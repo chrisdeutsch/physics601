@@ -17,6 +17,7 @@
 \usepackage{isotope}
 \usepackage[version=3]{mhchem}
 \usepackage{tensor}
+\usepackage{slashed}
 
 % zusätzliche mathematische Schriftarten
 \usepackage{amsfonts}
@@ -202,8 +203,23 @@ welche nur noch eine Funktion des Polarwinkels $\theta$ im jeweiligen Bezugssyst
 Im Gegensatz zu dem Polarwinkel~$\theta$ sind Pseudorapiditätsdifferenzen lorentzinvariant und somit ein bevorzugtes Maß für die Beschreibung von Ereignissen in Teilchendetektoren.
 Beispielsweise eine Pseudorapidität von $\eta = \num{0}$ einem Polarwinkel von $\theta = \SI{90}{\degree}$ (senkrecht zur Strahlachse) und positive/negative Pseudorapiditäten entsprechen Winkeln in/entgegen der Richtung der Strahlachse.
 
- 
-\subsubsection{Proton--Proton Kollisionen}
+\subsubsection{Hadronen-Kollision}
+Bei Kollisionen an Hadronenbeschleunigern wie dem LHC gilt es zu beachten, dass die eigentliche Kollision nicht zwischen den Hadronen, sondern dessen Partonen stattfindet.
+Im Partonmodell besteht jedes Hadron neben Valenzquarks auch aus Gluonen und paarerzeugten Quark-Antiquark-Paaren.
+Jedes Parton trägt dabei einen Impulsbruchteil, welcher im Bezugssystem in dem das Hadron einen unendlichen longitudinalen Impuls hat (d.h.\ transversale Impulse können vernachlässigt werden) durch die Bjorken'sche Skalenvariable~$x$ gegeben ist.
+
+Zur Charakterisierung von Hadronen-Kollisionen ist es demnach erforderlich die Wahrscheinlichkeitsverteilung, dass ein Parton den Impulsbruchteil~$x$ des Hadrons trägt, zu bestimmen.
+Diese Verteilungen, welche man Partonverteilungsfunktionen~$f(x)$ nennt, wurden für die verschiedenen Partonentypen~($u, \bar{u}, d, \dots, g$) an mehreren Teilchenbeschleunigern vermessen.
+
+Dennoch sind die spezifischen Impulsbruchteile~$x_1, x_2$ der kollidierenden Partonen in der Regel unbekannt, so dass der Transversalimpuls~$p_\mathrm{T}$, welcher beispielsweise im durch den Krümmungsradius geladener Teilchen im äußeren Magnetfeld bestimmt werden kann, für die Auswertung herangezogen wird.
+Darüber hinaus kann aus der Summe der Transversalimpulse aller Teilchen im Endzustand, welche gemäß der Impulserhaltung für frontal zusammenstoßende Partonen zu null summieren müssen, fehlender Transversalimpuls reproduziert werden, der auf nicht-detektierbare Teilchen wie Neutrinos zurückzuführen ist.
+
+Da der Transversalimpuls für ungeladene Teilchen wie beispielsweise Photonen nicht durch den Krümmungsradius im Magnetfeld vermessen werden kann, wird stattdessen auf die Energieeinträge in den Kalorimetern zurückgegriffen und die Größe der fehlenden transversalen Energie~$\slashed{E}_\mathrm{T}$
+\begin{align*}
+	\slashed{E}_\mathrm{T} = - \sum_{i} E^i \sin\theta_i \, \vec{n}_{i,\perp}
+\end{align*}
+mit den Energieeinträgen~$E_i$ des Kalorimeters unter Polarwinkeln~$\theta_i$  und azimuthalen Einheitsvektoren~$\vec{n}_{i,\perp}$ auf den jeweiligen Eintrag, definiert.
+
 
 
 \subsection{Neue Physik}
