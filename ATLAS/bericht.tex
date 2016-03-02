@@ -16,6 +16,7 @@
 \usepackage{braket}
 \usepackage{isotope}
 \usepackage[version=3]{mhchem}
+\usepackage{tensor}
 
 % zusätzliche mathematische Schriftarten
 \usepackage{amsfonts}
@@ -152,6 +153,41 @@ Tutor: & Elisabeth Schopf
 
 \subsection{Kinematik}
 
+\subsubsection{Lorentzvektoren}
+Ein Lorentzvektor~$\mathbf{x}$ ist ein vierdimensionaler Vektor mit reellen Komponenten, welche bezüglich einer Lorentztransformation~$\Lambda$ gemäß
+\begin{align*}
+	{x^\prime}^\mu = \tensor{\Lambda}{^\mu_\nu} x^\nu \qquad {x^\prime}_\mu = \tensor{\left(\Lambda^{-1}\right)}{^\nu_\mu} x_\nu
+\end{align*}
+transformieren.
+Dadurch ist das Minkowski-Produkt zweier Lorentzvektoren
+\begin{align*}
+	\mathbf{x} \cdot \mathbf{y} = \tensor{g}{_\mu_\nu} x^\mu y^\nu \quad \text{mit} \quad g = \mathrm{diag}(1,-1,-1,-1)
+\end{align*}
+invariant unter Lorentztransformationen.
+
+Ein solcher Lorentzvektor ist der sog.\ Viererimpuls~$\mathbf{p} = \left(E, \vec{p}\right)$, bestehend aus der Gesamtenergie~$E$ und dem Impuls~$\vec{p}$ im jeweiligen Bezugssystem.
+Dieser ist essenziell für kinematische Betrachtungen in der Teilchenphysik und tritt häufig in Form von lorentzinvarianten Skalarprodukten auf, die in einem beliebigen Bezugssystem (z.B.\ im Schwerpunktssystem) ausgewertet werden können.
+
+Beispiele dafür sind die invariante Masse eines Teilchens~$m_\mathrm{inv}^2 = \mathbf{p}^2$ oder die Mandelstam-Variable~$s = (\mathbf{p_1} + \mathbf{p_2})^2$, welche der quadratischen Schwerpunktsenergie zweier Teilchen entspricht.
+
+\subsubsection{Rapidität und Pseudorapidität}
+Die Rapidität entlang der Strahlachse~$z$ eines Teilchenbeschleunigers ist definiert als
+\begin{align*}
+	y = \frac{1}{2}\ln\left( \frac{E+p_z}{E-p_z} \right)
+\end{align*}
+mit der Energie~$E$ und dem Impuls~$p_z$ entlang der Strahlachse.
+Wie das Lorentz-Beta~$\beta$ ist die Rapidität ein Maß für die Geschwindigkeit eines Teilchens.
+Jedoch ist die Rapidität im Vergleich zu $\beta$ gegenüber Lorentz-Boosts entlang der Strahlachse lorentzinvariant und somit ein additives Geschwindigkeitsmaß, wie es bereits aus der klassischen Mechanik bekannt ist.
+
+Für Teilchen mit verschwindender Masse ($E \approx p$) geht die Rapidität~$y$ in die Pseudorapidität~$\eta$ über
+\begin{align*}
+	\eta = \frac{1}{2} \ln\left( \frac{1 + \cos\theta}{1 - \cos\theta} \right) = - \ln\left( \tan\frac{\theta}{2} \right)\text{,}
+\end{align*}
+welche nur noch eine Funktion des Polarwinkels $\theta$ im jeweiligen Bezugssystem darstellt.
+Im Gegensatz zu dem Polarwinkel~$\theta$ sind Pseudorapiditätsdifferenzen lorentzinvariant und somit ein bevorzugtes Maß für die Beschreibung von Ereignissen in Teilchendetektoren.
+Beispielsweise eine Pseudorapidität von $\eta = \num{0}$ einem Polarwinkel von $\theta = \SI{90}{\degree}$ (senkrecht zur Strahlachse) und positive/negative Pseudorapiditäten entsprechen Winkeln in/entgegen der Richtung der Strahlachse.
+
+ 
 \subsubsection{Proton--Proton Kollisionen}
 
 
