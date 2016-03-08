@@ -30,7 +30,7 @@ if ((p_1_ratio < 0.99) | (p_2_ratio > 1.01)).any():
 
 ### THETA CMS
 data["theta_1"] = 2 * np.arctan(np.exp(-data.eta_1))
-data["theta_2"] = 2* np.arctan(np.exp(-data.eta_2))
+data["theta_2"] = 2 * np.arctan(np.exp(-data.eta_2))
 
 
 ### UNIT VECTORS
