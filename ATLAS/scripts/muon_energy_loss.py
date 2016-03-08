@@ -38,7 +38,7 @@ data["dp_loss"] = np.sqrt(data.dp_in**2 + data.dp_out**2)
 ### ENERGY
 muon_mass = 0.105658  # GeV
 data["E_in"] = np.sqrt(muon_mass**2 + data.p_in**2)
-data["E_out"] = np.sqrt(muon_mass*2 + data.p_out**2)
+data["E_out"] = np.sqrt(muon_mass**2 + data.p_out**2)
 
 # Error: dE = sqrt(p^2 dp^2 / (m^2 + p^2))
 data["dE_in"] = np.sqrt(data.p_in**2 * data.dp_in**2 / (muon_mass**2 + data.p_in**2))
