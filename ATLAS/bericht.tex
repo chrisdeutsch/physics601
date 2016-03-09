@@ -230,6 +230,7 @@ mit den Energieeinträgen~$E_i$ des Kalorimeters unter Polarwinkeln~$\theta_i$  
 
 
 \section{Beschreibung der Software (ist sowas wie Versuchsaufbau)}
+\korr{Erklären was in welchem Fenster in ATLANTIS angezeigt wird.}
 
 \section{Versuchsaufgabe 1: Darstellung von Teilchenreaktionen}
 
@@ -242,14 +243,27 @@ Exemplarisch sollen für diese Teilchen im Folgenden einige Ereignisse vorgestel
 \subsubsection{Elektronen}
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\textwidth]{./data/atlantis/singlepart_events_new/electron/curvature.png}
-	\caption{Durch Magnetfeld gebogene Trajektorie eines Elektrons, welches im elektromagnetischen Kalorimeter gestoppt wird.}
+	\includegraphics[width=1.0\textwidth]{./data/atlantis/singlepart_events_new/electron/curvature.png}
+	\caption{Signatur eines einzelnen Elektrons im ATLAS-Detektor}
+	\label{fig:electron-curvature}
 \end{figure}
+Im Lerndatensatz der Elektronen finden sich Ereignisse in denen einzelne Elektronen erzeugt wurden.
+In Abbildung \ref{fig:electron-curvature} wurde ein typisches Ereignis mit einem einzelnen Elektron aufgetragen.
+Die Signatur eines Elektrons ist gekennzeichnet durch eine Trajektorie im inneren Detektor, welche aufgrund der elektromagnetischen Interaktion des Elektrons mit dem Detektormaterial als Ladungseintrag in den Halbleiter- und Übergangsstrahlungsdetektoren rekonstruiert werden kann.
+Das Magnetfeld im inneren Detektor, welches in Richtung der Strahlröhre zeigt, zwingt die Elektronen dort auf eine Kreisbogensegment und wird zur Rekonstruktion von Ladung und transversalem Impuls genutzt.
+Im Fall von Abbildung \ref{fig:electron-curvature} kann an der Krümmung abgelesen werden, dass es sich um ein negativ geladenes Elektron handelt (das Magnetfeld zeigt in der $x$-$y$-Ansicht aus der Bildebene).
+Schließlich bildet das Elektron im elektromagnetischen Kalorimeter einen Kaskade aus Photonen und Elektron-Positron-Paaren aufgrund von Bremsstrahlungs- und Paarbildungsprozessen.
+
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\textwidth]{./data/atlantis/singlepart_events_new/electron/twopart.png}
-	\caption{Zwei Elektronen}
+	\includegraphics[width=1.0\textwidth]{./data/atlantis/singlepart_events_new/electron/twopart.png}
+	\caption{Signatur eines Elektrons mit zusätzlichen geladenen Spuren im ATLAS-Detektor}
+	\label{fig:electron-twopart}
 \end{figure}
+In Abbildung \ref{fig:electron-twopart} wurden zwei geladene Spuren im inneren Detektor rekonstruiert.
+Da die zugrundeliegenden Ereignisse jedoch nur aus einem einzelnen Elektron bestehen, muss die zweite Spur durch das Ereignis-Elektron im Detektormaterial erzeugt worden sein.
+Eine Möglichkeit dafür ist die Erzeugung eines hoch-energetischen Delta-Elektrons durch das Primärelektron.
+Die Wahrscheinlichkeit für die Emission eines Delta-Elektrons in Vorwärtsrichtung ist jedoch sehr klein, daher könnte eine Alternative die Erzeugung eines Bremsstrahlphotons und die folgliche Paarbildung sein, in der das dritte Elektron nicht im Detektor rekonstruiert werden konnte.
 
 \subsubsection{Myonen}
 \begin{figure}
