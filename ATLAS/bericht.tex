@@ -404,16 +404,16 @@ Im Folgenden soll anhand der ersten 20 Myonen-Ereignisse aus den Lerndatensätze
 \subsubsection{Messung des Myonenimpulses mit Atlantis}
 \label{sssec:myon_momenta}
 Der ATLAS-Detektor besitzt mit dem Magnetfeld des Solenoids im inneren Detektor und dem des toroidalen Spulensystems im Myonensystem zwei unabhängige Methoden um den Myonenimpuls zu bestimmen.
-Bei den betrachteten Ereignissen können mithilfe der Ereignisanzeige \textit{Atlantis} die Myonenparameter (Impuls~$p$, transversaler Impuls~$p_\mathrm{T}$, Pseudorapidität~$\eta$, \dots) der Myonen jeweils im inneren Detektor und im Myonensystem abgefragt werden.
+Bei den betrachteten Ereignissen können mithilfe der Ereignisanzeige Atlantis die Myonenparameter (Impuls~$p$, transversaler Impuls~$p_\mathrm{T}$, Pseudorapidität~$\eta$, \dots) der Myonen jeweils im inneren Detektor und im Myonensystem abgefragt werden.
 
 Um den Energieverlust der Myonen im Kalorimeter zu bestimmen, ist es nötig den Impuls~$p$ ebendieser zu bestimmen.
-Da \textit{Atlantis} auf diesen Parameter jedoch keinen Fehler angibt, wurde stattdessen der transversale Impuls~$p_\mathrm{T}$ und die Pseudorapidität~$\eta$ bestimmt, um die Fehlerfortpflanzung per Hand durchzuführen.
+Da Atlantis auf diesen Parameter jedoch keinen Fehler angibt, wurde stattdessen der transversale Impuls~$p_\mathrm{T}$ und die Pseudorapidität~$\eta$ bestimmt, um die Fehlerfortpflanzung per Hand durchzuführen.
 Nach der Definition in Gleichung \eqref{eq:pseudorapidity} kann der Impuls gemäß
 \begin{align*}
 	p = p_\mathrm{T} \cosh(\eta)
 \end{align*}
 berechnet werden. \korr{evtl.\ herleiten}
-Da der relative Fehler der Pseudorapidität gemäß \textit{Atlantis} in der Größenordnung $10^{-3}$ liegt, soll dieser im Folgenden vernachlässigt werden.
+Da der relative Fehler der Pseudorapidität gemäß Atlantis in der Größenordnung $10^{-3}$ liegt, soll dieser im Folgenden vernachlässigt werden.
 Dann folgt aus \textsc{Gauß}scher Fehlerfortpflanzung für den Fehler des Impulses
 \begin{align*}
 	\sigma_p = | \cosh(\eta) \cdot \sigma_{p_\mathrm{T}} | \, \text{.}
@@ -433,14 +433,14 @@ Die Messdaten sowie die Berechnung des Impulses~$p$ der Myonen im inneren Detekt
 
 \subsubsection{Bestimmung von Impuls- und Energieverlust der Myonen im Kalorimeter}
 Nachfolgend soll der Impuls- bzw.\ Energieverlust der vermessenen Myonen im Kalorimeter berechnet werden.
-Zunächst betrachte man, dass die Größenordnung des Myonenimpulses~$p^{(\prime)}$ in der Größenordnung von einigen \SI{10}{\GeV} liegt.
+Zunächst betrachte man, dass der Myonenimpuls~$p^{(\prime)}$ in der Größenordnung von einigen \SI{10}{\GeV} liegt.
 Im Vergleich dazu beträgt die Masse der Myonen
 \begin{align*}
 	m_\mu \approx \SI{105.658}{\MeV} \, \cite{pdg} \text{,}
 \end{align*}
-weshalb $p \gg m_\mu$ ist und dadurch in guter Approximation $p^{(\prime)} = E^{(\prime)}$ angenommen werden.
+weshalb $p \gg m_\mu$ ist und dadurch in guter Approximation $p^{(\prime)} = E^{(\prime)}$ angenommen werden kann.
 
-Anschließend kann der Impuls- und Energieverlust der Differenz von Myon-Impuls im inneren Detektor~$p$ und Myon-Impuls im Myon-Detektor~$p^\prime$ berechnet werden:
+Anschließend kann der Impuls- und Energieverlust aus der Differenz von Myon-Impuls im inneren Detektor~$p$ und Myon-Impuls im Myon-Detektor~$p^\prime$ berechnet werden:
 \begin{align*}
 	\Delta E \approx \Delta p = p - p^\prime
 \end{align*}
