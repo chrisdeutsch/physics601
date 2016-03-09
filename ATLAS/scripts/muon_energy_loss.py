@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+plt.style.use("publication")
+
 # raw data
 raw_data = pd.read_csv("data/atlantis/muon_energy_loss.csv", comment="#")
 
@@ -63,4 +65,23 @@ out.to_latex("tables/muon_energy_loss.tex", index=False,
              formatters=[str, round(1), round(1), round(1), round(1)],
              column_format="rSSSS", escape=False)
 
+
 ### PLOTS
+# Pseudorapidity dependence
+def make_plots():
+    plt.errorbar(np.abs(data.eta_in), data.E_loss, yerr=data.dE_loss, fmt="o")
+
+    plt.xlabel("Pseudorapidität~$|\eta|$")
+    plt.ylabel("Energieverlust~$\Delta E$")
+
+    plt.savefig("figures/muon_energy_loss/eta.pdf")
+    plt.close()
+
+    # Energy dependence
+    plt.errorbar(data.E_in, data.E_loss, yerr=data.dE_loss, fmt="o")
+
+    plt.xlabel("Energie~$E$")
+    plt.ylabel("Energieverlust~$\Delta E$")
+
+    plt.savefig("figures/muon_energy_loss/energy.pdf")
+    plt.close()
