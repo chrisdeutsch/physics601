@@ -418,7 +418,9 @@ Dann folgt aus \textsc{Gauß}scher Fehlerfortpflanzung für den Fehler des Impul
 \begin{align*}
 	\sigma_p = | \cosh(\eta) \cdot \sigma_{p_\mathrm{T}} | \, \text{.}
 \end{align*}
-Die Messdaten sowie die Berechnung des Impulses wurde in Tabelle \ref{tab:muon_momenta} zusammengetragen.
+Die Messdaten sowie die Berechnung des Impulses~$p$ der Myonen im inneren Detektor und des Impulses~$p^\prime$ im Myon-Detektor wurde in Tabelle \ref{tab:muon_momenta} zusammengetragen.
+
+\korr{Erklären was mit dem einen Muon passiert ist}
 
 \begin{sidewaystable}
 	\centering
@@ -429,27 +431,37 @@ Die Messdaten sowie die Berechnung des Impulses wurde in Tabelle \ref{tab:muon_m
 \end{sidewaystable}
 
 \subsubsection{Bestimmung von Impuls- und Energieverlust der Myonen im Kalorimeter}
-
+Nachfolgend soll der Impuls- bzw.\ Energieverlust der vermessenen Myonen im Kalorimeter berechnet werden.
+Zunächst betrachte man, dass die Größenordnung des Myonenimpulses~$p^{(\prime)}$ in der Größenordnung von einigen \SI{10}{\GeV} liegt.
+Im Vergleich dazu beträgt die Masse der Myonen
 \begin{align*}
-	\Delta p = p - p^\prime
+	m_\mu \approx \SI{105.658}{\MeV} \, \cite{pdg} \text{,}
 \end{align*}
-Hier ergibt sich der quadratische Fehler aus quadratischer Addition der Fehler.
+weshalb $p \gg m_\mu$ ist und dadurch in guter Approximation $p^{(\prime)} = E^{(\prime)}$ angenommen werden.
 
+Anschließend kann der Impuls- und Energieverlust der Differenz von Myon-Impuls im inneren Detektor~$p$ und Myon-Impuls im Myon-Detektor~$p^\prime$ berechnet werden:
 \begin{align*}
-	E &= \sqrt{m_\mu^2 + p^2} \\
-	\sigma_E &= \sqrt{\frac{p^2 \, \sigma_p^2}{m_\mu^2 + p^2}}
+	\Delta E \approx \Delta p = p - p^\prime
 \end{align*}
-
+und der Fehler nach \textsc{Gauß}scher Fehlerfortpflanzung
 \begin{align*}
-	m_\mu \approx \SI{105.658}{\MeV} \, \cite{pdg}
+	\sigma_{\Delta E} = \sqrt{\sigma_p^2 + \sigma_{p^\prime}^2} \, \text{.}
 \end{align*}
+Die somit berechneten Energieverluste wurden in Tabelle \ref{tab:energy_loss_muons} aufgetragen.
 
-
-\begin{sidewaystable}[h]
+\begin{table}[h]
 	\centering
-	\input{./tables/muon_energy_loss.tex}
-	\caption{Testtabelle}
-\end{sidewaystable}
+	\begin{subtable}{.5\textwidth}
+		\centering		
+		\input{./tables/muon_energy_loss_pt1.tex}	
+	\end{subtable}%
+	\begin{subtable}{.5\textwidth}
+		\centering
+		\input{./tables/muon_energy_loss_pt2.tex}
+	\end{subtable}
+	\caption{Energieverlust~$\Delta E$ der Myonen im Kalorimeter des ATLAS-Detektors. Negative $\Delta E$ entsprechen einer Energiezunahme.}
+	\label{tab:energy_loss_muons}
+\end{table}
 
 \begin{figure}[h]
 	\centering

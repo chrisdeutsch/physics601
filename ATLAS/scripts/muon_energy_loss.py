@@ -75,18 +75,20 @@ out.to_latex("tables/muon_momenta.tex", index=False,
              column_format="rSSSSSSSSSS", escape=False)
 
 
-
-out = data[["event", "p_T_in", "dp_T_in", "E_loss", "dE_loss"]]
+# Momentum and energy loss
+out = data[["event", "E_loss", "dE_loss"]]
+out = out.dropna()
 out.columns = ["{Ereignis}",
-               "{$p_T$ / \si{\GeV}}",
-               "{$\Delta p_T$ / \si{\GeV}}",
-               "{$E_\mathrm{loss}$ / \si{\GeV}}",
-               "{$\Delta E_\mathrm{loss}$ / \si{\GeV}}"]
+               "{$\Delta E$ / \si{\GeV}}",
+               "{$\sigma_{\Delta E}$ / \si{\GeV}}"]
 
-out.to_latex("tables/muon_energy_loss.tex", index=False,
-             formatters=[str, round(1), round(1), round(1), round(1)],
-             column_format="rSSSS", escape=False)
+out[out["{Ereignis}"] <= 11].to_latex("tables/muon_energy_loss_pt1.tex",
+    index=False, formatters=[str, round(1), round(1)],
+    column_format="rSS", escape=False)
 
+out[out["{Ereignis}"] > 11].to_latex("tables/muon_energy_loss_pt2.tex",
+    index=False, formatters=[str, round(1), round(1)],
+    column_format="rSS", escape=False)
 
 ### PLOTS
 # Pseudorapidity dependence
