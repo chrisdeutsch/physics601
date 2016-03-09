@@ -50,5 +50,17 @@ data["dE_loss"] = np.sqrt(data.dE_in**2 + data.dE_out**2)
 
 
 ### LATEX
+from scripts.tools import round
+
+out = data[["event", "p_T_in", "dp_T_in", "E_loss", "dE_loss"]]
+out.columns = ["{Event}",
+               "{$p_T$ / \si{\GeV}}",
+               "{$\Delta p_T$ / \si{\GeV}}",
+               "{$E_\mathrm{loss}$ / \si{\GeV}}",
+               "{$\Delta E_\mathrm{loss}$ / \si{\GeV}}"]
+
+out.to_latex("tables/muon_energy_loss.tex", index=False,
+             formatters=[str, round(1), round(1), round(1), round(1)],
+             column_format="rSSSS", escape=False)
 
 ### PLOTS
