@@ -231,13 +231,26 @@ mit den Energieeinträgen~$E_i$ des Kalorimeters unter Polarwinkeln~$\theta_i$  
 
 
 \section{Beschreibung der Software (ist sowas wie Versuchsaufbau)}
-\korr{Erklären was in welchem Fenster in ATLANTIS angezeigt wird.}
+
+\subsection{ATLANTIS}
+
+Zur Darstellung von Ereignissen wird das Programm Atlantis verwendet, das den Aufbau des ATLAS Detektors zeigt und die jeweiligen Signale der einzelnen Subdetektoren für einzelne Ereignisse darstellt.
+Das Hauptfenster ist dabei in vier Darstellungen geteilt, wie in Abbildung \ref{fig:atlantis} zu sehen ist.
+Den größten Bildbereich nimmt eine Ansicht der $xy$-Ebene des Detektors ein, die den gesamten Querschnitt zeigt.
+Zusätzlich wird oben rechts ebenfalls eine Ansicht des Querschnitts gezeigt, jedoch mit Fokus auf den inneren Detektor, in dem Trajektorien geladener Teilchen dargestellt werden können. Am rechten Rand des Fensters ist ein Schnitt des Detektors in Längstrichtung gezeigt, während im unteren Bereich eine Ausschnitt in dieser $\rho z$-Ebene gezeigt wird, der vor allem den Bereich des inneren Detektors und der Kalorimeter zeigt, aber das Myonsystem ausblendet.
+Die Anzahl und Ansicht der einzelnen Fenster kann dabei individuell geändert werden je nach Information, die man aus einem Ereignis gewinnen möchte.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./data/atlantis/atlantis_empty.png}
+	\caption{Hauptfenster des Atlantis-Programms in der Standardansicht}
+	\label{fig:atlantis}
+\end{figure}
 
 \section{Versuchsaufgabe 1: Darstellung von Teilchenreaktionen}
 
 \subsection{Lerndatensätze}
 
-Zu Beginn des Versuchs wurde der Umgang mit Atlantis geübt, einem Programm zur graphischen Darstellung von Teilchenreaktionen im ATLAS Detektor.
+Zu Beginn des Versuchs wurde der Umgang mit Atlantis geübt.
 Hierzu wurden verschiedene Lerndatensätze betrachtet, die Ereignisse von Elektronen, Myonen, Photonen, $\tau$~-Leptonen und Jets enthalten.
 Exemplarisch sollen für diese Teilchen im Folgenden einige Ereignisse vorgestellt werden, mit denen die Antwort des Detektors auf verschiedene Teilchenarten verstanden werden kann.
 
@@ -256,7 +269,7 @@ In Abbildung \ref{fig:electron-curvature} wurde ein typisches Ereignis mit einem
 Die Signatur eines Elektrons ist gekennzeichnet durch eine Trajektorie im inneren Detektor, welche aufgrund der elektromagnetischen Interaktion des Elektrons mit dem Detektormaterial als Ladungseintrag in den Halbleiter- und Übergangsstrahlungsdetektoren rekonstruiert werden kann.
 Das Magnetfeld im inneren Detektor, welches in Richtung der Strahlröhre zeigt, zwingt die Elektronen dort auf einen Kreisbogen und wird zur Rekonstruktion von Ladung und transversalem Impuls genutzt.
 Im Fall von Abbildung \ref{fig:electron-curvature} kann an der Krümmung abgelesen werden, dass es sich um ein negativ geladenes Elektron handelt (das Magnetfeld zeigt in der $xy$-Ansicht aus der Bildebene).
-Schließlich bildet das Elektron im elektromagnetischen Kalorimeter einen Kaskade aus Photonen und Elektron-Positron-Paaren aufgrund von Bremsstrahlungs- und Paarbildungsprozessen.
+Schließlich bildet das Elektron im elektromagnetischen Kalorimeter eine Kaskade aus Photonen und Elektron-Positron-Paaren aufgrund von Bremsstrahlungs- und Paarbildungsprozessen.
 \vfill
 
 \clearpage
@@ -344,7 +357,7 @@ Das Ereignis in Abbildung \ref{fig:tau-muon} des $\tau$-Lerndatensatzes zeigt de
 \end{align*}
 Aufgrund der kurzen Lebensdauer zerfällt das $\tau$-Lepton nach sehr kurzer Flugstrecke $c \tau = \SI{87}{\micro\meter}$ \cite{pdg}, weshalb lediglich das Myon im Detektor rekonstruiert werden kann.
 Aufgrund der Leptonen-Universalität ist auch ein Zerfall in Elektron und zugehöriges Neutrino  mit ungefähr dem gleichen Verzweigungsverhältnis (abgesehen vom Phasenraumunterschied) möglich.
-Ein solcher Zerfall würde lediglich einen eine geladene Spur und einen Schauer im elektromagnetischen Kalorimeter verursachen und nicht wie bei dem hier betrachteten Ereignis im Myonsystem registriert werden.
+Ein solcher Zerfall würde lediglich eine geladene Spur und einen Schauer im elektromagnetischen Kalorimeter verursachen und nicht wie bei dem hier betrachteten Ereignis im Myonsystem registriert werden.
 
 In beiden Fällen entstehen zusätzlich zu dem geladenen Lepton auch ein $\tau$-Neutrino und das jeweilige Neutrino des Elektrons bzw.\ Myons.
 Diese können nicht detektiert werden, die fehlende transversale Energie (in den beiden oberen Ansichten der Abbildung \ref{fig:tau-muon} rot bzw.\ grau gestrichelt) ist jedoch ein Indiz für ihre Existenz.
@@ -361,7 +374,7 @@ Diese können nicht detektiert werden, die fehlende transversale Energie (in den
 \noindent
 Ein Beispiel für einen hadronischen $\tau$-Zerfall liefert Abbildung \ref{fig:tau-pion}.
 In diesem Fall ist eine geladene Spur im inneren Detektor sichtbar, sodass ein Zerfall mit einem geladenen Pion und einem $\tau$-Neutrino im Endzustand stattgefunden haben muss.
-Weiterhin können noch 0 bis 3 neutrale Pionen auftreten, welche nicht im inneren Detektor sichtbar sind.
+Weiterhin können noch bis zu drei neutrale Pionen auftreten, welche nicht im inneren Detektor sichtbar sind.
 Aufgrund der Lokalisierung der Energie im hadronischen Kalorimeter in einem kleinen Raumbereich ist ein Zerfall in ein einzelnes geladenes Pion zu vermuten.
 Es ist ebenfalls die fehlende transversale Energie aufgrund des $\tau$-Neutrinos zu beobachten, welche im Gegensatz zum leptonischen Zerfall nun ein Maß für den transversalen Impuls des Neutrinos darstellt, da nur ein Neutrino bei diesem Ereignis auftritt.
 \vfill
@@ -379,8 +392,8 @@ Es ist ebenfalls die fehlende transversale Energie aufgrund des $\tau$-Neutrinos
 In dem in Abbildung \ref{fig:jets-muon} zugrundeliegenden Ereignis entstehen zwei Quarks oder Gluonen, welche folglich aufgrund des \textit{Confinements} zwischen farb-geladenen Teilchen in Mesonen und Baryonen hadronisieren.
 Die so entstehenden geladenen Hadronen bilden im inneren Detektor eine Ansammlung vieler Spuren in einem engen Konus.
 Ein solcher \textit{Jet} enthält sowohl geladene als auch ungeladene Pionen.
-Die geladenen Pionen haben eine Zerfallslänge von in der Ordnung von $c \tau = \SI{7.8}{\meter}$~\cite{pdg} und können dadurch direkt in den hadronischen Kalorimetern beobachtet werden.
-Im Gegensatz dazu Zerfallen die ungeladenen Pionen schnell in zwei Photonen ($c \tau = \SI{25.5}{\nano\meter}$~\cite{pdg}) und führen somit ebenfalls zu signifikanten Einträgen in den elektromagnetischen Kalorimetern.
+Die geladenen Pionen haben eine Zerfallslänge in der Ordnung von $c \tau = \SI{7.8}{\meter}$~\cite{pdg} und können dadurch direkt in den hadronischen Kalorimetern beobachtet werden.
+Im Gegensatz dazu zerfallen die ungeladenen Pionen schnell in zwei Photonen ($c \tau = \SI{25.5}{\nano\meter}$~\cite{pdg}) und führen somit ebenfalls zu signifikanten Einträgen in den elektromagnetischen Kalorimetern.
 
 Das Myon, welches im oberen Jet in Abbildung \ref{fig:jets-muon} zu erkennen ist, ist ein Indikator dafür, dass das hadronisierende Quark-Paar ein $b\bar{b}$-Paar gewesen ist, da der Zerfall des im Jet entstandenen B-Mesons zu einem geladenen Lepton im Endzustand führen kann.
 \vfill
