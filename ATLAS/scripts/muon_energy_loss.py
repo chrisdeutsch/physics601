@@ -54,8 +54,30 @@ data["dE_loss"] = np.sqrt(data.dE_in**2 + data.dE_out**2)
 ### LATEX
 from scripts.tools import round
 
+# Momentum calculation
+out = data[["event", "p_T_in", "dp_T_in", "eta_in", "p_in", "dp_in", 
+                     "p_T_out", "dp_T_out", "eta_out", "p_out", "dp_out"]]
+out.columns = ["{Ereignis}",
+               "{$p_T$ / \si{\GeV}}",
+               "{$\sigma_{p_T}$ / \si{\GeV}}",
+               "{$\eta$}",
+               "{$p$ / \si{\GeV}}",
+               "{$\sigma_p$ / \si{\GeV}}",
+               "{$p_T^\prime$ / \si{\GeV}}",
+               "{$\sigma_{p_T^\prime}$ / \si{\GeV}}",
+               "{$\eta^\prime$}",
+               "{$p^\prime$ / \si{\GeV}}",
+               "{$\sigma_{p^\prime}$ / \si{\GeV}}"]
+
+out.to_latex("tables/muon_momenta.tex", index=False,
+             formatters=[str, round(1), round(1), round(2), round(1), round(1),
+                              round(1), round(1), round(2), round(1), round(1)],
+             column_format="rSSSSSSSSSS", escape=False)
+
+
+
 out = data[["event", "p_T_in", "dp_T_in", "E_loss", "dE_loss"]]
-out.columns = ["{Event}",
+out.columns = ["{Ereignis}",
                "{$p_T$ / \si{\GeV}}",
                "{$\Delta p_T$ / \si{\GeV}}",
                "{$E_\mathrm{loss}$ / \si{\GeV}}",

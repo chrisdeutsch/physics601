@@ -196,9 +196,10 @@ Wie das Lorentz-Beta~$\beta$ ist die Rapidität ein Maß für die Geschwindigkei
 Jedoch ist die Rapidität im Vergleich zu $\beta$ gegenüber Lorentz-Boosts entlang der Strahlachse lorentzinvariant und somit ein additives Geschwindigkeitsmaß, wie es bereits aus der klassischen Mechanik bekannt ist.
 
 Für Teilchen mit verschwindender Masse ($E \approx p$) geht die Rapidität~$y$ in die Pseudorapidität~$\eta$ über
-\begin{align*}
+\begin{align}
 	\eta = \frac{1}{2} \ln\left( \frac{1 + \cos\theta}{1 - \cos\theta} \right) = - \ln\left( \tan\frac{\theta}{2} \right)\text{,}
-\end{align*}
+	\label{eq:pseudorapidity}
+\end{align}
 welche nur noch eine Funktion des Polarwinkels $\theta$ im jeweiligen Bezugssystem darstellt.
 Im Gegensatz zu dem Polarwinkel~$\theta$ sind Pseudorapiditätsdifferenzen lorentzinvariant und somit ein bevorzugtes Maß für die Beschreibung von Ereignissen in Teilchendetektoren.
 Beispielsweise eine Pseudorapidität von $\eta = \num{0}$ einem Polarwinkel von $\theta = \SI{90}{\degree}$ (senkrecht zur Strahlachse) und positive/negative Pseudorapiditäten entsprechen Winkeln in/entgegen der Richtung der Strahlachse.
@@ -398,12 +399,57 @@ Das Myon, welches im oberen Jet in Abbildung \ref{fig:jets-muon} zu erkennen ist
 \vfill
 
 \subsection{Aufgabe 3: Energieverlust von Myonen im Kalorimeter}
+Im Folgenden soll anhand der ersten 20 Myonen-Ereignisse aus den Lerndatensätzen der mittlere Energieverlust der Myonen in den Kalorimetern bestimmt werden. 
 
-\begin{table}[h]
+\subsubsection{Messung des Myonenimpulses mit Atlantis}
+\label{sssec:myon_momenta}
+Der ATLAS-Detektor besitzt mit dem Magnetfeld des Solenoids im inneren Detektor und dem des toroidalen Spulensystems im Myonensystem zwei unabhängige Methoden um den Myonenimpuls zu bestimmen.
+Bei den betrachteten Ereignissen kann mithilfe der Ereignisanzeige \textit{Atlantis} die Myonenparameter (Impuls~$p$, transversaler Impuls~$p_\mathrm{T}$, Pseudorapidität~$\eta$, \dots) der Myonen jeweils im inneren Detektor und im Myonensystem abgefragt werden.
+
+Um den Energieverlust der Myonen im Kalorimeter zu bestimmen, ist es nötig den Impuls~$p$ ebendieser zu bestimmen.
+Da \textit{Atlantis} auf diesen Parameter jedoch keinen Fehler angibt, wurde stattdessen der transversale Impuls~$p_\mathrm{T}$ und die Pseudorapidität~$\eta$ bestimmt, um die Fehlerfortpflanzung per Hand durchzuführen.
+Nach der Definition in Gleichung \eqref{eq:pseudorapidity} kann der Impuls gemäß
+\begin{align*}
+	p = p_\mathrm{T} \cosh(\eta)
+\end{align*}
+berechnet werden. \korr{evtl.\ herleiten}
+Da der relative Fehler der Pseudorapidität gemäß \textit{Atlantis} in der Größenordnung $10^{-3}$ liegt, soll dieser im Folgenden vernachlässigt werden.
+Dann folgt aus \textsc{Gauß}scher Fehlerfortpflanzung für den Fehler des Impulses
+\begin{align*}
+	\sigma_p = | \cosh(\eta) \cdot \sigma_{p_\mathrm{T}} | \, \text{.}
+\end{align*}
+Die Messdaten sowie die Berechnung des Impulses wurde in Tabelle \ref{tab:muon_momenta} zusammengetragen.
+
+\begin{sidewaystable}
+	\centering
+	\input{./tables/muon_momenta.tex}
+	\caption{Bestimmung des Impulses des Myons im inneren Detektor (ungestrichene Größen) und im Myonensystem (gestrichene Größen) mithilfe der gemessenen Pseudorapidität~$\eta$ und des transversalen Impulses~$p_\mathrm{T}$.
+		Für Ereignis 10 konnte kein äußeres Myon rekonstruiert werden (für weitere Erklärung siehe Abschnitt \ref{sssec:myon_momenta}) stattdessen wurde noch das 21.\ Ereignis in die Analyse einbezogen.}
+	\label{tab:muon_momenta}
+\end{sidewaystable}
+
+\subsubsection{Bestimmung von Impuls- und Energieverlust der Myonen im Kalorimeter}
+
+\begin{align*}
+	\Delta p = p - p^\prime
+\end{align*}
+Hier ergibt sich der quadratische Fehler aus quadratischer Addition der Fehler.
+
+\begin{align*}
+	E &= \sqrt{m_\mu^2 + p^2} \\
+	\sigma_E &= \sqrt{\frac{p^2 \, \sigma_p^2}{m_\mu^2 + p^2}}
+\end{align*}
+
+\begin{align*}
+	m_\mu \approx \SI{105.658}{\MeV} \, \cite{pdg}
+\end{align*}
+
+
+\begin{sidewaystable}[h]
 	\centering
 	\input{./tables/muon_energy_loss.tex}
 	\caption{Testtabelle}
-\end{table}
+\end{sidewaystable}
 
 \begin{figure}[h]
 	\centering
