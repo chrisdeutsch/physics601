@@ -31,7 +31,7 @@ if ((p_out_ratio < 0.99) | (p_out_ratio > 1.01)).any():
 
 
 ### MOMENTUM LOSS
-data["p_loss"] = data.p_in - data.p_out
+data["p_loss"] = np.abs(data.p_in) - np.abs(data.p_out)
 
 # Error: dp_loss = sqrt(dp_in^2 + dp_out^2)
 data["dp_loss"] = np.sqrt(data.dp_in**2 + data.dp_out**2)
