@@ -241,7 +241,7 @@ Hierzu wurden verschiedene Lerndatensätze betrachtet, die Ereignisse von Elektr
 Exemplarisch sollen für diese Teilchen im Folgenden einige Ereignisse vorgestellt werden, mit denen die Antwort des Detektors auf verschiedene Teilchenarten verstanden werden kann.
 
 \subsubsection{Elektronen}
-\begin{figure}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=1.0\textwidth]{./data/atlantis/singlepart_events_new/electron/curvature.png}
 	\caption{Signatur eines einzelnen Elektrons im ATLAS-Detektor}
@@ -254,7 +254,7 @@ Das Magnetfeld im inneren Detektor, welches in Richtung der Strahlröhre zeigt, 
 Im Fall von Abbildung \ref{fig:electron-curvature} kann an der Krümmung abgelesen werden, dass es sich um ein negativ geladenes Elektron handelt (das Magnetfeld zeigt in der $x$-$y$-Ansicht aus der Bildebene).
 Schließlich bildet das Elektron im elektromagnetischen Kalorimeter einen Kaskade aus Photonen und Elektron-Positron-Paaren aufgrund von Bremsstrahlungs- und Paarbildungsprozessen.
 
-\begin{figure}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=1.0\textwidth]{./data/atlantis/singlepart_events_new/electron/twopart.png}
 	\caption{Signatur eines Elektrons mit zusätzlichen geladenen Spuren im ATLAS-Detektor}
@@ -265,43 +265,62 @@ Da die zugrundeliegenden Ereignisse jedoch nur aus einem einzelnen Elektron best
 Eine Möglichkeit dafür ist die Erzeugung eines hoch-energetischen Delta-Elektrons durch das Primärelektron.
 Die Wahrscheinlichkeit für die Emission eines Delta-Elektrons in Vorwärtsrichtung ist jedoch sehr klein, daher könnte eine Alternative die Erzeugung eines Bremsstrahlphotons und die folgliche Paarbildung sein, in der das dritte Elektron nicht im Detektor rekonstruiert werden konnte.
 
+\FloatBarrier
+
 \subsubsection{Myonen}
-\begin{figure}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.8\textwidth]{./data/atlantis/singlepart_events_new/muon/single_track2.png}
 	\caption{Single Myon}
+	\label{fig:myon-singletrack}
 \end{figure}
+In Abbildung \ref{fig:myon-singletrack} ist die typische Detektorantwort auf ein Myon zu sehen.
+Da es sich bei Myonen um geladene Teilchen handelt, hinterlassen diese eine Spur im inneren Detektor und fliegen durch das dort herrschende Magnetfeld auf einer gekrümmten Bahn.
+Sie passieren die beiden Kalorimeter beinahe ungehindert, deponieren jedoch aufgrund von \korr{warum?} eine geringe Energiemenge im hadronischen Kalorimeter.
+Im Myonsystem, das mit einer eigenen Spurrekonstruktion und einem toroidalen Magnetfeld ausgestattet ist, kann ebenfalls eine Spur dargestellt werden, die aufgrund eines anderen Magnetfelds eine andere Krümmung aufweist als im inneren Detektor.
+Da andere hadronische oder leptonische Teilchen im elektromagnetischen oder hadronischen Kalorimeter gestoppt worden wären und Neutrinos keine Spuren in einem Tracker hinterlassen, ist einer Teilchensignatur wie hier dargestellt zweifelsfrei ein Myon zuzuordnen. 
+
+\FloatBarrier
 
 \subsubsection{Photonen}
-\begin{figure}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.8\textwidth]{./data/atlantis/singlepart_events_new/photons/single_photon_2.png}
 	\caption{Single Photon}
+	\label{fig:photon}
 \end{figure}
-\begin{figure}
+Wie in Abbildung \ref{fig:photon} zu sehen, hinterlassen Photonen als ungeladene Teilchen keine rekonstruierbaren Spuren im Detektor.
+Da sie jedoch elektromagnetisch interagieren erzeugen sie einen Schauer im elektromagnetischen Kalorimeter, wo sie ihre gesamte Energie abgeben und somit gestoppt werden.
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.8\textwidth]{./data/atlantis/singlepart_events_new/photons/conversion.png}
 	\caption{Konversion}
 \end{figure}
 
+\FloatBarrier
+
 \subsubsection{$\tau$-Leptonen}
-\begin{figure}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.8\textwidth]{./data/atlantis/singlepart_events_new/tau/muon.png}
 	\caption{Event mit Myon}
 \end{figure}
-\begin{figure}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.8\textwidth]{./data/atlantis/singlepart_events_new/tau/single_pion.png}
 	\caption{Einzelnes Pion}
 \end{figure}
 
+\FloatBarrier
+
 \subsubsection{Jets}
-\begin{figure}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.8\textwidth]{./data/atlantis/singlepart_events_new/jets/muon.png}
 	\caption{Jet mit Myon}
 \end{figure}
+
+\FloatBarrier
 
 \subsection{Aufgabe 3: Energieverlust von Myonen im Kalorimeter}
 
