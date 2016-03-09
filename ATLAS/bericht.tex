@@ -241,7 +241,7 @@ Zusätzlich wird oben rechts ebenfalls eine Ansicht des Querschnitts gezeigt, je
 Die Anzahl und Ansicht der einzelnen Fenster kann dabei individuell geändert werden je nach Information, die man aus einem Ereignis gewinnen möchte.
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.8\textwidth]{./data/atlantis/atlantis_empty.png}
+	\includegraphics[width=\textwidth]{./data/atlantis/atlantis_empty.png}
 	\caption{Hauptfenster des Atlantis-Programms in der Standardansicht}
 	\label{fig:atlantis}
 \end{figure}
@@ -404,7 +404,7 @@ Im Folgenden soll anhand der ersten 20 Myonen-Ereignisse aus den Lerndatensätze
 \subsubsection{Messung des Myonenimpulses mit Atlantis}
 \label{sssec:myon_momenta}
 Der ATLAS-Detektor besitzt mit dem Magnetfeld des Solenoids im inneren Detektor und dem des toroidalen Spulensystems im Myonensystem zwei unabhängige Methoden um den Myonenimpuls zu bestimmen.
-Bei den betrachteten Ereignissen kann mithilfe der Ereignisanzeige \textit{Atlantis} die Myonenparameter (Impuls~$p$, transversaler Impuls~$p_\mathrm{T}$, Pseudorapidität~$\eta$, \dots) der Myonen jeweils im inneren Detektor und im Myonensystem abgefragt werden.
+Bei den betrachteten Ereignissen können mithilfe der Ereignisanzeige \textit{Atlantis} die Myonenparameter (Impuls~$p$, transversaler Impuls~$p_\mathrm{T}$, Pseudorapidität~$\eta$, \dots) der Myonen jeweils im inneren Detektor und im Myonensystem abgefragt werden.
 
 Um den Energieverlust der Myonen im Kalorimeter zu bestimmen, ist es nötig den Impuls~$p$ ebendieser zu bestimmen.
 Da \textit{Atlantis} auf diesen Parameter jedoch keinen Fehler angibt, wurde stattdessen der transversale Impuls~$p_\mathrm{T}$ und die Pseudorapidität~$\eta$ bestimmt, um die Fehlerfortpflanzung per Hand durchzuführen.
@@ -424,7 +424,8 @@ Die Messdaten sowie die Berechnung des Impulses wurde in Tabelle \ref{tab:muon_m
 	\centering
 	\input{./tables/muon_momenta.tex}
 	\caption{Bestimmung des Impulses des Myons im inneren Detektor (ungestrichene Größen) und im Myonensystem (gestrichene Größen) mithilfe der gemessenen Pseudorapidität~$\eta$ und des transversalen Impulses~$p_\mathrm{T}$.
-		Für Ereignis 10 konnte kein äußeres Myon rekonstruiert werden (für weitere Erklärung siehe Abschnitt \ref{sssec:myon_momenta}) stattdessen wurde noch das 21.\ Ereignis in die Analyse einbezogen.}
+		Für Ereignis 10 konnte kein äußeres Myon rekonstruiert werden (für weitere Erklärung siehe Abschnitt \ref{sssec:myon_momenta}) stattdessen wurde noch das 21.\ Ereignis in die Analyse einbezogen.
+		Das Vorzeichen von ~$p_\mathrm{T}$ dient der Unterscheidung positiv und negativ geladener Teilchen.}
 	\label{tab:muon_momenta}
 \end{sidewaystable}
 
@@ -464,6 +465,21 @@ Hier ergibt sich der quadratische Fehler aus quadratischer Addition der Fehler.
 \end{figure}
 
 \subsection{Aufgabe 6: invariante Elektron-Positron-Masse}
+
+Zur Bestimmung der invarianten Elektron-Positron-Masse aus drei~$Z^0 \rightarrow e^+ + e^-$ Zerfällen wurden mit Atlantis die Energien und Winkelinformationen der jeweiligen Teilchenspuren ausgelesen.
+Hierzu wurde die Darstellung der Ereignisse in der~$\phi\eta$-Ebene genutzt, um zweifelsfrei die Energieeinträge im Kalorimeter den Trajektorien von Elektron und Positron zuzuordnen.
+Die invariante Masse~$m_\mathrm{inv}$ kann dann gemäß
+\begin{align}
+	m_\mathrm{inv}=\sqrt{(\mathbf{p}_{\mathrm{e}^-}+\mathbf{p}_{\mathrm{e}^+})^2}
+\end{align}
+aus den beiden Vierervektoren von Elektron und Positron,~$\mathbf{p}_{\mathrm{e}^-}$ bzw.~$\mathbf{p}_{\mathrm{e}^+}$ berechnet werden.
+Man erhält somit als Ausdruck für die invariante Masse
+\begin{align}
+	m_\mathrm{inv}&=\sqrt{m^2_{\mathrm{e}^-} + m^2_{\mathrm{e}^+} + 2 E_{\mathrm{e}^-} E_{\mathrm{e}^+} - 2\vec{p}_{\mathrm{e}^-}\vec{p}_{\mathrm{e}^+}} \\
+	m_\mathrm{inv}&=\sqrt{m^2_{\mathrm{e}^-} + m^2_{\mathrm{e}^+} + 2 E_{\mathrm{e}^-} E_{\mathrm{e}^+} - 2|\vec{p}_{\mathrm{e}^-}||\vec{p}_{\mathrm{e}^+}|\cos(\theta)}\,\text{,}
+\end{align}
+wobei $\theta$ den Winkel zwischen den beiden Teilchen angibt.
+Da nur der Betrag des Impulses eines Teilchens gemessen werden kann, werden die Winkelinformationen~$\phi_0$ und~$\eta$ benötigt, um auf~$\theta$ zu schließen.
 
 \FloatBarrier
 % BIBLIOGRAPHIE
