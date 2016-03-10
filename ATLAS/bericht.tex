@@ -536,19 +536,6 @@ Man erhält somit als Ausdruck für die invariante Masse
 wobei $\theta$ den Winkel zwischen den beiden Teilchen angibt.
 Da nur der Betrag des Impulses eines Teilchens gemessen werden kann, werden die Winkelinformationen~$\phi$ und~$\eta$ benötigt, um auf~$\theta$ zu schließen.
 
-\section{Versuchsaufgabe 2: Kalibration der Elektronen}
-
-Für die weitere Durchführung des Versuchs ist es sowohl in Aufgabe 3 als auch in Aufgabe 4 nötig, die Energie von Elektronen zu bestimmen.
-Da einerseits die Kalorimeter aus vielen einzelnen Modulen bestehen und andererseits die Elektronen im inneren Detektor Energie verlieren oder in einen toten Bereich des Kalorimeters eintreten, ist die dort gemessene Energie systematisch zu gering.
-Aus diesem Grund muss in einem ersten Schritt eine Energiekalibration des gesamten Detektors durchgeführt werden, wobei sowohl Position der Elektronen im Detektor als auch deren Eigenschaften berücksichtigt werden sollten.
-
-Hierzu kommen Datensätze vom Zerfall $Z^0 \rightarrow e^+ + e^-$ zum Einsatz, da das $Z^0$ sehr genau gemessen wurde.
-Der bekannte Peak des Zerfalls kann damit zur Kalibration des Energiesignals genutzt werden.
-Die theoretische Erwartung der Verteilungsfunktion wird in guter Näherung auf eine nicht-relativistischen Breit-Wigner-Funktion mit Untergrund reduziert, die mit einer Gauss-Funktion zu einem Voigt-Profil gefaltet wird, um die (als gaußförmig angenommene) Verschmierung aufgrund der Detektorauflösung zu berücksichtigen.
-
-Das  in ROOT geladene Fit-Objekt passt somit die Lage des Peaks, also Masse des $Z^0$, die Verbreiterung aufgrund der Detektorauflösung, den Untergrund (gegeben durch vier Parameter) und Normierung des Peaks und Untergrunds an.
-
-
 \begin{sidewaystable}[p!]
 	\centering
 	\begin{subtable}{0.6\textheight}
@@ -571,6 +558,53 @@ Das  in ROOT geladene Fit-Objekt passt somit die Lage des Peaks, also Masse des 
 	\caption{Tabelle des Wahnsinns}
 	\label{tab:zee_inv_mass}
 \end{sidewaystable}
+
+\section{Versuchsaufgabe 2: Kalibration der Elektronen}
+
+Für die weitere Durchführung des Versuchs ist es sowohl in Aufgabe 3 als auch in Aufgabe 4 nötig, die Energie von Elektronen zu bestimmen.
+Da einerseits die Kalorimeter aus vielen einzelnen Modulen bestehen und andererseits die Elektronen im inneren Detektor Energie verlieren oder in einen toten Bereich des Kalorimeters eintreten, ist die dort gemessene Energie systematisch zu gering.
+Aus diesem Grund muss in einem ersten Schritt eine Energiekalibration des gesamten Detektors durchgeführt werden, wobei sowohl Position der Elektronen im Detektor als auch deren Eigenschaften berücksichtigt werden sollten.
+
+Hierzu kommen Datensätze vom Zerfall $Z^0 \rightarrow e^+ + e^-$ zum Einsatz, da das $Z^0$ sehr genau gemessen wurde.
+Der bekannte Peak des Zerfalls kann damit zur Kalibration des Energiesignals genutzt werden.
+Die theoretische Erwartung der Verteilungsfunktion wird in guter Näherung auf eine nicht-relativistischen Breit-Wigner-Funktion mit Untergrund reduziert, die mit einer Gauss-Funktion zu einem Voigt-Profil gefaltet wird, um die (als gaußförmig angenommene) Verschmierung aufgrund der Detektorauflösung zu berücksichtigen.
+
+Das  in ROOT geladene Fit-Objekt passt somit die Lage des Peaks, also Masse des $Z^0$, die Verbreiterung aufgrund der Detektorauflösung, den Untergrund (gegeben durch vier Parameter) und Normierung des Peaks und Untergrunds an.
+
+\subsection{Aufgabe a) Darstellung kinematischer Variablen}
+
+Zunächst werden mit dem Befehl \texttt{tree->Draw()} Histogramme der Elektronen- bzw Positronenenergie sowie der nvarianten Masse des Elektron-Positron-Paares erstellt.
+Diese sind in den Abbildungen \ref{fig:el_energy} bis \ref{fig:inv_masse} zu finden.
+Man kann bereits gut abschätzen, dass Elektron und Positron den gleichen Impulsbruchteil tragen, da das Maximum der Histogramme ungefähr bei der gleichen Energie in Höhe der halben Z-Masse auftritt.
+Das Maximum der invarianten Elektron-Positron-Masse liegt bereits wie erwartet in der Größenordnung der $Z^0$-Masse.
+Eine quantitative Aussage über die Lage des Z-Peaks liefert der Aufruf der Fit-Methode auf die unkalibrierten Daten, was in Abbildung \ref{fig:uncalibrated} dargestellt ist.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]{./data/root/calibration/new/uncalibrated.pdf}
+	\caption{Aufruf der Fit-Methode auf die unkalibrierten Daten. Die so gemessene Z-Masse beträgt \SI{85.8}{GeV}.}
+	\label{fig:uncalibrated}
+\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.7\textwidth]{./data/root/calibration/new/el_energy.pdf}
+		\subcaption{Histogrammierte Energie des Elektrons im $Z^0 \rightarrow e^+ + e^-$ Zerfall}
+		\label{fig:el_energy}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.7\textwidth]{./data/root/calibration/new/pos_energy.pdf}
+		\subcaption{Histogrammierte Energie des Positrons im $Z^0 \rightarrow e^+ + e^-$ Zerfall}
+		\label{fig:pos_energy}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=0.7\textwidth]{./data/root/calibration/new/inv_mass.pdf}
+		\subcaption{Histogrammierte invariante Masse des Elektron-Positron-Paars im $Z^0 \rightarrow e^+ + e^-$ Zerfall}
+		\label{fig:inv_masse}
+	\end{subfigure}
+\end{figure}
 
 
 
