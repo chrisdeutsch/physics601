@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
 
 plt.style.use("publication")
@@ -46,9 +47,25 @@ data["E_out"] = np.sqrt(muon_mass**2 + data.p_out**2)
 data["dE_in"] = np.sqrt(data.p_in**2 * data.dp_in**2 / (muon_mass**2 + data.p_in**2))
 data["dE_out"] = np.sqrt(data.p_out**2 * data.dp_out**2 / (muon_mass**2 + data.p_out**2))
 
+
 ### ENERGY LOSS
 data["E_loss"] = data.E_in - data.E_out
 data["dE_loss"] = np.sqrt(data.dE_in**2 + data.dE_out**2)
+
+
+### MEAN ENERGY LOSS
+df = data[["E_loss", "dE_loss"]].dropna()
+f = lambda x, b: 0.0 * x + b
+popt, pcov = curve_fit(f, df.index, df.E_loss, sigma=df.dE_loss)
+
+chisquare = ((np.zeros(df.E_loss.size) + popt[0]) - df.E_loss)**2 / df.dE_loss**2
+chisquare = chisquare.sum()
+# ndf = N - n - 1 (N: data points; n: fit parameters)
+chisquare_red = chisquare / (df.E_loss.size - 2)
+
+print("Average energy loss: {:.2f} +- {:.2f}".format(popt[0], 
+                                                     np.sqrt(np.diag(pcov))[0]))
+print("chi/ndf: {:.3f}".format(chisquare_red))
 
 
 ### LATEX
@@ -91,21 +108,31 @@ out[out["{Ereignis}"] > 11].to_latex("tables/muon_energy_loss_pt2.tex",
     column_format="rSS", escape=False)
 
 ### PLOTS
-# Pseudorapidity dependence
 def make_plots():
-    plt.errorbar(np.abs(data.eta_in), data.E_loss, yerr=data.dE_loss, fmt="o")
+    # Pseudorapidity dependence
+    plt.errorbar(np.abs(data.eta_in), data.E_loss, yerr=data.dE_loss,
+                 fmt="o", zorder=2, label="Messpunkte")
+    plt.plot(np.linspace(0.0, 3.0, 100), np.zeros(100) + popt[0], "-", zorder=1,
+             label=r"$\langle \Delta E \rangle$")
 
     plt.xlabel("Pseudorapidität~$|\eta|$")
-    plt.ylabel("Energieverlust~$\Delta E$")
-
+    plt.ylabel("Energieverlust~$\Delta E$ / GeV")
+    plt.grid()
+    plt.legend(loc="lower left")
+    
     plt.savefig("figures/muon_energy_loss/eta.pdf")
     plt.close()
 
-    # Energy dependence
-    plt.errorbar(data.E_in, data.E_loss, yerr=data.dE_loss, fmt="o")
+    # Momentum dependence
+    plt.errorbar(np.abs(data.p_in), data.E_loss, xerr=data.dp_in,
+                 yerr=data.dE_loss, fmt="o", zorder=2, label="Messpunkte")
+    plt.plot(np.linspace(0.0, 250.0, 100), np.zeros(100) + popt[0], "-",
+             zorder=1, label=r"$\langle \Delta E \rangle$")
+    
+    plt.xlabel("Impuls~$p$")
+    plt.ylabel("Energieverlust~$\Delta E$ / GeV")
+    plt.grid()
+    plt.legend(loc="lower left")
 
-    plt.xlabel("Energie~$E$")
-    plt.ylabel("Energieverlust~$\Delta E$")
-
-    plt.savefig("figures/muon_energy_loss/energy.pdf")
+    plt.savefig("figures/muon_energy_loss/momentum.pdf")
     plt.close()
