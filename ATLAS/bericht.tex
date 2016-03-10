@@ -536,6 +536,18 @@ Man erhält somit als Ausdruck für die invariante Masse
 wobei $\theta$ den Winkel zwischen den beiden Teilchen angibt.
 Da nur der Betrag des Impulses eines Teilchens gemessen werden kann, werden die Winkelinformationen~$\phi$ und~$\eta$ benötigt, um auf~$\theta$ zu schließen.
 
+\section{Versuchsaufgabe 2: Kalibration der Elektronen}
+
+Für die weitere Durchführung des Versuchs ist es sowohl in Aufgabe 3 als auch in Aufgabe 4 nötig, die Energie von Elektronen zu bestimmen.
+Da einerseits die Kalorimeter aus vielen einzelnen Modulen bestehen und andererseits die Elektronen im inneren Detektor Energie verlieren oder in einen toten Bereich des Kalorimeters eintreten, ist die dort gemessene Energie systematisch zu gering.
+Aus diesem Grund muss in einem ersten Schritt eine Energiekalibration des gesamten Detektors durchgeführt werden, wobei sowohl Position der Elektronen im Detektor als auch deren Eigenschaften berücksichtigt werden sollten.
+
+Hierzu kommen Datensätze vom Zerfall $Z^0 \rightarrow e^+ + e^-$ zum Einsatz, da das $Z^0$ sehr genau gemessen wurde.
+Der bekannte Peak des Zerfalls kann damit zur Kalibration des Energiesignals genutzt werden.
+Die theoretische Erwartung der Verteilungsfunktion wird in guter Näherung auf eine nicht-relativistischen Breit-Wigner-Funktion mit Untergrund reduziert, die mit einer Gauss-Funktion zu einem Voigt-Profil gefaltet wird, um die (als gaußförmig angenommene) Verschmierung aufgrund der Detektorauflösung zu berücksichtigen.
+
+Das  in ROOT geladene Fit-Objekt passt somit die Lage des Peaks, also Masse des $Z^0$, die Verbreiterung aufgrund der Detektorauflösung, den Untergrund (gegeben durch vier Parameter) und Normierung des Peaks und Untergrunds an.
+
 \FloatBarrier
 % BIBLIOGRAPHIE
 \vspace{\fill}
