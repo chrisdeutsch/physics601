@@ -246,6 +246,12 @@ Die Anzahl und Ansicht der einzelnen Fenster kann dabei individuell geändert we
 	\label{fig:atlantis}
 \end{figure}
 
+\subsection{ROOT}
+Zur Bearbeitung der Versuchsaufgaben 2 bis 4 wird das Datenanalyseprogramm ROOT verwendet.
+ROOT wird über einen C++-Interpreter aus der Kommandozeile heraus gesteuert und bietet vielfältige Möglichkeiten zur Datenanalyse.
+Die für den Versuch nötigen Daten und Funktionen werden als C++-Objekte vor Durchführung der Aufgaben in ROOT geladen.
+
+
 \section{Versuchsaufgabe 1: Darstellung von Teilchenreaktionen}
 
 \subsection{Lerndatensätze}
@@ -408,7 +414,7 @@ Bei den betrachteten Ereignissen können mithilfe der Ereignisanzeige Atlantis d
 
 Um den Energieverlust der Myonen im Kalorimeter zu bestimmen, ist es nötig den Impuls~$p$ ebendieser zu bestimmen.
 Da Atlantis auf diesen Parameter jedoch keinen Fehler angibt, wurde stattdessen der transversale Impuls~$p_\mathrm{T}$ und die Pseudorapidität~$\eta$ genutzt, um die Fehlerfortpflanzung per Hand durchzuführen.
-Nach der Definition in Gleichung \eqref{eq:pseudorapidity} und $p = p_\mathrm{T} / \sin\theta$ kann der Impuls gemäß
+Nach der Definition in Gleichung \eqref{eq:pseudorapidity} und $p = p_\mathrm{T} / \sin\vartheta$ kann der Impuls gemäß
 \begin{align*}
 	p = p_\mathrm{T} \cosh(\eta)
 \end{align*}
@@ -528,7 +534,7 @@ Man erhält somit als Ausdruck für die invariante Masse
 	m_\mathrm{inv}&=\sqrt{m^2_{\mathrm{e}^-} + m^2_{\mathrm{e}^+} + 2 E_{\mathrm{e}^-} E_{\mathrm{e}^+} - 2|\vec{p}_{\mathrm{e}^-}||\vec{p}_{\mathrm{e}^+}|\cos(\theta)}\,\text{,}
 \end{align}
 wobei $\theta$ den Winkel zwischen den beiden Teilchen angibt.
-Da nur der Betrag des Impulses eines Teilchens gemessen werden kann, werden die Winkelinformationen~$\phi_0$ und~$\eta$ benötigt, um auf~$\theta$ zu schließen.
+Da nur der Betrag des Impulses eines Teilchens gemessen werden kann, werden die Winkelinformationen~$\phi$ und~$\eta$ benötigt, um auf~$\theta$ zu schließen.
 
 \FloatBarrier
 % BIBLIOGRAPHIE
