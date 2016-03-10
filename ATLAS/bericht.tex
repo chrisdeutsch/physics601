@@ -547,6 +547,32 @@ Die Aufgabe erfolgt analog zu Frage A, jedoch mit der Schwerpunktsenergie von \S
 	|\vec{p}_{\mathrm{\tau}}|&=\sqrt{\frac{(\SI{5}{GeV})^2 - 4m^2_{\mathrm{\tau}}}{4}} \approx \SI{1.76}{GeV}
 \end{align}
 
+\subsubsection{6.3.1 ptw}
+Aufgrund der Impulserhaltung kann der Transversalimpuls des W-Bosons \texttt{ptw} aus den Messungen des transversalen Elektronimpulses und dem fehlenden transversalen Impuls (aufgrund des Neutrinos) bestimmt werden:
+\begin{align}
+	p_\mathrm{T,W}=\sqrt{(p_\mathrm{e,x} + p_\mathrm{mis, x})^2 + (p_\mathrm{e,y} + p_\mathrm{mis, y})^2}
+\end{align}
+
+\subsubsection{6.3.1 Herleitung}
+Mit der Kettenregel folgt:
+\begin{align}
+	\frac{\mathrm{d}\sigma}{\mathrm{d}p_\mathrm{T}} = \frac{\mathrm{d}\sigma}{\mathrm{d}\cos\vartheta^*}\left|\frac{\mathrm{d}\cos\vartheta^*}{\mathrm{d}p_\mathrm{T}}\right| = \frac{\mathrm{d}\sigma}{\mathrm{d}\cos\vartheta^*}\frac{1}{\left|\frac{\mathrm{d}p_\mathrm{T}}{\mathrm{d}\cos\vartheta^*}\right|}
+\end{align}
+Es gilt $p_\mathrm{T}=p^*\cos\vartheta^*$ mit $p^*$ dem Impuls im Schwerpunktsystem, wobei für eine vernachlässigbar kleine Leptonmasse $p^*\approx\frac{1}{2}M_\mathrm{W}$ angenommen werden kann.
+Dann gilt:
+\begin{align}
+	\frac{\mathrm{d}p_\mathrm{T}}{\mathrm{d}\cos\vartheta^*}=p^*\frac{\mathrm{d}\sin\vartheta^*}{\mathrm{d}\cos\vartheta^*}=-p^*\frac{\cos\vartheta^*}{\sin\vartheta^*}
+\end{align}
+Mit der Ableitung folgt für $\frac{\mathrm{d}\sigma}{\mathrm{d}p_\mathrm{T}}$:
+\begin{align}
+	\frac{\mathrm{d}\sigma}{\mathrm{d}p_\mathrm{T}}&=\frac{\mathrm{d}\sigma}{\mathrm{d}\cos\vartheta^*} \frac{1}{p^*\left|\frac{\cos\vartheta^*}{\sin\vartheta^*}\right|}\\
+	&=\frac{\mathrm{d}\sigma}{\mathrm{d}\cos\vartheta^*} \frac{1}{p^*\left|\frac{p^*\sqrt{1-\sin^2\vartheta^*}}{p^*\sin\vartheta^*}\right|}\\
+	&=\frac{\mathrm{d}\sigma}{\mathrm{d}\cos\vartheta^*} \frac{1}{p^*\left|\frac{\sqrt{{p^*}^2-{p^*}^2\sin^2\vartheta^*}}{p^*\sin\vartheta^*}\right|}\\
+	&=\frac{\mathrm{d}\sigma}{\mathrm{d}\cos\vartheta^*} \frac{1}{p^*\frac{\sqrt{{p^*}^2-p_\mathrm{T}^2}}{p_\mathrm{T}}}\\
+	&=\frac{\mathrm{d}\sigma}{\mathrm{d}\cos\vartheta^*} \frac{p_\mathrm{T}}{p^*\sqrt{{p^*}^2-p_\mathrm{T}^2}}\\
+	&\approx \frac{\mathrm{d}\sigma}{\mathrm{d}\cos\vartheta^*} \frac{2p_\mathrm{T}}{M_\mathrm{W}} \frac{1}{\sqrt{\frac{1}{4}M_\mathrm{W}^2-p_\mathrm{T}^2}}
+\end{align}
+
 \FloatBarrier
 \subsection{Section in Appendix}
 Appendix
