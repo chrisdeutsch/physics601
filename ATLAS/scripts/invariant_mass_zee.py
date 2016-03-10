@@ -7,6 +7,7 @@ raw_data = pd.read_csv("data/atlantis/invariant_mass_zee.csv", comment="#")
 
 # data for analysis
 data = raw_data.drop(["p_1", "p_2"], axis=1)
+data = data.sort_values(by="event")
 
 
 ### MOMENTUM
@@ -48,10 +49,78 @@ data["cos"] = data.unitv_x_1 * data.unitv_x_2 + \
               data.unitv_z_1 * data.unitv_z_2
 
 
-### INVARIANT MASS
+### ENERGIES
 mass_electron = 0.000511  # GeV
+# E = sqrt(m^2 + p^2)
+data["E_1_from_p"] = np.sqrt(mass_electron**2 + data.p_1**2)
+data["E_2_from_p"] = np.sqrt(mass_electron**2 + data.p_2**2)
+# dE = sqrt( p^2 dp^2 / (m^2 + p^2) )
+data["dE_1_from_p"] = np.sqrt( data.p_1**2 * data.dp_1**2 /
+                               (mass_electron**2 + data.p_1**2) )
+data["dE_2_from_p"] = np.sqrt( data.p_2**2 * data.dp_2**2 /
+                               (mass_electron**2 + data.p_2**2) )
+
+### INVARIANT MASS
 data["inv_mass"] = np.sqrt(2 * mass_electron**2 + \
-                           2 * (data.E_1 * data.E_2 - \
+                           2 * (data.E_1_from_p * data.E_2_from_p - \
                                 np.abs(data.p_1 * data.p_2) * data.cos))
 
+
 data["inv_mass_me0"] = np.sqrt(2 * np.abs(data.p_1 * data.p_2) * (1 - data.cos))
+
+data["dinv_mass_me0"] = np.sqrt((1 - data.cos) * np.abs(data.p_2) * data.dp_1**2 /
+                                (2 * np.abs(data.p_1)) +
+                                (1 - data.cos) * np.abs(data.p_1) * data.dp_2**2 /
+                                (2 * np.abs(data.p_2)))
+
+data["dinv_mass"] = data.dinv_mass_me0
+
+
+### LATEX
+from scripts.tools import round
+
+# Invariant masses
+out = data[data.event != 24]
+
+
+pt1 = out[["event", "p_T_1", "dp_T_1", "eta_1", "phi0_1", "p_1", "dp_1"]]
+pt2 = out[["event", "p_T_2", "dp_T_2", "eta_2", "phi0_2", "p_2", "dp_2"]]
+pt3 = out[["event", "cos", "inv_mass", "dinv_mass", "inv_mass_me0", "dinv_mass_me0"]]
+
+
+pt1.columns = ["{Ereignis}",
+               "{$p_{\mathrm{T}^{+}}$ / \si{\GeV}}",
+               "{$\sigma_{p_\mathrm{T}^{+}}$ / \si{\GeV}}",
+               "{$\eta^{+}$}",
+               "{$\phi^{+}$ / \si{\degree}}",
+               "{$p^{+}$ / \si{\GeV}}",
+               "{$\sigma_{p^{+}}$ / \si{\GeV}}"]
+
+pt2.columns = ["{Ereignis}",
+               "{$p_{\mathrm{T}^{-}}$ / \si{\GeV}}",
+               "{$\sigma_{p_\mathrm{T}^{-}}$ / \si{\GeV}}",
+               "{$\eta^{-}$}",
+               "{$\phi^{-}$ / \si{\degree}}",
+               "{$p^{-}$ / \si{\GeV}}",
+               "{$\sigma_{p^{-}}$ / \si{\GeV}}"]
+
+pt3.columns = ["{Ereignis}",
+               "{$\cos\theta$}",
+               "{$m_\mathrm{inv}^\mathrm{exakt}$ / \si{\GeV}}",
+               "{$\sigma_{m_\mathrm{inv}^\mathrm{exakt}}$ / \si{\GeV}}",
+               "{$m_\mathrm{inv}$ / \si{\GeV}}",
+               "{$\sigma_{m_\mathrm{inv}}$ / \si{\GeV}}"]
+
+
+pt1.to_latex("tables/zee_inv_mass_pt1.tex", index=False,
+             formatters=[str, round(2), round(2), round(2), round(1), round(1), round(1)],
+             column_format="rSSSSSS", escape=False)
+
+pt2.to_latex("tables/zee_inv_mass_pt2.tex", index=False,
+             formatters=[str, round(2), round(2), round(2), round(1), round(1), round(1)],
+             column_format="rSSSSSS", escape=False)
+
+pt3.to_latex("tables/zee_inv_mass_pt3.tex", index=False,
+             formatters=[str, round(3), round(1), round(1), round(1), round(1)],
+             column_format="rSSSSS", escape=False)
+
