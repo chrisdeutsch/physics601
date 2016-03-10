@@ -89,20 +89,20 @@ pt3 = out[["event", "cos", "inv_mass", "dinv_mass", "inv_mass_me0", "dinv_mass_m
 
 
 pt1.columns = ["{Ereignis}",
-               "{$p_{\mathrm{T}^{(1)}}$ / \si{\GeV}}",
-               "{$\sigma_{p_\mathrm{T}^{(1)}}$ / \si{\GeV}}",
-               "{$\eta^{(1)}$}",
-               "{$\phi^{(1)}$ / \si{\degree}}",
-               "{$p^{(1)}$ / \si{\GeV}}",
-               "{$\sigma_{p^{(1)}}$ / \si{\GeV}}"]
+               "{$p_{\mathrm{T}^{+}}$ / \si{\GeV}}",
+               "{$\sigma_{p_\mathrm{T}^{+}}$ / \si{\GeV}}",
+               "{$\eta^{+}$}",
+               "{$\phi^{+}$ / \si{\degree}}",
+               "{$p^{+}$ / \si{\GeV}}",
+               "{$\sigma_{p^{+}}$ / \si{\GeV}}"]
 
 pt2.columns = ["{Ereignis}",
-               "{$p_{\mathrm{T}^{(2)}}$ / \si{\GeV}}",
-               "{$\sigma_{p_\mathrm{T}^{(2)}}$ / \si{\GeV}}",
-               "{$\eta^{(2)}$}",
-               "{$\phi^{(2)}$ / \si{\degree}}",
-               "{$p^{(2)}$ / \si{\GeV}}",
-               "{$\sigma_{p^{(2)}}$ / \si{\GeV}}"]
+               "{$p_{\mathrm{T}^{-}}$ / \si{\GeV}}",
+               "{$\sigma_{p_\mathrm{T}^{-}}$ / \si{\GeV}}",
+               "{$\eta^{-}$}",
+               "{$\phi^{-}$ / \si{\degree}}",
+               "{$p^{-}$ / \si{\GeV}}",
+               "{$\sigma_{p^{-}}$ / \si{\GeV}}"]
 
 pt3.columns = ["{Ereignis}",
                "{$\cos\theta$}",
