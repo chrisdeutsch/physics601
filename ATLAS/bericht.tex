@@ -404,10 +404,10 @@ Im Gegensatz dazu zerfallen die ungeladenen Pionen schnell in zwei Photonen ($c 
 Das Myon, welches im oberen Jet in Abbildung \ref{fig:jets-muon} zu erkennen ist, ist ein Indikator dafür, dass das hadronisierende Quark-Paar ein $b\bar{b}$-Paar gewesen ist, da der Zerfall des im Jet entstandenen B-Mesons zu einem geladenen Lepton im Endzustand führen kann.
 \vfill
 
-\subsection{Aufgabe 3: Energieverlust von Myonen im Kalorimeter}
+\subsection{Energieverlust von Myonen in den Kalorimetern des ATLAS-Detektors}
 Im Folgenden soll anhand der ersten 20 Myonen-Ereignisse aus den Lerndatensätzen der mittlere Energieverlust der Myonen in den Kalorimetern bestimmt werden. 
 
-\subsubsection{Messung des Myonenimpulses mit Atlantis}
+\subsubsection{Bestimmung des Myonenimpulses mit Atlantis}
 \label{sssec:myon_momenta}
 Der ATLAS-Detektor besitzt mit dem Magnetfeld des Solenoids im inneren Detektor und dem des toroidalen Spulensystems im Myonensystem zwei unabhängige Methoden um den Myonenimpuls zu bestimmen.
 Bei den betrachteten Ereignissen können mithilfe der Ereignisanzeige Atlantis die Parameter (Impuls~$p$, transversaler Impuls~$p_\mathrm{T}$, Pseudorapidität~$\eta$, \dots) der Myonen jeweils im inneren Detektor und im Myonensystem abgefragt werden.
@@ -519,22 +519,91 @@ Dadurch erhält man
 mit einem reduzierten $\chi$-Quadrat $\chi_\mathrm{red.}^2 = \num{3.11}$; das Ergebnis wurde ebenfalls in den Abbildungen \ref{fig:muon_eloss} aufgetragen.
 Das reduzierte $\chi$-Quadrat spricht für keine gute Übereinstimmung der Fithypothese mit den gemessenen Daten, was jedoch nicht verwunderlich ist, da wie bereits erwähnt, der Energieverlust der Myonen einer statistischen Distribution folgt.
 
-\subsection{Aufgabe 6: invariante Elektron-Positron-Masse}
-
-Zur Bestimmung der invarianten Elektron-Positron-Masse aus drei~$Z^0 \rightarrow e^+ + e^-$ Zerfällen wurden mit Atlantis die Energien und Winkelinformationen der jeweiligen Teilchenspuren ausgelesen.
-Hierzu wurde die Darstellung der Ereignisse in der~$\phi\eta$-Ebene genutzt, um zweifelsfrei die Energieeinträge im Kalorimeter den Trajektorien von Elektron und Positron zuzuordnen.
+\subsection{Invariante Elektron-Positron-Masse im Prozess~$Z^0 \rightarrow e^+ + e^-$}
+Im Folgenden sollen aus einem Datensatz von Zerfällen~$Z^0 \rightarrow e^+ + e^-$ drei Ereignisse gewählt werden und aus den rekonstruierten Elektronen die invariante Elektron-Positron-Masse bestimmt werden.
+Bei der Auswahl der Ereignisse wurden die folgenden Bedingung gestellt:
+\begin{itemize}
+	\item zwei Elektronen mit hohem transversalen Impuls~$p_\mathrm{T}$
+	\item eindeutig zuzuordnende Schauer im elektromagnetischen Kalorimeter
+	\item entgegengesetzt Ladung beider Elektronen
+\end{itemize}
+Gemäß dieser Bedingungen wurden die Ereignisse 23, 33 und 37 des Datensatzes für die Auswertung ausgewählt.
+Um die invariante Masse dieses Elektronen-Paares zu bestimmen, ist es notwendig den vektoriellen Impuls $\vec{p}$ beider Teilchen zu bestimmen.
+Dazu wurde mithilfe von Atlantis der transversale Impuls~$p_\mathrm{T}$, die Pseudorapidität~$\eta$ und der Azimuthalwinkel~$\phi$ der rekonstruierten Elektronen bestimmt.
 Die invariante Masse~$m_\mathrm{inv}$ kann dann gemäß
-\begin{align}
+\begin{align*}
 	m_\mathrm{inv}=\sqrt{(\mathbf{p}_{\mathrm{e}^-}+\mathbf{p}_{\mathrm{e}^+})^2}
-\end{align}
+\end{align*}
 aus den beiden Vierervektoren von Elektron und Positron,~$\mathbf{p}_{\mathrm{e}^-}$ bzw.~$\mathbf{p}_{\mathrm{e}^+}$ berechnet werden.
 Man erhält somit als Ausdruck für die invariante Masse
 \begin{align}
-	m_\mathrm{inv}&=\sqrt{m^2_{\mathrm{e}^-} + m^2_{\mathrm{e}^+} + 2 E_{\mathrm{e}^-} E_{\mathrm{e}^+} - 2\vec{p}_{\mathrm{e}^-}\vec{p}_{\mathrm{e}^+}} \\
-	m_\mathrm{inv}&=\sqrt{m^2_{\mathrm{e}^-} + m^2_{\mathrm{e}^+} + 2 E_{\mathrm{e}^-} E_{\mathrm{e}^+} - 2|\vec{p}_{\mathrm{e}^-}||\vec{p}_{\mathrm{e}^+}|\cos(\theta)}\,\text{,}
+	m_\mathrm{inv}&=\sqrt{2 m^2_{\mathrm{e}} + 2 ( E_{\mathrm{e}^-} E_{\mathrm{e}^+} - \vec{p}_{\mathrm{e}^-}\vec{p}_{\mathrm{e}^+} )} \nonumber \\
+	&=\sqrt{ 2m^2_{\mathrm{e}} + 2 (E_{\mathrm{e}^-} E_{\mathrm{e}^+} - |\vec{p}_{\mathrm{e}^-}||\vec{p}_{\mathrm{e}^+}|\cos\theta)}\,\text{,}
+	\label{eq:inv_mass}
 \end{align}
-wobei $\theta$ den Winkel zwischen den beiden Teilchen angibt.
+wobei $\theta$ der Winkel zwischen den Impulsen beider Teilchen ist.
 Da nur der Betrag des Impulses eines Teilchens gemessen werden kann, werden die Winkelinformationen~$\phi$ und~$\eta$ benötigt, um auf~$\theta$ zu schließen.
+Dazu wird zunächst der Polarwinkel~$\vartheta$ im Laborsystem durch
+\begin{align*}
+	\vartheta = 2 \arctan\left( \mathrm{e}^{-\eta} \right)
+\end{align*}
+berechnet (folgt aus Gleichung \ref{eq:pseudorapidity}).
+Anschließend können mit den Winkeln~$\phi$ und $\vartheta$ des sphärischen Koordinatensystems Einheitsvektoren in die Richtung der Elektronenimpulse durch
+\begin{align*}
+	\hat{p}_x = \sin\vartheta \cos\phi \qquad
+	\hat{p}_y = \sin\vartheta \sin\phi \qquad
+	\hat{p}_z = \cos\vartheta
+\end{align*}
+konstruiert werden.
+Der Kosinus des Winkels zwischen dem Elektron- und Positronimpuls folgt dann aus dem Skalarprodukt
+\begin{align*}
+	\cos \theta = \hat{\vec{p}}_{\mathrm{e}^-} \cdot \hat{\vec{p}}_{\mathrm{e}^+}
+\end{align*}
+Bei der Berechnung dieses Werts kann aufgrund der kleinen Fehler in $\eta$ und $\phi$ der Fehler in~$\cos\theta$ vernachlässigt werden.
+Außerdem muss noch der Betrag des Impulses~$p$ aus dem transversalen Impuls~$p_\mathrm{T}$ berechnet werden.
+Dabei wird analog zu Abschnitt~\ref{sssec:myon_momenta} vorgegangen und wird hier nicht erneut zusammengetragen.
+
+Nun soll die invariante Masse exakt ($m_\mathrm{e} = \SI{511}{\keV}$) und unter der Annahme verschwindender Elektronenmasse berechnet werden.
+Bei der Berechnung dieser treten Terme der Form~$\sqrt{m_\mathrm{e}^2 + p^2}$ auf, wobei $p$ in der Größenordnung von einigen \SI{10}{\GeV} liegt.
+Daher ist die Näherung der verschwindenden Elektronenmasse wegen
+\begin{align*}
+	1 - \frac{\sqrt{(\SI{1}{\MeV})^2 + (\SI{10}{\GeV})^2}}{\SI{10}{\GeV}} \sim 10^{-8}
+\end{align*}
+in Anbetracht typischer Messfehler identisch mit der exakten Rechnung.
+Aus diesem Grund soll im Folgenden nur die Näherungsrechnung näher diskutiert werden.
+Dennoch wurde die exakte Rechnung durchgeführt, welche keine relevante Abweichung von der Näherung zeigt.
+
+Für die Näherung entspricht der Impuls der Elektronen deren Energie und somit folgt aus Gleichung~\eqref{eq:inv_mass}
+\begin{align*}
+	m_\mathrm{inv} = \sqrt{2 \, p_{\mathrm{e}^-} p_{\mathrm{e}^+} (1 - \cos\theta)}
+\end{align*}
+und aus \textsc{Gauß}scher Fehlerfortpflanzung
+\begin{align*}
+	\sigma_{m_\mathrm{inv}} = \sqrt{\frac{1 - \cos\theta}{2} \left( \frac{p_{\mathrm{e}^+}}{p_{\mathrm{e}^-}} \, \sigma_{p_{\mathrm{e}^-}}^2 + \frac{p_{\mathrm{e}^-}}{p_{\mathrm{e}^+}}  \, \sigma_{p_{\mathrm{e}^+}}^2\right)} \, \text{.}
+\end{align*}
+Die so berechneten Größen wurden in Tabelle \ref{tab:zee_inv_mass} zusammengetragen.
+\begin{sidewaystable}[p!]
+	\centering
+	\begin{subtable}{0.585\textheight}
+		\input{./tables/zee_inv_mass_pt1.tex}
+		\subcaption{kinematische Größen der Positronen: transversaler Impuls~$p_\mathrm{T}^+$, Pseudorapidität~$\eta^+$, Azimuthalwinkel~$\phi^+$, Impulsbetrag~$p^+$ sowie zugehörige Standardfehler~$\sigma$}
+		\vspace{1cm}
+	\end{subtable}
+	
+	\begin{subtable}{0.585\textheight}
+		\input{./tables/zee_inv_mass_pt2.tex}
+		\subcaption{kinematische Größen der Elektronen: transversaler Impuls~$p_\mathrm{T}^-$, Pseudorapidität~$\eta^-$, Azimuthalwinkel~$\phi^-$, Impulsbetrag~$p^-$ sowie zugehörige Standardfehler~$\sigma$}
+		\vspace{1cm}
+	\end{subtable}
+	
+	\begin{subtable}{0.585\textheight}
+		\input{./tables/zee_inv_mass_pt3.tex}
+		\subcaption{Kosinus des Winkels zwischen den Elektron-Impulsen und die daraus folgenden invarianten Massen unter Beachtung des Elektronenmasse $m_\mathrm{inv}^\mathrm{exakt}$ und unter der Vernachlässigung der Masse $m_\mathrm{inv}$}
+	\end{subtable}
+	
+	\caption{Messdaten und berechnete Größen zur Bestimmung der invarianten Elektron-Positron Masse.}
+	\label{tab:zee_inv_mass}
+\end{sidewaystable}
 
 \section{Versuchsaufgabe 2: Kalibration der Elektronen}
 
@@ -549,28 +618,6 @@ Die theoretische Erwartung der Verteilungsfunktion wird in guter Näherung auf e
 Das  in ROOT geladene Fit-Objekt passt somit die Lage des Peaks, also Masse des $Z^0$, die Verbreiterung aufgrund der Detektorauflösung, den Untergrund (gegeben durch vier Parameter) und Normierung des Peaks und Untergrunds an.
 
 
-\begin{sidewaystable}[p!]
-	\centering
-	\begin{subtable}{0.6\textheight}
-		\input{./tables/zee_inv_mass_pt1.tex}
-		\subcaption{Kinematische Variablen des Positron}
-		\vspace{1cm}
-	\end{subtable}
-	
-	\begin{subtable}{0.6\textheight}
-		\input{./tables/zee_inv_mass_pt2.tex}
-		\subcaption{Kinematische Variablen des Elektron}
-		\vspace{1cm}
-	\end{subtable}
-	
-	\begin{subtable}{0.6\textheight}
-		\input{./tables/zee_inv_mass_pt3.tex}
-		\subcaption{Kosinus des Winkels zwischen beiden Elektron-Impulsen und die daraus folgenden invarianten Massen unter Beachtung des Elektronenmasse $m_\mathrm{inv}^\mathrm{exakt}$ und unter der Vernachlässigung der Masse $m_\mathrm{inv}$}
-	\end{subtable}
-	
-	\caption{Tabelle des Wahnsinns}
-	\label{tab:zee_inv_mass}
-\end{sidewaystable}
 
 
 
