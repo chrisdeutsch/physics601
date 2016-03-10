@@ -404,10 +404,10 @@ Im Folgenden soll anhand der ersten 20 Myonen-Ereignisse aus den Lerndatensätze
 \subsubsection{Messung des Myonenimpulses mit Atlantis}
 \label{sssec:myon_momenta}
 Der ATLAS-Detektor besitzt mit dem Magnetfeld des Solenoids im inneren Detektor und dem des toroidalen Spulensystems im Myonensystem zwei unabhängige Methoden um den Myonenimpuls zu bestimmen.
-Bei den betrachteten Ereignissen können mithilfe der Ereignisanzeige Atlantis die Myonenparameter (Impuls~$p$, transversaler Impuls~$p_\mathrm{T}$, Pseudorapidität~$\eta$, \dots) der Myonen jeweils im inneren Detektor und im Myonensystem abgefragt werden.
+Bei den betrachteten Ereignissen können mithilfe der Ereignisanzeige Atlantis die Parameter (Impuls~$p$, transversaler Impuls~$p_\mathrm{T}$, Pseudorapidität~$\eta$, \dots) der Myonen jeweils im inneren Detektor und im Myonensystem abgefragt werden.
 
 Um den Energieverlust der Myonen im Kalorimeter zu bestimmen, ist es nötig den Impuls~$p$ ebendieser zu bestimmen.
-Da Atlantis auf diesen Parameter jedoch keinen Fehler angibt, wurde stattdessen der transversale Impuls~$p_\mathrm{T}$ und die Pseudorapidität~$\eta$ bestimmt, um die Fehlerfortpflanzung per Hand durchzuführen.
+Da Atlantis auf diesen Parameter jedoch keinen Fehler angibt, wurde stattdessen der transversale Impuls~$p_\mathrm{T}$ und die Pseudorapidität~$\eta$ genutzt, um die Fehlerfortpflanzung per Hand durchzuführen.
 Nach der Definition in Gleichung \eqref{eq:pseudorapidity} und $p = p_\mathrm{T} / \sin\theta$ kann der Impuls gemäß
 \begin{align*}
 	p = p_\mathrm{T} \cosh(\eta)
@@ -477,11 +477,11 @@ Betrachtet man jedoch den Fehler dieser Größen, sind die meisten dieser unphys
 Im Folgenden sollen die Abhängigkeiten des Energieverlustes von den kinematischen Variablen der Myonen untersucht werden.
 Zunächst würde man erwarten, dass eine Abhängigkeit von der Pseudorapidität~$\eta$ existiert, da die Weglängen der Myonen durch die Kalorimeter bei unterschiedlichen Polarwinkeln~$\theta$ verschieden sind und somit im Mittel unterschiedliche Energieverluste zu erwarten sind.
 Explizit würde man eine Zunahme des Energieverlustes mit steigender Pseudorapidität erwarten.
-In Abbildung \ref{fig:muon_eloss_eta} wurde der Energieverlust gegen den Betrag der Pseudorapidität aufgetragen und zeigt, dass keine starke Abhängigkeit festgestellt werden kann.
+In Abbildung \ref{fig:muon_eloss_eta} wurde der Energieverlust gegen den Betrag der Pseudorapidität aufgetragen, welche zeigt, dass keine starke Abhängigkeit festgestellt werden kann.
 Die Gründe dafür folgen nach dem nächsten Paragraphen.
 
 Darüber hinaus ist eine starke Abhängigkeit von der Energie der Myonen zu erwarten, wenn diese größer ist als die kritische Energie\footnote{Myonenenergie mit gleichem Beitrag zum mittleren Energieverlust durch Ionisation und Bremsstrahlung: $\langle \frac{\mathrm{d}E}{\mathrm{d}x} \rangle_\mathrm{Ion.}(E_{\mu\mathrm{c}}) = \langle \frac{\mathrm{d}E}{\mathrm{d}x} \rangle_\mathrm{Brems.}(E_{\mu\mathrm{c}})$}~$E_{\mu\mathrm{c}}$ der Myonen im Kalorimetermaterial.
-Da sich diese jedoch in der Größenordnung von mehreren \SI{100}{\GeV} \cite{pdg} liegt und der größte vermessene Impuls lediglich \SI{200}{\GeV} beträgt, sollte diese Abhängigkeit nicht in Erscheinung treten.
+Da diese jedoch in der Größenordnung von mehreren \SI{100}{\GeV} \cite{pdg} liegt und der größte vermessene Impuls lediglich \SI{200}{\GeV} beträgt, sollte diese Abhängigkeit nicht in Erscheinung treten.
 Zum Vergleich wurde auch hier die Abhängigkeit in Abbildung \ref{fig:muon_eloss_momentum} dargestellt.
 \begin{figure}[hp]
 	\begin{subfigure}{1.0\textwidth}
@@ -501,7 +501,7 @@ Zum Vergleich wurde auch hier die Abhängigkeit in Abbildung \ref{fig:muon_eloss
 \end{figure}
 
 In beiden Fällen ist in Anbetracht der Fehler keine signifikante Abhängigkeit zu erkennen.
-Im Wesentlichen liegt dies daran, dass Energieverlust von Teilchen in Materie ein statistischer Prozess ist und man lediglich eine Distribution für diesen angeben kann (Laundau-Distribution).
+Im Wesentlichen liegt dies daran, dass der Energieverlust von Teilchen in Materie ein statistischer Prozess ist und man lediglich eine Distribution für diesen angeben kann (Laundau-Distribution).
 Um eine bessere Bestimmung der Abhängigkeiten durchzuführen, sollten mehrere Energieverluste bei der gleichen zugrundeliegenden Größe (z.B.\ $\eta$, $p$, \dots) gemessen werden, um aus diesen einen Mittelwert zu bilden.
 
 Schließlich soll der mittlere Energieverlust~$\Delta E$ der Myonen in den Kalorimetern berechnet werden.
@@ -510,7 +510,7 @@ Dadurch erhält man
 \begin{align*}
 	\langle \Delta E \rangle = \SI{4.46 +- 0.92}{\GeV}
 \end{align*}
-mit einem reduzierten $\chi$-Quadrat $\chi_\mathrm{red.}^2 = \num{3.11}$ und wurde ebenfalls in den Abbildungen \ref{fig:muon_eloss} aufgetragen.
+mit einem reduzierten $\chi$-Quadrat $\chi_\mathrm{red.}^2 = \num{3.11}$; das Ergebnis wurde ebenfalls in den Abbildungen \ref{fig:muon_eloss} aufgetragen.
 Das reduzierte $\chi$-Quadrat spricht für keine gute Übereinstimmung der Fithypothese mit den gemessenen Daten, was jedoch nicht verwunderlich ist, da wie bereits erwähnt, der Energieverlust der Myonen einer statistischen Distribution folgt.
 
 \subsection{Aufgabe 6: invariante Elektron-Positron-Masse}
