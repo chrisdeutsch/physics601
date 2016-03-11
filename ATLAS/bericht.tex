@@ -612,13 +612,13 @@ Die so berechneten Größen wurden in Tabelle \ref{tab:zee_inv_mass} zusammenget
 	\begin{subtable}{0.585\textheight}
 		\input{./tables/zee_inv_mass_pt1.tex}
 		\subcaption{kinematische Größen der Positronen: transversaler Impuls~$p_\mathrm{T}^+$, Pseudorapidität~$\eta^+$, Azimuthalwinkel~$\phi^+$, Impulsbetrag~$p^+$ sowie zugehörige Standardfehler~$\sigma$}
-		\vspace{1cm}
+		\vspace{0.6cm}
 	\end{subtable}
 	
 	\begin{subtable}{0.585\textheight}
 		\input{./tables/zee_inv_mass_pt2.tex}
 		\subcaption{kinematische Größen der Elektronen: transversaler Impuls~$p_\mathrm{T}^-$, Pseudorapidität~$\eta^-$, Azimuthalwinkel~$\phi^-$, Impulsbetrag~$p^-$ sowie zugehörige Standardfehler~$\sigma$}
-		\vspace{1cm}
+		\vspace{0.6cm}
 	\end{subtable}
 	
 	\begin{subtable}{0.585\textheight}
@@ -674,11 +674,14 @@ Bei der Kalibration wird ein Fit-Objekt, welches durch das Analysepaket ROOT zur
 Dieses ermöglicht eine $\chi^2$-Anpassung, der durch den Detektor gemessene invariante Elektron-Positron-Massenverteilung, an die oben genannte Anpassungshypothese.
 Die Anpassung liefert dann die invariante Masse des $\mathrm{Z}^0$ sowie dessen natürliche Zerfallsbreite, die Verbreiterung aufgrund der Detektorauflösung, die vier Parameter des Untergrunds und die Normierung von Untergrund und Signal.
 
-\subsection{Aufgabe a) Darstellung kinematischer Variablen}
+\subsection{Darstellung kinematischer Variablen des Zerfalls $\mathrm{Z}^0 \rightarrow \mathrm{e}^- + \mathrm{e}^+$}
 
-Zunächst werden mit dem Befehl \texttt{tree->Draw()} Histogramme der Elektronen- bzw Positronenenergie sowie der nvarianten Masse des Elektron-Positron-Paares erstellt.
-Diese sind in den Abbildungen \ref{fig:el_energy} bis \ref{fig:inv_masse} zu finden.
-Man kann bereits gut abschätzen, dass Elektron und Positron den gleichen Impulsbruchteil tragen, da das Maximum der Histogramme ungefähr bei der gleichen Energie in Höhe der halben Z-Masse auftritt.
+Zunächst werden mit dem Befehl \texttt{tree->Draw()} Histogramme der Elektronen- bzw Positronenenergie sowie der invarianten Masse des Elektron-Positron-Paares erstellt.
+Diese sind in der Abbildungen \ref{fig:kinematische_variablen} aufgetragen.
+Wie für den symmetrischen Zerfall erwartet, sind die Energieverteilungen von Elektron und Positron identisch.
+Diese zeigen ein Maximum, welches ungefähr bei der halben $\mathrm{Z}^0$-Masse liegt, wie es gemäß Abschnitt \korr{REF auf Theorie} für hoch-energetische Elektronen zu erwarten ist.
+Ein weiteres Merkmal der Verteilung ist der starke Abfall in der Elektronenzahl bei einer Energie von etwa \SI{10}{\GeV}, welcher dadurch zu erklären ist, dass an die Daten die Schnittbedingung gestellt wurde, dass die invariante Elektron-Positron-Masse größer sein muss als \SI{20}{\GeV}.
+
 Das Maximum der invarianten Elektron-Positron-Masse liegt bereits wie erwartet in der Größenordnung der $Z^0$-Masse.
 Eine quantitative Aussage über die Lage des Z-Peaks liefert der Aufruf der Fit-Methode auf die unkalibrierten Daten, was in Abbildung \ref{fig:uncalibrated} dargestellt ist.
 \begin{figure}[htbp]
@@ -707,6 +710,8 @@ Eine quantitative Aussage über die Lage des Z-Peaks liefert der Aufruf der Fit-
 		\subcaption{Histogrammierte invariante Masse des Elektron-Positron-Paars im $Z^0 \rightarrow e^+ + e^-$ Zerfall}
 		\label{fig:inv_masse}
 	\end{subfigure}
+	\caption{Darstellung einiger kinematischen Variablen im Datensatz mit $\mathrm{Z}^0 \rightarrow \mathrm{e}^- + \mathrm{e}^+$ Zerfällen.}
+	\label{fig:kinematische_variablen}
 \end{figure}
 
 \subsection{Aufgabe b) Kalibationsdatei}
@@ -849,6 +854,11 @@ Insgesamt lässt sich die Wahrscheinlichkeit $P$, in mindestens einem Bin eine A
 \begin{align*}
 	P = 1 - \left(1 - \frac{1}{370}\right)^{200} \approx \SI{42}{\percent}
 \end{align*}
+
+\clearpage
+\subsection{Quellcode der verwendeten Kalibration}
+\label{sec:quellcode_kalibration}
+\lstinputlisting[language=C]{./data/root/calibration/ElecCalib.C}
 
 \end{appendix}
 
