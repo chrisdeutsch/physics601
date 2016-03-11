@@ -621,7 +621,13 @@ Die maßgebliche Größe hierfür ist die Strahlungslänge~$X_0$, welche durch
 	\label{eq:radiation_length}
 \end{align}
 mit der Energie~$E(x)$ eines Elektrons nach der Strecke~$x$ definiert ist.
-In Abbildung \korr{REF} sieht man, dass das Materialbudget bei kleinen Pseudorapiditäten für die Strahlröhre und Pixeldetektoren in der Größenordnung von \num{0.1} bis $\num{0.2} \, \mathrm{X}_0$ liegt.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figures/invariant_mass_zee/material_budget.png}
+	\caption{Materialbudget in Einheiten der Strahlungslänge~$\mathrm{X}_0$ in Abhängigkeit der Pseudorapidität~$\eta$ für die verschiedenen Detektorkomponenten in ATLAS \cite{electron_atlas}.} 
+	\label{fig:material_budget}
+\end{figure}
+In Abbildung \ref{fig:material_budget} sieht man, dass das Materialbudget bei kleinen Pseudorapiditäten für die Strahlröhre und Pixeldetektoren in der Größenordnung von \num{0.1} bis $\num{0.2} \, \mathrm{X}_0$ liegt.
 Dies entspricht gemäß Gleichung \eqref{eq:radiation_length} einer Korrektur von etwa
 \begin{align*}
 	\mathrm{e}^{\num{0.1}} \approx \SI{110}{\percent} \qquad \text{bis} \qquad \mathrm{e}^{\num{0.2}} \approx \SI{120}{\percent}
@@ -692,6 +698,11 @@ Eine quantitative Aussage über die Lage des Z-Peaks liefert der Aufruf der Fit-
 	K.A. Olive \textit{et al.} (Particle Data Group),
 	\emph{The Review of Particle Physics},
 	Chin. Phys. C, \textbf{38}, 090001 (2014).
+
+\bibitem{electron_atlas}
+	ATLAS Collaboration (Aad, Georges \textit{et al.}),
+	\emph{Electron performance measurements with the ATLAS detector using the 2010 LHC proton-proton collision data},
+	Eur.\ Phys.\ J.\ C72 (2012) 1909.
 	
 \bibitem{leo}
 	W. R. Leo,
