@@ -617,7 +617,7 @@ Um Rechenfehler auszuschließen wurde ein Vergleich der berechneten Werte mit de
 Eine mögliche Quelle für diesen Unterschied ist der Energieverlust der Elektronen aufgrund von Bremsstrahlung in der Strahlröhre und dem Silizium der Halbleiterdetektoren direkt um den Interaktionsvertex.
 Die maßgebliche Größe hierfür ist die Strahlungslänge~$X_0$, welche durch
 \begin{align}
-	E(x) = E_0 \, \mathrm{e}^{-\frac{x}{X_0}}
+	E(x) = E_0 \, e^{-\frac{x}{X_0}}
 	\label{eq:radiation_length}
 \end{align}
 mit der Energie~$E(x)$ eines Elektrons nach der Strecke~$x$ definiert ist.
@@ -630,7 +630,7 @@ mit der Energie~$E(x)$ eines Elektrons nach der Strecke~$x$ definiert ist.
 In Abbildung \ref{fig:material_budget} sieht man, dass das Materialbudget bei kleinen Pseudorapiditäten für die Strahlröhre und Pixeldetektoren in der Größenordnung von \num{0.1} bis $\num{0.2} \, \mathrm{X}_0$ liegt.
 Dies entspricht gemäß Gleichung \eqref{eq:radiation_length} einer Korrektur von etwa
 \begin{align*}
-	\mathrm{e}^{\num{0.1}} \approx \SI{110}{\percent} \qquad \text{bis} \qquad \mathrm{e}^{\num{0.2}} \approx \SI{120}{\percent}
+	e^{\num{0.1}} \approx \SI{110}{\percent} \qquad \text{bis} \qquad e^{\num{0.2}} \approx \SI{120}{\percent}
 \end{align*}
 auf die berechneten Impulse je nach Pseudorapidität des betrachteten Elektrons.
 Die invariante Masse bedarf einer Korrektur die in derselben Größenordnung liegt und ist dann ungefähr konsistent mit der realen Z-Masse von \SI{91.2}{\GeV}.
