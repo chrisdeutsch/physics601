@@ -1,3 +1,6 @@
+% !TeX document-id = {1a59407d-6137-47a3-bc51-2f068fe21e02}
+% !TeX TXS-program:compile = txs:///pdflatex/[--shell-escape]
+
 % PAKETE UND DOKUMENTKONFIGURATION
 \documentclass[11pt, a4paper]{article}
 
@@ -91,6 +94,10 @@
 % Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
 % 3 subsubsections)
 \setcounter{tocdepth}{3}
+
+% Code Einbettung
+\usepackage{minted}
+\renewcommand\listingscaption{Programmcode}
 
 % FANCYHDR SETUP
 \pagestyle{fancy}
@@ -651,6 +658,49 @@ Eine quantitative Aussage über die Lage des Z-Peaks liefert der Aufruf der Fit-
 		\subcaption{Histogrammierte invariante Masse des Elektron-Positron-Paars im $Z^0 \rightarrow e^+ + e^-$ Zerfall}
 		\label{fig:inv_masse}
 	\end{subfigure}
+\end{figure}
+
+\subsection{Aufgabe b) Kalibationsdatei}
+
+Da, wie eingangs erwähnt und in Abbildung \ref{fig:uncalibrated} zu sehen, die Masse des Z-Bosons systematisch unterschätzt wird, ist eine Kalibration der Energie nötig.
+Diese soll so kalibriert werden, dass das Z-Peak in Abbildung \ref{fig:uncalibrated} an der tatsächlichen Z-Masse liegt und die Breite (und damit der Einfluss von Detektoreffekten) minimiert wird.
+Die Kalorimeter liefern alle ein unterschiedliches Signal, weswegen der Detektor in virtuelle Elemente in der $\eta\phi$ Ebene aufgeteilt wird, so dass eine Kalibration abhängig von diesen Parametern durchgeführt werden kann.
+Hierzu wird ein iterativer Ansatz gewählt, bei dem die invariante Lepton-Masse für verschiedene Detektorbereiche dargestellt und die Verteilungsfunktion angepasst wird.
+Ausgehend von der so bestimmten Masse des Z-Bosons wird das Energiesignal mit einem Faktor multipliziert, um für diesen Detektorbereich den tatsächlichen Wert der Z-Masse zu erreichen.
+Die Kalibration wird durch C-Code in der Datei \texttt{EleCalib.c} implementiert, die in Codeausschnitt \ref{list:elecalib} beispielhaft (für eine Iteration des $\eta$ Parameters) angegeben ist.
+\begin{listing}[!h]
+\begin{minted}[xleftmargin=0em, xrightmargin=0em, tabsize=4, frame=lines, framesep=2mm, style=xcode]{c}
+#include "math.h"
+#include "TMath.h"
+
+double ElecCalib(double e_raw, double pt, double eta, 
+double phi, double etiso, double eoverp, double mindrjet) {
+	double dummy=pt*eta*phi*etiso*eoverp*mindrjet;
+	double energy = e_raw;
+	
+	if (fabs(eta) > 0.0 && fabs(eta) < 1.0) energy *= 91.19 / 92.19;
+	if (fabs(eta) > 1.0 && fabs(eta) < 1.5) energy *= 91.19 / 90.54;
+	if (fabs(eta) > 1.5 && fabs(eta) < 2.0) energy *= 91.19 / 88.12;
+	if (fabs(eta) > 2.0 && fabs(eta) < 2.5) energy *= 91.19 / 86.56;
+	
+	energy *= 91.19 / 91.28;
+	
+	return energy;
+} 
+\end{minted}
+\caption{Beispiel für eine Kalibrationsdatei}
+\label{list:elecalib}
+\end{listing}
+Dieses Vorgehen wurde , um die Abhängigkeiten untereinander zu minimieren, abwechselnd für die Parameter $\eta$, $\phi$ und die Elektronenenergie dreimal wiederholt.
+Durch Beobachtung der Verteilung in verschiedenen Detektorbereichen konnte nach dieser Kalibration keine signifikante systematische Abweichung mehr festgestellt werden.
+Der angepasste Parameter für die Detektorauflösung wurde somit von anfänglich \SI{5.8}{GeV} auf \SI{3.0}{GeV} reduziert.
+Im Anschluss wurde die gesamte Verteilung so kalibriert, dass der Schwerpunkt des Peaks mit der tatsächlichen Z-Masse zusammenfällt.
+Die endgültige Kalibration ist in Abbildung \ref{fig:final_calibration} gezeigt.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]{./data/root/calibration/new/calibrated.pdf}
+	\caption{Finale Kalibration der Elektronenenergie}
+	\label{fig:final calibration}
 \end{figure}
 
 
