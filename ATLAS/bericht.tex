@@ -337,7 +337,7 @@ In dieser Kaskade wird die gesamte Energie des Photons deponiert.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=1.0\textwidth]{./data/atlantis/singlepart_events_new/photons/conversion.png}
-	\caption{Signatur eines $\ell^- \ell^+$-Paares aus dem Paarbildungsprozess eines einzelnen Photons im ATLAS-Detektor}
+	\caption{Signatur eines $\mathrm{e}^- \mathrm{e}^+$-Paares aus dem Paarbildungsprozess eines einzelnen Photons im ATLAS-Detektor}
 	\label{fig:photon-conversion}
 \end{figure}
 \vfill
@@ -526,8 +526,8 @@ Dadurch erhält man
 mit einem reduzierten $\chi$-Quadrat $\chi_\mathrm{red.}^2 = \num{3.11}$; das Ergebnis wurde ebenfalls in den Abbildungen \ref{fig:muon_eloss} aufgetragen.
 Das reduzierte $\chi$-Quadrat spricht für keine gute Übereinstimmung der Fithypothese mit den gemessenen Daten, was jedoch nicht verwunderlich ist, da wie bereits erwähnt, der Energieverlust der Myonen einer statistischen Distribution folgt.
 
-\subsection{Invariante Elektron-Positron-Masse im Prozess~$Z^0 \rightarrow e^+ + e^-$}
-Im Folgenden sollen aus einem Datensatz von Zerfällen~$Z^0 \rightarrow e^+ + e^-$ drei Ereignisse gewählt werden und aus den rekonstruierten Elektronen die invariante Elektron-Positron-Masse bestimmt werden.
+\subsection{Invariante Elektron-Positron-Masse im Prozess~$\mathrm{Z}^0 \rightarrow \mathrm{e}^+ + \mathrm{e}^-$}
+Im Folgenden sollen aus einem Datensatz von Zerfällen~$\mathrm{Z}^0 \rightarrow \mathrm{e}^+ + \mathrm{e}^-$ drei Ereignisse gewählt werden und aus den rekonstruierten Elektronen die invariante Elektron-Positron-Masse bestimmt werden.
 Bei der Auswahl der Ereignisse wurden die folgenden Bedingung gestellt:
 \begin{itemize}
 	\item zwei Elektronen mit hohem transversalen Impuls~$p_\mathrm{T}$
@@ -578,7 +578,7 @@ Daher ist die Näherung der verschwindenden Elektronenmasse wegen
 \end{align*}
 in Anbetracht typischer Messfehler identisch mit der exakten Rechnung.
 Aus diesem Grund soll im Folgenden nur die Näherungsrechnung näher diskutiert werden.
-Dennoch wurde die exakte Rechnung durchgeführt, welche keine \korr{relevante Abweichung von der Näherung zeigt. Keine relevante oder sogar gar keine (bei ner gegebenen Genauigkeit)?}
+Dennoch wurde die exakte Rechnung durchgeführt, welche keine relevante Abweichung von der Näherung unter Beachtung der Messfehler zeigt.
 
 Für die Näherung entspricht der Impuls der Elektronen deren Energie und somit folgt aus Gleichung~\eqref{eq:inv_mass}
 \begin{align*}
@@ -612,6 +612,40 @@ Die so berechneten Größen wurden in Tabelle \ref{tab:zee_inv_mass} zusammenget
 	\caption{Messdaten und berechnete Größen zur Bestimmung der invarianten Elektron-Positron Masse.}
 	\label{tab:zee_inv_mass}
 \end{sidewaystable}
+
+Die Ergebnisse zeigen eine Abweichung von der erwarteten $\mathrm{Z}$-Masse \cite{pdg}
+\begin{align*}
+	m_\mathrm{Z} &= \SI{91.1876 +- 0.0021}{\GeV} \\
+	\Gamma_\mathrm{Z} &= \SI{2.4952 +- 0.0023}{\GeV} \, \text{.}
+\end{align*}
+Zum einen ist eine statistische Abweichung aufgrund der natürlichen Zerfallsbreite~$\Gamma_\mathrm{Z}$ zu erwarten.
+Beobachtet wird jedoch eine systematische Abweichung zu kleineren invarianten Massen.
+Um Rechenfehler auszuschließen wurde ein Vergleich der berechneten Werte mit denen von Atlantis durchgeführt und keine Abweichung festgestellt.
+Eine mögliche Quelle für diesen Unterschied ist der Energieverlust der Elektronen aufgrund von Bremsstrahlung in der Strahlröhre und dem Silizium der Halbleiterdetektoren direkt um den Interaktionsvertex.
+Die maßgebliche Größe hierfür ist die Strahlungslänge~$X_0$, welche durch
+\begin{align}
+	E(x) = E_0 \, e^{-\frac{x}{X_0}}
+	\label{eq:radiation_length}
+\end{align}
+mit der Energie~$E(x)$ eines Elektrons nach der Strecke~$x$ definiert ist.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figures/invariant_mass_zee/material_budget.png}
+	\caption{Materialbudget in Einheiten der Strahlungslänge~$\mathrm{X}_0$ in Abhängigkeit der Pseudorapidität~$\eta$ für die verschiedenen Detektorkomponenten in ATLAS \cite{electron_atlas}.} 
+	\label{fig:material_budget}
+\end{figure}
+In Abbildung \ref{fig:material_budget} sieht man, dass das Materialbudget bei kleinen Pseudorapiditäten für die Strahlröhre und Pixeldetektoren in der Größenordnung von \num{0.1} bis $\num{0.2} \, \mathrm{X}_0$ liegt.
+Dies entspricht gemäß Gleichung \eqref{eq:radiation_length} einer Korrektur von etwa
+\begin{align*}
+	e^{\num{0.1}} \approx \SI{110}{\percent} \qquad \text{bis} \qquad e^{\num{0.2}} \approx \SI{120}{\percent}
+\end{align*}
+auf die berechneten Impulse je nach Pseudorapidität des betrachteten Elektrons.
+Die invariante Masse bedarf einer Korrektur die in derselben Größenordnung liegt und ist dann ungefähr konsistent mit der realen Z-Masse von \SI{91.2}{\GeV}.
+
+
+
+
+
 
 \section{Versuchsaufgabe 2: Kalibration der Elektronen}
 
@@ -714,6 +748,11 @@ Die endgültige Kalibration ist in Abbildung \ref{fig:final_calibration} gezeigt
 	K.A. Olive \textit{et al.} (Particle Data Group),
 	\emph{The Review of Particle Physics},
 	Chin. Phys. C, \textbf{38}, 090001 (2014).
+
+\bibitem{electron_atlas}
+	ATLAS Collaboration (Aad, Georges \textit{et al.}),
+	\emph{Electron performance measurements with the ATLAS detector using the 2010 LHC proton-proton collision data},
+	Eur.\ Phys.\ J.\ C72 (2012) 1909.
 	
 \bibitem{leo}
 	W. R. Leo,
