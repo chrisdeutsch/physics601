@@ -679,6 +679,7 @@ Die Anpassung liefert dann die invariante Masse des $\mathrm{Z}^0$ sowie dessen 
 
 Zunächst werden mit dem Befehl \texttt{tree->Draw()} Histogramme der Elektronen- bzw Positronenenergie sowie der invarianten Masse des Elektron-Positron-Paares erstellt.
 Diese sind in der Abbildungen \ref{fig:kinematische_variablen} aufgetragen.
+
 Wie für den symmetrischen Zerfall erwartet, sind die Energieverteilungen von Elektron und Positron identisch.
 Diese zeigen ein Maximum, welches ungefähr bei der halben $\mathrm{Z}^0$-Masse liegt, wie es gemäß Abschnitt \korr{REF auf Theorie} für hoch-energetische Elektronen zu erwarten ist.
 Ein weiteres Merkmal der Verteilung ist der starke Abfall in der Elektronenzahl bei einer Energie von etwa \SI{10}{\GeV}, welcher dadurch zu erklären ist, dass an die Daten die Schnittbedingung gestellt wurde, dass die invariante Elektron-Positron-Masse größer sein muss als \SI{20}{\GeV}.
@@ -686,9 +687,10 @@ Ein weiteres Merkmal der Verteilung ist der starke Abfall in der Elektronenzahl 
 Das Maximum der invarianten Elektron-Positron-Masse liegt bereits wie erwartet in der Größenordnung der $Z^0$-Masse.
 Eine quantitative Aussage über die Lage des Z-Peaks liefert der Aufruf der Fit-Methode auf die unkalibrierten Daten, was in Abbildung \ref{fig:uncalibrated} dargestellt ist.
 
+Man sieht, dass die Anpassung eine $\mathrm{Z}^0$-Masse von \SI{85.8}{\GeV} sowie eine Detektorauflösung von \SI{5.816 +- 0.047}{\GeV} liefert.
+Im Folgenden ist es die Aufgabe durch eine Kalibration die Auflösung zu verbessern und die systematische Unterschätzung der $\mathrm{Z}^0$-Masse zu korrigieren.
 
-
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 	\begin{overpic}[width=\textwidth,tics=10]{./data/root/calibration/new/uncalibrated.pdf}
 		\put (43,1) {$m_\mathrm{inv}$ / \si{GeV}}
@@ -697,7 +699,8 @@ Eine quantitative Aussage über die Lage des Z-Peaks liefert der Aufruf der Fit-
 	\caption{Aufruf der Fit-Methode auf die unkalibrierten Daten. Die so gemessene Z-Masse beträgt \SI{85.8}{GeV}.}
 	\label{fig:uncalibrated}
 \end{figure}
-\begin{figure}[htbp]
+
+\begin{figure}[p]
 	\centering
 	\begin{subfigure}{\textwidth}
 		\centering
@@ -723,12 +726,13 @@ Eine quantitative Aussage über die Lage des Z-Peaks liefert der Aufruf der Fit-
 			\put (43,0) {\small $m_\mathrm{inv}$ / \si{GeV}}
 			\put (0,29) {\rotatebox{90}{\small Ereignisse}}
 		\end{overpic}
-		\subcaption{Verteilung der invariante Masse des Elektron-Positron-Paars.}
+		\subcaption{Verteilung der invariante Masse des Elektron-Positron-Paars. Der Untergrund des Prozesses ist deutlich an der linken Flanke zu erkennen.}
 		\label{fig:inv_masse}
 	\end{subfigure}
 	\caption{Darstellung einiger kinematischen Variablen im Datensatz mit $\mathrm{Z}^0 \rightarrow \mathrm{e}^- + \mathrm{e}^+$ Zerfällen.}
 	\label{fig:kinematische_variablen}
 \end{figure}
+
 
 \subsection{Aufgabe b) Kalibationsdatei}
 
@@ -789,11 +793,6 @@ Die endgültige Kalibration ist in Abbildung \ref{fig:final_calibration} gezeigt
 	ATLAS Collaboration (Aad, Georges \textit{et al.}),
 	\emph{Electron performance measurements with the ATLAS detector using the 2010 LHC proton-proton collision data},
 	Eur.\ Phys.\ J.\ C72 (2012) 1909.
-	
-\bibitem{leo}
-	W. R. Leo,
-	\emph{Techniques for Nuclear and Particle Physics Experiments},
-	Springer 1994
 
 \end{thebibliography}
 
