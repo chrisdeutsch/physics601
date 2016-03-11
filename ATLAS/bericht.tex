@@ -46,6 +46,7 @@
 
 % Bilder einfügen
 \usepackage{graphicx}
+\usepackage[percent]{overpic}
 
 % Textfarbe
 \usepackage{color}
@@ -684,9 +685,15 @@ Ein weiteres Merkmal der Verteilung ist der starke Abfall in der Elektronenzahl 
 
 Das Maximum der invarianten Elektron-Positron-Masse liegt bereits wie erwartet in der Größenordnung der $Z^0$-Masse.
 Eine quantitative Aussage über die Lage des Z-Peaks liefert der Aufruf der Fit-Methode auf die unkalibrierten Daten, was in Abbildung \ref{fig:uncalibrated} dargestellt ist.
+
+
+
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\textwidth]{./data/root/calibration/new/uncalibrated.pdf}
+	\begin{overpic}[width=\textwidth,tics=10]{./data/root/calibration/new/uncalibrated.pdf}
+		\put (43,1) {$m_\mathrm{inv}$ / \si{GeV}}
+		\put (1,29) {\rotatebox{90}{Ereignisse}}
+	\end{overpic}
 	\caption{Aufruf der Fit-Methode auf die unkalibrierten Daten. Die so gemessene Z-Masse beträgt \SI{85.8}{GeV}.}
 	\label{fig:uncalibrated}
 \end{figure}
@@ -694,19 +701,28 @@ Eine quantitative Aussage über die Lage des Z-Peaks liefert der Aufruf der Fit-
 	\centering
 	\begin{subfigure}{\textwidth}
 		\centering
-		\includegraphics[width=0.7\textwidth]{./data/root/calibration/new/el_energy.pdf}
+		\begin{overpic}[width=.7\textwidth,tics=10]{./data/root/calibration/new/el_energy.pdf}
+			\put (43,0) {\small $E_\mathrm{e^-}$ / \si{GeV}}
+			\put (0,29) {\rotatebox{90}{\small Ereignisse}}
+		\end{overpic}
 		\subcaption{Histogrammierte Energie des Elektrons im $Z^0 \rightarrow e^+ + e^-$ Zerfall}
 		\label{fig:el_energy}
 	\end{subfigure}
 	\begin{subfigure}{\textwidth}
 		\centering
-		\includegraphics[width=0.7\textwidth]{./data/root/calibration/new/pos_energy.pdf}
+		\begin{overpic}[width=.7\textwidth,tics=10]{./data/root/calibration/new/pos_energy.pdf}
+			\put (43,0) {\small $E_\mathrm{e^+}$ / \si{GeV}}
+			\put (0,29) {\rotatebox{90}{\small Ereignisse}}
+		\end{overpic}
 		\subcaption{Histogrammierte Energie des Positrons im $Z^0 \rightarrow e^+ + e^-$ Zerfall}
 		\label{fig:pos_energy}
 	\end{subfigure}
 	\begin{subfigure}{\textwidth}
 		\centering
-		\includegraphics[width=0.7\textwidth]{./data/root/calibration/new/inv_mass.pdf}
+		\begin{overpic}[width=.7\textwidth,tics=10]{./data/root/calibration/new/inv_mass.pdf}
+			\put (43,0) {\small $m_\mathrm{inv}$ / \si{GeV}}
+			\put (0,29) {\rotatebox{90}{\small Ereignisse}}
+		\end{overpic}
 		\subcaption{Histogrammierte invariante Masse des Elektron-Positron-Paars im $Z^0 \rightarrow e^+ + e^-$ Zerfall}
 		\label{fig:inv_masse}
 	\end{subfigure}
@@ -748,7 +764,10 @@ Im Anschluss wurde die gesamte Verteilung so kalibriert, dass der Schwerpunkt de
 Die endgültige Kalibration ist in Abbildung \ref{fig:final_calibration} gezeigt.
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\textwidth]{./data/root/calibration/new/calibrated.pdf}
+	\begin{overpic}[width=\textwidth,tics=10]{./data/root/calibration/new/calibrated.pdf}
+		\put (43,1) {$m_\mathrm{inv}$ / \si{GeV}}
+		\put (1,29) {\rotatebox{90}{Ereignisse}}
+	\end{overpic}
 	\caption{Finale Kalibration der Elektronenenergie}
 	\label{fig:final_calibration}
 \end{figure}
