@@ -452,7 +452,7 @@ Dann folgt aus \textsc{Gauß}scher Fehlerfortpflanzung für den Fehler des Impul
 Die Messdaten sowie die Berechnung des Impulses~$p$ der Myonen im inneren Detektor und des Impulses~$p^\prime$ im Myon-Detektor wurde in Tabelle \ref{tab:muon_momenta} zusammengetragen.
 
 Bei dem 10.\ Ereignis musste festgestellt werden, dass keine Trajektorie im Myon-Detektor rekonstruiert werden konnte.
-Der Vergleich mit dem Pfad des Myons im inneren Detektor legt dabei nahe, dass dieses durch einen unsensitiven Bereich des Detektors zwischen Barrel und Endkappe entkommen konnte.
+Der Vergleich mit dem Pfad des Myons im inneren Detektor legt dabei nahe, dass dieses durch einen nicht-sensitiven Bereich des Detektors zwischen Barrel und Endkappe entkommen konnte.
 Daher wurde zusätzlich das 21.\ Ereignis vermessen.
 
 
@@ -659,21 +659,20 @@ auf die berechneten Impulse je nach Pseudorapidität des betrachteten Elektrons.
 Die invariante Masse bedarf einer Korrektur die in derselben Größenordnung liegt und ist dann ungefähr konsistent mit der realen Z-Masse von \SI{91.2}{\GeV}.
 
 
+\section{Kalibration der Elektronen}
 
+Für die weitere Durchführung des Versuchs ist es nötig, die Energiemessung durch das elektromagnetische Kalorimeter zu kalibrieren.
+Da einerseits das Kalorimeter aus vielen unabhängigen Modulen besteht und andererseits die Elektronen im inneren Detektor Energie verlieren oder in einen nicht-sensitiven Bereich des Kalorimeters eintreten, kommt es zu systematischen Abweichungen in der Energiemessung.
+Aus diesem Grund muss in einem ersten Schritt eine Energiekalibration des gesamten Detektors durchgeführt werden, wobei sowohl Position der Elektronen im Detektor als auch deren Energie berücksichtigt werden sollten.
 
+Hierzu kommt ein Datensatz mit Zerfällen $\mathrm{Z}^0 \rightarrow \mathrm{e}^+ + \mathrm{e}^-$ zum Einsatz, da die Masse und Zerfallsbreite des $\mathrm{Z}^0$ sehr genau vermessen wurde und somit ein bekanntes Signal für die Kalibration liefert.
+Dabei wird die Verteilung der gemessenen invarianten Elektron-Positron-Massen in guter Näherung durch eine Faltung einer nicht-relativistische Breit-Wigner-Funktion und einer Gauss-Funktion beschrieben.
+Die Gauss-Funktion parametrisiert dabei die näherungsweise als gaußförmig angenommene Verzerrung aufgrund der begrenzten Detektorauflösung.
+Darüber hinaus wird der Untergrund in diesem Prozess durch vier zusätzliche Parameter beschrieben.
 
-
-\section{Versuchsaufgabe 2: Kalibration der Elektronen}
-
-Für die weitere Durchführung des Versuchs ist es sowohl in Aufgabe 3 als auch in Aufgabe 4 nötig, die Energie von Elektronen zu bestimmen.
-Da einerseits die Kalorimeter aus vielen einzelnen Modulen bestehen und andererseits die Elektronen im inneren Detektor Energie verlieren oder in einen toten Bereich des Kalorimeters eintreten, ist die dort gemessene Energie systematisch zu gering.
-Aus diesem Grund muss in einem ersten Schritt eine Energiekalibration des gesamten Detektors durchgeführt werden, wobei sowohl Position der Elektronen im Detektor als auch deren Eigenschaften berücksichtigt werden sollten.
-
-Hierzu kommen Datensätze vom Zerfall $Z^0 \rightarrow e^+ + e^-$ zum Einsatz, da das $Z^0$ sehr genau gemessen wurde.
-Der bekannte Peak des Zerfalls kann damit zur Kalibration des Energiesignals genutzt werden.
-Die theoretische Erwartung der Verteilungsfunktion wird in guter Näherung auf eine nicht-relativistischen Breit-Wigner-Funktion mit Untergrund reduziert, die mit einer Gauss-Funktion zu einem Voigt-Profil gefaltet wird, um die (als gaußförmig angenommene) Verschmierung aufgrund der Detektorauflösung zu berücksichtigen.
-
-Das  in ROOT geladene Fit-Objekt passt somit die Lage des Peaks, also Masse des $Z^0$, die Verbreiterung aufgrund der Detektorauflösung, den Untergrund (gegeben durch vier Parameter) und Normierung des Peaks und Untergrunds an.
+Bei der Kalibration wird ein Fit-Objekt, welches durch das Analysepaket ROOT zur Verfügung gestellt wird, verwendet.
+Dieses ermöglicht eine $\chi^2$-Anpassung, der durch den Detektor gemessene invariante Elektron-Positron-Massenverteilung, an die oben genannte Anpassungshypothese.
+Die Anpassung liefert dann die invariante Masse des $\mathrm{Z}^0$ sowie dessen natürliche Zerfallsbreite, die Verbreiterung aufgrund der Detektorauflösung, die vier Parameter des Untergrunds und die Normierung von Untergrund und Signal.
 
 \subsection{Aufgabe a) Darstellung kinematischer Variablen}
 
