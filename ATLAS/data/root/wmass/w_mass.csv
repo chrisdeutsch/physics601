@@ -1,0 +1,12 @@
+set,mc_w_mass,half_height,dhalf_height
+MC,79,41,0.1
+MC,79.5,41.26,0.1
+MC,80,41.48,0.08
+MC,80.5,41.92,0.15
+MC,81,41.97,0.09
+MC_Zee,,47.13,0.21
+MC_BG,,,
+ATLAS_W,,42.1,0.07
+ATLAS_W_UNCALIB,,41.37,0.08
+ATLAS_Z,,47.54,0.26
+ATLAS_Z_UNCALIB,,47.19,0.26
