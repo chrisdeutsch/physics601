@@ -737,43 +737,39 @@ Im Folgenden ist es die Aufgabe durch eine Kalibration die Auflösung zu verbess
 
 \subsection{Kalibration der Elektronen-Energie}
 
-Da, wie eingangs erwähnt und in Abbildung \ref{fig:uncalibrated} zu sehen, die Masse des Z-Bosons systematisch unterschätzt wird, ist eine Kalibration der Energie nötig.
-Diese soll so kalibriert werden, dass das Z-Peak in Abbildung \ref{fig:uncalibrated} an der tatsächlichen Z-Masse liegt und die Breite (und damit der Einfluss von Detektoreffekten) minimiert wird.
-Die Kalorimeter liefern alle ein unterschiedliches Signal, weswegen der Detektor in virtuelle Elemente in der $\eta\phi$ Ebene aufgeteilt wird, so dass eine Kalibration abhängig von diesen Parametern durchgeführt werden kann.
-Hierzu wird ein iterativer Ansatz gewählt, bei dem die invariante Lepton-Masse für verschiedene Detektorbereiche dargestellt und die Verteilungsfunktion angepasst wird.
-Ausgehend von der so bestimmten Masse des Z-Bosons wird das Energiesignal mit einem Faktor multipliziert, um für diesen Detektorbereich den tatsächlichen Wert der Z-Masse zu erreichen.
-Die Kalibration wird durch C-Code in der Datei \texttt{EleCalib.c} implementiert, die im folgenden Codeausschnitt beispielhaft (für eine Iteration des $\eta$ Parameters) angegeben ist.
-\begin{lstlisting}[language=C]
-#include "math.h"
-#include "TMath.h"
+Wie bereits im vorigen Abschnitt erwähnt, zeigt Abbildung \ref{fig:uncalibrated} die Anpassung an die unkalibrierten Daten für die invariante Leptonen-Masse.
+Zum einen zeigt diese eine systematische Abweichung von der tatsächlichen Z-Masse, als auch eine Verbreiterung des Signals durch die Detektorauflösung von \SI{5.816+-0.047}{\GeV}.
+Das Ziel dieser Aufgabe ist es nun, die Detektorauflösung zu verbessern, als auch die systematischen Abweichungen zu eliminieren.
+Dazu gilt es zunächst die Quelle der systematischen Abweichungen und die damit zusammenhängenden kinematischen Variablen der Leptonen zu identifizieren:
+\begin{itemize}
+	\item Azimuthalwinkel~$\phi$:
+		Das Kalorimeter besteht aus unabhängigen Modulen, die in der Sensitivität variieren können.
+		Dies hat einen systematischen Einfluss auf die Elektronen, die unter einem gewissen Azimuthalwinkel in eines der Kalorimeter eintreten.		
+	
+	\item Pseudorapidität~$\eta$:
+		Auch die Pseudorapidität als Maß für den Polarwinkel unter dem die Elektronen in die Kalorimeter eintreten, ist sensitiv auf systematische Abweichungen der einzelnen Kalorimeter-Module.
+		Darüber hinaus ist die Materialmenge, die von Teilchen im inneren Detektor durchlaufen werden muss, stark vom Polarwinkel abhängig. Dies wurde zuvor in Abbildung \ref{fig:material_budget} dargestellt.
+		
+	\item Energie~$E$:
+		Letztlich zeigt der Energieverlust von hoch-energetischen Elektronen in Materie, welcher hauptsächlich durch Bremsstrahlung verursacht wird, eine starke Abhängigkeit von deren Energie.
+		Daher muss eine zusätzliche Kalibration die Leptonen-Energie berücksichtigen.
+\end{itemize}
+Zur Kalibration wird ein iterativer Ansatz gewählt, bei dem die invariante Lepton-Masse für verschiedene Parameterbereiche der Elektronen dargestellt und die Verteilungsfunktion angepasst wird.
+Ausgehend von der so bestimmten Masse des Z-Bosons wird das Energiesignal mit einem Faktor multipliziert, um für den gewählten Parameterbereich den tatsächlichen Wert der Z-Masse zu erreichen.
+Die Kalibration wird durch C-Code in der Datei \texttt{ElecCalib.C} implementiert und ist in Anhang \ref{sec:quellcode_kalibration} komplett aufgeführt.
 
-double ElecCalib(double e_raw, double pt, double eta, 
-double phi, double etiso, double eoverp, double mindrjet) {
-	double dummy=pt*eta*phi*etiso*eoverp*mindrjet;
-	double energy = e_raw;
-	
-	if (fabs(eta) > 0.0 && fabs(eta) < 1.0) energy *= 91.19 / 92.19;
-	if (fabs(eta) > 1.0 && fabs(eta) < 1.5) energy *= 91.19 / 90.54;
-	if (fabs(eta) > 1.5 && fabs(eta) < 2.0) energy *= 91.19 / 88.12;
-	if (fabs(eta) > 2.0 && fabs(eta) < 2.5) energy *= 91.19 / 86.56;
-	
-	energy *= 91.19 / 91.28;
-	
-	return energy;
-} 
-\end{lstlisting}
-Dieses Vorgehen wurde, um die Abhängigkeiten untereinander zu minimieren, abwechselnd für die Parameter $\eta$, $\phi$ und die Elektronenenergie dreimal wiederholt.
-Durch Beobachtung der Verteilung in verschiedenen Detektorbereichen konnte nach dieser Kalibration keine signifikante systematische Abweichung mehr festgestellt werden.
+Dieses Vorgehen wurde, um die Abhängigkeiten untereinander zu minimieren, abwechselnd für die Parameter $\phi$, $\eta$ und die Elektronenenergie dreimal wiederholt.
+Durch Beobachtung der Verteilung in den verschiedenen Parameterbereichen konnte nach dieser Kalibration keine signifikante systematische Abweichung mehr festgestellt werden.
 Der angepasste Parameter für die Detektorauflösung wurde somit von anfänglich \SI{5.8}{GeV} auf \SI{3.0}{GeV} reduziert.
 Im Anschluss wurde die gesamte Verteilung so kalibriert, dass der Schwerpunkt des Peaks mit der tatsächlichen Z-Masse von \SI{91,19+-0,01}{GeV} \cite{pdg} zusammenfällt.
-Die endgültige Kalibration ist in Abbildung \ref{fig:final_calibration} gezeigt.
+Die invariante Leptonen-Masse für die abgeschlossene Kalibration ist in Abbildung \ref{fig:final_calibration} gezeigt.
 \begin{figure}[htbp]
 	\centering
 	\begin{overpic}[width=\textwidth,tics=10]{./data/root/calibration/new/calibrated.pdf}
 		\put (43,1) {$m_\mathrm{inv}$ / \si{GeV}}
 		\put (1,29) {\rotatebox{90}{Ereignisse}}
 	\end{overpic}
-	\caption{Finale Kalibration der Elektronenenergie}
+	\caption{Invariante Leptonen-Masse nach Kalibration der Energiemessung.}
 	\label{fig:final_calibration}
 \end{figure}
 
