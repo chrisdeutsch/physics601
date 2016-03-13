@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.odr import Model, RealData, ODR, polynomial
 from scipy.linalg import block_diag
+from scripts.tools import set_mpl_comma
 
 plt.style.use("publication")
 
@@ -46,6 +47,7 @@ print("\nW mass: " + str(w_mass) + " +- " + str(dw_mass))
 
 ### PLOTTING
 def make_gauge_plot():
+    set_mpl_comma()
     plt.xlim(40.8, 42.2)
     plt.ylim(78.5, 81.5)
     plt.xlabel(r"Halbhöhepunkt~$h$ / $\mathrm{GeV}$")

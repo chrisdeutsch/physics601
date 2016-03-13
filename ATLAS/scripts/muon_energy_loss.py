@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
+from scripts.tools import set_mpl_comma
 
 plt.style.use("publication")
 
@@ -109,6 +110,7 @@ out[out["{Ereignis}"] > 11].to_latex("tables/muon_energy_loss_pt2.tex",
 
 ### PLOTS
 def make_plots():
+    set_mpl_comma()
     # Pseudorapidity dependence
     plt.errorbar(np.abs(data.eta_in), data.E_loss, yerr=data.dE_loss,
                  fmt="o", zorder=2, label="Messpunkte")
