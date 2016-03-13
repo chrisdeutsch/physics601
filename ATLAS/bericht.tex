@@ -812,7 +812,64 @@ Um einen Überblick über die verschiedenen Datensätze zu gewinnen, wurden vers
 Aufgabe 3 (unter Beachtung von Aufgabe 5.), Aufgabe 4?
 
 \subsection{Eichkurve}
-Aufgabe 5
+Aufgabe 5\\
+\noindent ODR-Fit:
+\begin{align*}
+	m &= \num{1.9896 +- 0.1818} \\
+	b &= \num{-2.581 +- 7.545} \\
+	\Sigma^\mathrm{Eichk.} &= \begin{pmatrix}
+	\sigma_m^2 & \sigma_{mb} \\
+	\sigma_{bm} & \sigma_b^2
+	\end{pmatrix}\\
+	 &= \begin{pmatrix}
+		\num{0.03306} & \num{-1.372} \\
+		\num{-1.372}    & \num{56.93}
+	\end{pmatrix}\\
+	\sigma_\mathrm{res} &= \num{0.4256}\\	
+\end{align*}
+\\
+Messwert:
+\begin{align*}
+	h = \SI{42.10 +- 0.07}{\GeV}
+\end{align*}
+
+Gesamte Kovarianzmatrix inkl.\ des unabhängigen Fehlers von~$h$:
+\begin{align}
+	\Sigma^\mathrm{tot} = \begin{pmatrix}
+		\sigma_m^2  & \sigma_{mb} & 0 \\
+		\sigma_{bm} & \sigma_b^2  & 0 \\
+		0           & 0           & \sigma_h^2
+	\end{pmatrix}
+\end{align}
+
+Auswertung der Eichkurve $f(m, b, h) = m \cdot h + b$ Jacobian:
+\begin{align*}
+	J &= \begin{pmatrix}
+	\frac{\partial f}{\partial m} &
+	\frac{\partial f}{\partial b} &
+	\frac{\partial f}{\partial h}
+	\end{pmatrix} \\
+	&=\begin{pmatrix}
+	h & 1 & m
+	\end{pmatrix}
+\end{align*}
+
+Covarianzmatrix von $f$:
+\begin{align*}
+	\Sigma^f = \begin{pmatrix}
+	\Sigma^f_{ff}
+	\end{pmatrix} = J \, \Sigma^\mathrm{tot} \, J^\mathrm{T}
+\end{align*}
+
+Ergebnisse:
+\begin{align*}
+	m_\mathrm{W} &= \num{81.181} \\
+	\sigma_{m_\mathrm{W}} &= \sqrt{\Sigma^f_{ff}} \\
+	&= \num{0.189}
+\end{align*}
+
+
+
 \begin{figure}[h]
 	\centering
 	\includegraphics{./figures/wmass/gauge.pdf}

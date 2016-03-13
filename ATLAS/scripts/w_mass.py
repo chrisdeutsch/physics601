@@ -48,8 +48,8 @@ print("\nW mass: " + str(w_mass) + " +- " + str(dw_mass))
 def make_gauge_plot():
     plt.xlim(40.8, 42.2)
     plt.ylim(78.5, 81.5)
-    plt.xlabel(r"Halbhöhepunkt")
-    plt.ylabel(r"MC Masse")
+    plt.xlabel(r"Halbhöhepunkt~$h$ / $\mathrm{GeV}$")
+    plt.ylabel(r"MC Masse~$m_\mathrm{MC}$ / $\mathrm{GeV}$")
     
     # Data
     plt.errorbar(mc.half_height, mc.mc_w_mass, xerr=mc.dhalf_height, fmt="o",
