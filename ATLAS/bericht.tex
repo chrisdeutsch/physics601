@@ -868,14 +868,15 @@ Ein signifikanter Unterschied ist, dass der ATLAS-Datensatz wesentlich mehr Boso
 \subsection{Transversales Impulsspektrum des W-Bosons}
 \label{ssec:ptw_spektrum}
 
-Im Anschluss wird das Spektrum des Transversalimpulses des $W$-Bosons in Abhängigkeit von der Anzahl Jets betrachtet, um \korr{wofür genau?} Die Darstellung für Ereignisse ohne Jets ist in Abbildung \ref{fig:njet0} gezeigt, alle weiteren folgen in Abbildung \ref{fig:njet1-4}.
-\begin{figure}
+Im Anschluss wird das Spektrum des Transversalimpulses des W-Bosons in Abhängigkeit von der Anzahl Jets betrachtet, um für die Bestimmung der W-Masse eine geeignete Schnittselektion durchführen zu können.
+Die Darstellung für Ereignisse ohne Jets ist in Abbildung \ref{fig:njet0} gezeigt, alle weiteren folgen in Abbildung \ref{fig:njet1-4}.
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=\textwidth]{./data/root/wmass/exercise2/njet0}
-	\caption{Transversalimpuls des $W$-Bosons für Ereignisse ohne Jets.}
+	\includegraphics[width=0.8\textwidth]{./data/root/wmass/exercise2/njet0}
+	\caption{Transversaler Impuls des W-Bosons für Ereignisse ohne Jets.}
 	\label{fig:njet0}
 \end{figure}
-\begin{sidewaysfigure}
+\begin{sidewaysfigure}[h]
 	\centering
 	\begin{subfigure}{.49\textwidth}
 		\centering
@@ -900,8 +901,20 @@ Im Anschluss wird das Spektrum des Transversalimpulses des $W$-Bosons in Abhäng
 	\caption{Transversalimpuls des $W$-Bosons für Ereignisse mit ein, zwei, drei oder vier Jets.}
 	\label{fig:njet1-4}
 \end{sidewaysfigure}
-\korr{"Wie unterscheiden sie sich und warum?"}
 
+Für Ereignisse ohne Jets ist in Abbildung \ref{fig:njet0} deutlich zu erkennen, dass Zerfälle mit kleinem transversalen Impuls des W-Bosons bevorzugt sind.
+Für eine Kollision von zwei Partonen ohne transversalen Impuls ist es notwendig, dass das W-Boson ebenfalls ohne transversalen Impuls erzeugt wird.
+Da die Partonen in Hadronen-Kollisionen jedoch einen kleinen transversalen Impuls haben können, zeigt sich in Abbildung \ref{fig:njet0}, dass in realen Kollisionen das Boson stehts mit einem nicht-verschwindenden (jedoch kleinen) transversalen Impuls erzeugt wird.
+
+Zusätzliche Jets in den $\mathrm{W} \rightarrow \mathrm{e} + \nu$ Ereignissen können durch Abstrahlung von Gluonen im Anfangs- oder Endzustand entstehen.
+Dadurch wird die Viererimpuls-Bilanz verändert und das W-Boson muss mit einem signifikanten transversalen Impuls erzeugt werden.
+In der Abbildung \ref{fig:njet1-4} wurde das transversale Impulsspektrum des W-Bosons für verschiedene Jet-Anzahlen im Endzustand dargestellt.
+Es ist deutlich zu erkennen, dass der transversale Impuls des W-Bosons mit steigender Anzahl von Jets im Endzustand zunimmt, wie es aufgrund der Viererimpuls-Erhaltung erforderlich ist.
+
+Dieser Effekt führt auch zu der Abweichung in Abbildung \ref{fig:observablen_pt2} für höhere transversale Impulse, da der ATLAS-Datensatz wesentlich mehr Ereignisse mit hohen Jet-Anzahlen aufweist als der Monte-Carlo-Datensatz (vgl.\ Abbildung \ref{fig:observablen_pt1})
+
+
+\clearpage
 \subsection{Schnitte}
 Um die zur Verfügung stehenden Daten für eine aussagekräftige Messung zu verwenden, werden die Daten durch Schnittselektionen reduziert.
 Hierzu werden Ereignisse mit $W$-Bosonen ausgewählt, die beinahe als ruhend angenommen werden können, so dass nur solche mit Transversalpimpuls $p_\mathrm{T}<\SI{12}{GeV}$ zur Auswertung betrachtet werden.  
