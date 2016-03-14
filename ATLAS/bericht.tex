@@ -782,31 +782,48 @@ Dazu wird die Kalibration auf die zu verwendenden Messdaten angewendet und ein F
 Aufgabe 1, 2
 
 Es standen Datensätze mit jeweils einen kalibrierten und unkalibrierten ATLAS Ereignissen von W- und Z-Bosonen, sechs Datensätze von Monte-Carlo-Simulationen mit verschiedenen $W$-Massen, sowie ein Monte-Carlo-Untergrund zur Verfügung.
-Um einen Überblick über die verschiedenen Datensätze zu gewinnen, wurden verschiedene Observablen (Jet-Anzahl, Transversalimpuls des Elektrons und des $W$-Bosons) histogrammiert, wie in Abbildung \korr{REF} gezeigt ist.
+Um einen Überblick über die verschiedenen Datensätze zu gewinnen, wurden verschiedene Observablen (Jet-Anzahl, Transversalimpuls des Elektrons und des $W$-Bosons) histogrammiert, wie in den Abbildungen \ref{fig:atlas_njet} bis \ref{fig:mc_ptw} gezeigt ist.
 \begin{sidewaysfigure}
 	\centering
 	\begin{subfigure}{.49\textwidth}
-		\includegraphics[width=\textwidth]{./data/root/wmass/exercise1/ATLAS_njet.pdf}
+		\centering
+		\includegraphics[width=.7\textwidth]{./data/root/wmass/exercise1/ATLAS_njet.pdf}
+		\caption{Anzahl der Jets \texttt{njet} für die kalibrierten ATLAS Daten.}
+		\label{fig:atlas_njet}
 	\end{subfigure}
 	\begin{subfigure}{.49\textwidth}
-		\includegraphics[width=\textwidth]{./data/root/wmass/exercise1/MC_njet.pdf}
+		\centering
+		\includegraphics[width=.7\textwidth]{./data/root/wmass/exercise1/MC_njet.pdf}
+		\caption{Anzahl der Jets \texttt{njet} für die Monte-Carlo Daten.}
 	\end{subfigure}
 	\begin{subfigure}{.49\textwidth}
-		\includegraphics[width=\textwidth]{./data/root/wmass/exercise1/ATLAS_el_pt.pdf}
+		\centering
+		\includegraphics[width=.7\textwidth]{./data/root/wmass/exercise1/ATLAS_el_pt.pdf}
+		\caption{Transversaler Elektronenimpuls \texttt{el\_pt} für die kalibrierten ATLAS Daten.}
 	\end{subfigure}
 	\begin{subfigure}{.49\textwidth}
-		\includegraphics[width=\textwidth]{./data/root/wmass/exercise1/MC_el_pt.pdf}
+		\centering
+		\includegraphics[width=.7\textwidth]{./data/root/wmass/exercise1/MC_el_pt.pdf}
+		\caption{Transversaler Elektronenimpuls \texttt{el\_pt} für die Monte-Carlo Daten.}
 	\end{subfigure}
+	\caption{Jet-Anzahl und Elektronenimpuls für kalibrierte ATLAS Daten von $W\rightarrow e + \nu$ Zerfällen bzw. simulierten Monte-Carlo Daten mit einer angenommenen $W$-Masse von \SI{80,5}{GeV}.}
 \end{sidewaysfigure}
 \begin{sidewaysfigure}
 	\centering
 	\begin{subfigure}{.49\textwidth}
 		\includegraphics[width=\textwidth]{./data/root/wmass/exercise1/ATLAS_ptw.pdf}
+		\caption{Transversaler $W$-Boson Impuls \texttt{ptw} für die kalibrierten ATLAS Daten.}
 	\end{subfigure}
 	\begin{subfigure}{.49\textwidth}
 		\includegraphics[width=\textwidth]{./data/root/wmass/exercise1/MC_ptw.pdf}
+		\caption{Transversaler $W$-Boson Impuls \texttt{ptw} für die Monte-Carlo Daten.}
+		\label{fig:mc_ptw}
 	\end{subfigure}
+	\caption{Transversalimpuls des $W$-Bosons für kalibrierte ATLAS Daten von $W\rightarrow e + \nu$ Zerfällen bzw. simulierten Monte-Carlo Daten mit einer angenommenen $W$-Masse von \SI{80,5}{GeV}.}
 \end{sidewaysfigure}
+Es ist gut erkennbar, dass ein Großteil der Daten von Ereignissen ohne Jets oder mit einem Jet stammt.
+Weiterhin ist in den Abbildungen des transversalen Impulses des $W$-Bosons ein deutliches Maximum bei sehr geringen Impulsen beobachtbar.
+Im Vergleich dazu liegt das Maximum des transversalen Elektronenimpulses bei ungefähr \SI{40}{GeV}, was etwa der halben Masse des $W-Bosons$ entspricht. Aufgrund der Erhaltung des Transversalimpulses kann man daraus schließen, dass Elektron und Neutrino ungefähr den gleichen Impuls in Höhe der halben $W$-Masse tragen.
 
 \subsection{Schnitte}
 Aufgabe 3 (unter Beachtung von Aufgabe 5.), Aufgabe 4?
