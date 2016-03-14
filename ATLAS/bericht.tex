@@ -231,6 +231,7 @@ Im Gegensatz zu dem Polarwinkel~$\theta$ sind Pseudorapiditätsdifferenzen loren
 Beispielsweise eine Pseudorapidität von $\eta = \num{0}$ einem Polarwinkel von $\theta = \SI{90}{\degree}$ (senkrecht zur Strahlachse) und positive/negative Pseudorapiditäten entsprechen Winkeln in/entgegen der Richtung der Strahlachse.
 
 \subsubsection{Hadronen-Kollision}
+\label{sssec:hadronen_kollision}
 Bei Kollisionen an Hadronenbeschleunigern wie dem LHC gilt es zu beachten, dass die eigentliche Kollision nicht zwischen den Hadronen, sondern dessen Partonen stattfindet.
 Im Partonmodell besteht jedes Hadron neben Valenzquarks auch aus Gluonen und paarerzeugten Quark-Antiquark-Paaren.
 Jedes Parton trägt dabei einen Impulsbruchteil, welcher im Bezugssystem in dem das Hadron einen unendlichen longitudinalen Impuls hat (d.h.\ transversale Impulse können vernachlässigt werden) durch die Bjorken'sche Skalenvariable~$x$ gegeben ist.
@@ -247,14 +248,27 @@ Da der Transversalimpuls für ungeladene Teilchen wie beispielsweise Photonen ni
 \end{align*}
 mit den Energieeinträgen~$E_i$ des Kalorimeters unter Polarwinkeln~$\theta_i$  und azimuthalen Einheitsvektoren~$\vec{n}_{i,\perp}$ auf den jeweiligen Eintrag, definiert.
 
-
-
-\subsection{Neue Physik}
-
-\subsubsection{Higgs-Boson}
-
-\subsubsection{Supersymmetrie}
-
+\subsubsection{Kinematik des Zweikörperzerfalls}
+In diesem Versuch sollen Zerfälle von W und Z-Bosonen der Form 
+\begin{align*}
+	W &\rightarrow \ell + \nu \\
+	Z^0 &\rightarrow \ell^- + \ell^+
+\end{align*}
+untersucht werden.
+Um aus solchen Zerfällen Informationen gewinnen zu können, ist es nötig die Kinematik von Zweikörperzerfällen zu betrachten.
+Aufgrund von Impulserhaltung haben die Tochterteilchen im Schwerpunktsystem (Ruhesystem des Mutterteilchens) betraglich gleiche aber antiparallele Impulse.
+Das Ziel ist eine Aussage über die Kinematik des Zerfalls zu machen, indem lediglich eins der Tochterteilchen des Zerfalls im Versuch gemessen wird (das Neutrino im W-Zerfall ist nur durch fehlende Energie zu detektieren).
+Eine Schwierigkeit ist, dass die in diesem Versuch betrachteten Hadronen-Kollisionen gemäß Abschnitt~\ref{sssec:hadronen_kollision} keine Aussage über den longitudinalen Impuls der Tochterteilchen erlauben.
+Stattdessen kann der transversale Impuls~$p_\mathrm{T}$ eines der Tochterteilchen für die Beschreibung verwendet werden.
+An dieser Stelle wurde jedoch das Koordinatensystem der Betrachtung explizit gewählt (Ruhesystem des Mutterteilchens).
+Das Spektrum des transversalen Impulses~$p_\mathrm{T}$ für eines der Tochterteilchen lässt sich mithilfe einer Jakobi-Transformation als \cite{script}:
+\begin{align}
+	\label{eq:pt_spektrum}
+	\frac{\mathrm{d} \sigma}{\mathrm{d}p_\mathrm{T}} = \frac{\mathrm{d}\sigma}{\mathrm{d}\cos\vartheta^*} \frac{2 p_\mathrm{T}}{M} \frac{1}{\sqrt{\frac{1}{4} M^2 - p_\mathrm{T}^2}}
+\end{align}
+schreiben (vgl.\ Abschnitt \ref{sssec:herleitung_jacobi} für die Herleitung).
+Man sieht, dass das transversale Impulsspektrum eine Polstelle bei der halben Masse des Mutterkerns~$M$ aufweist, welche zur Massebestimmung genutzt werden kann.
+Dabei gilt es zu beachten, dass eine Abweichung vom gewählten Koordinatensystem (d.h.\ ein nicht-ruhendes Mutterteilchen) zu einer Verbreiterung der Polstelle in Gleichung \eqref{eq:pt_spektrum} führt.
 
 \section{Beschreibung der verwendeten Software}
 
@@ -775,7 +789,7 @@ Die invariante Leptonen-Masse für die abgeschlossene Kalibration ist in Abbildu
 
 \section{Messung der W-Boson-Masse}
 
-Mit der in Aufgabe 2 gefundenen Kalibration der elektromagnetischen Kalorimeter kann nun die Masse des $W$-Bosons möglichst genau bestimmt werden.
+Mit der in Aufgabe 2 gefundenen Kalibration der elektromagnetischen Kalorimeter kann nun die Masse des W-Bosons möglichst genau bestimmt werden.
 Dazu wird die Kalibration auf die zu verwendenden Messdaten angewendet und ein Fit-Objekt wie in Aufgabe 2 in ROOT geladen, um die Auswertung vorzunehmen.
 
 \subsection{Überblick}
@@ -938,6 +952,9 @@ Aufgabe 6
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{19}
+\bibitem{script}
+	N. Möser, J. Meier, J.-W. Tsung, E. von Törne,
+	\emph{Der ATLAS-Versuch: Eigenschaften von W-Bosonen und die Suche nach neuer Physik}.
 \bibitem{pdg}
 	K.A. Olive \textit{et al.} (Particle Data Group),
 	\emph{The Review of Particle Physics},
@@ -985,6 +1002,7 @@ Aufgrund der Impulserhaltung kann der Transversalimpuls des W-Bosons \texttt{ptw
 \end{align*}
 
 \subsubsection*{6.3.1 - Herleitung}
+\label{sssec:herleitung_jacobi}
 Mit der Kettenregel folgt:
 \begin{align*}
 	\frac{\mathrm{d}\sigma}{\mathrm{d}p_\mathrm{T}} = \frac{\mathrm{d}\sigma}{\mathrm{d}\cos\vartheta^*}\left|\frac{\mathrm{d}\cos\vartheta^*}{\mathrm{d}p_\mathrm{T}}\right| = \frac{\mathrm{d}\sigma}{\mathrm{d}\cos\vartheta^*}\frac{1}{\left|\frac{\mathrm{d}p_\mathrm{T}}{\mathrm{d}\cos\vartheta^*}\right|}
