@@ -55,12 +55,14 @@ def make_gauge_plot():
     
     # Data
     plt.errorbar(mc.half_height, mc.mc_w_mass, xerr=mc.dhalf_height, fmt="o",
-                 zorder=2)
+                 zorder=2, label="MC-Simulation")
     
     # Fit
     x_fit = np.linspace(*plt.xlim(), 200)
     y_fit = fit_f(odr_res.beta, x_fit)
-    plt.plot(x_fit, y_fit, "-", zorder=1)
+    plt.plot(x_fit, y_fit, "-", zorder=1, label="Anpassung")
+    
+    plt.legend(loc="best")
     
     plt.savefig("figures/wmass/gauge.pdf")
     plt.close()
