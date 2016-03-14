@@ -783,14 +783,29 @@ Die invariante Leptonen-Masse für die abgeschlossene Kalibration ist in Abbildu
 		\put (43,1) {$m_\mathrm{inv}$ / \si{GeV}}
 		\put (1,29) {\rotatebox{90}{Ereignisse}}
 	\end{overpic}
-	\caption{Invariante Leptonen-Masse nach Kalibration der Energiemessung.}
+	\caption{Invariante Leptonen-Masse in $\mathrm{Z}^0 \rightarrow \mathrm{e}^- + \mathrm{e}^+$ nach Kalibration der Energiemessung.}
 	\label{fig:final_calibration}
 \end{figure}
 
 \section{Messung der W-Boson-Masse}
 
-Mit der in Aufgabe 2 gefundenen Kalibration der elektromagnetischen Kalorimeter kann nun die Masse des W-Bosons möglichst genau bestimmt werden.
-Dazu wird die Kalibration auf die zu verwendenden Messdaten angewendet und ein Fit-Objekt wie in Aufgabe 2 in ROOT geladen, um die Auswertung vorzunehmen.
+Nachdem die elektromagnetischen Kalorimeter kalibriert wurden, kann eine Bestimmung der Masse des W-Bosons anhand eines Datensatzes mit Ereignissen $\mathrm{W} \rightarrow \ell + \nu$ erfolgen.
+Konkret stehen mehrere Datensätze zur Verfügung deren Verwendung kurz erläutert werden soll:
+\begin{itemize}
+	\item ATLAS $\mathrm{W} \rightarrow \ell + \nu$:
+		Simulierte Daten des Zerfalls, welche zur Bestimmung der W-Masse genutzt werden.
+		Dieser Datensatz steht mit kalibrierten und unkalibrierten Energien zur Verfügung, um den Einfluss der Kalibration aus dem vorigen Versuchsteil quantifizieren zu können.
+	
+	\item ATLAS $\mathrm{Z} \rightarrow \ell^- + \ell^+$:
+		Simulierte Daten die zur Abschätzung der systematischen Fehler bei der Bestimmung der W-Masse genutzt werden, da die Masse des Z-Bosons sehr genau bekannt ist.
+		
+	\item Monte-Carlo Untergrund:
+		Monte-Carlo Simulation des Untergrund von $\mathrm{W} \rightarrow \ell + \nu$, welcher durch die Wahl geeigneter Schnittselektionen minimiert werden muss.
+	
+	\item Monte-Carlo $\mathrm{W} \rightarrow \ell + \nu$:
+		Monte-Carlo Simulation des Zerfalls für verschiedene W-Massen zur Erstellung einer Eichkurve um die W-Masse aus dem ATLAS Datensatz zu rekonstruieren.	
+\end{itemize}
+Im Folgenden soll zunächst ein Überblick über die Datensätze geschaffen werden und anschließend eine Bestimmung der W-Masse anhand der vorliegenden Daten erfolgen.
 
 \subsection{Überblick}
 Aufgabe 1, 2
