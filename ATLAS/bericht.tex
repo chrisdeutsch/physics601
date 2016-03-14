@@ -931,7 +931,7 @@ Zur Bestimmung der Eichkurve wird die simulierte W-Masse~$M_\mathrm{MC}$ gegen d
 Um bei der Anpassung der Geraden die Fehler in der Halbhöhepunkt-Messung korrekt zu beachten, wird diese durch eine orthogonale Regression \cite{odr} durchgeführt.
 Als Anpassungshypothese wird
 \begin{align*}
-	M_\mathrm{MC}(h) = m \cdot h + b
+	M(h) = m \cdot h + b
 \end{align*}
 mit den Parametern $m$ und $b$ genutzt.
 Das Ergebnis der Anpassung ist in Abbildung \ref{fig:gauge_curve} gezeigt.
@@ -942,69 +942,73 @@ Das Ergebnis der Anpassung ist in Abbildung \ref{fig:gauge_curve} gezeigt.
 	\label{fig:gauge_curve}
 \end{figure}
 
-
-
+Nach der Anpassung ergibt sich für die Parameter:
 \begin{align*}
-	m &= \num{1.9896 +- 0.1818} \\
-	b &= \num{-2.581 +- 7.545} \\
-	\Sigma^\mathrm{Eichk.} &= \begin{pmatrix}
-	\sigma_m^2 & \sigma_{mb} \\
-	\sigma_{bm} & \sigma_b^2
-	\end{pmatrix}\\
-	 &= \begin{pmatrix}
-		\num{0.03306} & \num{-1.372} \\
-		\num{-1.372}    & \num{56.93}
-	\end{pmatrix}\\
-	\sigma_\mathrm{res} &= \num{0.4256}\\	
+	m &= \num{1.990 +- 0.182} \\
+	b &= \SI{-2.58 +- 7.54}{\GeV}
 \end{align*}
-\\
-Messwert:
-\begin{align*}
-	h = \SI{42.10 +- 0.07}{\GeV}
-\end{align*}
+mit einem reduzierten Chi-Quadrat von $\chi_\mathrm{red.}^2 = \num{0.638}$.
+Daraus ist zu folgern, dass die Anpassungshypothese die vorliegenden Daten gut beschreibt, jedoch die Fehler durch die Anpassung von ROOT etwas überschätzt wurden.
 
-Gesamte Kovarianzmatrix inkl.\ des unabhängigen Fehlers von~$h$:
+Bei der Verwendung dieser angepassten Eichkurve muss beachtet werden, dass die Fehler von Steigung~$m$ und Achsenabschnitt~$b$ stark korreliert sind.
+Dies wird durch die Kovarianzmatrix beschrieben wird, welche ebenfalls als Ergebnis der Anpassung vorliegt:
+\begin{align*}
+			\Sigma^\mathrm{Eichk.} &= \begin{pmatrix}
+			\sigma_m^2 & \sigma_{mb} \\
+			\sigma_{bm} & \sigma_b^2
+			\end{pmatrix}\\
+			&= \begin{pmatrix}
+			\num{0.03306} & \num{-1.372} \\
+			\num{-1.372}    & \num{56.93}
+			\end{pmatrix} \, \text{.}\\
+\end{align*}
+Auf der Diagonalen dieser Matrix finden sich die Varianz der einzelnen Anpassungsparameter und auf den Nebendiagonalen finden sich die Korrelationen der Fehler zwischen beiden Parametern.
+Die konkrete Auswertung innerhalb der \textsc{Gauß}schen Fehlerfortpflanzung findet im nächsten Abschnitt statt.
+
+\subsection{W-Masse}
+In Abschnitt \korr{REF} wurde die Position des Halbhöhepunktes~$h$ für die simulierten und kalibrierten ATLAS-Daten zu
 \begin{align}
+	h = \SI{42.10 +- 0.07}{\GeV}
+	\label{eq:messwert_w_h}
+\end{align}
+bestimmt.
+Um die W-Masse mithilfe der zuvor angepassten Eichkurve zu bestimmen, ist es nötig die gemeinsame Kovarianzmatrix für die Kurvenparameter $m, b$ und des Halbhöhepunktes~$h$ zu bestimmen.
+Da diese Fehler unabhängig sind, lässt sich die neue Kovarianzmatrix durch Bildung der Blockdiagonalmatrix
+\begin{align*}
 	\Sigma^\mathrm{tot} = \begin{pmatrix}
 		\sigma_m^2  & \sigma_{mb} & 0 \\
 		\sigma_{bm} & \sigma_b^2  & 0 \\
 		0           & 0           & \sigma_h^2
 	\end{pmatrix}
-\end{align}
-
-Auswertung der Eichkurve $f(m, b, h) = m \cdot h + b$ Jacobian:
+\end{align*}
+erzeugen.
+Außerdem wird für die Auswertung der Eichkurve $M(m, b, h)$ die Jakobi-Matrix
 \begin{align*}
 	J &= \begin{pmatrix}
-	\frac{\partial f}{\partial m} &
-	\frac{\partial f}{\partial b} &
-	\frac{\partial f}{\partial h}
+	\frac{\partial M}{\partial m} &
+	\frac{\partial M}{\partial b} &
+	\frac{\partial M}{\partial h}
 	\end{pmatrix} \\
-	&=\begin{pmatrix}
-	h & 1 & m
-	\end{pmatrix}
 \end{align*}
-
-Covarianzmatrix von $f$:
+benötigt.
+Mit der Eichkurve $M(m, b, h) = m \cdot h + b$ folgt die explizite Darstellung
 \begin{align*}
-	\Sigma^f = \begin{pmatrix}
-	\Sigma^f_{ff}
+	J=\begin{pmatrix}
+	h & 1 & m
+	\end{pmatrix} \, \text{.}
+\end{align*}
+Dadurch erhält man nach der Auswertung der Eichkurve durch Anwendung von \textsc{Gauß}scher Fehlerfortpflanzung gemäß \korr{CITE}
+\begin{align*}
+	\Sigma^M = \begin{pmatrix}
+	\sigma_{M}^2
 	\end{pmatrix} = J \, \Sigma^\mathrm{tot} \, J^\mathrm{T}
 \end{align*}
-
-Ergebnisse:
+die $1 \times 1$ Kovarianzmatrix für die Masse~$M$ mit dem Standardfehler~$\sigma_M$.
+Setzt man die Kurvenparameter und die Position des Halbhöhepunktes sowie deren Fehler ein, so erhält man für die W-Masse
 \begin{align*}
-	m_\mathrm{W} &= \num{81.181} \\
-	\sigma_{m_\mathrm{W}} &= \sqrt{\Sigma^f_{ff}} \\
-	&= \num{0.189}
+	M_\mathrm{W} = \SI{81.181 +- 0.189}{\GeV}
 \end{align*}
-
-
-
-
-\subsection{W-Masse}
-Aufgabe 6
-
-
+Die Notwendigkeit der Beachtung der Fehlerkorrelationen wird hier klar, da alleine aufgrund des großen Fehlers auf dem Achsenabschnitt von etwa \SI{7}{\GeV} bei der naiven Fehlerfortpflanzung ohne Beachtung der Korrelationen ein Fehler in derselben Größenordnung zu erwarten ist.
 
 \FloatBarrier
 % BIBLIOGRAPHIE
