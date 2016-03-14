@@ -958,12 +958,12 @@ Eine solche Anpassung ist für die kalibrierten ATLAS-Daten in Abbildung \ref{fi
 \end{table}
 
 \subsection{Eichkurve}
-A priori ist nicht klar, ob der angepasste Halbhöhepunktes~$h$ der Polstelle in Gleichung \eqref{eq:pt_spektrum} entspricht.
+A priori ist nicht klar, ob der angepasste Halbhöhenpunktes~$h$ der Polstelle in Gleichung \eqref{eq:pt_spektrum} entspricht.
 Aus diesem Grund ist ein direktes Ablesen der W-Masse mithilfe dieses Punktes nicht möglich.
 Stattdessen werden die Monte-Carlo Daten mit verschiedenen simulierten W-Massen genutzt, um eine Eichkurve für die Masse zu erzeugen.
 
-Zur Bestimmung der Eichkurve wird die simulierte W-Masse~$M_\mathrm{MC}$ gegen die angepasste Position des Halbhöhepunkts~$h$ aufgetragen und eine Gerade an die Daten angepasst.
-Um bei der Anpassung der Geraden die Fehler in der Halbhöhepunkt-Messung korrekt zu beachten, wird diese durch eine orthogonale Regression \cite{odr} durchgeführt.
+Zur Bestimmung der Eichkurve wird die simulierte W-Masse~$M_\mathrm{MC}$ gegen die angepasste Position des Halbhöhenpunkts~$h$ aufgetragen und eine Gerade an die Daten angepasst.
+Um bei der Anpassung der Geraden die Fehler in der Halbhöhenpunkt-Messung korrekt zu beachten, wird diese durch eine orthogonale Regression \cite{odr} durchgeführt.
 Als Anpassungshypothese wird
 \begin{align*}
 	M(h) = m \cdot h + b
@@ -1001,13 +1001,13 @@ Auf der Diagonalen dieser Matrix finden sich die Varianz der einzelnen Anpassung
 Die konkrete Auswertung innerhalb der \textsc{Gauß}schen Fehlerfortpflanzung findet im nächsten Abschnitt statt.
 
 \subsection{W-Masse}
-In Abschnitt \korr{REF} wurde die Position des Halbhöhepunktes~$h$ für die simulierten und kalibrierten ATLAS-Daten zu
+In Abschnitt \korr{REF} wurde die Position des Halbhöhenpunktes~$h$ für die simulierten und kalibrierten ATLAS-Daten zu
 \begin{align}
 	h = \SI{42.10 +- 0.07}{\GeV}
 	\label{eq:messwert_w_h}
 \end{align}
 bestimmt.
-Um die W-Masse mithilfe der zuvor angepassten Eichkurve zu bestimmen, ist es nötig die gemeinsame Kovarianzmatrix für die Kurvenparameter $m, b$ und des Halbhöhepunktes~$h$ zu bestimmen.
+Um die W-Masse mithilfe der zuvor angepassten Eichkurve zu bestimmen, ist es nötig die gemeinsame Kovarianzmatrix für die Kurvenparameter $m, b$ und des Halbhöhenpunktes~$h$ zu bestimmen.
 Da diese Fehler unabhängig sind, lässt sich die neue Kovarianzmatrix durch Bildung der Blockdiagonalmatrix
 \begin{align*}
 	\Sigma^\mathrm{tot} = \begin{pmatrix}
@@ -1032,14 +1032,14 @@ Mit der Eichkurve $M(m, b, h) = m \cdot h + b$ folgt die explizite Darstellung
 	h & 1 & m
 	\end{pmatrix} \, \text{.}
 \end{align*}
-Dadurch erhält man nach der Auswertung der Eichkurve durch Anwendung von \textsc{Gauß}scher Fehlerfortpflanzung gemäß \korr{CITE}
+Dadurch erhält man nach der Auswertung der Eichkurve durch Anwendung von \textsc{Gauß}scher Fehlerfortpflanzung gemäß \cite{error_prop}
 \begin{align*}
 	\Sigma^M = \begin{pmatrix}
 	\sigma_{M}^2
 	\end{pmatrix} = J \, \Sigma^\mathrm{tot} \, J^\mathrm{T}
 \end{align*}
 die $1 \times 1$ Kovarianzmatrix für die Masse~$M$ mit dem Standardfehler~$\sigma_M$.
-Setzt man die Kurvenparameter und die Position des Halbhöhepunktes sowie deren Fehler ein, so erhält man für die W-Masse
+Setzt man die Kurvenparameter und die Position des Halbhöhenpunktes sowie deren Fehler ein, so erhält man für die W-Masse
 \begin{align*}
 	M_\mathrm{W} = \SI{81.181 +- 0.189}{\GeV}
 \end{align*}
@@ -1067,7 +1067,12 @@ Die Notwendigkeit der Beachtung der Fehlerkorrelationen wird hier klar, da allei
 \bibitem{odr}
 	SciPy,
 	\emph{Orthogonal distance regression (\texttt{scipy.odr})},
-	\url{http://docs.scipy.org/doc/scipy/reference/odr.html} (Letzter Aufruf: 14. März 2016)
+	\url{http://docs.scipy.org/doc/scipy/reference/odr.html} (Letzter Aufruf: 14. März 2016).
+
+\bibitem{error_prop}
+	B. Ochoa, S. Belongie,
+	\emph{Covariance Propagation for Guided Matching},
+	\url{http://vision.cornell.edu/se3/wp-content/uploads/2014/09/ochoa06.pdf} (Letzter Aufruf: 14. März 2016).
 	
 
 \end{thebibliography}
