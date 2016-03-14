@@ -50,8 +50,8 @@ def make_gauge_plot():
     set_mpl_comma()
     plt.xlim(40.8, 42.2)
     plt.ylim(78.5, 81.5)
-    plt.xlabel(r"Halbhöhepunkt~$h$ / $\mathrm{GeV}$")
-    plt.ylabel(r"MC Masse~$m_\mathrm{MC}$ / $\mathrm{GeV}$")
+    plt.xlabel(r"Position des Halbhöhepunktes~$h$ / $\mathrm{GeV}$")
+    plt.ylabel(r"simulierte Masse~$M_\mathrm{MC}$ / $\mathrm{GeV}$")
     
     # Data
     plt.errorbar(mc.half_height, mc.mc_w_mass, xerr=mc.dhalf_height, fmt="o",

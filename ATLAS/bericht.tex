@@ -920,9 +920,30 @@ Um die zur Verfügung stehenden Daten für eine aussagekräftige Messung zu verw
 Hierzu werden Ereignisse mit $W$-Bosonen ausgewählt, die beinahe als ruhend angenommen werden können, so dass nur solche mit Transversalpimpuls $p_\mathrm{T}<\SI{12}{GeV}$ zur Auswertung betrachtet werden.  
 Aufgabe 3 (unter Beachtung von Aufgabe 5.), Aufgabe 4?
 
+\subsection{Selektion}
+
 \subsection{Eichkurve}
-Aufgabe 5\\
-\noindent ODR-Fit:
+A priori ist nicht klar, ob der angepasste Halbhöhepunktes~$h$ der Polstelle in Gleichung \eqref{eq:pt_spektrum} entspricht.
+Aus diesem Grund ist ein direktes Ablesen der W-Masse mithilfe dieses Punktes nicht möglich.
+Stattdessen werden die Monte-Carlo Daten mit verschiedenen simulierten W-Massen genutzt, um eine Eichkurve für die Masse zu erzeugen.
+
+Zur Bestimmung der Eichkurve wird die simulierte W-Masse~$M_\mathrm{MC}$ gegen die angepasste Position des Halbhöhepunkts~$h$ aufgetragen und eine Gerade an die Daten angepasst.
+Um bei der Anpassung der Geraden die Fehler in der Halbhöhepunkt-Messung korrekt zu beachten, wird diese durch eine orthogonale Regression \cite{odr} durchgeführt.
+Als Anpassungshypothese wird
+\begin{align*}
+	M_\mathrm{MC}(h) = m \cdot h + b
+\end{align*}
+mit den Parametern $m$ und $b$ genutzt.
+Das Ergebnis der Anpassung ist in Abbildung \ref{fig:gauge_curve} gezeigt.
+\begin{figure}[h]
+	\centering
+	\includegraphics{./figures/wmass/gauge.pdf}
+	\caption{Monte-Carlo Eichkurve}
+	\label{fig:gauge_curve}
+\end{figure}
+
+
+
 \begin{align*}
 	m &= \num{1.9896 +- 0.1818} \\
 	b &= \num{-2.581 +- 7.545} \\
@@ -979,11 +1000,6 @@ Ergebnisse:
 
 
 
-\begin{figure}[h]
-	\centering
-	\includegraphics{./figures/wmass/gauge.pdf}
-	\caption{Monte-Carlo Eichkurve}
-\end{figure}
 
 \subsection{W-Masse}
 Aufgabe 6
@@ -1008,6 +1024,12 @@ Aufgabe 6
 	ATLAS Collaboration (Aad, Georges \textit{et al.}),
 	\emph{Electron performance measurements with the ATLAS detector using the 2010 LHC proton-proton collision data},
 	Eur.\ Phys.\ J.\ C72 (2012) 1909.
+
+\bibitem{odr}
+	SciPy,
+	\emph{Orthogonal distance regression (\texttt{scipy.odr})},
+	\url{http://docs.scipy.org/doc/scipy/reference/odr.html} (Letzter Aufruf: 14. März 2016)
+	
 
 \end{thebibliography}
 
