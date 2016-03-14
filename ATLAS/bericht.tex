@@ -850,7 +850,7 @@ Um einen Überblick über die Datensätze zu gewinnen, wurden verschiedene Obser
 	\label{fig:observablen_pt2}
 \end{sidewaysfigure}
 
-Sowohl im simulierten Monte-Carlo als auch in denen des ATLAS-Datensatzes ist klar zu erkennen, dass die Anzahl der Jets ein Maximum bei 0 Jets pro Ereignis aufweist, sodass etwa die Hälfte aller Ereignisse keine Jets im Endzustand aufweisen.
+Sowohl im simulierten Monte-Carlo als auch im ATLAS-Datensatzes ist klar zu erkennen, dass die Anzahl der Jets ein Maximum bei 0 Jets pro Ereignis aufweist, sodass etwa die Hälfte aller Ereignisse keine Jets im Endzustand aufweisen.
 Diese Jets können durch Gluon-Abstrahlung im Anfangs- oder Endzustand entstehen, welche folglich zu Jets hadronisieren.
 Dennoch unterscheiden sich die ATLAS- und Monte-Carlo-Daten dahingehend, dass die Anzahl der Ereignisse mit steigender Jetanzahl~\texttt{njet} im MC-Datensatz wesentlich stärker abnimmt.
 
@@ -898,7 +898,7 @@ Die Darstellung für Ereignisse ohne Jets ist in Abbildung \ref{fig:njet0} gezei
 		\includegraphics[width=.7\textwidth]{./data/root/wmass/exercise2/njet4.pdf}
 		\caption{Vier Jets}
 	\end{subfigure}
-	\caption{Transversalimpuls des $W$-Bosons für Ereignisse mit ein, zwei, drei oder vier Jets.}
+	\caption{Transversalimpuls des W-Bosons für Ereignisse mit ein, zwei, drei oder vier Jets.}
 	\label{fig:njet1-4}
 \end{sidewaysfigure}
 
@@ -917,7 +917,24 @@ Dieser Effekt führt auch zu der Abweichung in Abbildung \ref{fig:observablen_pt
 \clearpage
 \subsection{Schnitte}
 Um die zur Verfügung stehenden Daten für eine aussagekräftige Messung zu verwenden, werden die Daten durch Schnittselektionen reduziert.
-Hierzu werden Ereignisse mit $W$-Bosonen ausgewählt, die beinahe als ruhend angenommen werden können, so dass nur solche mit Transversalpimpuls $p_\mathrm{T}<\SI{12}{GeV}$ zur Auswertung betrachtet werden.  
+Hierzu werden Ereignisse mit W-Bosonen ausgewählt, die beinahe als ruhend angenommen werden können, so dass nur solche mit Transversalpimpuls $p_\mathrm{T}<\SI{12}{GeV}$ zur Auswertung betrachtet werden.
+Für den Zerfall wird dann erwartet, dass geladenes Lepton und Neutrino beide einen Impuls in Höhe der halben W-Masse tragen, der aufgrund ihrer geringen Masse gleich ihrer Energie gesetzt werden kann.
+Dadurch lässt sich der erwartete Energiebereich der Leptonen einschränken.
+Es wurde eine Schnittbedingung für den transversalen Elektronenimpuls und die fehlende transversale Energie $\slashed{E}_\mathrm{T}$, die als Impuls des Neutrinos aufgefasst werden kann die Schnittbedingungen $p_\mathrm{T,e}>\SI{25}{Gev}$ und $\slashed{E}_\mathrm{T}>\SI{25}{Gev}$ formuliert.
+Aufgrund der erwarteten Elektronenenergie wird ebenfalls eine Schnittbedingung $E_\mathrm{e}<\SI{65}{GeV}$ angewendet.
+Die verbleibende Einschränkung, nur Ereignisse mit weniger als \num{2} Jets zu berücksichtigen stellt sich als redundant heraus, da beinahe keine Ereignisse mit \num{2} Jets oder mehr in den selektierten Daten zu finden sind, wie nach Formulierung der Selektion festgestellt wurde.
+Die selektierten Daten sind als Histogramm des Bosonimpulses in Abbildung \ref{fig:selektion_final} dargestellt.
+\begin{figure}[htbp]
+	\centering
+	\begin{overpic}[width=\textwidth,tics=10]{./data/root/wmass/exercise3/ATLAS_cut}
+		\put (25,1) {Transversalimpuls des W-Bosons $p_\mathrm{T}$ / \si{GeV}}
+		\put (1,29) {\rotatebox{90}{Ereignisse}}
+	\end{overpic}
+	\caption{Nach Anwenden der Selektion verbleibende Daten als Histogramm des transversalen Impulses des W-Bosons.}
+	\label{fig:selektion_final}
+\end{figure}
+Eine Schwierigkeit stellte dar, die Schnitte so zu wählen, dass nicht relevante Ereignisse nicht berücksichtigt werden, aber genügend viele Ereignisse für eine aussagekräftige Statistik erhalten bleiben.
+
 Aufgabe 3 (unter Beachtung von Aufgabe 5.), Aufgabe 4?
 
 \subsection{Selektion}
