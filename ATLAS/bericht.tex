@@ -792,25 +792,24 @@ Die invariante Leptonen-Masse für die abgeschlossene Kalibration ist in Abbildu
 Nachdem die elektromagnetischen Kalorimeter kalibriert wurden, kann eine Bestimmung der Masse des W-Bosons anhand eines Datensatzes mit Ereignissen $\mathrm{W} \rightarrow \ell + \nu$ erfolgen.
 Konkret stehen mehrere Datensätze zur Verfügung deren Verwendung kurz erläutert werden soll:
 \begin{itemize}
-	\item ATLAS $\mathrm{W} \rightarrow \ell + \nu$:
+	\item ATLAS $\mathrm{W} \rightarrow \mathrm{e} + \nu$:
 		Simulierte Daten des Zerfalls, welche zur Bestimmung der W-Masse genutzt werden.
 		Dieser Datensatz steht mit kalibrierten und unkalibrierten Energien zur Verfügung, um den Einfluss der Kalibration aus dem vorigen Versuchsteil quantifizieren zu können.
 	
-	\item ATLAS $\mathrm{Z} \rightarrow \ell^- + \ell^+$:
+	\item ATLAS $\mathrm{Z} \rightarrow \mathrm{e}^- + \mathrm{e}^+$:
 		Simulierte Daten die zur Abschätzung der systematischen Fehler bei der Bestimmung der W-Masse genutzt werden, da die Masse des Z-Bosons sehr genau bekannt ist.
 		
 	\item Monte-Carlo Untergrund:
-		Monte-Carlo Simulation des Untergrund von $\mathrm{W} \rightarrow \ell + \nu$, welcher durch die Wahl geeigneter Schnittselektionen minimiert werden muss.
+		Monte-Carlo Simulation des Untergrund von $\mathrm{W} \rightarrow \mathrm{e} + \nu$, welcher durch die Wahl geeigneter Schnittselektionen minimiert werden muss.
 	
-	\item Monte-Carlo $\mathrm{W} \rightarrow \ell + \nu$:
+	\item Monte-Carlo $\mathrm{W} \rightarrow \mathrm{e} + \nu$:
 		Monte-Carlo Simulation des Zerfalls für verschiedene W-Massen zur Erstellung einer Eichkurve um die W-Masse aus dem ATLAS Datensatz zu rekonstruieren.	
 \end{itemize}
 Im Folgenden soll zunächst ein Überblick über die Datensätze geschaffen werden und anschließend eine Bestimmung der W-Masse anhand der vorliegenden Daten erfolgen.
 
-\subsection{Überblick über die Datensätze}
-Es standen Datensätze mit jeweils einen kalibrierten und unkalibrierten ATLAS Ereignissen von W- und Z-Bosonen, sechs Datensätze von Monte-Carlo-Simulationen mit verschiedenen $W$-Massen, sowie ein Monte-Carlo-Untergrund zur Verfügung.
-Um einen Überblick über die verschiedenen Datensätze zu gewinnen, wurden verschiedene Observablen (Jet-Anzahl, Transversalimpuls des Elektrons und des $W$-Bosons) histogrammiert, wie in den Abbildungen \ref{fig:atlas_njet} bis \ref{fig:mc_ptw} gezeigt ist.
-\begin{sidewaysfigure}
+\subsection{Vergleich von ATLAS und MC-Datensatze}
+Für diesen Vergleich betrachten wir den ATLAS Datensatz $\mathrm{W} \rightarrow \mathrm{e} + \nu$ mit kalibrierten Energien und einen der fünf Monte-Carlo Datensätze (mit simulierter W-Masse~$M_\mathrm{W} = \SI{80.5}{\GeV}$).
+Um einen Überblick über die Datensätze zu gewinnen, wurden verschiedene Observablen (Jet-Anzahl, Transversalimpuls des Elektrons und des W-Bosons) in den Abbildungen \ref{fig:observablen_pt1} und \ref{fig:observablen_pt2} zusammengestellt.    \begin{sidewaysfigure}[h]
 	\centering
 	\begin{subfigure}{.49\textwidth}
 		\centering
@@ -834,8 +833,9 @@ Um einen Überblick über die verschiedenen Datensätze zu gewinnen, wurden vers
 		\caption{Transversaler Elektronenimpuls \texttt{el\_pt} für die Monte-Carlo Daten.}
 	\end{subfigure}
 	\caption{Jet-Anzahl und Elektronenimpuls für kalibrierte ATLAS Daten von $W\rightarrow e + \nu$ Zerfällen bzw. simulierten Monte-Carlo Daten mit einer angenommenen $W$-Masse von \SI{80,5}{GeV}.}
+	\label{fig:observablen_pt1}
 \end{sidewaysfigure}
-\begin{sidewaysfigure}
+\begin{sidewaysfigure}[h]
 	\centering
 	\begin{subfigure}{.49\textwidth}
 		\includegraphics[width=\textwidth]{./data/root/wmass/exercise1/ATLAS_ptw.pdf}
@@ -847,11 +847,13 @@ Um einen Überblick über die verschiedenen Datensätze zu gewinnen, wurden vers
 		\label{fig:mc_ptw}
 	\end{subfigure}
 	\caption{Transversalimpuls des $W$-Bosons für kalibrierte ATLAS Daten von $W\rightarrow e + \nu$ Zerfällen bzw. simulierten Monte-Carlo Daten mit einer angenommenen $W$-Masse von \SI{80,5}{GeV}.}
+	\label{fig:observablen_pt2}
 \end{sidewaysfigure}
 Es ist gut erkennbar, dass ein Großteil der Daten von Ereignissen ohne Jets oder mit einem Jet stammt.
 Weiterhin ist in den Abbildungen des transversalen Impulses des $W$-Bosons ein deutliches Maximum bei sehr geringen Impulsen beobachtbar.
 Im Vergleich dazu liegt das Maximum des transversalen Elektronenimpulses bei ungefähr \SI{40}{GeV}, was etwa der halben Masse des W-Bosons entspricht. Aufgrund der Erhaltung des Transversalimpulses kann man daraus schließen, dass Elektron und Neutrino ungefähr den gleichen Impuls in Höhe der halben $W$-Masse tragen.
 
+\clearpage
 \subsection{Transversales Impulsspektrum des W-Bosons}
 
 Im Anschluss wird das Spektrum des Transversalimpulses des $W$-Bosons in Abhängigkeit von der Anzahl Jets betrachtet, um \korr{wofür genau?} Die Darstellung für Ereignisse ohne Jets ist in Abbildung \ref{fig:njet0} gezeigt, alle weiteren folgen in Abbildung \ref{fig:njet1-4}.
