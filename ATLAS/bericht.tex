@@ -927,7 +927,7 @@ Die selektierten Daten sind als Histogramm des Bosonimpulses in Abbildung \ref{f
 \begin{figure}[htbp]
 	\centering
 	\begin{overpic}[width=\textwidth,tics=10]{./data/root/wmass/exercise3/ATLAS_cut}
-		\put (25,1) {Transversalimpuls des W-Bosons $p_\mathrm{T}$ / \si{GeV}}
+		\put (25,1) {Transversalimpuls $p_\mathrm{T}$ des W-Bosons / \si{GeV}}
 		\put (1,29) {\rotatebox{90}{Ereignisse}}
 	\end{overpic}
 	\caption{Nach Anwenden der Selektion verbleibende Daten als Histogramm des transversalen Impulses des W-Bosons.}
@@ -938,6 +938,24 @@ Eine Schwierigkeit stellte dar, die Schnitte so zu wählen, dass nicht relevante
 Aufgabe 3 (unter Beachtung von Aufgabe 5.), Aufgabe 4?
 
 \subsection{Selektion}
+
+Nach Formulierung der Schnittselektion konnte diese auf die verfügbaren Datensätze angewendet werden und mit einer Fit-Methode des ROOT Objekts jeweils der Halbhöhenpunkt $H$ der Verteilung angepasst.
+Eine solche Anpassung ist für die kalibrierten ATLAS-Daten in Abbildung \ref{fig:halbhöhe_atlas_calib} gezeigt, die angepassten Werte für alle Datensätze sind in Tabelle \ref{tab:halbhoehen} zu finden.
+\begin{figure}[htbp]
+	\centering
+	\begin{overpic}[width=\textwidth,tics=10]{./data/root/wmass/exercise4/atlas_calib}
+		\put (25,1) {Transversalimpuls $p_\mathrm{T}$ des W-Bosons / \si{GeV}}
+		\put (1,29) {\rotatebox{90}{Ereignisse}}
+	\end{overpic}
+	\caption{Anpassung der Verteilung an die Hypothese des ROOT-Fit-Objekts und Bestimmung des Halbhöhenpunktes $h$ für die kalibrierten ATLAS Daten des  $\mathrm{W} \rightarrow \mathrm{e} + \nu$ Zerfalls.}
+	\label{fig:halbhöhe_atlas_calib}
+\end{figure}
+\begin{table}[htbp]
+	\centering
+	\input{./tables/halbhoehen}
+	\caption{Angepasste Halbhöhenpunkte $h$ für die zur Verfügung stehenden Datensätze. Durch die Schnittselektion blieben zu wenig Ereignisse in dem Datensatz mit Monte-Carlo Untergrund übrig, so dass keine Anpassung erfolgen konnte.}
+	\label{tab:halbhoehen}
+\end{table}
 
 \subsection{Eichkurve}
 A priori ist nicht klar, ob der angepasste Halbhöhepunktes~$h$ der Polstelle in Gleichung \eqref{eq:pt_spektrum} entspricht.
