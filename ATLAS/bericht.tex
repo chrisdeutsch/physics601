@@ -998,7 +998,10 @@ Darüber hinaus sollen die Selektion den Untergrund weitgehend unterdrücken.
 Dieser wird nach Anwendung der Schnittbedingung in Abbildung \ref{fig:mc_bg} dargestellt und zeigt, dass die Schnittselektion den Monte-Carlo Untergrund von 7121 auf 261 Ereignisse reduzieren kann, was einer Unterdrückung von etwa \SI{96}{\percent} entspricht. 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1.0\textwidth]{./data/root/wmass/exercise4/mc_bg.pdf}
+	\begin{overpic}[width=\textwidth, tics=10]{./data/root/wmass/exercise4/mc_bg.pdf}
+		\put (26,1) {Transversalimpuls $p_\mathrm{T}$ des Elektrons / \si{GeV}}
+		\put (1,29) {\rotatebox{90}{Ereignisse}}
+	\end{overpic}
 	\caption{Monte-Carlo-Simulation vom Untergrund des Prozesses $\mathrm{W} \rightarrow \mathrm{e} + \nu$ nach Anwendung der Schnittbedingung. Vor Anwendung der Schnittbedingung enthielt die Simulation 7121 Ereignisse.}
 	\label{fig:mc_bg}
 \end{figure}
