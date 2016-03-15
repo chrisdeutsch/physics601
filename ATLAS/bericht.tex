@@ -158,7 +158,7 @@ Tutor: & Elisabeth Schopf
 
 % ZUSAMMENFASSUNG
 \begin{abstract}
-\noindent In diesem Praktikumsversuch sollen Ereignisse am ATLAS Detektor am LHC untersucht werden.
+\noindent In diesem Praktikumsversuch sollen Daten des ATLAS Detektor am LHC untersucht werden.
 Es wird die Detektorantwort auf verschiedene Teilchen analysiert und das elektromagnetische Kalorimeters kalibriert, um im Anschluss die Masse des W-Bosons zu bestimmen.
 \end{abstract}
 
@@ -1084,14 +1084,18 @@ In dieser Hinsicht wurde bereits bei der Schnittselektion in Abschnitt~\ref{ssec
 Ein Vergleich beider Spektren ist in Abbildung~\ref{fig:vgl_spektren} dargestellt, wobei die Anzahl der MC-Ereignisse auf die des ATLAS-Datensatzes hochskaliert wurde.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=.8\textwidth]{./figures/wmass/comparison.pdf}
-	\caption{Vergleich der Spektren der transversalen Impulse für den ATLAS- und MC-Datensatz ($M_\mathrm{W} = \SI{80.5}{\GeV}$). \korr{Achsenbeschriftung}}
+	\begin{overpic}[width=0.9\textwidth,tics=10]{./figures/wmass/comparison}
+		\put (26,-4) {Transversalimpuls $p_\mathrm{T}$ des Elektrons / \si{GeV}}
+		\put (-4,29) {\rotatebox{90}{Ereignisse}}
+	\end{overpic}
+	\vspace*{1.2em}
+	\caption{Vergleich der Spektren der transversalen Impulse für den ATLAS- und MC-Datensatz ($M_\mathrm{W} = \SI{80.5}{\GeV}$).}
 	\label{fig:vgl_spektren}
 \end{figure}
 In der Abbildung kann eine gute Übereinstimmung beider Spektren festgestellt werden.
 
 Dennoch kann nicht direkt die Position des Halbhöhenpunktes aus dem ATLAS-Datensatz in die Eichkurve, die aus Monte-Carlo-Daten gewonnen wurde, eingesetzt werden.
-Es ist folglich erforderlich, dass eine Umrechnung zwischen den Halbhöhenpunkten für die ATLAS-Daten~$h_\mathrm{ATLAS}$ und die Monte-Carlo-Daten~$h_\mathrm{MC}$ bestimmt wird.
+Es ist erforderlich, dass eine Umrechnung zwischen den Halbhöhenpunkten für die ATLAS-Daten~$h_\mathrm{ATLAS}$ und die Monte-Carlo-Daten~$h_\mathrm{MC}$ bestimmt wird.
 Da die Z-Masse sehr genau bestimmt wurde, wird daher der kalibrierte ATLAS-Datensatz $\mathrm{Z} \rightarrow ee$ und die Monte-Carlo-Simulation desselben Zerfalls für diese Korrektur verwendet.
 Eine Näherung erster Ordnung ist durch
 \begin{align*}
@@ -1184,6 +1188,11 @@ Diese Massen zeigen eine Abweichung von den Literaturwerten in der Größenordnu
 Ohne die Kalibration der Energiemessung sind demnach systematische Abweichungen in dieser Größenordnung zu erwarten.
 
 \section{Fazit}
+
+In dem Versuch konnten einige Einblicke in die Arbeit mit Daten des ATLAS Detektors gewonnen werden.
+Insbesondere der Umgang mit der Datenanalyse-Software ROOT stellte eine neue Erfahrung dar.
+Durch die Betrachtung ausgewählter Ereignisse mit Atlantis konnte ein gutes Verständnis für die unterschiedlichen Elemente des ATLAS Detektors aufgebaut werden.
+Die Kalibration der elektromagnetischen Kalorimeter gelang gut und stellte eine gute Basis für die anschließende Massenbestimmung des W-Bosons dar.
 
 \FloatBarrier
 % BIBLIOGRAPHIE
