@@ -31,6 +31,9 @@ w_meas = raw_data[raw_data.set == "ATLAS_W"]
 HH = w_meas.half_height.values[0]
 dHH = w_meas.dhalf_height.values[0]
 
+HH = 47.13/47.54 * HH
+dHH = 47.13/47.54 * dHH
+
 # Error propagation
 # covariance matrix for 3 parameters m, b, HH
 cov_gauge = block_diag(cov_mat, dHH**2)

@@ -937,6 +937,7 @@ Dieser Effekt führt auch zu der Abweichung in Abbildung \ref{fig:observablen_pt
 
 \clearpage
 \subsection{Schnittselektion der Ereignisse}
+\label{ssec:schnittselektion}
 Um die zur Verfügung stehenden Daten für eine aussagekräftige Messung zu verwenden, werden die Daten durch Schnittselektionen reduziert.
 Hierzu werden Ereignisse mit W-Bosonen ausgewählt, die beinahe als ruhend angenommen werden können, so dass nur solche mit Transversalpimpuls $p_\mathrm{T}<\SI{12}{GeV}$ zur Auswertung betrachtet werden.
 Der Grund für diese Selektion ist, dass aufgrund von Abschnitt \ref{sssec:kinamtik_zweikoerperzerfall} kleine Transversalimpulse des Bosons zu geringeren Verbreiterung des Jakobi-Maximums führen und so eine bessere Bestimmung der Masse ermöglichen sollten.
@@ -1037,6 +1038,21 @@ Auf der Diagonalen dieser Matrix finden sich die Varianzen der einzelnen Anpassu
 Die konkrete Auswertung innerhalb der \textsc{Gauß}schen Fehlerfortpflanzung, sowie die Diskussion der systematischen Abweichungen und Korrekturen findet im nächsten Abschnitt statt.
 
 \subsection{W-Masse}
+Abschließend soll mithilfe der aufgenommenen Daten eine Bestimmung der W-Masse durchgeführt werden.
+
+\subsubsection{Korrektur der Massebestimmung}
+Zu einer Abweichung bei der Massebestimmung kommt es durch abweichende $p_\mathrm{T}$-Spektren der Elektronen in den ATLAS- sowie Monte-Carlo-Daten.
+In dieser Hinsicht wurde bereits bei der Schnittselektion in Abschnitt~\ref{ssec:schnittselektion} sichergestellt, dass nach Anwendung der Schnitte auf die Datensätze ein ähnliches $p_\mathrm{T}$-Spektrum des Elektrons entsteht, sodass systematische Abweichungen vermieden werden können.
+Ein Vergleich beider Spektren ist in Abbildung~\ref{fig:vgl_spektren} dargestellt, wobei die Anzahl der MC-Ereignisse auf die des ATLAS-Datensatzes hochskaliert wurde.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.8\textwidth]{./figures/wmass/comparison.pdf}
+	\caption{Vergleich der Spektren der transversalen Impulse für den ATLAS- und MC-Datensatz ($M_\mathrm{W} = \SI{80.5}{\GeV}$). \korr{Achsenbeschriftung}}
+	\label{fig:vgl_spektren}
+\end{figure}
+In der Abbildung kann eine gute Übereinstimmung beider Spektren festgestellt werden, sodass weitere Korrekturen vernachlässigt werden können.
+
+
 \subsubsection{Bestimmung der W-Masse}
 In Abschnitt \ref{sec:selektion} wurde die Position des Halbhöhenpunktes~$h$ für die simulierten und kalibrierten ATLAS-Daten zu
 \begin{align}
