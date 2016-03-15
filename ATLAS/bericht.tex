@@ -967,10 +967,11 @@ Dieser wird nach Anwendung der Schnittbedingung in Abbildung \ref{fig:mc_bg} dar
 	\label{fig:mc_bg}
 \end{figure}
 
-\subsection{Selektion}
+\subsection{Bestimmung der Halbhöhenpunkte}
 \label{sec:selektion}
 
-Nach Formulierung der Schnittselektion konnte diese auf die verfügbaren Datensätze angewendet werden und mit einer Fit-Methode des ROOT Objekts jeweils der Halbhöhenpunkt $h$ der Verteilung angepasst.
+Nachdem die Schnittselektion aufgestellt wurde und der Untergrund hinreichend unterdrückt wurde, kann diese auf die verfügbaren Datensätze angewendet werden.
+Mithilfe einer Anpassungs-Methode des ROOT-Objektes können die Halbhöhenpunkte~$h$ der Transversalimpuls-Verteilung des Elektrons angepasst werden.
 Eine solche Anpassung ist für die kalibrierten ATLAS-Daten in Abbildung \ref{fig:halbhöhe_atlas_calib} gezeigt, die angepassten Werte für alle Datensätze sind in Tabelle \ref{tab:halbhoehen} zu finden.
 \begin{figure}[htbp]
 	\centering
@@ -987,6 +988,10 @@ Eine solche Anpassung ist für die kalibrierten ATLAS-Daten in Abbildung \ref{fi
 	\caption{Angepasste Halbhöhenpunkte $h$ für die zur Verfügung stehenden Datensätze. Durch die Schnittselektion blieben zu wenig Ereignisse in dem Datensatz mit Monte-Carlo Untergrund übrig, so dass keine Anpassung erfolgen konnte.}
 	\label{tab:halbhoehen}
 \end{table}
+
+Für die Datensätze $\mathrm{Z} \rightarrow ee$ musste die Schnittbedingung modifiziert werden, da im Z-Zerfall die Variable~\texttt{ptw} (Transversalimpuls des W-Bosons) undefiniert ist und keine Neutrinos auftreten, sodass keine signifikante fehlende transversale Energie~$\slashed{E}_\mathrm{T}$ festzustellen ist.
+Aus diesem Grund wurde \texttt{ptw} durch den transversalen Impuls des Elektron-Positron-Paares~\texttt{pt\_ee} ersetzt, der dem transversalen Impuls des Z-Bosons entspricht.
+Außerdem entfällt die Bedingung an fehlende transversale Energie~$\slashed{E}_\mathrm{T}$.
 
 \subsection{Eichkurve}
 A priori ist nicht klar, ob der angepasste Halbhöhenpunktes~$h$ der Polstelle in Gleichung \eqref{eq:pt_spektrum} entspricht.
