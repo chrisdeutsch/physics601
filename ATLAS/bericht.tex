@@ -1062,7 +1062,20 @@ Ein Vergleich beider Spektren ist in Abbildung~\ref{fig:vgl_spektren} dargestell
 	\caption{Vergleich der Spektren der transversalen Impulse für den ATLAS- und MC-Datensatz ($M_\mathrm{W} = \SI{80.5}{\GeV}$). \korr{Achsenbeschriftung}}
 	\label{fig:vgl_spektren}
 \end{figure}
-In der Abbildung kann eine gute Übereinstimmung beider Spektren festgestellt werden, sodass weitere Korrekturen vernachlässigt werden können.
+In der Abbildung kann eine gute Übereinstimmung beider Spektren festgestellt werden.
+
+Dennoch kann nicht direkt die Position des Halbhöhenpunktes aus dem ATLAS-Datensatz in die Eichkurve, die aus Monte-Carlo-Daten gewonnen wurde, eingesetzt werden.
+Es ist folglich erforderlich, dass eine Umrechnung zwischen den Halbhöhenpunkten für die ATLAS-Daten~$h_\mathrm{ATLAS}$ und die Monte-Carlo-Daten~$h_\mathrm{MC}$ bestimmt wird.
+Da die Z-Masse sehr genau bestimmt wurde, wird daher der kalibrierte ATLAS-Datensatz $\mathrm{Z} \rightarrow ee$ und die Monte-Carlo-Simulation desselben Zerfalls für diese Korrektur verwendet.
+Eine Näherung erster Ordnung ist durch
+\begin{align*}
+	h_\mathrm{MC} = \frac{h_{\mathrm{Z, MC}}}{h_{\mathrm{Z, ATLAS}}} \cdot h_\mathrm{ATLAS}
+\end{align*}
+gegeben, wobei der Faktor aus den Werten der Tabelle~\ref{tab:halbhoehen} zu
+\begin{align*}
+	\frac{h_{\mathrm{Z, MC}}}{h_{\mathrm{Z, ATLAS}}} = \num{0.9914 +- 0.0070}
+\end{align*}
+bestimmt werden kann.
 
 
 \subsubsection{Bestimmung der W-Masse}
@@ -1118,6 +1131,8 @@ und weicht in Anbetracht der statistischen Fehler stark von der in diesem Versuc
 Diese Abweichung ist auf systematische Effekte zurückzuführen, welche im folgenden Abschnitt behandelt werden sollen.
 
 \subsubsection{Einfluss der Kalibration und systematische Abweichungen}
+
+
 
 \section{Fazit}
 
