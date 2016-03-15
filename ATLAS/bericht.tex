@@ -249,6 +249,7 @@ Da der Transversalimpuls für ungeladene Teilchen wie beispielsweise Photonen ni
 mit den Energieeinträgen~$E_i$ des Kalorimeters unter Polarwinkeln~$\theta_i$  und azimuthalen Einheitsvektoren~$\vec{n}_{i,\perp}$ auf den jeweiligen Eintrag, definiert.
 
 \subsubsection{Kinematik des Zweikörperzerfalls}
+\label{sssec:kinamtik_zweikoerperzerfall}
 In diesem Versuch sollen Zerfälle von W und Z-Bosonen der Form 
 \begin{align*}
 	W &\rightarrow \ell + \nu \\
@@ -915,14 +916,17 @@ Dieser Effekt führt auch zu der Abweichung in Abbildung \ref{fig:observablen_pt
 
 
 \clearpage
-\subsection{Schnitte}
+\subsection{Schnittselektion der Ereignisse}
 Um die zur Verfügung stehenden Daten für eine aussagekräftige Messung zu verwenden, werden die Daten durch Schnittselektionen reduziert.
 Hierzu werden Ereignisse mit W-Bosonen ausgewählt, die beinahe als ruhend angenommen werden können, so dass nur solche mit Transversalpimpuls $p_\mathrm{T}<\SI{12}{GeV}$ zur Auswertung betrachtet werden.
-Für den Zerfall wird dann erwartet, dass geladenes Lepton und Neutrino beide einen Impuls in Höhe der halben W-Masse tragen, der aufgrund ihrer geringen Masse gleich ihrer Energie gesetzt werden kann.
+Der Grund für diese Selektion ist, dass aufgrund von Abschnitt \ref{sssec:kinamtik_zweikoerperzerfall} kleine Transversalimpulse des Bosons zu geringeren Verbreiterung des Jakobi-Maximums führen und so eine bessere Bestimmung der Masse ermöglichen sollten.
+Für den Zerfall wird dann erwartet, dass geladenes Lepton und Neutrino beide einen Impuls in der Größenordnung der halben W-Masse tragen, der aufgrund ihrer geringen Masse gleich ihrer Energie gesetzt werden kann.
 Dadurch lässt sich der erwartete Energiebereich der Leptonen einschränken.
 Es wurde eine Schnittbedingung für den transversalen Elektronenimpuls und die fehlende transversale Energie $\slashed{E}_\mathrm{T}$, die als Impuls des Neutrinos aufgefasst werden kann die Schnittbedingungen $p_\mathrm{T,e}>\SI{25}{Gev}$ und $\slashed{E}_\mathrm{T}>\SI{25}{Gev}$ formuliert.
-Aufgrund der erwarteten Elektronenenergie wird ebenfalls eine Schnittbedingung $E_\mathrm{e}<\SI{65}{GeV}$ angewendet.
+Aufgrund der erwarteten Elektronenenergie kann mit der Schnittbedingung $E_\mathrm{e}<\SI{65}{GeV}$ eine obere Grenze gesetzt werden.
 Die verbleibende Einschränkung, nur Ereignisse mit weniger als \num{2} Jets zu berücksichtigen stellt sich als redundant heraus, da beinahe keine Ereignisse mit \num{2} Jets oder mehr in den selektierten Daten zu finden sind, wie nach Formulierung der Selektion festgestellt wurde.
+Dies ist auf den Schnitt des Transversalimpulses des W-Bosons zurückzuführen, da gemäß Abschnitt \ref{ssec:ptw_spektrum} der transversale Impuls des Bosons für geringe Jet-Anzahlen im Endzustand klein ist.
+
 Die selektierten Daten sind als Histogramm des Bosonimpulses in Abbildung \ref{fig:selektion_final} dargestellt.
 \begin{figure}[htbp]
 	\centering
@@ -934,7 +938,14 @@ Die selektierten Daten sind als Histogramm des Bosonimpulses in Abbildung \ref{f
 	\label{fig:selektion_final}
 \end{figure}
 Eine Schwierigkeit stellte dar, die Schnitte so zu wählen, dass nicht relevante Ereignisse nicht berücksichtigt werden, aber genügend viele Ereignisse für eine aussagekräftige Statistik erhalten bleiben.
-\korr{MC erwähnen?}
+Darüber hinaus sollen die Selektion den Untergrund weitgehend unterdrücken.
+Dieser wird nach Anwendung der Schnittbedingung in Abbildung \ref{fig:mc_bg} dargestellt und zeigt, dass die Schnittselektion den Monte-Carlo Untergrund von 7121 auf 261 Ereignisse reduzieren kann, was einer Unterdrückung von etwa \SI{96}{\percent} entspricht. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{./data/root/wmass/exercise4/mc_bg.pdf}
+	\caption{Monte-Carlo-Simulation vom Untergrund des Prozesses $\mathrm{W} \rightarrow \mathrm{e} + \nu$ nach Anwendung der Schnittbedingung. Vor Anwendung der Schnittbedingung enthielt die Simulation 7121 Ereignisse.}
+	\label{fig:mc_bg}
+\end{figure}
 
 \subsection{Selektion}
 \label{sec:selektion}
