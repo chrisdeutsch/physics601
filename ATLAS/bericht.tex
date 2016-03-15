@@ -700,6 +700,7 @@ Die invariante Masse bedarf einer Korrektur die in derselben Größenordnung lie
 
 
 \section{Kalibration der Elektronen}
+\label{sec:kalibration}
 
 Für die weitere Durchführung des Versuchs ist es nötig, die Energiemessung durch das elektromagnetische Kalorimeter zu kalibrieren.
 Da einerseits das Kalorimeter aus vielen unabhängigen Modulen besteht und andererseits die Elektronen im inneren Detektor Energie verlieren oder in einen nicht-sensitiven Bereich des Kalorimeters eintreten, kommt es zu systematischen Abweichungen in der Energiemessung.
@@ -1157,9 +1158,30 @@ Zum Vergleich ist der Literaturwert für die W-Masse \cite{pdg}
 und ist in Anbetracht der statistischen Fehler in guter Übereinstimmung mit dem in diesem Versuch bestimmten Wert.
 Der Einfluss der Kalibration und etwaige systematische Fehler werden im nächsten Abschnitt untersucht.
 
-\subsubsection{Einfluss der Kalibration und systematische Abweichungen}
+\subsubsection{Systematische Fehler und Einfluss der Kalibration}
+Um die in diesem Teil verwendete Methodik zur Berechnung der W-Masse auf systematische Fehler zu untersuchen, können die ATLAS-Daten der Reaktion $\mathrm{Z}^0 \rightarrow \mathrm{e}^- + \mathrm{e}^+$ verwendet werden.
+Diese stellt ebenfalls einen Zweikörperzerfall dar und kann unter Verwendung derselben Methodik ausgewertet werden, um auf die Z-Masse zu schließen.
+Mit dem gemessenen Halbhöhenpunkt aus Tabelle~\ref{tab:halbhoehen}, der Korrektur aus Abschnitt~\ref{sssec:korrektur} und der Fehlerrechnung aus dem vorigen Abschnitt kann die Masse des Z-Bosons zu
+\begin{align*}
+	M_\mathrm{Z} &= \SI{91.19 +- 1.32}{\GeV}
+\end{align*}
+bestimmt werden.
+Der Vergleich mit dem Literaturwert \cite{pdg}
+\begin{align*}
+	M_\mathrm{Z}^\mathrm{Lit.} = \SI{91.1876 +- 0.0021}{\GeV}
+\end{align*}
+zeigt eine gute Übereinstimmung.
+Darüber hinaus kann in Anbetracht des relativ großen statistischen Fehlers, welcher auf die große Standardabweichung des durch ROOT angepassten Halbhöhenpunktes zurückzuführen ist, kein systematischer Fehler ausgemacht werden.
 
-
+Schließlich soll der Einfluss der in Abschnitt~\ref{sec:kalibration} durchgeführten Kalibration der Energiemessung auf dieses Ergebnis bestimmt werden.
+Dazu wurden in Tabelle~\ref{tab:halbhoehen} ebenfalls die Halbhöhenpunkte der unkalibrierten Datensätze dokumentiert.
+Die analoge Auswertung führt dann auf die Massen:
+\begin{align*}
+	M_\mathrm{W}^\mathrm{unkal.} &= \SI{79.02 +- 0.60}{\GeV} \\
+	M_\mathrm{Z}^\mathrm{unkal.} &= \SI{90.50 +- 1.27}{\GeV} \, \text{.}
+\end{align*}
+Diese Massen zeigen eine Abweichung von den Literaturwerten in der Größenordnung von \SI{1}{\GeV}.
+Ohne die Kalibration der Energiemessung sind demnach systematische Abweichungen in dieser Größenordnung zu erwarten.
 
 \section{Fazit}
 
