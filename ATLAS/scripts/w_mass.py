@@ -26,24 +26,54 @@ m, b = odr_res.beta[0], odr_res.beta[1]
 # Covariance matrix
 cov_mat = odr_res.res_var * odr_res.cov_beta
 
+
+##### MASS CALCULATIONS
+
+def calc(w_meas):
+    HH = w_meas.half_height.values[0]
+    dHH = w_meas.dhalf_height.values[0]
+    
+    HH = 47.13 / 47.54 * HH
+    dHH = np.sqrt(HH**2 * 0.00699357**2 + (47.13 / 47.54)**2 * dHH**2)
+    
+    # Error propagation
+    # covariance matrix for 3 parameters m, b, HH
+    cov_gauge = block_diag(cov_mat, dHH**2)
+    cov_gauge = np.matrix(cov_gauge)
+    
+    # Jacobian J = (HH, 1.0, m) for gauge curve
+    jac = np.matrix([[HH, 1.0, m]])
+    
+    # W mass
+    w_mass = fit_f(odr_res.beta, HH)
+    dw_mass = np.sqrt(jac * cov_gauge * jac.transpose())[0,0]
+    
+    return w_mass, dw_mass
+
+
 ### CALCULATION OF W MASS
 w_meas = raw_data[raw_data.set == "ATLAS_W"]
-HH = w_meas.half_height.values[0]
-dHH = w_meas.dhalf_height.values[0]
-
-# Error propagation
-# covariance matrix for 3 parameters m, b, HH
-cov_gauge = block_diag(cov_mat, dHH**2)
-cov_gauge = np.matrix(cov_gauge)
-
-# Jacobian J = (HH, 1.0, m) for gauge curve
-jac = np.matrix([[HH, 1.0, m]])
-
-# W mass
-w_mass = fit_f(odr_res.beta, HH)
-dw_mass = np.sqrt(jac * cov_gauge * jac.transpose())[0,0]
-
+w_mass, dw_mass = calc(w_meas)
 print("\nW mass: " + str(w_mass) + " +- " + str(dw_mass))
+
+
+### CALCULATION OF W MASS (UNCALIB)
+w_meas = raw_data[raw_data.set == "ATLAS_W_UNCALIB"]
+w_mass, dw_mass = calc(w_meas)
+print("\nW mass (uncalib.): " + str(w_mass) + " +- " + str(dw_mass))
+
+
+### CALCULATION OF Z MASS
+w_meas = raw_data[raw_data.set == "ATLAS_Z"]
+w_mass, dw_mass = calc(w_meas)
+print("\nZ mass: " + str(w_mass) + " +- " + str(dw_mass))
+
+
+### CALCULATION OF Z MASS (UNCALIB)
+w_meas = raw_data[raw_data.set == "ATLAS_Z_UNCALIB"]
+w_mass, dw_mass = calc(w_meas)
+print("\nZ mass (uncalib.): " + str(w_mass) + " +- " + str(dw_mass))
+
 
 ### PLOTTING
 def make_gauge_plot():
