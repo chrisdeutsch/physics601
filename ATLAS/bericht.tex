@@ -249,6 +249,7 @@ Da der Transversalimpuls für ungeladene Teilchen wie beispielsweise Photonen ni
 mit den Energieeinträgen~$E_i$ des Kalorimeters unter Polarwinkeln~$\theta_i$  und azimuthalen Einheitsvektoren~$\vec{n}_{i,\perp}$ auf den jeweiligen Eintrag, definiert.
 
 \subsubsection{Kinematik des Zweikörperzerfalls}
+\label{sssec:kinamtik_zweikoerperzerfall}
 In diesem Versuch sollen Zerfälle von W und Z-Bosonen der Form 
 \begin{align*}
 	W &\rightarrow \ell + \nu \\
@@ -931,7 +932,7 @@ Die Darstellung für Ereignisse ohne Jets ist in Abbildung \ref{fig:njet0} gezei
 		\end{overpic}
 		\caption{Vier Jets}
 	\end{subfigure}
-	\caption{Transversaler Impuls des W-Bosons für Ereignisse mit ein, zwei, drei oder vier Jets.}
+	\caption{Transversaler Impuls des W-Bosons für Ereignisse mit ein, zwei, drei oder vier Jets im Endzustand.}
 	\label{fig:njet1-4}
 \end{sidewaysfigure}
 Für Ereignisse ohne Jets ist in Abbildung \ref{fig:njet0} deutlich zu erkennen, dass Zerfälle mit kleinem transversalen Impuls des W-Bosons bevorzugt sind.
@@ -947,14 +948,17 @@ Dieser Effekt führt auch zu der Abweichung in Abbildung \ref{fig:observablen_pt
 
 
 \clearpage
-\subsection{Schnitte}
+\subsection{Schnittselektion der Ereignisse}
 Um die zur Verfügung stehenden Daten für eine aussagekräftige Messung zu verwenden, werden die Daten durch Schnittselektionen reduziert.
 Hierzu werden Ereignisse mit W-Bosonen ausgewählt, die beinahe als ruhend angenommen werden können, so dass nur solche mit Transversalpimpuls $p_\mathrm{T}<\SI{12}{GeV}$ zur Auswertung betrachtet werden.
-Für den Zerfall wird dann erwartet, dass geladenes Lepton und Neutrino beide einen Impuls in Höhe der halben W-Masse tragen, der aufgrund ihrer geringen Masse gleich ihrer Energie gesetzt werden kann.
+Der Grund für diese Selektion ist, dass aufgrund von Abschnitt \ref{sssec:kinamtik_zweikoerperzerfall} kleine Transversalimpulse des Bosons zu geringeren Verbreiterung des Jakobi-Maximums führen und so eine bessere Bestimmung der Masse ermöglichen sollten.
+Für den Zerfall wird dann erwartet, dass geladenes Lepton und Neutrino beide einen Impuls in der Größenordnung der halben W-Masse tragen, der aufgrund ihrer geringen Masse gleich ihrer Energie gesetzt werden kann.
 Dadurch lässt sich der erwartete Energiebereich der Leptonen einschränken.
 Es wurde eine Schnittbedingung für den transversalen Elektronenimpuls und die fehlende transversale Energie $\slashed{E}_\mathrm{T}$, die als Impuls des Neutrinos aufgefasst werden kann die Schnittbedingungen $p_\mathrm{T,e}>\SI{25}{Gev}$ und $\slashed{E}_\mathrm{T}>\SI{25}{Gev}$ formuliert.
-Aufgrund der erwarteten Elektronenenergie wird ebenfalls eine Schnittbedingung $E_\mathrm{e}<\SI{65}{GeV}$ angewendet.
+Aufgrund der erwarteten Elektronenenergie kann mit der Schnittbedingung $E_\mathrm{e}<\SI{65}{GeV}$ eine obere Grenze gesetzt werden.
 Die verbleibende Einschränkung, nur Ereignisse mit weniger als \num{2} Jets zu berücksichtigen stellt sich als redundant heraus, da beinahe keine Ereignisse mit \num{2} Jets oder mehr in den selektierten Daten zu finden sind, wie nach Formulierung der Selektion festgestellt wurde.
+Dies ist auf den Schnitt des Transversalimpulses des W-Bosons zurückzuführen, da gemäß Abschnitt \ref{ssec:ptw_spektrum} der transversale Impuls des Bosons für geringe Jet-Anzahlen im Endzustand klein ist.
+
 Die selektierten Daten sind als Histogramm des Bosonimpulses in Abbildung \ref{fig:selektion_final} dargestellt.
 \begin{figure}[htbp]
 	\centering
@@ -966,12 +970,20 @@ Die selektierten Daten sind als Histogramm des Bosonimpulses in Abbildung \ref{f
 	\label{fig:selektion_final}
 \end{figure}
 Eine Schwierigkeit stellte dar, die Schnitte so zu wählen, dass nicht relevante Ereignisse nicht berücksichtigt werden, aber genügend viele Ereignisse für eine aussagekräftige Statistik erhalten bleiben.
-\korr{MC erwähnen?}
+Darüber hinaus sollen die Selektion den Untergrund weitgehend unterdrücken.
+Dieser wird nach Anwendung der Schnittbedingung in Abbildung \ref{fig:mc_bg} dargestellt und zeigt, dass die Schnittselektion den Monte-Carlo Untergrund von 7121 auf 261 Ereignisse reduzieren kann, was einer Unterdrückung von etwa \SI{96}{\percent} entspricht. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{./data/root/wmass/exercise4/mc_bg.pdf}
+	\caption{Monte-Carlo-Simulation vom Untergrund des Prozesses $\mathrm{W} \rightarrow \mathrm{e} + \nu$ nach Anwendung der Schnittbedingung. Vor Anwendung der Schnittbedingung enthielt die Simulation 7121 Ereignisse.}
+	\label{fig:mc_bg}
+\end{figure}
 
-\subsection{Selektion}
+\subsection{Bestimmung der Halbhöhenpunkte}
 \label{sec:selektion}
 
-Nach Formulierung der Schnittselektion konnte diese auf die verfügbaren Datensätze angewendet werden und mit einer Fit-Methode des ROOT Objekts jeweils der Halbhöhenpunkt $h$ der Verteilung angepasst.
+Nachdem die Schnittselektion aufgestellt wurde und der Untergrund hinreichend unterdrückt wurde, kann diese auf die verfügbaren Datensätze angewendet werden.
+Mithilfe einer Anpassungs-Methode des ROOT-Objektes können die Halbhöhenpunkte~$h$ der Transversalimpuls-Verteilung des Elektrons angepasst werden.
 Eine solche Anpassung ist für die kalibrierten ATLAS-Daten in Abbildung \ref{fig:halbhöhe_atlas_calib} gezeigt, die angepassten Werte für alle Datensätze sind in Tabelle \ref{tab:halbhoehen} zu finden.
 \begin{figure}[htbp]
 	\centering
@@ -989,12 +1001,16 @@ Eine solche Anpassung ist für die kalibrierten ATLAS-Daten in Abbildung \ref{fi
 	\label{tab:halbhoehen}
 \end{table}
 
-\subsection{Eichkurve}
+Für die Datensätze $\mathrm{Z} \rightarrow ee$ musste die Schnittbedingung modifiziert werden, da im Z-Zerfall die Variable~\texttt{ptw} (Transversalimpuls des W-Bosons) undefiniert ist und keine Neutrinos auftreten, sodass keine signifikante fehlende transversale Energie~$\slashed{E}_\mathrm{T}$ festzustellen ist.
+Aus diesem Grund wurde \texttt{ptw} durch den transversalen Impuls des Elektron-Positron-Paares~\texttt{pt\_ee} ersetzt, der dem transversalen Impuls des Z-Bosons entspricht.
+Außerdem entfällt die Bedingung an fehlende transversale Energie~$\slashed{E}_\mathrm{T}$.
+
+\subsection{Erstellung einer Eichkurve aus Monte-Carlo-Daten}
 A priori ist nicht klar, ob der angepasste Halbhöhenpunktes~$h$ der Polstelle in Gleichung \eqref{eq:pt_spektrum} entspricht.
 Aus diesem Grund ist ein direktes Ablesen der W-Masse mithilfe dieses Punktes nicht möglich.
 Stattdessen werden die Monte-Carlo Daten mit verschiedenen simulierten W-Massen genutzt, um eine Eichkurve für die Masse zu erzeugen.
 
-Zur Bestimmung der Eichkurve wird die simulierte W-Masse~$M_\mathrm{MC}$ gegen die angepasste Position des Halbhöhenpunkts~$h$ aufgetragen und eine Gerade an die Daten angepasst.
+Zur Bestimmung der Eichkurve wird die simulierte W-Masse~$M_\mathrm{MC}$ gegen die durch ROOT angepasste Position des Halbhöhenpunktes~$h$ aufgetragen (vgl.\ Tabelle~\ref{tab:halbhoehen}) und eine Gerade an die Daten angepasst.
 Um bei der Anpassung der Geraden die Fehler in der Halbhöhenpunkt-Messung korrekt zu beachten, wird diese durch eine orthogonale Regression \cite{odr} durchgeführt.
 Als Anpassungshypothese wird
 \begin{align*}
@@ -1005,11 +1021,11 @@ Das Ergebnis der Anpassung ist in Abbildung \ref{fig:gauge_curve} gezeigt.
 \begin{figure}[h]
 	\centering
 	\includegraphics{./figures/wmass/gauge.pdf}
-	\caption{\korr{Vernünftige Caption}}
+	\caption{Anpassung einer Eichkurve für die Masse des Bosons an die gemessenen Halbhöhenpunkte der Monte-Carlo-Simulationen aus Tabelle \ref{tab:halbhoehen}.}
 	\label{fig:gauge_curve}
 \end{figure}
 
-Nach der Anpassung ergibt sich für die Parameter:
+\noindent Nach der Anpassung ergibt sich für die Parameter:
 \begin{align*}
 	m &= \num{1.990 +- 0.182} \\
 	b &= \SI{-2.58 +- 7.54}{\GeV}
@@ -1029,10 +1045,11 @@ Dies wird durch die Kovarianzmatrix beschrieben wird, welche ebenfalls als Ergeb
 			\num{-1.372}    & \num{56.93}
 			\end{pmatrix} \, \text{.}\\
 \end{align*}
-Auf der Diagonalen dieser Matrix finden sich die Varianz der einzelnen Anpassungsparameter und auf den Nebendiagonalen finden sich die Korrelationen der Fehler zwischen beiden Parametern.
-Die konkrete Auswertung innerhalb der \textsc{Gauß}schen Fehlerfortpflanzung findet im nächsten Abschnitt statt.
+Auf der Diagonalen dieser Matrix finden sich die Varianzen der einzelnen Anpassungsparameter und auf der Nebendiagonalen finden sich die Korrelationen der Fehler zwischen beiden Parametern.
+Die konkrete Auswertung innerhalb der \textsc{Gauß}schen Fehlerfortpflanzung, sowie die Diskussion der systematischen Abweichungen und Korrekturen findet im nächsten Abschnitt statt.
 
 \subsection{W-Masse}
+\subsubsection{Bestimmung der W-Masse}
 In Abschnitt \ref{sec:selektion} wurde die Position des Halbhöhenpunktes~$h$ für die simulierten und kalibrierten ATLAS-Daten zu
 \begin{align}
 	h = \SI{42.10 +- 0.07}{\GeV}
@@ -1073,9 +1090,11 @@ Dadurch erhält man nach der Auswertung der Eichkurve durch Anwendung von \texts
 die $1 \times 1$ Kovarianzmatrix für die Masse~$M$ mit dem Standardfehler~$\sigma_M$.
 Setzt man die Kurvenparameter und die Position des Halbhöhenpunktes sowie deren Fehler ein, so erhält man für die W-Masse
 \begin{align*}
-	M_\mathrm{W} = \SI{81.181 +- 0.189}{\GeV}
+	M_\mathrm{W} = \SI{81.18 +- 0.19}{\GeV}
 \end{align*}
 Die Notwendigkeit der Beachtung der Fehlerkorrelationen wird hier klar, da alleine aufgrund des großen Fehlers auf dem Achsenabschnitt von etwa \SI{7}{\GeV} bei der naiven Fehlerfortpflanzung ohne Beachtung der Korrelationen ein Fehler in derselben Größenordnung zu erwarten ist.
+
+\subsubsection{Systematische Abweichungen und Korrekturen}
 
 \FloatBarrier
 % BIBLIOGRAPHIE
