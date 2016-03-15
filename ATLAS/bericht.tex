@@ -702,7 +702,7 @@ Zunächst werden mit dem Befehl \texttt{tree->Draw()} Histogramme der Elektronen
 Diese sind in der Abbildungen \ref{fig:kinematische_variablen} aufgetragen.
 
 Wie für den symmetrischen Zerfall erwartet, sind die Energieverteilungen von Elektron und Positron identisch.
-Diese zeigen ein Maximum, welches ungefähr bei der halben $\mathrm{Z}^0$-Masse liegt, wie es gemäß Abschnitt \korr{REF auf Theorie} für hoch-energetische Elektronen zu erwarten ist.
+Diese zeigen ein Maximum, welches ungefähr bei der halben $\mathrm{Z}^0$-Masse liegt, wie es gemäß Abschnitt~\ref{sssec:kinamtik_zweikoerperzerfall} für hoch-energetische Elektronen zu erwarten ist.
 Ein weiteres Merkmal der Verteilung ist der starke Abfall in der Elektronenzahl bei einer Energie von etwa \SI{10}{\GeV}, welcher dadurch zu erklären ist, dass an die Daten die Schnittbedingung gestellt wurde, dass die invariante Elektron-Positron-Masse größer sein muss als \SI{20}{\GeV}.
 
 Das Maximum der invarianten Elektron-Positron-Masse liegt bereits wie erwartet in der Größenordnung der $Z^0$-Masse.
@@ -955,6 +955,7 @@ Dieser Effekt führt auch zu der Abweichung in Abbildung \ref{fig:observablen_pt
 
 \clearpage
 \subsection{Schnittselektion der Ereignisse}
+\label{ssec:schnittselektion}
 Um die zur Verfügung stehenden Daten für eine aussagekräftige Messung zu verwenden, werden die Daten durch Schnittselektionen reduziert.
 Hierzu werden Ereignisse mit W-Bosonen ausgewählt, die beinahe als ruhend angenommen werden können, so dass nur solche mit Transversalpimpuls $p_\mathrm{T}<\SI{12}{GeV}$ zur Auswertung betrachtet werden.
 Der Grund für diese Selektion ist, dass aufgrund von Abschnitt \ref{sssec:kinamtik_zweikoerperzerfall} kleine Transversalimpulse des Bosons zu geringeren Verbreiterung des Jakobi-Maximums führen und so eine bessere Bestimmung der Masse ermöglichen sollten.
@@ -1054,7 +1055,22 @@ Dies wird durch die Kovarianzmatrix beschrieben wird, welche ebenfalls als Ergeb
 Auf der Diagonalen dieser Matrix finden sich die Varianzen der einzelnen Anpassungsparameter und auf der Nebendiagonalen finden sich die Korrelationen der Fehler zwischen beiden Parametern.
 Die konkrete Auswertung innerhalb der \textsc{Gauß}schen Fehlerfortpflanzung, sowie die Diskussion der systematischen Abweichungen und Korrekturen findet im nächsten Abschnitt statt.
 
-\subsection{W-Masse}
+\subsection{Bestimmung der W-Masse}
+Abschließend soll mithilfe der aufgenommenen Daten eine Bestimmung der W-Masse durchgeführt werden.
+
+\subsubsection{Korrektur der Massebestimmung}
+Zu einer Abweichung bei der Massebestimmung kommt es durch abweichende $p_\mathrm{T}$-Spektren der Elektronen in den ATLAS- sowie Monte-Carlo-Daten.
+In dieser Hinsicht wurde bereits bei der Schnittselektion in Abschnitt~\ref{ssec:schnittselektion} sichergestellt, dass nach Anwendung der Schnitte auf die Datensätze ein ähnliches $p_\mathrm{T}$-Spektrum des Elektrons entsteht, sodass systematische Abweichungen vermieden werden können.
+Ein Vergleich beider Spektren ist in Abbildung~\ref{fig:vgl_spektren} dargestellt, wobei die Anzahl der MC-Ereignisse auf die des ATLAS-Datensatzes hochskaliert wurde.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.8\textwidth]{./figures/wmass/comparison.pdf}
+	\caption{Vergleich der Spektren der transversalen Impulse für den ATLAS- und MC-Datensatz ($M_\mathrm{W} = \SI{80.5}{\GeV}$). \korr{Achsenbeschriftung}}
+	\label{fig:vgl_spektren}
+\end{figure}
+In der Abbildung kann eine gute Übereinstimmung beider Spektren festgestellt werden, sodass weitere Korrekturen vernachlässigt werden können.
+
+
 \subsubsection{Bestimmung der W-Masse}
 In Abschnitt \ref{sec:selektion} wurde die Position des Halbhöhenpunktes~$h$ für die simulierten und kalibrierten ATLAS-Daten zu
 \begin{align}
@@ -1100,7 +1116,16 @@ Setzt man die Kurvenparameter und die Position des Halbhöhenpunktes sowie deren
 \end{align*}
 Die Notwendigkeit der Beachtung der Fehlerkorrelationen wird hier klar, da alleine aufgrund des großen Fehlers auf dem Achsenabschnitt von etwa \SI{7}{\GeV} bei der naiven Fehlerfortpflanzung ohne Beachtung der Korrelationen ein Fehler in derselben Größenordnung zu erwarten ist.
 
-\subsubsection{Systematische Abweichungen und Korrekturen}
+Der Literaturwert für die W-Masse ist \cite{pdg}
+\begin{align*}
+	M_\mathrm{W}^\mathrm{Lit.} = \SI{80.385 +- 0.015}{\GeV}
+\end{align*}
+und weicht in Anbetracht der statistischen Fehler stark von der in diesem Versuch bestimmten W-Masse ab.
+Diese Abweichung ist auf systematische Effekte zurückzuführen, welche im folgenden Abschnitt behandelt werden sollen.
+
+\subsubsection{Einfluss der Kalibration und systematische Abweichungen}
+
+\section{Fazit}
 
 \FloatBarrier
 % BIBLIOGRAPHIE
