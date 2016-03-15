@@ -993,12 +993,12 @@ Für die Datensätze $\mathrm{Z} \rightarrow ee$ musste die Schnittbedingung mod
 Aus diesem Grund wurde \texttt{ptw} durch den transversalen Impuls des Elektron-Positron-Paares~\texttt{pt\_ee} ersetzt, der dem transversalen Impuls des Z-Bosons entspricht.
 Außerdem entfällt die Bedingung an fehlende transversale Energie~$\slashed{E}_\mathrm{T}$.
 
-\subsection{Eichkurve}
+\subsection{Erstellung einer Eichkurve aus Monte-Carlo-Daten}
 A priori ist nicht klar, ob der angepasste Halbhöhenpunktes~$h$ der Polstelle in Gleichung \eqref{eq:pt_spektrum} entspricht.
 Aus diesem Grund ist ein direktes Ablesen der W-Masse mithilfe dieses Punktes nicht möglich.
 Stattdessen werden die Monte-Carlo Daten mit verschiedenen simulierten W-Massen genutzt, um eine Eichkurve für die Masse zu erzeugen.
 
-Zur Bestimmung der Eichkurve wird die simulierte W-Masse~$M_\mathrm{MC}$ gegen die angepasste Position des Halbhöhenpunkts~$h$ aufgetragen und eine Gerade an die Daten angepasst.
+Zur Bestimmung der Eichkurve wird die simulierte W-Masse~$M_\mathrm{MC}$ gegen die durch ROOT angepasste Position des Halbhöhenpunktes~$h$ aufgetragen (vgl.\ Tabelle~\ref{tab:halbhoehen}) und eine Gerade an die Daten angepasst.
 Um bei der Anpassung der Geraden die Fehler in der Halbhöhenpunkt-Messung korrekt zu beachten, wird diese durch eine orthogonale Regression \cite{odr} durchgeführt.
 Als Anpassungshypothese wird
 \begin{align*}
@@ -1009,11 +1009,11 @@ Das Ergebnis der Anpassung ist in Abbildung \ref{fig:gauge_curve} gezeigt.
 \begin{figure}[h]
 	\centering
 	\includegraphics{./figures/wmass/gauge.pdf}
-	\caption{\korr{Vernünftige Caption}}
+	\caption{Anpassung einer Eichkurve für die Masse des Bosons an die gemessenen Halbhöhenpunkte der Monte-Carlo-Simulationen aus Tabelle \ref{tab:halbhoehen}.}
 	\label{fig:gauge_curve}
 \end{figure}
 
-Nach der Anpassung ergibt sich für die Parameter:
+\noindent Nach der Anpassung ergibt sich für die Parameter:
 \begin{align*}
 	m &= \num{1.990 +- 0.182} \\
 	b &= \SI{-2.58 +- 7.54}{\GeV}
@@ -1033,7 +1033,7 @@ Dies wird durch die Kovarianzmatrix beschrieben wird, welche ebenfalls als Ergeb
 			\num{-1.372}    & \num{56.93}
 			\end{pmatrix} \, \text{.}\\
 \end{align*}
-Auf der Diagonalen dieser Matrix finden sich die Varianz der einzelnen Anpassungsparameter und auf den Nebendiagonalen finden sich die Korrelationen der Fehler zwischen beiden Parametern.
+Auf der Diagonalen dieser Matrix finden sich die Varianzen der einzelnen Anpassungsparameter und auf der Nebendiagonalen finden sich die Korrelationen der Fehler zwischen beiden Parametern.
 Die konkrete Auswertung innerhalb der \textsc{Gauß}schen Fehlerfortpflanzung findet im nächsten Abschnitt statt.
 
 \subsection{W-Masse}
