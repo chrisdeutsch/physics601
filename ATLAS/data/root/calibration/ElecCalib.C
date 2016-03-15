@@ -1,4 +1,4 @@
-﻿#include "math.h"
+#include "math.h"
 #include "TMath.h"
 
 double ElecCalib(double e_raw, double pt, double eta, double phi,
