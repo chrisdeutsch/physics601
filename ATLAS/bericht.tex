@@ -705,7 +705,7 @@ Da einerseits das Kalorimeter aus vielen unabhängigen Modulen besteht und ander
 Aus diesem Grund muss in einem ersten Schritt eine Energiekalibration des gesamten Detektors durchgeführt werden, wobei sowohl Position der Elektronen im Detektor als auch deren Energie berücksichtigt werden sollten.
 
 Hierzu kommt ein Datensatz mit Zerfällen $\mathrm{Z}^0 \rightarrow \mathrm{e}^+ + \mathrm{e}^-$ zum Einsatz, da die Masse und Zerfallsbreite des $\mathrm{Z}^0$ sehr genau vermessen wurde und somit ein bekanntes Signal für die Kalibration liefert.
-Dabei wird die Verteilung der gemessenen invarianten Elektron-Positron-Massen in guter Näherung durch eine Faltung einer nicht-relativistische Breit-Wigner-Funktion und einer Gauss-Funktion beschrieben.
+Dabei wird die Verteilung der gemessenen invarianten Elektron-Positron-Massen in guter Näherung durch eine Faltung einer nicht-relativistischen Breit-Wigner-Funktion und einer Gauss-Funktion beschrieben.
 Die Gauss-Funktion parametrisiert dabei die näherungsweise als gaußförmig angenommene Verzerrung aufgrund der begrenzten Detektorauflösung.
 Darüber hinaus wird der Untergrund in diesem Prozess durch vier zusätzliche Parameter beschrieben.
 
@@ -715,8 +715,8 @@ Die Anpassung liefert dann die invariante Masse des $\mathrm{Z}^0$ sowie dessen 
 
 \subsection{Darstellung kinematischer Variablen des Zerfalls $\mathrm{Z}^0 \rightarrow \mathrm{e}^- + \mathrm{e}^+$}
 
-Zunächst werden mit dem Befehl \texttt{tree->Draw()} Histogramme der Elektronen- bzw Positronenenergie sowie der invarianten Masse des Elektron-Positron-Paares erstellt.
-Diese sind in der Abbildungen \ref{fig:kinematische_variablen} aufgetragen.
+Zunächst werden mit dem Befehl \texttt{tree->Draw()} Histogramme der Elektronen- bzw. Positronenenergie sowie der invarianten Masse des Elektron-Positron-Paares erstellt.
+Diese sind in der Abbildung \ref{fig:kinematische_variablen} aufgetragen.
 
 Wie für den symmetrischen Zerfall erwartet, sind die Energieverteilungen von Elektron und Positron identisch.
 Diese zeigen ein Maximum, welches ungefähr bei der halben $\mathrm{Z}^0$-Masse liegt, wie es gemäß Abschnitt~\ref{sssec:kinamtik_zweikoerperzerfall} für hoch-energetische Elektronen zu erwarten ist.
@@ -734,7 +734,7 @@ Im Folgenden ist es die Aufgabe, durch eine Kalibration die Auflösung zu verbes
 		\put (43,1) {$m_\mathrm{inv}$ / \si{GeV}}
 		\put (1,29) {\rotatebox{90}{Ereignisse}}
 	\end{overpic}
-	\caption{Histogramm der invarianten Elektron-Positron-Masse des Zerfalls $\mathrm{Z}^0 \rightarrow \mathrm{e}^- + \mathrm{e}^+$ mit unkalibrierten Daten. 
+	\caption{Histogramm der invarianten Elektron-Positron-Masse des Zerfalls~$\mathrm{Z}^0\rightarrow\mathrm{e}^-+\mathrm{e}^+$ mit unkalibrierten Daten. 
 	Außerdem wurde mithilfe des ROOT-Fit-Objektes eine Anpassung an das Signal durchgeführt. Die so bestimmte Z-Masse beträgt \SI{85.8}{\GeV}.}
 	\label{fig:uncalibrated}
 \end{figure}
@@ -832,8 +832,8 @@ Konkret stehen mehrere Datensätze zur Verfügung deren Verwendung kurz erläute
 Im Folgenden soll zunächst ein Überblick über die Datensätze geschaffen werden und anschließend eine Bestimmung der W-Masse anhand der vorliegenden Daten erfolgen.
 
 \subsection{Vergleich von ATLAS und MC-Datensätze}
-Für diesen Vergleich betrachten wir den ATLAS Datensatz $\mathrm{W} \rightarrow \mathrm{e} + \nu$ mit kalibrierten Energien und einen der fünf Monte-Carlo Datensätze (mit simulierter W-Masse~$M_\mathrm{W} = \SI{80.5}{\GeV}$).
-Um einen Überblick über die Datensätze zu gewinnen, wurden verschiedene Observablen (Jet-Anzahl, Transversalimpuls des Elektrons und des W-Bosons) in den Abbildungen \ref{fig:observablen_pt1} und \ref{fig:observablen_pt2} zusammengestellt.    \begin{sidewaysfigure}[h]
+Für diesen Vergleich betrachten wir den ATLAS Datensatz $\mathrm{W} \rightarrow \mathrm{e} + \nu$ mit kalibrierten Energien und einen der fünf Monte-Carlo Datensätze (in allen Fällen den mit simulierter W-Masse~$M_\mathrm{W} = \SI{80.5}{\GeV}$).
+Um einen Überblick über die Datensätze zu gewinnen, wurden verschiedene Observablen (Jet-Anzahl und Transversalimpuls des Elektrons und des W-Bosons) in den Abbildungen \ref{fig:observablen_pt1} und \ref{fig:observablen_pt2} zusammengestellt.    \begin{sidewaysfigure}[h]
 	\centering
 	\begin{subfigure}{.49\textwidth}
 		\centering
@@ -892,16 +892,16 @@ Um einen Überblick über die Datensätze zu gewinnen, wurden verschiedene Obser
 	\label{fig:observablen_pt2}
 \end{sidewaysfigure}
 
-Sowohl im simulierten Monte-Carlo als auch im ATLAS-Datensatzes ist klar zu erkennen, dass die Anzahl der Jets ein Maximum bei 0 Jets pro Ereignis aufweist, sodass etwa die Hälfte aller Ereignisse keine Jets im Endzustand aufweisen.
+Sowohl im simulierten Monte-Carlo- als auch im ATLAS-Datensatz ist klar zu erkennen, dass die Anzahl der Jets ein Maximum bei 0 Jets pro Ereignis aufweist, sodass etwa die Hälfte aller Ereignisse keine Jets im Endzustand aufweisen.
 Diese Jets können durch Gluon-Abstrahlung im Anfangs- oder Endzustand entstehen, welche folglich zu Jets hadronisieren.
 Dennoch unterscheiden sich die ATLAS- und Monte-Carlo-Daten dahingehend, dass die Anzahl der Ereignisse mit steigender Jetanzahl~\texttt{njet} im MC-Datensatz wesentlich stärker abnimmt.
 
 Darüber hinaus wurde in den Abbildungen der transversale Impuls des Elektrons~$p_\mathrm{T}$ für die Datensätze aufgetragen.
 Diese weichen von der theoretisch erwarteten Verteilung aus Gleichung \eqref{eq:pt_spektrum} ab, da bei einer Messung nur eine endliche Detektorauflösung realisierbar ist und außerdem das W-Boson nicht immer ruhend erzeugt wird, wie es von der Gleichung vorausgesetzt wird.
-Dennoch liegen die Maxima beider Verteilung in der Größenordnung der halben W-Masse und können nach einer geeigneten Schnittselektion für die Bestimmung der W-Masse genutzt werden.
+Dennoch liegen die Maxima beider Verteilungen in der Größenordnung der halben W-Masse und können nach einer geeigneten Schnittselektion für die Bestimmung der W-Masse genutzt werden.
 Ein weiterer Unterschied ist die Form der linken Flanke der Verteilung, welche vermutlich darauf zurückzuführen ist, dass bei beiden Datensätzen zuvor unterschiedliche Schnittselektionen durchgeführt wurden.
 
-Weiterhin ist in den Abbildungen der transversale Impulse des W-Bosons~\texttt{ptw} aufgetragen.
+Weiterhin ist in den Abbildungen der transversale Impuls des W-Bosons~\texttt{ptw} aufgetragen.
 Man erkennt in beiden Datensätze, dass die W-Bosonen ein ausgeprägtes Maximum des transversalen Impulses bei kleinen Impulsen aufweisen.
 Für diese Bosonen ist die Abweichung von dem in der Theorie erwarteten Spektrum in Gleichung \eqref{eq:pt_spektrum} am geringsten.
 Ein signifikanter Unterschied ist, dass der ATLAS-Datensatz wesentlich mehr Bosonen mit hohen Impulsen aufweist, was auf die zuvor diskutierte Jetanzahl pro Ereignis zurückzuführen ist, jedoch erst im nächsten Abschnitt näher diskutiert werden soll.
@@ -960,14 +960,14 @@ Die Darstellung für Ereignisse ohne Jets ist in Abbildung \ref{fig:njet0} gezei
 \end{sidewaysfigure}
 Für Ereignisse ohne Jets ist in Abbildung \ref{fig:njet0} deutlich zu erkennen, dass Zerfälle mit kleinem transversalen Impuls des W-Bosons bevorzugt sind.
 Für eine Kollision von zwei Partonen ohne transversalen Impuls ist es notwendig, dass das W-Boson ebenfalls ohne transversalen Impuls erzeugt wird.
-Da die Partonen in Hadronen-Kollisionen jedoch einen kleinen transversalen Impuls haben können, zeigt sich in Abbildung \ref{fig:njet0}, dass in realen Kollisionen das Boson stehts mit einem nicht-ver\-schwin\-den\-den (jedoch kleinen) transversalen Impuls erzeugt wird.
+Da die Partonen in Hadronen-Kollisionen jedoch einen kleinen transversalen Impuls haben können, zeigt sich in Abbildung \ref{fig:njet0}, dass in realen Kollisionen das Boson stets mit einem nicht-ver\-schwin\-den\-den (jedoch kleinen) transversalen Impuls erzeugt wird.
 
 Zusätzliche Jets in den $\mathrm{W} \rightarrow \mathrm{e} + \nu$ Ereignissen können durch Abstrahlung von Gluonen im Anfangs- oder Endzustand entstehen.
 Dadurch wird die Viererimpuls-Bilanz verändert und das W-Boson muss mit einem signifikanten transversalen Impuls erzeugt werden.
 In der Abbildung \ref{fig:njet1-4} wurde das transversale Impulsspektrum des W-Bosons für verschiedene Jet-Anzahlen im Endzustand dargestellt.
 Es ist deutlich zu erkennen, dass der transversale Impuls des W-Bosons mit steigender Anzahl von Jets im Endzustand zunimmt, wie es aufgrund der Viererimpuls-Erhaltung erforderlich ist.
 
-Dieser Effekt führt auch zu der Abweichung in Abbildung \ref{fig:observablen_pt2} für höhere transversale Impulse, da der ATLAS-Datensatz wesentlich mehr Ereignisse mit hohen Jet-Anzahlen aufweist als der Monte-Carlo-Datensatz (vgl.\ Abbildung \ref{fig:observablen_pt1})
+Dieser Effekt führt auch zu der Abweichung in Abbildung \ref{fig:observablen_pt2} für höhere transversale Impulse, da der ATLAS-Datensatz wesentlich mehr Ereignisse mit hohen Jet-Anzahlen aufweist als der Monte-Carlo-Datensatz (vgl.\ Abbildung \ref{fig:observablen_pt1}).
 
 
 \clearpage
@@ -975,10 +975,10 @@ Dieser Effekt führt auch zu der Abweichung in Abbildung \ref{fig:observablen_pt
 \label{ssec:schnittselektion}
 Um die zur Verfügung stehenden Daten für eine aussagekräftige Messung zu verwenden, werden die Daten durch Schnittselektionen reduziert.
 Hierzu werden Ereignisse mit W-Bosonen ausgewählt, die beinahe als ruhend angenommen werden können, so dass nur solche mit Transversalpimpuls $p_\mathrm{T}<\SI{12}{GeV}$ zur Auswertung betrachtet werden.
-Der Grund für diese Selektion ist, dass aufgrund von Abschnitt \ref{sssec:kinamtik_zweikoerperzerfall} kleine Transversalimpulse des Bosons zu geringeren Verbreiterung des Jakobi-Maximums führen und so eine bessere Bestimmung der Masse ermöglichen sollten.
+Der Grund für diese Selektion ist, dass aufgrund von Abschnitt \ref{sssec:kinamtik_zweikoerperzerfall} kleine Transversalimpulse des Bosons zu geringeren Verbreiterung des Jakobi-Maximums führen und so eine bessere Bestimmung der Masse ermöglicht werden sollte.
 Für den Zerfall wird dann erwartet, dass geladenes Lepton und Neutrino beide einen Impuls in der Größenordnung der halben W-Masse tragen, der aufgrund ihrer geringen Masse gleich ihrer Energie gesetzt werden kann.
 Dadurch lässt sich der erwartete Energiebereich der Leptonen einschränken.
-Es wurde eine Schnittbedingung für den transversalen Elektronenimpuls und die fehlende transversale Energie $\slashed{E}_\mathrm{T}$, die als Impuls des Neutrinos aufgefasst werden kann die Schnittbedingungen $p_\mathrm{T,e}>\SI{25}{Gev}$ und $\slashed{E}_\mathrm{T}>\SI{25}{Gev}$ formuliert.
+Es wurden für den transversalen Elektronenimpuls und die fehlende transversale Energie $\slashed{E}_\mathrm{T}$, die als Impuls des Neutrinos aufgefasst werden kann, die Schnittbedingungen $p_\mathrm{T,e}>\SI{25}{Gev}$ und $\slashed{E}_\mathrm{T}>\SI{25}{Gev}$ formuliert.
 Aufgrund der erwarteten Elektronenenergie kann mit der Schnittbedingung $E_\mathrm{e}<\SI{65}{GeV}$ eine obere Grenze gesetzt werden.
 Die verbleibende Einschränkung, nur Ereignisse mit weniger als \num{2} Jets zu berücksichtigen stellt sich als redundant heraus, da beinahe keine Ereignisse mit \num{2} Jets oder mehr in den selektierten Daten zu finden sind, wie nach Formulierung der Selektion festgestellt wurde.
 Dies ist auf den Schnitt des Transversalimpulses des W-Bosons zurückzuführen, da gemäß Abschnitt \ref{ssec:ptw_spektrum} der transversale Impuls des Bosons für geringe Jet-Anzahlen im Endzustand klein ist.
@@ -1009,7 +1009,7 @@ Dieser wird nach Anwendung der Schnittbedingung in Abbildung \ref{fig:mc_bg} dar
 \subsection{Bestimmung der Halbhöhenpunkte}
 \label{sec:selektion}
 
-Nachdem die Schnittselektion aufgestellt wurde und der Untergrund hinreichend unterdrückt wurde, kann diese auf die verfügbaren Datensätze angewendet werden.
+Nachdem die Schnittselektion aufgestellt und der Untergrund hinreichend unterdrückt wurde, kann diese auf die verfügbaren Datensätze angewendet werden.
 Mithilfe einer Anpassungs-Methode des ROOT-Objektes können die Halbhöhenpunkte~$h$ der Transversalimpuls-Verteilung des Elektrons angepasst werden.
 Eine solche Anpassung ist für die kalibrierten ATLAS-Daten in Abbildung \ref{fig:halbhöhe_atlas_calib} gezeigt, die angepassten Werte für alle Datensätze sind in Tabelle \ref{tab:halbhoehen} zu finden.
 \begin{figure}[htbp]
@@ -1059,7 +1059,6 @@ Das Ergebnis der Anpassung ist in Abbildung \ref{fig:gauge_curve} gezeigt.
 \end{align*}
 mit einem reduzierten Chi-Quadrat von $\chi_\mathrm{red.}^2 = \num{0.638}$.
 Daraus ist zu folgern, dass die Anpassungshypothese die vorliegenden Daten gut beschreibt, jedoch die Fehler durch die Anpassung von ROOT etwas überschätzt wurden.
-
 Bei der Verwendung dieser angepassten Eichkurve muss beachtet werden, dass die Fehler von Steigung~$m$ und Achsenabschnitt~$b$ stark korreliert sind.
 Dies wird durch die Kovarianzmatrix beschrieben wird, welche ebenfalls als Ergebnis der Anpassung vorliegt:
 \begin{align*}
@@ -1096,7 +1095,7 @@ Ein Vergleich beider Spektren ist in Abbildung~\ref{fig:vgl_spektren} dargestell
 In der Abbildung kann eine gute Übereinstimmung beider Spektren festgestellt werden.
 
 Dennoch kann nicht direkt die Position des Halbhöhenpunktes aus dem ATLAS-Datensatz in die Eichkurve, die aus Monte-Carlo-Daten gewonnen wurde, eingesetzt werden.
-Es ist erforderlich, dass eine Umrechnung zwischen den Halbhöhenpunkten für die ATLAS-Daten~$h_\mathrm{ATLAS}$ und die Monte-Carlo-Daten~$h_\mathrm{MC}$ bestimmt wird.
+Es ist erforderlich, dass eine Umrechnung zwischen den Halbhöhenpunkten für die ATLAS-Daten~$h_\mathrm{ATLAS}$ und die Monte-Carlo-Daten~$h_\mathrm{MC}$ durchgeführt wird.
 Da die Z-Masse sehr genau bestimmt wurde, wird daher der kalibrierte ATLAS-Datensatz $\mathrm{Z} \rightarrow ee$ und die Monte-Carlo-Simulation desselben Zerfalls für diese Korrektur verwendet.
 Eine Näherung erster Ordnung ist durch
 \begin{align*}
@@ -1144,7 +1143,7 @@ Mit der Eichkurve $M(m, b, h) = m \cdot h + b$ folgt die explizite Darstellung
 	h & 1 & m
 	\end{pmatrix} \, \text{.}
 \end{align*}
-Dadurch erhält man nach der Auswertung der Eichkurve durch Anwendung von \textsc{Gauß}scher Fehlerfortpflanzung gemäß \cite{error_prop}
+Dadurch erhält man nach der Auswertung der Eichkurve durch Anwenden von \textsc{Gauß}scher Fehlerfortpflanzung gemäß \cite{error_prop}
 \begin{align*}
 	\Sigma^M = \begin{pmatrix}
 	\sigma_{M}^2
@@ -1191,13 +1190,13 @@ Ohne die Kalibration der Energiemessung sind demnach systematische Abweichungen 
 \section{Fazit}
 In diesem Versuch konnten einige Einblicke in die Arbeit mit Daten des ATLAS-Detektors gewonnen werden.
 Unter anderem wurde eine Übersicht über die Darstellung von Ereignissen und die typischen Detektorantworten gegeben.
-Dadurch konnte ein Verständnis für die verschiedenen Detektorkomponenten von ATLAS gewonnen und anschließend bei der Bestimmung des Energieverlustes von Myonen in den Kalorimetern und der Bestimmung der invarianten Elektronen-Positronen-Masse in Z-Boson Zerfällen erprobt werden.
+Dadurch konnte ein Verständnis für die verschiedenen Detektorkomponenten von ATLAS gewonnen und anschließend bei der Bestimmung des Energieverlustes von Myonen in den Kalorimetern und der Bestimmung der invarianten Elektron-Positron-Masse in Z-Boson Zerfällen erprobt werden.
 
-Außerdem konnte der Umgang mit der für die Teilchenphysik wichtigen Daten\-analyse-Software ROOT eingeführt werden und mit deren Hilfe eine Kalibration der Energiemessung in den Kalorimetern des ATLAS-Detektors durchgeführt werden konnte.
+Außerdem konnte der Umgang mit der für die Teilchenphysik wichtigen Daten\-analyse-Software ROOT eingeführt werden und mit deren Hilfe eine Kalibration der Energiemessung in den Kalorimetern des ATLAS-Detektors durchgeführt werden.
 Diese Kalibration stellte die Basis der anschließenden Massebestimmung des W-Bosons dar.
 
 Im letzten Teil des Versuchs konnte die Masse des W-Bosons aus dem transversalen Impulsspektrum des Elektrons im W-Zerfall bestimmt werden.
-Dabei wurde der Einfluss von Kalibration und systematischer Fehler ausgiebig untersucht, um letztendlich die W-Masse in exzellenter Übereinstimmung mit dem Literaturwert zu reproduzieren.
+Dabei wurde der Einfluss von Kalibration und systematischen Fehlern ausgiebig untersucht, um letztendlich die W-Masse in exzellenter Übereinstimmung mit dem Literaturwert zu reproduzieren.
 
 \FloatBarrier
 % BIBLIOGRAPHIE
