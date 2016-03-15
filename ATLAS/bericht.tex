@@ -1076,6 +1076,7 @@ Die konkrete Auswertung innerhalb der \textsc{Gauß}schen Fehlerfortpflanzung, s
 Abschließend soll mithilfe der aufgenommenen Daten eine Bestimmung der W-Masse durchgeführt werden.
 
 \subsubsection{Korrektur der Massebestimmung}
+\label{sssec:korrektur}
 Zu einer Abweichung bei der Massebestimmung kommt es durch abweichende $p_\mathrm{T}$-Spektren der Elektronen in den ATLAS- sowie Monte-Carlo-Daten.
 In dieser Hinsicht wurde bereits bei der Schnittselektion in Abschnitt~\ref{ssec:schnittselektion} sichergestellt, dass nach Anwendung der Schnitte auf die Datensätze ein ähnliches $p_\mathrm{T}$-Spektrum des Elektrons entsteht, sodass systematische Abweichungen vermieden werden können.
 Ein Vergleich beider Spektren ist in Abbildung~\ref{fig:vgl_spektren} dargestellt, wobei die Anzahl der MC-Ereignisse auf die des ATLAS-Datensatzes hochskaliert wurde.
@@ -1085,17 +1086,33 @@ Ein Vergleich beider Spektren ist in Abbildung~\ref{fig:vgl_spektren} dargestell
 	\caption{Vergleich der Spektren der transversalen Impulse für den ATLAS- und MC-Datensatz ($M_\mathrm{W} = \SI{80.5}{\GeV}$). \korr{Achsenbeschriftung}}
 	\label{fig:vgl_spektren}
 \end{figure}
-In der Abbildung kann eine gute Übereinstimmung beider Spektren festgestellt werden, sodass weitere Korrekturen vernachlässigt werden können.
+In der Abbildung kann eine gute Übereinstimmung beider Spektren festgestellt werden.
+
+Dennoch kann nicht direkt die Position des Halbhöhenpunktes aus dem ATLAS-Datensatz in die Eichkurve, die aus Monte-Carlo-Daten gewonnen wurde, eingesetzt werden.
+Es ist folglich erforderlich, dass eine Umrechnung zwischen den Halbhöhenpunkten für die ATLAS-Daten~$h_\mathrm{ATLAS}$ und die Monte-Carlo-Daten~$h_\mathrm{MC}$ bestimmt wird.
+Da die Z-Masse sehr genau bestimmt wurde, wird daher der kalibrierte ATLAS-Datensatz $\mathrm{Z} \rightarrow ee$ und die Monte-Carlo-Simulation desselben Zerfalls für diese Korrektur verwendet.
+Eine Näherung erster Ordnung ist durch
+\begin{align*}
+	h_\mathrm{MC} = \frac{h_{\mathrm{Z, MC}}}{h_{\mathrm{Z, ATLAS}}} \cdot h_\mathrm{ATLAS}
+\end{align*}
+gegeben, wobei der Faktor aus den Werten der Tabelle~\ref{tab:halbhoehen} zu
+\begin{align*}
+	\frac{h_{\mathrm{Z, MC}}}{h_{\mathrm{Z, ATLAS}}} = \num{0.9914 +- 0.0070}
+\end{align*}
+bestimmt werden kann.
 
 
 \subsubsection{Bestimmung der W-Masse}
 In Abschnitt \ref{sec:selektion} wurde die Position des Halbhöhenpunktes~$h$ für die simulierten und kalibrierten ATLAS-Daten zu
-\begin{align}
-	h = \SI{42.10 +- 0.07}{\GeV}
-	\label{eq:messwert_w_h}
-\end{align}
+\begin{align*}
+	h_\mathrm{ATLAS} = \SI{42.10 +- 0.07}{\GeV}
+\end{align*}
 bestimmt.
-Um die W-Masse mithilfe der zuvor angepassten Eichkurve zu bestimmen, ist es nötig die gemeinsame Kovarianzmatrix für die Kurvenparameter $m, b$ und des Halbhöhenpunktes~$h$ zu bestimmen.
+Nach Anwendung der Korrektur aus Abschnitt~\ref{sssec:korrektur} erhält man:
+\begin{align*}
+	h = \SI{41.74 +- 0.30}{\GeV} \, \text{.}
+\end{align*}
+Um schließlich die W-Masse mithilfe der zuvor angepassten Eichkurve zu bestimmen, ist es nötig die gemeinsame Kovarianzmatrix für die Kurvenparameter $m, b$ und des korrigierten Halbhöhenpunktes~$h$ zu bestimmen.
 Da diese Fehler unabhängig sind, lässt sich die neue Kovarianzmatrix durch Bildung der Blockdiagonalmatrix
 \begin{align*}
 	\Sigma^\mathrm{tot} = \begin{pmatrix}
@@ -1129,18 +1146,19 @@ Dadurch erhält man nach der Auswertung der Eichkurve durch Anwendung von \texts
 die $1 \times 1$ Kovarianzmatrix für die Masse~$M$ mit dem Standardfehler~$\sigma_M$.
 Setzt man die Kurvenparameter und die Position des Halbhöhenpunktes sowie deren Fehler ein, so erhält man für die W-Masse
 \begin{align*}
-	M_\mathrm{W} = \SI{81.18 +- 0.19}{\GeV}
+	M_\mathrm{W} = \SI{80.46 +- 0.60}{\GeV}
 \end{align*}
 Die Notwendigkeit der Beachtung der Fehlerkorrelationen wird hier klar, da alleine aufgrund des großen Fehlers auf dem Achsenabschnitt von etwa \SI{7}{\GeV} bei der naiven Fehlerfortpflanzung ohne Beachtung der Korrelationen ein Fehler in derselben Größenordnung zu erwarten ist.
-
-Der Literaturwert für die W-Masse ist \cite{pdg}
+Zum Vergleich ist der Literaturwert für die W-Masse \cite{pdg}
 \begin{align*}
 	M_\mathrm{W}^\mathrm{Lit.} = \SI{80.385 +- 0.015}{\GeV}
 \end{align*}
-und weicht in Anbetracht der statistischen Fehler stark von der in diesem Versuch bestimmten W-Masse ab.
-Diese Abweichung ist auf systematische Effekte zurückzuführen, welche im folgenden Abschnitt behandelt werden sollen.
+und ist in Anbetracht der statistischen Fehler in guter Übereinstimmung mit dem in diesem Versuch bestimmten Wert.
+Der Einfluss der Kalibration und etwaige systematische Fehler werden im nächsten Abschnitt untersucht.
 
 \subsubsection{Einfluss der Kalibration und systematische Abweichungen}
+
+
 
 \section{Fazit}
 
