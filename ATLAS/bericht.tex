@@ -814,40 +814,58 @@ Um einen Überblick über die Datensätze zu gewinnen, wurden verschiedene Obser
 	\centering
 	\begin{subfigure}{.49\textwidth}
 		\centering
-		\includegraphics[width=.7\textwidth]{./data/root/wmass/exercise1/ATLAS_njet.pdf}
+		\begin{overpic}[width=.7\textwidth,tics=10]{./data/root/wmass/exercise1/ATLAS_njet}
+			\put (40,1) {\scriptsize Anzahl Jets}
+			\put (2,25) {\rotatebox{90}{\scriptsize Ereignisse}}
+		\end{overpic}
 		\caption{Anzahl der Jets pro Ereignis~\texttt{njet} für die kalibrierten ATLAS Daten.}
 		\label{fig:atlas_njet}
 	\end{subfigure}
 	\begin{subfigure}{.49\textwidth}
 		\centering
-		\includegraphics[width=.7\textwidth]{./data/root/wmass/exercise1/MC_njet.pdf}
+		\begin{overpic}[width=.7\textwidth,tics=10]{./data/root/wmass/exercise1/MC_njet}
+			\put (40,1) {\scriptsize Anzahl Jets}
+			\put (3,25) {\rotatebox{90}{\scriptsize Ereignisse}}
+		\end{overpic}
 		\caption{Anzahl der Jets pro Ereignis~\texttt{njet} für die Monte-Carlo Daten.}
 	\end{subfigure}
 	\begin{subfigure}{.49\textwidth}
 		\centering
-		\includegraphics[width=.7\textwidth]{./data/root/wmass/exercise1/ATLAS_el_pt.pdf}
+		\begin{overpic}[width=.7\textwidth,tics=10]{./data/root/wmass/exercise1/ATLAS_el_pt}
+			\put (17,1) {\scriptsize Transversalimpuls $p_\mathrm{T}$ des Elektrons / \si{GeV}}
+			\put (1,25) {\rotatebox{90}{\scriptsize Ereignisse}}
+		\end{overpic}
 		\caption{Transversaler Elektronenimpuls~\texttt{el\_pt} für die kalibrierten ATLAS Daten.}
 	\end{subfigure}
 	\begin{subfigure}{.49\textwidth}
 		\centering
-		\includegraphics[width=.7\textwidth]{./data/root/wmass/exercise1/MC_el_pt.pdf}
+		\begin{overpic}[width=.7\textwidth,tics=10]{./data/root/wmass/exercise1/MC_el_pt}
+			\put (17,1) {\scriptsize Transversalimpuls $p_\mathrm{T}$ des Elektrons / \si{GeV}}
+			\put (1,25) {\rotatebox{90}{\scriptsize Ereignisse}}
+		\end{overpic}
 		\caption{Transversaler Elektronenimpuls~\texttt{el\_pt} für die Monte-Carlo Daten.}
 	\end{subfigure}
-	\caption{Jet-Anzahl und transversaler Elektronenimpuls für kalibrierte ATLAS Daten von $\mathrm{W} \rightarrow e + \nu$ Zerfällen bzw.\ Monte-Carlo Daten mit einer simulierten W-Masse von \SI{80,5}{GeV}.\korr{Achsenbeschriftung}}
+	\caption{Jet-Anzahl und transversaler Elektronenimpuls für kalibrierte ATLAS Daten von $\mathrm{W} \rightarrow e + \nu$ Zerfällen bzw.\ Monte-Carlo Daten mit einer simulierten W-Masse von \SI{80,5}{GeV}.}
 	\label{fig:observablen_pt1}
 \end{sidewaysfigure}
 \begin{sidewaysfigure}[h]
 	\centering
 	\begin{subfigure}{.49\textwidth}
-		\includegraphics[width=\textwidth]{./data/root/wmass/exercise1/ATLAS_ptw.pdf}
+		\begin{overpic}[width=\textwidth,tics=10]{./data/root/wmass/exercise1/ATLAS_ptw}
+			\put (20,1) {\small Transversalimpuls $p_\mathrm{T}$ des W-Bosons / \si{GeV}}
+			\put (1,25) {\rotatebox{90}{\small Ereignisse}}
+		\end{overpic}
 		\caption{Transversaler $W$-Boson Impuls \texttt{ptw} für die kalibrierten ATLAS Daten.}
 	\end{subfigure}
 	\begin{subfigure}{.49\textwidth}
-		\includegraphics[width=\textwidth]{./data/root/wmass/exercise1/MC_ptw.pdf}
+		\begin{overpic}[width=\textwidth,tics=10]{./data/root/wmass/exercise1/MC_ptw}
+			\put (20,1) {\small Transversalimpuls $p_\mathrm{T}$ des W-Bosons / \si{GeV}}
+			\put (1,25) {\rotatebox{90}{\small Ereignisse}}
+		\end{overpic}
 		\caption{Transversaler $W$-Boson Impuls \texttt{ptw} für die Monte-Carlo Daten.}
 		\label{fig:mc_ptw}
 	\end{subfigure}
-	\caption{Transversaler Impuls des W-Bosons für kalibrierte ATLAS Daten von $\mathrm{W} \rightarrow e + \nu$ Zerfällen bzw.\  Monte-Carlo Daten mit einer simulierten W-Masse von \SI{80,5}{GeV}.\korr{Achsenbeschriftung}}
+	\caption{Transversaler Impuls des W-Bosons für kalibrierte ATLAS Daten von $\mathrm{W} \rightarrow e + \nu$ Zerfällen bzw.\  Monte-Carlo Daten mit einer simulierten W-Masse von \SI{80,5}{GeV}.}
 	\label{fig:observablen_pt2}
 \end{sidewaysfigure}
 
@@ -873,8 +891,11 @@ Im Anschluss wird das Spektrum des Transversalimpulses des W-Bosons in Abhängig
 Die Darstellung für Ereignisse ohne Jets ist in Abbildung \ref{fig:njet0} gezeigt, alle weiteren folgen in Abbildung \ref{fig:njet1-4}.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{./data/root/wmass/exercise2/njet0}
-	\caption{Transversaler Impuls des W-Bosons für Ereignisse ohne Jets.\korr{Achsenbeschriftung}}
+	\begin{overpic}[width=\textwidth,tics=10]{./data/root/wmass/exercise2/njet0}
+		\put (25,1) {Transversalimpuls $p_\mathrm{T}$ des W-Bosons / \si{GeV}}
+		\put (1,29) {\rotatebox{90}{Ereignisse}}
+	\end{overpic}
+	\caption{Transversaler Impuls des W-Bosons für Ereignisse ohne Jets.}
 	\label{fig:njet0}
 \end{figure}
 \begin{sidewaysfigure}[h]
@@ -902,7 +923,6 @@ Die Darstellung für Ereignisse ohne Jets ist in Abbildung \ref{fig:njet0} gezei
 	\caption{Transversaler Impuls des W-Bosons für Ereignisse mit ein, zwei, drei oder vier Jets.}
 	\label{fig:njet1-4}
 \end{sidewaysfigure}
-
 Für Ereignisse ohne Jets ist in Abbildung \ref{fig:njet0} deutlich zu erkennen, dass Zerfälle mit kleinem transversalen Impuls des W-Bosons bevorzugt sind.
 Für eine Kollision von zwei Partonen ohne transversalen Impuls ist es notwendig, dass das W-Boson ebenfalls ohne transversalen Impuls erzeugt wird.
 Da die Partonen in Hadronen-Kollisionen jedoch einen kleinen transversalen Impuls haben können, zeigt sich in Abbildung \ref{fig:njet0}, dass in realen Kollisionen das Boson stehts mit einem nicht-ver\-schwin\-den\-den (jedoch kleinen) transversalen Impuls erzeugt wird.
@@ -931,7 +951,7 @@ Die selektierten Daten sind als Histogramm des Bosonimpulses in Abbildung \ref{f
 \begin{figure}[htbp]
 	\centering
 	\begin{overpic}[width=\textwidth,tics=10]{./data/root/wmass/exercise3/ATLAS_cut}
-		\put (25,1) {Transversalimpuls $p_\mathrm{T}$ des W-Bosons / \si{GeV}}
+		\put (26,1) {Transversalimpuls $p_\mathrm{T}$ des Elektrons / \si{GeV}}
 		\put (1,29) {\rotatebox{90}{Ereignisse}}
 	\end{overpic}
 	\caption{Nach Anwenden der Selektion verbleibende Daten als Histogramm des transversalen Impulses des W-Bosons.}
@@ -955,7 +975,7 @@ Eine solche Anpassung ist für die kalibrierten ATLAS-Daten in Abbildung \ref{fi
 \begin{figure}[htbp]
 	\centering
 	\begin{overpic}[width=\textwidth,tics=10]{./data/root/wmass/exercise4/atlas_calib}
-		\put (25,1) {Transversalimpuls $p_\mathrm{T}$ des W-Bosons / \si{GeV}}
+		\put (26,1) {Transversalimpuls $p_\mathrm{T}$ des Elektrons / \si{GeV}}
 		\put (1,29) {\rotatebox{90}{Ereignisse}}
 	\end{overpic}
 	\caption{Anpassung der Verteilung an die Hypothese des ROOT-Fit-Objekts und Bestimmung des Halbhöhenpunktes $h$ für die kalibrierten ATLAS Daten des  $\mathrm{W} \rightarrow \mathrm{e} + \nu$ Zerfalls.}
