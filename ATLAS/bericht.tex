@@ -158,8 +158,8 @@ Tutor: & Elisabeth Schopf
 
 % ZUSAMMENFASSUNG
 \begin{abstract}
-\noindent In diesem Praktikumsversuch sollen Daten des ATLAS Detektor am LHC untersucht werden.
-Es wird die Detektorantwort auf verschiedene Teilchen analysiert und das elektromagnetische Kalorimeters kalibriert, um im Anschluss die Masse des W-Bosons zu bestimmen.
+\noindent In diesem Versuch sollen Ereignisse im ATLAS-Detektor am LHC untersucht werden.
+Es wird die Detektorantwort auf verschiedene Teilchen analysiert und das elektromagnetische Kalorimeter kalibriert, um im Anschluss die Masse des W-Bosons zu bestimmen.
 \end{abstract}
 
 \end{titlepage}
@@ -178,17 +178,17 @@ Es wird die Detektorantwort auf verschiedene Teilchen analysiert und das elektro
 
 Das Standardmodell beschreibt die Elementarteilchen und die Wechselwirkungen zwischen ihnen, mit Ausnahme der Gravitation und vereint somit die Erkenntnisse der Teilchenphysik.
 Es gilt seit der Entdeckung des Higgs-Bosons als abgeschlossen.
-Im Rahmen des Standardmodells können die einzelnen Elementarteilchen in Gruppen zu Leptonen, Quarks und Kraftteilchen zusammengefasst werden.
+Im Rahmen des Standardmodells können die einzelnen Elementarteilchen in Gruppen zu Leptonen, Quarks und Eichbosonen zusammengefasst werden.
 Leptonen und Quarks sind Fermionen, d.h. sie sind Spin~-$1/2$-Teilchen und unterscheiden sich durch ihre Ladung.
 Während Leptonen, deren bekanntester Vertreter das Elektron ist, eine Ladungszahl~$1$ haben und die zugehörigen Neutrinos ungeladen sind, tragen Quarks drittelzahlige Ladungen~($1/3$ bzw.~$2/3$).
-Durch Eichbosonen, wie Photon, Gluon, Z- und W-Boson wirken Kräfte zwischen den Quarks und Leptonen.
-Das Higgs-Boson fällt aus dieser Einteilung heraus, da es eine Folge der spontanen Symmetriebrechung ist, die mit der Ursache von Masse assoziiert wird.
+Die Eichbosonen, wie Photon, Gluon, Z- und W-Boson vermitteln Kräfte zwischen den Teilchen mit der korrespondierenden Ladung.
+Das Higgs-Boson fällt aus dieser Einteilung heraus, da es eine Folge der spontanen Symmetriebrechung ist, die Masse in die Theorie einführt ohne die lokale Eichinvarianz zu zerstören.
 
 Durch diese Einteilung lässt sich eine Übersicht der einzelnen Elementarteilchen des Standardmodells gut wie in Abbildung \ref{fig:standardmodell} grafisch darstellen.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.6\textwidth]{./figures/standardmodell}
-	\caption{Standardmodell der Elementarteilchenphysik (aus \cite{wiki_standardmodell}).}
+	\caption{Standardmodell der Elementarteilchenphysik \cite{wiki_standardmodell}.}
 	\label{fig:standardmodell}
 \end{figure}
 
@@ -196,23 +196,23 @@ Durch diese Einteilung lässt sich eine Übersicht der einzelnen Elementarteilch
 
 Der Large Hadron Collider (LHC) der europäischen Organisation für Kernforschung (CERN) ist der zur Zeit weltgrößte Teilchenbeschleuniger mit einer Schwerpunktsenergie von bis zu~\SI{14}{TeV}.
 Dadurch können physikalische Hypothesen bei hohen Energien überprüft und möglicherweise neue Beobachtungen gemacht werden.
-Hierzu kommen vier Detektoren zum Einsatz, von denen zwei der Untersuchung hochenergetischer Ereignisse auf der Tera-Skala dienen.
+Hierzu kommen vier Detektoren zum Einsatz, von denen zwei Allzweckdetektoren zur Untersuchung hoch-energetischer Ereignisse auf der Tera-Skala sind.
 Einer dieser Detektoren ist der ATLAS-Detektor, mit dem die in diesem Versuch analysierten Daten aufgenommen wurden.
 In Abbildung \ref{fig:atlas} ist der ATLAS Detektor gezeigt.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=\textwidth]{./figures/atlas}
-	\caption{ATLAS Detektor\cite{cern}}
+	\caption{Schematische Darstellung des ATLAS-Detektors \cite{cern}}
 	\label{fig:atlas}
 \end{figure}
 In der Mitte des Bildes sind in rot die Pixeldetektoren und Siliziumdetektoren zur Spurrekonstruktion geladener Teilchen zu sehen.
 Mit wachsendem Abstand zum Interaktionspunkt folgen die Übergangsstrahlungsdetektoren, die ebenfalls zur Rekonstruktion von Spuren geladener Teilchen genutzt werden.
 Diese sind in der Grafik gelb dargestellt.
-In braun und grün schließen sich die Kalorimeter an, wobei das innere zur Energiemessung elektromagnetisch wechselwirkender Teilchen konzipiert ist, während das äußere Kalorimeter, das Hadronenkalorimeter für schwere Teilchen geeignet ist.
+In braun und grün schließen sich die Kalorimeter an, wobei das innere zur Energiemessung von Elektronen und Photonen konzipiert ist, während das äußere Kalorimeter, für Hadronen geeignet ist (hadronisches Kalorimeter).
 Beide Kalorimeter bestehen aus vielen Modulen, die so dimensioniert sind, dass die jeweiligen Teilchen in ihnen gestoppt werden, um eine möglichst optimale Energiemessung durchzuführen.
 Der gesamte Detektor wird dabei von einem Magnetfeld durchsetzt, das die Trajektorien geladener Teilchen krümmt, so dass aus der Krümmung der Impuls dieser bestimmt werden kann.
 
-Um den s.g. inneren Detektor und die Kalorimeter liegt das Myonsystem, welches den äußeren Detektor bildet und allein der Detektion von Myonen dient.
+Um den sog.\ inneren Detektor und die Kalorimeter liegt das Myonsystem, welches den äußeren Detektor bildet und allein der Detektion von Myonen dient.
 Es ist in Abbildung \ref{fig:atlas} blau dargestellt.
 Das Myonsystem beinhaltet wie der innere Detektor Elemente zur Spurrekonstruktion und Impulsmessung.
 
@@ -237,7 +237,7 @@ Dieser ist essenziell für kinematische Betrachtungen in der Teilchenphysik und 
 Beispiele dafür sind die invariante Masse eines Teilchens~$m_\mathrm{inv}^2 = \mathbf{p}^2$ oder die Mandelstam-Variable~$s = (\mathbf{p_1} + \mathbf{p_2})^2$, welche der quadratischen Schwerpunktsenergie zweier Teilchen entspricht.
 
 \subsubsection{Rapidität und Pseudorapidität}
-Die Rapidität entlang der Strahlachse~$z$ eines Teilchenbeschleunigers ist definiert als
+Die Rapidität entlang der Strahlachse~$z$ eines Teilchenbeschleunigers ist definiert als \cite{script}
 \begin{align*}
 	y = \frac{1}{2}\ln\left( \frac{E+p_z}{E-p_z} \right)
 \end{align*}
@@ -245,7 +245,7 @@ mit der Energie~$E$ und dem Impuls~$p_z$ entlang der Strahlachse.
 Wie das Lorentz-Beta~$\beta$ ist die Rapidität ein Maß für die Geschwindigkeit eines Teilchens.
 Jedoch ist die Rapidität im Vergleich zu $\beta$ gegenüber Lorentz-Boosts entlang der Strahlachse lorentzinvariant und somit ein additives Geschwindigkeitsmaß, wie es bereits aus der klassischen Mechanik bekannt ist.
 
-Für Teilchen mit verschwindender Masse ($E \approx p$) geht die Rapidität~$y$ in die Pseudorapidität~$\eta$ über
+Für Teilchen mit verschwindender Masse ($E \approx p$) geht die Rapidität~$y$ in die Pseudorapidität~$\eta$ über \cite{script}
 \begin{align}
 	\eta = \frac{1}{2} \ln\left( \frac{1 + \cos\theta}{1 - \cos\theta} \right) = - \ln\left( \tan\frac{\theta}{2} \right)\text{,}
 	\label{eq:pseudorapidity}
@@ -261,12 +261,12 @@ Im Partonmodell besteht jedes Hadron neben Valenzquarks auch aus Gluonen und paa
 Jedes Parton trägt dabei einen Impulsbruchteil, welcher im Bezugssystem in dem das Hadron einen unendlichen longitudinalen Impuls hat (d.h.\ transversale Impulse können vernachlässigt werden) durch die Bjorken'sche Skalenvariable~$x$ gegeben ist.
 
 Zur Charakterisierung von Hadronen-Kollisionen ist es demnach erforderlich die Wahrscheinlichkeitsverteilung, dass ein Parton den Impulsbruchteil~$x$ des Hadrons trägt, zu bestimmen.
-Diese Verteilungen, welche man Partonverteilungsfunktionen~$f(x)$ nennt, wurden für die verschiedenen Partonentypen~($u, \bar{u}, d, \dots, g$) an mehreren Teilchenbeschleunigern vermessen.
+Diese Verteilungen, welche man Partonverteilungsfunktionen nennt, wurden für die verschiedenen Partonentypen~($u, \bar{u}, d, \dots, g$) an mehreren Teilchenbeschleunigern vermessen.
 
 Dennoch sind die spezifischen Impulsbruchteile~$x_1, x_2$ der kollidierenden Partonen in der Regel unbekannt, so dass der Transversalimpuls~$p_\mathrm{T}$, welcher beispielsweise im durch den Krümmungsradius geladener Teilchen im äußeren Magnetfeld bestimmt werden kann, für die Auswertung herangezogen wird.
 Darüber hinaus kann aus der Summe der Transversalimpulse aller Teilchen im Endzustand, welche gemäß der Impulserhaltung für frontal zusammenstoßende Partonen zu null summieren müssen, fehlender Transversalimpuls reproduziert werden, der auf nicht-detektierbare Teilchen wie Neutrinos zurückzuführen ist.
 
-Da der Transversalimpuls für ungeladene Teilchen wie beispielsweise Photonen nicht durch den Krümmungsradius im Magnetfeld vermessen werden kann, wird stattdessen auf die Energieeinträge in den Kalorimetern zurückgegriffen und die Größe der fehlenden transversalen Energie~$\slashed{E}_\mathrm{T}$
+Da der Transversalimpuls für ungeladene Teilchen wie beispielsweise Photonen nicht durch den Krümmungsradius im Magnetfeld vermessen werden kann, wird stattdessen auf die Energieeinträge in den Kalorimetern zurückgegriffen und die Größe der fehlenden transversalen Energie~$\slashed{E}_\mathrm{T}$ \cite{script}
 \begin{align*}
 	\slashed{E}_\mathrm{T} = - \sum_{i} E^i \sin\theta_i \, \vec{n}_{i,\perp}
 \end{align*}
@@ -276,8 +276,8 @@ mit den Energieeinträgen~$E_i$ des Kalorimeters unter Polarwinkeln~$\theta_i$  
 \label{sssec:kinamtik_zweikoerperzerfall}
 In diesem Versuch sollen Zerfälle von W und Z-Bosonen der Form 
 \begin{align*}
-	W &\rightarrow \ell + \nu \\
-	Z^0 &\rightarrow \ell^- + \ell^+
+	\mathrm{W} &\rightarrow \ell + \nu \\
+	\mathrm{Z}^0 &\rightarrow \ell^- + \ell^+
 \end{align*}
 untersucht werden.
 Um aus solchen Zerfällen Informationen gewinnen zu können, ist es nötig die Kinematik von Zweikörperzerfällen zu betrachten.
@@ -312,7 +312,7 @@ Die Anzahl und Ansicht der einzelnen Fenster kann dabei individuell geändert we
 \end{figure}
 
 \subsection{ROOT}
-Zur Bearbeitung der Versuchsaufgaben 2 bis 4 wird das Datenanalyseprogramm ROOT verwendet.
+Zur Bearbeitung der letzten zwei Versuchsaufgaben wird das Datenanalyseprogramm ROOT verwendet.
 ROOT wird über einen C++-Interpreter aus der Kommandozeile heraus gesteuert und bietet vielfältige Möglichkeiten zur Datenanalyse.
 Die für den Versuch nötigen Daten und Funktionen werden als C++-Objekte vor Durchführung der Aufgaben in ROOT geladen.
 
@@ -1200,6 +1200,9 @@ Die Kalibration der elektromagnetischen Kalorimeter gelang gut und stellte eine 
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{19}
+\bibitem{wiki_standardmodell}
+	\emph{Wikimedia Commons, the free media repository}. \url{https://commons.wikimedia.org/wiki/File:Standard_Model_of_Elementary_Particles-de.svg} (Letzter Aufruf: 15. März 2016)
+	
 \bibitem{script}
 	N. Möser, J. Meier, J.-W. Tsung, E. von Törne,
 	\emph{Der ATLAS-Versuch: Eigenschaften von W-Bosonen und die Suche nach neuer Physik}.
@@ -1222,9 +1225,6 @@ Die Kalibration der elektromagnetischen Kalorimeter gelang gut und stellte eine 
 	B. Ochoa, S. Belongie,
 	\emph{Covariance Propagation for Guided Matching},
 	\url{http://vision.cornell.edu/se3/wp-content/uploads/2014/09/ochoa06.pdf} (Letzter Aufruf: 14. März 2016).
-	
-\bibitem{wiki_standardmodell}
-	\emph{Wikimedia Commons, the free media repository}. \url{https://commons.wikimedia.org/wiki/File:Standard_Model_of_Elementary_Particles-de.svg} (Letzter Aufruf: 15. März 2016)
 	
 \bibitem{cern}
 	CERN \emph{Computer generated image of the whole ATLAS detector (CERN-GE-0803012-06)}.\url{http://cds.cern.ch/record/1095924} (Letzter Aufruf: 15. März 2016)
