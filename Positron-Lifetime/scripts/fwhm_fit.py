@@ -12,28 +12,40 @@ data["dcnt"] = np.sqrt(data.cnt)
 
 ### Prompt plot
 plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="+", label="Messpunkte")
-plt.xlim(750, 1200)
 
 ### Fit
 def gauss(x, mu, sigma, norm, bg):
     return norm * np.exp(-0.5 * np.power((x - mu) / sigma, 2)) / np.sqrt(2.0 * np.pi) / sigma + bg
 
+mu = 963.0
+fitr = data[(data.index > mu - 140.0) & (data.index < mu + 140.0)]
 
-mu = float(data.idxmax()[0])
-fit_data = data[(data.index > mu - 150.0) & (data.index < mu + 150.0)]
+popt, pcov = curve_fit(gauss, fitr.index, fitr.cnt, p0=[960.0, 50.0, 1000000.0, 390], sigma=fitr.dcnt, absolute_sigma=True)
 
-popt, pcov = curve_fit(gauss, fit_data.index, fit_data.cnt, p0=[960.0, 50.0, 1000000.0, 390], sigma=fit_data.dcnt, absolute_sigma=True)
+plt.plot(fitr.index, gauss(fitr.index, *popt), "-", label="Anpassung")
 
-plt.plot(fit_data.index, gauss(fit_data.index, *popt), "-", label="Anpassung")
-
+plt.xlim(750, 1200)
+plt.xlabel("Kanal")
+plt.ylabel("Ereignisse~$N$")
 plt.legend(loc="best")
 
 ### Chi Quadrat
-chisq = np.power(gauss(fit_data.index, *popt) - fit_data.cnt, 2) / fit_data.dcnt**2
+chisq = np.power(gauss(fitr.index, *popt) - fitr.cnt, 2) / fitr.dcnt**2
 ndf = len(chisq) - 5
-chisq = chisq.get_values().sum()
-chisqndf = chisq / ndf
+chisq = chisq.get_values().sum() / ndf
 
-print(chisqndf)
+### FWHM
+sigma = popt[1]
+dsigma = np.sqrt(np.diag(pcov))[1]
+a = 2.0 * np.sqrt(2.0 * np.log(2.0))
+fwhm = a * sigma
+dfwhm = a * dsigma
+
+
+print("Chi^2/ndf: {}".format(chisq))
+print("sigma: {} +- {}".format(sigma, dsigma))
+print("FWHM: {} +- {}".format(fwhm, dfwhm))
+
 
 plt.savefig("figures/fwhm_fit.pdf")
+plt.close()
