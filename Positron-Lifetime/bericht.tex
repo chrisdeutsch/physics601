@@ -1,0 +1,235 @@
+% PAKETE UND DOKUMENTKONFIGURATION
+\documentclass[11pt, a4paper]{article}
+
+% Encoding für Umlaute
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Silbentrennung
+\usepackage[ngerman]{babel}
+
+% erweiterte Matheumgebungen und Formelnummer mit Sectionnummer
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+
+% Braket Notation
+\usepackage{braket}
+\usepackage{isotope}
+\usepackage[version=4]{mhchem}
+\usepackage{tensor}
+\usepackage{slashed}
+
+% zusätzliche mathematische Schriftarten
+\usepackage{amsfonts}
+
+% verschiedene mathematische Symbole
+\usepackage{amssymb}
+
+% Einheiten setzen z.B. \SI{10}{\kilo\gram\meter\per\second\squared}
+% Fehler: \SI{10 +- 0,2e-4}{\metre}
+\usepackage{siunitx}
+\sisetup{
+  output-decimal-marker={,},
+  separate-uncertainty
+}
+
+% Einheitendefinitionen
+\DeclareSIUnit{\skt}{Skt.}
+\DeclareSIUnit{\gauss}{G}
+\DeclareSIUnit{\division}{div.}
+
+% Operatordefinitionen
+\DeclareMathOperator{\erf}{erf}
+
+% Randbreiten
+\usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm,twoside]{geometry}
+
+% Bilder einfügen
+\usepackage{graphicx}
+\usepackage[percent]{overpic}
+
+% Textfarbe
+\usepackage{color}
+
+% Verweise innerhalb des Dokuments
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks = true,
+	allcolors = {black}
+}
+
+% bessere Tabellenlayouts
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+
+% Seitenlayout (Kopfzeile)
+\usepackage{fancyhdr}
+
+% Float Barriers
+\usepackage{placeins}
+
+% Pakete für gedrehte Subfigures
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{rotating}
+
+% Paket für textumflossene Abbildungen und Tabellen
+\usepackage{wrapfig}
+
+\usepackage{float}
+
+% Caption-Setup
+\captionsetup{font={small}}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\thesubtable}{\alph{subtable}}
+
+% Manuelle Silbentrennung
+\hyphenation{Par-ton-ver-teil-ungs-funk-tio-nen}
+
+% Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
+% 3 subsubsections)
+\setcounter{tocdepth}{3}
+
+% Code Einbettung
+\usepackage{listings}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\ttfamily},
+	numbers=left,
+	numbersep=4pt,
+	numberstyle=\tiny\color{black},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	xleftmargin=1em,
+	xrightmargin=0.8em
+}
+
+% FANCYHDR SETUP
+\pagestyle{fancy}
+\fancyhead[EL,OR]{\thepage}
+\fancyhead[ER]{\leftmark}
+\fancyhead[OL]{\rightmark}
+\setlength{\headheight}{13.6pt}
+
+\renewcommand{\sectionmark}[1]{
+\markboth{\thesection{} #1}{\thesection{} #1}
+}
+\renewcommand{\subsectionmark}[1]{
+\markright{\thesubsection{} #1}
+}
+
+\newcommand{\korr}[1]{{\color{red}(#1)}}
+
+% DOKUMENTINFORMATIONEN
+\title{K225 \\ Lebensdauer von Positronen in Metallen und Isolatoren}
+
+\author{Christopher Deutsch\footnote{christopher.deutsch@uni-bonn.de} \and Christian Bespin\footnote{christian.bespin@uni-bonn.de}}
+
+\date{\today}
+
+\begin{document}
+
+\begin{titlepage}
+
+\maketitle
+
+% DURCHFÜHRUNGSDATUM UND TUTOR
+\begin{center}
+\begin{tabular}{l r}
+Durchführung: & 22. März 2016 \\
+Gruppe: & P8 \\
+Tutor: & Martin Urban
+\end{tabular}
+\end{center}
+
+% ZUSAMMENFASSUNG
+\begin{abstract}
+\noindent 
+\end{abstract}
+
+\end{titlepage}
+
+% INHALTSVERZEICHNIS
+\tableofcontents
+% Neue Seite nach TOC
+\newpage
+
+% INHALT VERSUCHSPROTOKOLL
+\section{Theorie}
+
+\subsection{Einführung}
+
+\subsection{Positronenquellen}
+
+Anforderung: hohe Anzahl $e^+$ und hohe Energien, um in Probe einzudringen
+
+Häufigste Quelle: \ce{^22Na} (\SI{90}{\percent} Positronenausbeute)
+
+Zerfall in angeregtes \ce{^22Ne}, in Grundzustand über $\gamma$(\SI{1275}{keV}), was als Startsignal genutzt wird
+
+Na Spektrum zeigen
+
+\subsection{Positronen und Positronium}
+
+\subsection{Gitterdefekte in Metallen}
+
+
+\FloatBarrier
+% BIBLIOGRAPHIE
+\vspace{\fill}
+% Maximale Anzahl der Einträge in Klammer
+% Zitieren mit \cite{lamport94}
+\begin{thebibliography}{19}
+\bibitem{wiki_standardmodell}
+	\emph{Wikimedia Commons, the free media repository}. \url{https://commons.wikimedia.org/wiki/File:Standard_Model_of_Elementary_Particles-de.svg} (Letzter Aufruf: 15. März 2016)
+	
+\bibitem{script}
+	N. Möser, J. Meier, J.-W. Tsung, E. von Törne,
+	\emph{Der ATLAS-Versuch: Eigenschaften von W-Bosonen und die Suche nach neuer Physik}.
+\bibitem{pdg}
+	K.A. Olive \textit{et al.} (Particle Data Group),
+	\emph{The Review of Particle Physics},
+	Chin. Phys. C, \textbf{38}, 090001 (2014).
+
+\bibitem{electron_atlas}
+	ATLAS Collaboration (Aad, Georges \textit{et al.}),
+	\emph{Electron performance measurements with the ATLAS detector using the 2010 LHC proton-proton collision data},
+	Eur.\ Phys.\ J.\ C72 (2012) 1909.
+
+\bibitem{odr}
+	SciPy,
+	\emph{Orthogonal distance regression (\texttt{scipy.odr})},
+	\url{http://docs.scipy.org/doc/scipy/reference/odr.html} (Letzter Aufruf: 14. März 2016).
+
+\bibitem{error_prop}
+	B. Ochoa, S. Belongie,
+	\emph{Covariance Propagation for Guided Matching},
+	\url{http://vision.cornell.edu/se3/wp-content/uploads/2014/09/ochoa06.pdf} (Letzter Aufruf: 14. März 2016).
+	
+\bibitem{cern}
+	CERN, \emph{Computer generated image of the whole ATLAS detector (CERN-GE-0803012-06)}, \url{http://cds.cern.ch/record/1095924} (Letzter Aufruf: 15. März 2016)
+\end{thebibliography}
+
+% APPENDIX
+\begin{appendix}
+\newpage
+\section{Anhang}
+
+
+\end{appendix}
+
+\end{document}
