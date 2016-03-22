@@ -235,6 +235,10 @@ Die Spektren werden mit einem Mehrkanalanalysator (engl. \textit{multi channel a
 Dieser funktioniert ähnlich wie ein SCA, jedoch wird das Fenster in mehrere zur Signalhöhe proportionale Bereiche eingeteilt, die auch als Kanäle bezeichnet werden.
 Der in diesem Versuch verwendete MCA besitzt~\num{8192} Kanäle.
 Fällt eine am Eingang anliegende Amplitude in einen dieser Bereiche wird mit einem Zähler die dort registrierte Anzahl an Ereignissen um eins erhöht, wodurch ein Amplitudenspektrum (oftmals als Energiespektrum) registriert werden kann.
+Um die Triggerung der Zeitmessung umzusetzen, kommen Diskriminatoren zum Einsatz, die sicherstellen, dass nur ein aufgetretenes Signal und keine Untergrundereignisse eine Zeitmessung starten bzw. stoppen.
+Da der Zeitpunkt zum Schalten eines gewöhnlichen Diskriminators abhängig ist von der Amplitude des Signals, werden sogenannte \textit{constant fraction} Diskriminatoren eingesetzt, die immer bei Erreichen einem festgelegten Bruchteil der Maximalamplitude schalten.
+Hierzu wird das Eingangssignal in zwei Komponenten zerlegt, von denen eine um die Zeit verzögert wird, die das Signal braucht, um vom Bruchteil der Ampltude bis zu ihrem Maximum anzusteigen, während die andere Komponenten gedämpft und invertiert wird.
+Durch Addition der beiden Komponenten ergibt sich ein Signal, das einen Nulldurchgang an einem festgelegten Punkt, unabhängig von der Maximalamplitude hat und zum Schalten des Diskriminators  genutzt wird.
 
 \subsubsection{\textit{Fast}-\textit{Slow}-Koinzidenzkreis}
 
