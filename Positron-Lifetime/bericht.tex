@@ -171,21 +171,119 @@ Tutor: & Martin Urban
 % INHALT VERSUCHSPROTOKOLL
 \section{Theorie}
 
-\subsection{Einführung}
+\subsection{Positronen}
 
-\subsection{Positronenquellen}
+\subsubsection{Positronenquellen}
 
-Anforderung: hohe Anzahl $e^+$ und hohe Energien, um in Probe einzudringen
+\subsubsection{Positronium}
 
-Häufigste Quelle: \ce{^22Na} (\SI{90}{\percent} Positronenausbeute)
+\subsubsection{Annihilation}
 
-Zerfall in angeregtes \ce{^22Ne}, in Grundzustand über $\gamma$(\SI{1275}{keV}), was als Startsignal genutzt wird
+\subsection{Metalle}
+\subsubsection{Gitterdefekte}
+Gitterdefekte beschreiben Fehler in der Kristallstruktur von Festkörpern.
+In diesem Versuch sind dabei vor allem die Punktdefekte von Interesse, die als einzige im thermischen Gleichgewicht vorkommen und dabei insbesondere sogenannte Leerstellen (engl.~\textit{vacancies}).
+Sie entstehen vor allem durch zwei Effekte:
+\begin{description}
+	\item[Schottkydefekt] Hierbei bewegen sich oberflächennahe Gitteratome zur Oberfläche, wodurch Leerstellen in der Kristallstruktur entstehen, die entlang des Kristalls frei beweglich sind.
+	\item[Frenkeldefekt] Bei diesem Defekt verlassen Gitteratome ihre Plätze in der Kristallstruktur und werden zu Zwischengitteratomen, d.h. sie bevölkern Plätze, die im Gitter nicht vorgesehen sind, wodurch an der verlassenen Position eine Leerstelle entsteht.
+\end{description}
+Die Konzentration der Leerstellen im Gitter und ihre Temperaturabhängigkeit kann durch
+\begin{align}
+c_\mathrm{v}(T) = e^{\frac{S_\mathrm{t}}{k}}e^{-\frac{H_\mathrm{t}}{k T}}
+\end{align}
+mit der Boltzmannkonstante~$k$, der Temperatur~$T$, sowie der Leerstellenbildungsentropie~$S_\mathrm{t}$ und -enthalpie~$H_\mathrm{t}$ beschrieben werden\korr{CITE}.
 
-Na Spektrum zeigen
+\subsubsection{Haftstellenmodell}
 
-\subsection{Positronen und Positronium}
+\subsubsection{Lebensdauer von Positronen}
 
-\subsection{Gitterdefekte in Metallen}
+\subsection{Messmethoden}
+
+\subsubsection{Szintillatoren}
+
+Ein Szintillator ist ein Stoff, dessen Atome/Moleküle bei Bestrahlung durch ionisierende Strahlung angeregt werden und folglich Licht emittieren.
+Ein einfallendes Photon löst im Kristall eine Elektronenkaskade aus, welche solange anhält bis die Energie gleichmäßig auf den Elektronen des Kristalls verteilt wurde und die Elektronen eine ausreichend kleine Energie haben um mit den Atomen rekombinieren zu können.
+Bei der Rekombination kommt es dabei zur Emission eines Photons, welches umgehend vom Szintillator absorbiert wird, da dieser aufgrund der Bandstruktur im Kristall nicht für die Rekombinations-Photonen transparent ist.
+Um ein detektierbares Signal zu erhalten, wird der Szintillator dotiert.
+Diese Dotierung führt zu zusätzlichen lokalen Energieniveaus zwischen dem Leitungs- und dem Valenzband des Kristalls.
+Trifft ein Elektronen-Loch-Paar, welches durch ein einfallendes Gamma-Quant im Kristall ausgelöst wurde auf ein solchen Aktivator-Zentrum, kann das Elektron über das zusätzliche Energieniveau mit dem Loch unter Emission von zwei Photonen rekombinieren.
+
+Das in diesem Versuch verwendete Szintillatormaterial ist LYSO (\korr{Zusammensetzung}), welches aufgrund des raidoaktiven Lutetiums zusätzlich zum Spektrum des Szintillationslicht ein Spektrum aus dem radioaktiven Zerfall beobachtbar macht.
+Um das entstehende Photonensignal zu verstärken werden Sekundärelektronenvervielfacher (auch Photomultiplier, kurz PMT genannt) eingesetzt, die im folgenden näher beschrieben werden.
+
+\subsubsection{Sekundärelektronenvervielfacher}
+
+Ein Sekundärelektronenvervielfacher dient der gleichzeitigen Messung und Verstärkung eines optischen Signals in Form eines Strompulses.
+Ein eintreffendes Photon gelangt auf eine Photokathode und löst dort ein Elektron aus, welches in einem anliegenden Feld zu einer Elektrode hin beschleunigt wird.
+Diese Elektrode wird auch als Dynode bezeichnet und ist für die Verstärkung verantwortlich.
+Das Elektron erhält durch die Beschleunigung genug Energie, um aus der Dynode mehrere Elektronen auszulösen, wodurch eine Verstärkung erreicht wird.
+Das Signal kann dabei an mehreren Stellen abgegriffen werden:
+\begin{description}
+	\item[\textit{Slow}-Ausgang]Der Abgriff erfolgt an einer Dynode, so dass aufgrund der noch nicht vollständigen Verstärkung die Anstiegszeit des Signals geringer ist als der Anode (\textit{slow}), jedoch ist die hier abgegriffene Amplitude proportional zur Energie der einfallenden Photonen.
+	\item[\textit{Fast}-Ausgang]Dieser Abgriff geschieht an der Anode, wo aufgrund der hohen Verstärkung eine kurze Anstiegszeit des Signals beobachtet werden kann (\textit{fast}), weswegen dieser Ausgang für Zeitmessungen bevorzugt wird. Allerdings ist bereits eine Sättigung des Stroms möglich, so dass keine Energieinformation aus diesem Signal gewonnen werden kann.
+\end{description}
+
+\subsubsection{TODO: Nuklare Elektronik (SCA, MCA, CFD, TAC)}
+
+\subsubsection{\textit{Fast}-\textit{Slow}-Koinzidenzkreis}
+
+\subsubsection{Promptkurve}
+
+\section{Durchführung}
+
+Im Folgenden soll die Durchführung des Versuchs erklärt, sowie die gemessenen Werte und Spektren dargestellt werden.
+
+\subsection{Einstellung des \textit{Slow}-Kreises}
+In einem ersten Schritt werden die Verstärker, die vor den SCAs geschaltet sind, korrekt eingestellt.
+Dies wird für jeden Detektor einzeln durchgeführt, indem parallel zu den SCAs ein \textit{Delay} eingesetzt wird, dessen Ausgang mit dem analogen Eingang des MCAs verbunden wird, während die SCAs das \textit{Gate}-Signal liefern.
+Entgegen den Anweisungen in der Anleitung wurde die Positronenquelle bereits eingesetzt, um nach erfolgreicher Einstellung der Verstärker die beiden Spektren von Natirum und dem Detektormaterial bei gleichen Einstellungen aufzunehmen.
+Dazu wird das Fenster der SCAs maximal gewählt und die untere Schwelle so eingestellt, dass das gesamte Spektrum von Lutetium und Natrium bis zur~\SI{1275}{keV}~Linie (aus dem Natriumzerfall) noch beobachtbar ist.
+Für den rechten Detektor war dies nicht vollständig möglich, da das maximale Fenster nicht den gesamten Energiebereich von LYSO und Natrium abdeckt, obwohl die Verstärkung so gering wie möglich eingestellt war.
+Der SCA wurde daher so eingestellt, dass die~\SI{1275}{keV}~Linie im Spektrum liegt und kleine Energien nicht aufgenommen werden.
+Da der rechte Detektor in den Messungen als Stopsignal verwendet und aus diesem Grund später auf die~\SI{511}{keV}~Linie eingestellt wird, stellt dies kein Problem für die Messungen dar.
+Die mit den gefundenen Verstärkungen aufgenommenen Spektren sind in Abbildung \korr{REF} bzw \korr{REF} gezeigt.
+\korr{Abbildung}
+\korr{Abbildung}
+Im Anschluss wurden die SCAs auf die~\SI{511}{keV}~Linie eingestellt, da diese aufgrund der höheren Rate zur Zeitkalibration genutzt wurde.
+
+\subsection{Einstellung des \textit{Fast}-Kreises}
+\label{ssec:fastkreis}
+Im nächsten Schritt werden die Schwellen der CFDs im \textit{Fast}-Kreis eingestellt.
+Hierzu wird das Signal des \textit{Slow}-Kreises auf dem Oszilloskop beobachtet, während das Signal der CFDs zum Triggern verwendet wird.
+Die Schwelle wurde nun so eingestellt, dass gerade keine Nulllinie mehr auftrat.
+Ein Beispiel eines solchen beobachteten Signals ist in Abbildung \korr{REF} zu sehen.
+\korr{Abbildung}
+Da die zu messenden Lebenszeiten sehr kurz sind, muss das Stopsignal verzögert werden, um eine korrekte Zeitmessung zu ermöglichen.
+Dies geschieht, indem ein \si{ns}-Delay zwischen CFD des rechten Detektors und Eingang für das Stopsignal am TAC geschaltet wird.
+Die Zeitverzögerung wird unter Beobachtung der Signale am Oszilloskop auf~\SI{20}{ns} eingestellt, wobei die gleichen Kabel wie zur späteren Messung verwendet werden sollten, da in diesen Größenordnungen bereits die Laufzeit des Signals berücksichtigt werden muss.
+Um die gewünschte Verzögerung zu erreichen wurde eine zusätzliche Verzögerung am \textit{Delay}-Modul von~\SI{17.5}{ns} eingestellt.
+Die interne Verzögerung beträgt laut Aufdruck auf dem Geärt~\SI{1.5}{ns} und die Kabellängen unterschieden sich um geschätzte~\SI{30}{cm}, so dass die gewählten Einstellungen durch eine einfache Abschätzung als plausibel bewertet werden können.
+
+\subsection{Zeitkalibration}
+Da die Zeitmessung durch eine zusätzliche Verzögerung beeinflusst wird, muss zur Interpretation der gemessenen Zeiten eine Kalibration erstellt werden.
+Nachdem sowohl die Signal der beides SCAs im \textit{Slow}-Kreis als auch die Signale der \textit{Coincidence}-Einheit und des TACs aam Oszilloskop auf zeitliche Koinzidenz überprüft wurden, kann eine Promptkurve erstellt werden.
+Hierbei wird das Stopsignal zusätzlich zur in~\ref{ssec:fastkreis} gewählten Verzögerung schrittweise um jeweils weitere~\SI{4}{ns} verzögert und für jede Einstellung über~\SI{2}{min} das entstehende Spektrum aufgenommen, welches in Abbildung \korr{REF} gezeigt ist.
+\korr{Abbildung}
+Da aus den beobachteten Maxima die Zeitauflösung des Aufbaus bestimmt werden kann, wird eine Messung über~\SI{20}{min} von der Kurve mit keiner zusätzlichen Verzögerung durchgeführt.
+Durch Anpassung einer Gaussfunktion kann die Zeitauflösung aus der Breite~$\sigma$ der beobachteten Kurve zu 
+\begin{align*}
+48.30+-0.16
+\end{align*}
+bestimmt werden.
+Die zugehörigen Daten und Anpassung sind in Abbildung \korr{REF} dargestellt.
+
+\subsection{Messung der Lebensdauer mit Indium}
+
+Nachdem die einzelnen Elemente des Messaufbaus überprüft und kalibriert wurden, werden die SCAs für die Messung der Lebensdauer eingestellt.
+Da die beinahe gleichzeitig zur Positronenproduktion entstehenden Photonen als Startsignal genutzt werden, wird das Fenster des linken SCAs an die entsprechende Photonenenergie von~\SI{1275}{keV} angepasst.
+Analog wird mit dem SCA für das Stopsignal, welches durch bei der Annihilation entstehende Photonen der Energie~\SI{511}{keV} entsteht, verfahren.
+Danach kann mit der Messung der Lebensdauer begonnen werden.
+Hierzu werden bei verschiedenen Temperaturen das vom TAC erzeugte Amplitudenspektrum gemessen.
+Die Temperatur kann dabei über einen Lötkolben, der mit dem Probenhalter verbunden ist, geregelt werden.
+Zur Temperaturmessung kommt ein digitales Thermometer zum Einsatz, dessen gemessene Werte durch ein zweites, analoges Thermometer im Temperaturbereich unter~\SI{100}{\degree\celsius} verifiziert werden konnten.
+Als Messpunkt für die Temperatur wurde die mittlere Temperatur ausgehend von den Temperaturen zu Beginn und Ende der jeweiligen Messung verwendet.
+Die Probe wurde so positioniert, dass eine Zählrate von ungefähr~\SI{60}{\per\second} erreicht wurde und die Software wurde auf eine Messdauer von genau~\SI{30}{min} eingestellt, so dass für jede Messung eine Statistik mit etwa~\num{100000} Einträgen entsteht.
 
 
 \FloatBarrier
