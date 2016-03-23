@@ -87,7 +87,7 @@
 \renewcommand{\thesubtable}{\alph{subtable}}
 
 % Manuelle Silbentrennung
-\hyphenation{Par-ton-ver-teil-ungs-funk-tio-nen}
+\hyphenation{Sekundär-elek-tronen-verviel-facher}
 
 % Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
 % 3 subsubsections)
@@ -209,7 +209,7 @@ Um ein detektierbares Signal zu erhalten, wird der Szintillator dotiert.
 Diese Dotierung führt zu zusätzlichen lokalen Energieniveaus zwischen dem Leitungs- und dem Valenzband des Kristalls.
 Trifft ein Elektronen-Loch-Paar, welches durch ein einfallendes Gamma-Quant im Kristall ausgelöst wurde auf ein solchen Aktivator-Zentrum, kann das Elektron über das zusätzliche Energieniveau mit dem Loch unter Emission von zwei Photonen rekombinieren.
 
-Das in diesem Versuch verwendete Szintillatormaterial ist LYSO (\korr{Zusammensetzung}), welches aufgrund des radioaktiven Lutetiums zusätzlich zum Spektrum des Szintillationslicht ein Spektrum aus dem radioaktiven Zerfall beobachtbar macht.
+Das in diesem Versuch verwendete Szintillator\-material ist LYSO (\ce{Lu_{1.8}Y_{.2}SiO_5}), welches aufgrund des radioaktiven Lute\-tiums zusätzlich zum Spektrum des Szin\-tillations\-lichts ein Spektrum aus dem radioaktiven Zerfall beobachtbar macht.
 Um das entstehende Photonensignal zu verstärken werden Sekundärelektronenvervielfacher (auch Photomultiplier, kurz PMT genannt) eingesetzt, die im folgenden näher beschrieben werden.
 
 \subsubsection{Sekundärelektronenvervielfacher}
@@ -259,9 +259,36 @@ Dazu wird das Fenster der SCAs maximal gewählt und die untere Schwelle so einge
 Für den rechten Detektor war dies nicht vollständig möglich, da das maximale Fenster nicht den gesamten Energiebereich von LYSO und Natrium abdeckt, obwohl die Verstärkung so gering wie möglich eingestellt war.
 Der SCA wurde daher so eingestellt, dass die~\SI{1275}{keV}~Linie im Spektrum liegt und kleine Energien nicht aufgenommen werden.
 Da der rechte Detektor in den Messungen als Stopsignal verwendet und aus diesem Grund später auf die~\SI{511}{keV}~Linie eingestellt wird, stellt dies kein Problem für die Messungen dar.
-Die mit den gefundenen Verstärkungen aufgenommenen Spektren sind in Abbildung \korr{REF} bzw \korr{REF} gezeigt.
-\korr{Abbildung}
-\korr{Abbildung}
+Die mit den gefundenen Verstärkungen aufgenommenen Spektren sind in den Abbildungen \ref{fig:lyso_spektren} und \ref{fig:na_spektren} gezeigt.
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./figures/LYSO_links}
+		\caption{LYSO Spektrum aufgenommen mit dem linken Detektor}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./figures/LYSO_rechts}
+		\caption{LYSO Spektrum aufgenommen mit dem rechten Detektor}
+	\end{subfigure}
+	\caption{Spektren von Lutetium, das als Teil des Szintillatormaterials LYSO ein Gammaspektrum erzeugt. Die Maxima sind entsprechend der Photonenenergie gekennzeichnet.}
+	\label{fig:lyso_spektren}
+\end{figure}
+\begin{figure}[htbp]
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./figures/na_links}
+		\caption{Spektrum von Natrium aufgenommen mit dem linken Detekor}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./figures/na_rechts}
+		\caption{Spektrum von Natrium aufgenommen mit dem rechten Detekor}
+	\end{subfigure}
+	\caption{Spektren von Natrium. Es ist gut sichtbar, dass das Fenster des rechten SCAs zu klein ist, um bei minimaler Verstärkung das gesamte Spektrum aufzunehmen, weswegen ein deutlicher Schnitt bei Kanalnummer \num{1000} zu beobachten ist. Die Maxima des Untergrundes wurden nicht erneut gekennzeichnet, siehe hierfür Abb. \ref{fig:lyso_spektren}.}
+	\label{fig:na_spektren}
+\end{figure}
 Im Anschluss wurden die SCAs auf die~\SI{511}{keV}~Linie eingestellt, da diese aufgrund der höheren Rate zur Zeitkalibration genutzt wurde.
 
 \subsection{Einstellung des \textit{Fast}-Kreises}
@@ -285,7 +312,7 @@ Hierbei wird das Stopsignal zusätzlich zur in~\ref{ssec:fastkreis} gewählten V
 Da aus den beobachteten Maxima die Zeitauflösung des Aufbaus bestimmt werden kann, wird eine Messung über~\SI{20}{min} von der Kurve mit keiner zusätzlichen Verzögerung durchgeführt.
 Durch Anpassung einer Gaussfunktion kann die Zeitauflösung aus der Breite~$\sigma$ der beobachteten Kurve zu 
 \begin{align*}
-48.30+-0.16
+\num{48.30+-0.16}
 \end{align*}
 bestimmt werden.
 Die zugehörigen Daten und Anpassung sind in Abbildung \korr{REF} dargestellt.
