@@ -311,15 +311,19 @@ Abschließend wird das Fenster der SCAs auf die \SI{511}{keV}-Linie eingestellt,
 \subsection{Einstellung des \textit{Fast}-Kreises}
 \label{ssec:fastkreis}
 Im nächsten Schritt werden die Schwellen der CFDs im \textit{Fast}-Kreis eingestellt.
-Hierzu wird das Signal des \textit{Slow}-Kreises auf dem Oszilloskop beobachtet, während das Signal der CFDs zum Triggern verwendet wird.
-Die Schwelle wurde nun so eingestellt, dass gerade keine Nulllinie mehr auftrat.
+Hierzu wird das Signal des \textit{Slow}-Kreises auf dem Oszilloskop beobachtet, während das Signal der CFDs als Trigger verwendet wird.
+Stellt man die Schwelle des CFD auf ihr Minimum, so stellt man fest, dass neben den verstärkten Signalen des Szintillationsdetektors auch eine intensive Nulllinie auf dem Oszilloskop zu beobachten ist.
+Diese Nulllinie entsteht dadurch, dass das Hintergrundrauschen die CFD-Schwelle überschreitet und somit das Oszilloskop triggert.
+Würde der CFD durch ein Detektorsignal geschaltet werden, so muss ein Signal im \textit{Slow}-Kreis zu beobachten sein.
+Demnach wird die Schwelle gerade so eingestellt, dass keine Nulllinie mehr auf dem Oszilloskop sichtbar ist.
 Ein Beispiel eines solchen beobachteten Signals ist in Abbildung \korr{REF} zu sehen.
 \korr{Abbildung}
-Da die zu messenden Lebenszeiten sehr kurz sind, muss das Stopsignal verzögert werden, um eine korrekte Zeitmessung zu ermöglichen.
-Dies geschieht, indem ein \si{ns}-Delay zwischen CFD des rechten Detektors und Eingang für das Stopsignal am TAC geschaltet wird.
-Die Zeitverzögerung wird unter Beobachtung der Signale am Oszilloskop auf~\SI{20}{ns} eingestellt, wobei die gleichen Kabel wie zur späteren Messung verwendet werden sollten, da in diesen Größenordnungen bereits die Laufzeit des Signals berücksichtigt werden muss.
+
+Da die zu messenden Lebenszeiten sehr kurz sind, muss das Stopsignal gegen das Startsignal verzögert werden, damit der TAC ein Signal mit nicht-verschwindender Amplitude erzeugt.
+Dies geschieht, indem ein \si{ns}-Delay zwischen CFD des rechten Detektors und dem Eingang für das Stopsignal am TAC geschaltet wird.
+Die Zeitverzögerung wird unter Beobachtung der Signale am Oszilloskop auf~\SI{20}{ns} eingestellt, wobei die gleichen Kabel wie zur späteren Messung verwendet werden, da in diesen Größenordnungen bereits die Laufzeit des Signals berücksichtigt werden muss.
 Um die gewünschte Verzögerung zu erreichen wurde eine zusätzliche Verzögerung am \textit{Delay}-Modul von~\SI{17.5}{ns} eingestellt.
-Die interne Verzögerung beträgt laut Aufdruck auf dem Geärt~\SI{1.5}{ns} und die Kabellängen unterschieden sich um geschätzte~\SI{30}{cm}, so dass die gewählten Einstellungen durch eine einfache Abschätzung als plausibel bewertet werden können.
+Die interne Verzögerung beträgt laut Aufdruck auf dem Gerät~\SI{1.5}{ns} und die Kabellängen unterschieden sich um geschätzte~\SI{30}{cm}, sodass die gewählten Einstellungen durch eine einfache Abschätzung als plausibel bewertet werden können.
 
 \subsection{Zeitkalibration}
 Da die Zeitmessung durch eine zusätzliche Verzögerung beeinflusst wird, muss zur Interpretation der gemessenen Zeiten eine Kalibration erstellt werden.
