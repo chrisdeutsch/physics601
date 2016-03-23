@@ -237,11 +237,16 @@ Dadurch ist die Ladung auf dem Kondensator proportional zur Zeit bis das Stopsig
 
 \subsubsection{Promptkurve}
 
-\section{Durchführung}
+\section{Aufbau und Kalibration}
 
-Im Folgenden soll die Durchführung des Versuchs erklärt, sowie die gemessenen Werte und Spektren dargestellt werden.
+Im Folgenden soll der Aufbau des \textit{Fast}-\textit{Slow}-Konizidenzkreises und dessen Zeitkalibration dargestellt werden.
 
 \subsection{Einstellung des \textit{Slow}-Kreises}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{./figures/aufbau/energie.pdf}
+	\caption{Energie \cite{anleitung}}
+\end{figure}
 In einem ersten Schritt werden die Verstärker, die vor den SCAs geschaltet sind, korrekt eingestellt.
 Dies wird für jeden Detektor einzeln durchgeführt, indem parallel zu den SCAs ein \textit{Delay} eingesetzt wird, dessen Ausgang mit dem analogen Eingang des MCAs verbunden wird, während die SCAs das \textit{Gate}-Signal liefern.
 Entgegen den Anweisungen in der Anleitung wurde die Positronenquelle bereits eingesetzt, um nach erfolgreicher Einstellung der Verstärker die beiden Spektren von Natirum und dem Detektormaterial bei gleichen Einstellungen aufzunehmen.
@@ -350,12 +355,22 @@ Als Messpunkt für die Temperatur wurde die mittlere Temperatur ausgehend von de
 Die Probe wurde so positioniert, dass eine Zählrate von ungefähr~\SI{60}{\per\second} erreicht wurde und die Software wurde auf eine Messdauer von genau~\SI{30}{min} eingestellt, so dass für jede Messung eine Statistik mit etwa~\num{100000} Einträgen entsteht.
 
 
+\section{Lebenszeitmessung in Indium}
+
+\section{Lebenszeitmessung in Acrylglas}
+
+\section{Fazit}
+
 \FloatBarrier
 % BIBLIOGRAPHIE
 \vspace{\fill}
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{19}
+\bibitem{anleitung}
+	\emph{Advanced Laboratory Course (physics601): Description of Experiments},
+	BONN-AT-2016-01MP, Universität Bonn, Januar 2016.
+
 \bibitem{wiki_standardmodell}
 	\emph{Wikimedia Commons, the free media repository}. \url{https://commons.wikimedia.org/wiki/File:Standard_Model_of_Elementary_Particles-de.svg} (Letzter Aufruf: 15. März 2016)
 	
