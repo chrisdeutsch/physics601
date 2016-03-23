@@ -1,4 +1,4 @@
-import numpy as np
+﻿import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
@@ -143,9 +143,9 @@ plt.close()
 
 ### LATEX-Tabelle
 from scripts.tools import round
-prompt.columns = ["{Verzögerung~$\Delta t$ / \si{\nano\seconds}}",
-                  "{Schwerpunkt~$\mu$ / Kanal}",
-                  "{Schwerpunkt~$\sigma_\mu$ / Kanal}"]
+prompt.columns = ["{$\Delta t$ / \si{ns}}",
+                  "{$\mu$ / Kanal}",
+                  "{$\sigma_\mu$ / Kanal}"]
 
 prompt.to_latex("tables/prompt_fit.tex", index=False,
                 formatters=[round(0), round(2), round(2)],
