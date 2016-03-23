@@ -15,9 +15,34 @@ lw = 1.2
 
 plt.xlim(500, 5500)
 plt.xlabel("Kanal")
+plt.ylim(0, 1200)
 plt.ylabel("Ereignisse~$N$")
 
 plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="+", label="Spektrum")
+
+plt.annotate(r"$\SI{20}{ns}$", xy=(952, 930), xytext=(952, 1100),
+             arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
+
+plt.annotate(r"$\SI{24}{ns}$", xy=(1525, 895), xytext=(1525, 1000),
+             arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
+
+plt.annotate(r"$\SI{28}{ns}$", xy=(2131, 880), xytext=(2131, 1100),
+             arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
+
+plt.annotate(r"$\SI{32}{ns}$", xy=(2711, 890), xytext=(2711, 1000),
+             arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
+
+plt.annotate(r"$\SI{36}{ns}$", xy=(3322, 875), xytext=(3322, 1100),
+             arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
+
+plt.annotate(r"$\SI{40}{ns}$", xy=(3908, 865), xytext=(3908, 1000),
+             arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
+
+plt.annotate(r"$\SI{44}{ns}$", xy=(4521, 845), xytext=(4521, 1100),
+             arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
+
+plt.annotate(r"$\SI{48}{ns}$", xy=(5105, 870), xytext=(5105, 1000),
+             arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
 
 ### Angepasste Parameter
 t = []
