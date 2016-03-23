@@ -18,7 +18,7 @@ plt.xlabel("Kanal")
 plt.ylim(0, 1200)
 plt.ylabel("Ereignisse~$N$")
 
-plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="+", label="Spektrum")
+plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="|", label="Spektrum")
 
 plt.annotate(r"$\SI{20}{ns}$", xy=(952, 930), xytext=(952, 1100),
              arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")

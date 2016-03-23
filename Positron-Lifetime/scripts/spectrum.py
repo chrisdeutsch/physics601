@@ -10,7 +10,7 @@ data = pd.read_csv("data/spectrum/Na_links.txt", sep="\t", index_col=0,
                    names=["ch", "cnt"])
 data["dcnt"] = np.sqrt(data.cnt)
 
-plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="+")
+plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="|")
 
 plt.annotate(r"$1275 \, \si{\keV}$", xy=(5913, 133), xytext=(5913, 300),
              arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
@@ -31,7 +31,7 @@ data = pd.read_csv("data/spectrum/Na_rechts.txt", sep="\t", index_col=0,
                    names=["ch", "cnt"])
 data["dcnt"] = np.sqrt(data.cnt)
 
-plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="+")
+plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="|")
 
 plt.annotate(r"$1275 \, \si{\keV}$", xy=(6730, 120), xytext=(6730, 290),
              arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
@@ -52,7 +52,7 @@ data = pd.read_csv("data/spectrum/LYSO_links.txt", sep="\t", index_col=0,
                    names=["ch", "cnt"])
 data["dcnt"] = np.sqrt(data.cnt)
 
-plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="+")
+plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="|")
 
 plt.annotate(r"$597 \, \si{\keV}$", xy=(3000, 900), xytext=(4000, 930),
              arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
@@ -82,7 +82,7 @@ data = pd.read_csv("data/spectrum/LYSO_rechts.txt", sep="\t", index_col=0,
                    names=["ch", "cnt"])
 data["dcnt"] = np.sqrt(data.cnt)
 
-plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="+")
+plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="|")
 
 plt.annotate(r"$597 \, \si{\keV}$", xy=(3200, 780), xytext=(4400, 800),
              arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")

@@ -261,6 +261,9 @@ Daher wurde die untere Schwelle des SCA angehoben, bis die ~\SI{1275}{keV}-Linie
 \subsection{Aufnahme von Energiespektren}
 Nachdem die Verstärkung für beide Detektoren eingestellt wurde, wurde jeweils ein intrinsisches LYSO-Spektrum, sowie ein Spektrum mit der Natrium-Positronenquelle aufgenommen.
 Diese wurden in den Abbildungen \ref{fig:lyso_spektren} und \ref{fig:na_spektren} dargestellt.
+\begin{description}
+	\item[Anmerkung:] Für alle folgenden Spektren wird der Fehler Ereigniszahl in einem Kanal gemäß der zugrundeliegenden Poisson-Statistik auf $\sigma_N = \sqrt{N}$ abgeschätzt.
+\end{description}
 \begin{figure}[htbp]
 	\centering
 	\begin{subfigure}{\textwidth}
@@ -326,10 +329,35 @@ Um die gewünschte Verzögerung zu erreichen wurde eine zusätzliche Verzögerun
 Die interne Verzögerung beträgt laut Aufdruck auf dem Gerät~\SI{1.5}{ns} und die Kabellängen unterschieden sich um geschätzte~\SI{20}{cm}, sodass die gewählten Einstellungen durch eine einfache Abschätzung als plausibel bewertet werden können.
 
 \subsection{Zeitkalibration}
-Da die Zeitmessung durch eine zusätzliche Verzögerung beeinflusst wird, muss zur Interpretation der gemessenen Zeiten eine Kalibration erstellt werden.
-Nachdem sowohl die Signal der beides SCAs im \textit{Slow}-Kreis als auch die Signale der \textit{Coincidence}-Einheit und des TACs aam Oszilloskop auf zeitliche Koinzidenz überprüft wurden, kann eine Promptkurve erstellt werden.
+Um einen Zusammenhang zwischen Impulshöhe des TAC und gemessener Zeit zwischen Start- und Stopsignal zu erhalten, muss eine Kalibrierung der Zeitmessung stattfinden.
+Dazu werden die Komponenten gemäß Abbildung~\ref{fig:fast_slow_coincidence} verschaltet.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figures/aufbau/zeit.pdf}
+	\caption{Aufbau des \textit{Fast}-\textit{Slow}-Koninzidenzkreises für die Zeitkalibration und die Messung der Lebenszeitspektren von Positronen und Positronium in Festkörpern \cite{anleitung}.}
+	\label{fig:fast_slow_coincidence}
+\end{figure}
+Nachdem sowohl die Signal der beiden SCAs im \textit{Slow}-Kreis als auch die Signale der Koinzidenz-Einheit und des TAC am Oszilloskop auf zeitliche Koinzidenz überprüft wurden, kann eine Promptkurve erstellt werden.
 Hierbei wird das Stopsignal zusätzlich zur in~\ref{ssec:fastkreis} gewählten Verzögerung schrittweise um jeweils weitere~\SI{4}{ns} verzögert und für jede Einstellung über~\SI{2}{min} das entstehende Spektrum aufgenommen, welches in Abbildung~\ref{fig:promptkurven} gezeigt ist.
-\korr{Abbildung}
+\begin{figure}[h]
+	\centering
+	\includegraphics{./figures/prompt_curve_fits.pdf}
+	\caption{Aufnahme einer Promptkurve zur Zeitkalibration des TAC. Das gemessene Spektrum (rot) enthält Kurven bei verschiedenen Einstellungen des \si{ns}-Delays (Markierung). Zur Bestimmung der Kurvenschwerpunkte wurden Gaussfunktionen an die Linien angepasst (blau).}
+	\label{fig:promptkurven}
+\end{figure}
+Anschließend werden an die einzelnen Linien 
+
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics{./figures/prompt_curve.pdf}
+	\caption{Zeitkalibrierung Prompt-Kurve}
+\end{figure}
+
+
+
+
 Da aus den beobachteten Maxima die Zeitauflösung des Aufbaus bestimmt werden kann, wird eine Messung über~\SI{20}{min} von der Kurve mit keiner zusätzlichen Verzögerung durchgeführt.
 Durch Anpassung einer Gaussfunktion kann die Zeitauflösung aus der Breite~$\sigma$ der beobachteten Kurve zu 
 \begin{align*}
@@ -338,12 +366,7 @@ Durch Anpassung einer Gaussfunktion kann die Zeitauflösung aus der Breite~$\sig
 bestimmt werden.
 Die zugehörigen Daten und Anpassung sind in Abbildung~\ref{fig:promptkurve_einzeln} dargestellt.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics{./figures/prompt_curve_fits.pdf}
-	\caption{Prompt-Kurven Fits}
-	\label{fig:promptkurven}
-\end{figure}
+
 
 \begin{table}[h]
 	\centering
@@ -351,11 +374,6 @@ Die zugehörigen Daten und Anpassung sind in Abbildung~\ref{fig:promptkurve_einz
 	\caption{Schwerpunkte des Fits}
 \end{table}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics{./figures/prompt_curve.pdf}
-	\caption{Zeitkalibrierung Prompt-Kurve}
-\end{figure}
 
 
 \begin{figure}[h]
