@@ -93,31 +93,6 @@
 % 3 subsubsections)
 \setcounter{tocdepth}{3}
 
-% Code Einbettung
-\usepackage{listings}
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-
-\lstset{frame=tb,
-	aboveskip=3mm,
-	belowskip=3mm,
-	showstringspaces=false,
-	columns=flexible,
-	basicstyle={\ttfamily},
-	numbers=left,
-	numbersep=4pt,
-	numberstyle=\tiny\color{black},
-	keywordstyle=\color{blue},
-	commentstyle=\color{dkgreen},
-	stringstyle=\color{mauve},
-	breaklines=true,
-	breakatwhitespace=true,
-	tabsize=3,
-	xleftmargin=1em,
-	xrightmargin=0.8em
-}
-
 % FANCYHDR SETUP
 \pagestyle{fancy}
 \fancyhead[EL,OR]{\thepage}
@@ -175,11 +150,26 @@ Tutor: & Martin Urban
 
 \subsection{Positronen}
 
+Als Positron wird das Antiteilchen des Elektrons bezeichnet.
+Es hat entgegengesetzte Ladung ($+\num{1}$) und Spin $+\num{1/2}$, während seine Masse der des Elektrons entspricht (\SI{511}{keV}).
+
 \subsubsection{Positronenquellen}
+
+Als Positronenquelle wird in diesem Versuch Natrium (\ce{^22Na}) verwendet, welches durch radioaktiven $\beta^+$-Zerfall in einen angeregten Zustand von Neon (\ce{^22Ne}) zerfällt, der eine sehr kurze Lebensdauer hat und unter Emission eines Photons mit \SI{1275}{keV} in den Grundzustand übergeht.
+Beim $\beta^+$-Zerfall wird ein Proton unter Aussendung eines Positrons und Elektronneutrinos in ein Neutron umgewandelt.
 
 \subsubsection{Positronium}
 
+Ein Positron kann zusammen mit einem Elektron einen wasserstoffähnlichen Bindungszustand bilden, der als Positronium bezeichnet wird.
+Je nach Spinkonfiguration von Elektron und Positron unterscheidet man dabei zwischen dem als Singlett auftretenden Parapositronium (Spins antiparallel) und dem als Triplett auftretenden Orthopositronium (Spins parallel).
+In Metallen schirmen freie Elektronen die Ladung von Positronen, die in das Metall eindringen, ab, so dass kein Positronium entstehen kann.
+
 \subsubsection{Annihilation}
+
+Positronen können mit Elektronen annihilieren, wobei mindestens zwei Photonen mit jeweils \SI{511}{keV} entstehen.
+Die Annihilation in drei Photonen ist zwar möglich, aber unterdrückt und soll hier nicht weiter beachtet werden.
+Aufgrund der Drehimpulserhaltung zerfällt Orthopositronium in drei Photonen, während Parapositronium in zwei Photonen zerfällt.
+Zusätzlich ist es jedoch möglich, dass das Positron des Bindungszustands mit einem freien Elektron annihiliert (auch als \textit{pickoff decay} bezeichnet). 
 
 \subsection{Metalle}
 \subsubsection{Gitterdefekte}
@@ -327,7 +317,7 @@ Die interne Verzögerung beträgt laut Aufdruck auf dem Geärt~\SI{1.5}{ns} und 
 \subsection{Zeitkalibration}
 Da die Zeitmessung durch eine zusätzliche Verzögerung beeinflusst wird, muss zur Interpretation der gemessenen Zeiten eine Kalibration erstellt werden.
 Nachdem sowohl die Signal der beides SCAs im \textit{Slow}-Kreis als auch die Signale der \textit{Coincidence}-Einheit und des TACs aam Oszilloskop auf zeitliche Koinzidenz überprüft wurden, kann eine Promptkurve erstellt werden.
-Hierbei wird das Stopsignal zusätzlich zur in~\ref{ssec:fastkreis} gewählten Verzögerung schrittweise um jeweils weitere~\SI{4}{ns} verzögert und für jede Einstellung über~\SI{2}{min} das entstehende Spektrum aufgenommen, welches in Abbildung \korr{REF} gezeigt ist.
+Hierbei wird das Stopsignal zusätzlich zur in~\ref{ssec:fastkreis} gewählten Verzögerung schrittweise um jeweils weitere~\SI{4}{ns} verzögert und für jede Einstellung über~\SI{2}{min} das entstehende Spektrum aufgenommen, welches in Abbildung~\ref{fig:promptkurven} gezeigt ist.
 \korr{Abbildung}
 Da aus den beobachteten Maxima die Zeitauflösung des Aufbaus bestimmt werden kann, wird eine Messung über~\SI{20}{min} von der Kurve mit keiner zusätzlichen Verzögerung durchgeführt.
 Durch Anpassung einer Gaussfunktion kann die Zeitauflösung aus der Breite~$\sigma$ der beobachteten Kurve zu 
@@ -335,12 +325,13 @@ Durch Anpassung einer Gaussfunktion kann die Zeitauflösung aus der Breite~$\sig
 \num{48.30+-0.16}
 \end{align*}
 bestimmt werden.
-Die zugehörigen Daten und Anpassung sind in Abbildung \korr{REF} dargestellt.
+Die zugehörigen Daten und Anpassung sind in Abbildung~\ref{fig:promptkurve_einzeln} dargestellt.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics{./figures/prompt_curve_fits.pdf}
 	\caption{Prompt-Kurven Fits}
+	\label{fig:promptkurven}
 \end{figure}
 
 \begin{table}[h]
@@ -360,6 +351,7 @@ Die zugehörigen Daten und Anpassung sind in Abbildung \korr{REF} dargestellt.
 	\centering
 	\includegraphics{./figures/fwhm_fit.pdf}
 	\caption{FWHM Fit der Prompt Kurve}
+	\label{fig:promptkurve_einzeln}
 \end{figure}
 
 
