@@ -37,6 +37,7 @@
 \DeclareSIUnit{\skt}{Skt.}
 \DeclareSIUnit{\gauss}{G}
 \DeclareSIUnit{\division}{div.}
+\DeclareSIUnit{\Kanal}{Kanal}
 
 % Operatordefinitionen
 \DeclareMathOperator{\erf}{erf}
@@ -345,43 +346,62 @@ Hierbei wird das Stopsignal zusätzlich zur in~\ref{ssec:fastkreis} gewählten V
 	\caption{Aufnahme einer Promptkurve zur Zeitkalibration des TAC. Das gemessene Spektrum (rot) enthält Kurven bei verschiedenen Einstellungen des \si{ns}-Delays (Markierung). Zur Bestimmung der Kurvenschwerpunkte wurden Gaussfunktionen an die Linien angepasst (blau).}
 	\label{fig:promptkurven}
 \end{figure}
-Anschließend werden an die einzelnen Linien 
-
-
-
-\begin{figure}[h]
-	\centering
-	\includegraphics{./figures/prompt_curve.pdf}
-	\caption{Zeitkalibrierung Prompt-Kurve}
-\end{figure}
-
-
-
-
-Da aus den beobachteten Maxima die Zeitauflösung des Aufbaus bestimmt werden kann, wird eine Messung über~\SI{20}{min} von der Kurve mit keiner zusätzlichen Verzögerung durchgeführt.
-Durch Anpassung einer Gaussfunktion kann die Zeitauflösung aus der Breite~$\sigma$ der beobachteten Kurve zu 
-\begin{align*}
-\num{48.30+-0.16}
-\end{align*}
-bestimmt werden.
-Die zugehörigen Daten und Anpassung sind in Abbildung~\ref{fig:promptkurve_einzeln} dargestellt.
-
-
-
+Anschließend werden an die einzelnen Linien Gauss-Funktionen angepasst, um eine Bestimmung des Linienschwerpunktes zu ermöglichen.
+In Tabelle~\ref{tab:prompt_schwerpunkte} wurden diese für die einzelnen Einstellungen der Zeitverzögerung aufgetragen, wobei auf eine Angabe der restlichen Anpassungsparameter verzichtet werden soll.
 \begin{table}[h]
 	\centering
 	\input{./tables/prompt_fit.tex}
-	\caption{Schwerpunkte des Fits}
+	\caption{Ergebnisse der Anpassung von Schwerpunkten~$\mu$ an die Prompt-Linien bei verschiedenen Zeitverzögerungen~$\Delta t$.}
+	\label{tab:prompt_schwerpunkte}
 \end{table}
 
+Folglich kann durch die Anpassung einer Geraden an die so bestimmten Schwerpunkte die Zeitkalibration erfolgen.
+Dazu wird die Zeitverzögerung~$\Delta t$ auf die ein Fehler von \SI{0.1}{ns} abgeschätzt wird, gegen den Prompt-Linien Schwerpunkt~$\mu$ aufgetragen und eine Ausgleichsgerade angepasst.
+Dies wurde in Abbildung \ref{fig:prompt_anpassung} dargestellt.
+\begin{figure}[h]
+	\centering
+	\includegraphics{./figures/prompt_curve.pdf}
+	\caption{Anpassung einer Ausgleichsgeraden an die gemessenen Prompt-Linien Schwerpunkte~$\mu$ bei eingestellter Verzögerung~$\Delta t$. Die Fehler der Schwerpunkte liegen in der Größenordnung der Datenpunktmarkierung.}
+	\label{fig:prompt_anpassung}
+\end{figure}
+Mit der Anpassungshypothese 
+\begin{align*}
+	t(\mu) = m \cdot \mu + b
+\end{align*}
+folgt für die Parameter
+\begin{align*}
+	m &= \SI{0.006721 +- 0.000017}{\nano\second\per\Kanal} \\
+	b &= \SI{13.686 +- 0.057}{\nano\second} \, \text{.}
+\end{align*}
+Im Folgenden ist nur die Steigung~$m$ für die Zeitkalibrierung wichtig, da in diesem Versuch nur Zeitdifferenzen gemessen werden.
 
-
+Abschließend soll aus einer Messung der Prompt-Linie bei einer Verzögerung von \SI{20}{ns} über \SI{20}{\min} die Zeitauflösung des Aufbaus bestimmt werden.
+An diese Linie kann eine Anpassung durchgeführt werden um deren Halbwertsbreite zu bestimmen.
+Da die vermessene Linie etwas von der erwarteten Gauss-Form abweicht, wird zusätzlich der Untergrund durch ein Polynom 4.\ Ordnung parametrisiert.
+Die Datenpunkte und die Anpassung sind in Abbildung~\ref{fig:promptkurve_einzeln} dargestellt.
 \begin{figure}[h]
 	\centering
 	\includegraphics{./figures/fwhm_fit.pdf}
-	\caption{FWHM Fit der Prompt Kurve}
+	\caption{Anpassung einer Gauss-Funktion mit Untergrund (Polynom 4.\ Ordnung) an die Messung der $\Delta t = \SI{20}{ns}$ Prompt-Linie.}
 	\label{fig:promptkurve_einzeln}
 \end{figure}
+Aus der Anpassung resultiert die Standardabweichung der Gauss-Funktion
+\begin{align*}
+	\sigma &= (\num{50.690 +- 0.075}) \, \mathrm{Kan"ale} \, \text{,}
+\end{align*}
+aus der die volle Halbwertsbreite~$\Delta t_\mathrm{FWHM}$ gemäß
+\begin{align*}
+	\Delta t_\mathrm{FWHM} = 2 \sqrt{2\ln 2} \sigma
+\end{align*}
+bestimmt werden kann.
+Demnach folgt
+\begin{align*}
+	\Delta t_\mathrm{FWHM} = (\num{119.37 +- 0.18}) \, \mathrm{Kan"ale}
+\end{align*}
+und nach Anwenden der Kalibration
+\begin{align*}
+	\Delta t_\mathrm{FWHM} = \SI{0.8023 +- 0.0024}{\nano\second} \text{.}
+\end{align*}
 
 
 

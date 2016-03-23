@@ -11,7 +11,7 @@ data = pd.read_csv("data/prompt/prompt_curve_20min.txt", sep="\t", index_col=0,
 data["dcnt"] = np.sqrt(data.cnt)
 
 ### Prompt plot
-plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="+", label="Messpunkte")
+plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="|", label="Messpunkte")
 
 ### Fit
 def gauss(x, mu, sigma, norm, bg1, bg2, bg3, bg4):

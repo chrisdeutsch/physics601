@@ -147,7 +147,7 @@ plt.close()
 ### Prompt-Kurve
 prompt = pd.DataFrame(np.array([t, mu, dmu]).transpose(), columns=["t", "mu", "dmu"])
 plt.errorbar(prompt.mu, prompt.t, xerr=prompt.dmu, yerr=np.zeros(8)+0.1,
-             fmt="o", label="Prompt-Kurven\nSchwerpunkt", zorder=2)
+             fmt="o", label="Prompt-Linien\nSchwerpunkt", zorder=2)
 
 f = lambda x, m, b: m * x + b
 popt, pcov = curve_fit(f, prompt.mu, prompt.t)
@@ -161,6 +161,11 @@ plt.xlim(0.0, 6000.0)
 plt.xlabel("Kanal")
 plt.ylabel("Verzögerung $\Delta t$ / ns")
 plt.legend(loc=0)
+
+perr = np.sqrt(np.diag(pcov))
+
+print("m = {} +- {}".format(popt[0], perr[0]))
+print("b = {} +- {}".format(popt[1], perr[1]))
 
 plt.savefig("figures/prompt_curve.pdf")
 plt.close()
