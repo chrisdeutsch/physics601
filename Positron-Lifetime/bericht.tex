@@ -244,6 +244,7 @@ Dadurch ist die Ladung auf dem Kondensator proportional zur Zeit bis das Stopsig
 Im Folgenden soll der Aufbau des \textit{Fast}-\textit{Slow}-Konizidenzkreises und dessen Zeitkalibration dargestellt werden.
 
 \subsection{Einstellung des \textit{Slow}-Kreises}
+\label{sec:slow_kreis}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{./figures/aufbau/energie.pdf}
@@ -265,14 +266,14 @@ Diese wurden in den Abbildungen \ref{fig:lyso_spektren} und \ref{fig:na_spektren
 	\begin{subfigure}{\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./figures/LYSO_links}
-		\caption{LYSO Spektrum aufgenommen mit dem linken Detektor}
+		\caption{Intrinsisches Spektrum des linken Detektors}
 	\end{subfigure}
 	\begin{subfigure}{\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{./figures/LYSO_rechts}
-		\caption{LYSO Spektrum aufgenommen mit dem rechten Detektor}
+		\caption{Intrinsisches Spektrum des rechten Detektors}
 	\end{subfigure}
-	\caption{Spektren von Lutetium, das als Teil des Szintillatormaterials LYSO ein Gammaspektrum erzeugt. Die Maxima sind entsprechend der Photonenenergie gekennzeichnet.}
+	\caption{Intrinsische Spektren der LYSO-Detektoren durch den radioaktiven Zerfall des \isotope[176]{Lu}-Isotops im Detektormaterial. Die charakteristischen Linien wurden mit der Gesamtenergie der detektierten Photonen markiert.}
 	\label{fig:lyso_spektren}
 \end{figure}
 \begin{figure}[htbp]
@@ -285,6 +286,7 @@ Diese wurden in den Abbildungen \ref{fig:lyso_spektren} und \ref{fig:na_spektren
 		\centering
 		\includegraphics[width=\textwidth]{./figures/na_rechts}
 		\caption{Spektrum von Natrium aufgenommen mit dem rechten Detekor}
+		\label{fig:na_rechts}
 	\end{subfigure}
 	\caption{Spektren von Natrium. Es ist gut sichtbar, dass das Fenster des rechten SCAs zu klein ist, um bei minimaler Verstärkung das gesamte Spektrum aufzunehmen, weswegen ein deutlicher Schnitt bei Kanalnummer \num{1000} zu beobachten ist. Die Maxima des Untergrundes wurden nicht erneut gekennzeichnet, siehe hierfür Abb. \ref{fig:lyso_spektren}.}
 	\label{fig:na_spektren}
@@ -293,13 +295,18 @@ In den LYSO-Spektren können deutlich mehrere charakteristische Linien des radio
 Gemäß Abbildung~\korr{LUTETIUM-ZERFALLSSCHEMA} entsteht bei dem $\beta$-Zerfall von \isotope[176]{Lu} ein angeregter Hafnium-Zustand, welcher schnell über eine $\gamma$-Kaskade in den Grundzustand zerfällt.
 Dabei treten hauptsächlich Photonen mit Energien von \SI{88}{\keV}, \SI{202}{\keV} und \SI{307}{\keV} auf.
 Als Folge dessen bilden sich die charakteristischen Energiespektren aus Abbildung \ref{fig:lyso_spektren}, bei denen unter anderem Linien bei den Energien der einzelnen Photonen sichtbar sind.
-Darüber hinaus 
+Diese Linien zeigen nur eine kleine Amplitude, da in dem LYSO-Szintillator mit großer Wahrscheinlichkeit mehrere Photonen detektiert werden und sich so die Energien summieren.
+Dies sieht man beispielsweise an der \SI{597}{\keV}-Linie, die entsteht, wenn alle drei Photonen im Detektormaterial absorbiert werden.
 
+Außerdem wurden in Abbildung~\ref{fig:na_spektren} die Spektren beider Detektoren mit der \isotope[22]{Na}-Positronenquelle dargestellt.
+Wie bereits in Abschnitt~\ref{sec:slow_kreis} erwähnt, musste aufgrund der begrenzten Fensterbreite des SCA dessen untere Schwelle angehoben werden, um die \SI{1275}{\keV} Linie mit dem MCA darstellen zu können.
+Dies kann in Abbildung~\ref{fig:na_rechts} an der Kante bei Kanal 1000 ausgemacht werden.
+Für beide Detektoren ist der Lutetium-Untergrund weiterhin deutlich zu erkennen und soll hier nicht erneut diskutiert werden.
+Darüber hinaus sind zwei weitere Energiebeiträge bei \SI{511}{\keV} und \SI{1275}{\keV} zu erkennen.
+Die \SI{1275}{\keV}-Linie entsteht durch das Photon, welches durch den Übergang des angeregten \isotope[22]{Ne}-Zustandes in den Grundzustand entsteht und folglich im Szintillator detektiert wird.
+Weiterhin entsteht die \SI{511}{\keV}-Linie durch die thermalisierten (d.h.\ nahezu ruhenden) Positronen, die im $\beta^+$-Zerfall von \isotope[22]{Na} entstehen und folglich in zwei Photonen annihilieren.
 
-
-
-
-Im Anschluss wurden die SCAs auf die~\SI{511}{keV}~Linie eingestellt, da diese aufgrund der höheren Rate zur Zeitkalibration genutzt wurde.
+Abschließend wird das Fenster der SCAs auf die \SI{511}{keV}-Linie eingestellt, um diese als Koinzidenzquelle für die weitere Einstellung nutzen zu können.
 
 \subsection{Einstellung des \textit{Fast}-Kreises}
 \label{ssec:fastkreis}
