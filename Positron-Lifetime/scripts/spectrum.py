@@ -57,13 +57,16 @@ plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="+")
 plt.annotate(r"$597 \, \si{\keV}$", xy=(3000, 900), xytext=(4000, 930),
              arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
 
-plt.annotate(r"$290 \, \si{\keV}$", xy=(1400, 380), xytext=(1200, 550),
+plt.annotate(r"$290 \, \si{\keV}$", xy=(1400, 380), xytext=(1400, 600),
              arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
 
-plt.annotate(r"$395 \, \si{\keV}$", xy=(1900, 340), xytext=(2000, 500),
+plt.annotate(r"$395 \, \si{\keV}$", xy=(1900, 340), xytext=(1900, 500),
              arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
 
-plt.annotate(r"$88 \, \si{\keV}$", xy=(480, 80), xytext=(600, 200),
+plt.annotate(r"$88 \, \si{\keV}$", xy=(480, 80), xytext=(480, 200),
+             arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
+
+plt.annotate(r"$202 \, \si{\keV}$", xy=(922, 134), xytext=(922, 300),
              arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
 
 plt.xlim(0, 6000)
@@ -84,13 +87,16 @@ plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="+")
 plt.annotate(r"$597 \, \si{\keV}$", xy=(3200, 780), xytext=(4400, 800),
              arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
 
-plt.annotate(r"$290 \, \si{\keV}$", xy=(1420, 340), xytext=(1200, 500),
+plt.annotate(r"$290 \, \si{\keV}$", xy=(1420, 340), xytext=(1420, 500),
              arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
 
-plt.annotate(r"$395 \, \si{\keV}$", xy=(1980, 300), xytext=(2100, 420),
+plt.annotate(r"$395 \, \si{\keV}$", xy=(1980, 300), xytext=(1980, 420),
              arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
 
-plt.annotate(r"$88 \, \si{\keV}$", xy=(420, 75), xytext=(600, 200),
+plt.annotate(r"$88 \, \si{\keV}$", xy=(420, 75), xytext=(420, 220),
+             arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
+
+plt.annotate(r"$202 \, \si{\keV}$", xy=(886, 110), xytext=(886, 300),
              arrowprops=dict(arrowstyle="->", facecolor="black"), ha="center")
 
 plt.xlim(0, 7000)
