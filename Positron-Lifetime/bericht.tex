@@ -209,7 +209,7 @@ Um ein detektierbares Signal zu erhalten, wird der Szintillator dotiert.
 Diese Dotierung führt zu zusätzlichen lokalen Energieniveaus zwischen dem Leitungs- und dem Valenzband des Kristalls.
 Trifft ein Elektronen-Loch-Paar, welches durch ein einfallendes Gamma-Quant im Kristall ausgelöst wurde auf ein solchen Aktivator-Zentrum, kann das Elektron über das zusätzliche Energieniveau mit dem Loch unter Emission von zwei Photonen rekombinieren.
 
-Das in diesem Versuch verwendete Szintillatormaterial ist LYSO (\korr{Zusammensetzung}), welches aufgrund des raidoaktiven Lutetiums zusätzlich zum Spektrum des Szintillationslicht ein Spektrum aus dem radioaktiven Zerfall beobachtbar macht.
+Das in diesem Versuch verwendete Szintillatormaterial ist LYSO (\korr{Zusammensetzung}), welches aufgrund des radioaktiven Lutetiums zusätzlich zum Spektrum des Szintillationslicht ein Spektrum aus dem radioaktiven Zerfall beobachtbar macht.
 Um das entstehende Photonensignal zu verstärken werden Sekundärelektronenvervielfacher (auch Photomultiplier, kurz PMT genannt) eingesetzt, die im folgenden näher beschrieben werden.
 
 \subsubsection{Sekundärelektronenvervielfacher}
@@ -224,7 +224,24 @@ Das Signal kann dabei an mehreren Stellen abgegriffen werden:
 	\item[\textit{Fast}-Ausgang]Dieser Abgriff geschieht an der Anode, wo aufgrund der hohen Verstärkung eine kurze Anstiegszeit des Signals beobachtet werden kann (\textit{fast}), weswegen dieser Ausgang für Zeitmessungen bevorzugt wird. Allerdings ist bereits eine Sättigung des Stroms möglich, so dass keine Energieinformation aus diesem Signal gewonnen werden kann.
 \end{description}
 
-\subsubsection{TODO: Nuklare Elektronik (SCA, MCA, CFD, TAC)}
+\subsubsection{TODO: Nukleare Elektronik (SCA, MCA, CFD, TAC)}
+
+Im Messaufbau werden verschiedene elektronische Bauteile verwendet, die im Folgenden näher beschrieben werden sollen.
+Da aufgrund des Lutetium-Spektrums mehrere Photonen unterschiedlicher Energien in den Sekundärelektronenvervielfachern registriert werden, ist es nötig, eine Selektion auf Signale einer bestimmten Energie zu ermöglichen.
+Hierzu kommen Einkanalanalysatoren (engl. \textit{single channel analyzer}, im Weiteren kurz als \textbf{SCA} bezeichnet) zum Einsatz.
+Sie erzeugen ein logisches Signal, wenn die Eingangsamplitude in einem definierbaren Bereich, Fenster genannt, liegt.
+Dieser wird durch eine untere Schwelle und die Größe dieses Fensters eingestellt, was intern durch zwei Schwellendiskriminatoren realisiert wird.
+Die Spektren werden mit einem Mehrkanalanalysator (engl. \textit{multi channel analyzer}, kurz \textbf{MCA}) aufgenommen.
+Dieser funktioniert ähnlich wie ein SCA, jedoch wird das Fenster in mehrere zur Signalhöhe proportionale Bereiche eingeteilt, die auch als Kanäle bezeichnet werden.
+Der in diesem Versuch verwendete MCA besitzt~\num{8192} Kanäle.
+Fällt eine am Eingang anliegende Amplitude in einen dieser Bereiche wird mit einem Zähler die dort registrierte Anzahl an Ereignissen um eins erhöht, wodurch ein Amplitudenspektrum (oftmals als Energiespektrum) registriert werden kann.
+Um die Triggerung der Zeitmessung umzusetzen, kommen Diskriminatoren zum Einsatz, die sicherstellen, dass nur ein aufgetretenes Signal und keine Untergrundereignisse eine Zeitmessung starten bzw. stoppen.
+Da der Zeitpunkt zum Schalten eines gewöhnlichen Diskriminators abhängig ist von der Amplitude des Signals, werden sogenannte \textit{constant fraction} Diskriminatoren (\textbf{CFD}) eingesetzt, die immer bei Erreichen eines festgelegten Bruchteils der Maximalamplitude schalten.
+Hierzu wird das Eingangssignal in zwei Komponenten zerlegt, von denen eine um die Zeit verzögert wird, die das Signal braucht, um vom Bruchteil der Amplitude bis zu ihrem Maximum anzusteigen, während die andere Komponenten gedämpft und invertiert wird.
+Durch Addition der beiden Komponenten ergibt sich ein Signal, das einen Nulldurchgang an einem festgelegten Punkt, unabhängig von der Maximalamplitude hat und zum Schalten des Diskriminators  genutzt wird.
+Zur Zeitmessung selbst wird ein \textit{time to amplitude converter}, kurz \textbf{TAC} verwendet, der aus der Zeitdifferenz zwischen Eintreffen eines Start- und Stopsignals ein Signal mit zur Zeit proportionaler Amplitude erzeugt.
+Dies geschieht durch Aufladung eines Kondensators über eine Konstantstromquelle nachdem das Startsignal registriert wurde.
+Dadurch ist die Ladung auf dem Kondensator proportional zur Zeit bis das Stopsignal am entsprechenden Eingang eintrifft, wodurch die Porportionalität der Ausgangsamplitude zur gemessenen Zeit hergestellt wird. 
 
 \subsubsection{\textit{Fast}-\textit{Slow}-Koinzidenzkreis}
 
