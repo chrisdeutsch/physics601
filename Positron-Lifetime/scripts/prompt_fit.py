@@ -9,11 +9,17 @@ data = pd.read_csv("data/prompt/prompt_curves_4ns.txt", sep="\t", index_col=0,
                    names=["ch", "cnt"])
 data["dcnt"] = np.sqrt(data.cnt)
 
-data = data[(data.index > 500) & (data.index < 5500)]
+### Spektrum Plot
+lc = "#377EB8"
+lw = 1.2
 
 plt.xlim(500, 5500)
-#plt.plot(data.index, data.cnt)
+plt.xlabel("Kanal")
+plt.ylabel("Ereignisse~$N$")
 
+plt.errorbar(data.index, data.cnt, yerr=data.dcnt, fmt="+", label="Spektrum")
+
+### Angepasste Parameter
 t = []
 mu = []
 dmu = []
@@ -30,7 +36,7 @@ t.append(20.0)
 mu.append(popt[0])
 dmu.append(np.sqrt(np.diag(pcov))[0])
 
-plt.plot(fitr.index, gauss(fitr.index, *popt), "-")
+plt.plot(fitr.index, gauss(fitr.index, *popt), "-", linewidth=lw, c=lc)
 
 
 # Fit 2
@@ -41,7 +47,7 @@ t.append(24.0)
 mu.append(popt[0])
 dmu.append(np.sqrt(np.diag(pcov))[0])
 
-plt.plot(fitr.index, gauss(fitr.index, *popt), "-")
+plt.plot(fitr.index, gauss(fitr.index, *popt), "-", linewidth=lw, c=lc)
 
 
 # Fit 3
@@ -52,7 +58,7 @@ t.append(28.0)
 mu.append(popt[0])
 dmu.append(np.sqrt(np.diag(pcov))[0])
 
-plt.plot(fitr.index, gauss(fitr.index, *popt), "-")
+plt.plot(fitr.index, gauss(fitr.index, *popt), "-", linewidth=lw, c=lc)
 
 
 # Fit 4
@@ -63,7 +69,7 @@ t.append(32.0)
 mu.append(popt[0])
 dmu.append(np.sqrt(np.diag(pcov))[0])
 
-plt.plot(fitr.index, gauss(fitr.index, *popt), "-")
+plt.plot(fitr.index, gauss(fitr.index, *popt), "-", linewidth=lw, c=lc)
 
 
 # Fit 5
@@ -74,7 +80,7 @@ t.append(36.0)
 mu.append(popt[0])
 dmu.append(np.sqrt(np.diag(pcov))[0])
 
-plt.plot(fitr.index, gauss(fitr.index, *popt), "-")
+plt.plot(fitr.index, gauss(fitr.index, *popt), "-", linewidth=lw, c=lc)
 
 
 # Fit 6
@@ -85,7 +91,7 @@ t.append(40.0)
 mu.append(popt[0])
 dmu.append(np.sqrt(np.diag(pcov))[0])
 
-plt.plot(fitr.index, gauss(fitr.index, *popt), "-")
+plt.plot(fitr.index, gauss(fitr.index, *popt), "-", linewidth=lw, c=lc)
 
 
 # Fit 7
@@ -96,7 +102,7 @@ t.append(44.0)
 mu.append(popt[0])
 dmu.append(np.sqrt(np.diag(pcov))[0])
 
-plt.plot(fitr.index, gauss(fitr.index, *popt), "-")
+plt.plot(fitr.index, gauss(fitr.index, *popt), "-", linewidth=lw, c=lc)
 
 
 # Fit 8
@@ -107,14 +113,16 @@ t.append(48.0)
 mu.append(popt[0])
 dmu.append(np.sqrt(np.diag(pcov))[0])
 
-plt.plot(fitr.index, gauss(fitr.index, *popt), "-")
+plt.plot(fitr.index, gauss(fitr.index, *popt), "-", linewidth=lw, c=lc)
 
+plt.savefig("figures/prompt_curve_fits.pdf")
 plt.close()
 
 
 ### Prompt-Kurve
 prompt = pd.DataFrame(np.array([t, mu, dmu]).transpose(), columns=["t", "mu", "dmu"])
-plt.errorbar(prompt.mu, prompt.t, xerr=prompt.dmu, yerr=np.zeros(8)+0.1, fmt="o")
+plt.errorbar(prompt.mu, prompt.t, xerr=prompt.dmu, yerr=np.zeros(8)+0.1,
+             fmt="o", label="Prompt-Kurven\nSchwerpunkt", zorder=2)
 
 f = lambda x, m, b: m * x + b
 popt, pcov = curve_fit(f, prompt.mu, prompt.t)
@@ -122,10 +130,24 @@ popt, pcov = curve_fit(f, prompt.mu, prompt.t)
 fx = np.linspace(0.0, 6000.0, 1000)
 fy = f(fx, *popt)
 
-plt.plot(fx, fy, "-")
+plt.plot(fx, fy, "-", label="Anpassung", zorder=1)
 
 plt.xlim(0.0, 6000.0)
 plt.xlabel("Kanal")
 plt.ylabel("Verzögerung $\Delta t$ / ns")
+plt.legend(loc=0)
 
-plt.show()
+plt.savefig("figures/prompt_curve.pdf")
+plt.close()
+
+
+### LATEX-Tabelle
+from scripts.tools import round
+prompt.columns = ["{Verzögerung~$\Delta t$ / \si{\nano\seconds}}",
+                  "{Schwerpunkt~$\mu$ / Kanal}",
+                  "{Schwerpunkt~$\sigma_\mu$ / Kanal}"]
+
+prompt.to_latex("tables/prompt_fit.tex", index=False,
+                formatters=[round(0), round(2), round(2)],
+                column_format="SSS", escape=False)
+
