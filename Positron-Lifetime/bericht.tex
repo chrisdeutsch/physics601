@@ -189,6 +189,20 @@ mit der Boltzmannkonstante~$k$, der Temperatur~$T$, sowie der Leerstellenbildung
 
 \subsubsection{Haftstellenmodell}
 
+Mit dem Haftstellenmodell kann das Verhalten von Positronen (bzw. Positronium) in Festkörpern beschrieben werden.
+Hierbei wird angenommen, dass das Positron nur in zwei Zuständen, frei oder gebunden, vorkommt.
+Für die Besetzungszahlen $n_\mathrm{f}$, $n_\mathrm{b}$ der beiden Zustände lassen sich dann zwei Ratengleichungen formulieren, die die Übergänge zwischen diesen Zuständen $\mu_\mathrm{b}$, $\xi_\mathrm{b}$ sowie die Verluste aufgrund von Annihilation (mit den Raten $\lambda_\mathrm{f}$ und $\lambda_\mathrm{b}$) einschließen.
+$N$ bezeichne dabei die Rate der einfallenden Positronen.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.4\textwidth]{./figures/trapping_model}
+	\caption{Haftstellenmodell (nach \cite{schatz})}
+\end{figure}
+\begin{align}
+	\frac{\mathrm{d}n_\mathrm{f}}{\mathrm{d}t}
+\end{align}
+
+
 \subsubsection{Lebensdauer von Positronen}
 
 \subsection{Messmethoden}
@@ -320,8 +334,13 @@ Stellt man die Schwelle des CFD auf ihr Minimum, so stellt man fest, dass neben 
 Diese Nulllinie entsteht dadurch, dass das Hintergrundrauschen die CFD-Schwelle überschreitet und somit das Oszilloskop triggert.
 Würde der CFD durch ein Detektorsignal geschaltet werden, so muss ein Signal im \textit{Slow}-Kreis zu beobachten sein.
 Demnach wird die Schwelle gerade so eingestellt, dass keine Nulllinie mehr auf dem Oszilloskop sichtbar ist.
-Ein Beispiel eines solchen beobachteten Signals ist in Abbildung \korr{REF} zu sehen.
-\korr{Abbildung}
+Ein Beispiel eines solchen beobachteten Signals ist in Abbildung \ref{fig:cfd_threshold} zu sehen.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.8\textwidth]{./figures/cfd_threshold}
+	\caption{Beobachtetes Signal auf dem Oszillator. Es ist keine Nulllinie mehr zu sehen.}
+	\label{fig:cfd_threshold}
+\end{figure}
 
 Da die zu messenden Lebenszeiten sehr kurz sind, muss das Stopsignal gegen das Startsignal verzögert werden, damit der TAC ein Signal mit nicht-verschwindender Amplitude erzeugt.
 Dies geschieht, indem ein \si{ns}-Delay zwischen CFD des rechten Detektors und dem Eingang für das Stopsignal am TAC geschaltet wird.
@@ -461,8 +480,8 @@ Die Probe wurde so positioniert, dass eine Zählrate von ungefähr~\SI{60}{\per\
 	\emph{Covariance Propagation for Guided Matching},
 	\url{http://vision.cornell.edu/se3/wp-content/uploads/2014/09/ochoa06.pdf} (Letzter Aufruf: 14. März 2016).
 	
-\bibitem{cern}
-	CERN, \emph{Computer generated image of the whole ATLAS detector (CERN-GE-0803012-06)}, \url{http://cds.cern.ch/record/1095924} (Letzter Aufruf: 15. März 2016)
+\bibitem{schatz}
+	G. Schatz, A. Weidinger, \emph{Nukleare Festkörperphysik}, Teubner 1992
 \end{thebibliography}
 
 % APPENDIX
