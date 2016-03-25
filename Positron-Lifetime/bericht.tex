@@ -184,6 +184,7 @@ Sie entstehen vor allem durch zwei Effekte:
 Die Konzentration der Leerstellen im Gitter und ihre Temperaturabhängigkeit kann durch
 \begin{align}
 c_\mathrm{v}(T) = e^{\frac{S_\mathrm{t}}{k}}e^{-\frac{H_\mathrm{t}}{k T}}
+\label{eq:vac_conc}
 \end{align}
 mit der Boltzmannkonstante~$k$, der Temperatur~$T$, sowie der Leerstellenbildungsentropie~$S_\mathrm{t}$ und -enthalpie~$H_\mathrm{t}$ beschrieben werden \cite{add_infos}.
 
@@ -211,10 +212,10 @@ Unter der Annahme eines thermischen Gleichgewichts ($\frac{\mathrm{d}n_\mathrm{f
 \begin{align}
 	\frac{1}{\bar\tau}=f_\mathrm{f}\frac{1}{\tau_\mathrm{f}} + f_\mathrm{b}\frac{1}{\tau_\mathrm{b}}
 \end{align}
-mit den Bruchteilen der gebundenen bzw. freien Positronen $f$ und den Lebensdauern $1/\tau = \lambda$.
-Nimmt man weiterhin an, das $\xi_\mathrm{b}=0$ gilt, was einer starken Bindung der Positronen an die Leerstellen entspricht, kann man schreiben
+mit den Bruchteilen der gebundenen bzw. freien Positronen $f$ und den Lebensdauern $\tau = 1/\lambda$.
+Nimmt man weiterhin an, dass $\xi_\mathrm{b}=0$ gilt, was einer starken Bindung der Positronen an die Leerstellen entspricht, kann man mit $c_\mathrm{v}(T)$ aus \eqref{eq:vac_conc} schreiben
 \begin{align}
-	\bar\tau=\frac{\lambda_\mathrm{b}+\mu_\mathrm{b}c_\mathrm{v}(T)}{\lambda_\mathrm{b}\lambda_\mathrm{f}+\mu_\mathrm{b}\lambda_\mathrm{b}c_\mathrm{v}(T)}\quad\text{,}
+	\bar\tau=\tau_\mathrm{f}\frac{1+\sigma c_\mathrm{v}(T)\tau_\mathrm{b}}{1+\sigma c_\mathrm{v}(T)\tau_\mathrm{f}}\quad\text{,}
 \end{align}
 wodurch die Temperaturabhängigkeit der Lebensdauer untersucht werden kann.
 Grafisch dargestellt ergibt sich eine S-Kurve, wie in Abbildung \ref{fig:s_curve_schematic}.
