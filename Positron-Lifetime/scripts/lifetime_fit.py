@@ -219,7 +219,7 @@ dm = 1.7194029982964498e-5
 
 # -> ps / Kanal
 m = 1000.0 * m
-dm = 1000.0 * m
+dm = 1000.0 * dm
 
 # Mittlere Temperaturen
 lifetimes["Tbar"] = (lifetimes.T0 + lifetimes.T1) / 2.0
@@ -233,21 +233,33 @@ lifetimes["It"] = lifetimes.At / (lifetimes.A0 + lifetimes.At)
 lifetimes["taubar"] = lifetimes.I0 * lifetimes.tau0 + lifetimes.It * lifetimes.taut
 lifetimes["dtaubar"] = lifetimes.dtau0
 
+### Umrechnung von Kanal -> ps
+picosec = pd.DataFrame()
+picosec["Tbar"] = lifetimes.Tbar
+picosec["dTbar"] = lifetimes.dTbar
+picosec["tau0"] = lifetimes.tau0 * m
+picosec["dtau0"] = np.sqrt(lifetimes.tau0**2 * dm**2 + m**2 * lifetimes.dtau0**2)
+picosec["taut"] = lifetimes.taut * m
+picosec["dtaut"] = np.sqrt(lifetimes.taut**2 * dm**2 + m**2 * lifetimes.dtaut**2)
+picosec["taubar"] = lifetimes.taubar * m
+picosec["dtaubar"] = np.sqrt(lifetimes.taubar**2 * dm**2 + m**2 * lifetimes.dtaubar**2)
+
+
 ### Mean lifetime plot
-plt.errorbar(lifetimes.Tbar, lifetimes.taubar, xerr=lifetimes.dTbar.get_values(), yerr=lifetimes.dtaubar.get_values(), fmt="o", label="mittlere Lebenszeit (Anpassung)")
+plt.errorbar(picosec.Tbar, picosec.taubar, xerr=picosec.dTbar.get_values(), yerr=picosec.dtaubar.get_values(), fmt="o", label="mittlere Lebenszeit (Anpassung)")
 
 def s_curve(T, tauf, taut, sigma, S, H):
     kB = 1.0
     a = sigma * np.exp(S / kB - H / (kB * T))
     return tauf * (1.0 + a * taut) / (1.0 + a * tauf)
 
-popt, pcov = curve_fit(s_curve, lifetimes.T0, lifetimes.taubar)
+popt, pcov = curve_fit(s_curve, picosec.Tbar, picosec.taubar, p0=[4.5e+2, 3.8e+2, 2.9e-1, -7.6, -190.0])
 
 x = np.linspace(20.0, 140.0, 1000)
 plt.plot(x, s_curve(x, *popt), "-", label="Anpassung S-Kurve")
 
 plt.xlabel(r"Temperatur~$T$ / \si{\degreeCelsius}")
-plt.ylabel(r"mittlere Lebenszeit~$\bar{\tau}$")
+plt.ylabel(r"mittlere Lebenszeit~$\bar{\tau}$ / \si{ps}")
 plt.legend(loc="lower right")
 
 
@@ -279,3 +291,17 @@ out.to_latex("tables/lifetime_fit.tex", index = False,
                          round(0), round(0), round(0), round(0), round(1),
                          round(1), round(1), round(1), ],
              column_format="S[table-format=2.1]S[table-format=3.2]S[table-format=1.2]S[table-format=2.2]S[table-format=1.2]S[table-format=5.0]S[table-format=4.0]S[table-format=5.0]S[table-format=4.0]S[table-format=2.1]S[table-format=1.1]S[table-format=2.1]S[table-format=1.1]", escape=False)
+
+out = picosec[["Tbar", "tau0", "dtau0", "taut", "dtaut", "taubar", "dtaubar"]]
+
+out.columns = [r"{$\bar{T}$ / \si{\degreeCelsius}}",
+               r"{$\tau_0$ / \si{ps}}",
+               r"{$\Delta \tau_0$ / \si{ps}}",
+               r"{$\tau_t$ / \si{ps}}",
+               r"{$\Delta \tau_t$ / \si{ps}}",
+               r"{$\bar{\tau}$ / \si{ps}}",
+               r"{$\Delta \bar{\tau_t}$ / \si{ps}}"]
+
+out.to_latex("tables/mean_lifetimes.tex", index = False,
+             formatters=[round(1), round(1), round(1), round(1), round(1), round(1), round(1)],
+             column_format="S[table-format=2.1]S[table-format=3.1]S[table-format=2.1]S[table-format=3.1]S[table-format=2.1]S[table-format=3.1]S[table-format=2.1]", escape=False)

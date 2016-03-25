@@ -489,11 +489,19 @@ Hierbei beschreibt $\sigma$ die Standardabweichung der Normalverteilung, $\tau$ 
 
 
 \begin{sidewaystable}
-	\centering
-	\resizebox{\textwidth}{!}{
-	\input{./tables/lifetime_fit.tex}
-	}
-	\caption{Ergebnisse der Anpassung einer Kurve mit der Hypothese aus Gleichung \eqref{eq:spektrum_fit} an die gemessenen Lebenszeitspektren bei verschiedenen Temperaturen der Indium-Probe.}
+	\begin{subtable}{\textwidth}
+		\centering
+		\resizebox{\textwidth}{!}{
+			\input{./tables/lifetime_fit.tex}
+		}
+		\caption{Ergebnisse der Anpassung einer Kurve mit der Hypothese aus Gleichung \eqref{eq:spektrum_fit} an die gemessenen Lebenszeitspektren bei verschiedenen Temperaturen der Indium-Probe.}
+		\vspace*{1cm}
+	\end{subtable}
+	\begin{subtable}{\textwidth}
+		\centering
+		\input{./tables/mean_lifetimes.tex}
+		\caption{Umrechnung der Zeiten mithilfe der Zeitkalibration und Bestimmung der mittleren Lebenzeit~$\bar{\tau}$.}
+	\end{subtable}
 \end{sidewaystable}
 
 
