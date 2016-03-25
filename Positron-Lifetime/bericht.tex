@@ -369,6 +369,7 @@ Um die gewünschte Verzögerung zu erreichen wurde eine zusätzliche Verzögerun
 Die interne Verzögerung beträgt laut Aufdruck auf dem Gerät~\SI{1.5}{ns} und die Kabellängen unterschieden sich um geschätzte~\SI{20}{cm}, sodass die gewählten Einstellungen durch eine einfache Abschätzung als plausibel bewertet werden können.
 
 \subsection{Zeitkalibration}
+\label{sec:zeitkalibration}
 Um einen Zusammenhang zwischen Impulshöhe des TAC und gemessener Zeit zwischen Start- und Stopsignal zu erhalten, muss eine Kalibrierung der Zeitmessung stattfinden.
 Dazu werden die Komponenten gemäß Abbildung~\ref{fig:fast_slow_coincidence} verschaltet.
 \begin{figure}[h]
@@ -443,6 +444,7 @@ und nach Anwenden der Kalibration
 \end{align*}
 Für die Auflösung bedeutet dies, dass nur Signale mit einem zeitlichen Abstand von mindestens \SI{802.3 +- 2.4}{\pico\second} voneinander getrennt werden können.
 
+\clearpage
 \section{Lebenszeitmessung in Indium}
 Nachdem die einzelnen Elemente des Messaufbaus überprüft und kalibriert wurden, werden die SCAs für die Messung der Lebensdauer eingestellt.
 Da das \SI{1275}{\keV}-Photon des angeregten Neon-Zustandes beinahe gleichzeitig mit dem Positron des $\beta$-Zerfalls entsteht, kann dieses als Startsignal für die Lebenszeitmessung verwendet werden.
@@ -460,25 +462,57 @@ Darüber hinaus wird der statistische Fehler auf \SI{1}{\degreeCelsius} abgesch�
 
 Abschließend wurde die Probe so zwischen den Detektoren positioniert, dass eine Zählrate von ungefähr~\SI{60}{\per\second} erreicht wurde und die Software wurde auf eine Messdauer von \SI{30}{min} eingestellt, so dass für jede Messung eine Statistik mit etwa~\num{100000} Einträgen entsteht.
 
-
 \subsection{Analyse der Lebenszeitspektren}
-
-\begin{align*}
-	N(t) = \, &\frac{A_0}{2 \tau_0} \, e^{\frac{\sigma^2 - 2 \tau_0 (t - t_0)}{2 \tau_0^2}} \cdot \left\{ \erf(a_0) + \erf(b_0) \right\} \\
-	+ &\frac{A_t}{2 \tau_t} \, e^{\frac{\sigma^2 - 2 \tau_t (t - t_0)}{2 \tau_t^2}} \cdot \left\{ \erf(a_t) + \erf(b_t) \right\}\\
+Gemäß des Haftstellenmodells bestehen die Lebenszeitspektren der Positronen in Indium aus zwei exponentiellen Zerfällen mit jeweils unterschiedlichen Zeitkonstanten.
+Da diese Zeitkonstanten wesentlich kleiner sind als die charakteristische Zeitauflösung des Aufbaus wie sie in Abschnitt~\ref{sec:zeitkalibration} bestimmt wurde, muss die Auflösung bei der Auswertung der Spektren beachtet werden.
+Dieser Auflösungseffekt kann als gaußförmig angesehen werden und die tatsächlich beobachteten Lebenszeitspektren können dann als Faltung einer Normalverteilung mit zwei exponentiellen Zerfällen
+\begin{align}
+	N(t) = \, &\frac{A_0}{2 \tau_0} \, e^{\frac{\sigma^2 - 2 \tau_0 (t - t_0)}{2 \tau_0^2}} \cdot \left\{ \erf(a_0) + \erf(b_0) \right\} \nonumber\\
+	+ &\frac{A_t}{2 \tau_t} \, e^{\frac{\sigma^2 - 2 \tau_t (t - t_0)}{2 \tau_t^2}} \cdot \left\{ \erf(a_t) + \erf(b_t) \right\} \nonumber\\
 	+ &\mathrm{BG}
-\end{align*}
-
+	\label{eq:spektrum_fit}
+\end{align}
+mit
 \begin{alignat*}{2}
 	&a_0 = \frac{\sigma^2 + \tau_0 t_0}{\sqrt{2} \sigma \tau_0} \,\text{,} \qquad
 	&&b_0 = \frac{\tau_0 (t - t_0) - \sigma^2}{\sqrt{2} \sigma \tau_0} \\
 	&a_t = \frac{\sigma^2 + \tau_t t_0}{\sqrt{2} \sigma \tau_t} \,\text{,} \qquad
 	&&b_t = \frac{\tau_t (t - t_0) - \sigma^2}{\sqrt{2} \sigma \tau_t}
 \end{alignat*}
+beschrieben werden \cite{add_infos}.
+Hierbei beschreibt $\sigma$ die Standardabweichung der Normalverteilung, $\tau$ die jeweiligen Zeitkonstanten, $A$ einen von der Intensität der exponentiellen Zerfälle abhängigen Parameter und $\mathrm{BG}$ einen konstanten Untergrund.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics{./figures/lifetimes/raumtemperatur.pdf}
+	\caption{Vermessenes Lebenszeitspektrum bei Raumtemperatur $T = \SI{20}{\degreeCelsius}$}
+\end{figure}
 
 
+\begin{sidewaystable}
+	\begin{subtable}{\textwidth}
+		\centering
+		\resizebox{\textwidth}{!}{
+			\input{./tables/lifetime_fit.tex}
+		}
+		\caption{Ergebnisse der Anpassung einer Kurve mit der Hypothese aus Gleichung \eqref{eq:spektrum_fit} an die gemessenen Lebenszeitspektren bei verschiedenen Temperaturen der Indium-Probe.}
+		\vspace*{0.8cm}
+	\end{subtable}
+	\begin{subtable}{\textwidth}
+		\centering
+		\input{./tables/mean_lifetimes.tex}
+		\caption{Umrechnung der Zeiten mithilfe der Zeitkalibration und Bestimmung der mittleren Lebenzeit~$\bar{\tau}$.}
+		\vspace*{0.5cm}
+	\end{subtable}
+	
+	\caption{Auswertung der angepassten Lebenszeitspektren.}
+\end{sidewaystable}
 
-
+\begin{figure}[h]
+	\centering
+	\includegraphics{./figures/lifetime_s_curve.pdf}
+	\caption{S Kurve}
+\end{figure}
 
 
 \section{Lebenszeitmessung in Acrylglas}
@@ -494,32 +528,6 @@ Abschließend wurde die Probe so zwischen den Detektoren positioniert, dass eine
 \bibitem{anleitung}
 	\emph{Advanced Laboratory Course (physics601): Description of Experiments},
 	BONN-AT-2016-01MP, Universität Bonn, Januar 2016.
-
-\bibitem{wiki_standardmodell}
-	\emph{Wikimedia Commons, the free media repository}. \url{https://commons.wikimedia.org/wiki/File:Standard_Model_of_Elementary_Particles-de.svg} (Letzter Aufruf: 15. März 2016)
-	
-\bibitem{script}
-	N. Möser, J. Meier, J.-W. Tsung, E. von Törne,
-	\emph{Der ATLAS-Versuch: Eigenschaften von W-Bosonen und die Suche nach neuer Physik}.
-\bibitem{pdg}
-	K.A. Olive \textit{et al.} (Particle Data Group),
-	\emph{The Review of Particle Physics},
-	Chin. Phys. C, \textbf{38}, 090001 (2014).
-
-\bibitem{electron_atlas}
-	ATLAS Collaboration (Aad, Georges \textit{et al.}),
-	\emph{Electron performance measurements with the ATLAS detector using the 2010 LHC proton-proton collision data},
-	Eur.\ Phys.\ J.\ C72 (2012) 1909.
-
-\bibitem{odr}
-	SciPy,
-	\emph{Orthogonal distance regression (\texttt{scipy.odr})},
-	\url{http://docs.scipy.org/doc/scipy/reference/odr.html} (Letzter Aufruf: 14. März 2016).
-
-\bibitem{error_prop}
-	B. Ochoa, S. Belongie,
-	\emph{Covariance Propagation for Guided Matching},
-	\url{http://vision.cornell.edu/se3/wp-content/uploads/2014/09/ochoa06.pdf} (Letzter Aufruf: 14. März 2016).
 	
 \bibitem{schatz}
 	G. Schatz, A. Weidinger, \emph{Nukleare Festkörperphysik}, Teubner 1992
