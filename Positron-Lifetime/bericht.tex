@@ -440,24 +440,45 @@ und nach Anwenden der Kalibration
 \begin{align*}
 	\Delta t_\mathrm{FWHM} = \SI{0.8023 +- 0.0024}{\nano\second} \text{.}
 \end{align*}
-
-
-
-
-\subsection{Messung der Lebensdauer mit Indium}
-
-Nachdem die einzelnen Elemente des Messaufbaus überprüft und kalibriert wurden, werden die SCAs für die Messung der Lebensdauer eingestellt.
-Da die beinahe gleichzeitig zur Positronenproduktion entstehenden Photonen als Startsignal genutzt werden, wird das Fenster des linken SCAs an die entsprechende Photonenenergie von~\SI{1275}{keV} angepasst.
-Analog wird mit dem SCA für das Stopsignal, welches durch bei der Annihilation entstehende Photonen der Energie~\SI{511}{keV} entsteht, verfahren.
-Danach kann mit der Messung der Lebensdauer begonnen werden.
-Hierzu werden bei verschiedenen Temperaturen das vom TAC erzeugte Amplitudenspektrum gemessen.
-Die Temperatur kann dabei über einen Lötkolben, der mit dem Probenhalter verbunden ist, geregelt werden.
-Zur Temperaturmessung kommt ein digitales Thermometer zum Einsatz, dessen gemessene Werte durch ein zweites, analoges Thermometer im Temperaturbereich unter~\SI{100}{\degree\celsius} verifiziert werden konnten.
-Als Messpunkt für die Temperatur wurde die mittlere Temperatur ausgehend von den Temperaturen zu Beginn und Ende der jeweiligen Messung verwendet.
-Die Probe wurde so positioniert, dass eine Zählrate von ungefähr~\SI{60}{\per\second} erreicht wurde und die Software wurde auf eine Messdauer von genau~\SI{30}{min} eingestellt, so dass für jede Messung eine Statistik mit etwa~\num{100000} Einträgen entsteht.
-
+Für die Auflösung bedeutet dies, dass nur Signale mit einem zeitlichen Abstand von mindestens \SI{802.3 +- 2.4}{\pico\second} voneinander getrennt werden können.
 
 \section{Lebenszeitmessung in Indium}
+Nachdem die einzelnen Elemente des Messaufbaus überprüft und kalibriert wurden, werden die SCAs für die Messung der Lebensdauer eingestellt.
+Da das \SI{1275}{\keV}-Photon des angeregten Neon-Zustandes beinahe gleichzeitig mit dem Positron des $\beta$-Zerfalls entsteht, kann dieses als Startsignal für die Lebenszeitmessung verwendet werden.
+Daher wird das Fenster des linken SCA, welcher das Startsignal für den TAC liefert, auf die \SI{1275}{\keV}-Linie des Spektrums eingestellt.
+Der rechte SCA erzeugt nun das Stopsignal, indem dessen Fenster auf die \SI{511}{\keV}-Linie im Spektrum, welche durch die Annihilation des Positrons entsteht, eingestellt wird.
+Nachdem erneut die relevanten Signale auf Koinzidenz überprüft wurden, kann mit der Messung der Lebensdauer der Positronen in Indium begonnen werden.
+
+Hierzu wird bei verschiedenen Temperaturen das vom TAC erzeugte Amplitudenspektrum gemessen, welches (bis auf Hintergrund- und Auflösungseffekten) dem Lebenszeitspektrum der Positronen entspricht.
+Die Temperatur kann dabei über einen Lötkolben, der fest mit dem Probenhalter verbunden ist, geregelt werden.
+Zur Temperaturmessung kommt ein digitales Thermometer zum Einsatz, dessen gemessenen Temperaturen durch ein Flüssigkeitsthermometer im Temperaturbereich unter~\SI{100}{\degreeCelsius} verifiziert werden konnte.
+Die mit beiden Thermometern gemessenen Temperaturen stimmen, in Anbetracht der Ablesegenauigkeit am Flüssigkeitsthermometer, überein.
+Als Messpunkt für die Temperatur wurde die mittlere Temperatur ausgehend von den Temperaturen zu Beginn und Ende der jeweiligen Messung verwendet.
+Da der Zusammenhang zwischen gemessener Temperatur und Temperatur der Indium-Probe unbekannt ist, ist mit einem systematischen Fehler in der Temperaturmessung zu rechnen.
+Darüber hinaus wird der statistische Fehler auf \SI{1}{\degreeCelsius} abgeschätzt.
+
+Abschließend wurde die Probe so zwischen den Detektoren positioniert, dass eine Zählrate von ungefähr~\SI{60}{\per\second} erreicht wurde und die Software wurde auf eine Messdauer von \SI{30}{min} eingestellt, so dass für jede Messung eine Statistik mit etwa~\num{100000} Einträgen entsteht.
+
+
+\subsection{Analyse der Lebenszeitspektren}
+
+\begin{align*}
+	N(t) = \, &\frac{A_0}{2 \tau_0} \, e^{\frac{\sigma^2 - 2 \tau_0 (t - t_0)}{2 \tau_0^2}} \cdot \left\{ \erf(a_0) + \erf(b_0) \right\} \\
+	+ &\frac{A_t}{2 \tau_t} \, e^{\frac{\sigma^2 - 2 \tau_t (t - t_0)}{2 \tau_t^2}} \cdot \left\{ \erf(a_t) + \erf(b_t) \right\}\\
+	+ &\mathrm{BG}
+\end{align*}
+
+\begin{alignat*}{2}
+	&a_0 = \frac{\sigma^2 + \tau_0 t_0}{\sqrt{2} \sigma \tau_0} \,\text{,} \qquad
+	&&b_0 = \frac{\tau_0 (t - t_0) - \sigma^2}{\sqrt{2} \sigma \tau_0} \\
+	&a_t = \frac{\sigma^2 + \tau_t t_0}{\sqrt{2} \sigma \tau_t} \,\text{,} \qquad
+	&&b_t = \frac{\tau_t (t - t_0) - \sigma^2}{\sqrt{2} \sigma \tau_t}
+\end{alignat*}
+
+
+
+
+
 
 \section{Lebenszeitmessung in Acrylglas}
 
