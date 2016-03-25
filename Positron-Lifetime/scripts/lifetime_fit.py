@@ -213,6 +213,18 @@ t0, sigma, A0, At, tau0, taut, bg
 ### Lifetime table
 lifetimes = pd.DataFrame(fit_res, columns=["T0", "T1", "t0", "sigma", "A0", "At", "tau0", "taut", "bg", "dt0", "dsigma", "dA0", "dAt", "dtau0", "dtaut", "dbg"])
 
+# Zeitkalibration
+m = 0.006721094760572852 # ns / Kanal
+dm = 1.7194029982964498e-5
+
+# -> ps / Kanal
+m = 1000.0 * m
+dm = 1000.0 * m
+
+# Mittlere Temperaturen
+lifetimes["Tbar"] = (lifetimes.T0 + lifetimes.T1) / 2.0
+lifetimes["dTbar"] = 0.0 * lifetimes.Tbar + 1.0
+
 # Intensitäten
 lifetimes["I0"] = lifetimes.A0 / (lifetimes.A0 + lifetimes.At)
 lifetimes["It"] = lifetimes.At / (lifetimes.A0 + lifetimes.At)
@@ -222,7 +234,7 @@ lifetimes["taubar"] = lifetimes.I0 * lifetimes.tau0 + lifetimes.It * lifetimes.t
 lifetimes["dtaubar"] = lifetimes.dtau0
 
 ### Mean lifetime plot
-plt.errorbar(lifetimes.T0, lifetimes.taubar, yerr=lifetimes.dtaubar.get_values(), fmt="o")
+plt.errorbar(lifetimes.Tbar, lifetimes.taubar, xerr=lifetimes.dTbar.get_values(), yerr=lifetimes.dtaubar.get_values(), fmt="o", label="mittlere Lebenszeit (Anpassung)")
 
 def s_curve(T, tauf, taut, sigma, S, H):
     kB = 1.0
@@ -231,9 +243,39 @@ def s_curve(T, tauf, taut, sigma, S, H):
 
 popt, pcov = curve_fit(s_curve, lifetimes.T0, lifetimes.taubar)
 
-x = np.linspace(20.0, 130.0, 1000)
-plt.plot(x, s_curve(x, *popt), "-")
+x = np.linspace(20.0, 140.0, 1000)
+plt.plot(x, s_curve(x, *popt), "-", label="Anpassung S-Kurve")
+
+plt.xlabel(r"Temperatur~$T$ / \si{\degreeCelsius}")
+plt.ylabel(r"mittlere Lebenszeit~$\bar{\tau}$")
+plt.legend(loc="lower right")
+
 
 plt.savefig("figures/lifetime_s_curve.pdf")
-
 plt.close()
+
+
+### Latex Tabellen
+from scripts.tools import round
+
+out = lifetimes[["Tbar", "t0", "dt0", "sigma", "dsigma", "A0", "dA0", "At", "dAt", "tau0", "dtau0", "taut", "dtaut"]]
+
+out.columns = [r"{$\bar{T}$ / \si{\degreeCelsius}}",
+               r"{$t_0$ / Kanal}", 
+               r"{$\Delta t_0$ / Kanal}",
+               r"{$\sigma$ / Kanal}",
+               r"{$\Delta \sigma$ / Kanal}",
+               r"{$A_0$}",
+               r"{$\Delta A_0$}",
+               r"{$A_t$}",
+               r"{$\Delta A_t$}",
+               r"{$\tau_0$ / Kanal}",
+               r"{$\Delta \tau_0$ / Kanal}",
+               r"{$\tau_t$ / Kanal}",
+               r"{$\Delta \tau_t$ / Kanal}"]
+
+out.to_latex("tables/lifetime_fit.tex", index = False,
+             formatters=[round(1), round(2), round(2), round(2), round(2),
+                         round(0), round(0), round(0), round(0), round(1),
+                         round(1), round(1), round(1), ],
+             column_format="S[table-format=2.1]S[table-format=3.2]S[table-format=1.2]S[table-format=2.2]S[table-format=1.2]S[table-format=5.0]S[table-format=4.0]S[table-format=5.0]S[table-format=4.0]S[table-format=2.1]S[table-format=1.1]S[table-format=2.1]S[table-format=1.1]", escape=False)

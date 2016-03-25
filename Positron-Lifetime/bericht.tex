@@ -464,11 +464,12 @@ Abschließend wurde die Probe so zwischen den Detektoren positioniert, dass eine
 Gemäß des Haftstellenmodells bestehen die Lebenszeitspektren der Positronen in Indium aus zwei exponentiellen Zerfällen mit jeweils unterschiedlichen Zeitkonstanten.
 Da diese Zeitkonstanten wesentlich kleiner sind als die charakteristische Zeitauflösung des Aufbaus wie sie in Abschnitt~\ref{sec:zeitkalibration} bestimmt wurde, muss die Auflösung bei der Auswertung der Spektren beachtet werden.
 Dieser Auflösungseffekt kann als gaußförmig angesehen werden und die tatsächlich beobachteten Lebenszeitspektren können dann als Faltung einer Normalverteilung mit zwei exponentiellen Zerfällen
-\begin{align*}
+\begin{align}
 	N(t) = \, &\frac{A_0}{2 \tau_0} \, e^{\frac{\sigma^2 - 2 \tau_0 (t - t_0)}{2 \tau_0^2}} \cdot \left\{ \erf(a_0) + \erf(b_0) \right\} \\
 	+ &\frac{A_t}{2 \tau_t} \, e^{\frac{\sigma^2 - 2 \tau_t (t - t_0)}{2 \tau_t^2}} \cdot \left\{ \erf(a_t) + \erf(b_t) \right\}\\
 	+ &\mathrm{BG}
-\end{align*}
+	\label{eq:spektrum_fit}
+\end{align}
 mit
 \begin{alignat*}{2}
 	&a_0 = \frac{\sigma^2 + \tau_0 t_0}{\sqrt{2} \sigma \tau_0} \,\text{,} \qquad
@@ -478,6 +479,21 @@ mit
 \end{alignat*}
 beschrieben werden \cite{add_infos}.
 Hierbei beschreibt $\sigma$ die Standardabweichung der Normalverteilung, $\tau$ die jeweiligen Zeitkonstanten, $A$ einen von der Intensität der exponentiellen Zerfälle abhängigen Parameter und $\mathrm{BG}$ einen konstanten Untergrund.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics{./figures/lifetimes/raumtemperatur.pdf}
+	\caption{Vermessenes Lebenszeitspektrum bei Raumtemperatur $T = \SI{20}{\degreeCelsius}$}
+\end{figure}
+
+
+\begin{sidewaystable}
+	\centering
+	\resizebox{\textwidth}{!}{
+	\input{./tables/lifetime_fit.tex}
+	}
+	\caption{Ergebnisse der Anpassung einer Kurve mit der Hypothese aus Gleichung \eqref{eq:spektrum_fit} an die gemessenen Lebenszeitspektren bei verschiedenen Temperaturen der Indium-Probe.}
+\end{sidewaystable}
 
 
 
