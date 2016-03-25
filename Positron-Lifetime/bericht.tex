@@ -190,21 +190,40 @@ mit der Boltzmannkonstante~$k$, der Temperatur~$T$, sowie der Leerstellenbildung
 \subsubsection{Haftstellenmodell}
 
 Mit dem Haftstellenmodell kann das Verhalten von Positronen (bzw. Positronium) in Festkörpern beschrieben werden.
-Hierbei wird angenommen, dass das Positron nur in zwei Zuständen, frei oder gebunden, vorkommt.
-Für die Besetzungszahlen $n_\mathrm{f}$, $n_\mathrm{b}$ der beiden Zustände lassen sich dann zwei Ratengleichungen formulieren, die die Übergänge zwischen diesen Zuständen $\mu_\mathrm{b}$, $\xi_\mathrm{b}$ sowie die Verluste aufgrund von Annihilation (mit den Raten $\lambda_\mathrm{f}$ und $\lambda_\mathrm{b}$) einschließen.
-$N$ bezeichne dabei die Rate der einfallenden Positronen.
+Eine schematische Darstellung ist in Abbildung \ref{fig:trapping_model} dargestellt.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.4\textwidth]{./figures/trapping_model}
 	\caption{Haftstellenmodell (nach \cite{schatz})}
+	\label{fig:trapping_model}
 \end{figure}
+Hierbei wird angenommen, dass das Positron nur in zwei Zuständen, frei oder gebunden, vorkommt.
+Für die Besetzungszahlen $n_\mathrm{f}$, $n_\mathrm{b}$ der beiden Zustände lassen sich dann zwei Ratengleichungen formulieren, die die Übergänge zwischen diesen Zuständen $\mu_\mathrm{b}$, $\xi_\mathrm{b}$ sowie die Verluste aufgrund von Annihilation (mit den Raten $\lambda_\mathrm{f}$ und $\lambda_\mathrm{b}$) einschließen.
+$N$ bezeichne dabei die Rate der einfallenden Positronen.
 \begin{align}
-	\frac{\mathrm{d}n_\mathrm{f}}{\mathrm{d}t}
+	\frac{\mathrm{d}n_\mathrm{f}}{\mathrm{d}t}&=-\lambda_\mathrm{f}n_\mathrm{f}-\mu_\mathrm{b}c_\mathrm{v}n_\mathrm{f} + \xi_\mathrm{b}n_\mathrm{b} + N \\
+	\frac{\mathrm{d}n_\mathrm{b}}{\mathrm{d}t}&=-\lambda_\mathrm{b}n_\mathrm{b}+\mu_\mathrm{b}c_\mathrm{v}n_\mathrm{f} - \xi_\mathrm{b}n_\mathrm{f}
 \end{align}
-
 
 \subsubsection{Lebensdauer von Positronen}
 
+Unter der Annahme eines thermischen Gleichgewichts ($\frac{\mathrm{d}n_\mathrm{f}}{\mathrm{d}t} = \frac{\mathrm{d}n_\mathrm{b}}{\mathrm{d}t} = 0$) kann man die mittlere Lebensdauer $\bar\tau$ definieren als
+\begin{align}
+	\frac{1}{\bar\tau}=f_\mathrm{f}\frac{1}{\tau_\mathrm{f}} + f_\mathrm{b}\frac{1}{\tau_\mathrm{b}}
+\end{align}
+mit den Bruchteilen der gebundenen bzw. freien Positronen $f$ und den Lebensdauern $1/\tau = \lambda$.
+Nimmt man weiterhin an, das $\xi_\mathrm{b}=0$ gilt, was einer starken Bindung der Positronen an die Leerstellen entspricht, kann man schreiben
+\begin{align}
+	\bar\tau=\frac{\lambda_\mathrm{b}+\mu_\mathrm{b}c_\mathrm{v}(T)}{\lambda_\mathrm{b}\lambda_\mathrm{f}+\mu_\mathrm{b}\lambda_\mathrm{b}c_\mathrm{v}(T)}\quad\text{,}
+\end{align}
+wodurch die Temperaturabhängigkeit der Lebensdauer untersucht werden kann.
+Grafisch dargestellt ergibt sich eine S-Kurve, wie in Abbildung \ref{fig:s_curve_schematic}.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.6\textwidth]{./figures/s_curve_schematic}
+	\caption{Temperaturabhängigkeit der mittleren Lebensdauer $\bar\tau$.}
+	\label{fig:s_curve_schematic}
+\end{figure}
 \subsection{Messmethoden}
 
 \subsubsection{Szintillatoren}
@@ -357,7 +376,7 @@ Dazu werden die Komponenten gemäß Abbildung~\ref{fig:fast_slow_coincidence} ve
 	\caption{Aufbau des \textit{Fast}-\textit{Slow}-Koninzidenzkreises für die Zeitkalibration und die Messung der Lebenszeitspektren von Positronen und Positronium in Festkörpern \cite{anleitung}.}
 	\label{fig:fast_slow_coincidence}
 \end{figure}
-Nachdem sowohl die Signal der beiden SCAs im \textit{Slow}-Kreis als auch die Signale der Koinzidenz-Einheit und des TAC am Oszilloskop auf zeitliche Koinzidenz überprüft wurden, kann eine Promptkurve erstellt werden.
+Nachdem sowohl die Signale der beiden SCAs im \textit{Slow}-Kreis als auch die Signale der Koinzidenz-Einheit und des TAC am Oszilloskop auf zeitliche Koinzidenz überprüft wurden, kann eine Promptkurve erstellt werden.
 Hierbei wird das Stopsignal zusätzlich zur in~\ref{ssec:fastkreis} gewählten Verzögerung schrittweise um jeweils weitere~\SI{4}{ns} verzögert und für jede Einstellung über~\SI{2}{min} das entstehende Spektrum aufgenommen, welches in Abbildung~\ref{fig:promptkurven} gezeigt ist.
 \begin{figure}[h]
 	\centering
