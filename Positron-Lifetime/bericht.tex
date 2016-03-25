@@ -368,6 +368,7 @@ Um die gewünschte Verzögerung zu erreichen wurde eine zusätzliche Verzögerun
 Die interne Verzögerung beträgt laut Aufdruck auf dem Gerät~\SI{1.5}{ns} und die Kabellängen unterschieden sich um geschätzte~\SI{20}{cm}, sodass die gewählten Einstellungen durch eine einfache Abschätzung als plausibel bewertet werden können.
 
 \subsection{Zeitkalibration}
+\label{sec:zeitkalibration}
 Um einen Zusammenhang zwischen Impulshöhe des TAC und gemessener Zeit zwischen Start- und Stopsignal zu erhalten, muss eine Kalibrierung der Zeitmessung stattfinden.
 Dazu werden die Komponenten gemäß Abbildung~\ref{fig:fast_slow_coincidence} verschaltet.
 \begin{figure}[h]
@@ -460,27 +461,23 @@ Darüber hinaus wird der statistische Fehler auf \SI{1}{\degreeCelsius} abgesch�
 Abschließend wurde die Probe so zwischen den Detektoren positioniert, dass eine Zählrate von ungefähr~\SI{60}{\per\second} erreicht wurde und die Software wurde auf eine Messdauer von \SI{30}{min} eingestellt, so dass für jede Messung eine Statistik mit etwa~\num{100000} Einträgen entsteht.
 
 \subsection{Analyse der Lebenszeitspektren}
-
-
-
-
-
-
-
+Gemäß des Haftstellenmodells bestehen die Lebenszeitspektren der Positronen in Indium aus zwei exponentiellen Zerfällen mit jeweils unterschiedlichen Zeitkonstanten.
+Da diese Zeitkonstanten wesentlich kleiner sind als die charakteristische Zeitauflösung des Aufbaus wie sie in Abschnitt~\ref{sec:zeitkalibration} bestimmt wurde, muss die Auflösung bei der Auswertung der Spektren beachtet werden.
+Dieser Auflösungseffekt kann als gaußförmig angesehen werden und die tatsächlich beobachteten Lebenszeitspektren können dann als Faltung einer Normalverteilung mit zwei exponentiellen Zerfällen
 \begin{align*}
 	N(t) = \, &\frac{A_0}{2 \tau_0} \, e^{\frac{\sigma^2 - 2 \tau_0 (t - t_0)}{2 \tau_0^2}} \cdot \left\{ \erf(a_0) + \erf(b_0) \right\} \\
 	+ &\frac{A_t}{2 \tau_t} \, e^{\frac{\sigma^2 - 2 \tau_t (t - t_0)}{2 \tau_t^2}} \cdot \left\{ \erf(a_t) + \erf(b_t) \right\}\\
 	+ &\mathrm{BG}
 \end{align*}
-
+mit
 \begin{alignat*}{2}
 	&a_0 = \frac{\sigma^2 + \tau_0 t_0}{\sqrt{2} \sigma \tau_0} \,\text{,} \qquad
 	&&b_0 = \frac{\tau_0 (t - t_0) - \sigma^2}{\sqrt{2} \sigma \tau_0} \\
 	&a_t = \frac{\sigma^2 + \tau_t t_0}{\sqrt{2} \sigma \tau_t} \,\text{,} \qquad
 	&&b_t = \frac{\tau_t (t - t_0) - \sigma^2}{\sqrt{2} \sigma \tau_t}
 \end{alignat*}
-
-
+beschrieben werden \cite{add_infos}.
+Hierbei beschreibt $\sigma$ die Standardabweichung der Normalverteilung, $\tau$ die jeweiligen Zeitkonstanten, $A$ einen von der Intensität der exponentiellen Zerfälle abhängigen Parameter und $\mathrm{BG}$ einen konstanten Untergrund.
 
 
 
