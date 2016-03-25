@@ -38,7 +38,7 @@ data = pd.read_csv("data/temperatures/raumtemperatur.txt", sep="\t", index_col=0
 data["dcnt"] = np.sqrt(data.cnt)
 data = data[700:2000]
 
-plt.errorbar(data.index, data.cnt, yerr=data.dcnt.get_values(), fmt="+", label="Spektrum")
+plt.errorbar(data.index, data.cnt, yerr=data.dcnt.get_values(), fmt="|", label="Lebenszeitspektrum")
 popt, pcov = curve_fit(lifetime, data.index, data.cnt, p0=[t0, sigma, A0, At, tau0, taut, bg])
 perr = np.sqrt(np.diag(pcov))
 plt.plot(x, lifetime(x, *popt), "-", linewidth=1.2, label="Anpassung")
@@ -46,6 +46,9 @@ plt.plot(x, lifetime(x, *popt), "-", linewidth=1.2, label="Anpassung")
 fit_res.append([22.6, 22.8, *popt.tolist(), *perr.tolist()])
 
 plt.legend(loc=0)
+plt.xlim(800, 1800)
+plt.xlabel("Kanal")
+plt.ylabel("Ereignisse~$N$")
 
 plt.savefig("figures/lifetimes/raumtemperatur.pdf")
 plt.close()
@@ -57,7 +60,7 @@ data = pd.read_csv("data/temperatures/50_grad.txt", sep="\t", index_col=0,
 data["dcnt"] = np.sqrt(data.cnt)
 data = data[700:2000]
 
-plt.errorbar(data.index, data.cnt, yerr=data.dcnt.get_values(), fmt="+", label="Spektrum")
+plt.errorbar(data.index, data.cnt, yerr=data.dcnt.get_values(), fmt="|", label="Lebenszeitspektrum")
 popt, pcov = curve_fit(lifetime, data.index, data.cnt, p0=[t0, sigma, A0, At, tau0, taut, bg])
 perr = np.sqrt(np.diag(pcov))
 plt.plot(x, lifetime(x, *popt), "-", linewidth=1.2, label="Anpassung")
@@ -65,6 +68,9 @@ plt.plot(x, lifetime(x, *popt), "-", linewidth=1.2, label="Anpassung")
 fit_res.append([50.0, 51.3, *popt.tolist(), *perr.tolist()])
 
 plt.legend(loc=0)
+plt.xlim(800, 1800)
+plt.xlabel("Kanal")
+plt.ylabel("Ereignisse~$N$")
 
 plt.savefig("figures/lifetimes/50.pdf")
 plt.close()
@@ -76,7 +82,7 @@ data = pd.read_csv("data/temperatures/62_grad.txt", sep="\t", index_col=0,
 data["dcnt"] = np.sqrt(data.cnt)
 data = data[700:2000]
 
-plt.errorbar(data.index, data.cnt, yerr=data.dcnt.get_values(), fmt="+", label="Spektrum")
+plt.errorbar(data.index, data.cnt, yerr=data.dcnt.get_values(), fmt="|", label="Lebenszeitspektrum")
 popt, pcov = curve_fit(lifetime, data.index, data.cnt, p0=[t0, sigma, A0, At, tau0, taut, bg])
 perr = np.sqrt(np.diag(pcov))
 plt.plot(x, lifetime(x, *popt), "-", linewidth=1.2, label="Anpassung")
@@ -84,6 +90,9 @@ plt.plot(x, lifetime(x, *popt), "-", linewidth=1.2, label="Anpassung")
 fit_res.append([63.0, 62.6, *popt.tolist(), *perr.tolist()])
 
 plt.legend(loc=0)
+plt.xlim(800, 1800)
+plt.xlabel("Kanal")
+plt.ylabel("Ereignisse~$N$")
 
 plt.savefig("figures/lifetimes/62.pdf")
 plt.close()
@@ -95,7 +104,7 @@ data = pd.read_csv("data/temperatures/77_grad.txt", sep="\t", index_col=0,
 data["dcnt"] = np.sqrt(data.cnt)
 data = data[700:2000]
 
-plt.errorbar(data.index, data.cnt, yerr=data.dcnt.get_values(), fmt="+", label="Spektrum")
+plt.errorbar(data.index, data.cnt, yerr=data.dcnt.get_values(), fmt="|", label="Lebenszeitspektrum")
 popt, pcov = curve_fit(lifetime, data.index, data.cnt, p0=[t0, sigma, A0, At, tau0, taut, bg])
 perr = np.sqrt(np.diag(pcov))
 plt.plot(x, lifetime(x, *popt), "-", linewidth=1.2, label="Anpassung")
@@ -103,6 +112,9 @@ plt.plot(x, lifetime(x, *popt), "-", linewidth=1.2, label="Anpassung")
 fit_res.append([76.0, 76.8, *popt.tolist(), *perr.tolist()])
 
 plt.legend(loc=0)
+plt.xlim(800, 1800)
+plt.xlabel("Kanal")
+plt.ylabel("Ereignisse~$N$")
 
 plt.savefig("figures/lifetimes/77.pdf")
 plt.close()
@@ -114,7 +126,7 @@ data = pd.read_csv("data/temperatures/88_grad.txt", sep="\t", index_col=0,
 data["dcnt"] = np.sqrt(data.cnt)
 data = data[700:2000]
 
-plt.errorbar(data.index, data.cnt, yerr=data.dcnt.get_values(), fmt="+", label="Spektrum")
+plt.errorbar(data.index, data.cnt, yerr=data.dcnt.get_values(), fmt="|", label="Lebenszeitspektrum")
 popt, pcov = curve_fit(lifetime, data.index, data.cnt, p0=[t0, sigma, A0, At, tau0, taut, bg])
 perr = np.sqrt(np.diag(pcov))
 plt.plot(x, lifetime(x, *popt), "-", linewidth=1.2, label="Anpassung")
@@ -122,6 +134,9 @@ plt.plot(x, lifetime(x, *popt), "-", linewidth=1.2, label="Anpassung")
 fit_res.append([88.7, 88.9, *popt.tolist(), *perr.tolist()])
 
 plt.legend(loc=0)
+plt.xlim(800, 1800)
+plt.xlabel("Kanal")
+plt.ylabel("Ereignisse~$N$")
 
 plt.savefig("figures/lifetimes/88.pdf")
 plt.close()
@@ -133,7 +148,7 @@ data = pd.read_csv("data/temperatures/99_grad.txt", sep="\t", index_col=0,
 data["dcnt"] = np.sqrt(data.cnt)
 data = data[700:2000]
 
-plt.errorbar(data.index, data.cnt, yerr=data.dcnt.get_values(), fmt="+", label="Spektrum")
+plt.errorbar(data.index, data.cnt, yerr=data.dcnt.get_values(), fmt="|", label="Lebenszeitspektrum")
 popt, pcov = curve_fit(lifetime, data.index, data.cnt, p0=[t0, sigma, A0, At, tau0, taut, bg])
 perr = np.sqrt(np.diag(pcov))
 plt.plot(x, lifetime(x, *popt), "-", linewidth=1.2, label="Anpassung")
@@ -141,6 +156,9 @@ plt.plot(x, lifetime(x, *popt), "-", linewidth=1.2, label="Anpassung")
 fit_res.append([100.3, 99.8, *popt.tolist(), *perr.tolist()])
 
 plt.legend(loc=0)
+plt.xlim(800, 1800)
+plt.xlabel("Kanal")
+plt.ylabel("Ereignisse~$N$")
 
 plt.savefig("figures/lifetimes/99.pdf")
 plt.close()
@@ -152,7 +170,7 @@ data = pd.read_csv("data/temperatures/110_grad.txt", sep="\t", index_col=0,
 data["dcnt"] = np.sqrt(data.cnt)
 data = data[700:2000]
 
-plt.errorbar(data.index, data.cnt, yerr=data.dcnt.get_values(), fmt="+", label="Spektrum")
+plt.errorbar(data.index, data.cnt, yerr=data.dcnt.get_values(), fmt="|", label="Lebenszeitspektrum")
 popt, pcov = curve_fit(lifetime, data.index, data.cnt, p0=[t0, sigma, A0, At, tau0, taut, bg])
 perr = np.sqrt(np.diag(pcov))
 plt.plot(x, lifetime(x, *popt), "-", linewidth=1.2, label="Anpassung")
@@ -160,6 +178,9 @@ plt.plot(x, lifetime(x, *popt), "-", linewidth=1.2, label="Anpassung")
 fit_res.append([110.1, 110.0, *popt.tolist(), *perr.tolist()])
 
 plt.legend(loc=0)
+plt.xlim(800, 1800)
+plt.xlabel("Kanal")
+plt.ylabel("Ereignisse~$N$")
 
 plt.savefig("figures/lifetimes/110.pdf")
 plt.close()
@@ -171,7 +192,7 @@ data = pd.read_csv("data/temperatures/120_grad.txt", sep="\t", index_col=0,
 data["dcnt"] = np.sqrt(data.cnt)
 data = data[700:2000]
 
-plt.errorbar(data.index, data.cnt, yerr=data.dcnt.get_values(), fmt="+", label="Spektrum")
+plt.errorbar(data.index, data.cnt, yerr=data.dcnt.get_values(), fmt="|", label="Lebenszeitspektrum")
 popt, pcov = curve_fit(lifetime, data.index, data.cnt, p0=[t0, sigma, A0, At, tau0, taut, bg])
 perr = np.sqrt(np.diag(pcov))
 plt.plot(x, lifetime(x, *popt), "-", linewidth=1.2, label="Anpassung")
@@ -179,6 +200,9 @@ plt.plot(x, lifetime(x, *popt), "-", linewidth=1.2, label="Anpassung")
 fit_res.append([121.3, 121.1, *popt.tolist(), *perr.tolist()])
 
 plt.legend(loc=0)
+plt.xlim(800, 1800)
+plt.xlabel("Kanal")
+plt.ylabel("Ereignisse~$N$")
 
 plt.savefig("figures/lifetimes/120.pdf")
 plt.close()
