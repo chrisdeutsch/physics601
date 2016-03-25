@@ -218,6 +218,7 @@ Nimmt man weiterhin an, dass $\xi_\mathrm{b}=0$ gilt, was einer starken Bindung 
 	\bar\tau=\tau_\mathrm{f}\frac{1+\sigma c_\mathrm{v}(T)\tau_\mathrm{b}}{1+\sigma c_\mathrm{v}(T)\tau_\mathrm{f}}\quad\text{,}
 \end{align}
 wodurch die Temperaturabhängigkeit der Lebensdauer untersucht werden kann.
+Dabei beschreibt $\sigma$ eine materialabhängige Konstante mit Einheit \si{\per\second}.
 Grafisch dargestellt ergibt sich eine S-Kurve, wie in Abbildung \ref{fig:s_curve_schematic}.
 \begin{figure}[htbp]
 	\centering
@@ -272,7 +273,13 @@ Dadurch ist die Ladung auf dem Kondensator proportional zur Zeit bis das Stopsig
 
 \subsubsection{\textit{Fast}-\textit{Slow}-Koinzidenzkreis}
 
-\subsubsection{Promptkurve}
+Zur Messung der Lebensdauer wird ein s.g. \textit{Fast}-\textit{Slow}-Koinzidenzkreis genutzt, wie er in Abbildung \ref{fig:fast_slow_coincidence} dargestellt ist.
+Während der \textit{Slow}-Kreis der Selektion relevanter Ereignisse dient, wird der \textit{Fast}-Kreis zur eigentlichen Zeitmessung genutzt.
+Damit diese nur Positronenereignisse im Detektor berücksichtigt, muss eine Selektion erfolgen, die über die bei der Erzeugung und Vernichtung von Positronen entstehenden Photonen geschieht.
+Hier zu werden SCAs zur Auswahl von Ereignissen mit Photonen einer bestimmten Energie genutzt, die bei einem gleichzeitigen Signal in beiden Detektoren die Datenaufnahme des MCA ermöglichen (\textit{Gate}-Eingang).
+Zur Zeitmessung wird ein TAC verwendet, dessen Ausgangssignale vom MCA als (Zeit-) Spektrum dargestellt werden.
+Da die Amplitude des Ausgangssignals porportional zur gemessenen Zeit ist und der MCA Ereignisse nach Maximalamplitude sortiert, entspricht die Anzahl Einträge in einem Kanal der Anzahl von Ereignissen, für die eine bestimmte Zeit gemessen wurde.
+Zur Unterdrückung von Untergrundereignissen im Detektor werden aufgrund der Zeitsensitivität im \textit{Fast}-Kreis CFDs verwendet.
 
 \section{Aufbau und Kalibration}
 
