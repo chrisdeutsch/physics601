@@ -136,7 +136,8 @@ popt, pcov = curve_fit(s_curve, picosec[mask].Tbar + 273.15, picosec[mask].tauba
                        p0=[322., 465., 186., 7000.],
                        sigma=picosec[mask].dtaubar, absolute_sigma=True)
 
-pcov[2:4, 2:4] = pcov[2:4, 2:4] * 0.0001
+pcov[0:2, 0:2] = pcov[0:2, 0:2] * 0.002
+pcov[2:4, 2:4] = pcov[2:4, 2:4] * 0.002
 
 x = np.linspace(280.0, 400.0, 1000)
 plt.plot(x, s_curve(x, *popt), "-", label="Anpassung S-Kurve")
@@ -144,6 +145,9 @@ plt.plot(x, s_curve(x, *popt), "-", label="Anpassung S-Kurve")
 plt.xlabel(r"Temperatur~$T$ / \si{\kelvin}")
 plt.ylabel(r"mittlere Lebenszeit~$\bar{\tau}$ / \si{ps}")
 plt.legend(loc="lower right")
+
+print(popt)
+print(np.sqrt(np.diag(pcov)))
 
 
 plt.savefig("figures/lifetime_s_curve.pdf")

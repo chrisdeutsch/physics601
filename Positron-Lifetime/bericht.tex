@@ -526,6 +526,7 @@ Auf die Angabe der expliziten Formel soll jedoch aus Gründen der Übersichtlich
 Um die Lebenszeit des ungebundenen Positrons~$\tau_f$ zu bestimmen, kann eine Anpassung an die aus der Theorie erwarteten mittleren Lebenszeit 
 \begin{align*}
 	\bar{\tau} = \tau_f \, \frac{1 + \sigma \exp\left[ \frac{S_t}{k_\mathrm{B}} \right] \exp\left[ -\frac{H_t}{k_\mathrm{B} T} \right] \tau_t}{1 + \sigma \exp\left[ \frac{S_t}{k_\mathrm{B}} \right] \exp\left[ -\frac{H_t}{k_\mathrm{B} T} \right] \tau_f}
+	\label{fig:mean_lifetime}
 \end{align*}
 durchgeführt werden.
 Dabei wird die Anpassungshypothese
@@ -533,18 +534,35 @@ Dabei wird die Anpassungshypothese
 	\bar{\tau}(\bar{T}) = \tau_f \, \frac{1 + a \exp\left[ -\frac{b}{T} \right] \tau_t}{1 + a \exp\left[ -\frac{b}{T} \right] \tau_f}
 \end{align*}
 mit den Anpassungsparametern $\tau_f$, $\tau_t$, $a$ und $b$ genutzt.
-
-
-
-
-
-
-
+In Abbildung~\ref{fig:s_curve} wurde die Anpassung graphisch dargestellt.
 \begin{figure}[h]
 	\centering
 	\includegraphics{./figures/lifetime_s_curve.pdf}
-	\caption{S Kurve}
+	\caption{Anpassung an die gemessene mittlere Lebenszeit~$\bar{\tau}$ zur Bestimmung der Positron-Lebenszeiten~$\tau_f$ und $\tau_t$.}
+	\label{fig:s_curve}
 \end{figure}
+Aus der Anpassung folgen die Schwellen der S-Kurve
+\begin{align*}
+	\tau_f = \SI{322.1 +- 14.7}{ps} \qquad	\tau_t = \SI{465.8 +- 22.0}{ps}
+\end{align*}
+und die Parameter $a, b$
+\begin{align*}
+	a = \SI{186 +- 573}{\per\pico\second} \qquad b = \SI{6910 +- 1892}{\kelvin} \, \text{,}
+\end{align*}
+welche für die Bestimmung der Leerstellenenthalpie benötigt werden.
+Vergleicht man den Parameter $b$ mit Gleichung \eqref{eq:mean_lifetime} so kann die Leerstellenenthalpie berechnet werden durch:
+\begin{align*}
+	H_t = k_\mathrm{B} \cdot b
+\end{align*}
+mit $k_\mathrm{B} \approx \num{8.617} \cdot 10^{-5} \, \si{\eV\per\kelvin}$ \cite{codata}
+\begin{align*}
+	H_t = \SI{0.59 +- 0.17}{\electronvolt}
+\end{align*}
+
+
+
+
+
 
 
 \section{Lebenszeitmessung in Acrylglas}
@@ -567,6 +585,10 @@ mit den Anpassungsparametern $\tau_f$, $\tau_t$, $a$ und $b$ genutzt.
 \bibitem{add_infos}
 	\emph{Advanced Laboratory Course (physics601): K225 Additional Information},
 	ausgehändigt vom betreuenden Tutor, März 2016
+
+\bibitem{codata}
+	P.J.\ Mohr, B.N.\ Taylor, D.B.\ Newell (2015),
+	\emph{The 2014 CODATA Recommended Values of the Fundamental Physical Constants}.
 \end{thebibliography}
 
 % APPENDIX
