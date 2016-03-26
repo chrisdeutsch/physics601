@@ -225,13 +225,18 @@ dm = 1000.0 * dm
 lifetimes["Tbar"] = (lifetimes.T0 + lifetimes.T1) / 2.0
 lifetimes["dTbar"] = 0.0 * lifetimes.Tbar + 1.0
 
-# Intensitäten
-lifetimes["I0"] = lifetimes.A0 / (lifetimes.A0 + lifetimes.At)
-lifetimes["It"] = lifetimes.At / (lifetimes.A0 + lifetimes.At)
+# Mittlere Lebenszeit (uncertainties zur Fehlerfortpflanzung)
+from uncertainties import unumpy
+A0 = unumpy.uarray(lifetimes.A0.get_values(), lifetimes.dA0.get_values())
+At = unumpy.uarray(lifetimes.At.get_values(), lifetimes.dAt.get_values())
+tau0 = unumpy.uarray(lifetimes.tau0.get_values(), lifetimes.dtau0.get_values())
+taut = unumpy.uarray(lifetimes.taut.get_values(), lifetimes.dtaut.get_values())
+
+taubar = A0 / (A0 + At) * tau0 + At / (A0 + At) * taut
 
 # Mittlere Lebenszeit
-lifetimes["taubar"] = lifetimes.I0 * lifetimes.tau0 + lifetimes.It * lifetimes.taut
-lifetimes["dtaubar"] = lifetimes.dtau0
+lifetimes["taubar"] = unumpy.nominal_values(taubar)
+lifetimes["dtaubar"] = unumpy.std_devs(taubar)
 
 ### Umrechnung von Kanal -> ps
 picosec = pd.DataFrame()
@@ -300,7 +305,7 @@ out.columns = [r"{$\bar{T}$ / \si{\degreeCelsius}}",
                r"{$\tau_t$ / \si{ps}}",
                r"{$\Delta \tau_t$ / \si{ps}}",
                r"{$\bar{\tau}$ / \si{ps}}",
-               r"{$\Delta \bar{\tau_t}$ / \si{ps}}"]
+               r"{$\Delta \bar{\tau}$ / \si{ps}}"]
 
 out.to_latex("tables/mean_lifetimes.tex", index = False,
              formatters=[round(1), round(1), round(1), round(1), round(1), round(1), round(1)],

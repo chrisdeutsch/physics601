@@ -216,6 +216,7 @@ mit den Bruchteilen der gebundenen bzw. freien Positronen $f$ und den Lebensdaue
 Nimmt man weiterhin an, dass $\xi_\mathrm{b}=0$ gilt, was einer starken Bindung der Positronen an die Leerstellen entspricht, kann man mit $c_\mathrm{v}(T)$ aus \eqref{eq:vac_conc} schreiben
 \begin{align}
 	\bar\tau=\tau_\mathrm{f}\frac{1+\sigma c_\mathrm{v}(T)\tau_\mathrm{b}}{1+\sigma c_\mathrm{v}(T)\tau_\mathrm{f}}\quad\text{,}
+	\label{eq:mean_lifetime}
 \end{align}
 wodurch die Temperaturabhängigkeit der Lebensdauer untersucht werden kann.
 Dabei beschreibt $\sigma$ eine materialabhängige Konstante mit Einheit \si{\per\second}.
@@ -488,14 +489,20 @@ mit
 \end{alignat*}
 beschrieben werden \cite{add_infos}.
 Hierbei beschreibt $\sigma$ die Standardabweichung der Normalverteilung, $\tau$ die jeweiligen Zeitkonstanten, $A$ einen von der Intensität der exponentiellen Zerfälle abhängigen Parameter und $\mathrm{BG}$ einen konstanten Untergrund.
-
+In Abbildung \ref{fig:fit_lebenszeitspektrum} wurde beispielhaft eine Anpassung an ein gemessenes Lebenszeitspektrum durchgeführt.
 \begin{figure}[h]
 	\centering
 	\includegraphics{./figures/lifetimes/raumtemperatur.pdf}
 	\caption{Vermessenes Lebenszeitspektrum bei Raumtemperatur $T = \SI{20}{\degreeCelsius}$}
+	\label{fig:fit_lebenszeitspektrum}
 \end{figure}
-
-
+Die Ergebnisse der Anpassungen bei den verschiedenen Temperaturen der Indium-Probe wurden in Tabelle~\ref{tab:fit_ergebnisse} zusammengefasst und in Tabelle~\ref{tab:fit_ergebnisse_ps} unter Anwendung der Zeitkalibration umgerechnet.
+Darüber hinaus wurde die mittlere Lebenszeit durch
+\begin{align*}
+	\bar{\tau} = I_0 \tau_0 + I_t \tau_t = \frac{A_0}{A_0 + A_t} \cdot \tau_0 + \frac{A_t}{A_0 + A_t} \cdot \tau_t
+\end{align*}
+berechnet \cite{add_infos} und der zugehörige Fehler durch \textsc{Gauß}sche Fehlerfortpflanzung berechnet wurde.
+Auf die Angabe der expliziten Formel soll jedoch aus Gründen der Übersichtlichkeit verzichtet werden.
 \begin{sidewaystable}
 	\begin{subtable}{\textwidth}
 		\centering
@@ -503,17 +510,30 @@ Hierbei beschreibt $\sigma$ die Standardabweichung der Normalverteilung, $\tau$ 
 			\input{./tables/lifetime_fit.tex}
 		}
 		\caption{Ergebnisse der Anpassung einer Kurve mit der Hypothese aus Gleichung \eqref{eq:spektrum_fit} an die gemessenen Lebenszeitspektren bei verschiedenen Temperaturen der Indium-Probe.}
+		\label{tab:fit_ergebnisse}
 		\vspace*{0.8cm}
 	\end{subtable}
 	\begin{subtable}{\textwidth}
 		\centering
 		\input{./tables/mean_lifetimes.tex}
-		\caption{Umrechnung der Zeiten mithilfe der Zeitkalibration und Bestimmung der mittleren Lebenzeit~$\bar{\tau}$.}
+		\caption{Umrechnung der Zeiten mithilfe der Zeitkalibration und Bestimmung der mittleren Lebenszeit~$\bar{\tau}$.}
+		\label{tab:fit_ergebnisse_ps}
 		\vspace*{0.5cm}
 	\end{subtable}
-	
 	\caption{Auswertung der angepassten Lebenszeitspektren.}
 \end{sidewaystable}
+
+Zur Bestimmung der Lebenszeit des ungebundenen Positrons~$\tau_f$ in der Probe kann eine Anpassung
+
+\begin{align*}
+	\bar{\tau} = \tau_f \frac{1 + \sigma \exp\left[ \frac{S_t}{k_\mathrm{B}} \right] \exp\left[ -\frac{H_t}{k_\mathrm{B} T} \right] \tau_t}{1 + \sigma \exp\left[ \frac{S_t}{k_\mathrm{B}} \right] \exp\left[ -\frac{H_t}{k_\mathrm{B} T} \right] \tau_f}
+\end{align*}
+
+
+
+
+
+
 
 \begin{figure}[h]
 	\centering
