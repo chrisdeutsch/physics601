@@ -523,11 +523,16 @@ Auf die Angabe der expliziten Formel soll jedoch aus Gründen der Übersichtlich
 	\caption{Auswertung der angepassten Lebenszeitspektren.}
 \end{sidewaystable}
 
-Zur Bestimmung der Lebenszeit des ungebundenen Positrons~$\tau_f$ in der Probe kann eine Anpassung
-
+Um die Lebenszeit des ungebundenen Positrons~$\tau_f$ zu bestimmen, kann eine Anpassung an die aus der Theorie erwarteten mittleren Lebenszeit 
 \begin{align*}
-	\bar{\tau} = \tau_f \frac{1 + \sigma \exp\left[ \frac{S_t}{k_\mathrm{B}} \right] \exp\left[ -\frac{H_t}{k_\mathrm{B} T} \right] \tau_t}{1 + \sigma \exp\left[ \frac{S_t}{k_\mathrm{B}} \right] \exp\left[ -\frac{H_t}{k_\mathrm{B} T} \right] \tau_f}
+	\bar{\tau} = \tau_f \, \frac{1 + \sigma \exp\left[ \frac{S_t}{k_\mathrm{B}} \right] \exp\left[ -\frac{H_t}{k_\mathrm{B} T} \right] \tau_t}{1 + \sigma \exp\left[ \frac{S_t}{k_\mathrm{B}} \right] \exp\left[ -\frac{H_t}{k_\mathrm{B} T} \right] \tau_f}
 \end{align*}
+durchgeführt werden.
+Dabei wird die Anpassungshypothese
+\begin{align*}
+	\bar{\tau}(\bar{T}) = \tau_f \, \frac{1 + a \exp\left[ -\frac{b}{T} \right] \tau_t}{1 + a \exp\left[ -\frac{b}{T} \right] \tau_f}
+\end{align*}
+mit den Anpassungsparametern $\tau_f$, $\tau_t$, $a$ und $b$ genutzt.
 
 
 
