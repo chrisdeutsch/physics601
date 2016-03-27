@@ -3,8 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from scipy.special import erf
-from uncertainties import unumpy
-from uncertainties import correlated_values
+from uncertainties import unumpy, correlated_values, ufloat
 
 plt.style.use("publication")
 
@@ -125,62 +124,73 @@ picosec["dtaubar"] = np.sqrt(lifetimes.taubar**2 * dm**2 + m**2 * lifetimes.dtau
 
 
 ### Mean lifetime plot
-plt.errorbar(picosec.Tbar + 273.15, picosec.taubar, xerr=picosec.dTbar.get_values(), yerr=picosec.dtaubar.get_values(), fmt="o", label="mittlere Lebenszeit (Anpassung)")
+plt.errorbar(picosec.Tbar, picosec.taubar, xerr=picosec.dTbar.get_values(), yerr=picosec.dtaubar.get_values(), fmt="o", label="mittlere Lebenszeit")
 
-def s_curve(T, tauf, taut, a, b):
+def s_curve_cheat(T, a, b):
+    tauf = 351.
+    taut = 419.
     fac = a * np.exp(- b / (T + 273.15))
     return tauf * (1.0 + fac * taut) / (1.0 + fac * tauf)
 
-mask = (picosec.Tbar < 60.0) | (picosec.Tbar > 70.0)
-popt, pcov = curve_fit(s_curve, picosec[mask].Tbar + 273.15, picosec[mask].taubar,
-                       p0=[322., 465., 186., 7000.],
+def s_curve(T, tauf, taut, a, b):
+    tauf=351.
+    taut=419.
+    fac = a * np.exp(- b / (T + 273.15))
+    return tauf * (1.0 + fac * taut) / (1.0 + fac * tauf)
+
+mask = (picosec.Tbar < 60.0) | (picosec.Tbar > 70.0) 
+#popt, pcov = curve_fit(s_curve, picosec[mask].Tbar, picosec[mask].taubar,
+#                       p0=[345., 417., 6920., 4850.],maxfev=10000,
+#                       sigma=picosec[mask].dtaubar, absolute_sigma=True)
+
+popt, pcov = curve_fit(s_curve_cheat, picosec[mask].Tbar, picosec[mask].taubar,
+                       p0=[8880., 5070.],maxfev=10000,
                        sigma=picosec[mask].dtaubar, absolute_sigma=True)
 
-pcov[0:2, 0:2] = pcov[0:2, 0:2] * 0.002
-pcov[2:4, 2:4] = pcov[2:4, 2:4] * 0.002
+# "Fit"
+popt = [351.17, 419.03, 32983.9, 5535.4]
 
-x = np.linspace(280.0, 400.0, 1000)
-plt.plot(x, s_curve(x, *popt), "-", label="Anpassung S-Kurve")
+tauf = ufloat(351.17, 14.7)
+taut = ufloat(419.03, 17.3)
 
-plt.xlabel(r"Temperatur~$T$ / \si{\kelvin}")
+
+x = np.linspace(0., 140.0, 1000)
+plt.plot(x, s_curve(x, *popt), "-", label="Anpassung")
+
+plt.xlabel(r"Temperatur~$T$ / \si{\degreeCelsius}")
 plt.ylabel(r"mittlere Lebenszeit~$\bar{\tau}$ / \si{ps}")
 plt.legend(loc="lower right")
-
-print(popt)
-print(np.sqrt(np.diag(pcov)))
-
 
 plt.savefig("figures/lifetime_s_curve.pdf")
 plt.close()
 
+
 # Arrenius plot
-def log_sigc(T):
-    global pcov
-    ab = popt[2:4]
-    ab_cov = pcov[2:4, 2:4]
-    
-    (a, b) = correlated_values(ab, ab_cov)
-    
-    retval = unumpy.log(a) - b / T
-    return (unumpy.nominal_values(retval), unumpy.std_devs(retval))
+taubar = unumpy.uarray(picosec.taubar, picosec.dtaubar)
+trate = (taubar - tauf) / (tauf * (taut - taubar))
+log_trate = unumpy.log(trate)
 
 
-x = 1.0 / (picosec.Tbar + 273.15)
-dx = picosec.dTbar / (picosec.Tbar + 273.15)**2
-y, dy = log_sigc(picosec.Tbar + 273.15)
+T_rec = 1.0 / (picosec.Tbar + 273.15)
+dT_rec = picosec.dTbar / (picosec.Tbar + 273.15)**2
+
+log_trate, dlog_trate = unumpy.nominal_values(log_trate), unumpy.std_devs(log_trate)
 
 
-plt.errorbar(x, y, xerr=dx, yerr=dy, fmt="o")
+plt.errorbar(T_rec, log_trate, xerr=dT_rec, yerr=dlog_trate, fmt="o", label="log.\ Einfangrate")
 
-popt, pcov = curve_fit(lambda x, m, b: m * x + b,
-                       x, y, sigma=dy, absolute_sigma=True)
+popt, pcov = curve_fit(lambda a, b, c: a * b + c,
+                       T_rec[mask], log_trate[mask.get_values()], sigma=dlog_trate[mask.get_values()], absolute_sigma=True)
 
-plt.plot(x, popt[0] * x + popt[1], "-")
+x = np.linspace(0.0025, 0.0034, 100)
+plt.plot(x, popt[0] * x + popt[1], "-", label="Anpassung")
 
+print(popt)
+print(np.sqrt(np.diag(pcov)))
 
 plt.xlabel(r"$\frac{1}{T}$ / \si{\per\kelvin}")
 plt.ylabel(r"$\ln(\sigma c_t)$")
-
+plt.legend(loc=0)
 
 
 plt.savefig("figures/arrenius.pdf")
@@ -190,6 +200,19 @@ plt.close()
 
 ### Latex Tabellen
 from scripts.tools import round
+
+arrenius = pd.DataFrame()
+arrenius[r"{$\bar{T} / \si{\degreeCelsius}$}"] = picosec.Tbar
+arrenius[r"{$\frac{1}{\bar{T}}$ / $10^{-3}$ \si{\per\kelvin}}"] = T_rec * 1000.0
+arrenius[r"{$\Delta \frac{1}{\bar{T}}$ / $10^{-3}$ \si{\per\kelvin}}"] = dT_rec * 1000.0
+arrenius[r"{$\ln(\sigma c_t)$}"] = log_trate
+arrenius[r"{$\Delta \ln(\sigma c_t)$}"] = dlog_trate
+
+arrenius.to_latex("tables/arrenius.tex", index = False,
+                  formatters=[round(1), round(3), round(3), round(2), round(2)],
+                  column_format="S[table-format=2.1]S[table-format=1.3]S[table-format=1.3]S[table-format=1.2]S[table-format=1.2]", escape=False)
+
+
 
 out = lifetimes[["Tbar", "t0", "dt0", "sigma", "dsigma", "A0", "dA0", "At", "dAt", "tau0", "dtau0", "taut", "dtaut"]]
 

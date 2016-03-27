@@ -462,7 +462,7 @@ Nachdem erneut die relevanten Signale auf Koinzidenz überprüft wurden, kann mi
 
 Hierzu wird bei verschiedenen Temperaturen das vom TAC erzeugte Amplitudenspektrum gemessen, welches (bis auf Hintergrund- und Auflösungseffekten) dem Lebenszeitspektrum der Positronen entspricht.
 Die Temperatur kann dabei über einen Lötkolben, der fest mit dem Probenhalter verbunden ist, geregelt werden.
-Zur Temperaturmessung kommt ein digitales Thermometer zum Einsatz, dessen gemessenen Temperaturen durch ein Flüssigkeitsthermometer im Temperaturbereich unter~\SI{100}{\degreeCelsius} verifiziert werden konnte.
+Zur Temperaturmessung kommt ein digitales Thermometer zum Einsatz, dessen gemessenen Temperaturen durch ein Flüssigkeitsthermometer im Temperaturbereich unter~\SI{100}{\degreeCelsius} verifiziert werden konnten.
 Die mit beiden Thermometern gemessenen Temperaturen stimmen, in Anbetracht der Ablesegenauigkeit am Flüssigkeitsthermometer, überein.
 Als Messpunkt für die Temperatur wurde die mittlere Temperatur ausgehend von den Temperaturen zu Beginn und Ende der jeweiligen Messung verwendet.
 Da der Zusammenhang zwischen gemessener Temperatur und Temperatur der Indium-Probe unbekannt ist, ist mit einem systematischen Fehler in der Temperaturmessung zu rechnen.
@@ -501,7 +501,7 @@ Darüber hinaus wurde die mittlere Lebenszeit durch
 \begin{align*}
 	\bar{\tau} = I_0 \tau_0 + I_t \tau_t = \frac{A_0}{A_0 + A_t} \cdot \tau_0 + \frac{A_t}{A_0 + A_t} \cdot \tau_t
 \end{align*}
-berechnet \cite{add_infos} und der zugehörige Fehler durch \textsc{Gauß}sche Fehlerfortpflanzung berechnet wurde.
+\cite{add_infos} und der zugehörige Fehler durch \textsc{Gauß}sche Fehlerfortpflanzung berechnet (Kovarianzs der Anpassungsfehler wurden hierbei beachtet).
 Auf die Angabe der expliziten Formel soll jedoch aus Gründen der Übersichtlichkeit verzichtet werden.
 \begin{sidewaystable}
 	\begin{subtable}{\textwidth}
@@ -524,17 +524,18 @@ Auf die Angabe der expliziten Formel soll jedoch aus Gründen der Übersichtlich
 \end{sidewaystable}
 
 Um die Lebenszeit des ungebundenen Positrons~$\tau_f$ zu bestimmen, kann eine Anpassung an die aus der Theorie erwarteten mittleren Lebenszeit 
-\begin{align*}
+\begin{align}
 	\bar{\tau} = \tau_f \, \frac{1 + \sigma \exp\left[ \frac{S_t}{k_\mathrm{B}} \right] \exp\left[ -\frac{H_t}{k_\mathrm{B} T} \right] \tau_t}{1 + \sigma \exp\left[ \frac{S_t}{k_\mathrm{B}} \right] \exp\left[ -\frac{H_t}{k_\mathrm{B} T} \right] \tau_f}
 	\label{fig:mean_lifetime}
-\end{align*}
+\end{align}
 durchgeführt werden.
 Dabei wird die Anpassungshypothese
 \begin{align*}
-	\bar{\tau}(\bar{T}) = \tau_f \, \frac{1 + a \exp\left[ -\frac{b}{T} \right] \tau_t}{1 + a \exp\left[ -\frac{b}{T} \right] \tau_f}
+	\bar{\tau}(T) = \tau_f \, \frac{1 + a \exp\left[ -\frac{b}{T} \right] \tau_t}{1 + a \exp\left[ -\frac{b}{T} \right] \tau_f}
 \end{align*}
 mit den Anpassungsparametern $\tau_f$, $\tau_t$, $a$ und $b$ genutzt.
 In Abbildung~\ref{fig:s_curve} wurde die Anpassung graphisch dargestellt.
+Anzumerken ist, dass der Messpunkt bei etwa \SI{60}{\degreeCelsius} keine sinnvolle Anpassung ermöglichte und daher bei der Anpassung vernachlässigt wurde.
 \begin{figure}[h]
 	\centering
 	\includegraphics{./figures/lifetime_s_curve.pdf}
@@ -543,21 +544,51 @@ In Abbildung~\ref{fig:s_curve} wurde die Anpassung graphisch dargestellt.
 \end{figure}
 Aus der Anpassung folgen die Schwellen der S-Kurve
 \begin{align*}
-	\tau_f = \SI{322.1 +- 14.7}{ps} \qquad	\tau_t = \SI{465.8 +- 22.0}{ps}
+	\tau_f = \SI{351.2 +- 14.7}{ps} \qquad	\tau_t = \SI{419.0 +- 17.3}{ps}
 \end{align*}
 und die Parameter $a, b$
 \begin{align*}
-	a = \SI{186 +- 573}{\per\pico\second} \qquad b = \SI{6910 +- 1892}{\kelvin} \, \text{,}
+	a = \SI{33000 +- 200000}{\per\pico\second} \qquad b = \SI{5500 +- 2200}{\kelvin} \, \text{.}
 \end{align*}
-welche für die Bestimmung der Leerstellenenthalpie benötigt werden.
-Vergleicht man den Parameter $b$ mit Gleichung \eqref{eq:mean_lifetime} so kann die Leerstellenenthalpie berechnet werden durch:
+Wie erwartet zeigen die freien Positronen eine kleinere Lebenszeit~$\tau_f$ als die in Leerstellen gefangenen~$\tau_t$, da dort eine geringere Elektronendichte herrscht und somit die Wahrscheinlichkeit für Annihilation geringer ist.
+
+Theoretisch kann die Leerstellenenthalpie~$H_t$ aus dem Parameter~$b$ gewonnen werden, da dieser jedoch einen großen Fehler aufweist wird ein anderes Verfahren genutzt.
+Für dieses ist es nützlich die Einfangrate~$\sigma c_t$ durch die Lebenszeiten von freien und gefangenen Positronen auszudrücken \cite{add_infos}
 \begin{align*}
-	H_t = k_\mathrm{B} \cdot b
+	\sigma c_t = \frac{\bar{\tau} - \tau_f}{\tau_f (\tau_t - \bar{\tau})}
 \end{align*}
-mit $k_\mathrm{B} \approx \num{8.617} \cdot 10^{-5} \, \si{\eV\per\kelvin}$ \cite{codata}
+und mithilfe der Leerstellenkonzentration aus Gleichung \eqref{eq:vac_conc} kann der Logarithmus der Einfangrate gegen die reziproke Temperatur aufgetragen werden um
+\begin{align}
+	\ln(\sigma c_t) = \mathrm{const} - \frac{H_t}{k_\mathrm{B}} \cdot \frac{1}{T} \label{eq:logogogogo}
+\end{align}
+zu erhalten.
+Die Werte für die logarithmische Einfangrate bei den verschiedenen Temperaturen wurde in Tabelle~\ref{tab:arrenius} zusammengetragen und die graphische Darstellung der Geradenanpassung in Abbildung~\ref{fig:arrenius}.
+\begin{table}[h]
+	\centering
+	\input{./tables/arrenius.tex}
+	\caption{Berechnung der logarithmischen Einfangrate~$\ln(\sigma c_t)$ und der reziproken Temperatur~$\frac{1}{T}$.}
+	\label{tab:arrenius}
+\end{table}
+\begin{figure}[h]
+	\centering
+	\includegraphics{./figures/arrenius.pdf}
+	\caption{Logarithmische Einfangrate~$\ln(\sigma c_t)$ als Funktion der reziproken Temperatur~$\frac{1}{T}$ und Anpassung einer Geraden an die Daten.}
+	\label{fig:arrenius}
+\end{figure}
+Aus der Geraden-Anpassung folgt die Steigung
 \begin{align*}
-	H_t = \SI{0.59 +- 0.17}{\electronvolt}
+	m = \SI{-4945 +- 1149}{\kelvin}
 \end{align*}
+aus der gemäß Gleichung \eqref{eq:logogogogo} die Leerstellenenthalpie gewonnen werden kann:
+\begin{align*}
+	H_t = -k_\mathrm{B} \cdot m \, \text{.}
+\end{align*}
+Mit $k_\mathrm{B} \approx \num{8.617} \cdot 10^{-5} \, \si{\eV\per\kelvin}$ \cite{codata} folgt demnach die Leerstellenenthalpie
+\begin{align*}
+	H_t = \SI{0.43 +- 0.10}{\electronvolt} \, \text{.}
+\end{align*}
+Der Vergleich mit den in \cite{indium} gegebenen Literaturwerten für Indium, welche im Bereich von \SI{0.42}{\eV} bis \SI{0.59}{\eV} liegen, zeigt eine passable Übereinstimmung mit dem in diesem Versuch bestimmten Wert.
+
 
 
 
@@ -589,6 +620,11 @@ mit $k_\mathrm{B} \approx \num{8.617} \cdot 10^{-5} \, \si{\eV\per\kelvin}$ \cit
 \bibitem{codata}
 	P.J.\ Mohr, B.N.\ Taylor, D.B.\ Newell (2015),
 	\emph{The 2014 CODATA Recommended Values of the Fundamental Physical Constants}.
+
+\bibitem{indium}
+	W.\ Weiler, H.E.\ Schaefer,
+	\emph{Vacancy formation in indium investigated by positron lifetime spectroscopy},
+	J.\ Phys.\ F: Met.\ Phys. 15 (1985) 1651-1659.
 \end{thebibliography}
 
 % APPENDIX
