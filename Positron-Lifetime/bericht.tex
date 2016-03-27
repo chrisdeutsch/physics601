@@ -158,6 +158,12 @@ Es hat entgegengesetzte Ladung ($+\num{1}$) und Spin $+\num{1/2}$, während sein
 
 Als Positronenquelle wird in diesem Versuch Natrium (\ce{^22Na}) verwendet, welches durch radioaktiven $\beta^+$-Zerfall in einen angeregten Zustand von Neon (\ce{^22Ne}) zerfällt, der eine sehr kurze Lebensdauer hat und unter Emission eines Photons mit \SI{1275}{keV} in den Grundzustand übergeht.
 Beim $\beta^+$-Zerfall wird ein Proton unter Aussendung eines Positrons und Elektronneutrinos in ein Neutron umgewandelt.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.45\textwidth]{./figures/na_decay_scheme}
+	\caption{Zerfallsschema des $\beta^+$-Zerfalls von \ce{^22Na} (nach Daten aus \cite{nuc_datasheet_na}).}
+	\label{fig:na_decay_scheme}
+\end{figure}
 
 \subsubsection{Positronium}
 
@@ -199,23 +205,23 @@ Eine schematische Darstellung ist in Abbildung \ref{fig:trapping_model} dargeste
 	\label{fig:trapping_model}
 \end{figure}
 Hierbei wird angenommen, dass das Positron nur in zwei Zuständen, frei oder gebunden, vorkommt.
-Für die Besetzungszahlen $n_\mathrm{f}$, $n_\mathrm{b}$ der beiden Zustände lassen sich dann zwei Ratengleichungen formulieren, die die Übergänge zwischen diesen Zuständen $\mu_\mathrm{b}$, $\xi_\mathrm{b}$ sowie die Verluste aufgrund von Annihilation (mit den Raten $\lambda_\mathrm{f}$ und $\lambda_\mathrm{b}$) einschließen.
+Für die Besetzungszahlen $n_\mathrm{f}$, $n_\mathrm{t}$ der beiden Zustände lassen sich dann zwei Ratengleichungen formulieren, die die Übergänge zwischen diesen Zuständen $\mu_\mathrm{t}$, $\xi_\mathrm{t}$ sowie die Verluste aufgrund von Annihilation (mit den Raten $\lambda_\mathrm{f}$ und $\lambda_\mathrm{t}$) einschließen.
 $N$ bezeichne dabei die Rate der einfallenden Positronen.
 \begin{align}
-	\frac{\mathrm{d}n_\mathrm{f}}{\mathrm{d}t}&=-\lambda_\mathrm{f}n_\mathrm{f}-\mu_\mathrm{b}c_\mathrm{v}n_\mathrm{f} + \xi_\mathrm{b}n_\mathrm{b} + N \\
-	\frac{\mathrm{d}n_\mathrm{b}}{\mathrm{d}t}&=-\lambda_\mathrm{b}n_\mathrm{b}+\mu_\mathrm{b}c_\mathrm{v}n_\mathrm{f} - \xi_\mathrm{b}n_\mathrm{f}
+	\frac{\mathrm{d}n_\mathrm{f}}{\mathrm{d}t}&=-\lambda_\mathrm{f}n_\mathrm{f}-\mu_\mathrm{t}c_\mathrm{v}n_\mathrm{f} + \xi_\mathrm{t}n_\mathrm{t} + N \\
+	\frac{\mathrm{d}n_\mathrm{t}}{\mathrm{d}t}&=-\lambda_\mathrm{t}n_\mathrm{t}+\mu_\mathrm{t}c_\mathrm{v}n_\mathrm{f} - \xi_\mathrm{t}n_\mathrm{f}
 \end{align}
 
 \subsubsection{Lebensdauer von Positronen}
 
-Unter der Annahme eines thermischen Gleichgewichts ($\frac{\mathrm{d}n_\mathrm{f}}{\mathrm{d}t} = \frac{\mathrm{d}n_\mathrm{b}}{\mathrm{d}t} = 0$) kann man die mittlere Lebensdauer $\bar\tau$ definieren als
+Unter der Annahme eines thermischen Gleichgewichts ($\frac{\mathrm{d}n_\mathrm{f}}{\mathrm{d}t} = \frac{\mathrm{d}n_\mathrm{t}}{\mathrm{d}t} = 0$) kann man die mittlere Lebensdauer $\bar\tau$ definieren als
 \begin{align}
-	\frac{1}{\bar\tau}=f_\mathrm{f}\frac{1}{\tau_\mathrm{f}} + f_\mathrm{b}\frac{1}{\tau_\mathrm{b}}
+	\frac{1}{\bar\tau}=f_\mathrm{f}\frac{1}{\tau_\mathrm{f}} + f_\mathrm{t}\frac{1}{\tau_\mathrm{t}}
 \end{align}
 mit den Bruchteilen der gebundenen bzw. freien Positronen $f$ und den Lebensdauern $\tau = 1/\lambda$.
-Nimmt man weiterhin an, dass $\xi_\mathrm{b}=0$ gilt, was einer starken Bindung der Positronen an die Leerstellen entspricht, kann man mit $c_\mathrm{v}(T)$ aus \eqref{eq:vac_conc} schreiben
+Nimmt man weiterhin an, dass $\xi_\mathrm{t}=0$ gilt, was einer starken Bindung der Positronen an die Leerstellen entspricht, kann man mit $c_\mathrm{v}(T)$ aus \eqref{eq:vac_conc} schreiben
 \begin{align}
-	\bar\tau=\tau_\mathrm{f}\frac{1+\sigma c_\mathrm{v}(T)\tau_\mathrm{b}}{1+\sigma c_\mathrm{v}(T)\tau_\mathrm{f}}\quad\text{,}
+	\bar\tau=\tau_\mathrm{f}\frac{1+\sigma c_\mathrm{v}(T)\tau_\mathrm{t}}{1+\sigma c_\mathrm{v}(T)\tau_\mathrm{f}}\quad\text{,}
 	\label{eq:mean_lifetime}
 \end{align}
 wodurch die Temperaturabhängigkeit der Lebensdauer untersucht werden kann.
@@ -238,7 +244,13 @@ Um ein detektierbares Signal zu erhalten, wird der Szintillator dotiert.
 Diese Dotierung führt zu zusätzlichen lokalen Energieniveaus zwischen dem Leitungs- und dem Valenzband des Kristalls.
 Trifft ein Elektronen-Loch-Paar, welches durch ein einfallendes Gamma-Quant im Kristall ausgelöst wurde auf ein solchen Aktivator-Zentrum, kann das Elektron über das zusätzliche Energieniveau mit dem Loch unter Emission von zwei Photonen rekombinieren.
 
-Das in diesem Versuch verwendete Szintillator\-material ist LYSO (\ce{Lu_{1.8}Y_{.2}SiO_5}), welches aufgrund des radioaktiven Lute\-tiums zusätzlich zum Spektrum des Szin\-tillations\-lichts ein Spektrum aus dem radioaktiven Zerfall beobachtbar macht.
+Das in diesem Versuch verwendete Szintillator\-material ist LYSO (\ce{Lu_{1.8}Y_{.2}SiO_5}), welches aufgrund des radioaktiven Lute\-tiums zusätzlich zum Spektrum des Szin\-tillations\-lichts ein Spektrum aus dem radioaktiven Zerfall (siehe Abb. \ref{fig:lu_decay_scheme}) beobachtbar macht.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.5\textwidth]{./figures/lu_decay_scheme}
+	\caption{Zerfallsschema des $\beta^-$-Zerfalls von \ce{^176Lu} (nach Daten aus \cite{nuc_datasheet_lu}).}
+	\label{fig:lu_decay_scheme}
+\end{figure}
 Um das entstehende Photonensignal zu verstärken werden Sekundärelektronenvervielfacher (auch Photomultiplier, kurz PMT genannt) eingesetzt, die im folgenden näher beschrieben werden.
 
 \subsubsection{Sekundärelektronenvervielfacher}
@@ -249,7 +261,7 @@ Diese Elektrode wird auch als Dynode bezeichnet und ist für die Verstärkung ve
 Das Elektron erhält durch die Beschleunigung genug Energie, um aus der Dynode mehrere Elektronen auszulösen, wodurch eine Verstärkung erreicht wird.
 Das Signal kann dabei an mehreren Stellen abgegriffen werden:
 \begin{description}
-	\item[\textit{Slow}-Ausgang]Der Abgriff erfolgt an einer Dynode, so dass aufgrund der noch nicht vollständigen Verstärkung die Anstiegszeit des Signals geringer ist als der Anode (\textit{slow}), jedoch ist die hier abgegriffene Amplitude proportional zur Energie der einfallenden Photonen.
+	\item[\textit{Slow}-Ausgang]Der Abgriff erfolgt an einer Dynode, so dass aufgrund der noch nicht vollständigen Verstärkung die Anstiegszeit des Signals geringer ist als an der Anode (\textit{slow}), jedoch ist die hier abgegriffene Amplitude proportional zur Energie der einfallenden Photonen.
 	\item[\textit{Fast}-Ausgang]Dieser Abgriff geschieht an der Anode, wo aufgrund der hohen Verstärkung eine kurze Anstiegszeit des Signals beobachtet werden kann (\textit{fast}), weswegen dieser Ausgang für Zeitmessungen bevorzugt wird. Allerdings ist bereits eine Sättigung des Stroms möglich, so dass keine Energieinformation aus diesem Signal gewonnen werden kann.
 \end{description}
 
@@ -338,7 +350,7 @@ Diese wurden in den Abbildungen \ref{fig:lyso_spektren} und \ref{fig:na_spektren
 	\label{fig:na_spektren}
 \end{figure}
 In den LYSO-Spektren können deutlich mehrere charakteristische Linien des radioaktiven Detektormaterials identifiziert werden.
-Gemäß Abbildung~\korr{LUTETIUM-ZERFALLSSCHEMA} entsteht bei dem $\beta$-Zerfall von \isotope[176]{Lu} ein angeregter Hafnium-Zustand, welcher schnell über eine $\gamma$-Kaskade in den Grundzustand zerfällt.
+Gemäß Abbildung~\ref{fig:lu_decay_scheme} entsteht bei dem $\beta$-Zerfall von \isotope[176]{Lu} ein angeregter Hafnium-Zustand, welcher schnell über eine $\gamma$-Kaskade in den Grundzustand zerfällt.
 Dabei treten hauptsächlich Photonen mit Energien von \SI{88}{\keV}, \SI{202}{\keV} und \SI{307}{\keV} auf.
 Als Folge dessen bilden sich die charakteristischen Energiespektren aus Abbildung \ref{fig:lyso_spektren}, bei denen unter anderem Linien bei den Energien der einzelnen Photonen sichtbar sind.
 Diese Linien zeigen nur eine kleine Amplitude, da in dem LYSO-Szintillator mit großer Wahrscheinlichkeit mehrere Photonen detektiert werden und sich so die Energien summieren.
@@ -501,7 +513,11 @@ Darüber hinaus wurde die mittlere Lebenszeit durch
 \begin{align*}
 	\bar{\tau} = I_0 \tau_0 + I_t \tau_t = \frac{A_0}{A_0 + A_t} \cdot \tau_0 + \frac{A_t}{A_0 + A_t} \cdot \tau_t
 \end{align*}
+<<<<<<< HEAD
 \cite{add_infos} und der zugehörige Fehler durch \textsc{Gauß}sche Fehlerfortpflanzung berechnet (Kovarianzs der Anpassungsfehler wurden hierbei beachtet).
+=======
+berechnet \cite{add_infos} und der zugehörige Fehler durch \textsc{Gauß}sche Fehlerfortpflanzung gebildet.
+>>>>>>> 530d39f0983f164d32f810b4071ed01c6308e935
 Auf die Angabe der expliziten Formel soll jedoch aus Gründen der Übersichtlichkeit verzichtet werden.
 \begin{sidewaystable}
 	\begin{subtable}{\textwidth}
@@ -606,16 +622,20 @@ Der Vergleich mit den in \cite{indium} gegebenen Literaturwerten für Indium, we
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{19}
-\bibitem{anleitung}
-	\emph{Advanced Laboratory Course (physics601): Description of Experiments},
-	BONN-AT-2016-01MP, Universität Bonn, Januar 2016.
+\bibitem{nuc_datasheet_na}
+	R. B. Firestone, \emph{Nuclear Data Sheets for A = 22}, Nuclear \ Data \ Sheets \ 106 (2005) 1-88
+	
+\bibitem{add_infos}
+	\emph{Advanced Laboratory Course (physics601): K225 Additional Information}, ausgehändigt vom betreuenden Tutor, März 2016
 	
 \bibitem{schatz}
 	G. Schatz, A. Weidinger, \emph{Nukleare Festkörperphysik}, Teubner 1992
 	
-\bibitem{add_infos}
-	\emph{Advanced Laboratory Course (physics601): K225 Additional Information},
-	ausgehändigt vom betreuenden Tutor, März 2016
+\bibitem{nuc_datasheet_lu}
+	E. Browne, \emph{Nuclear Data Sheets for A = 176}, Nuclear \ Data \ Sheets \ 60, 227 (1990)
+	
+\bibitem{anleitung}
+	\emph{Advanced Laboratory Course (physics601): Description of Experiments}, BONN-AT-2016-01MP, Universität Bonn, Januar 2016
 
 \bibitem{codata}
 	P.J.\ Mohr, B.N.\ Taylor, D.B.\ Newell (2015),
