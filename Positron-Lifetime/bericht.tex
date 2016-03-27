@@ -238,7 +238,13 @@ Um ein detektierbares Signal zu erhalten, wird der Szintillator dotiert.
 Diese Dotierung führt zu zusätzlichen lokalen Energieniveaus zwischen dem Leitungs- und dem Valenzband des Kristalls.
 Trifft ein Elektronen-Loch-Paar, welches durch ein einfallendes Gamma-Quant im Kristall ausgelöst wurde auf ein solchen Aktivator-Zentrum, kann das Elektron über das zusätzliche Energieniveau mit dem Loch unter Emission von zwei Photonen rekombinieren.
 
-Das in diesem Versuch verwendete Szintillator\-material ist LYSO (\ce{Lu_{1.8}Y_{.2}SiO_5}), welches aufgrund des radioaktiven Lute\-tiums zusätzlich zum Spektrum des Szin\-tillations\-lichts ein Spektrum aus dem radioaktiven Zerfall beobachtbar macht.
+Das in diesem Versuch verwendete Szintillator\-material ist LYSO (\ce{Lu_{1.8}Y_{.2}SiO_5}), welches aufgrund des radioaktiven Lute\-tiums zusätzlich zum Spektrum des Szin\-tillations\-lichts ein Spektrum aus dem radioaktiven Zerfall (siehe Abb. \ref{fig:lu_decay_scheme}) beobachtbar macht.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.5\textwidth]{./figures/lu_decay_scheme}
+	\caption{Zerfallsspektrum des $\beta^-$-Zerfalls von \ce{^176Lu} (nach Daten aus \cite{nuc_datasheet}).}
+	\label{fig:lu_decay_scheme}
+\end{figure}
 Um das entstehende Photonensignal zu verstärken werden Sekundärelektronenvervielfacher (auch Photomultiplier, kurz PMT genannt) eingesetzt, die im folgenden näher beschrieben werden.
 
 \subsubsection{Sekundärelektronenvervielfacher}
@@ -338,7 +344,7 @@ Diese wurden in den Abbildungen \ref{fig:lyso_spektren} und \ref{fig:na_spektren
 	\label{fig:na_spektren}
 \end{figure}
 In den LYSO-Spektren können deutlich mehrere charakteristische Linien des radioaktiven Detektormaterials identifiziert werden.
-Gemäß Abbildung~\korr{LUTETIUM-ZERFALLSSCHEMA} entsteht bei dem $\beta$-Zerfall von \isotope[176]{Lu} ein angeregter Hafnium-Zustand, welcher schnell über eine $\gamma$-Kaskade in den Grundzustand zerfällt.
+Gemäß Abbildung~\ref{fig:lu_decay_scheme} entsteht bei dem $\beta$-Zerfall von \isotope[176]{Lu} ein angeregter Hafnium-Zustand, welcher schnell über eine $\gamma$-Kaskade in den Grundzustand zerfällt.
 Dabei treten hauptsächlich Photonen mit Energien von \SI{88}{\keV}, \SI{202}{\keV} und \SI{307}{\keV} auf.
 Als Folge dessen bilden sich die charakteristischen Energiespektren aus Abbildung \ref{fig:lyso_spektren}, bei denen unter anderem Linien bei den Energien der einzelnen Photonen sichtbar sind.
 Diese Linien zeigen nur eine kleine Amplitude, da in dem LYSO-Szintillator mit großer Wahrscheinlichkeit mehrere Photonen detektiert werden und sich so die Energien summieren.
@@ -577,10 +583,13 @@ mit $k_\mathrm{B} \approx \num{8.617} \cdot 10^{-5} \, \si{\eV\per\kelvin}$ \cit
 \begin{thebibliography}{19}
 \bibitem{anleitung}
 	\emph{Advanced Laboratory Course (physics601): Description of Experiments},
-	BONN-AT-2016-01MP, Universität Bonn, Januar 2016.
+	BONN-AT-2016-01MP, Universität Bonn, Januar 2016
 	
 \bibitem{schatz}
 	G. Schatz, A. Weidinger, \emph{Nukleare Festkörperphysik}, Teubner 1992
+	
+\bibitem{nuc_datasheet}
+	E. Browne, \emph{Nuclear Data Sheets for A = 176}, Nuclear \ Data \ Sheets \ 60, 227 (1990)
 	
 \bibitem{add_infos}
 	\emph{Advanced Laboratory Course (physics601): K225 Additional Information},
@@ -588,7 +597,7 @@ mit $k_\mathrm{B} \approx \num{8.617} \cdot 10^{-5} \, \si{\eV\per\kelvin}$ \cit
 
 \bibitem{codata}
 	P.J.\ Mohr, B.N.\ Taylor, D.B.\ Newell (2015),
-	\emph{The 2014 CODATA Recommended Values of the Fundamental Physical Constants}.
+	\emph{The 2014 CODATA Recommended Values of the Fundamental Physical Constants}
 \end{thebibliography}
 
 % APPENDIX
