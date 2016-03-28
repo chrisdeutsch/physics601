@@ -135,7 +135,7 @@ Tutor: & Martin Urban
 % ZUSAMMENFASSUNG
 \begin{abstract}
 \noindent
-\korr{TODO}
+In dem vorliegenden Versuch soll die Lebensdauer von Positronen in freiem beziehungsweise gebundenem Zustand in Metallen und Isolatoren untersucht und die Leerstellenenthalpie für die verwendete Indium Probe bestimmt werden.
 \end{abstract}
 
 \end{titlepage}
@@ -147,7 +147,12 @@ Tutor: & Martin Urban
 
 % INHALT VERSUCHSPROTOKOLL
 \section{Einführung}
-\korr{TODO}
+
+In diesem Praktikumsversuch wird die Lebensdauer von Positronen untersucht.
+Dazu wird eine metallische Probe (Indium) sowie ein Isolator (Acrylglas) verwendet, in denen die Teilchen sowohl in freiem als auch gebundenen Zustand auftreten können.
+Durch Annihilation mit einem Elektron entstehen Photonen, die zur Zeitmessung genutzt werden.
+Da die Lebensdauern der beiden Zustände nicht gleich sind, kann die Lebensdauermessung zur Untersuchung von Kristallen genutzt werden, insbesondere zur Untersuchung von Leerstellen, da Positronen dort eingefangen werden und somit der gebundene Zustand gebildet wird.
+
 \section{Theorie}
 
 \subsection{Positronen}
@@ -474,7 +479,7 @@ Für die Auflösung bedeutet dies, dass nur Signale mit einem zeitlichen Abstand
 \section{Lebenszeitmessung in Indium}
 Nachdem die einzelnen Elemente des Messaufbaus überprüft und kalibriert wurden, werden die SCAs für die Messung der Lebensdauer eingestellt.
 Da das \SI{1275}{\keV}-Photon des angeregten Neon-Zustandes beinahe gleichzeitig mit dem Positron des $\beta$-Zerfalls entsteht, kann dieses als Startsignal für die Lebenszeitmessung verwendet werden.
-Daher wird das Fenster des linken SCA, welcher das Startsignal für den TAC liefert, auf die \SI{1275}{\keV}-Linie des Spektrums eingestellt.
+Daher wird das Fenster des linken SCAs, welcher das Startsignal für den TAC liefert, auf die \SI{1275}{\keV}-Linie des Spektrums eingestellt.
 Der rechte SCA erzeugt nun das Stopsignal, indem dessen Fenster auf die \SI{511}{\keV}-Linie im Spektrum, welche durch die Annihilation des Positrons entsteht, eingestellt wird.
 Nachdem erneut die relevanten Signale auf Koinzidenz überprüft wurden, kann mit der Messung der Lebensdauer der Positronen in Indium begonnen werden.
 
@@ -577,12 +582,12 @@ Für dieses ist es nützlich die Einfangrate~$\sigma c_t$ durch die Lebenszeiten
 \begin{align*}
 	\sigma c_t = \frac{\bar{\tau} - \tau_f}{\tau_f (\tau_t - \bar{\tau})}
 \end{align*}
-und mithilfe der Leerstellenkonzentration aus Gleichung \eqref{eq:vac_conc} kann der Logarithmus der Einfangrate gegen die reziproke Temperatur aufgetragen werden um
+und mithilfe der Leerstellenkonzentration aus Gleichung \eqref{eq:vac_conc} kann der Logarithmus der Einfangrate gegen die reziproke Temperatur aufgetragen werden, um
 \begin{align}
 	\ln(\sigma c_t) = \mathrm{const} - \frac{H_t}{k_\mathrm{B}} \cdot \frac{1}{T} \label{eq:logogogogo}
 \end{align}
 zu erhalten.
-Die Werte für die logarithmische Einfangrate bei den verschiedenen Temperaturen wurde in Tabelle~\ref{tab:arrenius} zusammengetragen und die graphische Darstellung der Geraden-Anpassung in Abbildung~\ref{fig:arrenius}.
+Die Werte für die logarithmische Einfangrate bei den verschiedenen Temperaturen wurden in Tabelle~\ref{tab:arrenius} zusammengetragen und die graphische Darstellung der Geraden-Anpassung in Abbildung~\ref{fig:arrenius} gezeigt.
 \begin{table}[h]
 	\centering
 	\input{./tables/arrenius.tex}
