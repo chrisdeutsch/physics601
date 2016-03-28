@@ -134,7 +134,8 @@ Tutor: & Martin Urban
 
 % ZUSAMMENFASSUNG
 \begin{abstract}
-\noindent 
+\noindent
+\korr{TODO}
 \end{abstract}
 
 \end{titlepage}
@@ -146,18 +147,18 @@ Tutor: & Martin Urban
 
 % INHALT VERSUCHSPROTOKOLL
 \section{Einführung}
-
+\korr{TODO}
 \section{Theorie}
 
 \subsection{Positronen}
 
 Als Positron wird das Antiteilchen des Elektrons bezeichnet.
-Es hat entgegengesetzte Ladung ($+\num{1}$) und Spin $+\num{1/2}$, während seine Masse der des Elektrons entspricht (\SI{511}{keV}).
+Es hat entgegengesetzte Ladung ($+\num{1}$), Spin~$\num{1/2}$ und eine Masse identisch zum Elektron.
 
 \subsubsection{Positronenquellen}
 
-Als Positronenquelle wird in diesem Versuch Natrium (\isotope[22]{Na}) verwendet, welches durch radioaktiven $\beta^+$-Zerfall in einen angeregten Zustand von Neon (\isotope[22]{Ne}) zerfällt, der eine sehr kurze Lebensdauer hat und unter Emission eines Photons mit \SI{1275}{keV} in den Grundzustand übergeht.
-Beim $\beta^+$-Zerfall wird ein Proton unter Aussendung eines Positrons und Elektronneutrinos in ein Neutron umgewandelt.
+Als Positronenquelle wird in diesem Versuch das Natrium-Isotop \isotope[22]{Na} verwendet, welches durch $\beta^+$-Zerfall in einen angeregten Zustand von Neon (\isotope[22]{Ne}) zerfällt, der eine sehr kurze Lebensdauer hat und unter Emission eines Photons mit \SI{1275}{keV} in den Grundzustand übergeht.
+Beim $\beta^+$-Zerfall wird ein Proton unter Emission eines Positrons und Elektronneutrinos in ein Neutron umgewandelt.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.45\textwidth]{./figures/na_decay_scheme}
@@ -168,7 +169,7 @@ Beim $\beta^+$-Zerfall wird ein Proton unter Aussendung eines Positrons und Elek
 \subsubsection{Positronium}
 
 Ein Positron kann zusammen mit einem Elektron einen wasserstoffähnlichen Bindungszustand bilden, der als Positronium bezeichnet wird.
-Je nach Spinkonfiguration von Elektron und Positron unterscheidet man dabei zwischen dem als Singlett auftretenden Parapositronium (Spins antiparallel) und dem als Triplett auftretenden Orthopositronium (Spins parallel).
+Je nach Spinkonfiguration von Elektron und Positron unterscheidet man dabei zwischen dem als Singlett auftretenden Parapositronium (antiparallele Spins) und dem als Triplett auftretenden Orthopositronium (parallele Spins).
 In Metallen schirmen freie Elektronen die Ladung von Positronen, die in das Metall eindringen, ab, so dass kein Positronium entstehen kann.
 
 \subsubsection{Annihilation}
@@ -184,19 +185,21 @@ Gitterdefekte beschreiben Fehler in der Kristallstruktur von Festkörpern.
 In diesem Versuch sind dabei vor allem die Punktdefekte von Interesse, die als einzige im thermischen Gleichgewicht vorkommen und dabei insbesondere sogenannte Leerstellen (engl.~\textit{vacancies}).
 Sie entstehen vor allem durch zwei Effekte:
 \begin{description}
-	\item[Schottkydefekt] Hierbei bewegen sich oberflächennahe Gitteratome zur Oberfläche, wodurch Leerstellen in der Kristallstruktur entstehen, die entlang des Kristalls frei beweglich sind.
-	\item[Frenkeldefekt] Bei diesem Defekt verlassen Gitteratome ihre Plätze in der Kristallstruktur und werden zu Zwischengitteratomen, d.h. sie bevölkern Plätze, die im Gitter nicht vorgesehen sind, wodurch an der verlassenen Position eine Leerstelle entsteht.
+	\item[Schottkydefekt]
+		Hierbei bewegen sich Gitteratome an die Oberfläche des Kristalls und hinterlassen eine Leerstelle im Gitter, die entlang des Kristalls frei beweglich sind.
+	\item[Frenkeldefekt]
+		Bei diesem Defekt verlassen Gitteratome ihre Plätze in der Kristallstruktur und werden zu Zwischengitteratomen, d.h. sie bevölkern Plätze, die im Gitter nicht vorgesehen sind, wodurch an der verlassenen Position eine Leerstelle entsteht.
 \end{description}
 Die Konzentration der Leerstellen im Gitter und ihre Temperaturabhängigkeit kann durch
 \begin{align}
-c_\mathrm{v}(T) = e^{\frac{S_\mathrm{t}}{k}}e^{-\frac{H_\mathrm{t}}{k T}}
+c_\mathrm{t}(T) = e^{\frac{S_\mathrm{t}}{k}}e^{-\frac{H_\mathrm{t}}{k_\mathrm{B} T}}
 \label{eq:vac_conc}
 \end{align}
-mit der Boltzmannkonstante~$k$, der Temperatur~$T$, sowie der Leerstellenbildungsentropie~$S_\mathrm{t}$ und -enthalpie~$H_\mathrm{t}$ beschrieben werden \cite{add_infos}.
+mit der Boltzmannkonstante~$k_\mathrm{B}$, der Temperatur~$T$, sowie der Leerstellenbildungsentropie~$S_\mathrm{t}$ und -enthalpie~$H_\mathrm{t}$ beschrieben werden \cite{add_infos}.
 
 \subsubsection{Haftstellenmodell}
 
-Mit dem Haftstellenmodell kann das Verhalten von Positronen (bzw. Positronium) in Festkörpern beschrieben werden.
+Mit dem Haftstellenmodell nach \cite{schatz} kann das Verhalten von Positronen (bzw. Positronium) in Festkörpern beschrieben werden.
 Eine schematische Darstellung ist in Abbildung \ref{fig:trapping_model} dargestellt.
 \begin{figure}[htbp]
 	\centering
@@ -205,23 +208,23 @@ Eine schematische Darstellung ist in Abbildung \ref{fig:trapping_model} dargeste
 	\label{fig:trapping_model}
 \end{figure}
 Hierbei wird angenommen, dass das Positron nur in zwei Zuständen, frei oder gebunden, vorkommt.
-Für die Besetzungszahlen $n_\mathrm{f}$, $n_\mathrm{t}$ der beiden Zustände lassen sich dann zwei Ratengleichungen formulieren, die die Übergänge zwischen diesen Zuständen $\mu_\mathrm{t}$, $\xi_\mathrm{t}$ sowie die Verluste aufgrund von Annihilation (mit den Raten $\lambda_\mathrm{f}$ und $\lambda_\mathrm{t}$) einschließen.
+Für die Besetzungszahlen $n_\mathrm{f}$, $n_\mathrm{t}$ der beiden Zustände lassen sich dann zwei Ratengleichungen
+\begin{align*}
+	\frac{\mathrm{d}n_\mathrm{f}}{\mathrm{d}t}&=-\lambda_\mathrm{f}n_\mathrm{f}-\mu_\mathrm{t}c_\mathrm{t}n_\mathrm{f} + \xi_\mathrm{t}n_\mathrm{t} + N \\
+	\frac{\mathrm{d}n_\mathrm{t}}{\mathrm{d}t}&=-\lambda_\mathrm{t}n_\mathrm{t}+\mu_\mathrm{t}c_\mathrm{t}n_\mathrm{f} - \xi_\mathrm{t}n_\mathrm{f} \, \text{,}
+\end{align*}
+formulieren, die die Übergänge zwischen diesen Zuständen $\mu_\mathrm{t}$, $\xi_\mathrm{t}$ sowie die Verluste aufgrund von Annihilation (mit den Raten $\lambda_\mathrm{f}$ und $\lambda_\mathrm{t}$) einschließen.
 $N$ bezeichne dabei die Rate der einfallenden Positronen.
-\begin{align}
-	\frac{\mathrm{d}n_\mathrm{f}}{\mathrm{d}t}&=-\lambda_\mathrm{f}n_\mathrm{f}-\mu_\mathrm{t}c_\mathrm{v}n_\mathrm{f} + \xi_\mathrm{t}n_\mathrm{t} + N \\
-	\frac{\mathrm{d}n_\mathrm{t}}{\mathrm{d}t}&=-\lambda_\mathrm{t}n_\mathrm{t}+\mu_\mathrm{t}c_\mathrm{v}n_\mathrm{f} - \xi_\mathrm{t}n_\mathrm{f}
-\end{align}
-
 \subsubsection{Lebensdauer von Positronen}
 
 Unter der Annahme eines thermischen Gleichgewichts ($\frac{\mathrm{d}n_\mathrm{f}}{\mathrm{d}t} = \frac{\mathrm{d}n_\mathrm{t}}{\mathrm{d}t} = 0$) kann man die mittlere Lebensdauer $\bar\tau$ definieren als
-\begin{align}
+\begin{align*}
 	\frac{1}{\bar\tau}=f_\mathrm{f}\frac{1}{\tau_\mathrm{f}} + f_\mathrm{t}\frac{1}{\tau_\mathrm{t}}
-\end{align}
+\end{align*}
 mit den Bruchteilen der gebundenen bzw. freien Positronen $f$ und den Lebensdauern $\tau = 1/\lambda$.
-Nimmt man weiterhin an, dass $\xi_\mathrm{t}=0$ gilt, was einer starken Bindung der Positronen an die Leerstellen entspricht, kann man mit $c_\mathrm{v}(T)$ aus \eqref{eq:vac_conc} schreiben
+Nimmt man weiterhin an, dass $\xi_\mathrm{t}=0$ gilt, was einer starken Bindung der Positronen an die Leerstellen entspricht, kann man mit $c_\mathrm{t}(T)$ aus Gleichung~\eqref{eq:vac_conc} schreiben \cite{add_infos}
 \begin{align}
-	\bar\tau=\tau_\mathrm{f}\frac{1+\sigma c_\mathrm{v}(T)\tau_\mathrm{t}}{1+\sigma c_\mathrm{v}(T)\tau_\mathrm{f}}\quad\text{,}
+	\bar\tau=\tau_\mathrm{f} \, \frac{1+\sigma c_\mathrm{t}(T) \, \tau_\mathrm{t}}{1+\sigma c_\mathrm{t}(T) \, \tau_\mathrm{f}}\quad\text{,}
 	\label{eq:mean_lifetime}
 \end{align}
 wodurch die Temperaturabhängigkeit der Lebensdauer untersucht werden kann.
@@ -244,11 +247,11 @@ Um ein detektierbares Signal zu erhalten, wird der Szintillator dotiert.
 Diese Dotierung führt zu zusätzlichen lokalen Energieniveaus zwischen dem Leitungs- und dem Valenzband des Kristalls.
 Trifft ein Elektronen-Loch-Paar, welches durch ein einfallendes Gamma-Quant im Kristall ausgelöst wurde auf ein solchen Aktivator-Zentrum, kann das Elektron über das zusätzliche Energieniveau mit dem Loch unter Emission von zwei Photonen rekombinieren.
 
-Das in diesem Versuch verwendete Szintillator\-material ist LYSO (\ce{Lu_{1.8}Y_{.2}SiO_5}), welches aufgrund des radioaktiven Lute\-tiums zusätzlich zum Spektrum des Szin\-tillations\-lichts ein Spektrum aus dem radioaktiven Zerfall (siehe Abb. \ref{fig:lu_decay_scheme}) beobachtbar macht.
+\noindent Das in diesem Versuch verwendete Szintillator\-material ist LYSO (\ce{Lu_{1.8}Y_{.2}SiO_5:Ce}), welches aufgrund des radioaktiven Lute\-tiums zusätzlich zum Spektrum des Szin\-tillations\-lichts ein Spektrum aus dem radioaktiven Zerfall (siehe Abb. \ref{fig:lu_decay_scheme}) beobachtbar macht.
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.5\textwidth]{./figures/lu_decay_scheme}
-	\caption{Zerfallsschema des $\beta^-$-Zerfalls von \ce{^176Lu} (nach Daten aus \cite{nuc_datasheet_lu}).}
+	\caption{Zerfallsschema des $\beta^-$-Zerfalls von \isotope[176]{Lu} (nach Daten aus \cite{nuc_datasheet_lu}).}
 	\label{fig:lu_decay_scheme}
 \end{figure}
 Um das entstehende Photonensignal zu verstärken werden Sekundärelektronenvervielfacher (auch Photomultiplier, kurz PMT genannt) eingesetzt, die im folgenden näher beschrieben werden.
@@ -258,28 +261,31 @@ Um das entstehende Photonensignal zu verstärken werden Sekundärelektronenvervi
 Ein Sekundärelektronenvervielfacher dient der gleichzeitigen Messung und Verstärkung eines optischen Signals in Form eines Strompulses.
 Ein eintreffendes Photon gelangt auf eine Photokathode und löst dort ein Elektron aus, welches in einem anliegenden Feld zu einer Elektrode hin beschleunigt wird.
 Diese Elektrode wird auch als Dynode bezeichnet und ist für die Verstärkung verantwortlich.
-Das Elektron erhält durch die Beschleunigung genug Energie, um aus der Dynode mehrere Elektronen auszulösen, wodurch eine Verstärkung erreicht wird.
+Das Elektron erhält durch die Beschleunigung genug Energie, um aus der Dynode mehrere Elektronen auszulösen, wodurch nach dem Durchlaufen mehrerer Beschleunigungsstrecken eine Verstärkung erreicht werden kann.
 Das Signal kann dabei an mehreren Stellen abgegriffen werden:
 \begin{description}
 	\item[\textit{Slow}-Ausgang]Der Abgriff erfolgt an einer Dynode, so dass aufgrund der noch nicht vollständigen Verstärkung die Anstiegszeit des Signals geringer ist als an der Anode (\textit{slow}), jedoch ist die hier abgegriffene Amplitude proportional zur Energie der einfallenden Photonen.
-	\item[\textit{Fast}-Ausgang]Dieser Abgriff geschieht an der Anode, wo aufgrund der hohen Verstärkung eine kurze Anstiegszeit des Signals beobachtet werden kann (\textit{fast}), weswegen dieser Ausgang für Zeitmessungen bevorzugt wird. Allerdings ist bereits eine Sättigung des Stroms möglich, so dass keine Energieinformation aus diesem Signal gewonnen werden kann.
+	\item[\textit{Fast}-Ausgang]Dieser Abgriff geschieht an der Anode, wo aufgrund der hohen Verstärkung eine kurze Anstiegszeit des Signals beobachtet werden kann (\textit{fast}), weswegen dieser Ausgang für Zeitmessungen bevorzugt wird. Allerdings ist eine Sättigung des Stroms möglich, so dass keine Energieinformation aus diesem Signal gewonnen werden kann.
 \end{description}
 
-\subsubsection{TODO: Nukleare Elektronik (SCA, MCA, CFD, TAC)}
+\subsubsection{Nukleare Elektronik}
 
 Im Messaufbau werden verschiedene elektronische Bauteile verwendet, die im Folgenden näher beschrieben werden sollen.
 Da aufgrund des Lutetium-Spektrums mehrere Photonen unterschiedlicher Energien in den Sekundärelektronenvervielfachern registriert werden, ist es nötig, eine Selektion auf Signale einer bestimmten Energie zu ermöglichen.
 Hierzu kommen Einkanalanalysatoren (engl. \textit{single channel analyzer}, im Weiteren kurz als \textbf{SCA} bezeichnet) zum Einsatz.
 Sie erzeugen ein logisches Signal, wenn die Eingangsamplitude in einem definierbaren Bereich, Fenster genannt, liegt.
 Dieser wird durch eine untere Schwelle und die Größe dieses Fensters eingestellt, was intern durch zwei Schwellendiskriminatoren realisiert wird.
+
 Die Spektren werden mit einem Mehrkanalanalysator (engl. \textit{multi channel analyzer}, kurz \textbf{MCA}) aufgenommen.
 Dieser funktioniert ähnlich wie ein SCA, jedoch wird das Fenster in mehrere zur Signalhöhe proportionale Bereiche eingeteilt, die auch als Kanäle bezeichnet werden.
 Der in diesem Versuch verwendete MCA besitzt~\num{8192} Kanäle.
 Fällt eine am Eingang anliegende Amplitude in einen dieser Bereiche wird mit einem Zähler die dort registrierte Anzahl an Ereignissen um eins erhöht, wodurch ein Amplitudenspektrum (oftmals als Energiespektrum) registriert werden kann.
-Um die Triggerung der Zeitmessung umzusetzen, kommen Diskriminatoren zum Einsatz, die sicherstellen, dass nur ein aufgetretenes Signal und keine Untergrundereignisse eine Zeitmessung starten bzw. stoppen.
-Da der Zeitpunkt zum Schalten eines gewöhnlichen Diskriminators abhängig ist von der Amplitude des Signals, werden sogenannte \textit{constant fraction} Diskriminatoren (\textbf{CFD}) eingesetzt, die immer bei Erreichen eines festgelegten Bruchteils der Maximalamplitude schalten.
+
+Um das Schalten der Zeitmessung umzusetzen, kommen Diskriminatoren zum Einsatz, die sicherstellen, dass nur ein aufgetretenes Signal und keine Untergrundereignisse eine Zeitmessung starten bzw.\ stoppen.
+Da der Zeitpunkt zum Schalten eines gewöhnlichen (\textit{leading-edge}) Diskriminators von der Amplitude des Signals abhängig ist (\textit{time-walk}), werden sogenannte \textit{constant fraction} Diskriminatoren (\textbf{CFD}) eingesetzt, die immer bei Erreichen eines festgelegten Bruchteils der Maximalamplitude schalten.
 Hierzu wird das Eingangssignal in zwei Komponenten zerlegt, von denen eine um die Zeit verzögert wird, die das Signal braucht, um vom Bruchteil der Amplitude bis zu ihrem Maximum anzusteigen, während die andere Komponenten gedämpft und invertiert wird.
 Durch Addition der beiden Komponenten ergibt sich ein Signal, das einen Nulldurchgang an einem festgelegten Punkt, unabhängig von der Maximalamplitude hat und zum Schalten des Diskriminators  genutzt wird.
+
 Zur Zeitmessung selbst wird ein \textit{time to amplitude converter}, kurz \textbf{TAC} verwendet, der aus der Zeitdifferenz zwischen Eintreffen eines Start- und Stopsignals ein Signal mit zur Zeit proportionaler Amplitude erzeugt.
 Dies geschieht durch Aufladung eines Kondensators über eine Konstantstromquelle nachdem das Startsignal registriert wurde.
 Dadurch ist die Ladung auf dem Kondensator proportional zur Zeit bis das Stopsignal am entsprechenden Eingang eintrifft, wodurch die Porportionalität der Ausgangsamplitude zur gemessenen Zeit hergestellt wird. 
@@ -536,11 +542,10 @@ Auf die Angabe der expliziten Formel soll jedoch aus Gründen der Übersichtlich
 	\caption{Auswertung der angepassten Lebenszeitspektren.}
 \end{sidewaystable}
 
-Um die Lebenszeit des ungebundenen Positrons~$\tau_f$ zu bestimmen, kann eine Anpassung an die aus der Theorie erwarteten mittleren Lebenszeit 
-\begin{align}
+Um die Lebenszeit des ungebundenen Positrons~$\tau_f$ zu bestimmen, kann eine Anpassung an die gemäß Gleichung~\eqref{eq:mean_lifetime} erwartete mittlere Lebenszeit 
+\begin{align*}
 	\bar{\tau} = \tau_f \, \frac{1 + \sigma \exp\left[ \frac{S_t}{k_\mathrm{B}} \right] \exp\left[ -\frac{H_t}{k_\mathrm{B} T} \right] \tau_t}{1 + \sigma \exp\left[ \frac{S_t}{k_\mathrm{B}} \right] \exp\left[ -\frac{H_t}{k_\mathrm{B} T} \right] \tau_f}
-	\label{fig:mean_lifetime}
-\end{align}
+\end{align*}
 durchgeführt werden.
 Dabei wird die Anpassungshypothese
 \begin{align*}
