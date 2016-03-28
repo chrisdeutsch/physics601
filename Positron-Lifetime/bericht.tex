@@ -483,6 +483,7 @@ Darüber hinaus wird der statistische Fehler auf \SI{1}{\degreeCelsius} abgesch�
 Abschließend wurde die Probe so zwischen den Detektoren positioniert, dass eine Zählrate von ungefähr~\SI{60}{\per\second} erreicht wurde und die Software wurde auf eine Messdauer von \SI{30}{min} eingestellt, so dass für jede Messung eine Statistik mit etwa~\num{100000} Einträgen entsteht.
 
 \subsection{Analyse der Lebenszeitspektren}
+\label{sec:analyse_lebenszeitspektren}
 Gemäß des Haftstellenmodells bestehen die Lebenszeitspektren der Positronen in Indium aus zwei exponentiellen Zerfällen mit jeweils unterschiedlichen Zeitkonstanten.
 Da diese Zeitkonstanten wesentlich kleiner sind als die charakteristische Zeitauflösung des Aufbaus wie sie in Abschnitt~\ref{sec:zeitkalibration} bestimmt wurde, muss die Auflösung bei der Auswertung der Spektren beachtet werden.
 Dieser Auflösungseffekt kann als gaußförmig angesehen werden und die tatsächlich beobachteten Lebenszeitspektren können dann als Faltung einer Normalverteilung mit zwei exponentiellen Zerfällen
@@ -505,7 +506,7 @@ In Abbildung \ref{fig:fit_lebenszeitspektrum} wurde beispielhaft eine Anpassung 
 \begin{figure}[h]
 	\centering
 	\includegraphics{./figures/lifetimes/raumtemperatur.pdf}
-	\caption{Vermessenes Lebenszeitspektrum bei Raumtemperatur $T = \SI{20}{\degreeCelsius}$}
+	\caption{Lebenszeitspektrum von Positronen in der Indium-Probe bei Raumtemperatur $T = \SI{20}{\degreeCelsius}$.}
 	\label{fig:fit_lebenszeitspektrum}
 \end{figure}
 Die Ergebnisse der Anpassungen bei den verschiedenen Temperaturen der Indium-Probe wurden in Tabelle~\ref{tab:fit_ergebnisse} zusammengefasst und in Tabelle~\ref{tab:fit_ergebnisse_ps} unter Anwendung der Zeitkalibration umgerechnet.
@@ -513,7 +514,7 @@ Darüber hinaus wurde die mittlere Lebenszeit durch
 \begin{align*}
 	\bar{\tau} = I_0 \tau_0 + I_t \tau_t = \frac{A_0}{A_0 + A_t} \cdot \tau_0 + \frac{A_t}{A_0 + A_t} \cdot \tau_t
 \end{align*}
-\cite{add_infos} und der zugehörige Fehler durch \textsc{Gauß}sche Fehlerfortpflanzung berechnet (Kovarianzs der Anpassungsfehler wurden hierbei beachtet).
+\cite{add_infos} und der zugehörige Fehler durch \textsc{Gauß}sche Fehlerfortpflanzung berechnet (Kovarianz der Anpassungsfehler wurde hierbei beachtet).
 Auf die Angabe der expliziten Formel soll jedoch aus Gründen der Übersichtlichkeit verzichtet werden.
 \begin{sidewaystable}
 	\begin{subtable}{\textwidth}
@@ -551,7 +552,8 @@ Anzumerken ist, dass der Messpunkt bei etwa \SI{60}{\degreeCelsius} keine sinnvo
 \begin{figure}[h]
 	\centering
 	\includegraphics{./figures/lifetime_s_curve.pdf}
-	\caption{Anpassung an die gemessene mittlere Lebenszeit~$\bar{\tau}$ zur Bestimmung der Positron-Lebenszeiten~$\tau_f$ und $\tau_t$.}
+	\caption{Anpassung an die gemessene mittlere Lebenszeit~$\bar{\tau}$ zur Bestimmung der Positron-Lebenszeiten~$\tau_f$ und $\tau_t$.
+		     Der Messpunkt bei einer Temperatur von ca.\ \SI{60}{\degreeCelsius} wurde bei der Anpassung vernachlässigt.}
 	\label{fig:s_curve}
 \end{figure}
 Aus der Anpassung folgen die Schwellen der S-Kurve
@@ -563,8 +565,9 @@ und die Parameter $a, b$
 	a = \SI{33000 +- 200000}{\per\pico\second} \qquad b = \SI{5500 +- 2200}{\kelvin} \, \text{.}
 \end{align*}
 Wie erwartet zeigen die freien Positronen eine kleinere Lebenszeit~$\tau_f$ als die in Leerstellen gefangenen~$\tau_t$, da dort eine geringere Elektronendichte herrscht und somit die Wahrscheinlichkeit für Annihilation geringer ist.
+Darüber hinaus nähert sich die mittlere Lebenszeit~$\bar{\tau}$ bei hohen Temperaturen der oberen Schwelle~$\tau_t$, da die Leerstellenkonzentration mit steigender Temperatur zunimmt.
 
-Theoretisch kann die Leerstellenenthalpie~$H_t$ aus dem Parameter~$b$ gewonnen werden, da dieser jedoch einen großen Fehler aufweist wird ein anderes Verfahren genutzt.
+Theoretisch kann die Leerstellenenthalpie~$H_t$ aus dem Parameter~$b$ gewonnen werden, da dieser jedoch einen großen Fehler aufweist, wird ein anderes Verfahren genutzt.
 Für dieses ist es nützlich die Einfangrate~$\sigma c_t$ durch die Lebenszeiten von freien und gefangenen Positronen auszudrücken \cite{add_infos}
 \begin{align*}
 	\sigma c_t = \frac{\bar{\tau} - \tau_f}{\tau_f (\tau_t - \bar{\tau})}
@@ -574,7 +577,7 @@ und mithilfe der Leerstellenkonzentration aus Gleichung \eqref{eq:vac_conc} kann
 	\ln(\sigma c_t) = \mathrm{const} - \frac{H_t}{k_\mathrm{B}} \cdot \frac{1}{T} \label{eq:logogogogo}
 \end{align}
 zu erhalten.
-Die Werte für die logarithmische Einfangrate bei den verschiedenen Temperaturen wurde in Tabelle~\ref{tab:arrenius} zusammengetragen und die graphische Darstellung der Geradenanpassung in Abbildung~\ref{fig:arrenius}.
+Die Werte für die logarithmische Einfangrate bei den verschiedenen Temperaturen wurde in Tabelle~\ref{tab:arrenius} zusammengetragen und die graphische Darstellung der Geraden-Anpassung in Abbildung~\ref{fig:arrenius}.
 \begin{table}[h]
 	\centering
 	\input{./tables/arrenius.tex}
@@ -587,6 +590,7 @@ Die Werte für die logarithmische Einfangrate bei den verschiedenen Temperaturen
 	\caption{Logarithmische Einfangrate~$\ln(\sigma c_t)$ als Funktion der reziproken Temperatur~$\frac{1}{T}$ und Anpassung einer Geraden an die Daten.}
 	\label{fig:arrenius}
 \end{figure}
+
 Aus der Geraden-Anpassung folgt die Steigung
 \begin{align*}
 	m = \SI{-4945 +- 1149}{\kelvin}
@@ -599,7 +603,7 @@ Mit $k_\mathrm{B} \approx \num{8.617} \cdot 10^{-5} \, \si{\eV\per\kelvin}$ \cit
 \begin{align*}
 	H_t = \SI{0.43 +- 0.10}{\electronvolt} \, \text{.}
 \end{align*}
-Der Vergleich mit den in \cite{indium} gegebenen Literaturwerten für Indium, welche im Bereich von \SI{0.42}{\eV} bis \SI{0.59}{\eV} liegen, zeigt eine passable Übereinstimmung mit dem in diesem Versuch bestimmten Wert.
+Der Vergleich mit den in \cite{indium} gegebenen Werten für Indium, welche im Bereich von \SI{0.42}{\eV} bis \SI{0.59}{\eV} liegen, zeigt eine passable Übereinstimmung mit dem in diesem Versuch bestimmten Wert.
 
 
 
@@ -609,32 +613,58 @@ Der Vergleich mit den in \cite{indium} gegebenen Literaturwerten für Indium, we
 
 
 \section{Lebenszeitmessung in Acrylglas}
-Im Anschluss wurde eine Messung der Lebenszeit in Acrylglas bei Raumtemperatur gestartet und über Nacht Daten aufgenommen.
-Da in Acrylglas im Gegensatz zu Metall Positronium gebildet werden kann, lässt sich durch die Messung dessen Lebensdauer bestimmen.
+Im Anschluss wurde eine Messung der Lebenszeit von Positronen in Acrylglas bei Raumtemperatur gestartet und über Nacht Daten aufgenommen.
+Im Gegensatz zu Metallen (Indium) kann in Isolatoren (Acrylglas) Positronium gebildet werden.
+Das Lebenszeitspektrum sollte demnach Aussagen über die Lebenszeit von Ortho- und Parapositronium ermöglichen.
 
+\subsection{Analyse des Lebenszeitspektrums}
+Die Auswertung der Spektren erfolgt analog zu Abschnitt \ref{sec:analyse_lebenszeitspektren} für Indium, da auch hier zwei charakteristische Zeitkonstanten auftreten.
+In Abbildung~\ref{fig:spektrum_acrylglas} wurde das Lebenszeitspektrum und die Anpassung einer Funktion der Form aus Gleichung~\eqref{eq:spektrum_fit} dargestellt.
 \begin{figure}[h]
 	\centering
 	\includegraphics{./figures/acryl_glas.pdf}
-	\caption{Lebenszeitspektrum von Positronen / Positronium in Acrylglas.}
+	\caption{Lebenszeitspektrum von Positronen in Acrylglas bei Raumtemperatur.}
+	\label{fig:spektrum_acrylglas}
 \end{figure}
 
-Fit:
+Die Anpassung der Funktion \eqref{eq:spektrum_fit} an das gemessene Spektrum liefert:
 \begin{align*}
 	t_0 &= (\num{971.28 +- 0.19})\, \mathrm{Kan"ale}\\
 	\sigma &= (\num{36.73 +- 0.10})\, \mathrm{Kan"ale}\\
 	A_0 &= \num{1351000 +- 8000}\\
 	A_1 &= \num{693500 +- 7100}\\
 	\tau_0 &= (\num{42.85 +- 0.45})\, \mathrm{Kan"ale}\\
-	\tau_1 &= (\num{179.6 +- 1.8})\, \mathrm{Kan"ale} 
+	\tau_1 &= (\num{179.6 +- 1.8})\, \mathrm{Kan"ale} \text{.}
 \end{align*}
-
-Umrechnung:
+Man sieht an den charakteristischen Lebenszeiten~$\tau_0$ und $\tau_1$, dass ein kurzlebiger und ein langlebiger Zustand aufzutreten scheint.
+Um quantitative Aussagen zu ermöglichen, werden die Zeitkonstanten mithilfe der Kalibration umgerechnet um
 \begin{align*}
-	\tau_0 &= \SI{0.288 +- 0.004}{ns}\\
-	\tau_1 &= \SI{1.207 +- 0.013}{ns}
+	\tau_0 = \SI{0.288 +- 0.004}{ns}\qquad
+	\tau_1 = \SI{1.207 +- 0.013}{ns}
 \end{align*}
+zu erhalten.
 
+\subsection{Interpretation der Lebenszeiten}
+In dem gemessenen Spektrum treten zwei charakteristische Lebenszeiten auf.
+Zunächst soll die Ursache der größeren Zeitkonstante
+\begin{align*}
+	\tau_1 = \SI{1.207+-0.013}{ns}
+\end{align*}
+diskutiert werden.
+Diese kann nicht durch die Annihilation von Positronen oder Para-Positronium erklärt werden, da diese eine wesentlich kleinere Lebenszeit aufweisen.
+Der Zerfall von Ortho-Positronium liefert jedoch ein plausibles Argument für diese Lebenszeit.
+Die Lebenszeit von Ortho-Positronium im Vakuum beträgt etwa \SI{140}{ns} \cite{pos_annihilation}, da in der Acrylglas-Probe jedoch ständig Elektronen mit dem des Positroniums konkurrieren, kommt es im Material hauptsächlich zum sogenannten \textit{Pickoff}-Zerfall des Positroniums.
+Dieser zeichnet sich dadurch aus, dass das Positronium ein Elektron mit entgegengesetztem Spin (verglichen mit dem Elektron des Positroniums) aus dem Material erhält und schließlich als Para-Positronium mit einer kurzen Zeitkonstante zerfällt.
+Die charakteristische Zeitkonstante dieses Zerfalls ist in \cite{pos_annihilation} gegeben als \SI{1}{ns} und liefert somit eine mögliche Erklärung für die gemessene Zeitkonstante~$\tau_1$.
 
+Die kürzere der beiden Zeitkonstanten
+\begin{align*}
+	\tau_0 = \SI{288 +- 4}{ps}
+\end{align*}
+lässt sich nicht eindeutig einem einzelnen Prozess zuordnen und sollte eher als eine mittlere Lebensdauer mehrerer Prozesse gedeutet werden.
+Zum einen entsteht diese durch den Zerfall von Para-Positronium mit einer Zeitkonstante von \SI{125}{ps} \cite{pos_annihilation}.
+Darüber hinaus entstehen auch einzelne Positronen, welche mit einer Zeitkonstante in der Größenordung von \SI{400}{ps} (Messung der Lebenszeit in Indium) in Materie zerfallen.
+Demnach ist die Zeitkonstante~$\tau_0$ als Überlagerung der Zerfälle von Para-Positronium und einzelnen Positronen zu deuten und liegt in der erwarteten Größenordnung.
 
 \section{Fazit}
 
@@ -667,6 +697,12 @@ Umrechnung:
 	W.\ Weiler, H.E.\ Schaefer,
 	\emph{Vacancy formation in indium investigated by positron lifetime spectroscopy},
 	J.\ Phys.\ F: Met.\ Phys. 15 (1985) 1651-1659.
+
+\bibitem{pos_annihilation}
+	L.C.\ Smedskjaer and M.J.\ Fluss,
+	\emph{Experimental Methods of Positron Annihilation for the Study of Defects in Metals},
+	Academic Press, 1983.
+	
 \end{thebibliography}
 
 % APPENDIX
