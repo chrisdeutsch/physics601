@@ -509,10 +509,11 @@ mit
 beschrieben werden \cite{add_infos}.
 Hierbei beschreibt $\sigma$ die Standardabweichung der Normalverteilung, $\tau$ die jeweiligen Zeitkonstanten, $A$ einen von der Intensität der exponentiellen Zerfälle abhängigen Parameter und $\mathrm{BG}$ einen konstanten Untergrund.
 In Abbildung \ref{fig:fit_lebenszeitspektrum} wurde beispielhaft eine Anpassung an ein gemessenes Lebenszeitspektrum durchgeführt.
+Die restlichen Spektren finden sich in Anhang~\ref{app:spektren}.
 \begin{figure}[h]
 	\centering
 	\includegraphics{./figures/lifetimes/raumtemperatur.pdf}
-	\caption{Lebenszeitspektrum von Positronen in der Indium-Probe bei Raumtemperatur $T = \SI{20}{\degreeCelsius}$.}
+	\caption{Lebenszeitspektrum von Positronen in der Indium-Probe bei Raumtemperatur $T = \SI{22.7}{\degreeCelsius}$.}
 	\label{fig:fit_lebenszeitspektrum}
 \end{figure}
 Die Ergebnisse der Anpassungen bei den verschiedenen Temperaturen der Indium-Probe wurden in Tabelle~\ref{tab:fit_ergebnisse} zusammengefasst und in Tabelle~\ref{tab:fit_ergebnisse_ps} unter Anwendung der Zeitkalibration umgerechnet.
@@ -612,12 +613,6 @@ Mit $k_\mathrm{B} \approx \num{8.617} \cdot 10^{-5} \, \si{\eV\per\kelvin}$ \cit
 Der Vergleich mit den in \cite{indium} gegebenen Werten für Indium, welche im Bereich von \SI{0.42}{\eV} bis \SI{0.59}{\eV} liegen, zeigt eine passable Übereinstimmung mit dem in diesem Versuch bestimmten Wert.
 
 
-
-
-
-
-
-
 \section{Lebenszeitmessung in Acrylglas}
 Im Anschluss wurde eine Messung der Lebenszeit von Positronen in Acrylglas bei Raumtemperatur gestartet und über Nacht Daten aufgenommen.
 Im Gegensatz zu Metallen (Indium) kann in Isolatoren (Acrylglas) Positronium gebildet werden.
@@ -713,7 +708,64 @@ Demnach ist die Zeitkonstante~$\tau_0$ als Überlagerung der Zerfälle von Para-
 % APPENDIX
 \begin{appendix}
 \newpage
-\section{Anhang}
+\section{Lebenszeitspektren von Positronzerfällen in Indium}
+\label{app:spektren}
+\begin{figure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics{./figures/lifetimes/50_grad.pdf}
+		\subcaption{Temperatur der Probe $T = \SI{50.6}{\degreeCelsius}$}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics{./figures/lifetimes/62_grad.pdf}
+		\subcaption{Temperatur der Probe $T = \SI{62.8}{\degreeCelsius}$}
+	\end{subfigure}
+	\caption{Lebenszeitspektrum von Positronen in der Indium-Probe.}
+\end{figure}
+
+\begin{figure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics{./figures/lifetimes/77_grad.pdf}
+		\subcaption{Temperatur der Probe $T = \SI{76.4}{\degreeCelsius}$}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics{./figures/lifetimes/88_grad.pdf}
+		\subcaption{Temperatur der Probe $T = \SI{88.8}{\degreeCelsius}$}
+	\end{subfigure}
+	\caption{Lebenszeitspektrum von Positronen in der Indium-Probe.}
+\end{figure}
+
+\begin{figure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics{./figures/lifetimes/99_grad.pdf}
+		\subcaption{Temperatur der Probe $T = \SI{100.0}{\degreeCelsius}$}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics{./figures/lifetimes/110_grad.pdf}
+		\subcaption{Temperatur der Probe $T = \SI{110.0}{\degreeCelsius}$}
+	\end{subfigure}
+	\caption{Lebenszeitspektrum von Positronen in der Indium-Probe.}
+\end{figure}
+
+\begin{figure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics{./figures/lifetimes/120_grad.pdf}
+		\subcaption{Temperatur der Probe $T = \SI{121.2}{\degreeCelsius}$}
+	\end{subfigure}
+	\caption{Lebenszeitspektrum von Positronen in der Indium-Probe.}
+\end{figure}
+
+
+
+
+
+
 
 
 \end{appendix}
