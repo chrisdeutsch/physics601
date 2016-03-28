@@ -296,14 +296,20 @@ Dies geschieht durch Aufladung eines Kondensators über eine Konstantstromquelle
 Dadurch ist die Ladung auf dem Kondensator proportional zur Zeit bis das Stopsignal am entsprechenden Eingang eintrifft, wodurch die Porportionalität der Ausgangsamplitude zur gemessenen Zeit hergestellt wird. 
 
 \subsubsection{\textit{Fast}-\textit{Slow}-Koinzidenzkreis}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figures/aufbau/zeit.pdf}
+	\caption{Aufbau des \textit{Fast}-\textit{Slow}-Koninzidenzkreises für die Zeitkalibration und die Messung der Lebenszeitspektren von Positronen und Positronium in Festkörpern \cite{anleitung}.}
+	\label{fig:fast_slow_coincidence}
+\end{figure}
 
-Zur Messung der Lebensdauer wird ein s.g. \textit{Fast}-\textit{Slow}-Koinzidenzkreis genutzt, wie er in Abbildung \ref{fig:fast_slow_coincidence} dargestellt ist.
+Zur Messung der Lebensdauer wird ein sogenannter \textit{Fast}-\textit{Slow}-Koinzidenzkreis genutzt, wie er in Abbildung \ref{fig:fast_slow_coincidence} dargestellt ist.
 Während der \textit{Slow}-Kreis der Selektion relevanter Ereignisse dient, wird der \textit{Fast}-Kreis zur eigentlichen Zeitmessung genutzt.
 Damit diese nur Positronenereignisse im Detektor berücksichtigt, muss eine Selektion erfolgen, die über die bei der Erzeugung und Vernichtung von Positronen entstehenden Photonen geschieht.
 Hier zu werden SCAs zur Auswahl von Ereignissen mit Photonen einer bestimmten Energie genutzt, die bei einem gleichzeitigen Signal in beiden Detektoren die Datenaufnahme des MCA ermöglichen (\textit{Gate}-Eingang).
 Zur Zeitmessung wird ein TAC verwendet, dessen Ausgangssignale vom MCA als (Zeit-) Spektrum dargestellt werden.
 Da die Amplitude des Ausgangssignals porportional zur gemessenen Zeit ist und der MCA Ereignisse nach Maximalamplitude sortiert, entspricht die Anzahl Einträge in einem Kanal der Anzahl von Ereignissen, für die eine bestimmte Zeit gemessen wurde.
-Zur Unterdrückung von Untergrundereignissen im Detektor werden aufgrund der Zeitsensitivität im \textit{Fast}-Kreis CFDs verwendet.
+Zur Unterdrückung von Untergrundereignissen können die unteren Schwelle der CFDs im \textit{Fast}-Kreis genutzt werden.
 
 \section{Aufbau und Kalibration}
 
@@ -320,7 +326,7 @@ Im Folgenden soll der Aufbau des \textit{Fast}-\textit{Slow}-Konizidenzkreises u
 In einem ersten Schritt muss die Verstärkung des \textit{Slow}-Kreises so eingestellt werden, dass die \SI{1275}{\keV}-Linie des angeregten Neon-Zustandes, welcher bei dem $\beta^+$-Zerfall von \isotope[22]{Na} entsteht, in den Spannungsbereich des MCA fällt.
 Dies wird für jeden Detektor einzeln durchgeführt, indem parallel zu den SCAs ein \textit{Delay} eingesetzt wird, dessen Ausgang mit dem analogen Eingang des MCAs verbunden wird, während die SCAs das \textit{Gate}-Signal liefern.
 Nachdem für beide Detektoren der Aufbau in Abbildung \ref{fig:slow_kreis} realisiert und die Koinzidenz von \textit{Slow}- und SCA-Signal verifiziert wurde, wird die \isotope[22]{Na}-Quelle in den Detektor eingesetzt.
-Zur Einstellung der Verstärkung wird die Fensterbreite des SCA maximiert und die untere Schwelle auf das Minimum gesetzt, so dass das gesamte Spektrum von Lutetium und Natrium bis zur~\SI{1275}{keV}-Linie (aus dem Natriumzerfall) noch beobachtbar ist.
+Zur Einstellung der Verstärkung wird die Fensterbreite des SCA maximiert und die untere Schwelle auf das Minimum gesetzt, so dass das gesamte Spektrum von Lutetium und Natrium bis zur~\SI{1275}{keV}-Linie (aus der Relaxation des angeregten Neon-Zustandes im Natriumzerfall) noch beobachtbar ist.
 Für den rechten Detektor war dies nicht vollständig möglich, da die maximale Fensterbreite des SCA nicht ausreicht um den gesamten Energiebereich von Lutetium und Natrium abzudecken, obwohl am Verstärker die minimale Verstärkung eingestellt wurde.
 Daher wurde die untere Schwelle des SCA angehoben bis die~\SI{1275}{keV}-Linie mit dem MCA aufgenommen werden konnte.
 
@@ -368,7 +374,7 @@ Diese Linien zeigen nur eine kleine Amplitude, da in dem LYSO-Szintillator mit g
 Dies sieht man beispielsweise an der \SI{597}{\keV}-Linie, die entsteht, wenn alle drei Photonen im Detektormaterial absorbiert werden.
 
 Außerdem wurden in Abbildung~\ref{fig:na_spektren} die Spektren beider Detektoren mit der \isotope[22]{Na}-Positronenquelle dargestellt.
-Wie bereits in Abschnitt~\ref{sec:slow_kreis} erwähnt, musste aufgrund der begrenzten Fensterbreite des SCA dessen untere Schwelle angehoben werden, um die \SI{1275}{\keV} Linie mit dem MCA darstellen zu können.
+Wie bereits in Abschnitt~\ref{sec:slow_kreis} erwähnt, musste aufgrund der begrenzten Fensterbreite des SCA die untere Schwelle für eine Messung angehoben werden, um die \SI{1275}{\keV} Linie mit dem MCA darstellen zu können.
 Dies kann in Abbildung~\ref{fig:na_rechts} an der Kante bei Kanal 1000 ausgemacht werden.
 Für beide Detektoren ist der Lutetium-Untergrund weiterhin deutlich zu erkennen und soll hier nicht erneut diskutiert werden.
 Darüber hinaus sind zwei weitere Energiebeiträge bei \SI{511}{\keV} und \SI{1275}{\keV} zu erkennen.
@@ -389,7 +395,7 @@ Ein Beispiel eines solchen beobachteten Signals ist in Abbildung \ref{fig:cfd_th
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=.8\textwidth]{./figures/cfd_threshold}
-	\caption{Beobachtetes Signal auf dem Oszillator. Es ist keine Nulllinie mehr zu sehen.}
+	\caption{Beobachtetes Signal auf dem Oszilloskop bei der Einstellung der CFD-Schwellen. Im \textit{Slow}-Kreis ist keine Nulllinie zu sehen (Kanal 2), wenn das Oszilloskop auf dem Ausgang des CFD getriggert wird (Kanal 1).}
 	\label{fig:cfd_threshold}
 \end{figure}
 
@@ -403,12 +409,6 @@ Die interne Verzögerung beträgt laut Aufdruck auf dem Gerät~\SI{1.5}{ns} und 
 \label{sec:zeitkalibration}
 Um einen Zusammenhang zwischen Impulshöhe des TAC und gemessener Zeit zwischen Start- und Stopsignal zu erhalten, muss eine Kalibrierung der Zeitmessung stattfinden.
 Dazu werden die Komponenten gemäß Abbildung~\ref{fig:fast_slow_coincidence} verschaltet.
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{./figures/aufbau/zeit.pdf}
-	\caption{Aufbau des \textit{Fast}-\textit{Slow}-Koninzidenzkreises für die Zeitkalibration und die Messung der Lebenszeitspektren von Positronen und Positronium in Festkörpern \cite{anleitung}.}
-	\label{fig:fast_slow_coincidence}
-\end{figure}
 Nachdem sowohl die Signale der beiden SCAs im \textit{Slow}-Kreis als auch die Signale der Koinzidenz-Einheit und des TAC am Oszilloskop auf zeitliche Koinzidenz überprüft wurden, kann eine Promptkurve erstellt werden.
 Hierbei wird das Stopsignal zusätzlich zur in~\ref{ssec:fastkreis} gewählten Verzögerung schrittweise um jeweils weitere~\SI{4}{ns} verzögert und für jede Einstellung über~\SI{2}{min} das entstehende Spektrum aufgenommen, welches in Abbildung~\ref{fig:promptkurven} gezeigt ist.
 \begin{figure}[h]
@@ -521,11 +521,11 @@ In Abbildung \ref{fig:fit_lebenszeitspektrum} wurde beispielhaft eine Anpassung 
 	\label{fig:fit_lebenszeitspektrum}
 \end{figure}
 Die Ergebnisse der Anpassungen bei den verschiedenen Temperaturen der Indium-Probe wurden in Tabelle~\ref{tab:fit_ergebnisse} zusammengefasst und in Tabelle~\ref{tab:fit_ergebnisse_ps} unter Anwendung der Zeitkalibration umgerechnet.
-Darüber hinaus wurde die mittlere Lebenszeit durch
+Darüber hinaus wurde die mittlere Lebenszeit durch \cite{add_infos}
 \begin{align*}
 	\bar{\tau} = I_0 \tau_0 + I_t \tau_t = \frac{A_0}{A_0 + A_t} \cdot \tau_0 + \frac{A_t}{A_0 + A_t} \cdot \tau_t
 \end{align*}
-\cite{add_infos} und der zugehörige Fehler durch \textsc{Gauß}sche Fehlerfortpflanzung berechnet (Kovarianz der Anpassungsfehler wurde hierbei beachtet).
+und der zugehörige Fehler durch \textsc{Gauß}sche Fehlerfortpflanzung berechnet (Kovarianz der Anpassungsfehler wurde hierbei beachtet).
 Auf die Angabe der expliziten Formel soll jedoch aus Gründen der Übersichtlichkeit verzichtet werden.
 \begin{sidewaystable}
 	\begin{subtable}{\textwidth}
@@ -566,6 +566,7 @@ Anzumerken ist, dass der Messpunkt bei etwa \SI{60}{\degreeCelsius} keine sinnvo
 		     Der Messpunkt bei einer Temperatur von ca.\ \SI{60}{\degreeCelsius} wurde bei der Anpassung vernachlässigt.}
 	\label{fig:s_curve}
 \end{figure}
+
 Aus der Anpassung folgen die Schwellen der S-Kurve
 \begin{align*}
 	\tau_f = \SI{351.2 +- 14.7}{ps} \qquad	\tau_t = \SI{419.0 +- 17.3}{ps}
@@ -636,7 +637,6 @@ In Abbildung~\ref{fig:spektrum_acrylglas} wurde das Lebenszeitspektrum und die A
 	\caption{Lebenszeitspektrum von Positronen in Acrylglas bei Raumtemperatur.}
 	\label{fig:spektrum_acrylglas}
 \end{figure}
-
 Die Anpassung der Funktion \eqref{eq:spektrum_fit} an das gemessene Spektrum liefert:
 \begin{align*}
 	t_0 &= (\num{971.28 +- 0.19})\, \mathrm{Kan"ale}\\
@@ -644,7 +644,7 @@ Die Anpassung der Funktion \eqref{eq:spektrum_fit} an das gemessene Spektrum lie
 	A_0 &= \num{1351000 +- 8000}\\
 	A_1 &= \num{693500 +- 7100}\\
 	\tau_0 &= (\num{42.85 +- 0.45})\, \mathrm{Kan"ale}\\
-	\tau_1 &= (\num{179.6 +- 1.8})\, \mathrm{Kan"ale} \text{.}
+	\tau_1 &= (\num{179.6 +- 1.8})\, \mathrm{Kan"ale} \, \text{.}
 \end{align*}
 Man sieht an den charakteristischen Lebenszeiten~$\tau_0$ und $\tau_1$, dass ein kurzlebiger und ein langlebiger Zustand aufzutreten scheint.
 Um quantitative Aussagen zu ermöglichen, werden die Zeitkonstanten mithilfe der Kalibration umgerechnet um
