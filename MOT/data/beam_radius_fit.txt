@@ -1,0 +1,16 @@
+[[Model]]
+    Model(erf_fit)
+[[Fit Statistics]]
+    # function evals   = 23
+    # data points      = 12
+    # variables        = 3
+    chi-square         = 29.837
+    reduced chi-square = 3.315
+[[Variables]]
+    P0:   2.81807215 +/- 0.016501 (0.59%) (init= 2.8)
+    w:    0.28262693 +/- 0.008825 (3.12%) (init= 0.3)
+    mu:   0.72170207 +/- 0.003242 (0.45%) (init= 0.7)
+[[Correlations]] (unreported correlations are <  0.100)
+    C(P0, mu)                    = -0.452 
+    C(P0, w)                     =  0.375 
+    C(w, mu)                     = -0.170 
