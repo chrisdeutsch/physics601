@@ -1,0 +1,11 @@
+[[Model]]
+    Model(out_f)
+[[Fit Statistics]]
+    # function evals   = 6
+    # data points      = 19
+    # variables        = 1
+    chi-square         = 21.697
+    reduced chi-square = 1.205
+[[Variables]]
+    c:   124.368422 +/- 1.259375 (1.01%) (init= 110)
+[[Correlations]] (unreported correlations are <  0.100)
