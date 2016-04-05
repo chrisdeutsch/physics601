@@ -150,9 +150,37 @@ Tutor: & Daniel Babik
 \section{Theorie}
 
 \section{Aufbau der MOT}
-A -- I (Durchführung \& Messungen)
 
+\subsection{Einstellung der Laserfrequenzen}
 
+Zunächst wurden sowohl der Pump- als auch der Kühllaser auf die richtigen Frequenzen eingestellt.
+Hierzu ist es wichtig, in den auf dem Oszilloskop beobachtbaren Spektren die richtigen Übergänge im Rubidium zu identifizieren, auf die die Laser eingestellt werden sollen.
+Als Hilfe dienten die dargestellten Spektren in \cite{anleitung} für das \isotope[85]{Ru} Isotop.
+Der Kühllaser wurde auf den Übergang $F=3 \rightarrow F\prime=4$ eingestellt, indem durch Änderung der Scanamplitude und des Scanoffsets das in der Polarisationspsketroskopie beobachtete Fehlersignal einen Nulldurchgang bei einer leichten Rotverschiebung gegenüber des gewünschten Rubidiumübergangs zeigt.
+Durch fixieren dieses Signals mit dem Lock-Schalter an der Lockbox wird die Rückkopplungsschleife betrieben, die das Gitter am Diodenlaser ansteuert und damit die Frequenz reguliert.
+
+Der Pumplaser wurde auf die gleiche Weise auf den $F=2 \rightarrow F\prime=3$ Übergang eingestellt, jedoch kann dieser Laser nicht über eine Rückkopplungsschleife auf eine Frequenz fixiert werden.
+Da dieses Signal jedoch nicht mit der gleichen Genauigkeit wie beim Kühllaser eingestellt werden muss, ist ein Betrieb der Falle trotzdem möglich.
+
+\subsection{Justage der Laser an der Vakuumkammer}
+
+Mit einem Leistungsmessgerät wurde zunächst überpüft, ob genügend Licht aus der optischen Faser austritt, wobei eine Leistung von \SI{14,5}{mW} festgestellt werden konnte.
+Durch zwei Strahlteiler wird das Laserlicht in drei Strahlen geteilt, die jeweils senkrecht zueinander stehen und die Vakuumkammer durchlaufen, bevor sie von einem Spiegel in sich selbst reflektiert werden, so dass insgesamt sechs Strahlen die Kammer auf drei Achsen passieren.
+Zwei der Strahlen verlaufen in der horizontalen Ebene, einer entlang der vertikalen Achse.
+Durch $\lambda/2$-PLatten kann die Leistung der einzelnen Teilstrahlen individuell eingestellt werden, wobei alle Strahlen ungefähr die gleiche Leistung haben sollten.
+Für den vertikalen Strahl wurde eine Leistung vo \SI{3,0}{mW} eingestellt, für die beiden horizontalen \SI{3,0}{mW} bzw. \SI{3,2}{mW}.
+Da diese Leistungen sich nicht zu den ursprünglich zur Verfügung stehenden \SI{14,5}{mW} addieren, kann festgestellt werden, dass in dem Aufbau eine Lichtleistung von ca. \SI{5,3}{mW} verloren geht.
+
+Im Anschluss wurden die Aufbauten, d.h. die Spiegel und Einstellung der $\lambda/4$ Platten optimiert, so dass sich auf den drei Achsen sowohl einfallender als auch reflektierter Laserstrahl überlagern und sich die Strahlen im Zentrum der Vakuumkammer kreuzen.
+Nach Einschalten des Magnetfeldes konnte mit der CCD-Kamera bereits eine Fluoreszenz und eine kleine Wolke gefangener Rubidiumatome erkennen.
+
+\subsection{Optimierung der gefundenen Einstellungen}
+
+Während eine Änderung der Rotverschiebung des Kühllasers nur eine geringe Auswirkung auf die Größe und Intensität der beobachteten Atome zeigte, konnte vor allem durch eine Feinjustage der Frequenz des Pumplasers die Falle optimiert werden.
+Ein zusätzliches konstantes Magnetfeld verschlechterte das beobachtete Bild, so dass diese Möglichkeit zur Optimierung nicht genutzt wurde und im Folgenden nur die Frequenz des Pumplasers geändert wurde.
+Nach Anbringen eines Leistungsmessgeräts zur Bestimmung der Fluoreszenzleistung der Falle konnte auch quantitativ eine Optimierung vorgenommen werden.
+So konnte eine Leistung von \SI{114}{nW} erreicht werden, wobei dieser Wert aufgrund von Temperaturschwankungen im Raum und daher Änderungen der Laserfrequenz mit der Zeit eine leichte Veränderung erfuhr.
+Nachdem sich näherungsweise ein thermisches Gleichgewicht eingestellt hatte, war diese Veränderung jedoch sehr gering, so dass die folgenden Messungen durchgeführt werden konnten, wobei gegebenenfalls zwischen zwei Messungen eine Nachjustierung erfolgte.
 
 \section{Charakterisierung der MOT}
 \label{sec:charakterisierung_mot}
