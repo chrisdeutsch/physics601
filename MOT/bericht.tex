@@ -25,6 +25,9 @@
 % verschiedene mathematische Symbole
 \usepackage{amssymb}
 
+% sidewaysfrac
+\usepackage{xfrac}
+
 % Einheiten setzen z.B. \SI{10}{\kilo\gram\meter\per\second\squared}
 % Fehler: \SI{10 +- 0,2e-4}{\metre}
 \usepackage{siunitx}
@@ -240,19 +243,35 @@ Dazu wird angenommen, dass der Laserstrahl durch einen \textsc{Gauß}-Strahl bes
 \end{align*}
 mit der Gesamtleistung des Strahls~$P_0$ und dem Strahlradius~$w$ gegeben ist.
 Durch Integration kann nun die Leistung des teilweise blockierten Strahls bestimmt werden
-\begin{align*}
+\begin{align}
 	P(x) &= \int_{x}^{\infty} \mathrm{d}x^\prime \int_{-\infty}^{\infty} \mathrm{d}y^\prime \, I(x^\prime, y^\prime) \\
 	     &= \frac{P_0}{2} \left[ 1 - \erf\left( \frac{\sqrt{2} x}{w}\right) \right] \, \text{,}
-\end{align*}
+	\label{eq:erf_fit}
+\end{align}
 wobei $x$ den von der Klinge blockierten Teil des Strahls beschreibt.
 
-
+Da in der Praxis keine relative Messung von Klingenposition~$x$ zum Strahlmittelpunkt durchgeführt werden kann, wird stattdessen eine Anpassung der um $\mu$ verschobenen Funktion $P(x-\mu)$ an die gemessenen Leistungen durchgeführt, um aus der Messung die Strahlleistung~$P_0$, den Strahlradius~$w$ und den Strahlmittelpunkt~$\mu$ zu extrahieren.
+Die Anpassung einer solchen Kurve an die gemessenen Werte aus Tabelle~\ref{tab:beam_radius} 
+\begin{table}[h]
+	\centering
+	\input{./tables/beam_radius.tex}
+	\caption{Transmittierte Leistung des Strahls~$P$ in Abhängigkeit der Klingenposition~$x$ zur Bestimmung des Strahlradius~$w$.}
+	\label{tab:beam_radius}
+\end{table}
+führt zu den Anpassungsparametern:
+\begin{align*}
+	P_0 &= \SI{2.818 +- 0.017}{mW} \\
+	w &= \SI{2.826 +- 0.089}{mm} \\
+	\mu &= \SI{7.217 +- 0.033}{mm} \, \text{.}
+\end{align*}
+Die Messpunkte sowie die Anpassung wurden in Abbildung~\ref{fig:beam_radius} dargestellt.
 \begin{figure}[h]
 	\centering
 	\includegraphics{./figures/beam_radius_fit.pdf}
-	\caption{Anpassung des Strahlradius}
+	\caption{Anpassung einer Funktion gemäß der Hypothese in Gleichung~\eqref{eq:erf_fit} an die transmittierten Leistungen~$P$ nach der Blockierung des Strahlengangs mit einer Klinge an der Position~$x$. Der Fehler der Leistung~$\Delta P$ liegt in der Größenordnung der Markierung.}
+	\label{fig:beam_radius}
 \end{figure}
-
+Durch die Anpassung wurde demnach der Strahlradius~$w$ (Radius bei dem die Intensität auf $\sfrac{1}{e^2}$ abgefallen ist) zu \SI{2.826 +- 0.089}{mm} bestimmt und kann folglich für die Auswertung verwendet werden.
 
 
 \subsection{Größe der MOT}
