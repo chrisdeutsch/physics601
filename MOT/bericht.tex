@@ -156,7 +156,76 @@ A -- I (Durchführung \& Messungen)
 
 \section{Charakterisierung der MOT}
 \label{sec:charakterisierung_mot}
-Nur J
+Nachdem die MOT aufgebaut und auf möglichst hohe Fluoreszenz optimiert wurde, kann im Folgenden die Charakterisierung einiger Eigenschaften der Falle durchgeführt werden.
+
+\subsection{Atomzahl in der MOT}
+Im Folgenden soll die Anzahl der gefangenen Atome in der MOT bestimmt werden.
+Dazu muss zunächst der Fluoreszenzleistung der gefangenen Atome und der Strahlradius des Lasers bestimmt werden.
+
+
+\subsubsection{Fluoreszenz der MOT}
+Zur Bestimmung der Fluoreszenz der MOT wird die leuchtende Atomwolke mithilfe einer Linse auf ein Leistungsmessgerät abgebildet.
+Dabei gilt es zu beachten, dass die so gemessene Leistung auch die Fluoreszenz von ungefangenen Atomen beinhaltet.
+Daher wird nach jeder Messung das Magnetfeld der Falle deaktiviert um eine Hintergrundmessung durchzuführen und der so gemessene Hintergrund kann vom Fluoreszenzsignal abgezogen werden.
+Somit wird die Fluoreszenzleistung, die die Atomwolke in dem von der Linse aufgespannten Raumwinkel emittiert, zu
+\begin{align*}
+	P_\mathrm{Linse} = \SI{114 +- 5}{nW}
+\end{align*}
+bestimmt.
+Um die Fluoreszenzleistung zu erhalten, die im gesamten Raumwinkel von~$4\pi$ emittiert wird, kann
+\begin{align*}
+	P_\mathrm{tot} = P_\mathrm{Linse} \cdot \frac{A_\mathrm{tot}}{A_\mathrm{Linse}}
+\end{align*}
+genutzt werden.
+Dabei beschreibt $A_\mathrm{Linse}$ die Fläche der Linse und $A_\mathrm{tot}$ die Oberfläche der Kugel mit einem Radius $R$, der dem Abstand der MOT zur Linse entspricht.
+Somit erhält man
+\begin{align*}
+	P_\mathrm{tot} = P_\mathrm{Linse} \cdot \frac{4 \pi R^2}{\frac{1}{4} \pi d_\mathrm{Linse}^2} = P_\mathrm{Linse} \cdot \frac{16 R^2}{d_\mathrm{Linse}^2}
+\end{align*}
+und mit den gemessenen Werten für den Linsendurchmesser
+\begin{align*}
+	d_\mathrm{Linse} = \SI{2.5 +- 0.1}{cm} \, \text{,}
+\end{align*}
+sowie dem Abstand~$R$ zwischen MOT und Linse
+\begin{align*}
+	R = \SI{10.3 +- 0.2}{cm}
+\end{align*}
+kann die gesamte Leistung berechnet werden.
+Diese ergibt sich zu
+\begin{align*}
+	P_\mathrm{tot} = \SI{30.9 +- 3.1}{\micro\watt} \, \text{,}
+\end{align*}
+wobei der Fehler durch \textsc{Gauß}sche Fehlerfortpflanzung gemäß
+\begin{align*}
+	\Delta P_\mathrm{tot} = \frac{16}{d_\mathrm{Linse}^3} \sqrt{4 R^2 P_\mathrm{Linse}^2 d_\mathrm{Linse}^2 \Delta R^2 + R^4 \left( d_\mathrm{Linse}^2 \Delta P_\mathrm{Linse}^2 + 4 P_\mathrm{Linse}^2 \Delta d_\mathrm{Linse}^2 \right)}
+\end{align*}
+berechnet wurde.
+
+
+\subsubsection{Strahlradius des Lasers}
+Anschließend muss eine Bestimmung des Strahlradius durchgeführt werden.
+Dazu wird das Leistungsmessgerät in den Strahlengang gestellt und der Laser wird seitlich durch eine Messerklinge blockiert.
+Durch eine Messung der Leistung des teilweise blockierten Laserstrahls in Abhängigkeit der Position der Klinge kann der Strahlradius bestimmt werden.
+Dazu wird angenommen, dass der Laserstrahl durch einen \textsc{Gauß}-Strahl beschrieben werden kann, weshalb die Intensität des Strahls in der transversalen Ebene durch
+\begin{align*}
+	I(x, y) = \frac{2 P_0}{\pi w^2} \exp\left( - \frac{x^2 + y^2}{w^2} \right)
+\end{align*}
+mit der Gesamtleistung des Strahls~$P_0$ und dem Strahlradius~$w$ gegeben ist.
+Durch Integration kann nun die Leistung des teilweise blockierten Strahls bestimmt werden
+\begin{align*}
+	P(x) &= \int_{x}^{\infty} \mathrm{d}x^\prime \int_{-\infty}^{\infty} \mathrm{d}y^\prime \, I(x^\prime, y^\prime) \\
+	     &= \frac{P_0}{2} \left[ 1 - \erf\left( \frac{\sqrt{2} x}{w}\right) \right] \, \text{,}
+\end{align*}
+wobei $x$ den von der Klinge blockierten Teil des Strahls beschreibt.
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics{./figures/beam_radius_fit.pdf}
+	\caption{Anpassung des Strahlradius}
+\end{figure}
+
+
 
 \subsection{Größe der MOT}
 
@@ -173,7 +242,6 @@ Nur J
 \subsection{Verstimmung der Laserfrequenzen}
 
 
-\subsection{Population der MOT}
 
 
 
