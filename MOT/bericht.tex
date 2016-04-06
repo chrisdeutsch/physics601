@@ -319,7 +319,21 @@ Durch die Anpassung wurde demnach der Strahlradius~$w$ zu \SI{2.826 +- 0.089}{mm
 
 
 \subsection{Größe der MOT}
-
+Zur Bestimmung der Größe wird mit der CCD-Kamera ein Bild der in der Falle gefangenen Atome erstellt.
+Um die Größe anzugeben, wurde im Anschluss bei gleicher Brennweite eine Millimeterskala im gleichen Abstand wie die Falle aufgenommen.
+Dadurch konnte der Längenmaßstab der Aufnahmen zu~$\SI{1}{px}=\SI{0,0377}{mm}$ bestimmt werden.
+Entsprechend beträgt die Fläche eines Pixels dann~\SI{1.4213e-3}{mm^2}.
+Mit einem Bildbearbeitungsprogramm wurden in dem aufgenommenen Bild mehrere Strecken vermessen, da die beobachtete Atomwolke keiner einfachen geometrischen Figur ähnelt.
+Die gemessenen Strecken wurden im Anschluss gemittelt und so ein Durchmesser von ungefähr \SI{1,47+-0,12}{mm} ermittelt werden.
+Durch eine Zählung der Pixel konnte weiterhin die Fläche zu \SI{1,16+-0,2}{mm^2} bestimmt werden.
+Der Fehler wurde in diesem Fall abgeschätzt aufgrund von einer möglicherweise nicht idealen Auswahl des zu vermessenden Bereichs und entspricht einer Abweichung von~\num{162} Pixeln.
+In Abbildung \ref{fig:mot_groesse} ist der untersuchte Bereich zur Bestimmung von Durchmesser und Fläche zu sehen.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.7\textwidth]{./figures/size_inverted.png}
+	\caption{Zur Auswertung genutzter Bereich im mit der CCD-Kamera aufgenommenen Bild. Für eine bessere Druckqualität wurden die Farben invertiert.}
+	\label{fig:mot_groesse}
+\end{figure}
 
 \subsection{Einfluss der $\lambda / 4$-Platten}
 Im Folgenden soll der Einfluss der $\lambda / 4$-Platten auf die Population der Falle untersucht werden.
@@ -330,7 +344,7 @@ Da da der Einfluss der einzelnen Platten für die jeweilige Fallenachse identisc
 
 \subsubsection{Verzögerungsplatte des eingehenden Strahls}
 \label{sec:lambda_4_inc}
-Zur Untersuchung des Einflusses der Verzögerungsplatte des eingehenden Strahls wird diese Schrittweise gedreht und sowohl der Stellungswinkel~$\varphi$ sowie die Fluoreszenzleistung~$P$ (mit subtrahiertem Untergrund) gemessen.
+flusses der Verzögerungsplatte des eingehenden Strahls wird diese Schrittweise gedreht und sowohl der Stellungswinkel~$\varphi$ sowie die Fluoreszenzleistung~$P$ (mit subtrahiertem Untergrund) gemessen.
 Dabei wird der Stellungswinkel schrittweise von \SI{0}{\degree} bis \SI{180}{\degree} in \SI{10}{\degree}-Schritten verstellt, bis ein gesamter Winkelbereich von \SI{180}{\degree} vermessen wurde.
 Die somit gemessene Fluoreszenzleistung in Abhängigkeit des Drehwinkels der Platte für den eingehenden Strahl wurde in Abbildung \ref{fig:lambda_4_inc} aufgetragen.
 Die gemessenen Werte wurden in Tabelle \ref{tab:lambda_4} zusammengefasst.
@@ -362,26 +376,16 @@ Die Vergleich der Einstellung der Platten auf den verschiedenen Achsen~$\varphi$
 
 
 \subsubsection{Verzögerungsplatte des reflektierten Strahls}
-Letztlich soll der Einfluss der Verzögerungsplatte des reflektierten Strahls auf die Fluoreszenzleistung der MOT untersucht werden.
-Dabei wird analog zu Abschnitt \ref{sec:lambda_4_inc} vorgegangen und die Fluoreszenzleistung~$P$ gegen den Winkel der Platte~$\varphi$ aufgetragen.
-Die gemessenen Werte finden sich in Tabelle \ref{tab:lambda_4} und die Darstellung der Fluoreszenzleistung in Abbildung \ref{fig:lambda_4_out}.
 \begin{figure}[h]
 	\centering
 	\includegraphics{./figures/lambda_4_out.pdf}
-	\caption{Einfluss des Stellwinkels $\varphi$ der $\lambda / 4$-Platte des reflektierten Strahls auf die Fluoreszenz $P$ der MOT. Die Anpassung einer konstanten Funktion ergibt für die Fluoreszenzleistung $P_0 = \SI{124.4 +- 1.3}{nW}$.}
+	\caption{Einfluss des Stellwinkels $\varphi$ der $\lambda / 4$-Platte des reflektierten Strahls auf die Fluoreszenz $P$ der MOT.}
 	\label{fig:lambda_4_out}
 \end{figure}
 
-Man sieht, dass die Fluoreszenzleistung kaum vom Winkel der Verzögerungsplatte abhängt.
-Der Grund liegt darin, dass beim Eintreffen des zirkular-polarisierten Strahls aus dem Fallenzentrum auf die $\lambda / 4$-Platte dieser linear polarisiert wird.
-Anschließend wird der linear-polarisierte Strahl am Spiegel reflektiert und trifft unter dem gleichen Winkel erneut auf die $\lambda / 4$-Platte und ist somit unabhängig von deren Stellwinkel.
-Dies hat den Einfluss, dass die Helizität der Photonen umgekehrt wird und somit aus dem eingehenden Strahl mit $\sigma^\pm$-Polarisation ein rückläufiger Strahl mit $\sigma^\mp$-Polarisation entsteht.
 
-Die Anpassung einer konstanten Funktion an die gemessene Fluoreszenzleistung ergibt
-\begin{align*}
-	P_0 = \SI{124.4 +- 1.3}{nW}
-\end{align*}
-für die Fluoreszenzleistung der MOT.
+
+
 
 \begin{table}
 	\centering
@@ -391,25 +395,13 @@ für die Fluoreszenzleistung der MOT.
 \end{table}
 
 
-\subsection{Einfluss des Magnetfeldes}
 
-\begin{figure}
-	\centering
-	\includegraphics{./figures/magnetic_field.pdf}
-	\caption{Magnetfeld}
-	\vspace{1cm}
-	\begin{minipage}[t]{0.45\textwidth}
-		\centering
-		\vspace*{-\dimexpr\baselineskip+\heavyrulewidth+\abovetopsep\relax}
-		\input{./tables/magnetic_field_1.tex}
-	\end{minipage} 
-	\begin{minipage}[t]{0.45\textwidth}
-		\centering
-		\vspace*{-\dimexpr\baselineskip+\heavyrulewidth+\abovetopsep\relax}
-		\input{./tables/magnetic_field_2.tex}
-	\end{minipage}
-	\captionof{table}{Magnetfeld}
-\end{figure}
+
+
+
+
+             
+\subsection{Einfluss des Magnetfeldes}
 
 
 \subsection{Verhalten des Ladevorgangs}
