@@ -165,13 +165,6 @@ Ein solcher Aufbau kann durch eine sogenannte magneto-optische Falle realisiert 
 	\caption{Streukraft}
 \end{figure}
 
-\begin{figure}
-	\centering
-	\includegraphics{./figures/theory/mot.pdf}
-	\caption{MOT}
-\end{figure}
-
-
 \subsection{Laserkühlung}
 
 Zum Kühlen der Atome wird Laserlicht genutzt, das entgegen der Flugrichtung der Atome eingestrahlt wird.
@@ -189,7 +182,22 @@ Die entstehende Ansammlung kalter Atome wird als optische Melasse bezeichnet.
 
 \subsection{Fangen von Atomen}
 
+Um die gekühlten Atome, die sich zwar mit geringerer Geschwindigkeit aber weiterhin frei bewegen, an einem bestimmten Punkt zu konzentrieren wird der Zeeman-Effekt genutzt.
+Dieser bewirkt eine Aufspaltung der atomaren Niveaus in drei Zustände mit $m_\mathrm{J} = 0, \pm1$, deren Energieverschiebung vom Zustand mit $m_\mathrm{J}=0$, was dem ursprünglichen Niveau entspricht, von der Stärke des Magnetfeldes abhängt.
+Übergänge in diese Zustände können durch links- bzw. rechtszirkular polarisiertes Licht gezielt ausgewählt werden.
 
+Für das Magnetfeld wird ein Spulenaufbau in Anti-Helmholtz-Konfiguration verwendet, der ein linear ansteigendes Magnetfeld in alle Richtungen ermöglicht.
+Im Zentrum des Aufbaus verschwindet das Magnetfeld, hier werden die Atome gefangen.
+Damit diese die Falle nicht verlassen werden aus entgegengesetzten Richtungen jeweils ein linkszirkular und ein rechtszirkular polarisierter Laser eingestrahlt, der entsprechend mit den aufgespaltenen Energieniveaus interagiert, siehe Abbildung \ref{fig:magnetfeld}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.8\textwidth]{./figures/theory/mot.pdf}
+	\caption{Nutzung des Zeeman-Effekts, um eine ortsabhängige Kraft auf die zu fangenden Teilchen auszuüben.\korr{Bild ändern, Beschriftungen vergrößern, Indizes aufrecht}}
+	\label{fig:magnetfeld}
+\end{figure}
+Für ein nach links ausgelenktes Atom, d.h. im Bereich der Magnetfeldstärke $B<0$ liegt der Zustand mit $m_\mathrm{J}=+1$ unter dem nicht aufgespaltenen Energieniveau, so dass ein diesem Energieniveau gegenüber rotverstimmter Laser mit $\sigma^+$ Polarisation mit dem $m_\mathrm{J}=+1$ Zustand wechselwirkt und eine Kraft Richtung Zentrum der Falle auf das Atom ausübt.
+Der analoge Fall gilt für ein nach rechts ausgelenktes Atom im Bereich von $B>0$, wo der von rechts eingestrahlte Laser mit $\sigma^-$ Polarisation mit dem $m_\mathrm{J}=-1$ Zustand wechselwirkt, der ebenfalls unterhalb des ursprünglichen Energieniveaus liegt.
+Somit erhält man durch die gezielte Einstrahlung von polarisiertem Licht, welches entsprechend dem Magnetfeld polarisiert sein muss, eine ortsabhängige Kraft auf die Atome, die sie in das Zentrum der Falle drückt und somit ein Auseinanderlaufen der gekühlten Atome verhindert.
 
 \section{Aufbau der MOT}
 
