@@ -331,6 +331,7 @@ Diese sind die Platten für den in die Falle eingehenden Strahl und die für den
 Da da der Einfluss der einzelnen Platten für die jeweilige Fallenachse identisch ist, wird im Folgenden nur eine Achse detailliert untersucht.
 
 \subsubsection{Verzögerungsplatte des eingehenden Strahls}
+\label{sec:lambda_4_inc}
 Zur Untersuchung des Einflusses der Verzögerungsplatte des eingehenden Strahls wird diese Schrittweise gedreht und sowohl der Stellungswinkel~$\varphi$ sowie die Fluoreszenzleistung~$P$ (mit subtrahiertem Untergrund) gemessen.
 Dabei wird der Stellungswinkel schrittweise von \SI{0}{\degree} bis \SI{180}{\degree} in \SI{10}{\degree}-Schritten verstellt, bis ein gesamter Winkelbereich von \SI{180}{\degree} vermessen wurde.
 Die somit gemessene Fluoreszenzleistung in Abhängigkeit des Drehwinkels der Platte für den eingehenden Strahl wurde in Abbildung \ref{fig:lambda_4_inc} aufgetragen.
@@ -363,16 +364,26 @@ Die Vergleich der Einstellung der Platten auf den verschiedenen Achsen~$\varphi$
 
 
 \subsubsection{Verzögerungsplatte des reflektierten Strahls}
+Letztlich soll der Einfluss der Verzögerungsplatte des reflektierten Strahls auf die Fluoreszenzleistung der MOT untersucht werden.
+Dabei wird analog zu Abschnitt \ref{sec:lambda_4_inc} vorgegangen und die Fluoreszenzleistung~$P$ gegen den Winkel der Platte~$\varphi$ aufgetragen.
+Die gemessenen Werte finden sich in Tabelle \ref{tab:lambda_4} und die Darstellung der Fluoreszenzleistung in Abbildung \ref{fig:lambda_4_out}.
 \begin{figure}[h]
 	\centering
 	\includegraphics{./figures/lambda_4_out.pdf}
-	\caption{Einfluss des Stellwinkels $\varphi$ der $\lambda / 4$-Platte des reflektierten Strahls auf die Fluoreszenz $P$ der MOT.}
+	\caption{Einfluss des Stellwinkels $\varphi$ der $\lambda / 4$-Platte des reflektierten Strahls auf die Fluoreszenz $P$ der MOT. Die Anpassung einer konstanten Funktion ergibt für die Fluoreszenzleistung $P_0 = \SI{124.4 +- 1.3}{nW}$.}
 	\label{fig:lambda_4_out}
 \end{figure}
 
+Man sieht, dass die Fluoreszenzleistung kaum vom Winkel der Verzögerungsplatte abhängt.
+Der Grund liegt darin, dass beim Eintreffen des zirkular-polarisierten Strahls aus dem Fallenzentrum auf die $\lambda / 4$-Platte dieser linear polarisiert wird.
+Anschließend wird der linear-polarisierte Strahl am Spiegel reflektiert und trifft unter dem gleichen Winkel erneut auf die $\lambda / 4$-Platte und ist somit unabhängig von deren Stellwinkel.
+Dies hat den Einfluss, dass die Helizität der Photonen umgekehrt wird und somit aus dem eingehenden Strahl mit $\sigma^\pm$-Polarisation ein rückläufiger Strahl mit $\sigma^\mp$-Polarisation entsteht.
 
-
-
+Die Anpassung einer konstanten Funktion an die gemessene Fluoreszenzleistung ergibt
+\begin{align*}
+	P_0 = \SI{124.4 +- 1.3}{nW}
+\end{align*}
+für die Fluoreszenzleistung der MOT.
 
 \begin{table}
 	\centering
@@ -382,13 +393,19 @@ Die Vergleich der Einstellung der Platten auf den verschiedenen Achsen~$\varphi$
 \end{table}
 
 
-
-
-
-
-
-
 \subsection{Einfluss des Magnetfeldes}
+
+\begin{figure}
+	\centering
+	\includegraphics{./figures/magnetic_field.pdf}
+	\caption{Magnetfeld}
+\end{figure}
+
+\begin{table}
+	\centering
+	\input{./tables/magnetic_field.tex}
+	\caption{Magnetfeld}
+\end{table}
 
 
 \subsection{Verhalten des Ladevorgangs}
