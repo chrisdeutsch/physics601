@@ -26,7 +26,7 @@ plt.close()
 # Latex
 from scripts.tools import round
 out = data[["I", "Pbg"]]
-out.columns = ["{Strom $I$ / \si{A}}", "{Leistung $P$ / \si{nW}}"]
+out.columns = ["{$I$ / \si{A}}", "{$P$ / \si{nW}}"]
 
 out[out.index < 14].to_latex("tables/magnetic_field_1.tex", index=False,
              formatters=[round(2), round(0)],

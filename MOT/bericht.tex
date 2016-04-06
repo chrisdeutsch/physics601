@@ -414,24 +414,39 @@ für die Fluoreszenzleistung der MOT.
 
 
 \subsection{Einfluss des Magnetfeldes}
-
-\begin{figure}
+Anschließend findet eine Messung der Fluoreszenzleistung der gefangenen Atome in Abhängigkeit des Stroms durch as Anti-Helmholtz-Spulenpaar statt.
+Dieser Strom ist proportional zum Magnetfeldgradienten am Ort der Falle und hat somit einen Einfluss auf die Tiefe des Fallenpotentials.
+Die gemessenen Werte der Fluoreszenzleistung~$P$ wurden in Abbildung~\ref{fig:magnetic_field} gegen den Spulenstrom~$I$ aufgetragen.
+Darüber hinaus finden sich die gemessenen Werte in Tabelle~\ref{tab:magnetic_field}.
+\begin{figure}[hp]
 	\centering
 	\includegraphics{./figures/magnetic_field.pdf}
-	\caption{Magnetfeld}
+	\caption{Einfluss des Spulenstroms des Anti-Helmholtz-Spulenpaares und somit des Magnetfeldgradienten im Zentrum der Falle auf die Fluoreszenzleistung der in der MOT gefangenen Atome.}
+	\label{fig:magnetic_field}
 	\vspace{1cm}
-	\begin{minipage}[t]{0.45\textwidth}
+	\begin{minipage}[t]{0.3\textwidth}
 		\centering
 		\vspace*{-\dimexpr\baselineskip+\heavyrulewidth+\abovetopsep\relax}
 		\input{./tables/magnetic_field_1.tex}
 	\end{minipage} 
-	\begin{minipage}[t]{0.45\textwidth}
+	\begin{minipage}[t]{0.3\textwidth}
 		\centering
 		\vspace*{-\dimexpr\baselineskip+\heavyrulewidth+\abovetopsep\relax}
 		\input{./tables/magnetic_field_2.tex}
 	\end{minipage}
 	\captionof{table}{Magnetfeld}
+	\label{tab:magnetic_field}
 \end{figure}
+
+Die Abbildung kann im wesentlichen in drei unterschiedliche Bereiche eingeteilt werden.
+Zum einen ist dies der Bereich kleiner Ströme von \num{0} bis etwa \SI{1}{\ampere}, bei denen nur eine kleine Fluoreszenzleistung beobachtet werden kann, die nur langsam mit dem Spulenstrom ansteigt.
+In diesem Strombereich ist der Potentialtopf zu klein um eine signifikante Anzahl von Atomen einzufangen.
+Ab einem Strom von \SI{1}{\ampere} steigt die Fluoreszenzleistung stark mit dem Spulenstrom und die gefangenen Atome sind mithilfe einer Kamera klar zu erkennen.
+An diesem Punkt können die Rubidiumatome effizient durch das Fallenpotential gefangen werden.
+Übersteigt der Spulenstrom \SI{4.4}{\ampere} so stellt man fest, dass die Falle scheinbar in Sättigung übergeht.
+\korr{Argument für die Sättigung}
+Darüber hinaus finden sich einige Sprünge in den Messdaten deren Ursache bei dem Laser für das optische Pumpen der Rubidiumatome auf den Kühlübergang zu suchen sind.
+Dieser kann aufgrund eines schlechten Fehlersignals nicht durch die Lockbox auf den Übergang festgestellt werden konnte und somit leichte Abweichungen während der Messung verursachte.
 
 
 \subsection{Verhalten des Ladevorgangs}
