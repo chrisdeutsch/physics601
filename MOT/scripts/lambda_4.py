@@ -9,7 +9,7 @@ data = pd.read_csv("data/lambda_4.csv", comment="#")
 data.columns = ["phi", "P_in", "P_out"]
 
 # Subtract background
-data.P_in -= 253.0
+data.P_in -= 248.0
 data.P_out -= 232.0
 
 data["dP"] = 5.0
@@ -33,8 +33,8 @@ with open("data/lambda_4_out_fit.txt", "w") as f:
 # incoming beam
 plt.xlim(0.0, 180.0)
 # plt.ylim(-0.1, 3.0)
-plt.xlabel(r"Winkel $\phi$ / \si{\degree}")
-plt.ylabel(r"Leistung $P$ / \si{nW}")
+plt.xlabel(r"Winkel der Verzögerungsplatte $\varphi$ / \si{\degree}")
+plt.ylabel(r"Fluoreszenzleistung $P$ / \si{nW}")
 
 plt.errorbar(data.phi, data.P_in, data.dP, fmt="o", label="Messpunkte", zorder=2)
 
@@ -51,8 +51,8 @@ plt.close()
 # outgoing beam
 plt.xlim(0.0, 180.0)
 # plt.ylim(-0.1, 3.0)
-plt.xlabel(r"Winkel $\phi$ / \si{\degree}")
-plt.ylabel(r"Leistung $P$ / \si{nW}")
+plt.xlabel(r"Winkel der Verzögerungsplatte $\varphi$ / \si{\degree}")
+plt.ylabel(r"Fluoreszenzleistung $P$ / \si{nW}")
 
 plt.errorbar(data.phi, data.P_out, data.dP, fmt="o", label="Messpunkte", zorder=2)
 
@@ -66,9 +66,17 @@ plt.savefig("figures/lambda_4_out.pdf")
 plt.close()
 
 
+### LATEX Tabelle
+from scripts.tools import round
+out = data[["phi","P_in","P_out"]]
+out.columns = [r"{$\varphi$ / \si{\degree}}",
+               r"{$P_\mathrm{ein.}$ / \si{nW}}",
+               r"{$P_\mathrm{ref.}$ / \si{nW}}"]
 
-
-
+out.to_latex("tables/lambda_4.tex", index=False,
+             formatters=[round(0), round(0), round(0)], 
+             column_format="S[table-format=3.0]S[table-format=3.0]S[table-format=3.0]", 
+             escape=False)
 
 
 

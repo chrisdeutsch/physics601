@@ -322,7 +322,67 @@ Durch die Anpassung wurde demnach der Strahlradius~$w$ zu \SI{2.826 +- 0.089}{mm
 
 
 \subsection{Einfluss der $\lambda / 4$-Platten}
-Abc
+Im Folgenden soll der Einfluss der $\lambda / 4$-Platten auf die Population der Falle untersucht werden.
+Dazu wird erneut die MOT durch eine Linse auf das Leistungsmessgerät abgebildet, um ein Fluoreszenzsignal zu messen.
+Die im Aufbau auftretenden $\lambda / 4$-Verzögerungsplatten lassen sich in zwei Gruppen einteilen.
+Diese sind die Platten für den in die Falle eingehenden Strahl und die für den reflektierten Strahl direkt am retroreflektierenden Spiegel.
+Da da der Einfluss der einzelnen Platten für die jeweilige Fallenachse identisch ist, wird im Folgenden nur eine Achse detailliert untersucht.
+
+\subsubsection{Verzögerungsplatte des eingehenden Strahls}
+Zur Untersuchung des Einflusses der Verzögerungsplatte des eingehenden Strahls wird diese Schrittweise gedreht und sowohl der Stellungswinkel~$\varphi$ sowie die Fluoreszenzleistung~$P$ (mit subtrahiertem Untergrund) gemessen.
+Dabei wird der Stellungswinkel schrittweise von \SI{0}{\degree} bis \SI{180}{\degree} in \SI{10}{\degree}-Schritten verstellt, bis ein gesamter Winkelbereich von \SI{180}{\degree} vermessen wurde.
+Die somit gemessene Fluoreszenzleistung in Abhängigkeit des Drehwinkels der Platte für den eingehenden Strahl wurde in Abbildung \ref{fig:lambda_4_inc} aufgetragen.
+Die gemessenen Werte wurden in Tabelle \ref{tab:lambda_4} zusammengefasst.
+\begin{figure}[h]
+	\centering
+	\includegraphics{./figures/lambda_4_in.pdf}
+	\caption{Einfluss des Stellwinkels $\varphi$ der $\lambda / 4$-Platte des eingehenden Strahls auf die Fluoreszenz $P$ der MOT.}
+	\label{fig:lambda_4_inc}
+\end{figure}
+
+Man sieht, dass die Stellung der $\lambda / 4$-Platte des eingehenden Strahls einen starken Einfluss auf die Fluoreszenzleistung zeigt.
+Dies liegt daran, dass diese Platte den eintreffende linear-polarisierte Strahl in die für die Fallenoperation notwendige zirkulare Polarisation umwandelt.
+Dazu muss die Achse der Verzögerungsplatte um $\pm\SI{45}{\degree}$ gegen die Polarisation des eintreffenden Strahls verkippt sein.
+Darüber hinaus muss die richtige Zirkularpolarisation für diese Platte eingestellt werden, um die gemäß Abschnitt \korr{Theorie} erforderlichen Übergang zu treffen, der eine Operation der Falle ermöglicht.
+
+In Abbildung \ref{fig:lambda_4_inc} sieht man, dass die Fluoreszenzleistung ein breites Minimum um einen Winkel der Verzögerungsplatte von \SI{80}{\degree} aufweist.
+An dieser Stelle weist der Strahl gerade die falsche Zirkularpolarisation für das Fangen der Rubidiumatome auf.
+Demnach sollte ein Drehen der Verzögerungsplatte um \SI{90}{\degree} nun die entgegengesetzte Zirkularpolarisation erzeugen und somit den Fallenbetrieb ermöglichen.
+Dies entspricht dem breiten Maximum bei etwa \SI{170}{\degree}, bei dem der korrekte Übergang zum Fangen der Atome angeregt wird und somit den Fallenbetrieb ermöglicht.
+Der auf der Verzögerungsplatte angegebene Optimalwert von \SI{172}{\degree} kann somit verifiziert werden.
+
+Nach dem Abschluss dieser Messung werden die drei $\lambda / 4$-Platten für die eingehenden Strahlen per Hand auf das Maximum der Fluoreszenzleistung eingestellt.
+Die Vergleich der Einstellung der Platten auf den verschiedenen Achsen~$\varphi$ mit den angegebenen Optimalwerten~$\varphi^\mathrm{opt}$ zeigt eine gute Übereinstimmung:
+\begin{alignat*}{2}
+	\varphi_x &= \SI{180}{\degree} \qquad &&\varphi_x^\mathrm{opt} = \SI{172}{\degree}\\
+	\varphi_y &= \SI{214}{\degree} \qquad &&\varphi_y^\mathrm{opt} = \SI{224}{\degree}\\
+	\varphi_z &= \SI{80}{\degree} \qquad &&\varphi_z^\mathrm{opt} = \SI{80}{\degree} \, \text{.}
+\end{alignat*}
+
+
+\subsubsection{Verzögerungsplatte des reflektierten Strahls}
+\begin{figure}[h]
+	\centering
+	\includegraphics{./figures/lambda_4_out.pdf}
+	\caption{Einfluss des Stellwinkels $\varphi$ der $\lambda / 4$-Platte des reflektierten Strahls auf die Fluoreszenz $P$ der MOT.}
+	\label{fig:lambda_4_out}
+\end{figure}
+
+
+
+
+
+\begin{table}
+	\centering
+	\input{./tables/lambda_4.tex}
+	\caption{Gemessene Fluoreszenz der gefangenen Atome für verschiedene Stellungen der $\lambda / 4$-Platte des eingehenden Strahls~$P_\mathrm{ein.}$ und des reflektierten Strahls~$P_\mathrm{ref.}$. Auf die Fluoreszenzleistung wird ein Fehler von $\Delta P = \SI{5}{nW}$ angenommen.}
+	\label{tab:lambda_4}
+\end{table}
+
+
+
+
+
 
 
 
