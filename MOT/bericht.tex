@@ -77,6 +77,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{rotating}
+\usepackage{capt-of}
 
 % Paket für textumflossene Abbildungen und Tabellen
 \usepackage{wrapfig}
@@ -231,7 +232,7 @@ Nachdem die MOT aufgebaut und auf möglichst hohe Fluoreszenz optimiert wurde, k
 Im Folgenden soll die Anzahl der gefangenen Atome in der MOT bestimmt werden.
 Dazu muss zunächst der Fluoreszenzleistung der gefangenen Atome und der Strahlradius des Lasers bestimmt werden.
 
-\subsubsection{Fluoreszenz der MOT}
+\subsubsection{Bestimmung der Fluoreszenz der MOT}
 Zur Bestimmung der Fluoreszenz der MOT wird die leuchtende Atomwolke mithilfe einer Linse auf ein Leistungsmessgerät abgebildet.
 Dabei gilt es zu beachten, dass die so gemessene Leistung auch die Fluoreszenz von ungefangenen Atomen beinhaltet.
 Daher wird nach jeder Messung das Magnetfeld der Falle deaktiviert um eine Hintergrundmessung durchzuführen und der so gemessene Hintergrund kann vom Fluoreszenzsignal abgezogen werden.
@@ -270,15 +271,15 @@ wobei der Fehler durch \textsc{Gauß}sche Fehlerfortpflanzung gemäß
 berechnet wurde.
 
 
-\subsubsection{Strahlradius des Lasers}
-Anschließend muss eine Bestimmung des Strahlradius durchgeführt werden.
+\subsubsection{Bestimmung des Strahlradius}
+Anschließend muss eine Bestimmung des Radius des Laserstrahls durchgeführt werden.
 Dazu wird das Leistungsmessgerät in den Strahlengang gestellt und der Laser wird seitlich durch eine Messerklinge blockiert.
 Durch eine Messung der Leistung des teilweise blockierten Laserstrahls in Abhängigkeit der Position der Klinge kann der Strahlradius bestimmt werden.
 Dazu wird angenommen, dass der Laserstrahl durch einen \textsc{Gauß}-Strahl beschrieben werden kann, weshalb die Intensität des Strahls in der transversalen Ebene durch
 \begin{align*}
 	I(x, y) = \frac{2 P_0}{\pi w^2} \exp\left(-\frac{2 (x^2 + y^2)}{w^2} \right)
 \end{align*}
-mit der Gesamtleistung des Strahls~$P_0$ und dem Strahlradius~$w$ gegeben ist.
+mit der Gesamtleistung des Strahls~$P_0$ und dem Strahlradius~$w$, das ist die Entfernung zum Strahlmittelpunkt bei dem die Intensität auf $\sfrac{1}{e^2}$ abgefallen ist, gegeben ist.
 Durch Integration kann nun die Leistung des teilweise blockierten Strahls bestimmt werden
 \begin{align}
 	P(x) &= \int_{x}^{\infty} \mathrm{d}x^\prime \int_{-\infty}^{\infty} \mathrm{d}y^\prime \, I(x^\prime, y^\prime) \\
@@ -287,14 +288,21 @@ Durch Integration kann nun die Leistung des teilweise blockierten Strahls bestim
 \end{align}
 wobei $x$ den von der Klinge blockierten Teil des Strahls beschreibt.
 
+\begin{figure}
+	\centering
+	\includegraphics{./figures/beam_radius_fit.pdf}
+	\caption{Anpassung einer Funktion gemäß der Hypothese in Gleichung~\eqref{eq:erf_fit} an die transmittierten Leistungen~$P$ nach der Blockierung des Strahlengangs mit einer Klinge an der Position~$x$. Der Fehler der Leistung~$\Delta P$ liegt in der Größenordnung der Markierung.}
+	\label{fig:beam_radius}
+	
+	\vspace{0.5cm}
+	
+	\input{./tables/beam_radius.tex}
+	\captionof{table}{Transmittierte Leistung des Strahls~$P$ in Abhängigkeit der Klingenposition~$x$ zur Bestimmung des Strahlradius~$w$.}
+	\label{tab:beam_radius}	
+\end{figure}
+
 Da in der Praxis keine relative Messung von Klingenposition~$x$ zum Strahlmittelpunkt durchgeführt werden kann, wird stattdessen eine Anpassung der um $\mu$ verschobenen Funktion $P(x-\mu)$ an die gemessenen Leistungen durchgeführt, um aus der Messung die Strahlleistung~$P_0$, den Strahlradius~$w$ und den Strahlmittelpunkt~$\mu$ zu extrahieren.
 Die Anpassung einer solchen Kurve an die gemessenen Werte aus Tabelle~\ref{tab:beam_radius} 
-\begin{table}[h]
-	\centering
-	\input{./tables/beam_radius.tex}
-	\caption{Transmittierte Leistung des Strahls~$P$ in Abhängigkeit der Klingenposition~$x$ zur Bestimmung des Strahlradius~$w$.}
-	\label{tab:beam_radius}
-\end{table}
 führt zu den Anpassungsparametern:
 \begin{align*}
 	P_0 &= \SI{2.818 +- 0.017}{mW} \\
@@ -302,19 +310,20 @@ führt zu den Anpassungsparametern:
 	\mu &= \SI{7.217 +- 0.033}{mm} \, \text{.}
 \end{align*}
 Die Messpunkte sowie die Anpassung wurden in Abbildung~\ref{fig:beam_radius} dargestellt.
-\begin{figure}[h]
-	\centering
-	\includegraphics{./figures/beam_radius_fit.pdf}
-	\caption{Anpassung einer Funktion gemäß der Hypothese in Gleichung~\eqref{eq:erf_fit} an die transmittierten Leistungen~$P$ nach der Blockierung des Strahlengangs mit einer Klinge an der Position~$x$. Der Fehler der Leistung~$\Delta P$ liegt in der Größenordnung der Markierung.}
-	\label{fig:beam_radius}
-\end{figure}
-Durch die Anpassung wurde demnach der Strahlradius~$w$ (Radius bei dem die Intensität auf $\sfrac{1}{e^2}$ abgefallen ist) zu \SI{2.826 +- 0.089}{mm} bestimmt und kann folglich für die Auswertung verwendet werden.
+Durch die Anpassung wurde demnach der Strahlradius~$w$ zu \SI{2.826 +- 0.089}{mm} bestimmt und kann folglich für die Auswertung verwendet werden.
+
+
+\subsubsection{Bestimmung der Anzahl der gefangenen Atome}
+\korr{TODO: Detuning fehlt}
+
 
 
 \subsection{Größe der MOT}
 
 
 \subsection{Einfluss der $\lambda / 4$-Platten}
+Abc
+
 
 
 \subsection{Einfluss des Magnetfeldes}
