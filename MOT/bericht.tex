@@ -484,10 +484,47 @@ Diese beträgt
 \end{align*}
 wobei der Fehler aus der Stichprobenvarianz abgeschätzt wird.
 
-
-
-
-
+\subsubsection{Bestimmung des Rb-Rb Wirkungsquerschnittes}
+Anschließend kann die Messung der mittleren Zeitkonstante~$\bar{\tau}$ dazu genutzt werden den Wirkungsquerschnitt von Rb-Rb Kollisionen zu berechnen.
+Dies ist möglich, da gemäß \cite{wieman} die Zeitkonstante des Aufladeprozesses ebenfalls der mittleren Zeit entspricht, die ein Rubidiumatom in der Falle gefangen bleibt.
+Demnach kann die Zeitkonstante unter Vernachlässigung weiterer Spurengase durch 
+\begin{align*}
+	\frac{1}{\tau} = n_\mathrm{Rb}  \sigma_\mathrm{Rb}  v_\mathrm{Rb}
+\end{align*}
+beschrieben werden \cite{wieman}, wobei die Rubidiumdichte~$n_\mathrm{Rb}$, der Rb-Rb Wirkungsquerschnitt~$\sigma_\mathrm{Rb}$ und die mittlere Geschwindigkeit der Rubidiumatome~$v_\mathrm{Rb}$ gegeben ist.
+Somit kann der Wirkungsquerschnitt durch
+\begin{align}
+	\sigma_\mathrm{Rb} = \frac{1}{\tau n_\mathrm{Rb} v_\mathrm{Rb}}
+	\label{eq:cross_sec}
+\end{align}
+berechnet werden.
+Doch dazu wird zunächst die Rubidiumdichte~$n_\mathrm{Rb}$ benötigt, welche aus dem Druck in der Vakuumkammer~$p$ und der Temperatur~$T$ des Gases mithilfe der idealen Gasgleichung berechnet werden kann.
+Dabei wurde die Temperatur~$T$ zu $\SI{24.6 +- 0.5}{\degreeCelsius}$ mithilfe eines Thermometers bestimmt.
+Der Druck~$p$ in der Vakuumkammer muss auf $\SI{1.1 +- 0.2e-7}{mbar}$ abgeschätzt werden, da die Vakuumpumpe einen Auslesefehler für den Druck angezeigt hat.
+Dann kann gemäß der idealen Gasgleichung die Rubidiumdichte durch
+\begin{align*}
+	n_\mathrm{Rb} = \frac{p}{k_\mathrm{B} T}
+\end{align*}
+bestimmt werden.
+Unter Verwendung des abgeschätzten Drucks und der Temperatur des Gases erhält man
+\begin{align*}
+	n_\mathrm{Rb} = \SI{2.68 +- 0.49e15}{\per\meter\cubed} \, \text{,}
+\end{align*}
+wobei der Fehler durch \textsc{Gauß}sche Fehlerfortpflanzung berechnet wurde.
+Anschließend kann mithilfe der Maxwell-Boltzmann-Verteilung die mittlere Geschwindigkeit der Rubidiumatome~$v_\mathrm{Rb}$ durch
+\begin{align*}
+	v_\mathrm{Rb} = \sqrt{\frac{8 k_\mathrm{B} T}{\pi m_\mathrm{Rb}}} 
+\end{align*}
+berechnet werden.
+Mit der gemessenen Temperatur des Gases und der Masse von \isotope[85]{Rb}~$m_\mathrm{Rb} = \SI{1.41e-25}{kg}$ \cite{handbook_spectroscopic_data} erhält man
+\begin{align*}
+	v_\mathrm{Rb} = \SI{272.5 +- 0.3}{\meter\per\second} \, \text{.}
+\end{align*}
+Schließlich können diese Werte und die im vorigen Abschnitt vermessene mittlere Zeitkonstante in Gleichung \eqref{eq:cross_sec} eingesetzt werden um
+\begin{align*}
+	\sigma_\mathrm{Rb} = \SI{1.37 +- 0.26e-17}{\meter\squared}
+\end{align*}
+zu erhalten.
 
 \subsection{Verstimmung der Laserfrequenzen}
 
@@ -507,6 +544,17 @@ wobei der Fehler aus der Stichprobenvarianz abgeschätzt wird.
 \begin{thebibliography}{19}
 \bibitem{anleitung}
 	\emph{Advanced Laboratory Course (physics601): Description of Experiments}, BONN-AT-2016-01MP, Universität Bonn, Januar 2016
+
+\bibitem{wieman}
+	C.\ Wieman, G.\ Flowers, S.\ Gilbert,
+	\emph{Inexpensive laser cooling and trapping experiment for undergraduate laboratories},
+	Am.\ J.\ Phys.\ \textbf{63} (4), April 1995.
+
+\bibitem{handbook_spectroscopic_data}
+	J.\ E.\ Sansonetti, W.\ C.\ Martin,
+	\emph{Handbook of Basic Atomic Spectroscopic Data},
+	National Institute of Standards and Technology (NIST), \url{http://physics.nist.gov/PhysRefData/Handbook/Tables/rubidiumtable1.htm} (Letzter Aufruf: 7.\ April 2016).
+	
 \end{thebibliography}
 
 % APPENDIX
