@@ -200,6 +200,7 @@ Der analoge Fall gilt für ein nach rechts ausgelenktes Atom im Bereich von $B>0
 Somit erhält man durch die gezielte Einstrahlung von polarisiertem Licht, welches entsprechend dem Magnetfeld polarisiert sein muss, eine ortsabhängige Kraft auf die Atome, die sie in das Zentrum der Falle drückt und somit ein Auseinanderlaufen der gekühlten Atome verhindert.
 
 \subsection{Übergänge in Rubidium}
+\label{sec:rb_uebergaenge}
 
 In diesem Versuch soll das Rubidiumisotop \isotope[85]{Rb} eingefangen werden.
 Dazu ist es nötig, detaillierte Informationen über das Niveauschema und die Übergänge dieser Atome zu haben, um den optimalen Übergang zum Kühlen und Fangen der Atome auszuwählen.
@@ -207,6 +208,17 @@ Es eignet sich der Übergang $F=3 \rightarrow F^\prime=4$, da dieser beinahe abg
 Dieser Übergang entspricht einer Wellenlänge von \SI{780.25}{nm}, so dass ein entsprechender Laser zur resonanten Anregung gewählt wird.
 Da jedoch in einigen seltenen Fällen auch eine Anregung in die Niveaus $F^\prime=2$, $F^\prime=3$ möglich ist, die in den $F=2$ Zustand übergehen können und die Atome so das abgeschlossene System zur Kühlung verlassen, wird zusätzlich ein sogenannter Pumplaser eingesetzt, der die Atome aus diesem Zustand auf das $F^\prime=3$ Niveau anhebt, von wo aus sie wieder am Kühlprozess teilnehmen können.
 \korr{Niveauschema hierhin} 
+
+\subsection{Lasersystem}
+
+Wie in Abschnitt \ref{sec:rb_uebergaenge} erwähnt, werden zum Betrieb der magneto-optischen Falle zwei Laser benötigt, die auf die entsprechenden Frequenzen für den Kühl- und Pumplaser eingestellt werden müssen.
+Hierzu werden zwei Diodenlaser in Littrow-Konfiguration genutzt, d.h. das emittierte Laserlicht wird kollimiert und trifft auf ein Reflexionsgitter, welches so in den Strahlengang gebracht wird, dass die Beugung der~-1.~Ordnung zurückreflektiert wird und somit einen externen Resonator bildet, während das Licht, welches in~0.~Ordnung gebeugt wird, ausgekoppelt wird.
+Durch ein elektrisch anteuerbares Piezo-Element kann das Gitter gedreht und somit die Resonatorlänge und damit die Frequenz des ausgekoppelten Lichts geändert werden.
+\korr{evtl Bild von Littrow}
+
+Da die nötigen Frequenzen möglichst genau auf die Übergänge im Rubidium abgestimmt sein müssen, wird ein Teil des Laserlichts zu Spektroskopiezwecken mit Rubidium verwendet.
+Als Spektroskopieverfahren kommt die Polarisationsspektroskopie zum Einsatz, die eine Erweiterung der dopplerfreien Sättigungsspektroskopie darstellt.
+Dabei wird der Lichtstrahl in einen Pumpstrahl mit hoher Intensität und einen Teststrahl mit geringerer Intensität aufgespalten, die in ungefähr entgegengesetzter Richtung eine Kammer mit Rubidiumatomen durchlaufen.
 
 \section{Aufbau der MOT}
 
@@ -338,10 +350,10 @@ Durch die Anpassung wurde demnach der Strahlradius~$w$ zu \SI{2.826 +- 0.089}{mm
 \subsection{Größe der MOT}
 Zur Bestimmung der Größe wird mit der CCD-Kamera ein Bild der in der Falle gefangenen Atome erstellt.
 Um die Größe anzugeben, wurde im Anschluss bei gleicher Brennweite eine Millimeterskala im gleichen Abstand wie die Falle aufgenommen.
-Dadurch konnte der Längenmaßstab der Aufnahmen zu~$\SI{1}{px}=\SI{0,0377}{mm}$ \korr{Fehler \& evtl.\ Bild von der Skala} bestimmt werden.
-Entsprechend beträgt die Fläche eines Pixels dann~\SI{1.4213e-3}{mm^2} \korr{Fehler}.
-Mit einem Bildbearbeitungsprogramm wurden in dem aufgenommenen Bild mehrere Strecken vermessen \korr{unklar}, da die beobachtete Atomwolke keiner einfachen geometrischen Figur ähnelt.
-Die gemessenen Strecken wurden im Anschluss gemittelt und so ein Durchmesser von ungefähr \SI{1,47+-0,12}{mm} ermittelt werden \korr{Woher der Fehler}.
+Dadurch konnte der Längenmaßstab der Aufnahmen zu~$\SI{1}{px}=\SI{0,0377+-0,0005}{mm}$ \korr{evtl.\ Bild von der Skala} bestimmt werden.
+Entsprechend beträgt die Fläche eines Pixels dann~\SI{1.421+-0.038e-3}{mm^2}.
+Mit einem Bildbearbeitungsprogramm wurden in dem aufgenommenen Bild mehrere Abstände gegenüberliegender Punkte auf dem Rand des markierten Bereichs gemessen, da die beobachtete Atomwolke keiner einfachen geometrischen Figur ähnelt, deren Durchmesser einfach berechnet werden könnte.
+Die gemessenen Strecken wurden im Anschluss gemittelt und so ein Durchmesser von ungefähr \SI{1,47+-0,12}{mm} ermittelt werden, wobei der Fehler aus der Varianz folgt.
 Durch eine Zählung der Pixel konnte weiterhin die Fläche zu \SI{1,16+-0,2}{mm^2} bestimmt werden.
 Der Fehler wurde in diesem Fall abgeschätzt aufgrund von einer möglicherweise nicht idealen Auswahl des zu vermessenden Bereichs und entspricht einer Abweichung von~\num{162} Pixeln.
 In Abbildung \ref{fig:mot_groesse} ist der untersuchte Bereich zur Bestimmung von Durchmesser und Fläche zu sehen.
@@ -375,7 +387,7 @@ Die gemessenen Werte wurden in Tabelle \ref{tab:lambda_4} zusammengefasst.
 Man sieht, dass die Stellung der $\lambda / 4$-Platte des eingehenden Strahls einen starken Einfluss auf die Fluoreszenzleistung zeigt.
 Dies liegt daran, dass diese Platte den eintreffende linear-polarisierte Strahl in die für die Fallenoperation notwendige zirkulare Polarisation umwandelt.
 Dazu muss die Achse der Verzögerungsplatte um $\pm\SI{45}{\degree}$ gegen die Polarisation des eintreffenden Strahls verkippt sein.
-Darüber hinaus muss die richtige Zirkularpolarisation für diese Platte eingestellt werden, um die gemäß Abschnitt \korr{Theorie} erforderlichen Übergang zu treffen, der eine Operation der Falle ermöglicht.
+Darüber hinaus muss die richtige Zirkularpolarisation für diese Platte eingestellt werden, um den gemäß Abschnitt \korr{Theorie} erforderlichen Übergang zu treffen, der eine Operation der Falle ermöglicht.
 
 In Abbildung \ref{fig:lambda_4_inc} sieht man, dass die Fluoreszenzleistung ein breites Minimum um einen Winkel der Verzögerungsplatte von \SI{80}{\degree} aufweist.
 An dieser Stelle weist der Strahl gerade die falsche Zirkularpolarisation für das Fangen der Rubidiumatome auf.
