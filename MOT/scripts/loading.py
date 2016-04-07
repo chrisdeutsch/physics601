@@ -56,3 +56,35 @@ for filename, i in zip(files, range(len(files))):
     plt.tight_layout()
     plt.savefig("figures/loading/loading{}.pdf".format(i))
     plt.close()
+
+fit_params = pd.DataFrame(fit_params)
+fit_params = fit_params[fit_params.index > 0]
+
+# Weighted mean of tau
+fit_params["w"] = fit_params.dtau**-2
+
+var_tau = 1.0 / fit_params.w.sum()
+mean_tau = (fit_params.tau * fit_params.w).sum() * var_tau
+stderr_tau = np.sqrt(var_tau)
+
+print("tau = {} +- {}".format(mean_tau, stderr_tau))
+
+# Latex Tabelle
+out = fit_params[["amp", "damp", "tau", "dtau", "t0", "dt0", "offset", "doffset"]]
+
+# to ms
+out[["tau", "dtau", "t0", "dt0"]] *= 1000.0
+
+out.columns = [r"{$U_0$ / \si{mV}}", r"{$\Delta U_0$ / \si{mV}}",
+               r"{$\tau$ / \si{ms}}", r"{$\Delta \tau$ / \si{ms}}",
+               r"{$t_0$ / \si{ms}}", r"{$\Delta t_0$ / \si{ms}}",
+               r"{$\mathrm{BG}$ / \si{mV}}", r"{$\Delta \mathrm{BG}$ / \si{mV}}"]
+
+from scripts.tools import round
+out.to_latex("tables/loading.tex", index=False,
+             formatters=[round(2), round(2),
+                         round(2), round(2),
+                         round(2), round(2),
+                         round(2), round(2)], 
+             column_format="S[table-format=2.2]S[table-format=1.2]S[table-format=3.2]S[table-format=1.2]S[table-format=3.2]S[table-format=1.2]S[table-format=2.2]S[table-format=1.2]",
+             escape=False)
