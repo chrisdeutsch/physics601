@@ -3,6 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from lmfit.models import LorentzianModel, PolynomialModel, ConstantModel, GaussianModel
 
+plt.style.use("publication")
+
 # Spectrum Fit Model
 bg = PolynomialModel(4, prefix="bg_")
 L1 = LorentzianModel(prefix="L1_")
@@ -97,7 +99,15 @@ bg_spec = bg_spec[(bg_spec.t > low) & (bg_spec.t < high)].reset_index()
 bg_fluo = bg_fluo[(bg_fluo.t > low) & (bg_fluo.t < high)].reset_index()
 
 
-# Refit Spectrum
+# Refit Spectra
+t = sig_spec.t.get_values()
+I = sig_spec.I.get_values()
+
+sig_spec_fit = spec_model.fit(I, x=t, L1_amplitude=1.0, L1_sigma=1.0, L1_center=5.8,
+                              L2_amplitude=1.0, L2_sigma=1.0, L2_center=9.9,
+                              L3_amplitude=0.5, L3_sigma=1.0, L3_center=18.2,
+                              bg_c0=9.0, bg_c1=0.0, bg_c2=0.0, bg_c3=0.0, bg_c4=0.0)
+
 t = bg_spec.t.get_values()
 I = bg_spec.I.get_values()
 
@@ -118,3 +128,29 @@ t = fluo.t.get_values()
 I = fluo.I.get_values()
 cool_fit = cool_model.fit(fluo.I.get_values(), amplitude=0.06, sigma=1.0, center=16.8, c=0.0, x=t)
 
+
+plt.xlim(0.0, 21.2)
+plt.ylim(-0.05, 0.45)
+
+plt.xlabel(r"t / \si{s}")
+plt.ylabel(r"Photodiodensignal / beliebige Einheiten")
+
+plt.tick_params(axis="y", which="both", left="off", right="off", labelleft="off")
+
+
+# Daten
+plt.plot(sig_spec.t, sig_spec.I / 10.0 - 0.6, "o", label="Rb Spektrum")
+plt.plot(sig_fluo.t, sig_fluo.I + 0.1, "o", label="Fl. Signal")
+plt.plot(bg_fluo.t, bg_fluo.I + 0.1, "o", label="Fl. Hintergrund")
+plt.plot(fluo.t, fluo.I, "o", label="Fl. MOT")
+
+# Fits
+plt.plot(fluo.t, cool_fit.best_fit, "-", label="Anpassung MOT")
+plt.plot(sig_spec.t, sig_spec_fit.best_fit / 10.0 - 0.6, "-", label="Anpassung Spektrum")
+
+
+plt.legend(loc="lower left", framealpha=0.85)
+
+plt.tight_layout(pad=0.2)
+plt.savefig("figures/detuning_cooling.pdf")
+plt.close()
