@@ -219,6 +219,24 @@ Durch ein elektrisch anteuerbares Piezo-Element kann das Gitter gedreht und somi
 Da die nötigen Frequenzen möglichst genau auf die Übergänge im Rubidium abgestimmt sein müssen, wird ein Teil des Laserlichts zu Spektroskopiezwecken mit Rubidium verwendet.
 Als Spektroskopieverfahren kommt die Polarisationsspektroskopie zum Einsatz, die eine Erweiterung der dopplerfreien Sättigungsspektroskopie darstellt.
 Dabei wird der Lichtstrahl in einen Pumpstrahl mit hoher Intensität und einen Teststrahl mit geringerer Intensität aufgespalten, die in ungefähr entgegengesetzter Richtung eine Kammer mit Rubidiumatomen durchlaufen.
+Während der Pumplaser den gewählten Übergang sättigt, d.h. möglichst viele Atome in den angeregten Zustand bringt, wird die Intensität des Teststrahls beobachtet.
+Diese ist hoch, wenn der Übergang vollständig durch den Pumpstrahl gesättigt ist und gering, wenn Atome durch den Teststrahl angeregt werden.
+In Abhängigkeit von der Frequenz aufgetragen ergibt sich ein Intensitätsverlauf wie in Abbildung \korr{ref}.
+\korr{Bild von Sättigungssignal}
+Dieses lässt sich dadurch erklären, dass die Atome Raumtemperatur haben und sich somit sehr schnell bewegen.
+Aufgrund der Dopplerverschiebung interagieren die Laser immer mit Atomen einer bestimmten Geschwindigkeitsklasse, abhängig von der Bewegungsrichtung der Atome relativ zum Laserstrahl.
+Diese Bewegung ist für die Dopplerverschiebung verantwortlich und erklärt die Abflachung des Signals im mittleren Frequenzbereich.
+Das Maximum, auch Lamb-Dip genannt, ergibt sich durch Atome, die sich in einer Ebene senkrecht zu den Laserstrahlen bewegen.
+Die Dopplerverschiebung verschwindet hier, so dass der Pumpstrahl und Teststrahl mit der gleichen Frequenz im Ruhesystems des Atoms strahlen und der Übergang somit gesättigt wird, weswegen der Teststrahl keinen Intensitätsverlust erfährt.
+Die natürliche Linienbreite kann auf diese Weise beobachtet werden.
+
+In der Polarisationsspektroskopie wird der Pumpstrahl zirkularpolarisiert, so dass die $m_\mathrm{J}=\pm1$ Niveaus gesättigt werden.
+Diese anisotrope Besetzung ist dafür verantwortlich, dass das Rubidiumgas doppelbrechend wird und die lineare Polarisation des Teststrahls beim Durchgang um einen Winkel $\alpha$ gedreht wird.
+Dieser Winkel ist abhängig von der Änderung des Brechungsindex, die über die Kramers-Kronig-Relation mit dem Absorptionsprofil zusammenhängt \korr{scheiß Relation irgendwie erläutern}.
+Durch einen Polarisator und einen Analysator vor und hinter der Rubidiumkammer kann detektiert werden, ob die Polarisation des Teststrahls gedreht wurde.
+Dazu wird der Strahl durch einen polarisierenden Strahlteiler geteilt, wobei beide Strahlen das bekannte Spektrum der Sättigungsspektroskopie aufweisen.
+Durch Subtraktion der beiden Spektren kann ein Signal generiert werden, mit dem eine Rückkopplungsschleife betrieben wird, die das Piezoelement am Reflexionsgitter ansteuert, um die Frequenz des Lasers anzupassen.
+Dadurch ist es möglich, die Frequenz des Lasers mit hoher Genauigkeit einzustellen und Temperaturdrifts und anderen äußeren Einflüssen, die eine Änderung der Frequenz hervorrufen, entgegenzuwirken.
 
 \section{Aufbau der MOT}
 
