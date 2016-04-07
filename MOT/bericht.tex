@@ -311,7 +311,7 @@ wobei $x$ den von der Klinge blockierten Teil des Strahls beschreibt.
 	\caption{Anpassung einer Funktion gemäß der Hypothese in Gleichung~\eqref{eq:erf_fit} an die transmittierten Leistungen~$P$ nach der Blockierung des Strahlengangs mit einer Klinge an der Position~$x$. Der Fehler der Leistung~$\Delta P$ liegt in der Größenordnung der Markierung.}
 	\label{fig:beam_radius}
 	
-	\vspace{0.5cm}
+	\vspace{1cm}
 	
 	\input{./tables/beam_radius.tex}
 	\captionof{table}{Transmittierte Leistung des Strahls~$P$ in Abhängigkeit der Klingenposition~$x$ zur Bestimmung des Strahlradius~$w$.}
@@ -443,7 +443,7 @@ Darüber hinaus finden sich die gemessenen Werte in Tabelle~\ref{tab:magnetic_fi
 		\vspace*{-\dimexpr\baselineskip+\heavyrulewidth+\abovetopsep\relax}
 		\input{./tables/magnetic_field_2.tex}
 	\end{minipage}
-	\captionof{table}{Magnetfeld}
+	\captionof{table}{Messwerte zur Bestimmung des Einflusses des Spulenstroms~$I$ mit einem Fehler von $\Delta I = \SI{0.01}{\ampere}$ auf die Fluoreszenzleistung der gefangenen Atome $P$ mit $\Delta P = \SI{5}{nW}$.}
 	\label{tab:magnetic_field}
 \end{figure}
 
@@ -459,10 +459,42 @@ Dieser kann aufgrund eines schlechten Fehlersignals nicht durch die Lockbox auf 
 
 
 \subsection{Verhalten des Ladevorgangs}
+Folglich soll das Verhalten des Ladevorgangs der Atomfalle untersucht werden.
+Nun werden die gefangenen Atome durch eine Linse auf eine Photodiode abgebildet, welche eine zur Fluoreszenz der gefangenen Atome proportionale Spannung erzeugt, die folglich mit einem Oszilloskop gemessen werden kann.
+Um einen Ladevorgang der Falle zu starten wird zunächst das Spulenstrom durch das Anti-Helmholtz-Spulenpaar deaktiviert sodass keine MOT mehr zu beobachten ist.
+Danach wird das Magnetfeld reaktiviert und auf dem Oszilloskop kann ein exponentieller Anstieg der Fluoreszenz der gefangenen Atome beobachtet werden.
+Dieser Anstieg verhält sich wie die Aufladung eines Kondensators und folglich wird die Anpassungshypothese
+\begin{align}
+	U(t) =  U_0 \left[ 1 - \exp\left( - \frac{t - t_0}{\tau} \right) \right] \cdot \Theta(t - t_0) + \mathrm{BG}
+	\label{eq:loading_fit}
+\end{align}
+mit dem maximalen Fluoreszenzsignal~$U_0$ der Photodiode, der Zeitkonstante der Aufladung~$\tau$, der Beginn des Ladevorgangs~$t_0$, der Heaviside-Funktion~$\Theta$ und einem konstanten Untergrund~$\mathrm{BG}$.
+In Abbildung \ref{fig:loading} wurde beispielhaft eine Anpassung an die Ladekurve durchgeführt.
+Insgesamt wurden 11 Ladekurven zur Bestimmung der mittleren Zeitkonstante~$\bar{\tau}$ vermessen und die resultierenden Anpassungsparameter wurden in Tabelle~\ref{tab:loading_params} zusammengefasst.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics{./figures/loading/loading11.pdf}
+	\caption{Anpassung einer Ladekurve gemäß der Anpassungshypothese in Gleichung \eqref{eq:loading_fit} an den zeitlichen Verlauf des Photodiodensignal~$U$ während des Ladevorgangs der MOT.}
+	\label{fig:loading}
+	
+	\vspace{1cm}
+	
+	\resizebox{\textwidth}{!}{
+		\input{./tables/loading.tex}
+	}
+	\captionof{table}{Ergebnisse der Anpassungen gemäß Gleichung \eqref{eq:loading_fit} an die vermessenen Ladekurven der MOT.}
+	\label{tab:loading_params}
+\end{figure}
+
+Schließlich kann aus den 11 vermessenen Ladekurven die mittlere Zeitkonstante~$\bar{\tau}$ des Aufladeprozesses bestimmt werden.
+Diese beträgt
 \begin{align*}
-	P(t) =  P_0 \left[ 1 - \exp\left( - \frac{t - t_0}{\tau} \right) \right] \cdot \Theta(t - t_0)
+	\bar{\tau} = \SI{99.6 +- 4.9}{ms} \, \text{,}
 \end{align*}
-mit der Heaviside-Funktion~$\Theta$.
+wobei der Fehler aus der Stichprobenvarianz abgeschätzt wird.
+
+
+
 
 
 
