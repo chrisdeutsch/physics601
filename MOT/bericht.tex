@@ -151,8 +151,9 @@ Tutor: & Daniel Babik
 % INHALT VERSUCHSPROTOKOLL
 \section{Einführung}
 
-Das Ziel von Atomfallen ist die Speicherung von Atomen in einem festgelegten Raum.
-Um dies zu ermöglichen müssen sich die Atome kaum bewegen, so dass diese zunächst gekühlt und anschließend durch geeignete Mechanismen daran gehindert werden müssen, sich frei im Raum zu bewegen.
+Das Ziel von Atomfallen ist die Speicherung von Atomen in einem begrenzten Raumgebiet, ohne den Einsatz von harten Wänden.
+Um dies zu ermöglichen muss die thermische Bewegung der Atome minimiert werden, sodass gekühlt werden müssen.
+Anschließend kann durch geeignete Mechanismen die Bewegung der Atome auf ein Raumgebiet beschränkt werden.
 Ein solcher Aufbau kann durch eine sogenannte magneto-optische Falle realisiert werden, die in diesem Praktikumsversuch in Betrieb genommen und charakterisiert werden soll.
 
 \section{Theorie}
@@ -166,36 +167,39 @@ Ein solcher Aufbau kann durch eine sogenannte magneto-optische Falle realisiert 
 \end{figure}
 
 \subsection{Laserkühlung}
+\korr{Wie ist der Zusammenhang zu dem Bild?}
 
-Zum Kühlen der Atome wird Laserlicht genutzt, das entgegen der Flugrichtung der Atome eingestrahlt wird.
-Der Impuls eines Photons $\hbar k$ mit der Wellenzahl $k$ kann das Atom mit der Übergangsenergie $\hbar\omega = \hbar c k$ resonant anregen, wobei die Richtung des bei der Abregung entstehenden Photons zufällig ist.
-Für eine Vielzahl einfallender Photonen ist die Emission dann isotrop und es resultiert ein Impulsübertrag auf das Atom, welcher dieses bremst.
-Da sich das Atom jedoch bewegen kann und wegen seiner Geschwindigkeit $v$ das Laserlicht aufgrund des Dopplereffekts mit einer um $kv$ verschobenen Frequenz als der im Laborsystem wahrnimmt, wird der Laser rotverstimmt, d.h. mit einer geringeren Frequenz als für den atomaren Übergang nötig, betrieben.
-Aufgrund des Dopplereffekts nimmt ein Atom, welches sich also entgegen der Richtung des Laserstrahls bewegt, das Licht des Laser mit einer Frequenz wahr, welche das Atom in den angeregten Zustand versetzt und es aufgrund der isotropen Emission kühlt.
+Zum Kühlen der Atome wird Laserlicht genutzt, das entgegen der Flugrichtung der Atome eingestrahlt wird \korr{Würde ich anders schreiben}.
+Der Impuls eines Photons $\hbar k$ mit der Wellenzahl $k$ kann das Atom mit der Übergangsenergie $\hbar\omega = \hbar c k$ resonant anregen \korr{der Impuls regt nicht an}, wobei die Richtung des bei der Abregung entstehenden Photons zufällig ist.
+Für eine Vielzahl einfallender Photonen ist die Emission dann isotrop und es resultiert ein Impulsübertrag auf das Atom, welcher dieses bremst \korr{Emission und damit Impulsübertrag bei Abregung ist isotrop (nicht Vielzahl). Unklar wieso das bremst. -> Anregung nicht Isotrop.}.
+Da sich das Atom jedoch bewegen kann und wegen seiner Geschwindigkeit $v$ das Laserlicht aufgrund des Dopplereffekts mit einer um $kv$ verschobenen Frequenz als der im Laborsystem wahrnimmt, wird der Laser rotverstimmt, d.h. mit einer geringeren Frequenz als für den atomaren Übergang nötig, betrieben \korr{Rotverschiebung ist gerade der Punkt weshalb es kühlt. Klarer machen. Bild erklären dann wird das klarer.}.
+Aufgrund des Dopplereffekts nimmt ein Atom, welches sich also entgegen der Richtung des Laserstrahls bewegt, das Licht des Laser mit einer Frequenz wahr, welche das Atom in den angeregten Zustand versetzt und es aufgrund der isotropen Emission kühlt \korr{Die isotrope Emission kühlt nicht. Das ist die Mischung von nicht-isotroper Absorption und isotroper Emission}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.8\textwidth]{./figures/theory/melasse}
-	\caption{Optische Melasse. Links: Kraftwirkung auf ein ruhendes Atom. Rechts: der Bewegung eines Atoms entgegengesetzte Kraft}
+	\caption{Optische Melasse. Links: Kraftwirkung auf ein ruhendes Atom. Rechts: der Bewegung eines Atoms entgegengesetzte Kraft. \korr{Im Text erwähnen \& erklären / Außerdem ist das ein vereinfachtes Zweiniveausystem (das kurz erwähnen).}}
 \end{figure}
 Werden nun Laser auf drei zueinander senkrechten Achsen genutzt, welche so justiert werden, dass ihre Rückreflexion mit dem einfallenden Strahl überlagern, werden Atome im Kreuzungspunkt der Lichtstrahlen gekühlt, egal in welche Richtung sie sich bewegen.
-Die entstehende Ansammlung kalter Atome wird als optische Melasse bezeichnet.
+Die entstehende Ansammlung kalter Atome wird als optische Melasse bezeichnet \korr{Die Kühlmethode heißt optische Melasse nicht die Ansammlung von Atomen, weil Kraft proportional zu Geschwindigkeit (erwähnen!)}.
 
 \subsection{Fangen von Atomen}
+\korr{Erwähnen dass ein vereinfachtes System betrachtet wird.}
+
 
 Um die gekühlten Atome, die sich zwar mit geringerer Geschwindigkeit aber weiterhin frei bewegen, an einem bestimmten Punkt zu konzentrieren wird der Zeeman-Effekt genutzt.
-Dieser bewirkt eine Aufspaltung der atomaren Niveaus in drei Zustände mit $m_\mathrm{J} = 0, \pm1$, deren Energieverschiebung vom Zustand mit $m_\mathrm{J}=0$, was dem ursprünglichen Niveau entspricht, von der Stärke des Magnetfeldes abhängt.
+Dieser bewirkt eine Aufspaltung der atomaren Niveaus in drei Zustände mit $m_\mathrm{J} = 0, \pm1$, deren Energieverschiebung vom Zustand mit $m_\mathrm{J}=0$, was dem ursprünglichen Niveau entspricht, von der Stärke des Magnetfeldes abhängt \korr{Aufspaltung proportional zur magnetischen Flussdichte. -> Formel für Zeemanaufspaltung}.
 Übergänge in diese Zustände können durch links- bzw. rechtszirkular polarisiertes Licht gezielt ausgewählt werden.
 
 Für das Magnetfeld wird ein Spulenaufbau in Anti-Helmholtz-Konfiguration verwendet, der ein linear ansteigendes Magnetfeld in alle Richtungen ermöglicht.
-Im Zentrum des Aufbaus verschwindet das Magnetfeld, hier werden die Atome gefangen.
-Damit diese die Falle nicht verlassen werden aus entgegengesetzten Richtungen jeweils ein linkszirkular und ein rechtszirkular polarisierter Laser eingestrahlt, der entsprechend mit den aufgespaltenen Energieniveaus interagiert, siehe Abbildung \ref{fig:magnetfeld}.
+Im Zentrum des Aufbaus verschwindet das Magnetfeld\korr{Aber nicht der Gradient}, hier werden die Atome gefangen.
+Damit diese die Falle nicht verlassen werden aus entgegengesetzten Richtungen jeweils ein linkszirkular und ein rechtszirkular polarisierter Laser eingestrahlt \korr{Zuerst auf das Bild verweisen sonst ist es unklar wieso das so sein muss}, der entsprechend mit den aufgespaltenen Energieniveaus interagiert, siehe Abbildung \ref{fig:magnetfeld}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.8\textwidth]{./figures/theory/mot.pdf}
-	\caption{Nutzung des Zeeman-Effekts, um eine ortsabhängige Kraft auf die zu fangenden Teilchen auszuüben.\korr{Bild ändern, Beschriftungen vergrößern, Indizes aufrecht}}
+	\caption{Nutzung des Zeeman-Effekts, um eine ortsabhängige Kraft auf die zu fangenden Teilchen auszuüben.\korr{Bild ändern, Beschriftungen vergrößern, Indizes NICHT!! aufrecht, J ist Formelzeichen kein beschreibender Index wie Boltzmann etc.}}
 	\label{fig:magnetfeld}
 \end{figure}
-Für ein nach links ausgelenktes Atom, d.h. im Bereich der Magnetfeldstärke $B<0$ liegt der Zustand mit $m_\mathrm{J}=+1$ unter dem nicht aufgespaltenen Energieniveau, so dass ein diesem Energieniveau gegenüber rotverstimmter Laser mit $\sigma^+$ Polarisation mit dem $m_\mathrm{J}=+1$ Zustand wechselwirkt und eine Kraft Richtung Zentrum der Falle auf das Atom ausübt.
+Für ein nach links ausgelenktes Atom, d.h. im Bereich der Magnetfeldstärke $B<0$ liegt der Zustand mit $m_\mathrm{J}=+1$ \korr{J sollte nicht aufrecht sein da das ein Formelzeichen ist} unter dem nicht aufgespaltenen Energieniveau \korr{Aufgespalten gilt nur für mehrere Niveaus. Falsches Adjektiv. Lieber explizit mit mj=0}, so dass ein diesem Energieniveau gegenüber rotverstimmter Laser mit $\sigma^+$ Polarisation mit dem $m_\mathrm{J}=+1$ Zustand wechselwirkt und eine Kraft Richtung Zentrum der Falle auf das Atom ausübt.
 Der analoge Fall gilt für ein nach rechts ausgelenktes Atom im Bereich von $B>0$, wo der von rechts eingestrahlte Laser mit $\sigma^-$ Polarisation mit dem $m_\mathrm{J}=-1$ Zustand wechselwirkt, der ebenfalls unterhalb des ursprünglichen Energieniveaus liegt.
 Somit erhält man durch die gezielte Einstrahlung von polarisiertem Licht, welches entsprechend dem Magnetfeld polarisiert sein muss, eine ortsabhängige Kraft auf die Atome, die sie in das Zentrum der Falle drückt und somit ein Auseinanderlaufen der gekühlten Atome verhindert.
 
@@ -204,15 +208,15 @@ Somit erhält man durch die gezielte Einstrahlung von polarisiertem Licht, welch
 
 In diesem Versuch soll das Rubidiumisotop \isotope[85]{Rb} eingefangen werden.
 Dazu ist es nötig, detaillierte Informationen über das Niveauschema und die Übergänge dieser Atome zu haben, um den optimalen Übergang zum Kühlen und Fangen der Atome auszuwählen.
-Es eignet sich der Übergang $F=3 \rightarrow F^\prime=4$, da dieser beinahe abgeschlossen ist, d.h. dass das Atom durch Abregung vom Zustand $F^\prime=4$ beinahe ausschließlich in den Zustand $F=3$ übergeht.
-Dieser Übergang entspricht einer Wellenlänge von \SI{780.25}{nm}, so dass ein entsprechender Laser zur resonanten Anregung gewählt wird.
-Da jedoch in einigen seltenen Fällen auch eine Anregung in die Niveaus $F^\prime=2$, $F^\prime=3$ möglich ist, die in den $F=2$ Zustand übergehen können und die Atome so das abgeschlossene System zur Kühlung verlassen, wird zusätzlich ein sogenannter Pumplaser eingesetzt, der die Atome aus diesem Zustand auf das $F^\prime=3$ Niveau anhebt, von wo aus sie wieder am Kühlprozess teilnehmen können.
+Es eignet sich der Übergang $F=3 \rightarrow F^\prime=4$, da dieser beinahe abgeschlossen ist \korr{das ist abgeschlossen nicht nur beinahe}, d.h. dass das Atom durch Abregung vom Zustand $F^\prime=4$ beinahe ausschließlich in den Zustand $F=3$ übergeht \korr{das geht immer in den zustand über}.
+Dieser Übergang entspricht einer Wellenlänge von \SI{780.25}{nm}, so dass ein entsprechender Laser zur resonanten Anregung gewählt wird \korr{Nicht Resonant -> Detuning}.
+Da jedoch in einigen seltenen Fällen auch eine Anregung in die Niveaus $F^\prime=2$, $F^\prime=3$ möglich ist, die in den $F=2$ Zustand übergehen können und die Atome so das abgeschlossene System zur Kühlung verlassen, wird zusätzlich ein sogenannter Pumplaser eingesetzt, der die Atome aus diesem Zustand auf das $F^\prime=3$ Niveau anhebt, von wo aus sie wieder am Kühlprozess teilnehmen können\korr{Die nehmen noch nicht am Kühlprozess teil. Müssen erst wieder in das untere Niveau des Kühlübergangs zerfallen und das passiert nicht immer.}.
 \korr{Niveauschema hierhin} 
 
 \subsection{Lasersystem}
 
 Wie in Abschnitt \ref{sec:rb_uebergaenge} erwähnt, werden zum Betrieb der magneto-optischen Falle zwei Laser benötigt, die auf die entsprechenden Frequenzen für den Kühl- und Pumplaser eingestellt werden müssen.
-Hierzu werden zwei Diodenlaser in Littrow-Konfiguration genutzt, d.h. das emittierte Laserlicht wird kollimiert und trifft auf ein Reflexionsgitter, welches so in den Strahlengang gebracht wird, dass die Beugung der~-1.~Ordnung zurückreflektiert wird und somit einen externen Resonator bildet, während das Licht, welches in~0.~Ordnung gebeugt wird, ausgekoppelt wird.
+Hierzu werden zwei Diodenlaser in Littrow-Konfiguration genutzt, d.h. das emittierte Laserlicht wird kollimiert und trifft auf ein Reflexionsgitter, welches so in den Strahlengang gebracht wird \korr{Ich glaube das ist egal wie es steht. Die erste Ordnung geht immer zurück in den Laser}, dass die Beugung der~-1.~Ordnung zurückreflektiert wird und somit einen externen Resonator bildet, während das Licht, welches in~0.~Ordnung gebeugt wird, ausgekoppelt wird.
 Durch ein elektrisch anteuerbares Piezo-Element kann das Gitter gedreht und somit die Resonatorlänge und damit die Frequenz des ausgekoppelten Lichts geändert werden.
 \korr{evtl Bild von Littrow}
 
@@ -220,22 +224,23 @@ Da die nötigen Frequenzen möglichst genau auf die Übergänge im Rubidium abge
 Als Spektroskopieverfahren kommt die Polarisationsspektroskopie zum Einsatz, die eine Erweiterung der dopplerfreien Sättigungsspektroskopie darstellt.
 Dabei wird der Lichtstrahl in einen Pumpstrahl mit hoher Intensität und einen Teststrahl mit geringerer Intensität aufgespalten, die in ungefähr entgegengesetzter Richtung eine Kammer mit Rubidiumatomen durchlaufen.
 Während der Pumplaser den gewählten Übergang sättigt, d.h. möglichst viele Atome in den angeregten Zustand bringt, wird die Intensität des Teststrahls beobachtet.
-Diese ist hoch, wenn der Übergang vollständig durch den Pumpstrahl gesättigt ist und gering, wenn Atome durch den Teststrahl angeregt werden.
+Diese ist hoch, wenn der Übergang vollständig durch den Pumpstrahl gesättigt ist und gering, wenn Atome durch den Teststrahl angeregt werden \korr{Hier vllt ne kurze Erklärung}.
 In Abhängigkeit von der Frequenz aufgetragen ergibt sich ein Intensitätsverlauf wie in Abbildung \korr{ref}.
 \korr{Bild von Sättigungssignal}
 Dieses lässt sich dadurch erklären, dass die Atome Raumtemperatur haben und sich somit sehr schnell bewegen.
 Aufgrund der Dopplerverschiebung interagieren die Laser immer mit Atomen einer bestimmten Geschwindigkeitsklasse, abhängig von der Bewegungsrichtung der Atome relativ zum Laserstrahl.
-Diese Bewegung ist für die Dopplerverschiebung verantwortlich und erklärt die Abflachung des Signals im mittleren Frequenzbereich.
+Diese Bewegung ist für die Dopplerverschiebung verantwortlich und erklärt die Abflachung des Signals im mittleren Frequenzbereich \korr{nicht nur mittlerer Bereich. Dopplerverschiebung sorgt für den großen Gaußschen Einschnitt in dem der Lamb-Dip sitzt.}.
 Das Maximum, auch Lamb-Dip genannt, ergibt sich durch Atome, die sich in einer Ebene senkrecht zu den Laserstrahlen bewegen.
-Die Dopplerverschiebung verschwindet hier, so dass der Pumpstrahl und Teststrahl mit der gleichen Frequenz im Ruhesystems des Atoms strahlen und der Übergang somit gesättigt wird, weswegen der Teststrahl keinen Intensitätsverlust erfährt.
+Die Dopplerverschiebung verschwindet hier, so dass der Pumpstrahl und Teststrahl mit der gleichen Frequenz im Ruhesystems des Atoms strahlen und der Übergang somit gesättigt wird \korr{durch den Pumpstrahl}, weswegen der Teststrahl keinen Intensitätsverlust erfährt.
 Die natürliche Linienbreite kann auf diese Weise beobachtet werden.
 
-In der Polarisationsspektroskopie wird der Pumpstrahl zirkularpolarisiert, so dass die $m_\mathrm{J}=\pm1$ Niveaus gesättigt werden.
+In der Polarisationsspektroskopie wird der Pumpstrahl zirkularpolarisiert, so dass die $m_J=\pm1$ \korr{Beide oder nur einer? -> nur einer} Niveaus gesättigt werden.
 Diese anisotrope Besetzung ist dafür verantwortlich, dass das Rubidiumgas doppelbrechend wird und die lineare Polarisation des Teststrahls beim Durchgang um einen Winkel $\alpha$ gedreht wird.
-Dieser Winkel ist abhängig von der Änderung des Brechungsindex, die über die Kramers-Kronig-Relation mit dem Absorptionsprofil zusammenhängt \korr{scheiß Relation irgendwie erläutern}.
-Durch einen Polarisator und einen Analysator vor und hinter der Rubidiumkammer kann detektiert werden, ob die Polarisation des Teststrahls gedreht wurde.
+\korr{Änderung des Brechungsindex für was? Unterschiedliche Brechungsindizes für die verschiedenen Zirkularpolarisationen -> optische Aktivität.}
+Dieser Winkel ist abhängig von der Änderung des Brechungsindex, die über die Kramers-Kronig-Relation mit dem Absorptionsprofil zusammenhängt \korr{scheiß Relation irgendwie erläutern} \korr{Ich seh selber keine Relevanz der Relation für unser Protokoll -> raus damit}.
+Durch einen Polarisator und einen Analysator \korr{Das ist der PBS} vor und hinter der Rubidiumkammer kann detektiert werden, ob die Polarisation des Teststrahls gedreht wurde.
 Dazu wird der Strahl durch einen polarisierenden Strahlteiler geteilt, wobei beide Strahlen das bekannte Spektrum der Sättigungsspektroskopie aufweisen.
-Durch Subtraktion der beiden Spektren kann ein Signal generiert werden, mit dem eine Rückkopplungsschleife betrieben wird, die das Piezoelement am Reflexionsgitter ansteuert, um die Frequenz des Lasers anzupassen.
+Durch Subtraktion der beiden Spektren kann ein Signal generiert werden \korr{Was ist das gute an dem Signal? Vorallem im Vgl.\ zur Sättigungsspek.}, mit dem eine Rückkopplungsschleife betrieben wird \korr{Lockbox erwähnen}, die das Piezoelement am Reflexionsgitter ansteuert, um die Frequenz des Lasers anzupassen.
 Dadurch ist es möglich, die Frequenz des Lasers mit hoher Genauigkeit einzustellen und Temperaturdrifts und anderen äußeren Einflüssen, die eine Änderung der Frequenz hervorrufen, entgegenzuwirken.
 
 \section{Aufbau der MOT}
@@ -248,19 +253,19 @@ Als Hilfe dienten die dargestellten Spektren in \cite{anleitung} für das \isoto
 Der Kühllaser wurde auf den Übergang $F=3 \rightarrow F^\prime=4$ eingestellt, indem durch Änderung der Scanamplitude und des Scanoffsets das in der Polarisationspsketroskopie beobachtete Fehlersignal einen Nulldurchgang bei einer leichten Rotverschiebung gegenüber des gewünschten Rubidiumübergangs zeigt.
 Durch fixieren dieses Signals mit dem Lock-Schalter an der Lockbox wird die Rückkopplungsschleife betrieben, die das Gitter am Diodenlaser ansteuert und damit die Frequenz reguliert.
 
-Der Pumplaser wurde auf die gleiche Weise auf den $F=2 \rightarrow F^\prime=3$ Übergang eingestellt, jedoch kann dieser Laser nicht über eine Rückkopplungsschleife auf eine Frequenz fixiert werden.
+Der Pumplaser wurde auf die gleiche Weise auf den $F=2 \rightarrow F^\prime=3$ Übergang eingestellt, jedoch kann dieser Laser nicht über eine Rückkopplungsschleife auf eine Frequenz fixiert werden \korr{Wir haben beide Übergänge ->2 und ->3 im im Scan. Die 2 kann auch nach 3 zerfallen und ist somit im Kühlkreislauf}.
 Da dieses Signal jedoch nicht mit der gleichen Genauigkeit wie beim Kühllaser eingestellt werden muss, ist ein Betrieb der Falle trotzdem möglich.
 
 \subsection{Justage der Laser an der Vakuumkammer}
 
-Mit einem Leistungsmessgerät wurde zunächst überpüft, ob genügend Licht aus der optischen Faser austritt, wobei eine Leistung von \SI{14,5}{mW} festgestellt werden konnte.
+Mit einem Leistungsmessgerät wurde zunächst überprüft, ob genügend Licht aus der optischen Faser austritt, wobei eine Leistung von \SI{14,5 +- 0.1}{mW} festgestellt werden konnte.
 Durch zwei Strahlteiler wird das Laserlicht in drei Strahlen geteilt, die jeweils senkrecht zueinander stehen und die Vakuumkammer durchlaufen, bevor sie von einem Spiegel in sich selbst reflektiert werden, so dass insgesamt sechs Strahlen die Kammer auf drei Achsen passieren.
 Zwei der Strahlen verlaufen in der horizontalen Ebene, einer entlang der vertikalen Achse.
-Durch $\lambda/2$-PLatten kann die Leistung der einzelnen Teilstrahlen individuell eingestellt werden, wobei alle Strahlen ungefähr die gleiche Leistung haben sollten.
-Für den vertikalen Strahl wurde eine Leistung vo \SI{3,0}{mW} eingestellt, für die beiden horizontalen \SI{3,0}{mW} bzw. \SI{3,2}{mW}.
+Durch $\lambda/2$-Platten kann die Leistung der einzelnen Teilstrahlen individuell eingestellt werden, wobei alle Strahlen ungefähr die gleiche Leistung haben sollten.
+Für den vertikalen Strahl wurde eine Leistung vo \SI{3,0 +- 0.1}{mW} eingestellt, für die beiden horizontalen \SI{3,0 +- 0.1}{mW} bzw. \SI{3,2 +- 0.1}{mW}.
 Da diese Leistungen sich nicht zu den ursprünglich zur Verfügung stehenden \SI{14,5}{mW} addieren, kann festgestellt werden, dass in dem Aufbau eine Lichtleistung von ca. \SI{5,3}{mW} verloren geht.
 
-Im Anschluss wurden die Aufbauten, d.h. die Spiegel und Einstellung der $\lambda/4$ Platten optimiert, so dass sich auf den drei Achsen sowohl einfallender als auch reflektierter Laserstrahl überlagern und sich die Strahlen im Zentrum der Vakuumkammer kreuzen.
+Im Anschluss wurden die Aufbauten, d.h.\ die Spiegel und Einstellung der $\lambda/4$ Platten optimiert, so dass sich auf den drei Achsen sowohl einfallender als auch reflektierter Laserstrahl überlagern und sich die Strahlen im Zentrum der Vakuumkammer kreuzen.
 Nach Einschalten des Magnetfeldes konnte mit der CCD-Kamera bereits eine Fluoreszenz und eine kleine Wolke gefangener Rubidiumatome erkennen.
 
 \subsection{Optimierung der gefundenen Einstellungen}
@@ -268,7 +273,7 @@ Nach Einschalten des Magnetfeldes konnte mit der CCD-Kamera bereits eine Fluores
 Während eine Änderung der Rotverschiebung des Kühllasers nur eine geringe Auswirkung auf die Größe und Intensität der beobachteten Atome zeigte, konnte vor allem durch eine Feinjustage der Frequenz des Pumplasers die Falle optimiert werden.
 Ein zusätzliches konstantes Magnetfeld verschlechterte das beobachtete Bild, so dass diese Möglichkeit zur Optimierung nicht genutzt wurde und im Folgenden nur die Frequenz des Pumplasers geändert wurde.
 Nach Anbringen eines Leistungsmessgeräts zur Bestimmung der Fluoreszenzleistung der Falle konnte auch quantitativ eine Optimierung vorgenommen werden.
-So konnte eine Leistung von \SI{114}{nW} erreicht werden, wobei dieser Wert aufgrund von Temperaturschwankungen im Raum und daher Änderungen der Laserfrequenz mit der Zeit eine leichte Veränderung erfuhr.
+So konnte eine Leistung von \SI{114 +- 5}{nW} erreicht werden, wobei dieser Wert aufgrund von Temperaturschwankungen im Raum und daher Änderungen der Laserfrequenz \korr{Welcher Laser? Repump -> nicht gelockt} mit der Zeit eine leichte \korr{die waren schon relativ stark} Veränderung erfuhr.
 Nachdem sich näherungsweise ein thermisches Gleichgewicht eingestellt hatte, war diese Veränderung jedoch sehr gering, so dass die folgenden Messungen durchgeführt werden konnten, wobei gegebenenfalls zwischen zwei Messungen eine Nachjustierung erfolgte.
 
 \section{Charakterisierung der MOT}
