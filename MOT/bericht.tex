@@ -294,6 +294,7 @@ Im Folgenden soll die Anzahl der gefangenen Atome in der MOT bestimmt werden.
 Dazu muss zunächst der Fluoreszenzleistung der gefangenen Atome und der Strahlradius des Lasers bestimmt werden.
 
 \subsubsection{Bestimmung der Fluoreszenz der MOT}
+\label{sec:fluoreszenz}
 Zur Bestimmung der Fluoreszenz der MOT wird die leuchtende Atomwolke mithilfe einer Linse auf ein Leistungsmessgerät abgebildet.
 Dabei gilt es zu beachten, dass die so gemessene Leistung auch die Fluoreszenz von ungefangenen Atomen beinhaltet.
 Daher wird nach jeder Messung das Magnetfeld der Falle deaktiviert um eine Hintergrundmessung durchzuführen und der so gemessene Hintergrund kann vom Fluoreszenzsignal abgezogen werden.
@@ -333,6 +334,7 @@ berechnet wurde.
 
 
 \subsubsection{Bestimmung des Strahlradius}
+\label{sec:strahlradius}
 Anschließend muss eine Bestimmung des Radius des Laserstrahls durchgeführt werden.
 Dazu wird das Leistungsmessgerät in den Strahlengang gestellt und der Laser wird seitlich durch eine Messerklinge blockiert.
 Durch eine Messung der Leistung des teilweise blockierten Laserstrahls in Abhängigkeit der Position der Klinge kann der Strahlradius bestimmt werden.
@@ -373,11 +375,44 @@ führt zu den Anpassungsparametern:
 Die Messpunkte sowie die Anpassung wurden in Abbildung~\ref{fig:beam_radius} dargestellt.
 Durch die Anpassung wurde demnach der Strahlradius~$w$ zu \SI{2.826 +- 0.089}{mm} bestimmt und kann folglich für die Auswertung verwendet werden.
 
+\subsubsection{Streurate}
+Weiterhin muss die Streurate~$R$ des Kühllasers mit einer Verstimmung~$\delta$ vom Kühlübergang mit natürlicher Linienbreite~$\Gamma$ bestimmt werden.
+Diese ist gegeben durch
+\begin{align*}
+	R = \frac{\Gamma}{2} \frac{I / I_\mathrm{S}}{1 + I / I_\mathrm{S} + 4 \delta^2 / \Gamma^2}
+\end{align*}
+mit der Intensität des Lasers~$I$ und der Sättigungsintensität~$I_\mathrm{S}$ des Übergangs \cite{foot}.
+Im Folgenden wird der Strahlradius~$w$, welcher in Abschnitt~\ref{sec:strahlradius} bestimmt wurde, genutzt um die Intensität des Kühlstrahls abzuschätzen.
+Dabei wird die Gesamtleistung des Kühllasers berechnet durch
+\begin{align*}
+	P_\mathrm{K"uhl.} &= 2 \cdot \left[ \SI{3.0 +- 0.1}{mW} + \SI{3.0 +- 0.1}{mW} + \SI{3.2 +- 0.1}{mW} \right]\\
+	  &= \SI{18.4 +- 0.4}{mW} \, \text{,}
+\end{align*} 
+wobei der Faktor 2 aufgrund der Rückreflexion des Kühlstrahls entsteht.
+Nimmt man an, dass diese Leistung gleichmäßig auf einem Kreis mit Radius~$w$ verteilt ist, so erhält man für die Intensität mit dem Ergebnis für den Strahlradius aus Abschnitt~\ref{sec:strahlradius}
+\begin{align*}
+	I = \frac{P_\mathrm{K"uhl.}}{\pi w^2} = \SI{73.3 +- 4.9}{\milli\watt\per\centi\meter\squared} \, \text{.}
+\end{align*}
+Unter der Verwendung der natürlichen Linienbreite~$\Gamma = \SI{38.117+-0.011}{MHz}$, der Sättigungsintensität~$I_\mathrm{S} = \SI{1.66932 +- 0.00052}{\milli\watt\per\centi\meter\squared}$ aus \cite{steck}, sowie der Verstimmung des Kühllasers~$\delta = \SI{-11.6+- 0.4}{MHz}$ (wird in Abschnitt~\ref{sec:detuning_cooling} bestimmt) erhält man die Streurate
+\begin{align*}
+	R = \SI{18.5 +- 0.1}{MHz} \, \text{.}
+\end{align*}
+Der Fehler wurde dabei durch \textsc{Gauß}sche Fehlerfortpflanzung berechnet.
 
 \subsubsection{Bestimmung der Anzahl der gefangenen Atome}
 \label{sec:atomzahl}
-\korr{TODO: Detuning fehlt}
-
+Schließlich sind alle nötigen Größen bekannt und eine Berechnung der Anzahl der gefangenen Atome kann durchgeführt werden.
+Diese kann aus der gesamten Fluoreszenzleistung der gefangenen Atome~$P_\mathrm{tot}$ (Bestimmung in Abschnitt \ref{sec:fluoreszenz}), der Streurate~$R$ der Photonen des Kühllasers (Bestimmung im vorigen Abschnitt) und der bekannten Energie des Übergangs $\hbar \omega = \SI{1.589}{\electronvolt}$ \cite{steck} berechnet werden.
+Somit folgt die Anzahl der gefangenen Atome
+\begin{align*}
+	N = \frac{P_\mathrm{tot}}{\hbar \omega R}
+\end{align*}
+und mit den zuvor berechneten Größen
+\begin{align*}
+	N = \num{6.6 +- 0.7e6} \, \text{.}
+\end{align*}
+Der Vergleich mit den in \cite{wieman} erreichten \num{4e7} Atomen zeigt, dass die Größenordnung der Anzahl der gefangenen Atomen übereinstimmt.
+Mit zusätzlicher Feinjustage und einer funktionstüchtigen Frequenzstabilisierung für den Pumplaser sollte demnach die Größenordnung von $10^7$ Atomen mit dem vorliegenden Aufbau zu leicht erreichen sein.
 
 
 \subsection{Größe der MOT}
@@ -594,6 +629,7 @@ Darüber hinaus wird eine Untergrundmessung mit deaktiviertem Magnetfeld durchge
 Dieser Untergrund kann mithilfe des Spektrums aus der Rb-Spektroskopie an das Fluoreszenzsignal der MOT angepasst werden und folglich abgezogen werden.
 
 \subsubsection{Variation der Kühllaserfrequenz}
+\label{sec:detuning_cooling}
 Zunächst wird die Frequenz des Pumplasers fixiert, indem die Scan-Amplitude minimiert wird und mithilfe des Scan-Offset der Pumpübergang auf Resonanz gestellt wird.
 Im Gegensatz zum Kühllaser konnte der Pumplaser aufgrund eines stark Verrauschten Fehlersignals nicht mithilfe der Rückkopplungsschleife fixiert werden.
 Anschließend wird der Scan-Bereich des Kühllasers auf die Umgebung des Kühlübergangs eingestellt und mithilfe des Oszilloskops kann sowohl die Rb-Spektroskopie sowie das Fluoreszenzsignal der Photodiode dargestellt werden.
@@ -605,7 +641,7 @@ Weiterhin wurde das Signal nach Subtraktion des Untergrundes dargestellt.
 An das Signal der Rb-Spektroskopie wurde folglich eine Kurve bestehend aus drei Lorentz-Kurven und einem polynomialen Untergrund 4.\ Ordnung angepasst.
 Dies ermöglicht die Bestimmung der Frequenzen der drei Übergänge und wurde genutzt um das Untergrundsignal an das Fluoreszenzsignal der MOT anzupassen und folglich von diesem abzuziehen.
 Darüber hinaus können die bekannten Frequenzen der Übergänge genutzt werden um eine Frequenzeichung durchzuführen.
-Dazu nutzt man die Verstimmung $\delta_{1,2}$ der beiden Übergänge (im Spektrum links) gegenüber dem Kühlübergang, welche in \cite{script} gegeben ist durch $\delta_1 = \SI{-92.0}{MHz}$ und $\delta_2 = \SI{-60.3}{MHz}$.
+Dazu nutzt man die Verstimmung $\delta_{1,2}$ der beiden Überkreuzungs-Signale (im Spektrum links) gegenüber dem Kühlübergang, welche in \cite{script} gegeben ist durch $\delta_1 = \SI{-92.0}{MHz}$ ($F=3 \rightarrow F^\prime=2,4$) und $\delta_2 = \SI{-60.3}{MHz}$ ($F=3 \rightarrow F^\prime=3,4$).
 Schließlich wird an das Fluoreszenzsignal, welches bereits vom Untergrund bereinigt wurde, eine Gauß-Funktion angepasst, welche die Zentralfrequenz und somit die Rotverstimmung gegenüber dem Kühlübergang liefert.
 \begin{figure}[h]
 	\centering
@@ -676,6 +712,11 @@ und folglich für die optimale Verstimmung
 	C.\ J.\ Foot,
 	\emph{Atomic Physics},
 	Oxford University Press, 2005.
+	
+\bibitem{steck}
+	D.\ A.\ Steck,
+	\emph{Rubidium 85 D Line Data},
+	\url{http://steck.us/alkalidata} (Revision 2.1.6, 20.\ September 2013)
 \end{thebibliography}
 
 % APPENDIX
