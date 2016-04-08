@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from lmfit.models import LorentzianModel, PolynomialModel, ConstantModel, GaussianModel
+from uncertainties import ufloat, umath
 
 plt.style.use("publication")
 
@@ -128,28 +129,80 @@ t = fluo.t.get_values()
 I = fluo.I.get_values()
 cool_fit = cool_model.fit(fluo.I.get_values(), amplitude=0.06, sigma=1.0, center=16.8, c=0.0, x=t)
 
+# Frequency scaling
+spec_params = sig_spec_fit.params
+cool_params = cool_fit.params
 
+# For calibration: F->F' = 3->2,4
+left_peak = ufloat(spec_params["L1_center"].value, spec_params["L1_center"].stderr)
+
+# Cooling Transition F->F' = 3->4
+cooling_transition = ufloat(spec_params["L3_center"].value, spec_params["L3_center"].stderr)
+
+# Frequency band between both peaks
+freq = 92.0 # MHz
+
+# Proportionality constant
+freq_prop = freq / (cooling_transition - left_peak)
+
+def detuning(t):
+    ret = t - cooling_transition.n
+    ret *= freq_prop.n
+    return ret
+
+def detuning_inverse(f):
+    t = f
+    t = t / freq_prop.n
+    t += cooling_transition.n
+    return t
+
+# This describes the detuning
+cooling_freq = ufloat(cool_params["center"].value, cool_params["center"].stderr)
+
+# Calculate detuning
+detuning = cooling_freq - cooling_transition
+detuning *= freq_prop
+
+
+# Plot
 plt.xlim(0.0, 21.2)
 plt.ylim(-0.05, 0.45)
 
-plt.xlabel(r"t / \si{s}")
+plt.xlabel(r"Zeit $t$ / \si{s}")
 plt.ylabel(r"Photodiodensignal / beliebige Einheiten")
+
 
 plt.tick_params(axis="y", which="both", left="off", right="off", labelleft="off")
 
 
 # Daten
 plt.plot(sig_spec.t, sig_spec.I / 10.0 - 0.6, "o", label="Rb Spektrum")
-plt.plot(sig_fluo.t, sig_fluo.I + 0.1, "o", label="Fl. Signal")
-plt.plot(bg_fluo.t, bg_fluo.I + 0.1, "o", label="Fl. Hintergrund")
-plt.plot(fluo.t, fluo.I, "o", label="Fl. MOT")
+plt.plot(sig_fluo.t, sig_fluo.I + 0.1, "o", label="Fluoresz. MOT\n(mit Untergrund)")
+plt.plot(bg_fluo.t, bg_fluo.I + 0.1, "o", label="Fluoresz.\nUntergrund")
+plt.plot(fluo.t, fluo.I, "o", label="Fluoresz. MOT\n(ohne Untergrund)")
 
 # Fits
-plt.plot(fluo.t, cool_fit.best_fit, "-", label="Anpassung MOT")
-plt.plot(sig_spec.t, sig_spec_fit.best_fit / 10.0 - 0.6, "-", label="Anpassung Spektrum")
+plt.plot(fluo.t, cool_fit.best_fit, "-", label="Fluoresz. MOT\n(Anpassung)")
+plt.plot(sig_spec.t, sig_spec_fit.best_fit / 10.0 - 0.6, "-", label="Rb Spektrum\n(Anpassung)")
 
 
-plt.legend(loc="lower left", framealpha=0.85)
+# Vertical line at transition
+plt.axvline(x=cooling_transition.n, c="k", zorder=1)
+plt.axvline(x=cooling_freq.n, c="k", zorder=1, ls=":")
+
+plt.legend(loc="lower left", framealpha=0.85, fontsize=9)
+
+
+# Scaled axis
+ax1 = plt.gca()
+ax2 = ax1.twiny()
+ax2.set_xlim(ax1.get_xlim())
+
+tic_loc = detuning_inverse(np.arange(-130, 20, 10))
+ax2.set_xticks(tic_loc)
+ax2.set_xticklabels(np.arange(-130, 20, 10), fontsize=9)
+ax2.set_xlabel(r"Verstimmung $\delta$ / \si{MHz}")
+
 
 plt.tight_layout(pad=0.2)
 plt.savefig("figures/detuning_cooling.pdf")
