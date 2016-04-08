@@ -169,38 +169,45 @@ Ein solcher Aufbau kann durch eine sogenannte magneto-optische Falle realisiert 
 \subsection{Laserkühlung}
 \korr{Wie ist der Zusammenhang zu dem Bild?}
 
-Zum Kühlen der Atome wird Laserlicht genutzt, das entgegen der Flugrichtung der Atome eingestrahlt wird \korr{Würde ich anders schreiben}.
-Der Impuls eines Photons $\hbar k$ mit der Wellenzahl $k$ kann das Atom mit der Übergangsenergie $\hbar\omega = \hbar c k$ resonant anregen \korr{der Impuls regt nicht an}, wobei die Richtung des bei der Abregung entstehenden Photons zufällig ist.
-Für eine Vielzahl einfallender Photonen ist die Emission dann isotrop und es resultiert ein Impulsübertrag auf das Atom, welcher dieses bremst \korr{Emission und damit Impulsübertrag bei Abregung ist isotrop (nicht Vielzahl). Unklar wieso das bremst. -> Anregung nicht Isotrop.}.
-Da sich das Atom jedoch bewegen kann und wegen seiner Geschwindigkeit $v$ das Laserlicht aufgrund des Dopplereffekts mit einer um $kv$ verschobenen Frequenz als der im Laborsystem wahrnimmt, wird der Laser rotverstimmt, d.h. mit einer geringeren Frequenz als für den atomaren Übergang nötig, betrieben \korr{Rotverschiebung ist gerade der Punkt weshalb es kühlt. Klarer machen. Bild erklären dann wird das klarer.}.
-Aufgrund des Dopplereffekts nimmt ein Atom, welches sich also entgegen der Richtung des Laserstrahls bewegt, das Licht des Laser mit einer Frequenz wahr, welche das Atom in den angeregten Zustand versetzt und es aufgrund der isotropen Emission kühlt \korr{Die isotrope Emission kühlt nicht. Das ist die Mischung von nicht-isotroper Absorption und isotroper Emission}.
+Zum Kühlen der Atome wird Laserlicht genutzt und insbesondere der Impulsübertrag von Photonen auf Atome ausgenutzt.
+Der Impuls $\hbar k$ eines Photons mit der Wellenzahl $k$ kann von einem Atom absorbiert werden.
+Die aus der Absorption gewonnene Energie des Atoms kann dieses in ein energetisch höher gelegenes Niveau anregen, wobei die Richtung des bei der anschließenden spontanen Emission entstehenden Photons zufällig ist.
+Für eine hohe Anzahl einfallender Photonen ist die Emission und der bei der Abregung entstehende Impulsübertrag isotrop, weswegen bei kontinuierlicher Bestrahlung durch einen Laser ein Nettoimpulsübertrag auftritt.
+
+Ein sich bewegendes Atom nimmt aufgrund seiner Geschwindigkeit $v$ das Laserlicht wegen des Dopplereffekts mit einer um $kv$ verschobenen Frequenz gegenüber der im Laborsystem wahr.
+Eine Kühlung ist daher nur möglich, wenn der Laser bezüglich des Energieabstands der beiden Niveaus, die zum Kühlen verwendet werden, rotverstimmt ist, das heißt eine geringere Frequenz hat.
+Aufgrund des Dopplereffekts nimmt ein Atom, welches sich also entgegen der Richtung des Laserstrahls bewegt, das Licht des Laser mit einer Frequenz wahr, welche das Atom in den angeregten Zustand versetzt.
+Durch die Absorption des Photons, deren Impulsübertrag immer in die gleiche Richtung zeigt und die isotrope Emission wird ein Atom, welches sich entgegen der Richtung des Laserstrahls bewegt, gekühlt.
+Da die Rotverschiebung geschwindigkeitsabhängig ist, ist auch die resultierende kühlende Kraft auf das Atom proportional zur Geschwindigkeit, weswegen die Kühlung auch als optische Melasse bezeichnet wird.
+Für ein Zweiniveausystem ist dies in Abbildung \ref{fig:opt_melasse} dargestellt.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.8\textwidth]{./figures/theory/melasse}
-	\caption{Optische Melasse. Links: Kraftwirkung auf ein ruhendes Atom. Rechts: der Bewegung eines Atoms entgegengesetzte Kraft. \korr{Im Text erwähnen \& erklären / Außerdem ist das ein vereinfachtes Zweiniveausystem (das kurz erwähnen).}}
+	\caption{Optische Melasse eines Zweiniveausystems. Links: Kraftwirkung auf ein ruhendes Atom. Rechts: der Bewegung eines Atoms entgegengesetzte Kraft.}
+	\label{fig:opt_melasse}
 \end{figure}
-Werden nun Laser auf drei zueinander senkrechten Achsen genutzt, welche so justiert werden, dass ihre Rückreflexion mit dem einfallenden Strahl überlagern, werden Atome im Kreuzungspunkt der Lichtstrahlen gekühlt, egal in welche Richtung sie sich bewegen.
-Die entstehende Ansammlung kalter Atome wird als optische Melasse bezeichnet \korr{Die Kühlmethode heißt optische Melasse nicht die Ansammlung von Atomen, weil Kraft proportional zu Geschwindigkeit (erwähnen!)}.
 
 \subsection{Fangen von Atomen}
-\korr{Erwähnen dass ein vereinfachtes System betrachtet wird.}
-
-
+Im Folgenden wird nur ein vereinfachtes System betrachtet, da reale Atome eine Vielzahl von Energieniveaus besitzen, die die hier durchgeführte Betrachtung deutlich verkomplizieren.
 Um die gekühlten Atome, die sich zwar mit geringerer Geschwindigkeit aber weiterhin frei bewegen, an einem bestimmten Punkt zu konzentrieren wird der Zeeman-Effekt genutzt.
-Dieser bewirkt eine Aufspaltung der atomaren Niveaus in drei Zustände mit $m_\mathrm{J} = 0, \pm1$, deren Energieverschiebung vom Zustand mit $m_\mathrm{J}=0$, was dem ursprünglichen Niveau entspricht, von der Stärke des Magnetfeldes abhängt \korr{Aufspaltung proportional zur magnetischen Flussdichte. -> Formel für Zeemanaufspaltung}.
+Dieser bewirkt eine Aufspaltung der atomaren Niveaus in drei Zustände mit $m_J = 0, \pm1$, deren Energieverschiebung vom Zustand mit $m_J=0$, was dem ursprünglichen Niveau entspricht, von der Stärke des Magnetfeldes abhängt:
+\begin{align}
+	\Delta E =\mu_\mathrm{B}B
+\end{align}
+mit dem Bohrschen Magneton $\mu_\mathrm{B}$.
 Übergänge in diese Zustände können durch links- bzw. rechtszirkular polarisiertes Licht gezielt ausgewählt werden.
 
 Für das Magnetfeld wird ein Spulenaufbau in Anti-Helmholtz-Konfiguration verwendet, der ein linear ansteigendes Magnetfeld in alle Richtungen ermöglicht.
-Im Zentrum des Aufbaus verschwindet das Magnetfeld\korr{Aber nicht der Gradient}, hier werden die Atome gefangen.
-Damit diese die Falle nicht verlassen werden aus entgegengesetzten Richtungen jeweils ein linkszirkular und ein rechtszirkular polarisierter Laser eingestrahlt \korr{Zuerst auf das Bild verweisen sonst ist es unklar wieso das so sein muss}, der entsprechend mit den aufgespaltenen Energieniveaus interagiert, siehe Abbildung \ref{fig:magnetfeld}.
+Im Zentrum des Aufbaus, in dem die Atome gefangen werden, verschwindet das Magnetfeld, nicht aber der Gradient.
+Damit die Atome die Falle nicht verlassen werden, wie in Abbildung \ref{fig:magnetfeld} dargestellt, aus entgegengesetzten Richtungen jeweils ein linkszirkular und ein rechtszirkular polarisierter Laser eingestrahlt.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.8\textwidth]{./figures/theory/mot.pdf}
-	\caption{Nutzung des Zeeman-Effekts, um eine ortsabhängige Kraft auf die zu fangenden Teilchen auszuüben.\korr{Bild ändern, Beschriftungen vergrößern, Indizes NICHT!! aufrecht, J ist Formelzeichen kein beschreibender Index wie Boltzmann etc.}}
+	\caption{Nutzung des Zeeman-Effekts, um eine ortsabhängige Kraft auf die zu fangenden Teilchen auszuüben.\korr{Bild ändern, Beschriftungen vergrößern}}
 	\label{fig:magnetfeld}
 \end{figure}
-Für ein nach links ausgelenktes Atom, d.h. im Bereich der Magnetfeldstärke $B<0$ liegt der Zustand mit $m_\mathrm{J}=+1$ \korr{J sollte nicht aufrecht sein da das ein Formelzeichen ist} unter dem nicht aufgespaltenen Energieniveau \korr{Aufgespalten gilt nur für mehrere Niveaus. Falsches Adjektiv. Lieber explizit mit mj=0}, so dass ein diesem Energieniveau gegenüber rotverstimmter Laser mit $\sigma^+$ Polarisation mit dem $m_\mathrm{J}=+1$ Zustand wechselwirkt und eine Kraft Richtung Zentrum der Falle auf das Atom ausübt.
-Der analoge Fall gilt für ein nach rechts ausgelenktes Atom im Bereich von $B>0$, wo der von rechts eingestrahlte Laser mit $\sigma^-$ Polarisation mit dem $m_\mathrm{J}=-1$ Zustand wechselwirkt, der ebenfalls unterhalb des ursprünglichen Energieniveaus liegt.
+Für ein nach links ausgelenktes Atom, d.h. im Bereich der Magnetfeldstärke $B<0$ liegt der Zustand mit $m_J=+1$ unter dem Niveau mit $m_J=0$, so dass ein diesem Energieniveau gegenüber rotverstimmter Laser mit $\sigma^+$ Polarisation mit dem $m_J=+1$ Zustand wechselwirkt und eine Kraft in Richtung des Zentrum der Falle auf das Atom ausübt.
+Der analoge Fall gilt für ein nach rechts ausgelenktes Atom im Bereich von $B>0$, wo der von rechts eingestrahlte Laser mit $\sigma^-$ Polarisation mit dem $m_J=-1$ Zustand interagiert, der ebenfalls unterhalb des ursprünglichen Energieniveaus liegt.
 Somit erhält man durch die gezielte Einstrahlung von polarisiertem Licht, welches entsprechend dem Magnetfeld polarisiert sein muss, eine ortsabhängige Kraft auf die Atome, die sie in das Zentrum der Falle drückt und somit ein Auseinanderlaufen der gekühlten Atome verhindert.
 
 \subsection{Übergänge in Rubidium}
@@ -229,7 +236,7 @@ In Abhängigkeit von der Frequenz aufgetragen ergibt sich ein Intensitätsverlau
 \korr{Bild von Sättigungssignal}
 Dieses lässt sich dadurch erklären, dass die Atome Raumtemperatur haben und sich somit sehr schnell bewegen.
 Aufgrund der Dopplerverschiebung interagieren die Laser immer mit Atomen einer bestimmten Geschwindigkeitsklasse, abhängig von der Bewegungsrichtung der Atome relativ zum Laserstrahl.
-Diese Bewegung ist für die Dopplerverschiebung verantwortlich und erklärt die Abflachung des Signals im mittleren Frequenzbereich \korr{nicht nur mittlerer Bereich. Dopplerverschiebung sorgt für den großen Gaußschen Einschnitt in dem der Lamb-Dip sitzt.}.
+Diese Bewegung ist für die Dopplerverschiebung verantwortlich und erklärt die Abflachung des Signals.
 Das Maximum, auch Lamb-Dip genannt, ergibt sich durch Atome, die sich in einer Ebene senkrecht zu den Laserstrahlen bewegen.
 Die Dopplerverschiebung verschwindet hier, so dass der Pumpstrahl und Teststrahl mit der gleichen Frequenz im Ruhesystems des Atoms strahlen und der Übergang somit gesättigt wird \korr{durch den Pumpstrahl}, weswegen der Teststrahl keinen Intensitätsverlust erfährt.
 Die natürliche Linienbreite kann auf diese Weise beobachtet werden.
