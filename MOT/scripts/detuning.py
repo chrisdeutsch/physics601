@@ -138,6 +138,7 @@ left_peak = ufloat(spec_params["L1_center"].value, spec_params["L1_center"].stde
 
 # Cooling Transition F->F' = 3->4
 cooling_transition = ufloat(spec_params["L3_center"].value, spec_params["L3_center"].stderr)
+cooling_transition_fwhm = ufloat(spec_params["L3_fwhm"].value, spec_params["L3_fwhm"].stderr)
 
 # Frequency band between both peaks
 freq = 92.0 # MHz
@@ -163,6 +164,9 @@ cooling_freq = ufloat(cool_params["center"].value, cool_params["center"].stderr)
 detuning = cooling_freq - cooling_transition
 detuning *= freq_prop
 
+# Calculate FWHM
+cooling_transition_fwhm *= freq_prop
+
 
 # Plot
 plt.xlim(0.0, 21.2)
@@ -176,14 +180,14 @@ plt.tick_params(axis="y", which="both", left="off", right="off", labelleft="off"
 
 
 # Daten
-plt.plot(sig_spec.t, sig_spec.I / 10.0 - 0.6, "o", label="Rb Spektrum")
+plt.plot(sig_spec.t, sig_spec.I / 10.0 - 0.6, "o", label="Rb-Spektrum")
 plt.plot(sig_fluo.t, sig_fluo.I + 0.1, "o", label="Fluoresz. MOT\n(mit Untergrund)")
 plt.plot(bg_fluo.t, bg_fluo.I + 0.1, "o", label="Fluoresz.\nUntergrund")
 plt.plot(fluo.t, fluo.I, "o", label="Fluoresz. MOT\n(ohne Untergrund)")
 
 # Fits
 plt.plot(fluo.t, cool_fit.best_fit, "-", label="Fluoresz. MOT\n(Anpassung)")
-plt.plot(sig_spec.t, sig_spec_fit.best_fit / 10.0 - 0.6, "-", label="Rb Spektrum\n(Anpassung)")
+plt.plot(sig_spec.t, sig_spec_fit.best_fit / 10.0 - 0.6, "-", label="Rb-Spektrum\n(Anpassung)")
 
 
 # Vertical line at transition

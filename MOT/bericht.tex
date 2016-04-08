@@ -366,6 +366,7 @@ Durch die Anpassung wurde demnach der Strahlradius~$w$ zu \SI{2.826 +- 0.089}{mm
 
 
 \subsubsection{Bestimmung der Anzahl der gefangenen Atome}
+\label{sec:atomzahl}
 \korr{TODO: Detuning fehlt}
 
 
@@ -576,12 +577,55 @@ Der in diesem Versuch bestimmte Wert fällt ebenfalls in diesen Bereich, sollte 
 
 
 \subsection{Verstimmung der Laserfrequenzen}
+Letztlich soll die Fluoreszenz der magneto-optischen Falle in Abhängigkeit der Frequenz von Kühllaser sowie Pumplaser untersucht werden.
+Dazu wird jeweils einer der Laser mithilfe der Lockbox auf eine bestimmte Frequenz festgelegt, während der andere im Scan-Modus mit einer Frequenz von \SI{20}{mHz} betrieben wird.
+Dadurch wird die Frequenz des Lasers in Abhängigkeit von Scan-Offset und Amplitude über einen kleinen Bereich variiert und mithilfe einer Photodiode kann die Fluoreszenz der MOT gemessen werden.
+Dabei ist es wichtig die Scan-Frequenz so klein zu wählen, dass die Periode des Scan-Signals wesentlich kleiner als die typische Ladezeit von etwa \SI{0.1}{s} der MOT.
+Darüber hinaus wird eine Untergrundmessung mit deaktiviertem Magnetfeld durchgeführt, um die Fluoreszenz des heißen Hintergrundgases entfernen zu können.
+Dieser Untergrund kann mithilfe des Spektrums aus der Rb-Spektroskopie an das Fluoreszenzsignal der MOT angepasst werden und folglich abgezogen werden.
 
-\begin{figure}
+\subsubsection{Variation der Kühllaserfrequenz}
+Zunächst wird die Frequenz des Pumplasers fixiert, indem die Scan-Amplitude minimiert wird und mithilfe des Scan-Offset der Pumpübergang auf Resonanz gestellt wird.
+Im Gegensatz zum Kühllaser konnte der Pumplaser aufgrund eines stark Verrauschten Fehlersignals nicht mithilfe der Rückkopplungsschleife fixiert werden.
+Anschließend wird der Scan-Bereich des Kühllasers auf die Umgebung des Kühlübergangs eingestellt und mithilfe des Oszilloskops kann sowohl die Rb-Spektroskopie sowie das Fluoreszenzsignal der Photodiode dargestellt werden.
+Nun kann die Fluoreszenz der MOT in Abhängigkeit der Verstimmung des Kühllasers gemessen werden.
+Dazu wird jeweils eine Messung mit und eine ohne Magnetfeld durchgeführt, um die Hintergrundfluoreszenz in der Analyse entfernen zu können.
+
+In Abbildung~\ref{fig:detuning_cooling} wurde sowohl das Rb-Spektrum, als auch das Fluoreszenzsignal der MOT und dessen Untergrund dargestellt.
+Weiterhin wurde das Signal nach Subtraktion des Untergrundes dargestellt.
+An das Signal der Rb-Spektroskopie wurde folglich eine Kurve bestehend aus drei Lorentz-Kurven und einem polynomialen Untergrund 4.\ Ordnung angepasst.
+Dies ermöglicht die Bestimmung der Frequenzen der drei Übergänge und wurde genutzt um das Untergrundsignal an das Fluoreszenzsignal der MOT anzupassen und folglich von diesem abzuziehen.
+Darüber hinaus können die bekannten Frequenzen der Übergänge genutzt werden um eine Frequenzeichung durchzuführen.
+Dazu nutzt man die Verstimmung $\delta_{1,2}$ der beiden Übergänge (im Spektrum links) gegenüber dem Kühlübergang, welche in \cite{script} gegeben ist durch $\delta_1 = \SI{-92.0}{MHz}$ und $\delta_2 = \SI{-60.3}{MHz}$.
+Schließlich wird an das Fluoreszenzsignal, welches bereits vom Untergrund bereinigt wurde, eine Gauß-Funktion angepasst, welche die Zentralfrequenz und somit die Rotverstimmung gegenüber dem Kühlübergang liefert.
+\begin{figure}[h]
 	\centering
 	\includegraphics{./figures/detuning_cooling.pdf}
-	\caption{Cooling Laser}
+	\caption{Darstellung des Rubidium-Spektrums und der MOT-Fluoreszenz in Abhängigkeit der Verstimmung des Kühllasers. An das Spektrum wurde eine Funktion aus drei Lorentz-Kurven und einem polynomialen Untergrund 4.\ Ordnung angepasst und an das Fluoreszenzsignal der MOT eine Gauß-Kurve.}
+	\label{fig:detuning_cooling}
 \end{figure}
+Im Folgenden soll auf eine Angabe sämtlicher Anpassungsparameter verzichtet werden und nur die Parameter erwähnt werden, die für die weitere Auswertung relevant sind.
+Zum einen ist dies die Verstimmung für optimale MOT-Operation, welche aus dem Abstand des Mittelpunkts der Gauß-Kurve, welche an das Fluoreszenzsignal der MOT angepasst wurde, zu dem Zentrum der Lorentz-Kurve des Kühlübergangs.
+Diese Verstimmung beträgt demnach
+\begin{align*}
+	\delta = \SI{-11.6 +- 0.4}{MHz} \, \text{,}
+\end{align*}
+wobei das negative Vorzeichen die erwartete Rotverschiebung signalisiert.
+Diese Verstimmung wurde bereits in Abschnitt~\ref{sec:atomzahl} genutzt, um die Anzahl der gefangenen Atome in der Falle zu bestimmen.
+Die für den Betrieb einer magneto-optischen Falle optimale Verstimmung~$\delta_\mathrm{opt.}$ ist gegeben durch
+\begin{align*}
+	\delta_\mathrm{opt.} = -\frac{\Gamma}{2} \, \text{,}
+\end{align*}
+wobei~$\Gamma$ die natürliche Linienbreite des Kühlübergangs beschreibt \cite{foot}.
+Die Linienbreite kann aus der vollen Halbwertsbreite der Lorentz-Kurve an den jeweiligen Übergang gewonnen werden und man erhält für den Kühlübergang
+\begin{align*}
+	\Gamma = \SI{25.7 +- 1.0}{MHz}
+\end{align*}
+und folglich für die optimale Verstimmung
+\begin{align*}
+	\delta_\mathrm{opt.} = \SI{-12.8 +- 0.5}{MHz} \, \text{.}
+\end{align*}
+
 
 
 
@@ -613,7 +657,16 @@ Der in diesem Versuch bestimmte Wert fällt ebenfalls in diesen Bereich, sollte 
 	A.\ M.\ Steane, M.\ Chowdhury, C.\ J.\ Foot,
 	\emph{Radiation force in the magneto-optical trap},
 	J.\ Opt.\ Soc.\ Am.\ B \textbf{9}, 2142 (1992).
-	
+
+\bibitem{script}
+	Skript zum Versuch,
+	\emph{FP Experiment: Rubidium MOT},
+	(Stand: Januar 2014).
+
+\bibitem{foot}
+	C.\ J.\ Foot,
+	\emph{Atomic Physics},
+	Oxford University Press, 2005.
 \end{thebibliography}
 
 % APPENDIX
