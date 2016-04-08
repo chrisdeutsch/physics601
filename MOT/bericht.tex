@@ -215,16 +215,16 @@ Somit erhält man durch die gezielte Einstrahlung von polarisiertem Licht, welch
 
 In diesem Versuch soll das Rubidiumisotop \isotope[85]{Rb} eingefangen werden.
 Dazu ist es nötig, detaillierte Informationen über das Niveauschema und die Übergänge dieser Atome zu haben, um den optimalen Übergang zum Kühlen und Fangen der Atome auszuwählen.
-Es eignet sich der Übergang $F=3 \rightarrow F^\prime=4$, da dieser beinahe abgeschlossen ist \korr{das ist abgeschlossen nicht nur beinahe}, d.h. dass das Atom durch Abregung vom Zustand $F^\prime=4$ beinahe ausschließlich in den Zustand $F=3$ übergeht \korr{das geht immer in den zustand über}.
-Dieser Übergang entspricht einer Wellenlänge von \SI{780.25}{nm}, so dass ein entsprechender Laser zur resonanten Anregung gewählt wird \korr{Nicht Resonant -> Detuning}.
-Da jedoch in einigen seltenen Fällen auch eine Anregung in die Niveaus $F^\prime=2$, $F^\prime=3$ möglich ist, die in den $F=2$ Zustand übergehen können und die Atome so das abgeschlossene System zur Kühlung verlassen, wird zusätzlich ein sogenannter Pumplaser eingesetzt, der die Atome aus diesem Zustand auf das $F^\prime=3$ Niveau anhebt, von wo aus sie wieder am Kühlprozess teilnehmen können\korr{Die nehmen noch nicht am Kühlprozess teil. Müssen erst wieder in das untere Niveau des Kühlübergangs zerfallen und das passiert nicht immer.}.
+Es eignet sich der Übergang $F=3 \rightarrow F^\prime=4$, da dieser abgeschlossen ist, d.h. dass das Atom durch Abregung vom Zustand $F^\prime=4$ ausschließlich in den Zustand $F=3$ übergeht.
+Dieser Übergang entspricht einer Wellenlänge von \SI{780.25}{nm}, so dass ein entsprechender Laser gewählt wird, der diesem Übergang gegenüber rotverstimmt ist.
+Da jedoch in einigen seltenen Fällen auch eine Anregung in die Niveaus $F^\prime=2$, $F^\prime=3$ möglich ist, die in den $F=2$ Zustand übergehen können und die Atome so das abgeschlossene System zur Kühlung verlassen, wird zusätzlich ein sogenannter Pumplaser eingesetzt, der die Atome aus diesem Zustand auf das $F^\prime=3$ Niveau anhebt, von wo aus sie zu einem Großteil in das untere Niveau des Kühlübergangs mit $F=3$ zerfallen und wieder am Kühlprozess teilnehmen.
 \korr{Niveauschema hierhin} 
 
 \subsection{Lasersystem}
 
 Wie in Abschnitt \ref{sec:rb_uebergaenge} erwähnt, werden zum Betrieb der magneto-optischen Falle zwei Laser benötigt, die auf die entsprechenden Frequenzen für den Kühl- und Pumplaser eingestellt werden müssen.
-Hierzu werden zwei Diodenlaser in Littrow-Konfiguration genutzt, d.h. das emittierte Laserlicht wird kollimiert und trifft auf ein Reflexionsgitter, welches so in den Strahlengang gebracht wird \korr{Ich glaube das ist egal wie es steht. Die erste Ordnung geht immer zurück in den Laser}, dass die Beugung der~-1.~Ordnung zurückreflektiert wird und somit einen externen Resonator bildet, während das Licht, welches in~0.~Ordnung gebeugt wird, ausgekoppelt wird.
-Durch ein elektrisch anteuerbares Piezo-Element kann das Gitter gedreht und somit die Resonatorlänge und damit die Frequenz des ausgekoppelten Lichts geändert werden.
+Hierzu werden zwei Diodenlaser in Littrow-Konfiguration genutzt, d.h. das emittierte Laserlicht wird kollimiert und trifft auf ein Reflexionsgitter, welches die Beugung der~-1.~Ordnung zurückreflektiert und somit einen externen Resonator bildet, während das Licht, welches in~0.~Ordnung gebeugt wird, ausgekoppelt wird.
+Durch ein elektrisch ansteuerbares Piezo-Element kann das Gitter gedreht und somit die Resonatorlänge und damit die Frequenz des ausgekoppelten Lichts geändert werden.
 \korr{evtl Bild von Littrow}
 
 Da die nötigen Frequenzen möglichst genau auf die Übergänge im Rubidium abgestimmt sein müssen, wird ein Teil des Laserlichts zu Spektroskopiezwecken mit Rubidium verwendet.
@@ -238,16 +238,18 @@ Dieses lässt sich dadurch erklären, dass die Atome Raumtemperatur haben und si
 Aufgrund der Dopplerverschiebung interagieren die Laser immer mit Atomen einer bestimmten Geschwindigkeitsklasse, abhängig von der Bewegungsrichtung der Atome relativ zum Laserstrahl.
 Diese Bewegung ist für die Dopplerverschiebung verantwortlich und erklärt die Abflachung des Signals.
 Das Maximum, auch Lamb-Dip genannt, ergibt sich durch Atome, die sich in einer Ebene senkrecht zu den Laserstrahlen bewegen.
-Die Dopplerverschiebung verschwindet hier, so dass der Pumpstrahl und Teststrahl mit der gleichen Frequenz im Ruhesystems des Atoms strahlen und der Übergang somit gesättigt wird \korr{durch den Pumpstrahl}, weswegen der Teststrahl keinen Intensitätsverlust erfährt.
+Die Dopplerverschiebung verschwindet hier, so dass der Pumpstrahl und Teststrahl mit der gleichen Frequenz im Ruhesystems des Atoms strahlen und der Übergang somit durch den Pumpstrahl gesättigt wird, weswegen der Teststrahl keinen Intensitätsverlust erfährt.
 Die natürliche Linienbreite kann auf diese Weise beobachtet werden.
 
-In der Polarisationsspektroskopie wird der Pumpstrahl zirkularpolarisiert, so dass die $m_J=\pm1$ \korr{Beide oder nur einer? -> nur einer} Niveaus gesättigt werden.
-Diese anisotrope Besetzung ist dafür verantwortlich, dass das Rubidiumgas doppelbrechend wird und die lineare Polarisation des Teststrahls beim Durchgang um einen Winkel $\alpha$ gedreht wird.
-\korr{Änderung des Brechungsindex für was? Unterschiedliche Brechungsindizes für die verschiedenen Zirkularpolarisationen -> optische Aktivität.}
-Dieser Winkel ist abhängig von der Änderung des Brechungsindex, die über die Kramers-Kronig-Relation mit dem Absorptionsprofil zusammenhängt \korr{scheiß Relation irgendwie erläutern} \korr{Ich seh selber keine Relevanz der Relation für unser Protokoll -> raus damit}.
+In der Polarisationsspektroskopie wird der Pumpstrahl zirkularpolarisiert, so dass eines der $m_J=\pm1$ Niveaus, abhängig von der eingestrahlten Polarisation, gesättigt wird.
+Diese anisotrope Besetzung ist dafür verantwortlich, dass das Rubidiumgas für die verschiedenen Zirkularpolarisationen doppelbrechend (optisch aktiv) wird und die lineare Polarisation des Teststrahls beim Durchgang um einen Winkel $\alpha$ gedreht wird.
+Dieser Winkel ist abhängig von der Änderung des Brechungsindex, die mit dem Absorptionsprofil zusammenhängt.
 Durch einen Polarisator und einen Analysator \korr{Das ist der PBS} vor und hinter der Rubidiumkammer kann detektiert werden, ob die Polarisation des Teststrahls gedreht wurde.
-Dazu wird der Strahl durch einen polarisierenden Strahlteiler geteilt, wobei beide Strahlen das bekannte Spektrum der Sättigungsspektroskopie aufweisen.
-Durch Subtraktion der beiden Spektren kann ein Signal generiert werden \korr{Was ist das gute an dem Signal? Vorallem im Vgl.\ zur Sättigungsspek.}, mit dem eine Rückkopplungsschleife betrieben wird \korr{Lockbox erwähnen}, die das Piezoelement am Reflexionsgitter ansteuert, um die Frequenz des Lasers anzupassen.
+Den Analysator bildet ein polarisierender Strahlteiler, durch den der Strahl geteilt, wobei beide Strahlen das bekannte Spektrum der Sättigungsspektroskopie aufweisen.
+Durch Subtraktion der beiden Spektren kann ein Signal generiert werden, mit dem eine Rückkopplungsschleife zur Stabilisierung der Frequenz betrieben wird.
+Das Signal ist hierzu besonders gut geeignet, da die Signalhöhe proportional zur Frequenz ist.
+Mithilfe eine Lockbox kann nun durch Wahl von einer Scanamplitude und einem Scanoffset ein Frequenzbereich eingestellt werden, für den die Polarisationsspektroskopie durchgeführt wird, um so ein Fehlersignal zu erzeugen, welches ein Piezoelement am Reflexionsgitter des Diodenlasers ansteuert.
+Durch Änderung der Resonatorlänge wird somit die Frequenz des Lasers angepasst, wenn diese von der gewünschten, über die Lockbox eingestellte Frequenz, abweicht.
 Dadurch ist es möglich, die Frequenz des Lasers mit hoher Genauigkeit einzustellen und Temperaturdrifts und anderen äußeren Einflüssen, die eine Änderung der Frequenz hervorrufen, entgegenzuwirken.
 
 \section{Aufbau der MOT}
