@@ -180,10 +180,10 @@ plt.tick_params(axis="y", which="both", left="off", right="off", labelleft="off"
 
 
 # Daten
-plt.plot(sig_spec.t, sig_spec.I / 10.0 - 0.6, "o", label="Rb-Spektrum")
-plt.plot(sig_fluo.t, sig_fluo.I + 0.1, "o", label="Fluoresz. MOT\n(mit Untergrund)")
-plt.plot(bg_fluo.t, bg_fluo.I + 0.1, "o", label="Fluoresz.\nUntergrund")
-plt.plot(fluo.t, fluo.I, "o", label="Fluoresz. MOT\n(ohne Untergrund)")
+plt.plot(sig_spec.t, sig_spec.I / 10.0 - 0.6, "+", label="Rb-Spektrum", markersize=2.0, markeredgewidth=0.5)
+plt.plot(sig_fluo.t, sig_fluo.I + 0.1, "+", label="Fluoresz. MOT\n(mit Untergrund)", markersize=2.0, markeredgewidth=0.5)
+plt.plot(bg_fluo.t, bg_fluo.I + 0.1, "+", label="Fluoresz.\nUntergrund", markersize=2.0, markeredgewidth=0.5)
+plt.plot(fluo.t, fluo.I, "+", label="Fluoresz. MOT\n(ohne Untergrund)", markersize=2.0, markeredgewidth=0.5)
 
 # Fits
 plt.plot(fluo.t, cool_fit.best_fit, "-", label="Fluoresz. MOT\n(Anpassung)")
@@ -194,7 +194,7 @@ plt.plot(sig_spec.t, sig_spec_fit.best_fit / 10.0 - 0.6, "-", label="Rb-Spektrum
 plt.axvline(x=cooling_transition.n, c="k", zorder=1)
 plt.axvline(x=cooling_freq.n, c="k", zorder=1, ls=":")
 
-plt.legend(loc="lower left", framealpha=0.85, fontsize=9)
+plt.legend(loc="lower left", framealpha=0.85, fontsize=7, markerscale=2.0)
 
 
 # Scaled axis
@@ -204,7 +204,7 @@ ax2.set_xlim(ax1.get_xlim())
 
 tic_loc = detuning_inverse(np.arange(-130, 20, 10))
 ax2.set_xticks(tic_loc)
-ax2.set_xticklabels(np.arange(-130, 20, 10), fontsize=9)
+ax2.set_xticklabels(np.arange(-130, 20, 10), fontsize=7)
 ax2.set_xlabel(r"Verstimmung $\delta$ / \si{MHz}")
 
 
