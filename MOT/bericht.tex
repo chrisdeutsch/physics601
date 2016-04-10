@@ -158,23 +158,23 @@ Ein solcher Aufbau kann durch eine sogenannte magneto-optische Falle realisiert 
 
 \section{Theorie}
 
-\korr{Hier noch kurze Einführung}
-
-\begin{figure}
-	\centering
-	\includegraphics{./figures/theory/streukraft.pdf}
-	\caption{Streukraft}
-\end{figure}
+Im Folgenden soll grob das nötige Hintergrundwissen zum Aufbau und Betrieb einer magneto-optischen Falle gegeben werden, dies betrifft das Kühlen und Fangen der Atome, sowie die Konfiguration der Laser.
+Darüber hinaus werden auch die Notwendigkeiten zum Fangen von \isotope[85]{Rb} Atomen, wie in dem durchzuführenden Versuch, betrachtet.
 
 \subsection{Laserkühlung}
-\korr{Wie ist der Zusammenhang zu dem Bild?}
 
 Zum Kühlen der Atome wird Laserlicht genutzt und insbesondere der Impulsübertrag von Photonen auf Atome ausgenutzt.
 Der Impuls $\hbar k$ eines Photons mit der Wellenzahl $k$ kann von einem Atom absorbiert werden.
-Die aus der Absorption gewonnene Energie des Atoms kann dieses in ein energetisch höher gelegenes Niveau anregen, wobei die Richtung des bei der anschließenden spontanen Emission entstehenden Photons zufällig ist.
+Die aus der Absorption gewonnene Energie des Atoms kann dieses in ein energetisch höher gelegenes Niveau anregen, wobei die Richtung des bei der anschließenden spontanen Emission entstehenden Photons zufällig ist, siehe auch Abbildung \ref{fig:streukraft}.
+\begin{figure}[h]
+	\centering
+	\includegraphics{./figures/theory/streukraft.pdf}
+	\caption{Impulsübertrag eines Photons auf ein zu kühlendes Atom. Oben: Laserlicht wird entgegen der Flugrichtung des Atoms eingestrahlt. Mitte: durch Absorption nimmt der Impuls des Atoms ab und dieses wird angeregt. Unten: die Richtung des in Folge der Abregung emittierten Photons ist zufällig, das Atom erfährt erneut einen Impulsübertrag.}
+	\label{fig:streukraft}
+\end{figure}
 Für eine hohe Anzahl einfallender Photonen ist die Emission und der bei der Abregung entstehende Impulsübertrag isotrop, weswegen bei kontinuierlicher Bestrahlung durch einen Laser ein Nettoimpulsübertrag auftritt.
 
-Ein sich bewegendes Atom nimmt aufgrund seiner Geschwindigkeit $v$ das Laserlicht wegen des Dopplereffekts mit einer um $kv$ verschobenen Frequenz gegenüber der im Laborsystem wahr.
+Ein sich bewegendes Atom nimmt jedoch aufgrund seiner Geschwindigkeit $v$ das Laserlicht wegen des Dopplereffekts mit einer um $kv$ verschobenen Frequenz gegenüber der im Laborsystem wahr.
 Eine Kühlung ist daher nur möglich, wenn der Laser bezüglich des Energieabstands der beiden Niveaus, die zum Kühlen verwendet werden, rotverstimmt ist, das heißt eine geringere Frequenz hat.
 Aufgrund des Dopplereffekts nimmt ein Atom, welches sich also entgegen der Richtung des Laserstrahls bewegt, das Licht des Laser mit einer Frequenz wahr, welche das Atom in den angeregten Zustand versetzt.
 Durch die Absorption des Photons, deren Impulsübertrag immer in die gleiche Richtung zeigt und die isotrope Emission wird ein Atom, welches sich entgegen der Richtung des Laserstrahls bewegt, gekühlt.
@@ -216,29 +216,37 @@ Somit erhält man durch die gezielte Einstrahlung von polarisiertem Licht, welch
 In diesem Versuch soll das Rubidiumisotop \isotope[85]{Rb} eingefangen werden.
 Dazu ist es nötig, detaillierte Informationen über das Niveauschema und die Übergänge dieser Atome zu haben, um den optimalen Übergang zum Kühlen und Fangen der Atome auszuwählen.
 Es eignet sich der Übergang $F=3 \rightarrow F^\prime=4$, da dieser abgeschlossen ist, d.h. dass das Atom durch Abregung vom Zustand $F^\prime=4$ ausschließlich in den Zustand $F=3$ übergeht.
-Dieser Übergang entspricht einer Wellenlänge von \SI{780.25}{nm}, so dass ein entsprechender Laser gewählt wird, der diesem Übergang gegenüber rotverstimmt ist.
-Da jedoch in einigen seltenen Fällen auch eine Anregung in die Niveaus $F^\prime=2$, $F^\prime=3$ möglich ist, die in den $F=2$ Zustand übergehen können und die Atome so das abgeschlossene System zur Kühlung verlassen, wird zusätzlich ein sogenannter Pumplaser eingesetzt, der die Atome aus diesem Zustand auf das $F^\prime=3$ Niveau anhebt, von wo aus sie zu einem Großteil in das untere Niveau des Kühlübergangs mit $F=3$ zerfallen und wieder am Kühlprozess teilnehmen.
-\korr{Niveauschema hierhin} 
+Dieser Übergang entspricht einer Wellenlänge von \SI{780.25}{nm} \cite{steck}, so dass ein Laser gewählt wird, der diesem Übergang gegenüber rotverstimmt ist.
+Da jedoch in einigen seltenen Fällen auch eine Anregung in die Niveaus $F^\prime=2$, $F^\prime=3$ geschieht, die in den $F=2$ Zustand übergehen können und die Atome so das abgeschlossene System zur Kühlung verlassen, wird zusätzlich ein sogenannter Pumplaser eingesetzt, der die Atome aus diesem Zustand auf das $F^\prime=3$ Niveau anhebt, von wo aus sie zu einem Großteil in das untere Niveau des Kühlübergangs mit $F=3$ zerfallen und wieder am Kühlprozess teilnehmen.
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.65\textwidth]{./figures/theory/schema}
+	\caption{Niveauschema von \isotope[85]{Rb} (aus \cite{script}).}
+\end{figure}
 
 \subsection{Lasersystem}
 
 Wie in Abschnitt \ref{sec:rb_uebergaenge} erwähnt, werden zum Betrieb der magneto-optischen Falle zwei Laser benötigt, die auf die entsprechenden Frequenzen für den Kühl- und Pumplaser eingestellt werden müssen.
 Hierzu werden zwei Diodenlaser in Littrow-Konfiguration genutzt, d.h. das emittierte Laserlicht wird kollimiert und trifft auf ein Reflexionsgitter, welches die Beugung der~-1.~Ordnung zurückreflektiert und somit einen externen Resonator bildet, während das Licht, welches in~0.~Ordnung gebeugt wird, ausgekoppelt wird, siehe Abbildung~\ref{fig:littrow}.
 Durch ein elektrisch ansteuerbares Piezo-Element kann das Gitter gedreht und somit die Resonatorlänge und damit die Frequenz des ausgekoppelten Lichts geändert werden.
-\begin{figure}[h]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=.7\textwidth]{./figures/theory/littrow}
 	\caption{Littrow-Anordnung für einen Diodenlaser. Die -1. Ordnung wird retroreflektiert, während die 0. Ordnung ausgekoppelt und für den Aufbau eines optischen Systems genutzt wird.}
 	\label{fig:littrow}
 \end{figure}
-
 Da die nötigen Frequenzen möglichst genau auf die Übergänge im Rubidium abgestimmt sein müssen, wird ein Teil des Laserlichts zu Spektroskopiezwecken mit Rubidium verwendet.
 Als Spektroskopieverfahren kommt die Polarisationsspektroskopie zum Einsatz, die eine Erweiterung der dopplerfreien Sättigungsspektroskopie darstellt.
 Dabei wird der Lichtstrahl in einen Pumpstrahl mit hoher Intensität und einen Teststrahl mit geringerer Intensität aufgespalten, die in ungefähr entgegengesetzter Richtung eine Kammer mit Rubidiumatomen durchlaufen.
 Während der Pumplaser den gewählten Übergang sättigt, d.h. möglichst viele Atome in den angeregten Zustand bringt, wird die Intensität des Teststrahls beobachtet.
 Diese ist hoch, wenn der Übergang vollständig durch den Pumpstrahl gesättigt ist und gering, wenn Atome durch den Teststrahl angeregt werden \korr{Hier vllt ne kurze Erklärung}.
-In Abhängigkeit von der Frequenz aufgetragen ergibt sich ein Intensitätsverlauf wie in Abbildung \korr{ref}.
-\korr{Bild von Sättigungssignal}
+In Abhängigkeit von der Frequenz aufgetragen ergibt sich ein Intensitätsverlauf wie in Abbildung \ref{fig:saturation}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.8\textwidth]{./figures/theory/saturation}
+	\caption{Transmissionsspektrum des Teststrahls in der Sättigungsspektroskopie. Aufgrund des Dopplereffekts ist eine Senke um \SI{0}{MHz} zu beobachten, in der das dopplerfreie Maximum des betrachteten Übergangs (Lamb-Dip) liegt. \korr{Quelle: nach bla}}
+	\label{fig:saturation}
+\end{figure}
 Dieses lässt sich dadurch erklären, dass die Atome Raumtemperatur haben und sich somit sehr schnell bewegen.
 Aufgrund der Dopplerverschiebung interagieren die Laser immer mit Atomen einer bestimmten Geschwindigkeitsklasse, abhängig von der Bewegungsrichtung der Atome relativ zum Laserstrahl.
 Diese Bewegung ist für die Dopplerverschiebung verantwortlich und erklärt die Abflachung des Signals.
@@ -249,8 +257,8 @@ Die natürliche Linienbreite kann auf diese Weise beobachtet werden.
 In der Polarisationsspektroskopie wird der Pumpstrahl zirkularpolarisiert, so dass eines der $m_J=\pm1$ Niveaus, abhängig von der eingestrahlten Polarisation, gesättigt wird.
 Diese anisotrope Besetzung ist dafür verantwortlich, dass das Rubidiumgas für die verschiedenen Zirkularpolarisationen doppelbrechend (optisch aktiv) wird und die lineare Polarisation des Teststrahls beim Durchgang um einen Winkel $\alpha$ gedreht wird.
 Dieser Winkel ist abhängig von der Änderung des Brechungsindex, die mit dem Absorptionsprofil zusammenhängt.
-Durch einen Polarisator und einen Analysator \korr{Das ist der PBS} vor und hinter der Rubidiumkammer kann detektiert werden, ob die Polarisation des Teststrahls gedreht wurde.
-Den Analysator bildet ein polarisierender Strahlteiler, durch den der Strahl geteilt, wobei beide Strahlen das bekannte Spektrum der Sättigungsspektroskopie aufweisen.
+Durch einen Polarisator und einen Analysator vor und hinter der Rubidiumkammer kann detektiert werden, ob die Polarisation des Teststrahls gedreht wurde.
+Den Analysator bildet ein polarisierender Strahlteiler, durch den der Strahl geteilt wird, wobei beide Strahlen das bekannte Spektrum der Sättigungsspektroskopie aufweisen.
 Durch Subtraktion der beiden Spektren kann ein Signal generiert werden, mit dem eine Rückkopplungsschleife zur Stabilisierung der Frequenz betrieben wird.
 Das Signal ist hierzu besonders gut geeignet, da die Signalhöhe proportional zur Frequenz ist.
 Mithilfe eine Lockbox kann nun durch Wahl von einer Scanamplitude und einem Scanoffset ein Frequenzbereich eingestellt werden, für den die Polarisationsspektroskopie durchgeführt wird, um so ein Fehlersignal zu erzeugen, welches ein Piezoelement am Reflexionsgitter des Diodenlasers ansteuert.
@@ -267,8 +275,8 @@ Als Hilfe dienten die dargestellten Spektren in \cite{anleitung} für das \isoto
 Der Kühllaser wurde auf den Übergang $F=3 \rightarrow F^\prime=4$ eingestellt, indem durch Änderung der Scanamplitude und des Scanoffsets das in der Polarisationspsketroskopie beobachtete Fehlersignal einen Nulldurchgang bei einer leichten Rotverschiebung gegenüber des gewünschten Rubidiumübergangs zeigt.
 Durch fixieren dieses Signals mit dem Lock-Schalter an der Lockbox wird die Rückkopplungsschleife betrieben, die das Gitter am Diodenlaser ansteuert und damit die Frequenz reguliert.
 
-Der Pumplaser wurde auf die gleiche Weise auf den $F=2 \rightarrow F^\prime=3$ Übergang eingestellt, jedoch kann dieser Laser nicht über eine Rückkopplungsschleife auf eine Frequenz fixiert werden \korr{Wir haben beide Übergänge ->2 und ->3 im im Scan. Die 2 kann auch nach 3 zerfallen und ist somit im Kühlkreislauf}.
-Da dieses Signal jedoch nicht mit der gleichen Genauigkeit wie beim Kühllaser eingestellt werden muss, ist ein Betrieb der Falle trotzdem möglich.
+Der Pumplaser wurde auf die gleiche Weise auf die Übergänge $F=2 \rightarrow F^\prime=3$ und $F=2 \rightarrow F^\prime = 2$ eingestellt, indem die Frequenzen beider Übergänge in dem durchfahrenen Frequenzbereich liegen, da der Zustand mit $F^\prime = 2$ auch zu $F=3$ zerfallen kann und so wieder dem Kühlkreislauf zugeführt wird.
+Dieser Laser kann nicht über eine Rückkopplungsschleife auf eine Frequenz fixiert werden, es ist jedoch ein Betrieb der Falle  möglich, da das Signal nicht mit der gleichen Genauigkeit wie beim Kühllaser eingestellt werden muss.
 
 \subsection{Justage der Laser an der Vakuumkammer}
 
