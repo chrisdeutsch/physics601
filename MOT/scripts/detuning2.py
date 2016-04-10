@@ -161,9 +161,9 @@ ax1 = plt.gca()
 ax2 = ax1.twiny()
 ax2.set_xlim(ax1.get_xlim())
 
-tic_loc = detuning_inverse(np.arange(-40, 140, 10))
+tic_loc = detuning_inverse(np.arange(-40, 130, 10))
 ax2.set_xticks(tic_loc)
-ax2.set_xticklabels(np.arange(-40, 140, 10), fontsize=7)
+ax2.set_xticklabels(np.arange(-40, 130, 10), fontsize=7)
 ax2.set_xlabel(r"Verstimmung $\delta$ / \si{MHz}")
 
 
