@@ -70,6 +70,12 @@ fluo_fit = model.fit(I, x=t,
                      L2_amplitude=0.4, L2_sigma=3.0, L2_center=14.4,
                      bg_c0=0.0, bg_c1=0.0, bg_c2=0.0, bg_c3=0.0, bg_c4=0.0)
 
+# Peak positions
+fluo_params = fluo_fit.params
+fl_left = ufloat(fluo_params["L1_center"].value, fluo_params["L1_center"].stderr)
+fl_right = ufloat(fluo_params["L2_center"].value, fluo_params["L2_center"].stderr)
+fl_right += 0.30
+
 
 # PSEUDOSIGNAL:
 lorentzian = L1.func
@@ -97,6 +103,33 @@ spec_fit = model.fit(I, x=t,
                      L2_amplitude=0.55, L2_sigma=2.0, L2_center=10.7,
                      bg_c0=0.0, bg_c1=0.0, bg_c2=0.0, bg_c3=0.0, bg_c4=0.0)
 
+# Peak positions
+spec_params = spec_fit.params
+left = ufloat(spec_params["L1_center"].value, spec_params["L1_center"].stderr)
+right = ufloat(spec_params["L2_center"].value, spec_params["L2_center"].stderr)
+
+# Frequency between both peaks
+freq = 17.0 + 14.7 # MHz
+freq_prop = freq / (right - left)
+
+def detuning(t):
+    ret = t - left.n
+    ret *= freq_prop.n
+    return ret
+
+def detuning_inverse(f):
+    t = f
+    t = t / freq_prop.n
+    t += left.n
+    return t
+
+# detunings
+detuning_left = fl_left - left
+detuning_right = fl_right - left
+
+detuning_left *= freq_prop
+detuning_right *= freq_prop
+
 
 # Plot
 plt.xlim(2.1, 22.3)
@@ -117,7 +150,21 @@ plt.plot(fluo.t, fluo.I, "+", label="Fluoresz. MOT\n(ohne Untergrund)", markersi
 plt.plot(fluo.t, fluo_fit.best_fit, "-", label="Fluoresz. MOT\n(Anpassung)")
 plt.plot(t, spec_fit.best_fit + 1.22, "-", label="Rb-Spektrum\n(Anpassung)")
 
+plt.axvline(x=left.n, c="k", zorder=1)
+plt.axvline(x=fl_left.n, c="k", zorder=1, ls=":")
+plt.axvline(x=fl_right.n, c="k", zorder=1, ls=":")
+
 plt.legend(loc="upper right", framealpha=0.85, fontsize=7, markerscale=2.0)
+
+# Scaled axis
+ax1 = plt.gca()
+ax2 = ax1.twiny()
+ax2.set_xlim(ax1.get_xlim())
+
+tic_loc = detuning_inverse(np.arange(-40, 140, 10))
+ax2.set_xticks(tic_loc)
+ax2.set_xticklabels(np.arange(-40, 140, 10), fontsize=7)
+ax2.set_xlabel(r"Verstimmung $\delta$ / \si{MHz}")
 
 
 plt.tight_layout(pad=0.2)
