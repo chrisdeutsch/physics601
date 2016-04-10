@@ -203,7 +203,7 @@ Damit die Atome die Falle nicht verlassen werden, wie in Abbildung \ref{fig:magn
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.8\textwidth]{./figures/theory/mot.pdf}
-	\caption{Nutzung des Zeeman-Effekts, um eine ortsabhängige Kraft auf die zu fangenden Teilchen auszuüben.\korr{Bild ändern, Beschriftungen vergrößern}}
+	\caption{Nutzung des Zeeman-Effekts, um eine ortsabhängige Kraft auf die zu fangenden Teilchen auszuüben.}
 	\label{fig:magnetfeld}
 \end{figure}
 Für ein nach links ausgelenktes Atom, d.h. im Bereich der Magnetfeldstärke $B<0$ liegt der Zustand mit $m_J=+1$ unter dem Niveau mit $m_J=0$, so dass ein diesem Energieniveau gegenüber rotverstimmter Laser mit $\sigma^+$ Polarisation mit dem $m_J=+1$ Zustand wechselwirkt und eine Kraft in Richtung des Zentrum der Falle auf das Atom ausübt.
@@ -223,9 +223,14 @@ Da jedoch in einigen seltenen Fällen auch eine Anregung in die Niveaus $F^\prim
 \subsection{Lasersystem}
 
 Wie in Abschnitt \ref{sec:rb_uebergaenge} erwähnt, werden zum Betrieb der magneto-optischen Falle zwei Laser benötigt, die auf die entsprechenden Frequenzen für den Kühl- und Pumplaser eingestellt werden müssen.
-Hierzu werden zwei Diodenlaser in Littrow-Konfiguration genutzt, d.h. das emittierte Laserlicht wird kollimiert und trifft auf ein Reflexionsgitter, welches die Beugung der~-1.~Ordnung zurückreflektiert und somit einen externen Resonator bildet, während das Licht, welches in~0.~Ordnung gebeugt wird, ausgekoppelt wird.
+Hierzu werden zwei Diodenlaser in Littrow-Konfiguration genutzt, d.h. das emittierte Laserlicht wird kollimiert und trifft auf ein Reflexionsgitter, welches die Beugung der~-1.~Ordnung zurückreflektiert und somit einen externen Resonator bildet, während das Licht, welches in~0.~Ordnung gebeugt wird, ausgekoppelt wird, siehe Abbildung~\ref{fig:littrow}.
 Durch ein elektrisch ansteuerbares Piezo-Element kann das Gitter gedreht und somit die Resonatorlänge und damit die Frequenz des ausgekoppelten Lichts geändert werden.
-\korr{evtl Bild von Littrow}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.7\textwidth]{./figures/theory/littrow}
+	\caption{Littrow-Anordnung für einen Diodenlaser. Die -1. Ordnung wird retroreflektiert, während die 0. Ordnung ausgekoppelt und für den Aufbau eines optischen Systems genutzt wird.}
+	\label{fig:littrow}
+\end{figure}
 
 Da die nötigen Frequenzen möglichst genau auf die Übergänge im Rubidium abgestimmt sein müssen, wird ein Teil des Laserlichts zu Spektroskopiezwecken mit Rubidium verwendet.
 Als Spektroskopieverfahren kommt die Polarisationsspektroskopie zum Einsatz, die eine Erweiterung der dopplerfreien Sättigungsspektroskopie darstellt.
@@ -421,8 +426,8 @@ Um die Größe anzugeben, wurde im Anschluss bei gleicher Brennweite eine Millim
 Dadurch konnte der Längenmaßstab der Aufnahmen zu~$\SI{1}{px}=\SI{0,0377+-0,0005}{mm}$ \korr{evtl.\ Bild von der Skala} bestimmt werden.
 Entsprechend beträgt die Fläche eines Pixels dann~\SI{1.421+-0.038e-3}{mm^2}.
 Mit einem Bildbearbeitungsprogramm wurden in dem aufgenommenen Bild mehrere Abstände gegenüberliegender Punkte auf dem Rand des markierten Bereichs gemessen, da die beobachtete Atomwolke keiner einfachen geometrischen Figur ähnelt, deren Durchmesser einfach berechnet werden könnte.
-Die gemessenen Strecken wurden im Anschluss gemittelt und so ein Durchmesser von ungefähr \SI{1,47+-0,12}{mm} ermittelt werden, wobei der Fehler aus der Varianz folgt.
-Durch eine Zählung der Pixel konnte weiterhin die Fläche zu \SI{1,16+-0,2}{mm^2} bestimmt werden.
+Die gemessenen Strecken wurden im Anschluss gemittelt und so der Durchmesser zu ungefähr \SI{1,47+-0,12}{mm} bestimmt, wobei der Fehler aus der Varianz folgt.
+Durch eine Zählung der Pixel konnte weiterhin eine Fläche von \SI{1,16+-0,2}{mm^2} ermittelt werden.
 Der Fehler wurde in diesem Fall abgeschätzt aufgrund von einer möglicherweise nicht idealen Auswahl des zu vermessenden Bereichs und entspricht einer Abweichung von~\num{162} Pixeln.
 In Abbildung \ref{fig:mot_groesse} ist der untersuchte Bereich zur Bestimmung von Durchmesser und Fläche zu sehen.
 \begin{figure}[h]
@@ -455,7 +460,7 @@ Die gemessenen Werte wurden in Tabelle \ref{tab:lambda_4} zusammengefasst.
 Man sieht, dass die Stellung der $\lambda / 4$-Platte des eingehenden Strahls einen starken Einfluss auf die Fluoreszenzleistung zeigt.
 Dies liegt daran, dass diese Platte den eintreffenden linear-polarisierten Strahl in die für die Fallenoperation notwendige zirkulare Polarisation umwandelt.
 Dazu muss die Achse der Verzögerungsplatte um $\pm\SI{45}{\degree}$ gegen die Polarisation des eintreffenden Strahls verkippt sein.
-Darüber hinaus muss die richtige Zirkularpolarisation für diese Platte eingestellt werden, um den gemäß Abschnitt \korr{Theorie} erforderlichen Übergang zu treffen, der eine Operation der Falle ermöglicht.
+Darüber hinaus muss die richtige Zirkularpolarisation für diese Platte eingestellt werden, um den gemäß Abschnitt \ref{sec:rb_uebergaenge} erforderlichen Übergang zu treffen, der eine Operation der Falle ermöglicht.
 
 In Abbildung \ref{fig:lambda_4_inc} sieht man, dass die Fluoreszenzleistung ein breites Minimum um einen Winkel der Verzögerungsplatte von \SI{80}{\degree} aufweist.
 An dieser Stelle weist der Strahl gerade die falsche Zirkularpolarisation für das Fangen der Rubidiumatome auf.
