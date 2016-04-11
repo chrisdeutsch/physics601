@@ -136,7 +136,7 @@ plt.xlim(2.1, 22.3)
 plt.ylim(0.0, 0.28)
 
 plt.xlabel(r"Zeit $t$ / \si{s}")
-plt.ylabel(r"Photodiodensignal / beliebige Einheiten")
+plt.ylabel(r"Signal / beliebige Einheiten")
 
 plt.tick_params(axis="y", which="both", left="off", right="off", labelleft="off")
 
