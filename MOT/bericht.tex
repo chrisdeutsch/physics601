@@ -598,6 +598,7 @@ wobei der Fehler aus der Stichprobenvarianz abgeschätzt wird.
 \subsubsection{Bestimmung des Rb-Rb Wirkungsquerschnittes}
 Anschließend kann die Messung der mittleren Zeitkonstante~$\bar{\tau}$ dazu genutzt werden den Wirkungsquerschnitt von Rb-Rb Kollisionen zu berechnen.
 Dies ist möglich, da gemäß \cite{wieman} die Zeitkonstante des Aufladeprozesses ebenfalls der mittleren Zeit entspricht, die ein Rubidiumatom in der Falle gefangen bleibt.
+Diese werden vorzüglich durch Kollisionen mit dem heißen Hintergrundgas aus der Falle entfernt.
 Demnach kann die Zeitkonstante unter Vernachlässigung weiterer Spurengase durch 
 \begin{align*}
 	\frac{1}{\tau} = n_\mathrm{Rb}  \sigma_\mathrm{Rb}  v_\mathrm{Rb}
@@ -653,13 +654,14 @@ Dieser Untergrund kann mithilfe des Spektrums aus der Rb-Spektroskopie an das Fl
 \subsubsection{Variation der Kühllaserfrequenz}
 \label{sec:detuning_cooling}
 Zunächst wird die Frequenz des Pumplasers fixiert, indem die Scan-Amplitude minimiert und mithilfe des Scan-Offset der Pumpübergang auf Resonanz gestellt wird.
-Im Gegensatz zum Kühllaser konnte der Pumplaser aufgrund eines stark Verrauschten Fehlersignals nicht mithilfe der Rückkopplungsschleife fixiert werden.
+Im Gegensatz zum Kühllaser konnte der Pumplaser aufgrund eines stark verrauschten Fehlersignals nicht mithilfe der Rückkopplungsschleife fixiert werden.
 Anschließend wird der Scan-Bereich des Kühllasers auf die Umgebung des Kühlübergangs eingestellt und mithilfe des Oszilloskops kann sowohl die Rb-Spektroskopie als auch das Fluoreszenzsignal der Photodiode dargestellt werden.
 Nun kann die Fluoreszenz der MOT in Abhängigkeit der Verstimmung des Kühllasers gemessen werden.
 Dazu wird jeweils eine Messung mit und eine ohne Magnetfeld durchgeführt, um die Hintergrundfluoreszenz in der Analyse entfernen zu können.
 
 In Abbildung~\ref{fig:detuning_cooling} wurde sowohl das Rb-Spektrum, als auch das Fluoreszenzsignal der MOT und dessen Untergrund dargestellt.
 Weiterhin wurde das Signal nach Subtraktion des Untergrundes dargestellt.
+Anzumerken ist, dass die jeweiligen Signale eine beliebige Skalierung und Offset aufweisen (mit Ausnahme des Fluoreszenzsignals der MOT mit Untergrund und der Untergrundmessung, die identische Skalierung und Offset haben), da lediglich die Schwerpunkte der Linien und somit die Frequenzen für die weitere Analyse relevant sind.
 An das Signal der Rb-Spektroskopie wurde folglich eine Kurve bestehend aus drei Lorentz-Kurven und einem polynomialen Untergrund 4.\ Ordnung angepasst.
 Dies ermöglicht die Bestimmung der Frequenzen der Linien im Spektrum und wurde genutzt um das Untergrundsignal an das Fluoreszenzsignal der MOT anzupassen und folglich von diesem abzuziehen.
 Darüber hinaus können die bekannten Frequenzen der Linien genutzt werden um eine Frequenzeichung durchzuführen.
@@ -706,7 +708,7 @@ Die Vorgehensweise zur Entfernung des Untergrundes der Fluoreszenzmessung verble
 	\label{fig:detuning_repumping}
 \end{figure}
 
-Die Frequenzkalibrierung des Spektrums erfolgt über die beiden Linien im Rb-Spektrum, an welches zwei Lorentz-Kurven mit einem polynomialen Untergrund~4.\ Ordnung angepasst wurde.
+Die Frequenzkalibrierung des Spektrums erfolgt über die beiden Linien im Rb-Spektrum, an welche zwei Lorentz-Kurven mit einem polynomialen Untergrund~4.\ Ordnung angepasst wurde.
 Die sichtbaren Linien entsprechen hierbei dem Übergang $F=2 \rightarrow F^\prime=2$ (links) und dem Überkreuzungs-Signal $F=2 \rightarrow F^\prime=2,3$ (rechts).
 Zwischen diesen beiden Linien liegt ein Frequenzbereich von \SI{31.7}{MHz} \cite{script}, welcher für die Frequenzkalibrierung genutzt werden kann, um die Frequenzverstimmung zum $F=2 \rightarrow F^\prime=2$ Übergang angeben zu können.
 Weiterhin ist anzumerken, dass zwischen die beiden Linien im Rb-Spektrum ein weiteres Überkreuzungs-Signal fällt, welches jedoch nicht klar aufgelöst werden kann.
