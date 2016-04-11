@@ -652,9 +652,9 @@ Dazu wird jeweils eine Messung mit und eine ohne Magnetfeld durchgeführt, um di
 In Abbildung~\ref{fig:detuning_cooling} wurde sowohl das Rb-Spektrum, als auch das Fluoreszenzsignal der MOT und dessen Untergrund dargestellt.
 Weiterhin wurde das Signal nach Subtraktion des Untergrundes dargestellt.
 An das Signal der Rb-Spektroskopie wurde folglich eine Kurve bestehend aus drei Lorentz-Kurven und einem polynomialen Untergrund 4.\ Ordnung angepasst.
-Dies ermöglicht die Bestimmung der Frequenzen der drei Übergänge und wurde genutzt um das Untergrundsignal an das Fluoreszenzsignal der MOT anzupassen und folglich von diesem abzuziehen.
-Darüber hinaus können die bekannten Frequenzen der Übergänge genutzt werden um eine Frequenzeichung durchzuführen.
-Dazu nutzt man die Verstimmung $\delta_{1,2}$ der beiden Überkreuzungs-Signale (im Spektrum links) gegenüber dem Kühlübergang, welche in \cite{script} gegeben ist durch $\delta_1 = \SI{-92.0}{MHz}$ ($F=3 \rightarrow F^\prime=2,4$) und $\delta_2 = \SI{-60.3}{MHz}$ ($F=3 \rightarrow F^\prime=3,4$).
+Dies ermöglicht die Bestimmung der Frequenzen der Linien im Spektrum und wurde genutzt um das Untergrundsignal an das Fluoreszenzsignal der MOT anzupassen und folglich von diesem abzuziehen.
+Darüber hinaus können die bekannten Frequenzen der Linien genutzt werden um eine Frequenzeichung durchzuführen.
+Dazu nutzt man die Verstimmung der beiden Überkreuzungs-Signale (im Spektrum links) gegenüber dem Kühlübergang, welche in \cite{script} gegeben ist durch $\delta_{3 \rightarrow 2,4} = \SI{-92.0}{MHz}$ ($F=3 \rightarrow F^\prime=2,4$) und $\delta_{3 \rightarrow 3, 4} = \SI{-60.3}{MHz}$ ($F=3 \rightarrow F^\prime=3,4$).
 Schließlich wird an das Fluoreszenzsignal, welches bereits vom Untergrund bereinigt wurde, eine Gauß-Funktion angepasst, welche die Zentralfrequenz und somit die Rotverstimmung gegenüber dem Kühlübergang liefert.
 \begin{figure}[h]
 	\centering
@@ -663,7 +663,7 @@ Schließlich wird an das Fluoreszenzsignal, welches bereits vom Untergrund berei
 	\label{fig:detuning_cooling}
 \end{figure}
 Im Folgenden soll auf eine Angabe sämtlicher Anpassungsparameter verzichtet werden und nur die Parameter erwähnt werden, die für die weitere Auswertung relevant sind.
-Zum einen ist dies die Verstimmung für optimale MOT-Operation, welche aus dem Abstand des Mittelpunkts der Gauß-Kurve, welche an das Fluoreszenzsignal der MOT angepasst wurde, zu dem Zentrum der Lorentz-Kurve des Kühlübergangs.
+Zum einen ist dies die Verstimmung für optimale MOT-Operation, welche aus dem Abstand des Mittelpunkts der Gauß-Kurve (aus der Anpassung an das Fluoreszenzsignal der MOT), zu dem Zentrum der Lorentz-Kurve des Kühlübergangs.
 Diese Verstimmung beträgt demnach
 \begin{align*}
 	\delta = \SI{-11.6 +- 0.4}{MHz} \, \text{,}
@@ -675,7 +675,7 @@ Die für den Betrieb einer magneto-optischen Falle optimale Verstimmung~$\delta_
 	\delta_\mathrm{opt.} = -\frac{\Gamma}{2} \, \text{,}
 \end{align*}
 wobei~$\Gamma$ die natürliche Linienbreite des Kühlübergangs beschreibt \cite{foot}.
-Die Linienbreite kann aus der vollen Halbwertsbreite der Lorentz-Kurve an den jeweiligen Übergang gewonnen werden und man erhält für den Kühlübergang
+Die Linienbreite kann aus der vollen Halbwertsbreite der Lorentz-Kurve an den jeweiligen Übergang gewonnen werden und man erhält aus der Anpassung einer Lorentz-Kurve an den Kühlübergang
 \begin{align*}
 	\Gamma = \SI{25.7 +- 1.0}{MHz}
 \end{align*}
@@ -683,19 +683,39 @@ und folglich für die optimale Verstimmung
 \begin{align*}
 	\delta_\mathrm{opt.} = \SI{-12.8 +- 0.5}{MHz} \, \text{.}
 \end{align*}
+Man sieht, dass der experimentell bestimmte Wert für die Verstimmung des Kühllasers leicht von dem aus der Theorie erwarteten Wert abweicht.
+Dies kann darauf zurückzuführen sein, dass für der theoretische Wert~$\delta_\mathrm{opt.}$ nur unter idealisierten Bedingungen gilt, welche in diesem Experiment nicht vollständig erfüllt werden können.
 
-\subsubsection{Repumping Laser}
-\begin{align*}
-	\delta_\mathrm{links} &= \SI{0.1 +- 0.5}{MHz}\\
-	\delta_\mathrm{rechts} &= \SI{62.4 +- 1.4}{MHz}
-\end{align*}
-\begin{figure}
+
+\subsubsection{Variation der Pumplaserfrequenz}
+Zuletzt wird die Methode aus den vorigen Abschnitt wiederholt, um den Einfluss der Frequenz des Pumplasers auf die magneto-optische Falle zu untersuchen.
+Dazu wird nun der Kühllaser unter einer Rotverstimmung von etwa einer halben Linienbreite auf den Kühlübergang fixiert und der Pumplaser im Scan-Modus unter einer kleinen Scan-Frequenz betrieben.
+Die Vorgehensweise zur Entfernung des Untergrundes der Fluoreszenzmessung verbleibt analog zum Abschnitt~\ref{sec:detuning_cooling} und in Abbildung~\ref{fig:detuning_repumping} wurden erneut die Spektren zusammengetragen.
+\begin{figure}[h]
 	\includegraphics{./figures/detuning_repumping.pdf}
-	\caption{Repumping}
+	\caption{Darstellung des Rubidium-Spektrums und der MOT-Fluoreszenz in Abhängigkeit der Verstimmung des Pumplasers. An das Spektrum wurde eine Funktion aus zwei Lorentz-Kurven und einem polynomialen Untergrund 4.\ Ordnung angepasst und an das Fluoreszenzsignal der MOT zwei Gauß-Kurven.}
+	\label{fig:detuning_repumping}
 \end{figure}
 
+Die Frequenzkalibrierung des Spektrums erfolgt über die beiden Linien im Rb-Spektrum, an welches zwei Lorentz-Kurven mit einem polynomialen Untergrund 4.\ Ordnung angepasst wurde.
+Die sichtbaren Linien entsprechen hierbei dem Übergang $F=2 \rightarrow F^\prime=2$ (links) und dem Überkreuzungs-Signal $F=2 \rightarrow F^\prime=2,3$ (rechts).
+Zwischen diesen beiden Linien liegt ein Frequenzbereich von \SI{31.7}{MHz} \cite{script}, welcher für die Frequenzkalibrierung genutzt werden kann, um die Frequenzverstimmung zum $F=2 \rightarrow F^\prime=2$ Übergang angeben zu können.
+Weiterhin ist anzumerken, dass zwischen die beiden Linien im Rb-Spektrum ein weiteres Überkreuzungs-Signal fällt, welches jedoch nicht klar aufgelöst werden kann.
+Darüber hinaus ist der zweite Pumpübergang $F=2 \rightarrow F^\prime=3$ im Spektrum nicht klar zu erkennen, da dieser nur eine kleine Signalhöhe aufweist \cite{script}.
 
-
+Nachdem die Frequenzkalibrierung erfolgreich war, kann aus der Anpassung von zwei Gauß-Kurven an das gemessene Fluoreszenzspektrum (ohne Untergrund) der jeweilige Linienschwerpunkt und somit die Verstimmung zum $F=2 \rightarrow F^\prime=2$ Übergang bestimmt werden.
+Für das linke Maximum im Fluoreszenzspektrum entspricht dies einer Verstimmung von
+\begin{align*}
+	\delta_{2 \rightarrow 2} &= \SI{0.1 +- 0.5}{MHz}
+\end{align*}
+und korrespondiert zu einer resonanten Anregung des $F=2 \rightarrow F^\prime=2$ Übergangs.
+Dies entspricht den Erwartungen für ein effizientes Pumpen der Rubidium-Atome, welche nach dem Zerfall des angeregten Zustandes erneut in den Kühlkreislauf eintreten können.
+Das zweite Maximum der Fluoreszenz zeigt eine Verstimmung von
+\begin{align*}
+	\delta_{2 \rightarrow 3} &= \SI{62.4 +- 1.4}{MHz}
+\end{align*}
+und entspricht demnach dem zweiten Pumpübergang $F=2 \rightarrow F^\prime=3$, welcher in \cite{script} mit einer Verstimmung von \SI{63.4}{MHz} zum $F=2 \rightarrow F^\prime=2$ Übergang angegeben ist.
+Demnach ist der gemessene Wert für das zweite Fluoreszenzmaximum kompatibel mit einer resonanten Anregung des zweiten Pumpübergangs.
 
 \section{Fazit}
 
