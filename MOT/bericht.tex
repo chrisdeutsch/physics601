@@ -559,7 +559,7 @@ Dieser kann aufgrund eines schlechten Fehlersignals nicht durch die Lockbox auf 
 
 
 \subsection{Verhalten des Ladevorgangs}
-Folglich soll das Verhalten des Ladevorgangs der Atomfalle untersucht werden.
+Im Folgenden soll das Verhalten des Ladevorgangs der Atomfalle untersucht werden.
 Nun werden die gefangenen Atome durch eine Linse auf eine Photodiode abgebildet, welche eine zur Fluoreszenz der gefangenen Atome proportionale Spannung erzeugt, die mit einem Oszilloskop gemessen werden kann.
 Um einen Ladevorgang der Falle zu starten wird zunächst der Spulenstrom durch das Anti-Helmholtz-Spulenpaar deaktiviert sodass keine MOT mehr zu beobachten ist.
 Danach wird das Magnetfeld reaktiviert und auf dem Oszilloskop kann ein exponentieller Anstieg der Fluoreszenz der gefangenen Atome beobachtet werden.
@@ -596,7 +596,7 @@ wobei der Fehler aus der Stichprobenvarianz abgeschätzt wird.
 \subsubsection{Bestimmung des Rb-Rb Wirkungsquerschnittes}
 Anschließend kann die Messung der mittleren Zeitkonstante~$\bar{\tau}$ dazu genutzt werden den Wirkungsquerschnitt von Rb-Rb Kollisionen zu berechnen.
 Dies ist möglich, da gemäß \cite{wieman} die Zeitkonstante des Aufladeprozesses ebenfalls der mittleren Zeit entspricht, die ein Rubidiumatom in der Falle gefangen bleibt.
-Diese werden vorzüglich durch Kollisionen mit dem heißen Hintergrundgas aus der Falle entfernt.
+Diese werden vorwiegend durch Kollisionen mit dem heißen Hintergrundgas aus der Falle entfernt.
 Demnach kann die Zeitkonstante unter Vernachlässigung weiterer Spurengase durch 
 \begin{align*}
 	\frac{1}{\tau} = n_\mathrm{Rb}  \sigma_\mathrm{Rb}  v_\mathrm{Rb}
@@ -662,7 +662,7 @@ Weiterhin wurde das Signal nach Subtraktion des Untergrundes dargestellt.
 Anzumerken ist, dass die jeweiligen Signale eine beliebige Skalierung und Offset aufweisen (mit Ausnahme des Fluoreszenzsignals der MOT mit Untergrund und der Untergrundmessung, die identische Skalierung und Offset haben), da lediglich die Schwerpunkte der Linien und somit die Frequenzen für die weitere Analyse relevant sind.
 An das Signal der Rb-Spektroskopie wurde folglich eine Kurve bestehend aus drei Lorentz-Kurven und einem polynomialen Untergrund 4.\ Ordnung angepasst.
 Dies ermöglicht die Bestimmung der Frequenzen der Linien im Spektrum und wurde genutzt um das Untergrundsignal an das Fluoreszenzsignal der MOT anzupassen und folglich von diesem abzuziehen.
-Darüber hinaus können die bekannten Frequenzen der Linien genutzt werden um eine Frequenzeichung durchzuführen.
+Darüber hinaus können die bekannten Frequenzen der Linien genutzt werden um eine Frequenzkalibrierung durchzuführen.
 Dazu nutzt man die Verstimmung der beiden Überkreuzungs-Signale (im Spektrum links) gegenüber dem Kühlübergang, welche in \cite{script} gegeben ist durch $\delta_{3 \rightarrow 2,4} = \SI{-92.0}{MHz}$ ($F=3 \rightarrow F^\prime=2,4$) und $\delta_{3 \rightarrow 3, 4} = \SI{-60.3}{MHz}$ ($F=3 \rightarrow F^\prime=3,4$).
 Schließlich wird an das Fluoreszenzsignal, welches bereits vom Untergrund bereinigt wurde, eine Gauß-Funktion angepasst, welche die Zentralfrequenz und somit die Rotverstimmung gegenüber dem Kühlübergang liefert.
 \begin{figure}[h]
@@ -697,7 +697,7 @@ Dies kann darauf zurückzuführen sein, dass der theoretische Wert~$\delta_\math
 
 
 \subsubsection{Variation der Pumplaserfrequenz}
-Zuletzt wird die Methode aus den vorigen Abschnitt wiederholt, um den Einfluss der Frequenz des Pumplasers auf die magneto-optische Falle zu untersuchen.
+Zuletzt wird die Methode aus dem vorigen Abschnitt wiederholt, um den Einfluss der Frequenz des Pumplasers auf die magneto-optische Falle zu untersuchen.
 Dazu wird nun der Kühllaser unter einer Rotverstimmung von etwa einer halben Linienbreite auf den Kühlübergang fixiert und der Pumplaser im Scan-Modus unter einer kleinen Scan-Frequenz betrieben.
 Die Vorgehensweise zur Entfernung des Untergrundes der Fluoreszenzmessung verbleibt analog zum Abschnitt~\ref{sec:detuning_cooling} und in Abbildung~\ref{fig:detuning_repumping} wurden erneut die Spektren zusammengetragen.
 \begin{figure}[h]
@@ -717,13 +717,13 @@ Für das linke Maximum im Fluoreszenzspektrum entspricht dies einer Verstimmung 
 \begin{align*}
 	\delta_{2 \rightarrow 2} &= \SI{0.1 +- 0.5}{MHz}
 \end{align*}
-und korrespondiert zu einer resonanten Anregung des $F=2 \rightarrow F^\prime=2$ Übergangs.
-Dies entspricht den Erwartungen für ein effizientes Pumpen der Rubidium-Atome, welche nach dem Zerfall des angeregten Zustandes erneut in den Kühlkreislauf eintreten können.
+und korrespondiert mit einer resonanten Anregung des $F=2 \rightarrow F^\prime=2$ Übergangs.
+Dies entspricht den Erwartungen für ein effizientes Pumpen der Rubidiumatome, welche nach dem Zerfall des angeregten Zustandes erneut in den Kühlkreislauf eintreten können.
 Das zweite Maximum der Fluoreszenz zeigt eine Verstimmung von
 \begin{align*}
 	\delta_{2 \rightarrow 3} &= \SI{62.4 +- 1.4}{MHz}
 \end{align*}
-und entspricht demnach dem zweiten Pumpübergang $F=2 \rightarrow F^\prime=3$, welcher in \cite{script} mit einer Verstimmung von \SI{63.4}{MHz} zum $F=2 \rightarrow F^\prime=2$ Übergang angegeben ist.
+und entspricht daher dem zweiten Pumpübergang $F=2 \rightarrow F^\prime=3$, welcher in \cite{script} mit einer Verstimmung von \SI{63.4}{MHz} zum $F=2 \rightarrow F^\prime=2$ Übergang angegeben ist.
 Demnach ist der gemessene Wert für das zweite Fluoreszenzmaximum kompatibel mit einer resonanten Anregung des zweiten Pumpübergangs.
 
 \section{Fazit}
