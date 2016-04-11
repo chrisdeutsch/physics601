@@ -315,7 +315,7 @@ Dazu muss zunächst die Fluoreszenzleistung der gefangenen Atome und die Streura
 
 \subsubsection{Bestimmung der Fluoreszenz der MOT}
 \label{sec:fluoreszenz}
-Zur Bestimmung der Fluoreszenz der MOT wird die leuchtende Atomwolke mithilfe einer Linse auf ein Leistungsmessgerät abgebildet.
+Zur Bestimmung der Fluoreszenz der Falle wird die leuchtende Atomwolke mithilfe einer Linse auf ein Leistungsmessgerät abgebildet.
 Dabei ist zu beachten, dass die so gemessene Leistung auch die Fluoreszenz von ungefangenen Atomen beinhaltet.
 Daher wird nach jeder Messung das Magnetfeld der Falle deaktiviert, um eine Hintergrundmessung durchzuführen und der so gemessene Hintergrund kann vom Fluoreszenzsignal abgezogen werden.
 Somit wird die Fluoreszenzleistung, die die Atomwolke in dem von der Linse aufgespannten Raumwinkel emittiert, zu
@@ -337,7 +337,7 @@ und mit den gemessenen Werten für den Linsendurchmesser
 \begin{align*}
 	d_\mathrm{Linse} = \SI{2.5 +- 0.1}{cm} \, \text{,}
 \end{align*}
-sowie dem Abstand~$R$ zwischen MOT und Linse
+ud dem Abstand~$R$ zwischen MOT und Linse
 \begin{align*}
 	R = \SI{10.3 +- 0.2}{cm}
 \end{align*}
@@ -439,7 +439,7 @@ Mit zusätzlicher Feinjustage und einer funktionstüchtigen Frequenzstabilisieru
 \subsection{Größe der MOT}
 Zur Bestimmung der Größe wird mit der CCD-Kamera ein Bild der in der Falle gefangenen Atome erstellt.
 Um die Größe anzugeben, wurde im Anschluss bei gleicher Brennweite eine Millimeterskala im gleichen Abstand wie die Falle aufgenommen.
-Dadurch konnte der Längenmaßstab der Aufnahmen zu~$\SI{1}{px}=\SI{0,0377+-0,0005}{mm}$ \korr{evtl.\ Bild von der Skala} bestimmt werden.
+Dadurch konnte der Längenmaßstab der Aufnahmen zu~$\SI{1}{px}=\SI{0,0377+-0,0005}{mm}$ bestimmt werden.
 Entsprechend beträgt die Fläche eines Pixels dann~\SI{1.421+-0.038e-3}{mm^2}.
 Mit einem Bildbearbeitungsprogramm wurden in dem aufgenommenen Bild mehrere Abstände gegenüberliegender Punkte auf dem Rand des markierten Bereichs gemessen, da die beobachtete Atomwolke keiner geometrischen Figur ähnelt, deren Durchmesser einfach berechnet werden könnte.
 Die gemessenen Strecken wurden im Anschluss gemittelt und so der Durchmesser zu ungefähr \SI{1,47+-0,12}{mm} bestimmt, wobei der Fehler aus der Varianz folgt.
@@ -463,7 +463,7 @@ Da der Einfluss der einzelnen Platten für die jeweilige Fallenachse identisch i
 \subsubsection{Verzögerungsplatte des eingehenden Strahls}
 \label{sec:lambda_4_inc}
 Zur Untersuchung des Einflusses der Verzögerungsplatte des eingehenden Strahls wird diese schrittweise gedreht und sowohl der Stellungswinkel~$\varphi$ als auch die Fluoreszenzleistung~$P$ (mit subtrahiertem Untergrund) gemessen.
-Dabei wird der Stellungswinkel schrittweise von \SI{0}{\degree} bis \SI{180}{\degree} in \SI{10}{\degree}-Schritten verstellt, bis ein gesamter Winkelbereich von \SI{180}{\degree} vermessen wurde.
+Dabei wird der Stellungswinkel schrittweise von \SI{0}{\degree} bis \SI{180}{\degree} in \SI{10}{\degree}-Schritten verstellt, so dass ein gesamter Winkelbereich von \SI{180}{\degree} vermessen wurde.
 Die somit gemessene Fluoreszenzleistung in Abhängigkeit des Drehwinkels der Platte für den eingehenden Strahl wurde in Abbildung \ref{fig:lambda_4_inc} aufgetragen.
 Die gemessenen Werte wurden in Tabelle \ref{tab:lambda_4} zusammengefasst.
 \begin{figure}[h]
@@ -474,14 +474,14 @@ Die gemessenen Werte wurden in Tabelle \ref{tab:lambda_4} zusammengefasst.
 \end{figure}
 
 Man sieht, dass die Stellung der $\lambda / 4$-Platte des eingehenden Strahls einen starken Einfluss auf die Fluoreszenzleistung zeigt.
-Dies liegt daran, dass diese Platte den eintreffenden linear-polarisierten Strahl in die für die Fallenoperation notwendige zirkulare Polarisation umwandelt.
+Dies liegt daran, dass diese Platte den eintreffenden linear polarisierten Strahl in die für die Fallenoperation notwendige zirkulare Polarisation umwandelt.
 Dazu muss die Achse der Verzögerungsplatte um $\pm\SI{45}{\degree}$ gegen die Polarisation des eintreffenden Strahls verkippt sein.
 Darüber hinaus muss die richtige Zirkularpolarisation für diese Platte eingestellt werden, um den gemäß Abschnitt \ref{sec:rb_uebergaenge} erforderlichen Übergang zu treffen, der eine Operation der Falle ermöglicht.
 
 In Abbildung \ref{fig:lambda_4_inc} sieht man, dass die Fluoreszenzleistung ein breites Minimum um einen Winkel der Verzögerungsplatte von \SI{80}{\degree} aufweist.
 An dieser Stelle weist der Strahl gerade die falsche Zirkularpolarisation für das Fangen der Rubidiumatome auf.
 Demnach sollte ein Drehen der Verzögerungsplatte um \SI{90}{\degree} nun die entgegengesetzte Zirkularpolarisation erzeugen und somit den Fallenbetrieb ermöglichen.
-Dies entspricht dem breiten Maximum bei etwa \SI{170}{\degree}, bei dem der korrekte Übergang zum Fangen der Atome angeregt wird und somit den Fallenbetrieb ermöglicht.
+Dies entspricht dem breiten Maximum bei etwa \SI{170}{\degree}, bei dem der korrekte Übergang zum Fangen der Atome angeregt wird.
 Der auf der Verzögerungsplatte angegebene Optimalwert von \SI{172}{\degree} kann somit verifiziert werden.
 
 Nach dem Abschluss dieser Messung werden die drei $\lambda / 4$-Platten für die eingehenden Strahlen per Hand auf das Maximum der Fluoreszenzleistung eingestellt.
@@ -505,17 +505,15 @@ Die gemessenen Werte finden sich in Tabelle \ref{tab:lambda_4} und die Darstellu
 \end{figure}
 
 Man sieht, dass die Fluoreszenzleistung kaum vom Winkel der Verzögerungsplatte abhängt.
-Der Grund liegt darin, dass beim Eintreffen des zirkular-polarisierten Strahls aus dem Fallenzentrum auf die $\lambda / 4$-Platte dieser linear polarisiert wird.
-Anschließend wird der linear-polarisierte Strahl am Spiegel reflektiert und trifft unter dem gleichen Winkel erneut auf die $\lambda / 4$-Platte und ist somit unabhängig von deren Stellwinkel.
+Der Grund liegt darin, dass beim Eintreffen des zirkular polarisierten Strahls aus dem Fallenzentrum auf die $\lambda / 4$-Platte dieser linear polarisiert wird.
+Anschließend wird der linear polarisierte Strahl am Spiegel reflektiert und trifft unter dem gleichen Winkel erneut auf die $\lambda / 4$-Platte und ist somit unabhängig von deren Stellwinkel.
 Dies hat den Einfluss, dass die Helizität der Photonen umgekehrt wird und somit aus dem eingehenden Strahl mit $\sigma^\pm$-Polarisation ein rückläufiger Strahl mit $\sigma^\mp$-Polarisation entsteht.
 
 Die Anpassung einer konstanten Funktion an die gemessene Fluoreszenzleistung ergibt
 \begin{align*}
-P_0 = \SI{124.4 +- 1.3}{nW}
+P_0 = \SI{124.4 +- 1.3}{nW}\,\text{.}
 \end{align*}
-für die Fluoreszenzleistung der MOT.
-
-\begin{table}
+\begin{table}[h]
 	\centering
 	\input{./tables/lambda_4.tex}
 	\caption{Gemessene Fluoreszenz der gefangenen Atome für verschiedene Stellungen der $\lambda / 4$-Platte des eingehenden Strahls~$P_\mathrm{ein.}$ und des reflektierten Strahls~$P_\mathrm{ref.}$. Auf die Fluoreszenzleistung wird ein Fehler von $\Delta P = \SI{5}{nW}$ angenommen.}
@@ -551,7 +549,7 @@ Darüber hinaus finden sich die gemessenen Werte in Tabelle~\ref{tab:magnetic_fi
 Die Abbildung kann im wesentlichen in drei unterschiedliche Bereiche eingeteilt werden.
 Zum einen ist dies der Bereich kleiner Ströme von \num{0} bis etwa \SI{1}{\ampere}, bei denen nur eine kleine Fluoreszenzleistung beobachtet werden kann, die nur langsam mit dem Spulenstrom ansteigt.
 In diesem Strombereich ist der Potentialtopf zu klein um eine signifikante Anzahl von Atomen einzufangen.
-Ab einem Strom von \SI{1}{\ampere} steigt die Fluoreszenzleistung stark mit dem Spulenstrom und die gefangenen Atome sind mithilfe einer Kamera klar zu erkennen.
+Ab einem Strom von \SI{1}{\ampere} steigt die Fluoreszenzleistung stark mit dem Spulenstrom an und die gefangenen Atome sind mithilfe einer Kamera klar zu erkennen.
 An diesem Punkt können die Rubidiumatome effizient durch das Fallenpotential gefangen werden.
 Übersteigt der Spulenstrom \SI{4.4}{\ampere} so stellt man fest, dass die Falle scheinbar in Sättigung übergeht.
 Dies liegt daran, dass für sehr hohe Magnetfeldgradienten die Ausdehnung der Falle, aufgrund der stärkeren Aufspaltung der Energieniveaus mit zunehmendem Abstand vom Fallenzentrum aufgrund des Zeeman-Effekts, abnimmt.
