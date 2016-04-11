@@ -192,9 +192,9 @@ Im Folgenden wird nur ein vereinfachtes System betrachtet, da reale Atome eine V
 Um die gekühlten Atome, die sich zwar mit geringerer Geschwindigkeit aber weiterhin frei bewegen, an einem bestimmten Punkt zu konzentrieren wird der Zeeman-Effekt genutzt.
 Dieser bewirkt eine Aufspaltung der atomaren Niveaus in drei Zustände mit $m_J = 0, \pm1$, deren Energieverschiebung vom Zustand mit $m_J=0$, was dem ursprünglichen Niveau entspricht, von der Stärke des Magnetfeldes abhängt:
 \begin{align}
-	\Delta E =\mu_\mathrm{B}B
+	\Delta E =\mu_\mathrm{B}Bm_Jg_J
 \end{align}
-mit dem Bohrschen Magneton $\mu_\mathrm{B}$.
+mit dem Bohrschen Magneton $\mu_\mathrm{B}$, dem Landé-Faktor $g_J$ und der zu dem aufgespaltenen Niveau korrespondieren Quantenzahl $m_J$.
 Übergänge in diese Zustände können durch links- bzw. rechtszirkular polarisiertes Licht gezielt ausgewählt werden.
 
 Für das Magnetfeld wird ein Spulenaufbau in Anti-Helmholtz-Konfiguration verwendet, der ein linear ansteigendes Magnetfeld in alle Richtungen ermöglicht.
@@ -239,12 +239,12 @@ Da die nötigen Frequenzen möglichst genau auf die Übergänge im Rubidium abge
 Als Spektroskopieverfahren kommt die Polarisationsspektroskopie zum Einsatz, die eine Erweiterung der dopplerfreien Sättigungsspektroskopie darstellt.
 Dabei wird der Lichtstrahl in einen Pumpstrahl mit hoher Intensität und einen Teststrahl mit geringerer Intensität aufgespalten, die in ungefähr entgegengesetzter Richtung eine Kammer mit Rubidiumatomen durchlaufen.
 Während der Pumplaser den gewählten Übergang sättigt, d.h. möglichst viele Atome in den angeregten Zustand bringt, wird die Intensität des Teststrahls beobachtet.
-Diese ist hoch, wenn der Übergang vollständig durch den Pumpstrahl gesättigt ist und gering, wenn Atome durch den Teststrahl angeregt werden \korr{Hier vllt ne kurze Erklärung}.
+Diese ist hoch, wenn der Übergang vollständig durch den Pumpstrahl gesättigt ist und gering, wenn Atome durch den Teststrahl angeregt werden.
 In Abhängigkeit von der Frequenz aufgetragen ergibt sich ein Intensitätsverlauf wie in Abbildung \ref{fig:saturation}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.8\textwidth]{./figures/theory/saturation}
-	\caption{Transmissionsspektrum des Teststrahls in der Sättigungsspektroskopie. Aufgrund des Dopplereffekts ist eine Senke um \SI{0}{MHz} zu beobachten, in der das dopplerfreie Maximum des betrachteten Übergangs (Lamb-Dip) liegt. \korr{Quelle: nach bla}}
+	\caption{Transmissionsspektrum des Teststrahls in der Sättigungsspektroskopie. Aufgrund des Dopplereffekts ist eine Senke um \SI{0}{MHz} zu beobachten, in der das dopplerfreie Maximum des betrachteten Übergangs (Lamb-Dip) liegt (nach \cite{script}).}
 	\label{fig:saturation}
 \end{figure}
 Dieses lässt sich dadurch erklären, dass die Atome Raumtemperatur haben und sich somit sehr schnell bewegen.
@@ -304,13 +304,13 @@ Nachdem die MOT aufgebaut und auf möglichst hohe Fluoreszenz optimiert wurde, k
 
 \subsection{Atomzahl in der MOT}
 Im Folgenden soll die Anzahl der gefangenen Atome in der MOT bestimmt werden.
-Dazu muss zunächst der Fluoreszenzleistung der gefangenen Atome und der Strahlradius des Lasers bestimmt werden.
+Dazu muss zunächst die Fluoreszenzleistung der gefangenen Atome und der Strahlradius des Lasers bestimmt werden.
 
 \subsubsection{Bestimmung der Fluoreszenz der MOT}
 \label{sec:fluoreszenz}
 Zur Bestimmung der Fluoreszenz der MOT wird die leuchtende Atomwolke mithilfe einer Linse auf ein Leistungsmessgerät abgebildet.
-Dabei gilt es zu beachten, dass die so gemessene Leistung auch die Fluoreszenz von ungefangenen Atomen beinhaltet.
-Daher wird nach jeder Messung das Magnetfeld der Falle deaktiviert um eine Hintergrundmessung durchzuführen und der so gemessene Hintergrund kann vom Fluoreszenzsignal abgezogen werden.
+Dabei ist zu beachten, dass die so gemessene Leistung auch die Fluoreszenz von ungefangenen Atomen beinhaltet.
+Daher wird nach jeder Messung das Magnetfeld der Falle deaktiviert, um eine Hintergrundmessung durchzuführen und der so gemessene Hintergrund kann vom Fluoreszenzsignal abgezogen werden.
 Somit wird die Fluoreszenzleistung, die die Atomwolke in dem von der Linse aufgespannten Raumwinkel emittiert, zu
 \begin{align*}
 	P_\mathrm{Linse} = \SI{114 +- 5}{nW}
@@ -395,14 +395,14 @@ Diese ist gegeben durch
 	R = \frac{\Gamma}{2} \frac{I / I_\mathrm{S}}{1 + I / I_\mathrm{S} + 4 \delta^2 / \Gamma^2}
 \end{align*}
 mit der Intensität des Lasers~$I$ und der Sättigungsintensität~$I_\mathrm{S}$ des Übergangs \cite{foot}.
-Im Folgenden wird der Strahlradius~$w$, welcher in Abschnitt~\ref{sec:strahlradius} bestimmt wurde, genutzt um die Intensität des Kühlstrahls abzuschätzen.
+Im Folgenden wird der Strahlradius~$w$, welcher in Abschnitt~\ref{sec:strahlradius} bestimmt wurde, genutzt, um die Intensität des Kühlstrahls abzuschätzen.
 Dabei wird die Gesamtleistung des Kühllasers berechnet durch
 \begin{align*}
 	P_\mathrm{K"uhl.} &= 2 \cdot \left[ \SI{3.0 +- 0.1}{mW} + \SI{3.0 +- 0.1}{mW} + \SI{3.2 +- 0.1}{mW} \right]\\
 	  &= \SI{18.4 +- 0.4}{mW} \, \text{,}
 \end{align*} 
 wobei der Faktor 2 aufgrund der Rückreflexion des Kühlstrahls entsteht.
-Nimmt man an, dass diese Leistung gleichmäßig auf einem Kreis mit Radius~$w$ verteilt ist, so erhält man für die Intensität mit dem Ergebnis für den Strahlradius aus Abschnitt~\ref{sec:strahlradius}
+Nimmt man an, dass diese Leistung gleichmäßig auf einem Kreis mit Radius~$w$ verteilt ist, so erhält man mit dem Ergebnis für den Strahlradius aus Abschnitt~\ref{sec:strahlradius} für die Intensität
 \begin{align*}
 	I = \frac{P_\mathrm{K"uhl.}}{\pi w^2} = \SI{73.3 +- 4.9}{\milli\watt\per\centi\meter\squared} \, \text{.}
 \end{align*}
@@ -433,7 +433,7 @@ Zur Bestimmung der Größe wird mit der CCD-Kamera ein Bild der in der Falle gef
 Um die Größe anzugeben, wurde im Anschluss bei gleicher Brennweite eine Millimeterskala im gleichen Abstand wie die Falle aufgenommen.
 Dadurch konnte der Längenmaßstab der Aufnahmen zu~$\SI{1}{px}=\SI{0,0377+-0,0005}{mm}$ \korr{evtl.\ Bild von der Skala} bestimmt werden.
 Entsprechend beträgt die Fläche eines Pixels dann~\SI{1.421+-0.038e-3}{mm^2}.
-Mit einem Bildbearbeitungsprogramm wurden in dem aufgenommenen Bild mehrere Abstände gegenüberliegender Punkte auf dem Rand des markierten Bereichs gemessen, da die beobachtete Atomwolke keiner einfachen geometrischen Figur ähnelt, deren Durchmesser einfach berechnet werden könnte.
+Mit einem Bildbearbeitungsprogramm wurden in dem aufgenommenen Bild mehrere Abstände gegenüberliegender Punkte auf dem Rand des markierten Bereichs gemessen, da die beobachtete Atomwolke keiner geometrischen Figur ähnelt, deren Durchmesser einfach berechnet werden könnte.
 Die gemessenen Strecken wurden im Anschluss gemittelt und so der Durchmesser zu ungefähr \SI{1,47+-0,12}{mm} bestimmt, wobei der Fehler aus der Varianz folgt.
 Durch eine Zählung der Pixel konnte weiterhin eine Fläche von \SI{1,16+-0,2}{mm^2} ermittelt werden.
 Der Fehler wurde in diesem Fall abgeschätzt aufgrund von einer möglicherweise nicht idealen Auswahl des zu vermessenden Bereichs und entspricht einer Abweichung von~\num{162} Pixeln.
@@ -448,13 +448,13 @@ In Abbildung \ref{fig:mot_groesse} ist der untersuchte Bereich zur Bestimmung vo
 \subsection{Einfluss der $\lambda / 4$-Platten}
 Im Folgenden soll der Einfluss der $\lambda / 4$-Platten auf die Population der Falle untersucht werden.
 Dazu wird erneut die MOT durch eine Linse auf das Leistungsmessgerät abgebildet, um ein Fluoreszenzsignal zu messen.
-Die im Aufbau auftretenden $\lambda / 4$-Verzögerungsplatten lassen sich in zwei Gruppen einteilen.
+Die im Aufbau genutzten $\lambda / 4$-Verzögerungsplatten lassen sich in zwei Gruppen einteilen.
 Diese sind die Platten für den in die Falle eingehenden Strahl und die für den reflektierten Strahl direkt am retroreflektierenden Spiegel.
 Da der Einfluss der einzelnen Platten für die jeweilige Fallenachse identisch ist, wird im Folgenden nur eine Achse detailliert untersucht.
 
 \subsubsection{Verzögerungsplatte des eingehenden Strahls}
 \label{sec:lambda_4_inc}
-Zur Untersuchung des Einflusses der Verzögerungsplatte des eingehenden Strahls wird diese Schrittweise gedreht und sowohl der Stellungswinkel~$\varphi$ sowie die Fluoreszenzleistung~$P$ (mit subtrahiertem Untergrund) gemessen.
+Zur Untersuchung des Einflusses der Verzögerungsplatte des eingehenden Strahls wird diese schrittweise gedreht und sowohl der Stellungswinkel~$\varphi$ als auch die Fluoreszenzleistung~$P$ (mit subtrahiertem Untergrund) gemessen.
 Dabei wird der Stellungswinkel schrittweise von \SI{0}{\degree} bis \SI{180}{\degree} in \SI{10}{\degree}-Schritten verstellt, bis ein gesamter Winkelbereich von \SI{180}{\degree} vermessen wurde.
 Die somit gemessene Fluoreszenzleistung in Abhängigkeit des Drehwinkels der Platte für den eingehenden Strahl wurde in Abbildung \ref{fig:lambda_4_inc} aufgetragen.
 Die gemessenen Werte wurden in Tabelle \ref{tab:lambda_4} zusammengefasst.
@@ -486,7 +486,7 @@ Die Vergleich der Einstellung der Platten auf den verschiedenen Achsen~$\varphi$
 
 
 \subsubsection{Verzögerungsplatte des reflektierten Strahls}
-Letztlich soll der Einfluss der Verzögerungsplatte des reflektierten Strahls auf die Fluoreszenzleistung der MOT untersucht werden.
+Als nächstes soll der Einfluss der Verzögerungsplatte des reflektierten Strahls auf die Fluoreszenzleistung der MOT untersucht werden.
 Dabei wird analog zu Abschnitt \ref{sec:lambda_4_inc} vorgegangen und die Fluoreszenzleistung~$P$ gegen den Winkel der Platte~$\varphi$ aufgetragen.
 Die gemessenen Werte finden sich in Tabelle \ref{tab:lambda_4} und die Darstellung der Fluoreszenzleistung in Abbildung \ref{fig:lambda_4_out}.
 \begin{figure}[h]
@@ -553,7 +553,7 @@ Dieser kann aufgrund eines schlechten Fehlersignals nicht durch die Lockbox auf 
 
 \subsection{Verhalten des Ladevorgangs}
 Folglich soll das Verhalten des Ladevorgangs der Atomfalle untersucht werden.
-Nun werden die gefangenen Atome durch eine Linse auf eine Photodiode abgebildet, welche eine zur Fluoreszenz der gefangenen Atome proportionale Spannung erzeugt, die folglich mit einem Oszilloskop gemessen werden kann.
+Nun werden die gefangenen Atome durch eine Linse auf eine Photodiode abgebildet, welche eine zur Fluoreszenz der gefangenen Atome proportionale Spannung erzeugt, die mit einem Oszilloskop gemessen werden kann.
 Um einen Ladevorgang der Falle zu starten wird zunächst der Spulenstrom durch das Anti-Helmholtz-Spulenpaar deaktiviert sodass keine MOT mehr zu beobachten ist.
 Danach wird das Magnetfeld reaktiviert und auf dem Oszilloskop kann ein exponentieller Anstieg der Fluoreszenz der gefangenen Atome beobachtet werden.
 Dieser Anstieg verhält sich wie die Aufladung eines Kondensators und folglich wird die Anpassungshypothese
@@ -601,7 +601,7 @@ Somit kann der Wirkungsquerschnitt durch
 \end{align}
 berechnet werden.
 Dazu wird zunächst die Rubidiumdichte~$n_\mathrm{Rb}$ benötigt, welche aus dem Druck in der Vakuumkammer~$p$ und der Temperatur~$T$ des Gases mithilfe der idealen Gasgleichung berechnet werden kann.
-Dabei wurde die Temperatur~$T$ zu $\SI{24.6 +- 0.5}{\degreeCelsius}$ mithilfe eines Thermometers bestimmt.
+Dabei wurde die Temperatur~$T$ mithilfe eines Thermometers zu $\SI{24.6 +- 0.5}{\degreeCelsius}$ bestimmt.
 Der Druck~$p$ in der Vakuumkammer muss auf $\SI{1.1 +- 0.2e-7}{mbar}$ abgeschätzt werden, da ein Fehler an der Druckanzeige der Vakuumpumpe vorlag.
 Dann kann gemäß der idealen Gasgleichung die Rubidiumdichte durch
 \begin{align*}
@@ -637,15 +637,15 @@ Der in diesem Versuch bestimmte Wert fällt ebenfalls in diesen Bereich, sollte 
 Letztlich soll die Fluoreszenz der magneto-optischen Falle in Abhängigkeit der Frequenz von Kühllaser sowie Pumplaser untersucht werden.
 Dazu wird jeweils einer der Laser mithilfe der Lockbox auf eine bestimmte Frequenz festgelegt, während der andere im Scan-Modus mit einer Frequenz von \SI{20}{mHz} betrieben wird.
 Dadurch wird die Frequenz des Lasers in Abhängigkeit von Scan-Offset und Amplitude über einen kleinen Bereich variiert und mithilfe einer Photodiode kann die Fluoreszenz der MOT gemessen werden.
-Dabei ist es wichtig die Scan-Frequenz so klein zu wählen, dass die Periode des Scan-Signals wesentlich kleiner als die typische Ladezeit von etwa \SI{0.1}{s} der MOT.
+Dabei ist es wichtig die Scan-Frequenz so klein zu wählen, dass die Periode des Scan-Signals wesentlich kleiner ist als die typische Ladezeit der MOT von etwa \SI{0.1}{s}.
 Darüber hinaus wird eine Untergrundmessung mit deaktiviertem Magnetfeld durchgeführt, um die Fluoreszenz des heißen Hintergrundgases entfernen zu können.
 Dieser Untergrund kann mithilfe des Spektrums aus der Rb-Spektroskopie an das Fluoreszenzsignal der MOT angepasst werden und folglich abgezogen werden.
 
 \subsubsection{Variation der Kühllaserfrequenz}
 \label{sec:detuning_cooling}
-Zunächst wird die Frequenz des Pumplasers fixiert, indem die Scan-Amplitude minimiert wird und mithilfe des Scan-Offset der Pumpübergang auf Resonanz gestellt wird.
+Zunächst wird die Frequenz des Pumplasers fixiert, indem die Scan-Amplitude minimiert und mithilfe des Scan-Offset der Pumpübergang auf Resonanz gestellt wird.
 Im Gegensatz zum Kühllaser konnte der Pumplaser aufgrund eines stark Verrauschten Fehlersignals nicht mithilfe der Rückkopplungsschleife fixiert werden.
-Anschließend wird der Scan-Bereich des Kühllasers auf die Umgebung des Kühlübergangs eingestellt und mithilfe des Oszilloskops kann sowohl die Rb-Spektroskopie sowie das Fluoreszenzsignal der Photodiode dargestellt werden.
+Anschließend wird der Scan-Bereich des Kühllasers auf die Umgebung des Kühlübergangs eingestellt und mithilfe des Oszilloskops kann sowohl die Rb-Spektroskopie als auch das Fluoreszenzsignal der Photodiode dargestellt werden.
 Nun kann die Fluoreszenz der MOT in Abhängigkeit der Verstimmung des Kühllasers gemessen werden.
 Dazu wird jeweils eine Messung mit und eine ohne Magnetfeld durchgeführt, um die Hintergrundfluoreszenz in der Analyse entfernen zu können.
 
