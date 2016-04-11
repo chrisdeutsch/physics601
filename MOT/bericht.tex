@@ -221,7 +221,7 @@ In diesem Versuch soll das Rubidiumisotop \isotope[85]{Rb} eingefangen werden.
 Dazu ist es nötig, detaillierte Informationen über das Niveauschema und die Übergänge dieser Atome zu haben, um den optimalen Übergang zum Kühlen und Fangen der Atome auszuwählen.
 Es eignet sich der Übergang $F=3 \rightarrow F^\prime=4$, da dieser abgeschlossen ist, d.h. dass das Atom durch Abregung vom Zustand $F^\prime=4$ ausschließlich in den Zustand $F=3$ übergeht.
 Dieser Übergang entspricht einer Wellenlänge von \SI{780.25}{nm} \cite{steck}, so dass ein Laser gewählt wird, der diesem Übergang gegenüber rotverstimmt ist.
-Da jedoch in einigen seltenen Fällen auch eine Anregung in die Niveaus $F^\prime=2$, $F^\prime=3$ geschieht, die in den $F=2$ Zustand übergehen können und die Atome so das abgeschlossene System zur Kühlung verlassen, wird zusätzlich ein sogenannter Pumplaser eingesetzt, der die Atome aus diesem Zustand auf das $F^\prime=3$ Niveau anhebt, von wo aus sie zu einem Großteil in das untere Niveau des Kühlübergangs mit $F=3$ zerfallen und wieder am Kühlprozess teilnehmen.
+Da jedoch in einigen seltenen Fällen auch eine Anregung in die Niveaus $F^\prime=2$, $F^\prime=3$ geschieht, die in den $F=2$ Zustand übergehen können und die Atome so das abgeschlossene System zur Kühlung verlassen, wird zusätzlich ein sogenannter Pumplaser eingesetzt, der die Atome aus diesem Zustand auf das $F^\prime=2$ oder $F^\prime=3$ Niveau anhebt, von wo aus sie in das untere Niveau des Kühlübergangs mit $F=3$ zerfallen können und folglich wieder am Kühlprozess teilnehmen.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=.65\textwidth]{./figures/theory/schema}
@@ -258,16 +258,18 @@ Das Maximum, auch Lamb-Dip genannt, ergibt sich durch Atome, die sich in einer E
 Die Dopplerverschiebung verschwindet hier, so dass der Pumpstrahl und Teststrahl mit der gleichen Frequenz im Ruhesystems des Atoms strahlen und der Übergang somit durch den Pumpstrahl gesättigt wird, weswegen der Teststrahl keinen Intensitätsverlust erfährt.
 Die natürliche Linienbreite kann auf diese Weise beobachtet werden.
 
-In der Polarisationsspektroskopie wird der Pumpstrahl zirkularpolarisiert, so dass eines der $m_J=\pm1$ Niveaus, abhängig von der eingestrahlten Polarisation, gesättigt wird.
-Diese anisotrope Besetzung ist dafür verantwortlich, dass das Rubidiumgas für die verschiedenen Zirkularpolarisationen doppelbrechend (optisch aktiv) wird und die lineare Polarisation des Teststrahls beim Durchgang um einen Winkel $\alpha$ gedreht wird.
-Dieser Winkel ist abhängig von der Änderung des Brechungsindex, die mit dem Absorptionsprofil zusammenhängt.
+In der Polarisationsspektroskopie wird der Pumpstrahl zirkularpolarisiert, so dass eines der $\Delta m_J=\pm1$ Übergänge, abhängig von der eingestrahlten Polarisation, gesättigt wird.
+Diese anisotrope Besetzung ist dafür verantwortlich, dass das Rubidiumgas für die verschiedenen Zirkularpolarisationen unterschiedliche Brechungsindizes aufweist und somit das Medium optisch aktiv wird.
+Dies führt dazu dass der linear polarisierte Teststrahl beim Durchgang um einen Winkel $\alpha$ gedreht wird.
+Dieser Winkel ist abhängig von der Änderung des Brechungsindex für die verschiedenen Polarisationen.
 Durch einen Polarisator und einen Analysator vor und hinter der Rubidiumkammer kann detektiert werden, ob die Polarisation des Teststrahls gedreht wurde.
-Den Analysator bildet ein polarisierender Strahlteiler, durch den der Strahl geteilt wird, wobei beide Strahlen das bekannte Spektrum der Sättigungsspektroskopie aufweisen.
-Durch Subtraktion der beiden Spektren kann ein Signal generiert werden, mit dem eine Rückkopplungsschleife zur Stabilisierung der Frequenz betrieben wird.
-Das Signal ist hierzu besonders gut geeignet, da die Signalhöhe proportional zur Frequenz ist.
-Mithilfe eine Lockbox kann nun durch Wahl von einer Scanamplitude und einem Scanoffset ein Frequenzbereich eingestellt werden, für den die Polarisationsspektroskopie durchgeführt wird, um so ein Fehlersignal zu erzeugen, welches ein Piezoelement am Reflexionsgitter des Diodenlasers ansteuert.
+Den Analysator bildet ein polarisierender Strahlteiler, durch den der Strahl in zwei linear polarisierte Strahlen geteilt wird, wobei beide das bekannte Spektrum der Sättigungsspektroskopie aufweisen.
+Durch Subtraktion der beiden Spektren kann ein Signal generiert werden, mit dem eine Rückkopplungsschleife zur Stabilisierung der Laserfrequenz betrieben wird.
+Das Signal ist hierzu besonders gut geeignet, da die Signalhöhe im Bereich um einen Übergang proportional zur Frequenzverstimmung ist.
+Mithilfe einer Lockbox kann nun durch Wahl von einer Scan-Amplitude und einem Scan-Offset ein Frequenzbereich um den gewünschten Übergang eingestellt werden, um so ein Fehlersignal zu erzeugen, welches ein Piezoelement am Reflexionsgitter des Diodenlasers ansteuert.
 Durch Änderung der Resonatorlänge wird somit die Frequenz des Lasers angepasst, wenn diese von der gewünschten, über die Lockbox eingestellte Frequenz, abweicht.
 Dadurch ist es möglich, die Frequenz des Lasers mit hoher Genauigkeit einzustellen und Temperaturdrifts und anderen äußeren Einflüssen, die eine Änderung der Frequenz hervorrufen, entgegenzuwirken.
+Darüber hinaus kann eine gewollte Verstimmung durch die das Überlagern einer konstanten Spannung erzeugt werden.
 
 \section{Aufbau der MOT}
 
