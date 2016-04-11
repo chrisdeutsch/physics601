@@ -643,7 +643,7 @@ Dazu wird jeweils einer der Laser mithilfe der Lockbox auf eine bestimmte Freque
 Dadurch wird die Frequenz des Lasers in Abhängigkeit von Scan-Offset und Amplitude über einen kleinen Bereich variiert und mithilfe einer Photodiode kann die Fluoreszenz der MOT gemessen werden.
 Dabei ist es wichtig die Scan-Frequenz so klein zu wählen, dass die Periode des Scan-Signals wesentlich kleiner ist als die typische Ladezeit der MOT von etwa \SI{0.1}{s}.
 Darüber hinaus wird eine Untergrundmessung mit deaktiviertem Magnetfeld durchgeführt, um die Fluoreszenz des heißen Hintergrundgases entfernen zu können.
-Dieser Untergrund kann mithilfe des Spektrums aus der Rb-Spektroskopie an das Fluoreszenzsignal der MOT angepasst werden und folglich abgezogen werden.
+Dieser Untergrund kann mithilfe des Spektrums aus der Rb-Spektroskopie an das Fluoreszenzsignal der MOT angepasst und folglich abgezogen werden.
 
 \subsubsection{Variation der Kühllaserfrequenz}
 \label{sec:detuning_cooling}
@@ -688,7 +688,7 @@ und folglich für die optimale Verstimmung
 	\delta_\mathrm{opt.} = \SI{-12.8 +- 0.5}{MHz} \, \text{.}
 \end{align*}
 Man sieht, dass der experimentell bestimmte Wert für die Verstimmung des Kühllasers leicht von dem aus der Theorie erwarteten Wert abweicht.
-Dies kann darauf zurückzuführen sein, dass für der theoretische Wert~$\delta_\mathrm{opt.}$ nur unter idealisierten Bedingungen gilt, welche in diesem Experiment nicht vollständig erfüllt werden können.
+Dies kann darauf zurückzuführen sein, dass der theoretische Wert~$\delta_\mathrm{opt.}$ nur unter idealisierten Bedingungen gilt, welche in diesem Experiment nicht vollständig erfüllt werden können.
 
 
 \subsubsection{Variation der Pumplaserfrequenz}
@@ -701,7 +701,7 @@ Die Vorgehensweise zur Entfernung des Untergrundes der Fluoreszenzmessung verble
 	\label{fig:detuning_repumping}
 \end{figure}
 
-Die Frequenzkalibrierung des Spektrums erfolgt über die beiden Linien im Rb-Spektrum, an welches zwei Lorentz-Kurven mit einem polynomialen Untergrund 4.\ Ordnung angepasst wurde.
+Die Frequenzkalibrierung des Spektrums erfolgt über die beiden Linien im Rb-Spektrum, an welches zwei Lorentz-Kurven mit einem polynomialen Untergrund~4.\ Ordnung angepasst wurde.
 Die sichtbaren Linien entsprechen hierbei dem Übergang $F=2 \rightarrow F^\prime=2$ (links) und dem Überkreuzungs-Signal $F=2 \rightarrow F^\prime=2,3$ (rechts).
 Zwischen diesen beiden Linien liegt ein Frequenzbereich von \SI{31.7}{MHz} \cite{script}, welcher für die Frequenzkalibrierung genutzt werden kann, um die Frequenzverstimmung zum $F=2 \rightarrow F^\prime=2$ Übergang angeben zu können.
 Weiterhin ist anzumerken, dass zwischen die beiden Linien im Rb-Spektrum ein weiteres Überkreuzungs-Signal fällt, welches jedoch nicht klar aufgelöst werden kann.
@@ -723,6 +723,13 @@ Demnach ist der gemessene Wert für das zweite Fluoreszenzmaximum kompatibel mit
 
 \section{Fazit}
 
+Die Durchführung des Versuchs gelang gut, insbesondere die Justierung der Laser.
+Nach kurzer Zeit konnten bereits gefangene Atome beobachtet werden, wobei die Falle durch Veränderungen am Laseraufbau nicht weiter verbessert werden konnte.
+Durch Variation und Einstellung der Frequenzen beider Laser konnte die Falle hinsichtlich ihrer Fluoreszenz optimiert werden und eignete sich für die anschließende Charakterisierung.
+Der Pumplaser stellte einer Schwierigkeit für die Messungen dar, da er nicht durch eine Rückkopplungsschleife stabilisert werden konnte.
+Temperaturdrifts und mögliche andere äußere Einflüsse sorgten dafür, dass sich die Frequenz nach kurzer Zeit bereits so stark veränderte, dass die Fluoreszenzleistung deutlich zurückging und so eine ständige Kontrolle dieser, sowie ein Nachregeln der Laserfrequenz nötig war.
+
+Dennoch konnten aussagekräftige Messwerte aufgenommen werden, die, falls vorhanden, durch Literaturvergleiche als plausibel bewertet werden können. 
 
 \FloatBarrier
 % BIBLIOGRAPHIE
