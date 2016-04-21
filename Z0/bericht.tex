@@ -1,0 +1,208 @@
+% PAKETE UND DOKUMENTKONFIGURATION
+\documentclass[11pt, a4paper]{article}
+
+% Encoding für Umlaute
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Silbentrennung
+\usepackage[english]{babel}
+
+% erweiterte Matheumgebungen und Formelnummer mit Sectionnummer
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+
+% Braket Notation
+\usepackage{braket}
+\usepackage{isotope}
+\usepackage[version=4]{mhchem}
+\usepackage{tensor}
+\usepackage{slashed}
+
+% zusätzliche mathematische Schriftarten
+\usepackage{amsfonts}
+
+% verschiedene mathematische Symbole
+\usepackage{amssymb}
+
+% sidewaysfrac
+\usepackage{xfrac}
+
+% Einheiten setzen z.B. \SI{10}{\kilo\gram\meter\per\second\squared}
+% Fehler: \SI{10 +- 0,2e-4}{\metre}
+\usepackage{siunitx}
+\sisetup{
+  output-decimal-marker={,},
+  separate-uncertainty
+}
+
+% Einheitendefinitionen
+\DeclareSIUnit{\skt}{Skt.}
+\DeclareSIUnit{\gauss}{G}
+\DeclareSIUnit{\division}{div.}
+\DeclareSIUnit{\Kanal}{Kanal}
+
+% Operatordefinitionen
+\DeclareMathOperator{\erf}{erf}
+
+% Randbreiten
+\usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm,twoside]{geometry}
+
+% Bilder einfügen
+\usepackage{graphicx}
+\usepackage[percent]{overpic}
+
+% Textfarbe
+\usepackage{color}
+
+% Verweise innerhalb des Dokuments
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks = true,
+	allcolors = {black}
+}
+
+% bessere Tabellenlayouts
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+
+% Seitenlayout (Kopfzeile)
+\usepackage{fancyhdr}
+
+% Float Barriers
+\usepackage{placeins}
+
+% Pakete für gedrehte Subfigures
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{rotating}
+\usepackage{capt-of}
+
+% Paket für textumflossene Abbildungen und Tabellen
+\usepackage{wrapfig}
+
+\usepackage{float}
+
+% Caption-Setup
+\captionsetup{font={small}}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\thesubtable}{\alph{subtable}}
+
+% Manuelle Silbentrennung
+\hyphenation{Sekundär-elek-tronen-verviel-facher}
+
+% Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
+% 3 subsubsections)
+\setcounter{tocdepth}{3}
+
+% FANCYHDR SETUP
+\pagestyle{fancy}
+\fancyhead[EL,OR]{\thepage}
+\fancyhead[ER]{\leftmark}
+\fancyhead[OL]{\rightmark}
+\setlength{\headheight}{13.6pt}
+
+\renewcommand{\sectionmark}[1]{
+\markboth{\thesection{} #1}{\thesection{} #1}
+}
+\renewcommand{\subsectionmark}[1]{
+\markright{\thesubsection{} #1}
+}
+
+\newcommand{\korr}[1]{{\color{red}(#1)}}
+
+% DOKUMENTINFORMATIONEN
+\title{E213 \\ Analysis of Decays of Heavy Vector Boson Z$_0$}
+
+\author{Christopher Deutsch\footnote{christopher.deutsch@uni-bonn.de} \and Christian Bespin\footnote{christian.bespin@uni-bonn.de}}
+
+\date{\today}
+
+\begin{document}
+
+\begin{titlepage}
+
+\maketitle
+
+% DURCHFÜHRUNGSDATUM UND TUTOR
+\begin{center}
+\begin{tabular}{l r}
+Performed: & April 20 \& 21, 2016 \\
+Group: & P8 \\
+Tutor: & David Hohn
+\end{tabular}
+\end{center}
+
+% ZUSAMMENFASSUNG
+\begin{abstract}
+	\noindent 
+\end{abstract}
+
+\end{titlepage}
+
+% INHALTSVERZEICHNIS
+\tableofcontents
+% Neue Seite nach TOC
+\newpage
+
+% INHALT VERSUCHSPROTOKOLL
+\section{Introduction}
+
+
+
+\section{Theoretical Background}
+
+
+\section{Conclusion}
+
+
+\FloatBarrier
+% BIBLIOGRAPHIE
+\vspace{\fill}
+% Maximale Anzahl der Einträge in Klammer
+% Zitieren mit \cite{lamport94}
+\begin{thebibliography}{19}
+\bibitem{steck}
+D.\ A.\ Steck,
+\emph{Rubidium 85 D Line Data},
+\url{http://steck.us/alkalidata} (Revision 2.1.6, 20.\ September 2013)
+
+\bibitem{script}
+Skript zum Versuch,
+\emph{FP Experiment: Rubidium MOT},
+(Stand: Januar 2014).
+	
+\bibitem{anleitung}
+	\emph{Advanced Laboratory Course (physics601): Description of Experiments}, BONN-AT-2016-01MP, Universität Bonn, Januar 2016
+	
+\bibitem{foot}
+C.\ J.\ Foot,
+\emph{Atomic Physics},
+Oxford University Press, 2005.
+
+\bibitem{wieman}
+	C.\ Wieman, G.\ Flowers, S.\ Gilbert,
+	\emph{Inexpensive laser cooling and trapping experiment for undergraduate laboratories},
+	Am.\ J.\ Phys.\ \textbf{63} (4), April 1995.
+
+\bibitem{handbook_spectroscopic_data}
+	J.\ E.\ Sansonetti, W.\ C.\ Martin,
+	\emph{Handbook of Basic Atomic Spectroscopic Data},
+	National Institute of Standards and Technology (NIST), \url{http://physics.nist.gov/PhysRefData/Handbook/Tables/rubidiumtable1.htm} (Letzter Aufruf: 7.\ April 2016).
+
+\bibitem{force_in_mot}
+	A.\ M.\ Steane, M.\ Chowdhury, C.\ J.\ Foot,
+	\emph{Radiation force in the magneto-optical trap},
+	J.\ Opt.\ Soc.\ Am.\ B \textbf{9}, 2142 (1992).
+\end{thebibliography}
+
+% APPENDIX
+\begin{appendix}
+\newpage
+\section{Appendix}
+\end{appendix}
+
+\end{document}
