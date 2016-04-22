@@ -1,0 +1,59 @@
+zone 1 1
+
+* Only pcharged cut
+n/cuts $1 pcharged<1
+
+n/plot electrons.pcharged $1
+pict/print pcharged_investigation/pcharged_cut/pcharged.ps
+
+n/plot electrons.ncharged $1
+pict/print pcharged_investigation/pcharged_cut/ncharged.ps
+
+n/plot electrons.e_ecal $1
+pict/print pcharged_investigation/pcharged_cut/e_ecal.ps
+
+n/plot electrons.e_hcal $1
+pict/print pcharged_investigation/pcharged_cut/e_hcal.ps
+
+n/plot electrons.cos_thet $1.and.cos_thet<2
+pict/print pcharged_investigation/pcharged_cut/cos_thet.ps
+
+n/plot electrons.cos_thru $1.and.cos_thru<2
+pict/print pcharged_investigation/pcharged_cut/cos_thru.ps
+
+
+* + ncharged cut
+n/cuts $1 pcharged<1.and.ncharged>0
+
+n/plot electrons.pcharged $1
+pict/print pcharged_investigation/ncharged_cut/pcharged.ps
+
+n/plot electrons.ncharged $1
+pict/print pcharged_investigation/ncharged_cut/ncharged.ps
+
+n/plot electrons.e_ecal $1
+pict/print pcharged_investigation/ncharged_cut/e_ecal.ps
+
+n/plot electrons.e_hcal $1
+pict/print pcharged_investigation/ncharged_cut/e_hcal.ps
+
+n/plot electrons.cos_thet $1.and.cos_thet<2
+pict/print pcharged_investigation/ncharged_cut/cos_thet.ps
+
+n/plot electrons.cos_thru $1.and.cos_thru<2
+pict/print pcharged_investigation/ncharged_cut/cos_thru.ps
+
+
+* abs(cos_thet) < 0.9
+n/plot electrons.pcharged cos_thet<0.9.and.cos_thet>-0.9.and.pcharged<150
+pict/print pcharged_investigation/final_electron.ps
+
+n/plot muons.pcharged cos_thet<0.9.and.cos_thet>-0.9.and.pcharged<150
+pict/print pcharged_investigation/final_muon.ps
+
+
+
+
+
+
+

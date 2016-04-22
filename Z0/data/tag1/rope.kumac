@@ -1,0 +1,168 @@
+*
+* rope.kumac
+* 
+* 08-Jul-96 S.Menke added rope.kumac HPPLUS version
+* 27-Mar-95 S.Menke
+*  Modified macros for alpha
+* 8-Jul-93  R.Bartoldus
+* taken from standard OPAL kumac
+* modified PRLASER
+*
+
+ALIAS/CREATE PRLASER  'EXEC grope#PRLASER'
+ALIAS/CREATE LASER    'EXEC grope#LASER'
+ALIAS/CREATE PRCOL    'EXEC grope#PRCOL'
+ALIAS/CREATE NEXT     'EXEC grope#NEXT'
+ALIAS/CREATE HITSON   'EXEC grope#HITSON'
+ALIAS/CREATE DSTON    'EXEC grope#DSTON'
+ALIAS/CREATE NICE     'EXEC grope#NICE'
+ 
+* ALIAS/CREATE NEXT     'EXEC rope#NEXT'
+ALIAS/CREATE RAWDATA  'EXEC grope#RAWDATA'
+* ALIAS/CREATE HITSON   'EXEC rope#HITSON'
+ALIAS/CREATE HITSOFF  'EXEC rope#HITSOFF'
+* ALIAS/CREATE DSTON    'EXEC rope#DSTON'
+* ALIAS/CREATE NICE     'EXEC rope#NICE'
+ALIAS/CREATE ALLNEW   'EXEC rope#ALLNEW'
+ALIAS/CREATE EXOTICS  'EXEC rope#ALLNEW'
+ALIAS/CREATE ALLWW    'EXEC rope#ALLWW'
+ALIAS/CREATE MCTREE   'DZDISP EXTR'
+
+SET/PROMPT 'GRope> '
+set/break on
+set/break tb
+
+* define some GPHIGS buttons
+* GOSIP/DEF ENTIRE ENTIRE
+* GOSIP/DEF XY     XY
+* GOSIP/DEF YZ     YZ
+* GOSIP/DEF XZ     XZ
+* GOSIP/DEF SIDE   SIDE
+* GOSIP/DEF DRAW   DRAW
+* GOSIP/DEF GET    GET
+* GOSIP/DEF PICK   PICK
+* GOSIP/DEF ZOOM   VI/ZOOM
+ 
+RETURN
+
+macro allnew
+/EVSEL/SET/EVTYPE GACE 0 SET                                      
+/EVSEL/SET/EVTYPE LMAE 0 SET                                      
+/EVSEL/SET/EVTYPE MONO 0 SET                                      
+/EVSEL/SET/EVTYPE GOPL 0 SET                                      
+/EVSEL/SET/EVTYPE NELO 0 SET                                      
+/EVSEL/SET/EVTYPE NETI 0 SET 
+/EVSEL/SET/EVTYPE LLIL 0 SET 
+/EVSEL/SHOW BITS
+return                                     
+macro allww
+*NKW 960630. Need fixed ROTPARM for this to work.
+/EVSEL/SET/EVTYPE WW4Q 0 SET                                      
+/EVSEL/SET/EVTYPE WWQE 0 SET                                      
+/EVSEL/SET/EVTYPE WWQM 0 SET                                      
+/EVSEL/SET/EVTYPE WWQT 0 SET                                      
+/EVSEL/SET/EVTYPE WWLL 0 SET                                      
+/EVSEL/SHOW BITS
+return                                     
+macro next
+trig
+draw
+return
+macro get
+get 
+draw
+return
+macro hitson
+set/hits si 1
+set/hits cv 1
+set/hits cj 1
+set/hits eb 1
+set/hits ee 1
+set/hits hb 1
+set/hits he 1
+set/hits mb 1
+set/hits me 1
+set/dst ecal 0
+set/dst hcal 0
+return
+macro hitsoff
+set/hits si 0
+set/hits cv 0
+set/hits cj 0
+set/hits eb 0
+set/hits ee 0
+set/hits hb 0
+set/hits he 0
+set/hits mb 0
+set/hits me 0
+set/dst ecal 1
+set/dst hcal 1
+return
+MACRO NICE    
+SET/AUTOGO OFF
+SET/LINE CVR SOLID 2.0 2
+SET/MARK CVHA POINT 0.5 2
+SET/MARK CVHU POINT 0.5 2
+SET/MARK CVHG POINT 0.5 2
+SET/LINE CJT SOLID 2.0 4
+SET/MARK CJH POINT 0.5 3
+SET/MARK CJHA XMARK 0.5 3
+SET/LINE CZR SOLID 2.0 6
+SET/MARK CZH POINT 0.5 6
+SET/LINE CDR SOLID 2.0 4
+SET/LINE PBR SOLID 2.0 4
+SET/LINE EBH SOLID 2.0 2
+*SET/LINE EBG SOLID 0.5 1
+SET/LINE EEH SOLID 2.0 2
+SET/LINE EMR SOLID 2.0 2
+SET/LINE ODE SOLID 2.0 2
+SET/MARK ODV POINT 0.1 7
+SET/MARK MBH PLUS  0.6  4
+*SET/LINE MBG SOLID 0.5 1
+SET/MARK MEC OMARK 0.5  2
+SET/MARK MES XMARK 0.5  2
+SET/LINE ODCB SOLID 2.0 7
+SET/LINE ODCG SOLID 2.0 7
+SET/LINE ODCM SOLID 2.0 7
+SET/LINE ODM  SOLID 2.0 2
+SET/TEXT EMR 1 STRING 1. 0. 2 20.
+SET/TEXT ODE 1 STRING 1. 0. 2 20.
+SET/FILLBOX 1
+SET/DST CTRK 1
+SET/DST MUON 0
+SET/DST ECAL 0
+SET/DST HCAL 0
+SET/DST PRES 0
+SET/DST FDET 0
+SET/DST TOF  1
+SET/DST VRTX 1
+SET/HITS EB 1
+SET/HITS EE 1
+SET/HITS HB 2
+SET/HITS HE 0
+SET/HITS MB 3
+*SET/GEOM ME 0
+*SET/GEOM MB 3
+*SET/GEOM HB 0
+SET/GEOM CZ 1
+MOM 0.2
+THETA 85. 95. OUTER
+SET/AUTOGO ON
+DRAW
+RETURN
+MACRO DSTON  
+SET/AUTOGO OFF
+SET/HITS CV 0
+SET/HITS CJ 0
+SET/HITS CZ 0
+SET/HITS TB 0
+SET/HITS EB 0
+SET/HITS EE 0
+SET/HITS HB 0
+SET/HITS HE 0
+SET/HITS MB 0
+SET/HITS TR 0
+SET/RECON OD 2
+SET/AUTOGO ON
+VIEW/GO 
+RETURN

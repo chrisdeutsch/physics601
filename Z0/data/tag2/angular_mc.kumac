@@ -1,0 +1,13 @@
+zone 2 2
+
+n/plot electrons.cos_thet cos_thet<2
+n/plot muons.cos_thet cos_thet<2
+n/plot taus.cos_thet cos_thet<2
+n/plot hadrons.cos_thet cos_thet<2
+
+pict/print angular_mc/cos_theta.ps
+
+zone 1 1
+n/plot electrons.cos_thet cos_thet>-0.9.and.cos_thet<0.5
+pict/print angular_mc/t_channel_cut.ps
+

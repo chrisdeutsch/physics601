@@ -1,0 +1,62 @@
+n/cuts $1 e_lep>44.0.and.e_lep<44.5
+n/cuts $2 e_lep>44.5.and.e_lep<45.0
+n/cuts $3 e_lep>45.0.and.e_lep<45.4
+n/cuts $4 e_lep>45.4.and.e_lep<45.8
+n/cuts $5 e_lep>45.8.and.e_lep<46.25
+n/cuts $6 e_lep>46.25.and.e_lep<46.7
+n/cuts $7 e_lep>46.7.and.e_lep<47.0
+
+n/cuts $99 cos_thet>-0.9.and.cos_thet<0.9
+
+* muon cut
+n/cuts $12 ncharged<4.and.e_ecal<15.and.e_hcal<25.and.pcharged>55
+
+zone 1 2
+
+* energy 1
+n/plot daten6.pcharged $12.and.$99.and.cos_thet>0.and.$1
+n/plot daten6.pcharged $12.and.$99.and.cos_thet<0.and.$1
+pict/print measurement/fba/energy1.ps
+
+
+
+* energy 2
+n/plot daten6.pcharged $12.and.$99.and.cos_thet>0.and.$2
+n/plot daten6.pcharged $12.and.$99.and.cos_thet<0.and.$2
+pict/print measurement/fba/energy2.ps
+
+
+* energy 3
+n/plot daten6.pcharged $12.and.$99.and.cos_thet>0.and.$3
+n/plot daten6.pcharged $12.and.$99.and.cos_thet<0.and.$3
+pict/print measurement/fba/energy3.ps
+
+
+* energy 4
+n/plot daten6.pcharged $12.and.$99.and.cos_thet>0.and.$4
+n/plot daten6.pcharged $12.and.$99.and.cos_thet<0.and.$4
+pict/print measurement/fba/energy4.ps
+
+
+* energy 5
+n/plot daten6.pcharged $12.and.$99.and.cos_thet>0.and.$5
+n/plot daten6.pcharged $12.and.$99.and.cos_thet<0.and.$5
+pict/print measurement/fba/energy5.ps
+
+
+* energy 6
+n/plot daten6.pcharged $12.and.$99.and.cos_thet>0.and.$6
+n/plot daten6.pcharged $12.and.$99.and.cos_thet<0.and.$6
+pict/print measurement/fba/energy6.ps
+
+
+* energy 7
+n/plot daten6.pcharged $12.and.$99.and.cos_thet>0.and.$7
+n/plot daten6.pcharged $12.and.$99.and.cos_thet<0.and.$7
+pict/print measurement/fba/energy7.ps
+
+
+
+
+
+

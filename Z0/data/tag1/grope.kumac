@@ -1,0 +1,144 @@
+*
+* grope.kumac
+*
+* 27-Mar-95 S.Menke
+*   Modfied macros for alpha
+* 8-Jul-93  R.Bartoldus
+* taken from standard OPAL kumac
+* modified PRLASER
+*
+
+MACRO PRLASER
+METAFILE POST
+SHELL echo "%!"                                                   >grope.post
+SHELL echo "/Times-Roman findfont 10 scalefont setfont"          >>grope.post
+SHELL echo " 50 810 moveto (${USERNAME-$USER}) show"             >>grope.post
+SHELL echo " 440 810 moveto ($HOST) show"                        >>grope.post
+SHELL echo " 480 810 moveto (`date +\"%d-%h-%Y   %H:%M\"`) show" >>grope.post
+SHELL ls -t META_* > meta.list
+SHELL cat `head -1 meta.list` >>grope.post
+SHELL rm `head -1 meta.list`
+SHELL lpr -Popal_print grope.post
+SHELL lpq -Popal_print
+RETURN
+
+MACRO LASER
+METAFILE POST
+SHELL ls -t META_* > meta.list
+SHELL lpr -Popal_print `head -1 meta.list`
+SHELL lpq -Popal_print
+SHELL rm `head -1 meta.list`
+RETURN                                              
+
+MACRO PRCOL
+KUIP/MESS 'Be sure to type NICE first, to get nice colour setup'
+META POSC                
+SHELL ls -t META_* > meta.list
+SHELL lpr -Patlas_print `head -1 meta.list`
+SHELL lpq -Patlas_print
+SHELL rm `head -1 meta.list`
+SHELL rm meta.list 
+RETURN
+MACRO NICE    
+SET/AUTOGO OFF
+SET/LINE CVR SOLID 2.0 2
+SET/MARK CVHA POINT 0.5 2
+SET/MARK CVHU POINT 0.5 2
+SET/MARK CVHG POINT 0.5 2
+SET/LINE CJT SOLID 2.0 4
+SET/MARK CJH POINT 0.5 3
+SET/MARK CJHA XMARK 0.5 3
+SET/LINE CZR SOLID 2.0 6
+SET/MARK CZH POINT 0.5 6
+SET/LINE CDR SOLID 2.0 4
+SET/LINE PBR SOLID 2.0 4
+SET/LINE EBH SOLID 2.0 2
+*SET/LINE EBG SOLID 0.5 1
+SET/LINE EEH SOLID 2.0 2
+SET/LINE EMR SOLID 2.0 2
+SET/LINE ODE SOLID 2.0 2
+SET/MARK ODV POINT 0.1 7
+SET/MARK MBH PLUS  0.6  4
+*SET/LINE MBG SOLID 0.5 1
+SET/MARK MEC OMARK 0.5  2
+SET/MARK MES XMARK 0.5  2
+SET/LINE ODCB SOLID 2.0 7
+SET/LINE ODCG SOLID 2.0 7
+SET/LINE ODCM SOLID 2.0 7
+SET/LINE ODM  SOLID 2.0 2
+SET/TEXT EMR 1 STRING 1. 0. 2
+SET/TEXT ODE 1 STRING 1. 0. 2
+SET/FILLBOX 1
+SET/DST CTRK 1
+SET/DST MUON 0
+SET/DST ECAL 0
+SET/DST HCAL 0
+SET/DST PRES 0
+SET/DST FDET 0
+SET/DST TOF  1
+SET/DST VRTX 1
+SET/HITS EB 1
+SET/HITS EE 1
+SET/HITS HB 2
+SET/HITS HE 0
+SET/HITS MB 3
+*SET/GEOM ME 0
+*SET/GEOM MB 3
+*SET/GEOM HB 0
+SET/GEOM CZ 1
+MOM 0.2
+THETA 85. 95. OUTER
+SET/AUTOGO ON
+DRAW
+RETURN
+MACRO DSTON  
+SET/AUTOGO OFF
+SET/HITS CV 0
+SET/HITS CJ 0
+SET/HITS CZ 0
+SET/HITS TB 0
+SET/HITS EB 0
+SET/HITS EE 0
+SET/HITS HB 0
+SET/HITS HE 0
+SET/HITS MB 0
+SET/HITS TR 0
+SET/RECON OD 2
+SET/AUTOGO ON
+VIEW/GO 
+RETURN
+MACRO HITSON
+SET/AUTOGO OFF
+SET/RECON OD 1
+* SET/HITS CV 1
+* SET/HITS CJ 1
+* SET/HITS CZ 1
+SET/DST CTRK 1
+SET/DST MUON 1
+SET/DST ECAL 0
+SET/DST HCAL 0
+SET/DST PRES 0
+SET/DST FDET 0
+SET/DST TOF  1
+SET/DST VRTX 1
+SET/HITS EB 1
+SET/HITS EE 1
+SET/HITS HB 2
+SET/HITS HE 1
+* SET/HITS MB 1
+* SET/HITS TR 2
+SET/AUTOGO ON
+VIEW/GO 
+RETURN
+MACRO NEXT
+TRIG
+DRAW
+RETURN
+MACRO VIRGIN    
+SET/AUTOGO OFF
+SET/LINE AX  SOLID 0.5 1
+SET/LINE BU  SOLID 0.5 1
+SET/LINE CDR SOLID 0.5 6
+SET/AUTOGO ON
+DRAW
+RETURN

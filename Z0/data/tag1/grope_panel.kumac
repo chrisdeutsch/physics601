@@ -1,0 +1,64 @@
+*
+* MOTIF_PANEL grope_panel.kumac
+*
+* NKW. Make rope.kumac set macro search path to: .,$grope_dir_new.
+panel 0
+panel 1.01 . 'Trig' 
+panel 1.02 . 'Next' 
+panel 1.03  'Char/rerun'                       'DoChSel' 
+panel 1.04  'call $ENV(grope_dir_new)/wwsel.f' 'DoWWSel'
+panel 1.05 .             'Divert' 
+panel 1.06  'META'       'Save_PS'
+
+panel 2.01  'Ev/Set/'    'Select'
+panel 2.02  'Ev/show'    'ShowSel'
+panel 2.03 'k/mess "** Any event selections defined will be IGNORED **" ; _
+            Ev/ignore'  'NoSel' 
+panel 2.04 'k/mess "** Any event selections defined will be ENABLED **" ; _
+            Ev/enable'  'UseSel'
+panel 2.05  'ALLWW'      'WWSel' 
+*NKW panel 2.06  'EXOTICS'    'SelExotic'
+panel 2.06  'Char/print' 'ChPrint'
+
+panel 3.01 . 'Draw' 
+panel 3.02 . 'Evfind' 
+panel 3.03   'Side'      'SideView' 
+panel 3.04   'xy'        'xy-View' 
+panel 3.05 'TWODIM XY SIDE SIDT' 'TwoD'
+panel 3.06 . 'ThreeD'
+ 
+panel 4.01 . 'Entire'
+panel 4.02 . 'Zoom' 
+panel 4.03 . 'In 2' 
+panel 4.04 . 'In 5' 
+panel 4.05 . 'Out 2' 
+panel 4.06 . 'Out 5' 
+
+panel 5.01 . 'Rotate' 
+panel 5.02 . 'Spin' 
+panel 5.03 . 'Left' 
+panel 5.04 . 'Right' 
+panel 5.05 . 'Up' 
+panel 5.06 . 'Down' 
+
+panel 6.01 . 'Lego' 
+panel 6.02 . 'SIroll' 
+panel 6.03 . 'SWdisp' 
+panel 6.04 . 'dEdx' 
+panel 6.05 . 'Btof' 
+panel 6.06  'call $ENV(grope_dir_new)/chplot.f' 'AcopRvis' 
+
+panel 7.01 . 'Pick' 
+panel 7.02 . 'High' 
+panel 7.03 . 'Jets/' 
+panel 7.04 . 'g/Show/' 
+panel 7.05 . 'g/Set/' 
+panel 7.06 . 'Od/Print'
+ 
+panel 8.01 . 'DZdisp'
+panel 8.02 . 'McTree'
+panel 8.03 'call $ENV(grope_dir_new)/hot.f' 'HotBlcks'
+panel 8.04   'file' 'Openfile' 
+panel 8.05 'exec gr_scan' 'Scanning' 
+panel 8.06 'QUIT' 'Exit' 
+panel 0 d 'GRope++ : handy commands' 500x305+0+640

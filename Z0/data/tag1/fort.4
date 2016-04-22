@@ -1,0 +1,47 @@
+C
+C
+C-- graphics and workstation stuff
+
+C
+C uncomment GRCOLOR card if you want to use a b/w monitor
+ GRCOLOR 1
+ GRWKTYPE 8887 2 2 2 2
+ GRMENPOS 0.001 0.88 0.06 0.12
+* REPORT 0 0 0 0 0 
+C
+C-- init and constants files
+C
+ *FILE 'BANK' 'IN  ' 19 256 'I   '    ' ' '/hep/opal/cal/ropebank.rzbank'
+C
+C --- Data ---
+C
+ *FILE 'CAL ' 'IN  ' 45 0 'I   ' 'EXP5' '/hep/opal/cal/opalcal.rzexp5'
+ *FILE 'CAL ' 'IN  ' 42 0 'I   ' 'EXP2' '/hep/opal/cal/opalcal.rzexp2'
+ *FILE 'CAL ' 'IN  ' 43 0 'I   ' 'EXP3' '/hep/opal/cal/opalcal.rzexp3'
+ *FILE 'CAL ' 'IN  ' 44 0 'I   ' 'EXP4' '/hep/opal/cal/opalcal.rzexp4'
+ *FILE 'CAL ' 'IN  ' 46 0 'I   ' 'EXP1' '/hep/opal/cal/opalcal.rzexp1'
+C
+C --- Monte Carlo ---
+ *FILE 'INIT' 'IN  ' 21 0 'ILX ' '    ' '/hep/opal/cal/fullg142.fxinit'
+ *FILE 'CNST' 'IN  ' 40 0 'ILX ' '    ' '/hep/opal/cal/muon142.fxdata'
+C
+C-- data files
+C
+*FILE 'DATA' 'IN  ' 20 0 'IXTL' 7='/home/fp213/fxddst/test1.fxdst'
+C
+C------------------------------------------------------------------------
+C unpack dense data
+C------------------------------------------------------------------------
+  DCDEFDIR '/hep/opal/cal/dicts'
+  DDUNPACK 1
+  DDUPDET 'ALL '
+  CENTRAL 'ALL '
+  ODBLK 'ALL '
+  RERUN 'ALL '
+  DDMONI
+  DDLOGLEV 0
+C
+C
+C  *get 1520 3000
+ *READIN 1 999999 1
+ STOP

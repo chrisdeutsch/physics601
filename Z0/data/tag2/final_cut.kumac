@@ -1,0 +1,55 @@
+zone 2 2
+
+n/cuts $8 cos_thet>-0.9.and.cos_thet<0.5
+n/cuts $9 cos_thet>-0.9.and.cos_thet<0.9
+
+* hadron cut
+n/cuts $1 ncharged>7.and.e_ecal>20
+
+* electron cut
+n/cuts $2 ncharged<5.and.e_ecal>70.and.e_hcal<15.and.pcharged>30
+
+* muon cut
+n/cuts $3 ncharged<4.and.e_ecal<15.and.e_hcal<25.and.pcharged>55
+
+* tau cut
+n/cuts $4 ncharged<8.and.e_ecal<75.and.pcharged<75.and.pcharged>1
+
+n/plot electrons.pcharged $2.and.$9
+n/plot muons.pcharged $3.and.$9
+n/plot taus.pcharged $4
+n/plot hadrons.pcharged $1
+pict/print final_cuts/cut.ps
+
+
+* electron cut
+n/plot electrons.pcharged $2.and.$8
+n/plot muons.pcharged $2.and.$8
+n/plot taus.pcharged $2.and.$8
+n/plot hadrons.pcharged $2.and.$8
+pict/print final_cuts/electron_cut.ps
+
+* muon cut
+n/plot electrons.pcharged $3.and.$9
+n/plot muons.pcharged $3.and.$9
+n/plot taus.pcharged $3.and.$9
+n/plot hadrons.pcharged $3.and.$9
+pict/print final_cuts/muon_cut.ps
+
+* tau cut
+n/plot electrons.pcharged $4
+n/plot muons.pcharged $4
+n/plot taus.pcharged $4
+n/plot hadrons.pcharged $4
+pict/print final_cuts/tau_cut.ps
+
+* hadron cut
+n/plot electrons.pcharged $1
+n/plot muons.pcharged $1
+n/plot taus.pcharged $1
+n/plot hadrons.pcharged $1
+pict/print final_cuts/hadron_cut.ps
+
+
+
+

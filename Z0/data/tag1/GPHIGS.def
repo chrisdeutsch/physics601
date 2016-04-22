@@ -1,0 +1,76 @@
+C
+             ********************************************
+             ********************************************
+             **  DIRECTIVES FOR GPHIGS DEFAULT VALUES  **
+             ********************************************
+             ********************************************
+
+
+
+  - General format of a directive :
+
+      %DD arg comments
+
+    where :
+
+       '%'      : must be in the first column.
+       DD       : is the directive name coded in two charcaters, and must be
+                  in the second and thirst column.
+       arg      : is the argument(s) of the directive, the arguments must be
+                  separated with the blank character.
+       comments : anything.
+          
+
+
+   - List of directives :
+
+------------------------------------------------------------------------------
+ DD arguments               Command Name             valid        default
+                                                     values       value
+------------------------------------------------------------------------------
+ wk wkid                    WorKsation identifier    (1,2,3,4,5)  [1]
+ wa alternative             Window Aspect (ratio)    (no/yes)     [no]
+ wi alternative             Window Iconify           (no/yes)     [no]
+ wn name_of_the_window      Window Name                           [G5G-GPHIGS]
+ wp xmin xmax ymin ymax     Window position(percent)              [manual]
+ wP xpos ypos width height  Window Position(pixel)                [manual]
+ wr alternative             Window Resizable         (no/yes)     [yes]
+ ws alternative             Window Scroll            (no/yes)     [yes]
+ bs alternative             Backing Store            (no/yes)     [no]
+ cm n                       Colour Mode              (0,1,2,3)    [0]
+ db alternative             Double Buffering         (no/yes)     [yes]
+ in name_of_the_icone       Icone  Name                           [window_name]
+ ip xpos ypos               Icone  position(percent)              [manual]
+ iP xpos ypos               Icone  Position(pixel)                [manual]
+ pa n                       Pick   Apperture(pixel)  (>0)         [5]
+------------------------------------------------------------------------------
+
+
+
+   - Rem :
+
+     Every line begining with a non '%' character is not a directive line,
+     but it is allowed (for example, this file is correct).
+
+     GPHIGS use this file when you call the function "open phigs", however
+     if you want to custom your application, you can give the name of this
+     file :
+             FORTRAN binding :   CALL PXNDEF ('myfile.def')
+                                 CALL POPPH  (6,-1)
+                                 ..........
+             C       binding :   Pxndef ("myfile.def");
+                                 popen_phigs ("/dev/tty",0);
+                                 ..........
+
+
+   - Example :
+
+workstation number 1 :
+%wk 1
+%wP 005 005 805 805               upper left corner 
+ %wp 0.01 0.65 0.20 0.99           upper left corner
+%bs yes                           must be yes
+%db yes                           must be yes on DECstation
+ %db no                            must be no on TEKTRONIX
+%wn GROPE                         is the name of the window
+%cm 1

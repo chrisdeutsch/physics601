@@ -1,0 +1,85 @@
+zone 2 2
+*exec dateiname wenn man cuts usw auslagern moechte
+
+* Datensaetze:
+* electrons
+* muons
+* taus
+* hadrons
+
+* Variablen:
+* ncharged
+* pcharged
+* e_ecal
+* e_hcal
+* cos_thet
+* cos_thru
+* e_lep
+
+n/plot electrons.ncharged
+n/plot muons.ncharged
+n/plot taus.ncharged
+n/plot hadrons.ncharged
+pict/print uncut/ncharged_uncut.ps
+
+n/plot electrons.pcharged pcharged<150
+n/plot muons.pcharged pcharged<150
+n/plot taus.pcharged pcharged<150
+n/plot hadrons.pcharged pcharged<150
+pict/print uncut/pcharged_uncut.ps
+
+n/plot electrons.e_ecal
+n/plot muons.e_ecal
+n/plot taus.e_ecal
+n/plot hadrons.e_ecal
+pict/print uncut/e_ecal_uncut.ps
+
+n/plot electrons.e_hcal
+n/plot muons.e_hcal
+n/plot taus.e_hcal
+n/plot hadrons.e_hcal
+pict/print uncut/e_hcal_uncut.ps
+
+n/plot electrons.cos_thet cos_thet<2
+n/plot muons.cos_thet cos_thet<2
+n/plot taus.cos_thet cos_thet<2
+n/plot hadrons.cos_thet cos_thet<2
+pict/print uncut/cos_thet_uncut.ps
+
+n/plot electrons.cos_thru cos_thru<2
+n/plot muons.cos_thru cos_thru<2
+n/plot taus.cos_thru cos_thru<2
+n/plot hadrons.cos_thru cos_thru<2
+pict/print uncut/cos_thru_uncut.ps
+
+n/plot electrons.e_lep
+n/plot muons.e_lep
+n/plot taus.e_lep
+n/plot hadrons.e_lep
+pict/print uncut/e_lep_uncut.ps
+
+
+*cuts benennen
+*n/cuts $9 pcharged<150
+
+*n/cuts $20 cos_thet>0.and.cos_thet<0.9
+*n/cuts $21 cos_thet>-0.9.and.cos_thet<0
+
+
+*n/plot electrons.pcharged  $9 
+*n/plot muons.pcharged 	    $9
+*n/plot taus.pcharged 	    $9
+*n/plot hadrons.pcharged    $9
+*pict/print pcharged_cutless.ps
+
+
+
+
+
+
+
+
+
+
+
+

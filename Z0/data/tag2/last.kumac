@@ -1,0 +1,35 @@
+*** Begin of history file: Thu Apr 21 20:37:37 2016
+n/plot daten6.pcharged
+n/plot daten6.pcharged
+n/plot daten6.pcharged
+n/plot daten6.pcharged pcharged < 150
+n/plot daten6.pcharged
+n/plot daten6.pcharged pcharged<150
+n/plot daten6.pcharged e_lep
+n/plot daten6.pcharged e_lep
+n/plot daten6.e_lep
+n/plot daten6.e_lep e_lep <45.75
+n/plot daten6.e_lep e_lep<45.8
+n/plot daten6.e_lep e_lep<45.8
+n/plot daten6.e_lep e_lep<45.8
+n/plot daten6.e_lep e_lep<100
+n/plot daten6.e_lep e_lep<100
+n/plot daten6.e_lep e_lep<46.25
+n/plot daten6.e_lep e_lep<46.5
+n/plot daten6.e_lep e_lep<100
+n/plot daten6.e_lep e_lep<46.7
+n/plot daten6.e_lep e_lep<46.7
+n/plot daten6.e_lep e_lep<47
+n/plot daten6.e_lep e_lep<100
+exec measurement
+exec measurement
+exec measurement
+exec measurement
+exec measurement
+exec measurement
+exec measurement
+exec measurement
+exec fba
+exec fba
+exit
+*** End   of history file: Thu Apr 21 21:29:14 2016

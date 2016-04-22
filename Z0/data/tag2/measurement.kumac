@@ -1,0 +1,141 @@
+n/cuts $1 e_lep>44.0.and.e_lep<44.5
+n/cuts $2 e_lep>44.5.and.e_lep<45.0
+n/cuts $3 e_lep>45.0.and.e_lep<45.4
+n/cuts $4 e_lep>45.4.and.e_lep<45.8
+n/cuts $5 e_lep>45.8.and.e_lep<46.25
+n/cuts $6 e_lep>46.25.and.e_lep<46.7
+n/cuts $7 e_lep>46.7.and.e_lep<47.0
+
+n/cuts $98 cos_thet>-0.9.and.cos_thet<0.5
+n/cuts $99 cos_thet>-0.9.and.cos_thet<0.9
+
+
+* electron cut
+n/cuts $11 ncharged<5.and.e_ecal>70.and.e_hcal<15.and.pcharged>30
+
+* muon cut
+n/cuts $12 ncharged<4.and.e_ecal<15.and.e_hcal<25.and.pcharged>55
+
+* tau cut
+n/cuts $13 ncharged<8.and.e_ecal<75.and.pcharged<75.and.pcharged>1
+
+* hadron cut
+n/cuts $14 ncharged>7.and.e_ecal>20
+
+
+zone 1 1
+n/plot daten6.e_lep
+pict/print measurement/totalenergy.ps
+
+n/plot daten6.e_lep $1
+pict/print measurement/energies1.ps
+
+n/plot daten6.e_lep $2
+pict/print measurement/energies2.ps
+
+n/plot daten6.e_lep $3
+pict/print measurement/energies3.ps
+
+n/plot daten6.e_lep $4
+pict/print measurement/energies4.ps
+
+n/plot daten6.e_lep $5
+pict/print measurement/energies5.ps
+
+n/plot daten6.e_lep $6
+pict/print measurement/energies6.ps
+
+n/plot daten6.e_lep $7
+pict/print measurement/energies7.ps
+
+
+* Cross section
+zone 2 2
+
+* energy 1
+
+n/plot daten6.pcharged $98.and.$11.and.$1
+n/plot daten6.pcharged $99.and.$12.and.$1
+n/plot daten6.pcharged $13.and.$1
+n/plot daten6.pcharged $14.and.$1
+
+pict/print measurement/crosssection/energy1.ps
+
+* energy 2
+
+n/plot daten6.pcharged $98.and.$11.and.$2
+n/plot daten6.pcharged $99.and.$12.and.$2
+n/plot daten6.pcharged $13.and.$2
+n/plot daten6.pcharged $14.and.$2
+
+pict/print measurement/crosssection/energy2.ps
+
+* energy 3
+
+n/plot daten6.pcharged $98.and.$11.and.$3
+n/plot daten6.pcharged $99.and.$12.and.$3
+n/plot daten6.pcharged $13.and.$3
+n/plot daten6.pcharged $14.and.$3
+
+pict/print measurement/crosssection/energy3.ps
+
+* energy 4
+
+n/plot daten6.pcharged $98.and.$11.and.$4
+n/plot daten6.pcharged $99.and.$12.and.$4
+n/plot daten6.pcharged $13.and.$4
+n/plot daten6.pcharged $14.and.$4
+
+pict/print measurement/crosssection/energy4.ps
+
+* energy 5
+
+n/plot daten6.pcharged $98.and.$11.and.$5
+n/plot daten6.pcharged $99.and.$12.and.$5
+n/plot daten6.pcharged $13.and.$5
+n/plot daten6.pcharged $14.and.$5
+
+pict/print measurement/crosssection/energy5.ps
+
+* energy 6
+
+n/plot daten6.pcharged $98.and.$11.and.$6
+n/plot daten6.pcharged $99.and.$12.and.$6
+n/plot daten6.pcharged $13.and.$6
+n/plot daten6.pcharged $14.and.$6
+
+pict/print measurement/crosssection/energy6.ps
+
+* energy 7
+
+n/plot daten6.pcharged $98.and.$11.and.$7
+n/plot daten6.pcharged $99.and.$12.and.$7
+n/plot daten6.pcharged $13.and.$7
+n/plot daten6.pcharged $14.and.$7
+
+pict/print measurement/crosssection/energy7.ps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
