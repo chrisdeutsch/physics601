@@ -46,6 +46,10 @@
 % Operatordefinitionen
 \DeclareMathOperator{\erf}{erf}
 
+% Makros
+\newcommand\dinf[1]{ \,\mathrm{d}#1 }
+\newcommand\deriv[2] { \frac{\mathrm{d} #1}{\mathrm{d} #2} }
+
 % Randbreiten
 \usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm,twoside]{geometry}
 
@@ -248,6 +252,15 @@ Decays of Z$^0$ into quark-antiquark pairs always produce jets where quarks hadr
 Those can be identified as a large number of charged tracks in the tracking system.
 In addition some of the hadrons decay into leptons which can be seen as signal in the electromagnetic calorimeter or the muon chambers.
 The hadrons are stopped and seen as showers in the hadronic calorimeter.
+
+\subsection{Part II: Statistical Analysis of $\mathrm{Z}^0$ Decays}
+
+Correction for missing s-channel electrons:
+\begin{align*}
+	\frac{\int_{-1}^{1}(1 + \cos^2\theta) \dinf{\cos\theta}}{\int_{-0.9}^{0.5}(1 + \cos^2\theta) \dinf{\cos\theta}} = 1.5829
+\end{align*}
+
+
 
 \section{Conclusion}
 
