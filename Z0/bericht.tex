@@ -229,6 +229,13 @@ A decay into electrons can easily be identified by the energy deposited in the e
 The final state particles are flying approximately in opposite direction and are ideally completely stopped in the calorimeter.
 A track for every particle can be observed in the tracking chamber.
 Additional hits in the electromagnetic calorimeters probably occur due to bremsstrahlung photons which leave no track in the inner detector.
+\begin{table}[h]
+	\centering
+	\resizebox{\textwidth}{!}{
+		\input{./tables/tag1/ee}
+	}
+	\caption{Collected data from the electron dataset. All values for energies and momenta in \si{GeV}.}
+\end{table}
 
 \subsubsection{Z$^0\rightarrow \mu^+\mu^-$}
 
@@ -276,8 +283,13 @@ The resulting histograms are shown in figures \korr{REF} where one cut for ident
 While retaining as much events as possible it was not possible to fully differentiate between the decay channels.
 Because of this, there are some misinterpreted events for datasets which do not correspond to the applied cuts.
 For identifying electrons an additional cut on the angle was set such that only s-channel electrons are selected.
-An overview of the cuts is given in \korr{REF}.
-
+An overview of the cuts is given in table \ref{tab:cut_criteria}.
+\begin{table}[h]
+	\centering
+	\input{./tables/cuts}
+	\caption{Applied cuts on the data to identify the decay channel. An additional cut on the angle is used for electrons since only the s-channel is of interest.}
+	\label{tab:cut_criteria}
+\end{table}
 \subsubsection{Efficiency Matrix}
 
 Obviously one loses events in setting cuts on the data which makes it necessary to analyse the efficiency, i.e. the fractional losses of these cuts.
