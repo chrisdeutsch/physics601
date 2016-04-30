@@ -249,6 +249,43 @@ Those can be identified as a large number of charged tracks in the tracking syst
 In addition some of the hadrons decay into leptons which can be seen as signal in the electromagnetic calorimeter or the muon chambers.
 The hadrons are stopped and seen as showers in the hadronic calorimeter.
 
+\subsection{Part 2: Statistical Analysis of Z$^0$ Decays}
+
+The second part of the experiment is performed using the data analysis software \texttt{PAW}.
+To accustom ourselves with \texttt{PAW}, several variables from different Monte-Carlo simulated datasets have been plotted.
+When displaying \texttt{pcharged} one maximum at~\SI{0}{GeV} in the electron and muon data could be observed.
+To investigate the source for this observation, additional cuts on other variables have been set until it was found that those events come from particles that have been detected at a very small angle with respect to the beam axis.
+Because of the bad sensitivity in these regions the data were cut on the angle such that $\left|\cos\theta\right|<\num{0.9}$.
+It must be noted that this cut has to be used for all of the following tasks.
+
+\subsubsection{Cuts for Event Selection}
+
+In order to optimize the cuts for event identification the variables \texttt{ncharged}, \texttt{pcharged}, \texttt{e\_ecal}, \texttt{e\_hcal} have been plotted as histograms for all datasets.
+Baed on the observed distributions cuts on the parameters have been set such that we can determine the decay channel in good approximation by cutting the data.
+The resulting histograms are shown in figures \korr{REF} where one cut for identifying one decay channel has been applied to all datasets in each figure.
+\korr{FIGURES}
+While retaining as much events as possible it was not possible to fully differentiate between the decay channels.
+Because of this, there are some misinterpreted events for datasets which do not correspond to the applied cuts.
+For identifying electrons an additional cut on the angle was set such that only s-channel electrons are selected.
+An overview of the cuts is given in \korr{REF}.
+
+\subsubsection{Efficiency Matrix}
+
+Obviously one loses events in setting cuts on the data which makes it necessary to analyse the efficiency, i.e. the fractional losses of these cuts.
+Knowing that each of the datasets have been simulated with \num{100000} events the efficiency can be calculated from the number of remaining events that fulfill the cut conditions.
+A matrix formalism can be used to describe the number of measured events per decay channel $\vec{N}_\mathrm{meas}=(e_\mathrm{meas}, \mu_\mathrm{meas}, \tau_\mathrm{meas}, q_\mathrm{meas})^T$ by the number of events that have been simulated in this channel $\vec{N}_\mathrm{orig}$:
+\begin{align}
+\vec{N}_\mathrm{meas} = A \cdot \vec{N}_\mathrm{orig}
+\end{align}
+The values of $A$ describe how many events of one decay channel are identified as such or as one of the other decay channels.
+With the measured event numbers after applying the cuts on all datasets, $A$ is then given by
+\begin{align}
+A = \begin{pmatrix}
+	x & \dots \\
+	\vdots & \ddots \\
+	\end{pmatrix}
+\end{align}
+
 \section{Conclusion}
 
 
