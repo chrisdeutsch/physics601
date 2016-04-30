@@ -46,6 +46,10 @@
 % Operatordefinitionen
 \DeclareMathOperator{\erf}{erf}
 
+% Makros
+\newcommand\dinf[1]{ \,\mathrm{d}#1 }
+\newcommand\deriv[2] { \frac{\mathrm{d} #1}{\mathrm{d} #2} }
+
 % Randbreiten
 \usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm,twoside]{geometry}
 
@@ -214,7 +218,7 @@ As a last layer muon chambers are installed which consist of a tracking detector
 
 On the first day the software \texttt{GROPE} was used to study event displays and detector responses of the OPAL detector.
 
-\subsection{Part 1: Analysis of Event Displays}
+\subsection{Part I: Analysis of Event Displays}
 
 To learn how to distinguish the different decay channels of the Z boson test samples with events with only one decay mode have been investigated.
 In the following part the measured properties of the observed events and exemplary pictures of the detector response are presented.
@@ -249,7 +253,12 @@ Those can be identified as a large number of charged tracks in the tracking syst
 In addition some of the hadrons decay into leptons which can be seen as signal in the electromagnetic calorimeter or the muon chambers.
 The hadrons are stopped and seen as showers in the hadronic calorimeter.
 
-\subsection{Part 2: Statistical Analysis of Z$^0$ Decays}
+\subsection{Part II: Statistical Analysis of $\mathrm{Z}^0$ Decays}
+
+Correction for missing s-channel electrons:
+\begin{align*}
+\frac{\int_{-1}^{1}(1 + \cos^2\theta) \dinf{\cos\theta}}{\int_{-0.9}^{0.5}(1 + \cos^2\theta) \dinf{\cos\theta}} = 1.5829
+\end{align*}
 
 The second part of the experiment is performed using the data analysis software \texttt{PAW}.
 To accustom ourselves with \texttt{PAW}, several variables from different Monte-Carlo simulated datasets have been plotted.
