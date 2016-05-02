@@ -1,7 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-import sympy as sp
+from lmfit.models import LorentzianModel
+from mcerp import Binomial
 
 ### Monte-Carlo Data
 
@@ -42,4 +43,44 @@ tau_cut[1:] /= 100000
 hadr_cut[1:] /= 100000
 
 # Efficiency matrix
-E = np.array([e_cut, mu_cut, tau_cut, hadr_cut])
+efficiency = np.array([e_cut, mu_cut, tau_cut, hadr_cut])
+inv_efficiency = np.linalg.inv(efficiency)
+
+
+
+### Cross section measurement
+data = pd.read_csv("data/cross_sec_data.csv", dtype=np.float64)
+
+
+# apply efficiency correction
+pvecs = data[["e", "mu", "tau", "hadr"]].get_values()
+pvecs = np.array([np.dot(inv_efficiency, pvec) for pvec in pvecs])
+corr = pd.DataFrame(pvecs, columns=["e_corr", "mu_corr", "tau_corr", "hadr_corr"])
+data = pd.concat([data, corr], axis=1)
+
+data["sig_e"] = data.e_corr / data.lumi + data.corr_lep
+data["sig_mu"] = data.mu_corr / data.lumi + data.corr_lep
+data["sig_tau"] = data.tau_corr / data.lumi + data.corr_lep
+data["sig_hadr"] = data.hadr_corr / data.lumi + data.corr_hadr
+
+
+# BreitWignerFits
+model = LorentzianModel()
+
+E_cm = data.E_cm.get_values()
+e_fit = model.fit(data.sig_e.get_values(), x=E_cm,
+                  amplitude=8.0, center= 91.2,  sigma=1.0)
+mu_fit = model.fit(data.sig_mu.get_values(), x=E_cm,
+                   amplitude=8.0, center= 91.2,  sigma=1.0)
+tau_fit = model.fit(data.sig_tau.get_values(), x=E_cm,
+                   amplitude=8.0, center= 91.2,  sigma=1.0)
+hadr_fit = model.fit(data.sig_hadr.get_values(), x=E_cm,
+                   amplitude=160.0, center= 91.2,  sigma=1.0)
+
+
+print(e_fit.fit_report())
+print(mu_fit.fit_report())
+print(tau_fit.fit_report())
+print(hadr_fit.fit_report())
+
+
