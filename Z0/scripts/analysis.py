@@ -4,6 +4,8 @@ import pandas as pd
 from lmfit.models import LorentzianModel
 from mcerp import Binomial
 
+np.random.seed(12856712)
+
 ### Monte-Carlo Data
 
 # After precut
@@ -31,6 +33,7 @@ korr_s_cut = 8 / 3 * (-a - a**3 / 3 + b + b**3 / 3)**-1
 precut_factor = 100000 / precut[0]
 true_s_events = e_cut[0] * precut_factor * korr_s_cut
 
+
 # Calculate efficiencies
 e_cut[0] /= true_s_events
 mu_cut[0] /= true_s_events
@@ -46,6 +49,31 @@ hadr_cut[1:] /= 100000
 efficiency = np.array([e_cut, mu_cut, tau_cut, hadr_cut])
 inv_efficiency = np.linalg.inv(efficiency)
 
+# Calculate errors
+efficiency_err = np.zeros((4,4))
+
+for i in range(4):
+    efficiency_err[i,0] = np.sqrt((efficiency[i,0]-efficiency[i,0]**2) / true_s_events)
+
+for i in range(1,4):
+    for j in range(1,4):
+        efficiency_err[i,j] = np.sqrt((efficiency[i,j]-efficiency[i,j]**2) / 100000)
+
+
+# Monte Carlo Error Propagation
+matrices = []
+for i in range(10000):
+    dE = np.random.randn(16)
+    dE.resize((4,4))
+    dE *= efficiency_err
+    E = efficiency + dE
+    matrices.append(np.linalg.inv(E).flatten())
+
+matrices = np.array(matrices)
+matrices = matrices.transpose()
+
+inv_efficiency_err = np.array([m.std() for m in matrices])
+inv_efficiency_err = inv_efficiency_err.reshape((4,4))
 
 
 ### Cross section measurement
@@ -78,9 +106,8 @@ hadr_fit = model.fit(data.sig_hadr.get_values(), x=E_cm,
                    amplitude=160.0, center= 91.2,  sigma=1.0)
 
 
+print(efficiency)
 print(e_fit.fit_report())
 print(mu_fit.fit_report())
 print(tau_fit.fit_report())
 print(hadr_fit.fit_report())
-
-
