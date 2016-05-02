@@ -242,6 +242,13 @@ Additional hits in the electromagnetic calorimeters probably occur due to bremss
 Muons are detected in the muon chambers which form the outermost part of the detector.
 Since all other particles (except the non-detectable neutrinos) are stopped before reaching the muon chamber a signal there can -- neglecting noise hits -- be identified as a muon. 
 In general, muons are also created in a back to back configuration and leave a track in the tracking detector.
+\begin{table}[h]
+	\centering
+	\resizebox{\textwidth}{!}{
+		\input{./tables/tag1/mm}
+	}
+	\caption{Collected data from the muon dataset. All values for energies and momenta in \si{GeV}.}
+\end{table}
 
 \subsubsection{Z$^0\rightarrow \tau^+\tau^-$}
 
@@ -252,6 +259,13 @@ They cause signals either in the electromagnetic calorimeter or in the muon cham
 
 In a hadronic $\tau$ decay a neutrino and hadrons are produced.
 All hadrons create a shower in the hadronic calorimeter but depending on their charge a track can not always be observed.
+\begin{table}[h]
+	\centering
+	\resizebox{\textwidth}{!}{
+		\input{./tables/tag1/tt}
+	}
+	\caption{Collected data from the tau dataset. All values for energies and momenta in \si{GeV}.}
+\end{table}
 
 \subsubsection{Z$^0\rightarrow q\bar{q}$}
 
@@ -259,6 +273,32 @@ Decays of Z$^0$ into quark-antiquark pairs always produce jets where quarks hadr
 Those can be identified as a large number of charged tracks in the tracking system.
 In addition some of the hadrons decay into leptons which can be seen as signal in the electromagnetic calorimeter or the muon chambers.
 The hadrons are stopped and seen as showers in the hadronic calorimeter.
+\begin{table}[h]
+	\centering
+	\resizebox{\textwidth}{!}{
+		\input{./tables/tag1/qq}
+	}
+	\caption{Collected data from the hadronic dataset. All values for energies and momenta in \si{GeV}.}
+\end{table}
+
+\subsubsection{Event Identification in Test Sample}
+
+Based on the observations from the previous excercise it was possible to evaluate cuts to apply on the data in order to distinguish between different decay channels of the Z boson.
+The used cuts are given in table \ref{tab:cut_criteria_day1} and could be reviewed by looking on the events in a test sample.
+All of the decay channels found with the cut criteria could be verified by analysis of event displays.
+\begin{table}[h]
+	\centering
+	\input{./tables/tag1/cuts}
+	\caption{Applied cuts on the data to identify the decay channel.}
+	\label{tab:cut_criteria_day1}
+\end{table}
+\begin{table}[h]
+	\centering
+	\resizebox{\textwidth}{!}{
+		\input{./tables/tag1/testsample}
+	}
+	\caption{Collected data from the events in the test sample dataset. All values for energies and momenta in \si{GeV}.}
+\end{table}
 
 \subsection{Part II: Statistical Analysis of $\mathrm{Z}^0$ Decays}
 
@@ -290,6 +330,7 @@ An overview of the cuts is given in table \ref{tab:cut_criteria}.
 	\caption{Applied cuts on the data to identify the decay channel. An additional cut on the angle is used for electrons since only the s-channel is of interest.}
 	\label{tab:cut_criteria}
 \end{table}
+
 \subsubsection{Efficiency Matrix}
 
 Obviously one loses events in setting cuts on the data which makes it necessary to analyse the efficiency, i.e. the fractional losses of these cuts.
