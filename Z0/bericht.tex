@@ -388,32 +388,64 @@ A = \begin{pmatrix}
 	\end{pmatrix}
 \end{align}
 
+
+\begin{align*}
+	&\Delta n = \sqrt{N \cdot \left[ \frac{n}{N} - \left( \frac{n}{N} \right)^2 \right]} \\
+	&\Delta n_i^2 = \sum_k \left[ N_k^2 \cdot \Delta E_{ik}^2 + E_{ik}^2 \cdot \Delta N_k^2 \right]
+\end{align*}
+
 \subsubsection{Determination of the Differential Cross Sections}
+
+\begin{align*}
+	&N = \sigma \cdot \int \mathcal{L} \dinf{t}\\
+	&\sigma = \frac{N}{\int \mathcal{L} \dinf{t}}
+\end{align*}
+
 
 \subsubsection{Determination of the Forward-Backward Asymmetry using Muons}
 
+\begin{align*}
+	&A_\mathrm{FB} = \frac{n_\mathrm{F} - n_\mathrm{B}}{n_\mathrm{F} + n_\mathrm{B}} + \mathrm{corr}(\sqrt{s})\\
+	&A_\mathrm{FB}^\mathrm{peak} \approx 3 \left( \frac{v_\ell}{a_\ell} \right)^2 = 3 \left( 1 - 4 \sin^2\theta_\mathrm{W} \right) \\
+	&\sin^2\theta_\mathrm{W} = \frac{1 - \sqrt{A_\mathrm{FB}^\mathrm{peak} / 3}}{4}
+\end{align*}
+
 \subsubsection{Fitting Resonance Curves}
+\begin{align*}
+	&f(x; A, \mu, \sigma) = \frac{A}{\pi} \frac{\sigma}{(x - \mu)^2 + \sigma^2} \\
+	&f(x=\mu; A, \sigma) = \frac{A}{\pi \sigma} \\
+	&\Gamma = 2 \sigma \\
+	&\sigma^\mathrm{peak} = \frac{A}{\pi \sigma}
+\end{align*}
 
 \subsubsection{Calculation of the Partial Widths}
 
+\begin{align*}
+	&\sigma_f^\mathrm{peak} = \frac{12 \pi}{M_\mathrm{Z}^2} \cdot \frac{\Gamma_\mathrm{e}}{\Gamma_\mathrm{Z}} \cdot \frac{\Gamma_f}{\Gamma_\mathrm{Z}} \\
+	&\Gamma_\mathrm{e} = \sqrt{\frac{M_\mathrm{Z}^2}{12 \pi} \, \Gamma_\mathrm{Z}^2 \sigma_\mathrm{e}^\mathrm{peak}} \\
+	&\Gamma_f = \frac{M_\mathrm{Z}^2}{12 \pi } \, \frac{\Gamma_\mathrm{Z}^2 }{\Gamma_\mathrm{e}} \sigma_f^\mathrm{peak}
+\end{align*}
+
+
+
+
+
+
 \subsubsection{Lepton Universality}
+\begin{align*}
+	&\frac{\Gamma_\mathrm{\mu}}{\Gamma_\mathrm{e}} = \\
+	&\frac{\Gamma_\mathrm{\tau}}{\Gamma_\mathrm{e}} = \\
+\end{align*}
 
 \subsubsection{Number of Light Neutrino Generations}
 
+\begin{align*}
+	N_\nu = \frac{\Gamma_\mathrm{tot} - \Gamma_\mathrm{e} - \Gamma_\mathrm{\mu} - \Gamma_\mathrm{\tau} - \Gamma_\mathrm{hadr}}{\Gamma_\nu}
+\end{align*}
+
 \subsubsection{Discussion of Uncertainties}
 
-\subsection{Stuff}
-Variance of the binomial distribution:
-\begin{align*}
-	\mathrm{Var} = n p (1 - p) 
-\end{align*}
 
-
-Calculation of the cross section
-\begin{align*}
-	N &= \sigma \cdot \int \mathcal{L} \dinf{t}\\
-	\sigma &= \frac{N}{\int \mathcal{L} \dinf{t}}
-\end{align*}
 
 \section{Conclusion}
 
