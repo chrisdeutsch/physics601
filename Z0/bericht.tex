@@ -71,6 +71,7 @@
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{multicol}
+\usepackage{tabularx}
 
 % Seitenlayout (Kopfzeile)
 \usepackage{fancyhdr}
@@ -298,21 +299,58 @@ All of the decay channels found with the cut criteria could be verified by analy
 
 \clearpage
 \section{Part II: Statistical Analysis of $\mathrm{Z}^0$ Decays}
+The second part of this laboratory experiment is concerned with the analysis of data gathered by the OPAL-detector at LEP.
+Since an analysis using event displays is infeasible, the data analysis software \texttt{PAW} is used instead.
 
-\subsubsection{Variables and Cut Optimization}
-The second part of the experiment is performed using the data analysis software \texttt{PAW}.
-To accustom ourselves with \texttt{PAW}, several variables from different Monte-Carlo simulated datasets have been plotted.
-When displaying \texttt{pcharged} one maximum at~\SI{0}{GeV} in the electron and muon data could be observed.
-To investigate the source for this observation, additional cuts on other variables have been set until it was found that those events come from particles that have been detected at a very small angle with respect to the beam axis.
-Because of the bad sensitivity in these regions the data were cut on the angle such that $\left|\cos\theta\right|<\num{0.9}$.
-It must be noted that this cut has to be used for all of the following tasks.
+\subsection{Analysis of Monte-Carlo Data}
+Before the data taken at the OPAL-detector can be evaluated, four datasets of Monte-Carlo data are analyzed to refine the preliminary cuts that were determined in section \korr{REF}.
+These datasets contain a selection of simulated $\mathrm{Z}^0$ decays, which are separated into the different decay channels with electron, muon, tau or hadronic final states.
+Since the number of simulated events is known, these datasets can be used to estimate the (mis-)identification probability of our final cuts.
 
-\subsubsection{Separating s- and t-channel}
 
-\subsubsection{Cuts for Event Selection}
 
-In order to optimize the cuts for event identification the variables \texttt{ncharged}, \texttt{pcharged}, \texttt{e\_ecal}, \texttt{e\_hcal} have been plotted as histograms for all datasets.
-Baed on the observed distributions cuts on the parameters have been set such that we can determine the decay channel in good approximation by cutting the data.
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{0.9\textwidth}{lX}
+		\toprule
+		\textbf{Variable} & \textbf{Description} \\
+		\midrule		
+		\texttt{ncharged} & Number of charged particle tracks in the tracking detector \\
+		\texttt{pcharged} & Total momentum of all charged particle tracks in the tracking detector \\
+		\texttt{e\_ecal} & Total energy deposited in the electromagnetic calorimeter \\
+		\texttt{e\_hcal} & Total energy deposited in the hadronic calorimeter \\
+		\texttt{cos\_thet} & Angle between the incoming positron and outgoing positively charged particle (undefined if the number of positively charged particles in the final state is not equal to one) \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Description of the variables in the $\mathrm{Z}^0$ decay datasets.}
+	\label{tab:desc_variables}
+\end{table}
+
+\subsubsection{Acceptance of the OPAL-Detector}
+To get accustomed to the data analysis software the distributions of a number of variables in the MC data were plotted as histograms (a short description of the different variables can be found in table \ref{tab:desc_variables}).
+One such variable is the sum of the charged particle momenta, which is depicted in figure \ref{fig:uncut_pcharged}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{./data/tag2/uncut/cropped/pcharged_uncut.pdf}
+	\caption{Distribution of \texttt{pcharged} for the Monte-Carlo simulations of electron (upper left), muon (upper right), tau (lower left) and hadronic final states (lower right).}
+	\label{fig:uncut_pcharged}
+\end{figure}
+A notable feature of these distributions is the high number of events with vanishing \texttt{pcharged} for the electron and muon channel, which shall be analyzed further.
+To investigate this occurrence additional cuts on other variables were performed, which lead to the observation that these events stem from particles that have been detected at very small angles with respect to the beam axis.
+Since the detector cannot properly detect particles close to the beam axis a cut on \texttt{cos\_thet} should decrease the number events with vanishing \texttt{pcharged}.
+For this the cut
+\begin{align*}
+	|\cos\theta| < 0.9
+\end{align*}
+was chosen, which removed almost all events with vanishing \texttt{pcharged}.
+
+
+\subsubsection{Refining the Cuts for Event Selection}
+In order to optimize the cuts for event identification various variables of the simulated datasets have been plotted to allow for the determination of cut criteria to allow for the distinction of different decay channels of the Z-boson.
+The histograms of the variables are depicted in appendix \ref{app:uncut_mc}.
+
+
+Based on the observed distributions, cuts on the parameters have been set such that we can determine the decay channel in good approximation by cutting the data.
 The resulting histograms are shown in figures \korr{REF} where one cut for identifying one decay channel has been applied to all datasets in each figure.
 \korr{FIGURES}
 While retaining as much events as possible it was not possible to fully differentiate between the decay channels.
@@ -325,6 +363,12 @@ An overview of the cuts is given in table \ref{tab:cut_criteria}.
 	\caption{Applied cuts on the data to identify the decay channel. An additional cut on the angle is used for electrons since only the s-channel is of interest.}
 	\label{tab:cut_criteria}
 \end{table}
+
+\subsubsection{Separating $s$- and $t$-Channel of Electron Final States}
+
+\begin{align*}
+\frac{\int_{-1}^{1}(1 + \cos^2\theta) \dinf{\cos\theta}}{\int_{-0.9}^{0.5}(1 + \cos^2\theta) \dinf{\cos\theta}} = 1.5829
+\end{align*}
 
 \subsubsection{Efficiency Matrix}
 
@@ -343,39 +387,64 @@ A = \begin{pmatrix}
 	\end{pmatrix}
 \end{align}
 
+
+\begin{align*}
+	&\Delta n = \sqrt{N \cdot \left[ \frac{n}{N} - \left( \frac{n}{N} \right)^2 \right]} \\
+	&\Delta n_i^2 = \sum_k \left[ N_k^2 \cdot \Delta E_{ik}^2 + E_{ik}^2 \cdot \Delta N_k^2 \right]
+\end{align*}
+
 \subsubsection{Determination of the Differential Cross Sections}
+
+\begin{align*}
+	&N = \sigma \cdot \int \mathcal{L} \dinf{t}\\
+	&\sigma = \frac{N}{\int \mathcal{L} \dinf{t}}
+\end{align*}
+
 
 \subsubsection{Determination of the Forward-Backward Asymmetry using Muons}
 
+\begin{align*}
+	&A_\mathrm{FB} = \frac{n_\mathrm{F} - n_\mathrm{B}}{n_\mathrm{F} + n_\mathrm{B}} + \mathrm{corr}(\sqrt{s})\\
+	&A_\mathrm{FB}^\mathrm{peak} \approx 3 \left( \frac{v_\ell}{a_\ell} \right)^2 = 3 \left( 1 - 4 \sin^2\theta_\mathrm{W} \right) \\
+	&\sin^2\theta_\mathrm{W} = \frac{1 - \sqrt{A_\mathrm{FB}^\mathrm{peak} / 3}}{4}
+\end{align*}
+
 \subsubsection{Fitting Resonance Curves}
+\begin{align*}
+	&f(x; A, \mu, \sigma) = \frac{A}{\pi} \frac{\sigma}{(x - \mu)^2 + \sigma^2} \\
+	&f(x=\mu; A, \sigma) = \frac{A}{\pi \sigma} \\
+	&\Gamma = 2 \sigma \\
+	&\sigma^\mathrm{peak} = \frac{A}{\pi \sigma}
+\end{align*}
 
 \subsubsection{Calculation of the Partial Widths}
 
+\begin{align*}
+	&\sigma_f^\mathrm{peak} = \frac{12 \pi}{M_\mathrm{Z}^2} \cdot \frac{\Gamma_\mathrm{e}}{\Gamma_\mathrm{Z}} \cdot \frac{\Gamma_f}{\Gamma_\mathrm{Z}} \\
+	&\Gamma_\mathrm{e} = \sqrt{\frac{M_\mathrm{Z}^2}{12 \pi} \, \Gamma_\mathrm{Z}^2 \sigma_\mathrm{e}^\mathrm{peak}} \\
+	&\Gamma_f = \frac{M_\mathrm{Z}^2}{12 \pi } \, \frac{\Gamma_\mathrm{Z}^2 }{\Gamma_\mathrm{e}} \sigma_f^\mathrm{peak}
+\end{align*}
+
+
+
+
+
+
 \subsubsection{Lepton Universality}
+\begin{align*}
+	&\frac{\Gamma_\mathrm{\mu}}{\Gamma_\mathrm{e}} = \\
+	&\frac{\Gamma_\mathrm{\tau}}{\Gamma_\mathrm{e}} = \\
+\end{align*}
 
 \subsubsection{Number of Light Neutrino Generations}
 
+\begin{align*}
+	N_\nu = \frac{\Gamma_\mathrm{tot} - \Gamma_\mathrm{e} - \Gamma_\mathrm{\mu} - \Gamma_\mathrm{\tau} - \Gamma_\mathrm{hadr}}{\Gamma_\nu}
+\end{align*}
+
 \subsubsection{Discussion of Uncertainties}
 
-\subsection{Stuff}
 
-Correction for missing s-channel electrons:
-\begin{align*}
-\frac{\int_{-1}^{1}(1 + \cos^2\theta) \dinf{\cos\theta}}{\int_{-0.9}^{0.5}(1 + \cos^2\theta) \dinf{\cos\theta}} = 1.5829
-\end{align*}
-
-
-Variance of the binomial distribution:
-\begin{align*}
-	\mathrm{Var} = n p (1 - p) 
-\end{align*}
-
-
-Calculation of the cross section
-\begin{align*}
-	N &= \sigma \cdot \int \mathcal{L} \dinf{t}\\
-	\sigma &= \frac{N}{\int \mathcal{L} \dinf{t}}
-\end{align*}
 
 \section{Conclusion}
 
@@ -386,44 +455,40 @@ Calculation of the cross section
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{19}
-\bibitem{steck}
-D.\ A.\ Steck,
-\emph{Rubidium 85 D Line Data},
-\url{http://steck.us/alkalidata} (Revision 2.1.6, 20.\ September 2013)
-
-\bibitem{script}
-Skript zum Versuch,
-\emph{FP Experiment: Rubidium MOT},
-(Stand: Januar 2014).
-	
-\bibitem{anleitung}
-	\emph{Advanced Laboratory Course (physics601): Description of Experiments}, BONN-AT-2016-01MP, Universität Bonn, Januar 2016
-	
-\bibitem{foot}
-C.\ J.\ Foot,
-\emph{Atomic Physics},
-Oxford University Press, 2005.
-
-\bibitem{wieman}
-	C.\ Wieman, G.\ Flowers, S.\ Gilbert,
-	\emph{Inexpensive laser cooling and trapping experiment for undergraduate laboratories},
-	Am.\ J.\ Phys.\ \textbf{63} (4), April 1995.
-
-\bibitem{handbook_spectroscopic_data}
-	J.\ E.\ Sansonetti, W.\ C.\ Martin,
-	\emph{Handbook of Basic Atomic Spectroscopic Data},
-	National Institute of Standards and Technology (NIST), \url{http://physics.nist.gov/PhysRefData/Handbook/Tables/rubidiumtable1.htm} (Letzter Aufruf: 7.\ April 2016).
-
-\bibitem{force_in_mot}
-	A.\ M.\ Steane, M.\ Chowdhury, C.\ J.\ Foot,
-	\emph{Radiation force in the magneto-optical trap},
-	J.\ Opt.\ Soc.\ Am.\ B \textbf{9}, 2142 (1992).
+\bibitem{pdg}
+	K.\ A.\ Olive \textit{et al.} (Particle Data Group),
+	Chin.\ Phys.\ C, \textbf{38}, 090001 (2014).
 \end{thebibliography}
 
 % APPENDIX
 \begin{appendix}
 \newpage
 \section{Appendix}
+
+\subsection{Uncut MC-Data}
+\label{app:uncut_mc}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/pcharged_uncut.pdf}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/ncharged_uncut.pdf}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/e_ecal_uncut.pdf}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/e_hcal_uncut.pdf}
+\end{figure}
+
+
 \end{appendix}
 
 \end{document}
