@@ -214,7 +214,7 @@ The solenoid is followed by the calorimeters, first the electromagnetic and afte
 As a last layer muon chambers are installed which consist of a tracking detector themselves.
 \korr{OPAL Bild?}
 
-\section{Performing the Experiment}
+\section{Part I: Analysis of Event Displays}
 
 On the first day the software \texttt{GROPE} was used to study event displays and detector responses of the OPAL detector.
 
@@ -300,19 +300,18 @@ All of the decay channels found with the cut criteria could be verified by analy
 	\caption{Collected data from the events in the test sample dataset. All values for energies and momenta in \si{GeV}.}
 \end{table}
 
-\subsection{Part II: Statistical Analysis of $\mathrm{Z}^0$ Decays}
+\clearpage
+\section{Part II: Statistical Analysis of $\mathrm{Z}^0$ Decays}
 
-Correction for missing s-channel electrons:
-\begin{align*}
-\frac{\int_{-1}^{1}(1 + \cos^2\theta) \dinf{\cos\theta}}{\int_{-0.9}^{0.5}(1 + \cos^2\theta) \dinf{\cos\theta}} = 1.5829
-\end{align*}
-
+\subsubsection{Variables and Cut Optimization}
 The second part of the experiment is performed using the data analysis software \texttt{PAW}.
 To accustom ourselves with \texttt{PAW}, several variables from different Monte-Carlo simulated datasets have been plotted.
 When displaying \texttt{pcharged} one maximum at~\SI{0}{GeV} in the electron and muon data could be observed.
 To investigate the source for this observation, additional cuts on other variables have been set until it was found that those events come from particles that have been detected at a very small angle with respect to the beam axis.
 Because of the bad sensitivity in these regions the data were cut on the angle such that $\left|\cos\theta\right|<\num{0.9}$.
 It must be noted that this cut has to be used for all of the following tasks.
+
+\subsubsection{Separating s- and t-channel}
 
 \subsubsection{Cuts for Event Selection}
 
@@ -348,7 +347,28 @@ A = \begin{pmatrix}
 	\end{pmatrix}
 \end{align}
 
+\subsubsection{Determination of the Differential Cross Sections}
+
+\subsubsection{Determination of the Forward-Backward Asymmetry using Muons}
+
+\subsubsection{Fitting Resonance Curves}
+
+\subsubsection{Calculation of the Partial Widths}
+
+\subsubsection{Lepton Universality}
+
+\subsubsection{Number of Light Neutrino Generations}
+
+\subsubsection{Discussion of Uncertainties}
+
 \subsection{Stuff}
+
+Correction for missing s-channel electrons:
+\begin{align*}
+\frac{\int_{-1}^{1}(1 + \cos^2\theta) \dinf{\cos\theta}}{\int_{-0.9}^{0.5}(1 + \cos^2\theta) \dinf{\cos\theta}} = 1.5829
+\end{align*}
+
+
 Variance of the binomial distribution:
 \begin{align*}
 	\mathrm{Var} = n p (1 - p) 
