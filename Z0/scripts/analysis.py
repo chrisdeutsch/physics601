@@ -1,10 +1,18 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-from lmfit.models import LorentzianModel
-from mcerp import Binomial
+from lmfit.models import LorentzianModel, Model
+from uncertainties import ufloat, umath, correlated_values, unumpy
+
 
 np.random.seed(12856712)
+
+
+# Breit Wigner
+def breit_wigner(s, peak, fwhm, mass):
+    return peak * s * fwhm**2 / ( (s - mass**2)**2 + s**2 * fwhm**2 / mass**2)
+
+
 
 ### Monte-Carlo Data
 
@@ -62,7 +70,7 @@ for i in range(1,4):
 
 # Monte Carlo Error Propagation
 matrices = []
-for i in range(10000):
+for i in range(100000):
     dE = np.random.randn(16)
     dE.resize((4,4))
     dE *= efficiency_err
@@ -79,34 +87,115 @@ inv_efficiency_err = inv_efficiency_err.reshape((4,4))
 ### Cross section measurement
 data = pd.read_csv("data/cross_sec_data.csv", dtype=np.float64)
 
-
 # apply efficiency correction
 pvecs = data[["e", "mu", "tau", "hadr"]].get_values()
 pvecs = np.array([np.dot(inv_efficiency, pvec) for pvec in pvecs])
 corr = pd.DataFrame(pvecs, columns=["e_corr", "mu_corr", "tau_corr", "hadr_corr"])
 data = pd.concat([data, corr], axis=1)
 
+# error on counts (binomial)
+which = ["e", "mu", "tau", "hadr"]
+
+for s in which:
+    data["{}_err".format(s)] = np.sqrt(data.events * (data[s] / data.events - (data[s] / data.events)**2))
+
+
+# error prop for efficiency
+for s, i in zip(which, range(4)):
+    sum = 0.0
+    for c, k in zip(which, range(4)):
+        sum += data[c]**2 * inv_efficiency_err[i,k]**2 +\
+               inv_efficiency[i,k]**2 * data["{}_err".format(c)]**2
+    
+    data["{}_corr_err".format(s)] = np.sqrt(sum)
+
+
+# calculate cross section
 data["sig_e"] = data.e_corr / data.lumi + data.corr_lep
 data["sig_mu"] = data.mu_corr / data.lumi + data.corr_lep
 data["sig_tau"] = data.tau_corr / data.lumi + data.corr_lep
 data["sig_hadr"] = data.hadr_corr / data.lumi + data.corr_hadr
 
+data["sig_e_err"] = np.sqrt(data.e_corr_err**2 / data.lumi**2 + data.e_corr**2 / data.lumi**4 * data.lumi_tot**2)
+data["sig_mu_err"] = np.sqrt(data.mu_corr_err**2 / data.lumi**2 + data.mu_corr**2 / data.lumi**4 * data.lumi_tot**2)
+data["sig_tau_err"] = np.sqrt(data.tau_corr_err**2 / data.lumi**2 + data.tau_corr**2 / data.lumi**4 * data.lumi_tot**2)
+data["sig_hadr_err"] = np.sqrt(data.hadr_corr_err**2 / data.lumi**2 + data.hadr_corr**2 / data.lumi**4 * data.lumi_tot**2)
+
+# Forward backward asymmetry
+data["afb_events"] = data.fwd + data.bwd
+data["fwd_err"] = np.sqrt(data.afb_events * (data.fwd / data.afb_events - (data.fwd / data.afb_events)**2))
+data["bwd_err"] = np.sqrt(data.afb_events * (data.bwd / data.afb_events - (data.bwd / data.afb_events)**2))
+
+
+data["afb"] = (data.fwd - data.bwd) / (data.fwd + data.bwd) + data.corr_afb
+data["afb_err"] = 2.0 / (data.fwd + data.bwd)**2 * np.sqrt(data.bwd**2 * data.fwd_err**2 + data.fwd**2 * data.bwd_err**2)
+
+afb_data = data[["afb", "afb_err"]].get_values()
+afb = ufloat(afb_data[3,0], afb_data[3,1])
+
+weinberg = (1.0 - umath.sqrt(afb / 3.0)) / 4.0
+
 
 # BreitWignerFits
 model = LorentzianModel()
-
 E_cm = data.E_cm.get_values()
-e_fit = model.fit(data.sig_e.get_values(), x=E_cm,
-                  amplitude=8.0, center= 91.2,  sigma=1.0)
-mu_fit = model.fit(data.sig_mu.get_values(), x=E_cm,
+
+e_fit = model.fit(data.sig_e.get_values(), x=E_cm, weights=data.sig_e_err**-1,
+                  amplitude=8.0, center= 91.2, sigma=1.0)
+mu_fit = model.fit(data.sig_mu.get_values(), x=E_cm, weights=data.sig_mu_err**-1,
                    amplitude=8.0, center= 91.2,  sigma=1.0)
-tau_fit = model.fit(data.sig_tau.get_values(), x=E_cm,
+tau_fit = model.fit(data.sig_tau.get_values(), x=E_cm, weights=data.sig_tau_err**-1,
                    amplitude=8.0, center= 91.2,  sigma=1.0)
-hadr_fit = model.fit(data.sig_hadr.get_values(), x=E_cm,
+hadr_fit = model.fit(data.sig_hadr.get_values(), x=E_cm, weights=data.sig_hadr_err**-1,
                    amplitude=160.0, center= 91.2,  sigma=1.0)
 
+# Calculate peak cross sections
+(e_sigma, e_mu, e_A) = correlated_values([e_fit.values[name] for name in ["sigma", "center", "amplitude"]], e_fit.covar)
+(mu_sigma, mu_mu, mu_A) = correlated_values([mu_fit.values[name] for name in ["sigma", "center", "amplitude"]], mu_fit.covar)
+(tau_sigma, tau_mu, tau_A) = correlated_values([tau_fit.values[name] for name in ["sigma", "center", "amplitude"]], tau_fit.covar)
+(hadr_sigma, hadr_mu, hadr_A) = correlated_values([hadr_fit.values[name] for name in ["sigma", "center", "amplitude"]], hadr_fit.covar)
 
-print(efficiency)
+e_peak = e_A / (np.pi * e_sigma)
+mu_peak = mu_A / (np.pi * mu_sigma)
+tau_peak = tau_A / (np.pi * tau_sigma)
+hadr_peak = hadr_A / (np.pi * hadr_sigma)
+
+nb_gev = 2.5681897e-6 # GeV^-2 per nbarn
+
+# error weighted mean total decay width
+Z_fwhm = np.array([2.0 * e_sigma, 2.0 * mu_sigma, 2.0 * tau_sigma, 2.0 * hadr_sigma])
+weights = unumpy.std_devs(Z_fwhm)**-2
+var = weights.sum()**-1
+mean = unumpy.nominal_values(Z_fwhm) * weights
+mean = mean.sum()
+mean *= var
+
+Z_fwhm = ufloat(mean, np.sqrt(var))
+
+#error weighted mean mass
+Z_mass = np.array([e_mu, mu_mu, tau_mu, hadr_mu])
+weights = unumpy.std_devs(Z_mass)**-2
+var = weights.sum()**-1
+mean = unumpy.nominal_values(Z_mass) * weights
+mean = mean.sum()
+mean *= var
+
+Z_mass = ufloat(mean, np.sqrt(var))
+
+# partial decay width
+e_part_fwhm = umath.sqrt(Z_fwhm**2 * e_peak * nb_gev * Z_mass**2 /(12.0 * np.pi))
+mu_part_fwhm = Z_fwhm**2 * mu_peak * nb_gev * Z_mass**2 / (12.0 * np.pi * e_part_fwhm)
+tau_part_fwhm = Z_fwhm**2 * tau_peak * nb_gev * Z_mass**2 / (12.0 * np.pi * e_part_fwhm)
+hadr_part_fwhm = Z_fwhm**2 * hadr_peak * nb_gev * Z_mass**2 / (12.0 * np.pi * e_part_fwhm)
+
+r_mu_e = mu_part_fwhm / e_part_fwhm
+r_tau_e = tau_part_fwhm / e_part_fwhm
+
+# number of neutrino generations
+neutrino_fwhm = 0.1678 # GeV
+N_nu = (Z_fwhm - e_part_fwhm - mu_part_fwhm - tau_part_fwhm - hadr_part_fwhm) / neutrino_fwhm
+
+
 print(e_fit.fit_report())
 print(mu_fit.fit_report())
 print(tau_fit.fit_report())
