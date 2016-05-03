@@ -1,4 +1,4 @@
-% !TeX spellcheck = en_GB
+% !TeX spellcheck = en_US
 % PAKETE UND DOKUMENTKONFIGURATION
 \documentclass[11pt, a4paper]{article}
 
@@ -229,9 +229,8 @@ A decay into electrons can easily be identified by the energy deposited in the e
 The final state particles are flying approximately in opposite direction and are ideally completely stopped in the calorimeter.
 A track for every particle can be observed in the tracking chamber.
 Additional hits in the electromagnetic calorimeters probably occur due to bremsstrahlung photons which leave no track in the inner detector.
-\begin{sidewaystable}[h]
+\begin{sidewaystable}
 	\centering
-
 	\input{./tables/tag1/ee}
 	\caption{Collected data from the electron dataset. All values for energies and momenta in \si{GeV}.}
 \end{sidewaystable}
@@ -241,13 +240,12 @@ Additional hits in the electromagnetic calorimeters probably occur due to bremss
 Muons are detected in the muon chambers which form the outermost part of the detector.
 Since all other particles (except the non-detectable neutrinos) are stopped before reaching the muon chamber a signal there can -- neglecting noise hits -- be identified as a muon. 
 In general, muons are also created in a back to back configuration and leave a track in the tracking detector.
-\begin{table}[h]
+\begin{sidewaystable}
 	\centering
-	\resizebox{\textwidth}{!}{
-		\input{./tables/tag1/mm}
-	}
+
+	\input{./tables/tag1/mm}
 	\caption{Collected data from the muon dataset. All values for energies and momenta in \si{GeV}.}
-\end{table}
+\end{sidewaystable}
 
 \subsubsection{Z$^0\rightarrow \tau^+\tau^-$}
 
@@ -282,7 +280,7 @@ The hadrons are stopped and seen as showers in the hadronic calorimeter.
 
 \subsubsection{Event Identification in Test Sample}
 
-Based on the observations from the previous excercise it was possible to evaluate cuts to apply on the data in order to distinguish between different decay channels of the Z boson.
+Based on the observations from the previous exercise it was possible to evaluate cuts to apply on the data in order to distinguish between different decay channels of the Z boson.
 The used cuts are given in table \ref{tab:cut_criteria_day1} and could be reviewed by looking on the events in a test sample.
 All of the decay channels found with the cut criteria could be verified by analysis of event displays.
 \begin{table}[h]
