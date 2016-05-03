@@ -1,4 +1,4 @@
-﻿*.pdf
+*.pdf
 *.aux
 *.log
 *.synctex.gz
@@ -8,3 +8,4 @@
 *~
 bericht.pdf
 __pycache__
+*.ps1
