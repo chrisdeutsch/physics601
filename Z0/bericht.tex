@@ -371,8 +371,32 @@ An overview of the cuts is given in table \ref{tab:cut_criteria}.
 \end{align*}
 
 \subsubsection{Efficiency Matrix}
+By setting cuts on the data one loses a fraction of the simulated events and in addition to this misidentifications of events using the cuts can occur.
+Knowing that each of the datasets have been simulated with \num{100000} events the efficiency of the event selection using cuts can be evaluated.
+ 
+ 
+ \begin{align*}
+ 	E = \begin{pmatrix}
+	 	E_{\mathrm{e e}} & E_{\mathrm{e \mu}} & E_{\mathrm{e \tau}} & E_{\mathrm{e q}} \\
+	 	E_{\mathrm{\mu e}} & E_{\mathrm{\mu \mu}} & E_{\mathrm{\mu \tau}} & E_{\mathrm{\mu q}} \\
+	 	E_{\mathrm{\tau e}} & E_{\mathrm{\tau \mu}} & E_{\mathrm{\tau \tau}} & E_{\mathrm{\tau q}} \\
+	 	E_{\mathrm{q e}} & E_{\mathrm{q \mu}} & E_{\mathrm{q \tau}} & E_{\mathrm{q q}} \\
+ 	\end{pmatrix}
+ \end{align*}
+ 
+ \begin{align*}
+ 	&E_{ij} = \frac{n_{ij}}{n_i^\mathrm{tot}} \quad \text{with} \quad i,j \in \{ \mathrm{e}, \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \} \\
+ 	&n_{ij} \text{: number of $j$ identified as $i$}
+ \end{align*}
+ 
+
+
+
+
 
 Obviously one loses events in setting cuts on the data which makes it necessary to analyse the efficiency, i.e. the fractional losses of these cuts.
+
+
 Knowing that each of the datasets have been simulated with \num{100000} events the efficiency can be calculated from the number of remaining events that fulfill the cut conditions.
 A matrix formalism can be used to describe the number of measured events per decay channel $\vec{N}_\mathrm{meas}=(e_\mathrm{meas}, \mu_\mathrm{meas}, \tau_\mathrm{meas}, q_\mathrm{meas})^T$ by the number of events that have been simulated in this channel $\vec{N}_\mathrm{orig}$:
 \begin{align}
@@ -487,6 +511,38 @@ A = \begin{pmatrix}
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/e_hcal_uncut.pdf}
 \end{figure}
+
+
+\clearpage
+\subsection{MC-Data using the Final Cuts}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{./data/tag2/final_cuts/cropped/electron_cut.pdf}
+	\caption{Electron cut}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{./data/tag2/final_cuts/cropped/muon_cut.pdf}
+	\caption{Muon cut}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{./data/tag2/final_cuts/cropped/tau_cut.pdf}
+	\caption{Tau cut}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{./data/tag2/final_cuts/cropped/hadron_cut.pdf}
+	\caption{Hadron cut}
+\end{figure}
+
+
+
+
 
 
 \end{appendix}
