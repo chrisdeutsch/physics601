@@ -427,7 +427,7 @@ Using the number of events after the different cuts in table \korr{REF} and thei
 	0.00018 & 0.00000 & 0.00503 & 0.97533 \\
 	\end{pmatrix}
 \end{align*}
-and the error matrix
+and the error matrix using Gaussian Error Propagation
 \begin{align*}
 	&\Delta E = \begin{pmatrix}
 	0.00266 & 0.00000 & 0.00000 & 0.00000 \\
@@ -468,7 +468,7 @@ and the error matrix
 	&\Delta n_i^2 = \sum_k \left[ N_k^2 \cdot \Delta E_{ik}^2 + E_{ik}^2 \cdot \Delta N_k^2 \right]
 \end{align*}
 
-\subsubsection{Determination of the Differential Cross Sections}
+\subsection{Determination of the Differential Cross Sections}
 
 \begin{align*}
 	&N = \sigma \cdot \int \mathcal{L} \dinf{t}\\
@@ -476,7 +476,7 @@ and the error matrix
 \end{align*}
 
 
-\subsubsection{Determination of the Forward-Backward Asymmetry using Muons}
+\subsection{Determination of the Forward-Backward Asymmetry using Muons}
 
 \begin{align*}
 	&A_\mathrm{FB} = \frac{n_\mathrm{F} - n_\mathrm{B}}{n_\mathrm{F} + n_\mathrm{B}} + \mathrm{corr}(\sqrt{s})\\
@@ -484,7 +484,7 @@ and the error matrix
 	&\sin^2\theta_\mathrm{W} = \frac{1 - \sqrt{A_\mathrm{FB}^\mathrm{peak} / 3}}{4}
 \end{align*}
 
-\subsubsection{Fitting Resonance Curves}
+\subsection{Fitting Resonance Curves}
 \begin{align*}
 	&f(x; A, \mu, \sigma) = \frac{A}{\pi} \frac{\sigma}{(x - \mu)^2 + \sigma^2} \\
 	&f(x=\mu; A, \sigma) = \frac{A}{\pi \sigma} \\
@@ -492,7 +492,7 @@ and the error matrix
 	&\sigma^\mathrm{peak} = \frac{A}{\pi \sigma}
 \end{align*}
 
-\subsubsection{Calculation of the Partial Widths}
+\subsection{Calculation of the Partial Widths}
 
 \begin{align*}
 	&\sigma_f^\mathrm{peak} = \frac{12 \pi}{M_\mathrm{Z}^2} \cdot \frac{\Gamma_\mathrm{e}}{\Gamma_\mathrm{Z}} \cdot \frac{\Gamma_f}{\Gamma_\mathrm{Z}} \\
@@ -505,19 +505,19 @@ and the error matrix
 
 
 
-\subsubsection{Lepton Universality}
+\subsection{Lepton Universality}
 \begin{align*}
 	&\frac{\Gamma_\mathrm{\mu}}{\Gamma_\mathrm{e}} = \\
 	&\frac{\Gamma_\mathrm{\tau}}{\Gamma_\mathrm{e}} = \\
 \end{align*}
 
-\subsubsection{Number of Light Neutrino Generations}
+\subsection{Number of Light Neutrino Generations}
 
 \begin{align*}
 	N_\nu = \frac{\Gamma_\mathrm{tot} - \Gamma_\mathrm{e} - \Gamma_\mathrm{\mu} - \Gamma_\mathrm{\tau} - \Gamma_\mathrm{hadr}}{\Gamma_\nu}
 \end{align*}
 
-\subsubsection{Discussion of Uncertainties}
+\subsection{Discussion of Uncertainties}
 
 
 
