@@ -4,7 +4,7 @@ import pandas as pd
 from lmfit.models import LorentzianModel, Model
 from uncertainties import ufloat, umath, correlated_values, unumpy
 
-
+plt.style.use("publication")
 np.random.seed(12856712)
 
 
@@ -188,6 +188,10 @@ mu_part_fwhm = Z_fwhm**2 * mu_peak * nb_gev * Z_mass**2 / (12.0 * np.pi * e_part
 tau_part_fwhm = Z_fwhm**2 * tau_peak * nb_gev * Z_mass**2 / (12.0 * np.pi * e_part_fwhm)
 hadr_part_fwhm = Z_fwhm**2 * hadr_peak * nb_gev * Z_mass**2 / (12.0 * np.pi * e_part_fwhm)
 
+# Lepton universality
+sig_mu_e = mu_peak / e_peak
+sig_tau_e = tau_peak / e_peak
+
 r_mu_e = mu_part_fwhm / e_part_fwhm
 r_tau_e = tau_part_fwhm / e_part_fwhm
 
@@ -200,3 +204,60 @@ print(e_fit.fit_report())
 print(mu_fit.fit_report())
 print(tau_fit.fit_report())
 print(hadr_fit.fit_report())
+
+
+### Plots
+
+# Cross sections
+fig = plt.gcf()
+fig.set_size_inches(5.4, 4.8)
+
+
+x = np.linspace(88.0, 94.0, 1000)
+
+ax1 = plt.subplot(221)
+plt.errorbar(data.E_cm.get_values(), data.sig_e.get_values(), yerr=data.sig_e_err.get_values(), fmt="o", zorder=2, markersize=2.5)
+plt.plot(x, e_fit.eval(x=x), "-", zorder=1)
+plt.setp(ax1.get_xticklabels(), visible=False)
+plt.ylim((0.0, 2.0))
+plt.title("electrons", fontsize=11)
+
+ax2 = plt.subplot(222, sharex=ax1)
+plt.errorbar(data.E_cm.get_values(), data.sig_mu.get_values(), yerr=data.sig_mu_err.get_values(), fmt="o", zorder=2, markersize=2.5)
+plt.plot(x, mu_fit.eval(x=x), "-", zorder=1)
+plt.setp(ax2.get_xticklabels(), visible=False)
+plt.ylim((0.0, 2.0))
+plt.title("muons", fontsize=11)
+
+
+ax3 = plt.subplot(223)
+plt.errorbar(data.E_cm.get_values(), data.sig_tau.get_values(), yerr=data.sig_tau_err.get_values(), fmt="o", zorder=2, markersize=2.5)
+plt.plot(x, tau_fit.eval(x=x), "-", zorder=1)
+plt.ylim((0.0, 2.2))
+plt.title("taus", fontsize=11)
+
+ax4 = plt.subplot(224, sharex=ax2)
+plt.errorbar(data.E_cm.get_values(), data.sig_hadr.get_values(), yerr=data.sig_hadr_err.get_values(), fmt="o", zorder=2, markersize=2.5)
+plt.plot(x, hadr_fit.eval(x=x), "-", zorder=1)
+plt.ylim((0.0, 50.0))
+plt.title("hadrons", fontsize=11)
+
+axes = [ax1, ax2, ax3, ax4]
+yaxes = [ax1, ax3]
+xaxes = [ax3, ax4]
+for ax in xaxes:
+    ax.set_xlabel(r"$\sqrt{s}$ / GeV", fontsize=11)
+
+for ax in yaxes:
+    ax.set_ylabel(r"$\sigma$ / nb", fontsize=11)
+
+for ax in axes:
+    ax.tick_params(axis="both", labelsize=9)
+
+
+plt.tight_layout(pad=0.5)
+plt.savefig("figures/cross_sections.pdf")
+plt.close()
+
+
+
