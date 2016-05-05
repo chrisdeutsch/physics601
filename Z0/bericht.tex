@@ -279,7 +279,10 @@ The hadrons are stopped and seen as showers in the hadronic calorimeter.
 \subsubsection{Event Identification in Test Sample}
 
 Based on the observations from the previous exercise it was possible to evaluate cuts to apply on the data in order to distinguish between different decay channels of the Z boson.
-The used cuts are given in table \ref{tab:cut_criteria_day1} and could be reviewed by looking on the events in a test sample.
+Those are given by the parameters measured or reconstructed in the detector, namely the number of charged tracks (\texttt{ncharged}), the scalar sum of all momenta of charged tracks (\texttt{pcharged}) and the total energy deposited in the electromagnetic or hadronic calorimeter (\texttt{E\_ECAL} or \texttt{E\_HCAL} respectively).
+
+In order to get optimal cut criteria, the data from all Monte-Carlo simulated samples has been histogrammed which is shown in figure \korr{REF}.
+The used cuts are given in table \ref{tab:cut_criteria_day1} and can be reviewed by looking on the events in a test sample.
 All of the decay channels found with the cut criteria could be verified by analysis of event displays.
 \begin{table}[h]
 	\centering
@@ -287,13 +290,11 @@ All of the decay channels found with the cut criteria could be verified by analy
 	\caption{Applied cuts on the data to identify the decay channel.}
 	\label{tab:cut_criteria_day1}
 \end{table}
-\begin{table}[h]
+\begin{sidewaystable}
 	\centering
-	\resizebox{\textwidth}{!}{
 		\input{./tables/tag1/testsample}
-	}
 	\caption{Collected data from the events in the test sample dataset. All values for energies and momenta in \si{GeV}.}
-\end{table}
+\end{sidewaystable}
 
 \clearpage
 \section{Part II: Statistical Analysis of $\mathrm{Z}^0$ Decays}
