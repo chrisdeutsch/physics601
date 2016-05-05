@@ -472,6 +472,7 @@ The data contains events at seven different center of mass energies at LEP surro
 Therefore in a first step the measurement at different energies have to be separated by a cut in \texttt{e\_lep}.
 
 \subsubsection{Determination of the Differential Cross Sections}
+\label{sec:determination_cross_section}
 After the energies have been separated the identification cuts can be applied to the samples at different energies.
 Then the remaining number of particles $n_i$ with $i \in \{ \mathrm{e}, \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \}$ can be obtained.
 The number of events after the cuts is summarized in table \ref{tab:counts_cross_section}.
@@ -567,19 +568,28 @@ This value is in good agreement with the literature value of
 
 
 \subsubsection{Fitting Resonance Curves}
+From the determined cross section in section \ref{sec:determination_cross_section} various quantities can be extracted by fitting a resonance curve.
+The resonance can be described by a Breit-Wigner resonance
 \begin{align*}
-	&f(x; A, \mu, \sigma) = \frac{A}{\pi} \frac{\sigma}{(x - \mu)^2 + \sigma^2} \\
-	&f(x=\mu; A, \sigma) = \frac{A}{\pi \sigma} \\
-	&\Gamma = 2 \sigma \\
-	&\sigma^\mathrm{peak} = \frac{A}{\pi \sigma}
+	\sigma(E_\mathrm{cm}; A, M_\mathrm{Z}, \Gamma_\mathrm{Z}) = \frac{A}{2\pi} \frac{\Gamma_\mathrm{Z}}{(E_\mathrm{cm} - M_\mathrm{Z})^2 + \Gamma_\mathrm{Z}^2 / 4}
 \end{align*}
-
+By fitting such a resonance curve to the measured cross sections a number of parameters can be extracted namely the mass of the Z-Boson $M_\mathrm{Z}$, the total decay width $\Gamma_\mathrm{Z}$ and the cross section at peak
+\begin{align*}
+	\sigma^\mathrm{peak} = \frac{2A}{\pi \Gamma_\mathrm{Z}}
+\end{align*}
+The resonance curve was fitted to the measured data using a least-squares fit and the resulting parameters are summarized in table \korr{REF}.
+The measured data and fits is depicted in figure \ref{fig:cross_section_fit}.
 
 \begin{figure}
 	\centering
 	\includegraphics{./figures/cross_sections.pdf}
 	\caption{bla}
+	\label{fig:cross_section_fit}
 \end{figure}
+
+
+
+
 
 
 
