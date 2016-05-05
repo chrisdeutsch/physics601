@@ -188,6 +188,10 @@ mu_part_fwhm = Z_fwhm**2 * mu_peak * nb_gev * Z_mass**2 / (12.0 * np.pi * e_part
 tau_part_fwhm = Z_fwhm**2 * tau_peak * nb_gev * Z_mass**2 / (12.0 * np.pi * e_part_fwhm)
 hadr_part_fwhm = Z_fwhm**2 * hadr_peak * nb_gev * Z_mass**2 / (12.0 * np.pi * e_part_fwhm)
 
+# Lepton universality
+sig_mu_e = mu_peak / e_peak
+sig_tau_e = tau_peak / e_peak
+
 r_mu_e = mu_part_fwhm / e_part_fwhm
 r_tau_e = tau_part_fwhm / e_part_fwhm
 
