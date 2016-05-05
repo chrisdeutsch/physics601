@@ -525,12 +525,46 @@ Using the integrated luminosities for the given dataset in \cite{anleitung} and 
 
 
 \subsubsection{Determination of the Forward-Backward Asymmetry using Muons}
-
+The Weinberg angle can be determined from the forward-backward asymmetry of the decay $\mathrm{Z}^0 \rightarrow \mu^- \mu^+$, that is the asymmetry in the number of positively charged muons in the forward direction $n_\mathrm{F}$ compared to positively charged muons in the backward direction $n_\mathrm{B}$.
+The asymmetry can be calculated using
 \begin{align*}
-	&A_\mathrm{FB} = \frac{n_\mathrm{F} - n_\mathrm{B}}{n_\mathrm{F} + n_\mathrm{B}} + \mathrm{corr}(\sqrt{s})\\
-	&A_\mathrm{FB}^\mathrm{peak} \approx 3 \left( \frac{v_\ell}{a_\ell} \right)^2 = 3 \left( 1 - 4 \sin^2\theta_\mathrm{W} \right) \\
-	&\sin^2\theta_\mathrm{W} = \frac{1 - \sqrt{A_\mathrm{FB}^\mathrm{peak} / 3}}{4}
+	A_\mathrm{FB} = \frac{n_\mathrm{F} - n_\mathrm{B}}{n_\mathrm{F} + n_\mathrm{B}} + \mathrm{corr}(\sqrt{s})
 \end{align*}
+including a radiation correction $\mathrm{corr}(\sqrt{s})$.
+For calculating the forward-backward asymmetry no efficiency correction has to be performed, since the correction cancles from the fraction.
+In table \ref{tab:afb} the number of events in forward/backward direction, as well as the calculated forward-backward asymmetry $A_\mathrm{FB}$ has been summarized.
+
+\begin{table}
+	\centering
+	\input{./tables/afb.tex}
+	\caption{afb}
+	\label{tab:afb}
+\end{table}
+
+According to the approximation of the forward-backward asymmetry at the resonance peak
+\begin{align*}
+	A_\mathrm{FB}^\mathrm{peak} \approx 3 \left( \frac{v_\ell}{a_\ell} \right)^2 = 3 \left( 1 - 4 \sin^2\theta_\mathrm{W} \right)
+\end{align*}
+which can be approximated by the measured value at $\sqrt{s} = \SI{91.24}{GeV}$
+\begin{align*}
+	A_\mathrm{FB}^\mathrm{peak} \approx \num{0.0119 +- 0.0075}
+\end{align*}
+Then the Weinberg angle $\sin^2\theta_\mathrm{W}$ can be calculated using
+\begin{align*}
+	\sin^2\theta_\mathrm{W} = \frac{1 - \sqrt{A_\mathrm{FB}^\mathrm{peak} / 3}}{4}
+\end{align*}
+
+Using the measured value for $A_\mathrm{FB}$ at the peak of the resonance the Weinberg angle is estimated to be
+\begin{align*}
+	\sin^2\theta_\mathrm{W} = \num{0.234 +- 0.005}
+\end{align*}
+with the error from gaussian error propagation.
+This value is in good agreement with the literature value of
+\begin{align*}
+	\sin^2\theta_\mathrm{W} = \num{0.23126(5)}
+\end{align*}
+
+
 
 \subsubsection{Fitting Resonance Curves}
 \begin{align*}
