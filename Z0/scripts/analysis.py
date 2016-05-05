@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from lmfit.models import LorentzianModel, Model
 from uncertainties import ufloat, umath, correlated_values, unumpy
+from scipy.stats import chi2
 
 plt.style.use("publication")
 np.random.seed(12856712)
@@ -148,6 +149,15 @@ tau_fit = model.fit(data.sig_tau.get_values(), x=E_cm, weights=data.sig_tau_err*
                    amplitude=8.0, center= 91.2,  sigma=1.0)
 hadr_fit = model.fit(data.sig_hadr.get_values(), x=E_cm, weights=data.sig_hadr_err**-1,
                    amplitude=160.0, center= 91.2,  sigma=1.0)
+
+
+# chi square test
+ndf = 4
+e_pval = 1 - chi2.cdf(e_fit.chisqr, ndf)
+mu_pval = 1 - chi2.cdf(mu_fit.chisqr, ndf)
+tau_pval = 1 - chi2.cdf(tau_fit.chisqr, ndf)
+hadr_pval = 1 - chi2.cdf(hadr_fit.chisqr, ndf)
+
 
 # Calculate peak cross sections
 (e_sigma, e_mu, e_A) = correlated_values([e_fit.values[name] for name in ["sigma", "center", "amplitude"]], e_fit.covar)

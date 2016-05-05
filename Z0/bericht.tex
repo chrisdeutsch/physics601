@@ -618,7 +618,18 @@ The full decay width shows a deviation of a bit more than $1\sigma$ from the lit
 This is due to the large deviation of the full decay width in the tau-channel, which is probably caused by additional misidentified events that could not be corrected using the efficiency matrix formalism.
 This is because classification of tau events is difficult.
 
-\korr{chi square stuff}
+\subsubsection{Confidence Levels}
+\begin{table}
+	\centering
+	\input{./tables/chisqr.tex}
+	\caption{chisquare stuff}
+\end{table}
+
+\begin{align*}
+	p(\chi^2, \mathrm{ndf}) = \int_{\chi^2}^\infty f(x, \mathrm{ndf}) \dinf{x}
+\end{align*}
+with the probability density~$f(x, \mathrm{ndf})$ of the $\chi^2$-distribution with $\mathrm{ndf}$ degrees of freedom.
+
 
 \subsubsection{Calculation of the Partial Widths}
 According to
