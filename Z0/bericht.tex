@@ -319,6 +319,7 @@ Since the number of simulated events is known, these datasets can be used to est
 		\texttt{e\_ecal} & Total energy deposited in the electromagnetic calorimeter \\
 		\texttt{e\_hcal} & Total energy deposited in the hadronic calorimeter \\
 		\texttt{cos\_thet} & Angle between the incoming positron and outgoing positively charged particle (undefined if the number of positively charged particles in the final state is not equal to one) \\
+		\texttt{e\_lep} & \\
 		\bottomrule
 	\end{tabularx}
 	\caption{Description of the variables in the $\mathrm{Z}^0$ decay datasets.}
@@ -371,7 +372,7 @@ The error of the number of events after applying a cut can be estimated by the v
 with the number of events $n_i$ after the $i$-cut and the total number of events~$N$.
 
 
-\subsection{Separating $s$- and $t$-Channel of Electron Final States}
+\subsubsection{Separating $s$- and $t$-Channel of Electron Final States}
 
 \begin{align*}
 \frac{\int_{-1}^{1}(1 + \cos^2\theta) \dinf{\cos\theta}}{\int_{-0.9}^{0.5}(1 + \cos^2\theta) \dinf{\cos\theta}} = 1.5829
@@ -384,7 +385,7 @@ with the number of events $n_i$ after the $i$-cut and the total number of events
 \end{align*}
 
 
-\subsection{Efficiency Matrix}
+\subsubsection{Efficiency Matrix}
 By setting cuts on the data one loses a fraction of the simulated events and in addition to this misidentifications of events using the cuts can occur.
 Knowing that each datasets was simulated with \num{100000} events the efficiency of the event selection using cuts can be evaluated.
 For this a matrix formalism is employed, which connects the number of events in the different decay channels (as determined by the cut selection) $\vec{n}$ with the number of events per channel in the underlying data $\vec{N}$.
@@ -412,9 +413,10 @@ For ideal cuts the efficiency matrix would be the unit matrix, since the off-dia
 
 For real data the number of events in the different channels $\vec{N}$ is generally not known, but the different cuts can be applied to the data to obtain the vector of identified particles $\vec{n}$.
 Then the number of events $\vec{N}$ in the different decay channels can be inferred from $\vec{n}$ using the inverse of equation \eqref{eq:efficiency_definition}
-\begin{align*}
+\begin{align}
 	\vec{N} = E^{-1} \cdot \vec{n}
-\end{align*}
+	\label{eq:efficiency_correction}
+\end{align}
 
 To calculate the efficiency matrix according to equation \eqref{eq:efficiency_matrix_elements} one has to note that $N_\mathrm{e} \neq 100000$ but rather the number of events in the s-channel \korr{as determined in s-t-channel chapter}.
 Using the number of events after the different cuts in table \korr{REF} and their errors according to the underlying binomial distribution, the matrix elements of the efficiency matrix can be calculated
@@ -462,20 +464,69 @@ and the error matrix
 \end{align*}
 
 
+\subsection{Analysis of OPAL-Data}
+After the analysis of the cuts for event selection was performed, the data measured at the OPAL-detector can be analyzed.
+Of the available datasets \texttt{data6} was chosen, since it has the highest integrated luminosities and therefore should allow for better statistics.
 
+The data contains events at seven different center of mass energies at LEP surrounding the Z-resonance.
+Therefore in a first step the measurement at different energies have to be separated by a cut in \texttt{e\_lep}.
+
+\subsubsection{Determination of the Differential Cross Sections}
+After the energies have been separated the identification cuts can be applied to the samples at different energies.
+Then the remaining number of particles $n_i$ with $i \in \{ \mathrm{e}, \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \}$ can be obtained.
+The number of events after the cuts is summarized in table \ref{tab:counts_cross_section}.
+To get the true number of events one has to correct for the efficiency of the cut selection.
+This is simply done by matrix multiplication of the measured vector $\vec{n}$ and the inverse efficiency matrix $E^{-1}$ as in equation \eqref{eq:efficiency_correction}.
+The error of the correction counts can be calculated using Gaussian Error Propagation
 \begin{align*}
-	&\Delta n_i^2 = \sum_k \left[ N_k^2 \cdot \Delta E_{ik}^2 + E_{ik}^2 \cdot \Delta N_k^2 \right]
+&\Delta N_i = \sqrt{\sum_k \left[ n_k^2 \cdot \left(\Delta E^{-1}\right)_{ik}^2 + \left(E^{-1}\right)_{ik}^2 \cdot \Delta n_k^2 \right]}
 \end{align*}
+The efficiency corrected number of events are summarized in table \ref{tab:counts_cross_section_corr}.
 
-\subsection{Determination of the Differential Cross Sections}
+\begin{table}
+	\begin{subtable}{1.0\textwidth}
+		\centering
+		\input{./tables/cross_section_counts.tex}
+		\subcaption{Counts for cross section measurement. Error estimated from binomial statistics.}
+		\label{tab:counts_cross_section}
+	\end{subtable}
+	
+	\vspace{0.5cm}
+	
+	\begin{subtable}{1.0\textwidth}
+		\centering
+		\input{./tables/cross_section_counts_corr.tex}
+		\subcaption{Corrected counts for cross section measurement}
+		\label{tab:counts_cross_section_corr}
+	\end{subtable}
+	\caption{Counts}
+\end{table}
 
+After the true number of events has been determined a calculation of the cross section with respect to energy can be done.
+For this the relation
 \begin{align*}
-	&N = \sigma \cdot \int \mathcal{L} \dinf{t}\\
-	&\sigma = \frac{N}{\int \mathcal{L} \dinf{t}}
+	N = \sigma \cdot \int \mathcal{L} \dinf{t}
 \end{align*}
+can be used to determine the cross section from the number of events at a specific energy and the integrated luminosity in the specified energy interval.
+\begin{align*}
+	\sigma = \frac{N}{\int \mathcal{L} \dinf{t}}
+\end{align*}
+Moreover radiation corrections to the cross section are necessary, so that the cross section can be calculated by
+\begin{align*}
+	\sigma = \frac{N}{\int \mathcal{L} \dinf{t}} + \mathrm{corr}(\sqrt{s})
+\end{align*}
+Using the integrated luminosities for the given dataset in \cite{anleitung} and the radiation correction given in \korr{REF} the cross sections can be calculated.
+
+\begin{table}
+	\centering
+	\input{./tables/cross_section.tex}
+	\caption{measured cross section}
+\end{table}
 
 
-\subsection{Determination of the Forward-Backward Asymmetry using Muons}
+
+
+\subsubsection{Determination of the Forward-Backward Asymmetry using Muons}
 
 \begin{align*}
 	&A_\mathrm{FB} = \frac{n_\mathrm{F} - n_\mathrm{B}}{n_\mathrm{F} + n_\mathrm{B}} + \mathrm{corr}(\sqrt{s})\\
@@ -483,7 +534,7 @@ and the error matrix
 	&\sin^2\theta_\mathrm{W} = \frac{1 - \sqrt{A_\mathrm{FB}^\mathrm{peak} / 3}}{4}
 \end{align*}
 
-\subsection{Fitting Resonance Curves}
+\subsubsection{Fitting Resonance Curves}
 \begin{align*}
 	&f(x; A, \mu, \sigma) = \frac{A}{\pi} \frac{\sigma}{(x - \mu)^2 + \sigma^2} \\
 	&f(x=\mu; A, \sigma) = \frac{A}{\pi \sigma} \\
@@ -491,7 +542,7 @@ and the error matrix
 	&\sigma^\mathrm{peak} = \frac{A}{\pi \sigma}
 \end{align*}
 
-\subsection{Calculation of the Partial Widths}
+\subsubsection{Calculation of the Partial Widths}
 
 \begin{align*}
 	&\sigma_f^\mathrm{peak} = \frac{12 \pi}{M_\mathrm{Z}^2} \cdot \frac{\Gamma_\mathrm{e}}{\Gamma_\mathrm{Z}} \cdot \frac{\Gamma_f}{\Gamma_\mathrm{Z}} \\
@@ -504,19 +555,19 @@ and the error matrix
 
 
 
-\subsection{Lepton Universality}
+\subsubsection{Lepton Universality}
 \begin{align*}
 	&\frac{\Gamma_\mathrm{\mu}}{\Gamma_\mathrm{e}} = \\
 	&\frac{\Gamma_\mathrm{\tau}}{\Gamma_\mathrm{e}} = \\
 \end{align*}
 
-\subsection{Number of Light Neutrino Generations}
+\subsubsection{Number of Light Neutrino Generations}
 
 \begin{align*}
 	N_\nu = \frac{\Gamma_\mathrm{tot} - \Gamma_\mathrm{e} - \Gamma_\mathrm{\mu} - \Gamma_\mathrm{\tau} - \Gamma_\mathrm{hadr}}{\Gamma_\nu}
 \end{align*}
 
-\subsection{Discussion of Uncertainties}
+\subsubsection{Discussion of Uncertainties}
 
 
 
@@ -529,6 +580,9 @@ and the error matrix
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{19}
+\bibitem{anleitung}
+	\emph{Advanced Laboratory Course (physics601): Description of Experiments}, BONN-AT-2016-01MP, Universität Bonn, Januar 2016
+	
 \bibitem{pdg}
 	K.\ A.\ Olive \textit{et al.} (Particle Data Group),
 	Chin.\ Phys.\ C, \textbf{38}, 090001 (2014).
