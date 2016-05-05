@@ -362,60 +362,111 @@ An overview of the cuts is given in table \ref{tab:cut_criteria}.
 	\label{tab:cut_criteria}
 \end{table}
 
-\subsubsection{Separating $s$- and $t$-Channel of Electron Final States}
+\korr{Final cut counts \& precut counts}
+The error of the number of events after applying a cut can be estimated by the variance of the underlying binomial distribution
+\begin{align*}
+	\Delta n_i = \sqrt{N \cdot \left[ \frac{n_i}{N} - \left( \frac{n_i}{N} \right)^2 \right]} \quad \text{with}\quad i \in \{ \mathrm{e}, \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \}
+\end{align*}
+with the number of events $n_i$ after the $i$-cut and the total number of events~$N$.
+
+
+\subsection{Separating $s$- and $t$-Channel of Electron Final States}
 
 \begin{align*}
 \frac{\int_{-1}^{1}(1 + \cos^2\theta) \dinf{\cos\theta}}{\int_{-0.9}^{0.5}(1 + \cos^2\theta) \dinf{\cos\theta}} = 1.5829
 \end{align*}
 
-\subsubsection{Efficiency Matrix}
+
+\korr{Number of s-channel events}
+\begin{align*}
+	n_\mathrm{e,s-channel} = n_\mathrm{e} \cdot \mathrm{precut} \cdot \mathrm{anglecut}
+\end{align*}
+
+
+\subsection{Efficiency Matrix}
 By setting cuts on the data one loses a fraction of the simulated events and in addition to this misidentifications of events using the cuts can occur.
-Knowing that each of the datasets have been simulated with \num{100000} events the efficiency of the event selection using cuts can be evaluated.
- 
- 
- \begin{align*}
- 	E = \begin{pmatrix}
-	 	E_{\mathrm{e e}} & E_{\mathrm{e \mu}} & E_{\mathrm{e \tau}} & E_{\mathrm{e q}} \\
-	 	E_{\mathrm{\mu e}} & E_{\mathrm{\mu \mu}} & E_{\mathrm{\mu \tau}} & E_{\mathrm{\mu q}} \\
-	 	E_{\mathrm{\tau e}} & E_{\mathrm{\tau \mu}} & E_{\mathrm{\tau \tau}} & E_{\mathrm{\tau q}} \\
-	 	E_{\mathrm{q e}} & E_{\mathrm{q \mu}} & E_{\mathrm{q \tau}} & E_{\mathrm{q q}} \\
- 	\end{pmatrix}
- \end{align*}
- 
- \begin{align*}
- 	&E_{ij} = \frac{n_{ij}}{n_i^\mathrm{tot}} \quad \text{with} \quad i,j \in \{ \mathrm{e}, \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \} \\
- 	&n_{ij} \text{: number of $j$ identified as $i$}
- \end{align*}
- 
-
-
-
-
-
-Obviously one loses events in setting cuts on the data which makes it necessary to analyse the efficiency, i.e. the fractional losses of these cuts.
-
-
-Knowing that each of the datasets have been simulated with \num{100000} events the efficiency can be calculated from the number of remaining events that fulfill the cut conditions.
-A matrix formalism can be used to describe the number of measured events per decay channel $\vec{N}_\mathrm{meas}=(e_\mathrm{meas}, \mu_\mathrm{meas}, \tau_\mathrm{meas}, q_\mathrm{meas})^T$ by the number of events that have been simulated in this channel $\vec{N}_\mathrm{orig}$:
-\begin{align}
-\vec{N}_\mathrm{meas} = A \cdot \vec{N}_\mathrm{orig}
-\end{align}
-The values of $A$ describe how many events of one decay channel are identified as such or as one of the other decay channels.
-With the measured event numbers after applying the cuts on all datasets, $A$ is then given by
-\begin{align}
-A = \begin{pmatrix}
-	x & \dots \\
-	\vdots & \ddots \\
+Knowing that each datasets was simulated with \num{100000} events the efficiency of the event selection using cuts can be evaluated.
+For this a matrix formalism is employed, which connects the number of events in the different decay channels (as determined by the cut selection) $\vec{n}$ with the number of events per channel in the underlying data $\vec{N}$.
+This relation is described by the so called efficiency matrix~$E$
+\begin{align*}
+	E = \begin{pmatrix}
+		E_{\mathrm{e e}} & E_{\mathrm{e \mu}} & E_{\mathrm{e \tau}} & E_{\mathrm{e q}} \\
+		E_{\mathrm{\mu e}} & E_{\mathrm{\mu \mu}} & E_{\mathrm{\mu \tau}} & E_{\mathrm{\mu q}} \\
+		E_{\mathrm{\tau e}} & E_{\mathrm{\tau \mu}} & E_{\mathrm{\tau \tau}} & E_{\mathrm{\tau q}} \\
+		E_{\mathrm{q e}} & E_{\mathrm{q \mu}} & E_{\mathrm{q \tau}} & E_{\mathrm{q q}} \\
 	\end{pmatrix}
+\end{align*}
+with matrix elements $E_{ij}$, which are defined by
+\begin{align}
+	E_{ij} = \frac{n_{ij}}{N_j} \quad \text{with} \quad i,j \in \{ \mathrm{e}, \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \}
+	\label{eq:efficiency_matrix_elements}
 \end{align}
+with $n_{ij}$ the number of particles of type $j$ that were identified by the cut selection to be of type $i$ and the total number of simulated events of this type $N_j$.
+According to this formalism the vector of identified particles $\vec{n} = (n_\mathrm{e}, n_\mathrm{\mu}, n_\mathrm{\tau}, n_\mathrm{q})^\mathrm{T}$ can be calculated from the efficiency matrix~$E$ and the vector containing the simulated events $\vec{N} = (N_\mathrm{e}, N_\mathrm{\mu}, N_\mathrm{\tau}, N_\mathrm{q})^\mathrm{T}$ by matrix multiplication
+\begin{align}
+	\vec{n} = E \cdot \vec{N} \,\text{.}
+	\label{eq:efficiency_definition}
+\end{align}
+For ideal cuts the efficiency matrix would be the unit matrix, since the off-diagonal elements correspond to misidentification of the decay channel and the diagonal elements give the fraction of correctly identified events.
+
+For real data the number of events in the different channels $\vec{N}$ is generally not known, but the different cuts can be applied to the data to obtain the vector of identified particles $\vec{n}$.
+Then the number of events $\vec{N}$ in the different decay channels can be inferred from $\vec{n}$ using the inverse of equation \eqref{eq:efficiency_definition}
+\begin{align*}
+	\vec{N} = E^{-1} \cdot \vec{n}
+\end{align*}
+
+To calculate the efficiency matrix according to equation \eqref{eq:efficiency_matrix_elements} one has to note that $N_\mathrm{e} \neq 100000$ but rather the number of events in the s-channel \korr{as determined in s-t-channel chapter}.
+Using the number of events after the different cuts in table \korr{REF} and their errors according to the underlying binomial distribution, the matrix elements of the efficiency matrix can be calculated
+\begin{align*}
+	&E = \begin{pmatrix}
+	0.59259 & 0.00001 & 0.00117 & 0.00000 \\
+	0.00000 & 0.78537 & 0.00549 & 0.00000 \\
+	0.02027 & 0.04089 & 0.76651 & 0.00934 \\
+	0.00018 & 0.00000 & 0.00503 & 0.97533 \\
+	\end{pmatrix}
+\end{align*}
+and the error matrix using Gaussian Error Propagation
+\begin{align*}
+	&\Delta E = \begin{pmatrix}
+	0.00266 & 0.00000 & 0.00000 & 0.00000 \\
+	0.00000 & 0.00130 & 0.00024 & 0.00000 \\
+	0.00077 & 0.00063 & 0.00134 & 0.00031 \\
+	0.00008 & 0.00000 & 0.00023 & 0.00050 \\
+	\end{pmatrix}
+\end{align*}
+
+\korr{Interpretation: almost diagonal, efficiencies etc.}
+For the further analysis the efficiency matrix has to be inverted.
+Since the analytical error propagation in the process of inverting this matrix is rather complicated, a Monte-Carlo approach was used instead.
+For this a sample of $\num{100000}$ different efficiency matrices was generated according to the standard deviations as given in the error matrix.
+The sampled matrices can then be inverted using a numerical algorithm and a sample of $\num{100000}$ inverted efficiency matrices is generated.
+From the samples of the inverse matrix the error of the matrix elements can be estimated by the sample standard deviation.
+
+\begin{align*}
+&E^{-1} = \begin{pmatrix}
+	1.68758 & 0.00011 &-0.00258 & 0.00002 \\
+	0.00312 & 1.27376 &-0.00912 & 0.00009 \\
+   -0.04465 &-0.06796 & 1.30525 &-0.01250 \\
+   -0.00007 & 0.00035 &-0.00673 & 1.02536 \\
+\end{pmatrix}
+\end{align*}
+and the error matrix
+\begin{align*}
+&\Delta E^{-1} = \begin{pmatrix}
+	0.00756 & 0.00001 & 0.00002 & 0.00001 \\
+	0.00002 & 0.00211 & 0.00039 & 0.00001 \\
+	0.00170 & 0.00105 & 0.00227 & 0.00041 \\
+	0.00013 & 0.00002 & 0.00030 & 0.00052 \\
+\end{pmatrix}
+\end{align*}
+
 
 
 \begin{align*}
-	&\Delta n = \sqrt{N \cdot \left[ \frac{n}{N} - \left( \frac{n}{N} \right)^2 \right]} \\
 	&\Delta n_i^2 = \sum_k \left[ N_k^2 \cdot \Delta E_{ik}^2 + E_{ik}^2 \cdot \Delta N_k^2 \right]
 \end{align*}
 
-\subsubsection{Determination of the Differential Cross Sections}
+\subsection{Determination of the Differential Cross Sections}
 
 \begin{align*}
 	&N = \sigma \cdot \int \mathcal{L} \dinf{t}\\
@@ -423,7 +474,7 @@ A = \begin{pmatrix}
 \end{align*}
 
 
-\subsubsection{Determination of the Forward-Backward Asymmetry using Muons}
+\subsection{Determination of the Forward-Backward Asymmetry using Muons}
 
 \begin{align*}
 	&A_\mathrm{FB} = \frac{n_\mathrm{F} - n_\mathrm{B}}{n_\mathrm{F} + n_\mathrm{B}} + \mathrm{corr}(\sqrt{s})\\
@@ -431,7 +482,7 @@ A = \begin{pmatrix}
 	&\sin^2\theta_\mathrm{W} = \frac{1 - \sqrt{A_\mathrm{FB}^\mathrm{peak} / 3}}{4}
 \end{align*}
 
-\subsubsection{Fitting Resonance Curves}
+\subsection{Fitting Resonance Curves}
 \begin{align*}
 	&f(x; A, \mu, \sigma) = \frac{A}{\pi} \frac{\sigma}{(x - \mu)^2 + \sigma^2} \\
 	&f(x=\mu; A, \sigma) = \frac{A}{\pi \sigma} \\
@@ -439,7 +490,7 @@ A = \begin{pmatrix}
 	&\sigma^\mathrm{peak} = \frac{A}{\pi \sigma}
 \end{align*}
 
-\subsubsection{Calculation of the Partial Widths}
+\subsection{Calculation of the Partial Widths}
 
 \begin{align*}
 	&\sigma_f^\mathrm{peak} = \frac{12 \pi}{M_\mathrm{Z}^2} \cdot \frac{\Gamma_\mathrm{e}}{\Gamma_\mathrm{Z}} \cdot \frac{\Gamma_f}{\Gamma_\mathrm{Z}} \\
@@ -452,19 +503,19 @@ A = \begin{pmatrix}
 
 
 
-\subsubsection{Lepton Universality}
+\subsection{Lepton Universality}
 \begin{align*}
 	&\frac{\Gamma_\mathrm{\mu}}{\Gamma_\mathrm{e}} = \\
 	&\frac{\Gamma_\mathrm{\tau}}{\Gamma_\mathrm{e}} = \\
 \end{align*}
 
-\subsubsection{Number of Light Neutrino Generations}
+\subsection{Number of Light Neutrino Generations}
 
 \begin{align*}
 	N_\nu = \frac{\Gamma_\mathrm{tot} - \Gamma_\mathrm{e} - \Gamma_\mathrm{\mu} - \Gamma_\mathrm{\tau} - \Gamma_\mathrm{hadr}}{\Gamma_\nu}
 \end{align*}
 
-\subsubsection{Discussion of Uncertainties}
+\subsection{Discussion of Uncertainties}
 
 
 
