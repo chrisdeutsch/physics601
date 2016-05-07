@@ -321,13 +321,13 @@ All of the decay channels found with the cut criteria could be verified by analy
 \section{Part II: Statistical Analysis of $\mathrm{Z}^0$ Decays}
 The second part of this laboratory experiment is concerned with the analysis of data gathered by the OPAL-detector at LEP.
 Since an analysis using event displays is infeasible, the data analysis software \texttt{PAW} is used instead.
+The aim of this part is to determine the mass and (partial) decay width of the $\mathrm{Z}^0$ and in addition to this calculate the mixing~$\sin^2\theta_\mathrm{W}$ from the forward-backward asymmetry in the muon channel.
 
 \subsection{Analysis of Monte-Carlo Data}
-Before the data taken at the OPAL-detector can be evaluated, four datasets of Monte-Carlo data are analyzed to refine the preliminary cuts that were determined in section \korr{REF}.
+Before the data taken at the OPAL-detector can be evaluated, four datasets of Monte-Carlo data are analyzed to refine the preliminary cuts that were determined in the previous part.
 These datasets contain a selection of simulated $\mathrm{Z}^0$ decays, which are separated into the different decay channels with electron, muon, tau or hadronic final states.
 Since the number of simulated events is known, these datasets can be used to estimate the (mis-)identification probability of our final cuts.
-
-
+The nomenclature that is used in describing the detector data is summarized in table~\ref{tab:desc_variables}.
 
 \begin{table}[H]
 	\centering
@@ -340,30 +340,30 @@ Since the number of simulated events is known, these datasets can be used to est
 		\texttt{e\_ecal} & Total energy deposited in the electromagnetic calorimeter \\
 		\texttt{e\_hcal} & Total energy deposited in the hadronic calorimeter \\
 		\texttt{cos\_thet} & Angle between the incoming positron and outgoing positively charged particle (undefined if the number of positively charged particles in the final state is not equal to one) \\
-		\texttt{e\_lep} & \\
+		\texttt{e\_lep} & Beam energy at LEP \\
 		\bottomrule
 	\end{tabularx}
-	\caption{Description of the variables in the $\mathrm{Z}^0$ decay datasets.}
+	\caption{Description of the variables in the $\mathrm{Z}^0$ decay datasets. Momenta and energies are always given in units of GeV.}
 	\label{tab:desc_variables}
 \end{table}
 
 \subsubsection{Acceptance of the OPAL-Detector}
-To get accustomed to the data analysis software the distributions of a number of variables in the MC data were plotted as histograms (a short description of the different variables can be found in table \ref{tab:desc_variables}).
+To get accustomed to the data analysis software, the distributions of a number of variables in the MC-datasets were plotted as histograms.
 One such variable is the sum of the charged particle momenta, which is depicted in figure \ref{fig:uncut_pcharged}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{./data/tag2/uncut/cropped/pcharged_uncut.pdf}
-	\caption{Distribution of \texttt{pcharged} for the Monte-Carlo simulations of electron (upper left), muon (upper right), tau (lower left) and hadronic final states (lower right).}
+	\caption{Distribution of \texttt{pcharged} for the Monte-Carlo simulations of electron (upper left), muon (upper right), tau (lower left) and hadronic final states (lower right). The momenta are given in units of GeV.}
 	\label{fig:uncut_pcharged}
 \end{figure}
 A notable feature of these distributions is the high number of events with vanishing \texttt{pcharged} for the electron and muon channel, which shall be analyzed further.
 To investigate this occurrence additional cuts on other variables were performed, which lead to the observation that these events stem from particles that have been detected at very small angles with respect to the beam axis.
-Since the detector cannot properly detect particles close to the beam axis a cut on \texttt{cos\_thet} should decrease the number events with vanishing \texttt{pcharged}.
-For this the cut
+Since the detector cannot properly detect particles close to the beam axis, a cut on \texttt{cos\_thet} should decrease the number events with vanishing \texttt{pcharged}.
+Therefore the cut
 \begin{align*}
-	|\cos\theta| < 0.9
+	\left| \cos\theta \right| < 0.9
 \end{align*}
-was chosen, which removed almost all events with vanishing \texttt{pcharged}.
+was chosen, which removed almost all events with vanishing \texttt{pcharged} in both channels.
 
 
 \subsubsection{Refining the Cuts for Event Selection}
