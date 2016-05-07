@@ -435,20 +435,38 @@ thus the correction due to the cut on the scattering angle can be calculated by 
 \begin{align*}
 \kappa_\mathrm{angular} = \frac{\int_{-1}^{1}(1 + \cos^2\theta) \dinf{\cos\theta}}{\int_{-0.9}^{0.5}(1 + \cos^2\theta) \dinf{\cos\theta}} \approx 1.5829 \text{.}
 \end{align*}
-
-
-\korr{Number of s-channel events}
+For the upcoming determination of the efficiency matrix it is important to know the total number of $s$-channel events in the MC-dataset, which contains $s$ as well as $t$-channel events.
+Therefore one has to consider the total number of \num{100000} simulated events in the electron-channel ($s$- and $t$-channel) was reduced by a precut to \num{93454} events, discarding events that cannot be reconstructed.
+Since the details of the precut are not known, it is assumed that it affects the $s$- and $t$-channel equally.
+Thus the total number of annihilation events in the dataset can be calculated using
 \begin{align*}
-	n_\mathrm{e,s-channel} = n_\mathrm{e} \cdot \mathrm{precut} \cdot \mathrm{anglecut}
+	N_\mathrm{e,\,s} = n_\mathrm{e,\,s} \cdot \frac{100000}{93454} \cdot \kappa_\mathrm{angular}
 \end{align*}
-
-
-\korr{Final cut counts \& precut counts}
-The error of the number of events after applying a cut can be estimated by the variance of the underlying binomial distribution
+with the number of $s$-channel events $n_\mathrm{e,\,s}$ after the cuts previously described.
+Using the values in table~\ref{tab:num_events} the total number of $s$-channel events in the MC-dataset can be estimated to be
 \begin{align*}
-\Delta n_i = \sqrt{N \cdot \left[ \frac{n_i}{N} - \left( \frac{n_i}{N} \right)^2 \right]} \quad \text{with}\quad i \in \{ \mathrm{e}, \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \}
+	N_\mathrm{e,\,s} = 34136
 \end{align*}
-with the number of events $n_i$ after the $i$-cut and the total number of events~$N$.
+which is used in section~\ref{sec:efficiency_matrix} to determine the efficiency matrix.
+
+\begin{table}[h]
+	\centering
+	\input{./tables/events.tex}
+	\caption{Number of events in the various decay channels after applying the selection cuts described the previous sections. }
+	\label{tab:num_events}
+\end{table}
+
+
+
+\begin{description}
+	\item[Remark] Applying the cut condition on a total of $N$ entries leads to $N$ binary decisions, whether the entry fulfills the cut or does not.
+	Therefore the underlying statistical description is the binomial distribution, for which the standard deviation can be estimated by
+	\begin{align*}
+		\Delta n_i = \sqrt{N \cdot \left[ \frac{n_i}{N} - \left( \frac{n_i}{N} \right)^2 \right]} \quad \text{with}\quad i \in \{ \mathrm{e}, \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \} \,\text{,}
+	\end{align*}
+	where $n_i$ describes the number of events after cut $i$ and $N$ the total number of events.
+	Therefore it is assumed that the standard deviations of event counts after cutting the data can be estimated by this statistic.
+\end{description}
 
 
 \subsubsection{Efficiency Matrix}
