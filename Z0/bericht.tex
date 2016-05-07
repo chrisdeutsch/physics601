@@ -644,31 +644,31 @@ In table \ref{tab:afb} the number of events in forward/backward direction, as we
 \begin{table}[h]
 	\centering
 	\input{./tables/afb.tex}
-	\caption{Number of events in the forward $n_\mathrm{F}$ and backward direction $n_\mathrm{B}$, radiation correction to the forward-backward asymmetry $\mathrm{corr}(\sqrt{s})$ as given in \cite{anleitung} and the corrected forward-backward asymmetry $A_\mathrm{FB}$.}
+	\caption{Number of events in the forward $n_\mathrm{F}$ and backward direction $n_\mathrm{B}$, radiation correction to the forward-backward asymmetry $\mathrm{corr}(\sqrt{s})$ as given in \cite{anleitung} and the corrected forward-backward asymmetry $A_\mathrm{FB}$. The errors for the number of events is given by binomial statistics and the error of the forward-backward asymmetry by first order error propagation.}
 	\label{tab:afb}
 \end{table}
 
-According to the approximation of the forward-backward asymmetry at the resonance peak
+The forward-backward asymmetry at the peak of the resonance can be approximated by \cite{instructions}
 \begin{align*}
-	A_\mathrm{FB}^\mathrm{peak} \approx 3 \left( \frac{v_\ell}{a_\ell} \right)^2 = 3 \left( 1 - 4 \sin^2\theta_\mathrm{W} \right)
+	A_\mathrm{FB}^\mathrm{peak} \approx 3 \left( 1 - 4 \sin^2\theta_\mathrm{W} \right)
 \end{align*}
-which can be approximated by the measured value at $\sqrt{s} = \SI{91.24}{GeV}$
+with the Weinberg mixing angle $\theta_\mathrm{W}$.
+This can be approximated by the value measured at a center of mass energy of $\sqrt{s} = \SI{91.24}{GeV}$
 \begin{align*}
 	A_\mathrm{FB}^\mathrm{peak} \approx \num{0.0119 +- 0.0075}
 \end{align*}
-Then the Weinberg angle $\sin^2\theta_\mathrm{W}$ can be calculated using
+thus allowing the calculation of $\sin^2\theta_\mathrm{W}$ using
 \begin{align*}
-	\sin^2\theta_\mathrm{W} = \frac{1 - \sqrt{A_\mathrm{FB}^\mathrm{peak} / 3}}{4}
+	\sin^2\theta_\mathrm{W} = \frac{1 - \sqrt{A_\mathrm{FB}^\mathrm{peak} / 3}}{4} \,\text{.}
 \end{align*}
-
-Using the measured value for $A_\mathrm{FB}$ at the peak of the resonance the Weinberg angle is estimated to be
+From this approximation the Weinberg angle can be estimated to be
 \begin{align*}
 	\sin^2\theta_\mathrm{W} = \num{0.234 +- 0.005}
 \end{align*}
-with the error from gaussian error propagation.
-This value is in good agreement with the literature value of
+using first order error propagation.
+The value calculated by using the forward-backward asymmetry is in good agreement with the literature value of \cite{pdg}
 \begin{align*}
-	(\sin^2\theta_\mathrm{W})^\mathrm{PDG} = \num{0.23126(5)}
+	(\sin^2\theta_\mathrm{W})^\mathrm{PDG} = \num{0.23126(5)} \,\text{.}
 \end{align*}
 
 
