@@ -348,6 +348,7 @@ The nomenclature that is used in describing the detector data is summarized in t
 \end{table}
 
 \subsubsection{Acceptance of the OPAL-Detector}
+\label{sec:acceptance_detector}
 To get accustomed to the data analysis software, the distributions of a number of variables in the MC-datasets were plotted as histograms.
 One such variable is the sum of the charged particle momenta, which is depicted in figure \ref{fig:uncut_pcharged}.
 \begin{figure}[h]
@@ -402,20 +403,37 @@ An overview of the selection cuts is given in table~\ref{tab:cut_criteria}, whic
 	\item[Hadron-channel] This channel is quite cleanly isolated by cutting on the number of charged particles due to the hadronization process.
 	Nevertheless some misidentified tau-events can be expected.
 \end{description}
+In addition to these selection cuts the electron and muon-channels are cut in \texttt{cos\_thet} to remove non-reconstructible events close to the beam axis (according to section \ref{sec:acceptance_detector}).
 
-\korr{Final cut counts \& precut counts}
-The error of the number of events after applying a cut can be estimated by the variance of the underlying binomial distribution
-\begin{align*}
-	\Delta n_i = \sqrt{N \cdot \left[ \frac{n_i}{N} - \left( \frac{n_i}{N} \right)^2 \right]} \quad \text{with}\quad i \in \{ \mathrm{e}, \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \}
-\end{align*}
-with the number of events $n_i$ after the $i$-cut and the total number of events~$N$.
-
-
-\subsubsection{Separating $s$- and $t$-Channel of Electron Final States}
+\subsubsection{Separating $s$- and $t$-Channel in $\mathrm{e}^+ + \mathrm{e}^- \rightarrow \mathrm{e}^+ + \mathrm{e}^-$ Events}
 \label{sec:s_t_channel_separation}
+In section \korr{REF Vorbereitungsaufgaben} it was determined the differential cross section of the scattering process ($t$-channel) is strongly peaked in the forward direction.
+This process only contributes marginally to the total differential cross section of $t$- and $s$-channel in the backward direction.
+Therefore by constraining the scattering angle to larger values a selection of the annihilation process can be performed.
+For the case of annihilation the contribution of the intermediate Z-boson to the cross section is dominant, at center of mass energies comparable to the Z-mass.
 
+The angular distribution in the electron-channel is depicted in appendix~\ref{fig:cos_theta_uncut}, where one can clearly see the peak in the forward direction due to $t$-channel events.
+To select the $s$-channel processes an upper bound on \texttt{cos\_thet} (scattering angle) is chosen, such that the angular distribution is mirror-symmetric with respect to $\cos\theta = 0$, reflecting the approximate\footnote{The forward-backward asymmetry is small compared to the asymmetry introduced by the $t$-channel process.} forward-backward symmetry of the $s$-channel process.
+
+As the upper limit $\cos\theta < 0.5$ was chosen resulting in the angular distribution shown in figure~\ref{fig:t_cut_distribution}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./data/tag2/angular_mc/cropped/t_channel_cut.pdf}
+	\caption{Angular distribution of the scattering angle in the electron-channel after separating $s$- and $t$-channel.}
+	\label{fig:t_cut_distribution}
+\end{figure}
+In hindsight the chosen upper limit on the scattering angle was set too high, since the mirror-symmetry is clearly broken.
+Therefore it is expected that there is a significant $t$-channel contribution in the final cuts, leading to a distortion of the measured resonance curve.
+
+In addition to this the cut in the scattering angle leads to a significant loss of $s$-channel events in the forward direction.
+Moreover the cut $\left| \cos\theta \right| < 0.9$ made in section~\ref{sec:acceptance_detector} also leads to some losses close to the beam pipe in the backward direction.
+To correct for these losses one can consider that the differential cross-section of the $s$-channel process is given by
 \begin{align*}
-\frac{\int_{-1}^{1}(1 + \cos^2\theta) \dinf{\cos\theta}}{\int_{-0.9}^{0.5}(1 + \cos^2\theta) \dinf{\cos\theta}} = 1.5829
+	\deriv{\sigma_\mathrm{s}}{\cos\theta} \propto \left( 1 + \cos\theta \right)
+\end{align*}
+thus the correction due to the cut on the scattering angle can be calculated by integration leading to
+\begin{align*}
+\kappa_\mathrm{angular} = \frac{\int_{-1}^{1}(1 + \cos^2\theta) \dinf{\cos\theta}}{\int_{-0.9}^{0.5}(1 + \cos^2\theta) \dinf{\cos\theta}} \approx 1.5829 \text{.}
 \end{align*}
 
 
@@ -423,6 +441,14 @@ with the number of events $n_i$ after the $i$-cut and the total number of events
 \begin{align*}
 	n_\mathrm{e,s-channel} = n_\mathrm{e} \cdot \mathrm{precut} \cdot \mathrm{anglecut}
 \end{align*}
+
+
+\korr{Final cut counts \& precut counts}
+The error of the number of events after applying a cut can be estimated by the variance of the underlying binomial distribution
+\begin{align*}
+\Delta n_i = \sqrt{N \cdot \left[ \frac{n_i}{N} - \left( \frac{n_i}{N} \right)^2 \right]} \quad \text{with}\quad i \in \{ \mathrm{e}, \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \}
+\end{align*}
+with the number of events $n_i$ after the $i$-cut and the total number of events~$N$.
 
 
 \subsubsection{Efficiency Matrix}
@@ -772,21 +798,32 @@ The calculated value is consistent with the observed three light neutrino genera
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/pcharged_uncut.pdf}
+	\caption{text}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/ncharged_uncut.pdf}
+	\caption{text}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/e_ecal_uncut.pdf}
+	\caption{text}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/e_hcal_uncut.pdf}
+	\caption{text}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{./data/tag2/angular_mc/cropped/cos_theta.pdf}
+	\caption{text}
+	\label{fig:cos_theta_uncut}
 \end{figure}
 
 
