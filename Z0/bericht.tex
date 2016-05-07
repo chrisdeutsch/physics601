@@ -452,11 +452,9 @@ which is used in section~\ref{sec:efficiency_matrix} to determine the efficiency
 \begin{table}[h]
 	\centering
 	\input{./tables/events.tex}
-	\caption{Number of events in the various decay channels after applying the selection cuts described the previous sections on the MC-datasets. }
+	\caption{Number of events in the various decay channels after applying the selection cuts described the previous sections on the MC-datasets. The plots for determining these values can be found in appendix~\ref{app:mc_final_cut}.}
 	\label{tab:num_events}
 \end{table}
-
-
 
 \begin{description}
 	\item[Remark] Applying the cut condition on a total of $N$ entries leads to $N$ binary decisions, whether the entry fulfills the cut or does not.
@@ -471,8 +469,8 @@ which is used in section~\ref{sec:efficiency_matrix} to determine the efficiency
 
 \subsubsection{Efficiency Matrix}
 \label{sec:efficiency_matrix}
-By setting cuts on the data one loses a fraction of the simulated events and in addition to this misidentifications of events using the cuts can occur.
-Knowing that each datasets was simulated with \num{100000} events the efficiency of the event selection using cuts can be evaluated.
+By setting cuts on the data one loses a fraction of the simulated events and in addition to this misidentification of events can occur.
+Knowing that each datasets was simulated with \num{100000} events (or for the electron-channel the total number of events in the $s$-channel as determined in section~\ref{sec:s_t_channel_separation}) the efficiency of the event selection using cuts can be evaluated.
 For this a matrix formalism is employed, which connects the number of events in the different decay channels (as determined by the cut selection) $\vec{n}$ with the number of events per channel in the underlying data $\vec{N}$.
 This relation is described by the so called efficiency matrix~$E$
 \begin{align*}
@@ -502,9 +500,10 @@ Then the number of events $\vec{N}$ in the different decay channels can be infer
 	\vec{N} = E^{-1} \cdot \vec{n}
 	\label{eq:efficiency_correction}
 \end{align}
+with the inverted efficiency matrix $E^{-1}$.
 
-To calculate the efficiency matrix according to equation \eqref{eq:efficiency_matrix_elements} one has to note that $N_\mathrm{e} \neq 100000$ but rather the number of events in the s-channel \korr{as determined in s-t-channel chapter}.
-Using the number of events after the different cuts in table \korr{REF} and their errors according to the underlying binomial distribution, the matrix elements of the efficiency matrix can be calculated
+To calculate the efficiency matrix according to equation \eqref{eq:efficiency_matrix_elements} one has to note that $N_\mathrm{e}$ is not \num{100000} but rather the number of events in the s-channel as determined in section~\ref{sec:s_t_channel_separation}.
+Using the number of events after the different cuts in table~\ref{tab:num_events} the matrix elements of the efficiency matrix can be calculated
 \begin{align*}
 	&E = \begin{pmatrix}
 	0.59259 & 0.00001 & 0.00117 & 0.00000 \\
@@ -513,23 +512,29 @@ Using the number of events after the different cuts in table \korr{REF} and thei
 	0.00018 & 0.00000 & 0.00503 & 0.97533 \\
 	\end{pmatrix}
 \end{align*}
-and the error matrix using Gaussian Error Propagation
+and the errors are calculated by first order error propagation using the standard deviation as estimated by the underlying binomial distribution for the number of events after cutting
 \begin{align*}
 	&\Delta E = \begin{pmatrix}
 	0.00266 & 0.00000 & 0.00000 & 0.00000 \\
 	0.00000 & 0.00130 & 0.00024 & 0.00000 \\
 	0.00077 & 0.00063 & 0.00134 & 0.00031 \\
 	0.00008 & 0.00000 & 0.00023 & 0.00050 \\
-	\end{pmatrix}
+	\end{pmatrix} \,\text{.}
 \end{align*}
+The off-diagonal elements of this matrix are almost zero meaning that the probability of misidentification is small.
+The largest off-diagonal elements with misidentification probabilities of the order of $1 \%$ are the elements for tau-events misidentified as either electron- or muon-events.
+This is because separating tau-events from those channels is rather difficult as was mentioned previously.
+Moreover the diagonal elements give the fraction of correctly identified events.
+Due to the clear signature of hadronic events almost $100 \%$ of events are identified correctly.
+For the muon- and tau-channel larger losses of the order of $20 \%$ are observed.
+The smallest efficiency of $60 \%$ is observed for the electron-channel due to the high number of discarded events caused by the angular cuts.
 
-\korr{Interpretation: almost diagonal, efficiencies etc.}
 For the further analysis the efficiency matrix has to be inverted.
 Since the analytical error propagation in the process of inverting this matrix is rather complicated, a Monte-Carlo approach was used instead.
-For this a sample of $\num{100000}$ different efficiency matrices was generated according to the standard deviations as given in the error matrix.
+For this a random sample of $\num{100000}$ different efficiency matrices was generated according to the standard deviations given in the error matrix.
 The sampled matrices can then be inverted using a numerical algorithm and a sample of $\num{100000}$ inverted efficiency matrices is generated.
 From the samples of the inverse matrix the error of the matrix elements can be estimated by the sample standard deviation.
-
+Finally the resulting inverted matrix is given by
 \begin{align*}
 &E^{-1} = \begin{pmatrix}
 	1.68758 & 0.00011 &-0.00258 & 0.00002 \\
@@ -538,16 +543,16 @@ From the samples of the inverse matrix the error of the matrix elements can be e
    -0.00007 & 0.00035 &-0.00673 & 1.02536 \\
 \end{pmatrix}
 \end{align*}
-and the error matrix
+with the error matrix by Monte-Carlo error propagation
 \begin{align*}
 &\Delta E^{-1} = \begin{pmatrix}
 	0.00756 & 0.00001 & 0.00002 & 0.00001 \\
 	0.00002 & 0.00211 & 0.00039 & 0.00001 \\
 	0.00170 & 0.00105 & 0.00227 & 0.00041 \\
 	0.00013 & 0.00002 & 0.00030 & 0.00052 \\
-\end{pmatrix}
+\end{pmatrix} \,\text{.}
 \end{align*}
-
+In the following this matrix can be used in analyzing real data gathered at OPAL.
 
 \subsection{Analysis of OPAL-Data}
 After the analysis of the cuts for event selection was performed, the data measured at the OPAL-detector can be analyzed.
@@ -847,6 +852,7 @@ The calculated value is consistent with the observed three light neutrino genera
 
 \clearpage
 \subsection{MC-Data using the Final Cuts}
+\label{app:mc_final_cut}
 
 \begin{figure}
 	\centering
