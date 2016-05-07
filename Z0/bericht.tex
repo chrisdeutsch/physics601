@@ -324,6 +324,7 @@ Since an analysis using event displays is infeasible, the data analysis software
 The aim of this part is to determine the mass and (partial) decay width of the $\mathrm{Z}^0$ and in addition to this calculate the mixing~$\sin^2\theta_\mathrm{W}$ from the forward-backward asymmetry in the muon channel.
 
 \subsection{Analysis of Monte-Carlo Data}
+\label{sec:analysis_mc_data}
 Before the data taken at the OPAL-detector can be evaluated, four datasets of Monte-Carlo data are analyzed to refine the preliminary cuts that were determined in the previous part.
 These datasets contain a selection of simulated $\mathrm{Z}^0$ decays, which are separated into the different decay channels with electron, muon, tau or hadronic final states.
 Since the number of simulated events is known, these datasets can be used to estimate the (mis-)identification probability of our final cuts.
@@ -558,27 +559,29 @@ In the following this matrix can be used in analyzing real data gathered at OPAL
 After the analysis of the cuts for event selection was performed, the data measured at the OPAL-detector can be analyzed.
 Of the available datasets \texttt{data6} was chosen, since it has the highest integrated luminosities and therefore should allow for better statistics.
 
-The data contains events at seven different center of mass energies at LEP surrounding the Z-resonance.
+The dataset contains events at seven different center of mass energies at LEP surrounding the Z-resonance.
 Therefore in a first step the measurement at different energies have to be separated by a cut in \texttt{e\_lep}.
+In the following only the mean value of the center of mass energy is denoted, since the energies vary only slightly from this value.
 
 \subsubsection{Determination of the Differential Cross Sections}
 \label{sec:determination_cross_section}
-After the energies have been separated the identification cuts can be applied to the samples at different energies.
-Then the remaining number of particles $n_i$ with $i \in \{ \mathrm{e}, \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \}$ can be obtained.
+After the energies have been separated the selection cuts can be applied to the samples at different energies $\sqrt{s}$.
+From these the remaining number of particles $n_i$ with $i \in \{ \mathrm{e}, \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \}$ can be obtained.
 The number of events after the cuts is summarized in table \ref{tab:counts_cross_section}.
-To get the true number of events one has to correct for the efficiency of the cut selection.
-This is simply done by matrix multiplication of the measured vector $\vec{n}$ and the inverse efficiency matrix $E^{-1}$ as in equation \eqref{eq:efficiency_correction}.
-The error of the correction counts can be calculated using Gaussian Error Propagation
-\begin{align*}
-&\Delta N_i = \sqrt{\sum_k \left[ n_k^2 \cdot \left(\Delta E^{-1}\right)_{ik}^2 + \left(E^{-1}\right)_{ik}^2 \cdot \Delta n_k^2 \right]}
-\end{align*}
+To obtain the total number of events of a specific type one has to correct for the efficiency of the cut selection.
+This is simply done by matrix multiplication of the inverse efficiency matrix $E^{-1}$ as in equation \eqref{eq:efficiency_correction} with the vector $\vec{n}$.
+The error of the correction counts can be calculated using first order error propagation:
+\begin{align}
+&\Delta N_i = \sqrt{\sum_k \left[ n_k^2 \cdot \left(\Delta E^{-1}\right)_{ik}^2 + \left(E^{-1}\right)_{ik}^2 \cdot \Delta n_k^2 \right]} \,\text{.}
+\label{eq:error_prop_matrix_mult}
+\end{align}
 The efficiency corrected number of events are summarized in table \ref{tab:counts_cross_section_corr}.
 
 \begin{table}
 	\begin{subtable}{1.0\textwidth}
 		\centering
 		\input{./tables/cross_section_counts.tex}
-		\subcaption{Counts for cross section measurement. Error estimated from binomial statistics.}
+		\subcaption{Number of events at the specified center of mass energy $\sqrt{s}$ after applying the cut selection. The error is estimated from binomial statistics.}
 		\label{tab:counts_cross_section}
 	\end{subtable}
 	
@@ -587,33 +590,41 @@ The efficiency corrected number of events are summarized in table \ref{tab:count
 	\begin{subtable}{1.0\textwidth}
 		\centering
 		\input{./tables/cross_section_counts_corr.tex}
-		\subcaption{Corrected counts for cross section measurement}
+		\subcaption{Total number of events after correction for the efficiency of the cut selection. The error is estimated by first order error propagation as given in equation \eqref{eq:error_prop_matrix_mult}.}
 		\label{tab:counts_cross_section_corr}
 	\end{subtable}
-	\caption{Counts}
+	\caption{Number of events at center of mass energies $\sqrt{s}$ near the Z-resonance given by the selection cuts determined in section \ref{sec:analysis_mc_data}.}
 \end{table}
 
-After the true number of events has been determined a calculation of the cross section with respect to energy can be done.
+After the total number of events has been determined, the cross section can be calculated at the different center of mass energies.
 For this the relation
 \begin{align*}
-	N = \sigma \cdot \int \mathcal{L} \dinf{t}
+	N_i = \sigma_i \cdot \int \mathcal{L} \dinf{t}
 \end{align*}
 can be used to determine the cross section from the number of events at a specific energy and the integrated luminosity in the specified energy interval.
+This can be solved for the cross section thus obtaining
 \begin{align*}
-	\sigma = \frac{N}{\int \mathcal{L} \dinf{t}}
+	\sigma_i = \frac{N_i}{\int \mathcal{L} \dinf{t}} \, \text{.}
 \end{align*}
 Moreover radiation corrections to the cross section are necessary, so that the cross section can be calculated by
 \begin{align*}
-	\sigma = \frac{N}{\int \mathcal{L} \dinf{t}} + \mathrm{corr}(\sqrt{s})
+	\sigma_i = \frac{N_i}{\int \mathcal{L} \dinf{t}} + \mathrm{corr}_i(\sqrt{s}) \,\text{.}
 \end{align*}
-Using the integrated luminosities for the given dataset in \cite{anleitung} and the radiation correction given in \korr{REF} the cross sections can be calculated.
-
-\begin{table}
+Using the integrated luminosities for the given dataset (\texttt{data6}) and the radiation correction summarized in table~\ref{tab:lumi_corr} the cross sections can be calculated.
+\begin{table}[h]
+	\centering
+	\input{./tables/luminosities_radcorr.tex}
+	\caption{Integrated luminosities at LEP for the given center of mass energy from \cite{anleitung} and radiation correction to the cross section as given in \cite{instructions}.}
+	\label{tab:lumi_corr}
+\end{table}
+The calculated cross sections at the specified center of mass energies are summarized in table~\ref{tab:cross_sections} using first order error propagation.
+\begin{table}[h]
 	\centering
 	\input{./tables/cross_section.tex}
-	\caption{measured cross section}
+	\caption{Calculated cross sections of the different decay channels using the measured number of events in table~\ref{tab:counts_cross_section_corr} and the integrated luminosities as well as radiation corrections given in table~\ref{tab:lumi_corr}. The errors are calculated using first order error propagation.}
+	\label{tab:cross_sections}
 \end{table}
-
+These results are discussed in detail in the upcoming sections.
 
 \subsubsection{Determination of the Forward-Backward Asymmetry using Muons}
 The Weinberg angle can be determined from the forward-backward asymmetry of the decay $\mathrm{Z}^0 \rightarrow \mu^- \mu^+$, that is the asymmetry in the number of positively charged muons in the forward direction $n_\mathrm{F}$ compared to positively charged muons in the backward direction $n_\mathrm{B}$.
@@ -804,6 +815,10 @@ The calculated value is consistent with the observed three light neutrino genera
 \begin{thebibliography}{19}
 \bibitem{anleitung}
 	\emph{Advanced Laboratory Course (physics601): Description of Experiments}, BONN-AT-2016-01MP, Universität Bonn, Januar 2016
+
+\bibitem{instructions}
+	\emph{Instructions for E213: Analysis of $Z^0$ decays},
+	Universität Bonn.
 	
 \bibitem{pdg}
 	K.\ A.\ Olive \textit{et al.} (Particle Data Group),
