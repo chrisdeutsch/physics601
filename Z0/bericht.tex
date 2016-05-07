@@ -370,20 +370,38 @@ was chosen, which removed almost all events with vanishing \texttt{pcharged} in 
 In order to optimize the cuts for event identification various variables of the simulated datasets have been plotted to allow for the determination of cut criteria to allow for the distinction of different decay channels of the Z-boson.
 The histograms of the variables are depicted in appendix \ref{app:uncut_mc}.
 
-
-Based on the observed distributions, cuts on the parameters have been set such that we can determine the decay channel in good approximation by cutting the data.
-The resulting histograms are shown in figures \korr{REF} where one cut for identifying one decay channel has been applied to all datasets in each figure.
-\korr{FIGURES}
-While retaining as much events as possible it was not possible to fully differentiate between the decay channels.
-Because of this, there are some misinterpreted events for datasets which do not correspond to the applied cuts.
-For identifying electrons an additional cut on the angle was set such that only s-channel electrons are selected.
-An overview of the cuts is given in table \ref{tab:cut_criteria}.
+Based on the observed distributions cuts on the parameters have been set, such that specific decay channels are filtered out of the datasets.
+The cuts are chosen in a way, that a high number of events are retained while separating the different decay channels.
+Nevertheless an optimal separation is not possible without discarding a high number of events, thus leading to diminished statistics.
+Therefore in section~\ref{sec:efficiency_matrix} the number of misidentifications in the different decay channels is evaluated, leading to the formulation of a efficiency matrix.
+Moreover in section~\ref{sec:s_t_channel_separation} additional cuts to the electron channel determined to separate $s$- and $t$-channel.
+An overview of the selection cuts is given in table~\ref{tab:cut_criteria}, which were chosen according to the distribution of the various decay channels depicted in appendix~\ref{app:uncut_mc}.
 \begin{table}[h]
 	\centering
 	\input{./tables/cuts}
-	\caption{Applied cuts on the data to identify the decay channel. An additional cut on the angle is used for electrons since only the s-channel is of interest.}
+	\caption{Selection cuts for filtering of specific decay channels. A differentiation of $s$- and $t$-channel for the electron-channel is discussed in section~\ref{sec:s_t_channel_separation}.}
 	\label{tab:cut_criteria}
 \end{table}
+
+\noindent In the following a short reasoning for the chosen cuts is given:
+\begin{description}
+	\item[Electron-channel] A cut in the number of charged particles is used to separate the electron from the hadron channel.
+	Moreover a high energy deposition in the electromagnetic calorimeter is observed, so that a lower bound on the deposited energy leads to a good separation of the muon- and tau-channels.
+	Finally additional cuts to the deposited energy in the hadronic calorimeter and the sum of charged particle momenta are applied, which further separate electrons from tau final-states.
+	
+	\item[Muon-channel] Again a cut in the number of charged particles separates the muon cleanly from the hadron-channel.
+	An upper bound on the energy deposit in the electromagnetic calorimeter isolates it from the electron-channel and leads to some separation from the tau-channel.
+	The cut on the sum of charged particle momenta leads to a clean separation from the tau-channel.	
+	
+	\item[Tau-channel] Again this channel is separated from the hadronic channel by the cut on \texttt{ncharged}.
+	Moreover some separation of the electron and muon-channels is done by cutting on \texttt{e\_ecal} and \texttt{pcharged}.
+	However the tau-channel is difficult to isolate from the remaining channels.
+	Therefore a (relatively) high probability of misidentification of tau-events is expected.
+	Quantitatively this is examined in section~\ref{sec:efficiency_matrix}. 
+	
+	\item[Hadron-channel] This channel is quite cleanly isolated by cutting on the number of charged particles due to the hadronization process.
+	Nevertheless some misidentified tau-events can be expected.
+\end{description}
 
 \korr{Final cut counts \& precut counts}
 The error of the number of events after applying a cut can be estimated by the variance of the underlying binomial distribution
@@ -394,6 +412,7 @@ with the number of events $n_i$ after the $i$-cut and the total number of events
 
 
 \subsubsection{Separating $s$- and $t$-Channel of Electron Final States}
+\label{sec:s_t_channel_separation}
 
 \begin{align*}
 \frac{\int_{-1}^{1}(1 + \cos^2\theta) \dinf{\cos\theta}}{\int_{-0.9}^{0.5}(1 + \cos^2\theta) \dinf{\cos\theta}} = 1.5829
@@ -407,6 +426,7 @@ with the number of events $n_i$ after the $i$-cut and the total number of events
 
 
 \subsubsection{Efficiency Matrix}
+\label{sec:efficiency_matrix}
 By setting cuts on the data one loses a fraction of the simulated events and in addition to this misidentifications of events using the cuts can occur.
 Knowing that each datasets was simulated with \num{100000} events the efficiency of the event selection using cuts can be evaluated.
 For this a matrix formalism is employed, which connects the number of events in the different decay channels (as determined by the cut selection) $\vec{n}$ with the number of events per channel in the underlying data $\vec{N}$.
