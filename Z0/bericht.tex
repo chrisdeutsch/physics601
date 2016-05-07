@@ -563,7 +563,7 @@ The dataset contains events at seven different center of mass energies at LEP su
 Therefore in a first step the measurement at different energies have to be separated by a cut in \texttt{e\_lep}.
 In the following only the mean value of the center of mass energy is denoted, since the energies vary only slightly from this value.
 
-\subsubsection{Determination of the Differential Cross Sections}
+\subsubsection{Determination of the Cross Section}
 \label{sec:determination_cross_section}
 After the energies have been separated the selection cuts can be applied to the samples at different energies $\sqrt{s}$.
 From these the remaining number of particles $n_i$ with $i \in \{ \mathrm{e}, \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \}$ can be obtained.
@@ -633,13 +633,18 @@ The asymmetry can be calculated using
 	A_\mathrm{FB} = \frac{n_\mathrm{F} - n_\mathrm{B}}{n_\mathrm{F} + n_\mathrm{B}} + \mathrm{corr}(\sqrt{s})
 \end{align*}
 including a radiation correction $\mathrm{corr}(\sqrt{s})$.
-For calculating the forward-backward asymmetry no efficiency correction has to be performed, since the correction cancles from the fraction.
-In table \ref{tab:afb} the number of events in forward/backward direction, as well as the calculated forward-backward asymmetry $A_\mathrm{FB}$ has been summarized.
-
-\begin{table}
+For calculating the forward-backward asymmetry no efficiency correction has to be performed, since the correction cancels in the resulting expression.
+Using the previously determined cut for muon-event selection the forward-backward asymmetry can be measured using the additional cuts 
+\begin{align*}
+	&\cos\theta > 0 \quad \text{(forward direction)} \\
+	&\cos\theta < 0 \quad \text{(backward direction)}
+\end{align*}
+thus obtaining $n_\mathrm{F}$ or $n_\mathrm{B}$ respectively.
+In table \ref{tab:afb} the number of events in forward/backward direction, as well as the calculated forward-backward asymmetry $A_\mathrm{FB}$ have been summarized.
+\begin{table}[h]
 	\centering
 	\input{./tables/afb.tex}
-	\caption{afb}
+	\caption{Number of events in the forward $n_\mathrm{F}$ and backward direction $n_\mathrm{B}$, radiation correction to the forward-backward asymmetry $\mathrm{corr}(\sqrt{s})$ as given in \cite{anleitung} and the corrected forward-backward asymmetry $A_\mathrm{FB}$.}
 	\label{tab:afb}
 \end{table}
 
@@ -814,7 +819,7 @@ The calculated value is consistent with the observed three light neutrino genera
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{19}
 \bibitem{anleitung}
-	\emph{Advanced Laboratory Course (physics601): Description of Experiments}, BONN-AT-2016-01MP, Universität Bonn, Januar 2016
+	\emph{Advanced Laboratory Course (physics601): Description of Experiments}, BONN-AT-2016-01MP, Universität Bonn, January 2016
 
 \bibitem{instructions}
 	\emph{Instructions for E213: Analysis of $Z^0$ decays},
