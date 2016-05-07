@@ -676,63 +676,66 @@ The value calculated by using the forward-backward asymmetry is in good agreemen
 \label{sec:fit_resonance}
 From the cross sections that were determined in section~\ref{sec:determination_cross_section} various quantities can be extracted by fitting a resonance curve.
 For center of mass energies~$E_\mathrm{cm}$ close to the Z-boson mass the resonance can be described by a Breit-Wigner distribution given by
-\begin{align*}
+\begin{align}
 	\sigma(E_\mathrm{cm}; A, M_\mathrm{Z}, \Gamma_\mathrm{Z}) = \frac{A}{2\pi} \frac{\Gamma_\mathrm{Z}}{(E_\mathrm{cm} - M_\mathrm{Z})^2 + \Gamma_\mathrm{Z}^2 / 4}
-\end{align*}
+	\label{eq:breit_wigner}
+\end{align}
 with parameters $A$ proportional to the amplitude of the resonance, the mass of the Z-boson $M_\mathrm{Z}$ and the full decay width~$\Gamma_\mathrm{Z}$.
 By fitting this distribution to the measured cross sections in table~\ref{tab:cross_sections} a number of parameters can be extracted, namely the mass~$M_\mathrm{Z}$, the full decay width~$\Gamma_\mathrm{Z}$ and the cross section at peak
-\begin{align*}
+\begin{align}
 	\sigma^\mathrm{peak} = \frac{2A}{\pi \Gamma_\mathrm{Z}} \,\text{.}
-\end{align*}
-The fitting of the Breit-Wigner distribution was done using a non-linear least squares algorithm and the plots of the calculated cross sections as well as the fitted distributions is displayed 
-
-
-
-
-
-(in calculating the peak cross section the correlation of the fit-errors is considered in first order error propagation).
-
-
-
-The resonance curve was fitted to the measured data using a least-squares fit and the resulting parameters are summarized in table \korr{REF}.
-The measured data and fits is depicted in figure \ref{fig:cross_section_fit}.
-\korr{discuss deviation in electron channel (esp. mass)}
-
-
+	\label{eq:peak_cross_section}
+\end{align}
+The fitting of the Breit-Wigner distribution was done using a non-linear least squares algorithm \cite{lmfit} and the plots of the calculated cross sections as well as the fitted distributions for the different decay channels are depicted in figure~\ref{fig:cross_section_fit}.
 \begin{figure}[tb]
 	\centering
 	\includegraphics{./figures/cross_sections.pdf}
-	\caption{bla}
+	\caption{Measured cross sections for the different decay channels (cf.\ table~\ref{tab:cross_sections}) and fitted Breit-Wigner distributions as given in equation \eqref{eq:breit_wigner}. The resulting fit parameters of the best-fit are summarized in table~\ref{tab:fit_params}.}
 	\label{fig:cross_section_fit}
 \end{figure}
-
-\begin{table}
+Furthermore the quantities resulting from the best-fit (i.e.\ the mass~$M_\mathrm{Z}$, full decay width~$\Gamma_\mathrm{Z}$ and peak cross section~$\sigma^\mathrm{peak}$) and the reduced $\chi^2$ are summarized in table~\ref{tab:fit_params}.
+In calculating the peak cross section from the fit parameters according to equation~\eqref{eq:peak_cross_section} the correlations of the fit-errors are considered in first order error propagation.
+\begin{table}[h]
 	\centering
 	\input{./tables/fit_params.tex}
-	\caption{Fit Params}
+	\caption{Quantities extracted from the fit at the cross section data of the different decay channels.}
+	\label{tab:fit_params}
 \end{table}
 
-Using the error weighted mean
+\korr{Korrekturlesen}
+In the following the results of the least-squares fit are discussed.
+The electron channel shows a rather large deviation from the expected mass of the Z-boson and a large reduced $\chi^2$.
+This is due to the the fact that still a significant part of $t$-channel events is contained in the dataset as was discussed in section~\ref{sec:s_t_channel_separation}, thus leading to a distortion of the resulting distribution and therefore to a lower observed mass.
+Nevertheless the full decay width seems to be unaffected by the additional $t$-channel events.
+Moreover a large $\chi_\mathrm{red}^2$ and a large deviation from the expected decay width is observed for the tau channel.
+The reason for this observation is probably that the differentiation of the tau channel from the other channels by using selection cuts is difficult and misidentifications cannot be fully resolved by the efficiency correction.
+This could probably be resolved by using more sophisticated cuts for the tau channel.
+The muon and the hadron channel fit well with the calculated cross sections with reduced $\chi^2$ close to one.
+
+The resulting quantities from the fit can be combined using the error weighted mean
 \begin{align*}
-	&\bar{x} = \frac{\sum_i w_i x_i}{\sum_i w_i} \qquad \sigma_{\bar{x}} = \frac{1}{\sum_i w_i}\\
-	&w_i = \frac{1}{\sigma_i^2} 	
+	&\bar{x} = \frac{\sum_i w_i x_i}{\sum_i w_i} \qquad \sigma_{\bar{x}} = \frac{1}{\sum_i w_i}\\	
 \end{align*}
-with weights $w_i$ given by the standard deviation the mean values of the Z-mass and decay width can be determined to be
+with weights $w_i$ given by the standard deviation of the $i$-th value
+\begin{align*}
+	&w_i = \frac{1}{\sigma_i^2} \, \text{.}
+\end{align*}
+Therefore the mean values of the Z-mass and decay widths can be determined to be
 \begin{align*}
 	M_\mathrm{Z} &= \SI{91.15 +- 0.10}{GeV}\\
-	\Gamma_\mathrm{Z} &= \SI{2.52 +- 0.02}{GeV} 
+	\Gamma_\mathrm{Z} &= \SI{2.52 +- 0.02}{GeV} \,\text{.}
 \end{align*}
-The comparison of the Z-mass with the literature value \cite{pdg}
+Comparing the calculated value for the Z-mass with the literature value \cite{pdg}
 \begin{align*}
 	M_\mathrm{Z}^\mathrm{PDG} = \SI{91.1876 +- 0.0021}{GeV}
 \end{align*}
 shows agreement within the errors of the measured value.
-The full decay width shows a deviation of a bit more than $1\sigma$ from the literature value \cite{pdg}
+Nevertheless the full decay width shows a deviation larger that $1\sigma$ from the literature value \cite{pdg}
 \begin{align*}
 	\Gamma_\mathrm{Z}^\mathrm{PDG} = \SI{2.4952 +- 0.0023}{GeV}
 \end{align*}
+albeit a small one.
 This is due to the large deviation of the full decay width in the tau-channel, which is probably caused by additional misidentified events that could not be corrected using the efficiency matrix formalism.
-This is because classification of tau events is difficult.
 
 \subsubsection{Confidence Levels}
 \begin{table}
@@ -838,6 +841,10 @@ The calculated value is consistent with the observed three light neutrino genera
 \bibitem{pdg}
 	K.\ A.\ Olive \textit{et al.} (Particle Data Group),
 	Chin.\ Phys.\ C, \textbf{38}, 090001 (2014).
+
+\bibitem{lmfit}
+	M.\ Newville \textit{et al.},
+	\emph{LMFIT: Non-Linear Least-Square Minimization and Curve-Fitting for Python}, Zenodo (2014). \url{http://dx.doi.org/10.5281/zenodo.11813}
 \end{thebibliography}
 
 % APPENDIX
