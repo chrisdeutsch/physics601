@@ -745,6 +745,25 @@ This is due to the large deviation of the full decay width in the tau-channel, w
 
 \subsubsection{Confidence Levels}
 \label{sec:confidence_levels}
+The fits in the previous section were done using the minimization of
+\begin{align*}
+	\chi^2\left(\Theta\right) = \sum_{i = 1}^{N} \frac{\left[ y_i - f\left(x_i; \Theta\right) \right]^2}{\sigma_i^2}
+\end{align*}
+with respect to the fit parameters~$\Theta$, where the measured values are given by the tuple $(x_i, y_i)$ with standard deviation $\sigma_i$ (in $y$-direction) and the fit hypothesis $f$ that depends on the parameters~$\Theta$.
+
+
+
+
+
+
+
+
+
+
+\cite{barlow}
+
+
+
 \begin{table}
 	\centering
 	\input{./tables/chisqr.tex}
@@ -855,6 +874,12 @@ The calculated value is consistent with the observed number of three light neutr
 \bibitem{lmfit}
 	M.\ Newville \textit{et al.},
 	\emph{LMFIT: Non-Linear Least-Square Minimization and Curve-Fitting for Python}, Zenodo (2014). \url{http://dx.doi.org/10.5281/zenodo.11813}
+
+\bibitem{barlow}
+	R.J.\ Barlow,
+	\emph{Statistics: A Guide to the Use of Statistical Methods in the Physical Sciences},
+	Wiley (1989).
+	
 \end{thebibliography}
 
 % APPENDIX
