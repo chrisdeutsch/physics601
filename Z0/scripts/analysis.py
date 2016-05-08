@@ -208,10 +208,6 @@ r_tau_e = tau_part_fwhm / e_part_fwhm
 # ratio of hadronic to lepton
 r_hadr_lepton = hadr_part_fwhm / (e_part_fwhm + mu_part_fwhm + tau_part_fwhm)
 
-
-
-
-
 # number of neutrino generations
 neutrino_fwhm = 0.1678 # GeV
 N_nu = (Z_fwhm - e_part_fwhm - mu_part_fwhm - tau_part_fwhm - hadr_part_fwhm) / neutrino_fwhm
