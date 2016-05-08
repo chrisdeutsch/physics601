@@ -173,13 +173,14 @@ Interaction particles can also be charged (W~boson) or uncharged (photon, gluon,
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.8\textwidth]{./figures/theory/standardmodel}
-	\caption{Standard Model of elementary particle physics (from \korr{QUELLE: wiki})}
+	\caption{Standard Model of elementary particle physics\protect\footnotemark}
 	\label{fig:standard_model}
 \end{figure}
+\footnotetext{{Image source: \url{https://commons.wikimedia.org/wiki/File:Standard_Model_of_Elementary_Particles.svg}, accessed 05/08/2016.}}
 
 \subsection{Heavy Vector Boson Z$^0$}
 
-The particle of interest for this experiment is the Z~boson \korr{dessen} decays are studied.
+The particle of interest for this experiment is the Z~boson and its decays are studied.
 The Z~boson has a mass of \SI{91.2}{GeV} and a decay width of \SI{2.5}{GeV}.
 It was discovered in 1983 in collider experiments at CERN.
 
@@ -302,10 +303,34 @@ The hadrons are stopped and seen as showers in the hadronic calorimeter.
 
 Based on the observations from the previous exercise it was possible to evaluate cuts to apply on the data in order to distinguish between different decay channels of the Z boson.
 Those are given by the parameters measured or reconstructed in the detector, Ctrk(N), Ctrk(SumP), Ecal(SumE) and Hcal(SumE).
-In order to get optimal cut criteria, the data from all Monte-Carlo simulated samples has been histogrammed which is shown in figure \korr{REF}.
+In order to get optimal cut criteria, the data from all Monte-Carlo simulated samples has been histogrammed which is shown in figure \ref{fig:histograms}.
+\begin{figure}[htb]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./figures/event_display/Ctrk(N)}
+
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./figures/event_display/Ctrk(SumP)}
+
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./figures/event_display/Ecal(SumE)}
+
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{./figures/event_display/Hcal(SumE)}
+
+	\end{subfigure}
+	\caption{Distributions of the measured parameters for the different types of decay channels. To find cuts to differentiate between the decay channels the overlap of two distributions should be minimized without loosing two many events of the distribution of the particle type that shall be identified. All energies are given in \si{GeV}.}
+	\label{fig:histograms}
+\end{figure}
 The used cuts are given in table \ref{tab:cut_criteria_day1} and can be reviewed by looking on the events in a test sample (dataset number 1 was used).
 All of the decay channels found with the cut criteria could be verified by analysis of event displays.
-\begin{table}[h]
+\begin{table}[htb]
 	\centering
 	\input{./tables/tag1/cuts}
 	\caption{Applied cuts on the data to identify the decay channel.}
