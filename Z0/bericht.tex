@@ -920,30 +920,45 @@ is obtained.
 The calculated value is consistent with the observed number of three light neutrino generations.
 
 \subsection{Discussion of Systematic Uncertainties}
-Sources:
+In the following additional sources of systematic uncertainties shall be discussed:
 \begin{itemize}
-	\item unknown precut: assumption affects $s$ and $t$ channel the same -- probably higher cuts in $t$-channel due to small scattering angle leads to non-reconstructible events
+	\item The details of the precut that was applied to the data are unknown.
+	For the treatment in this report it was assumed that the precut affects $s$- and $t$-channel equally.
+	But generally this does not have to be the case, since the smaller scattering angles in $t$-channel processes lead to more events close to the beam pipe, which cannot be reconstructed by the detector and thus are (in part) discarded in the precut.
+	Therefore the assumption that both channels are equally affected leads to a systematic uncertainty.	
 	
-	\item systematic error in angle cut for electrons
+	\item For the separation of $s$- and $t$-channel events for electron final states (discussed in section~\ref{sec:s_t_channel_separation}) the upper bound on the scattering angle was chosen too large.
+	This leads to a pollution of the electron data by $t$-channel events introducing systematic errors, which can be observed in the systematic deviation of the Z-mass as determined in the electron channel.
 	
-	\item systematic errors due to differences in the MC-data
-	
-	\item some systematic error in grouping of LEP energies
-	
-	\item systematic errors in the detector reconstruction -- missing energy in calo etc. this generally corrected by mc stuff
+	\item Furthermore it was assumed that the Monte-Carlo simulation of the events accurately describes the underlying physics.
+	If this assumption does not hold systematic uncertainties are introduced.
+	Additionally the detector response has to be simulated using the exact detector geometry, material properties and external parameters affecting the detector operation (e.g.\ stray magnetic fields etc.).
+	This can only be done in approximation and therefore could be a cause of additional systematic uncertainties.
 \end{itemize}
 
-
-
 \section{Conclusion}
+Finally this report is concluded by summarizing the results of both parts.
 
-\korr{Fluff hier}
-\begin{description}
-	\item[Part I:] description
-	
-	\item[Part II:] description
-\end{description}
+\subsection{Part I: Analysis of Event Displays}
 
+\subsection{Part II: Statistical Analysis of $\mathrm{Z}^0$ Decays}
+After refining the preliminary cuts from the first part using Monte-Carlo data a number of important quantities could be determined from data gathered by the OPAL-detector at LEP.
+These are the mass of the Z-boson
+\begin{align*}
+	M_\mathrm{Z} = \SI{91.15 +- 0.10}{GeV} \,\text{,}
+\end{align*}
+the full decay width
+\begin{align*}
+	\Gamma_\mathrm{Z} = \SI{2.52 +- 0.02}{GeV}
+\end{align*}
+and the partial widths of the lepton- and hadron-channels.
+Using the forward-backward asymmetry in the muon-channel the mixing angle in electroweak unification could be determined to be
+\begin{align*}
+	\sin\theta_\mathrm{W} = \num{0.234 +- 0.005} \,\text{.}
+\end{align*}
+These quantities are in good agreement with the currently best-known values as given in \cite{pdg}.
+Furthermore lepton universality could be verified using the different partial decay widths and peak cross section.
+Finally a determination of the number of light neutrino generations could be performed resulting in three light neutrino generations.
 
 \FloatBarrier
 % BIBLIOGRAPHIE
