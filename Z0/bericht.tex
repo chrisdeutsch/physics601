@@ -650,7 +650,7 @@ In table \ref{tab:afb} the number of events in forward/backward direction, as we
 \begin{figure}[h]
 	\centering
 	\includegraphics{./figures/afb.pdf}
-	\caption{\korr{TODO}}
+	\caption{Measured forward-backward asymmetry~$A_\mathrm{FB}$ in the muon-channel for seven different center of mass energies~$\sqrt{s}$ (cf. table~\ref{tab:afb}).}
 \end{figure}
 
 
@@ -693,38 +693,38 @@ By fitting this distribution to the measured cross sections in table~\ref{tab:cr
 	\label{eq:peak_cross_section}
 \end{align}
 The fitting of the Breit-Wigner distribution was done using a non-linear least squares algorithm \cite{lmfit} and the plots of the calculated cross sections as well as the fitted distributions for the different decay channels are depicted in figure~\ref{fig:cross_section_fit}.
-\begin{figure}[tb]
-	\centering
-	\includegraphics{./figures/cross_sections.pdf}
-	\caption{Measured cross sections for the different decay channels (cf.\ table~\ref{tab:cross_sections}) and fitted Breit-Wigner distributions as given in equation \eqref{eq:breit_wigner}. The resulting fit parameters of the best-fit are summarized in table~\ref{tab:fit_params}.}
-	\label{fig:cross_section_fit}
-\end{figure}
-Furthermore the quantities resulting from the best-fit (i.e.\ the mass~$M_\mathrm{Z}$, full decay width~$\Gamma_\mathrm{Z}$ and peak cross section~$\sigma^\mathrm{peak}$) and the reduced $\chi^2$ are summarized in table~\ref{tab:fit_params}.
-In calculating the peak cross section from the fit parameters according to equation~\eqref{eq:peak_cross_section} the correlations of the fit-errors are considered in first order error propagation.
 \begin{table}[h]
 	\centering
 	\input{./tables/fit_params.tex}
 	\caption{Quantities extracted from the fit at the cross section data of the different decay channels.}
 	\label{tab:fit_params}
 \end{table}
+Furthermore the quantities resulting from the best-fit (i.e.\ the mass~$M_\mathrm{Z}$, full decay width~$\Gamma_\mathrm{Z}$ and peak cross section~$\sigma^\mathrm{peak}$) and the reduced $\chi^2$ are summarized in table~\ref{tab:fit_params}.
+In calculating the peak cross section from the fit parameters according to equation~\eqref{eq:peak_cross_section} the correlations of the fit-errors are considered in first order error propagation.
+\begin{figure}[tb]
+	\centering
+	\includegraphics{./figures/cross_sections.pdf}
+	\caption{Measured cross sections for the different decay channels (cf.\ table~\ref{tab:cross_sections}) and fitted Breit-Wigner distributions as given in equation \eqref{eq:breit_wigner}. The resulting fit parameters of the best-fit are summarized in table~\ref{tab:fit_params}.}
+	\label{fig:cross_section_fit}
+\end{figure}
 
-\korr{Korrekturlesen}
-In the following the results of the least-squares fit are discussed.
+In the following the results of the least-squares fits are discussed.
 The electron channel shows a rather large deviation from the expected mass of the Z-boson and a large reduced $\chi^2$.
 This is due to the the fact that still a significant part of $t$-channel events is contained in the dataset as was discussed in section~\ref{sec:s_t_channel_separation}, thus leading to a distortion of the resulting distribution and therefore to a lower observed mass.
 Nevertheless the full decay width seems to be unaffected by the additional $t$-channel events.
 Moreover a large $\chi_\mathrm{red}^2$ and a large deviation from the expected decay width is observed for the tau channel.
 The reason for this observation is probably that the differentiation of the tau channel from the other channels by using selection cuts is difficult and misidentifications cannot be fully resolved by the efficiency correction.
-This could probably be resolved by using more sophisticated cuts for the tau channel.
+This could probably be improved by using more sophisticated cuts for the tau channel.
 The muon and the hadron channel fit well with the calculated cross sections with reduced $\chi^2$ close to one.
+An additional discussion with respect to the confidence levels of the fits will take place in section~\ref{sec:confidence_levels}.
 
 The resulting quantities from the fit can be combined using the error weighted mean
 \begin{align*}
-	&\bar{x} = \frac{\sum_i w_i x_i}{\sum_i w_i} \qquad \sigma_{\bar{x}} = \frac{1}{\sum_i w_i}\\	
+	&\bar{x} = \frac{\sum_i w_i x_i}{\sum_i w_i} \qquad \Delta \bar{x} = \frac{1}{\sum_i w_i}\\	
 \end{align*}
 with weights $w_i$ given by the standard deviation of the $i$-th value
 \begin{align*}
-	&w_i = \frac{1}{\sigma_i^2} \, \text{.}
+	&w_i = \frac{1}{\Delta \bar{x}_i^2} \, \text{.}
 \end{align*}
 Therefore the mean values of the Z-mass and decay widths can be determined to be
 \begin{align*}
@@ -744,6 +744,7 @@ albeit a small one.
 This is due to the large deviation of the full decay width in the tau-channel, which is probably caused by additional misidentified events that could not be corrected using the efficiency matrix formalism.
 
 \subsubsection{Confidence Levels}
+\label{sec:confidence_levels}
 \begin{table}
 	\centering
 	\input{./tables/chisqr.tex}
@@ -756,51 +757,53 @@ This is due to the large deviation of the full decay width in the tau-channel, w
 with the probability density~$f(x, \mathrm{ndf})$ of the $\chi^2$-distribution with $\mathrm{ndf}$ degrees of freedom.
 
 
-\subsubsection{Calculation of the Partial Widths}
-According to
+\subsubsection{Calculation of the Partial Decay Widths}
+After fitting resonance curves to the measured cross sections a determination of the partial decay widths can take place.
+The partial decay widths of the different channels can be calculated using the expression for the cross section at the resonance peak \cite{instructions}
 \begin{align*}
-	\sigma_f^\mathrm{peak} = \frac{12 \pi}{M_\mathrm{Z}^2} \cdot \frac{\Gamma_\mathrm{e}}{\Gamma_\mathrm{Z}} \cdot \frac{\Gamma_f}{\Gamma_\mathrm{Z}} 
+	\sigma_f^\mathrm{peak} = \frac{12 \pi}{M_\mathrm{Z}^2} \cdot \frac{\Gamma_\mathrm{e}}{\Gamma_\mathrm{Z}} \cdot \frac{\Gamma_f}{\Gamma_\mathrm{Z}}
 \end{align*}
-the partial decay widths $\Gamma_f$ can be extracted from the fitted peak cross section.
-For the calculation of the partial width the averaged values for the Z-mass and the full decay width of the Z-boson, which were determined in section \ref{sec:fit_resonance} are used.
-First the partial width in the electron channel can be determined according to
+with the partial decay width $\Gamma_f$ of the $f$-channel.
+For the calculations of the partial widths the averaged values for the Z-mass and full decay widths of the Z-boson, which were determined in section~\ref{sec:fit_resonance} are used.
+First the partial decay width of the electron-channel has to be calculated using
 \begin{align*}
 	\Gamma_\mathrm{e} = \sqrt{\frac{M_\mathrm{Z}^2}{12 \pi} \, \Gamma_\mathrm{Z}^2 \sigma_\mathrm{e}^\mathrm{peak}}
 \end{align*}
-this partial width can then be used to determine the remaining partial widths $f \in \{ \mathrm{\mu}, \mathrm{\tau}, \mathrm{hadrons} \}$ using
+after which the partial width of the remaining channels $f \in \{ \mathrm{\mu}, \mathrm{\tau}, \mathrm{hadrons} \}$ can be determined according to
 \begin{align*}
-	\Gamma_f = \frac{M_\mathrm{Z}^2}{12 \pi } \, \frac{\Gamma_\mathrm{Z}^2 }{\Gamma_\mathrm{e}} \sigma_f^\mathrm{peak}
+	\Gamma_f = \frac{M_\mathrm{Z}^2}{12 \pi } \, \frac{\Gamma_\mathrm{Z}^2 }{\Gamma_\mathrm{e}} \sigma_f^\mathrm{peak} \,\text{.}
 \end{align*}
-Again using gaussian error propagation one gets
+The partial decay widths of the different channels are therefore calculated to be
 \begin{alignat*}{2}
 	&\Gamma_\mathrm{e} = \SI{83.6 +- 1.8}{MeV} \qquad
 	&&\Gamma_\mathrm{\mu} = \SI{85.0 +- 2.3}{MeV}\\
 	&\Gamma_\mathrm{\tau} = \SI{87.1 +- 3.5}{MeV}\qquad
 	&&\Gamma_\mathrm{hadrons} = \SI{1778.5 +- 39}{MeV}
 \end{alignat*}
-Comparison with literature \cite{pdg}
+with the fitted peak cross sections in table~\ref{tab:fit_params} and errors estimated by first order error propagation.
+These values can be compared with the literature \cite{pdg}
 \begin{align*}
-	&\Gamma_\ell = \SI{83.984 +- 0.086}{MeV} \\
-	&\Gamma_\mathrm{hadrons} = \SI{1744.4 +- 2.0}{MeV}
+	&\Gamma_\ell^\mathrm{PDG} = \SI{83.984 +- 0.086}{MeV} \\
+	&\Gamma_\mathrm{hadrons}^\mathrm{PDG} = \SI{1744.4 +- 2.0}{MeV}
 \end{align*}
-\korr{again deviation in tau}
+with the partial decay width of leptons~$\Gamma_\ell$ assuming lepton universality.
+Within the errors all of the measured partial decay widths are consistent with the literature values.
 
 \subsubsection{Lepton Universality}
 According to lepton universality one would expect the same peak cross sections and partial widths for all lepton final states.
-A test of lepton universality is then
+Therefore a test of lepton universality is given by
 \begin{align*}
 	&\frac{\Gamma_\mathrm{\mu}}{\Gamma_\mathrm{e}} = \frac{\sigma_\mathrm{\mu}^\mathrm{peak}}{\sigma_\mathrm{e}^\mathrm{peak}} = \num{1.017 +- 0.044}\\
-	&\frac{\Gamma_\mathrm{\tau}}{\Gamma_\mathrm{e}} = \frac{\sigma_\mathrm{\tau}^\mathrm{peak}}{\sigma_\mathrm{e}^\mathrm{peak}} = \num{1.042 +- 0.055}\\
+	&\frac{\Gamma_\mathrm{\tau}}{\Gamma_\mathrm{e}} = \frac{\sigma_\mathrm{\tau}^\mathrm{peak}}{\sigma_\mathrm{e}^\mathrm{peak}} = \num{1.042 +- 0.055} \,\text{,}
 \end{align*}
-(the mean values as well as the errors comparing partial widths and peak cross sections are the same if the correlation of the errors is considered).
-One can see that both values are consistent with one so that lepton violation is not falsified.
-These values can be compared with \cite{pdg}
+using the previously determined partial decay widths and peak cross sections\footnote{The mean value as well as the error in the comparison of partial widths and peak cross sections are the same, if the correlation of the errors is considered in first order error propagation.}.
+With regards to the errors both values are consistent with one, so that lepton universality is not falsified.
+The current literature value for the ratio of partial widths is \cite{pdg}
 \begin{align*}
 	&\left(\frac{\Gamma_\mathrm{\mu}}{\Gamma_\mathrm{e}}\right)^\mathrm{PDG} = \num{1.0009 +- 0.0028} \\
 	&\left(\frac{\Gamma_\mathrm{\tau}}{\Gamma_\mathrm{e}}\right)^\mathrm{PDG} = \num{1.0019 +- 0.0032} \\
 \end{align*}
-which also shows good agreement with the data measured at OPAL. 
-
+which is also consistent with lepton universality.
 
 \subsubsection{Number of Light Neutrino Generations}
 From the expression of the full decay width of the Z-boson
