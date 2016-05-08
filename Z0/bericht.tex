@@ -758,6 +758,7 @@ with the probability density~$f(x, \mathrm{ndf})$ of the $\chi^2$-distribution w
 
 
 \subsubsection{Calculation of the Partial Decay Widths}
+\label{sec:partial_widths}
 After fitting resonance curves to the measured cross sections a determination of the partial decay widths can take place.
 The partial decay widths of the different channels can be calculated using the expression for the cross section at the resonance peak \cite{instructions}
 \begin{align*}
@@ -806,26 +807,26 @@ The current literature value for the ratio of partial widths is \cite{pdg}
 which is also consistent with lepton universality.
 
 \subsubsection{Number of Light Neutrino Generations}
-From the expression of the full decay width of the Z-boson
+The full decay width of the Z-boson~$\Gamma_\mathrm{Z}$ can be expressed as the sum of partial widths of all possible decay channels
 \begin{align*}
-	\Gamma_\mathrm{full} = \Gamma_\mathrm{e} + \Gamma_\mathrm{\mu} + \Gamma_\mathrm{\tau} + N_\nu \Gamma_\mathrm{\nu} + \Gamma_\mathrm{hadrons} 
+	\Gamma_\mathrm{Z} = \Gamma_\mathrm{e} + \Gamma_\mathrm{\mu} + \Gamma_\mathrm{\tau} + N_\nu \Gamma_\mathrm{\nu} + \Gamma_\mathrm{hadrons}
 \end{align*}
-with the number of light neutrino generations $N_\mathrm{\nu}$ (i.e.\ neutrinos with masses smaller than $M_\mathrm{Z} / 2$ \korr{is this correct?}) and the partial widths of the corresponding decay channel.
-If we assume that the decay widths of the neutrino channel $\Gamma_\mathrm{\nu}$ is known from theory to be
+with the number of light neutrino generations~$N_\nu$ (i.e.\ neutrinos with masses smaller than $M_\mathrm{Z}/2$) and the partial decay width of the neutrino channel~$\Gamma_\nu$, which is assumed to be the same for all generations.
+Moreover if it is assumed that the decay width of the neutrino channel is known from theory to be \cite{instructions}
 \begin{align*}
-	\Gamma_\mathrm{\nu} = \SI{167.6}{MeV}
+	\Gamma_\mathrm{\nu} = \SI{167.6}{MeV} \,\text{,}
 \end{align*}
-\korr{REF, Z0 Anleitung} the number of light neutrino generations can be calculated by
+then the number of light neutrino generations can be calculated by
 \begin{align*}
-	N_\nu = \frac{\Gamma_\mathrm{full} - \Gamma_\mathrm{e} - \Gamma_\mathrm{\mu} - \Gamma_\mathrm{\tau} - \Gamma_\mathrm{hadrons}}{\Gamma_\nu}
+N_\nu = \frac{\Gamma_\mathrm{Z} - \Gamma_\mathrm{e} - \Gamma_\mathrm{\mu} - \Gamma_\mathrm{\tau} - \Gamma_\mathrm{hadrons}}{\Gamma_\nu}
 \end{align*}
 using the measured values for the remaining decay widths.
-For \korr{...} the number of light neutrino generations of
+With the full decay width from section~\ref{sec:fit_resonance}, the partial decay widths from section~\ref{sec:partial_widths} and the theoretical value for the partial width of the neutrino channel, the number of light neutrino generations
 \begin{align*}
 	N_\mathrm{\nu} = \num{2.94 +- 0.24}
 \end{align*}
 is obtained.
-The calculated value is consistent with the observed three light neutrino generations.
+The calculated value is consistent with the observed number of three light neutrino generations.
 
 \subsubsection{Discussion of Uncertainties}
 
