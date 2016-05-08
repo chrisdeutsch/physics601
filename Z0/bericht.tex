@@ -772,9 +772,9 @@ This is due to the large deviation of the full decay width in the tau-channel, w
 \label{sec:confidence_levels}
 The fits in the previous section were done using the minimization of
 \begin{align*}
-	\chi^2\left(\Theta\right) = \sum_{i = 1}^{N} \frac{\left[ y_i - f\left(x_i; \Theta\right) \right]^2}{\sigma_i^2}
+	\chi^2\left(\Theta\right) = \sum_{i = 1}^{N} \frac{\left[ y_i - f\left(x_i; \Theta\right) \right]^2}{\Delta y_i^2}
 \end{align*}
-with respect to the fit parameters~$\Theta = (\Theta_1, \dots, \Theta_k)$, where the measured values are given by the tuple $(x_i, y_i)$ with standard deviation $\sigma_i$ (in $y$-direction) and the fit hypothesis $f$ that depends on the parameters~$\Theta$.
+with respect to the fit parameters~$\Theta = (\Theta_1, \dots, \Theta_k)$, where the measured values are given by the tuple $(x_i, y_i)$ with standard deviation~$\Delta y_i$ and the fit hypothesis $f$ that depends on the parameters~$\Theta$.
 
 The $\chi^2$ of the fit is distributed according to the $\chi^2$-distribution, which is given by \cite{barlow}
 \begin{align*}
