@@ -235,8 +235,8 @@ Possible Feynman diagrams for the mentioned processes are shown in figure \ref{f
 
 In a $e^+e^- \rightarrow f\bar{f}$ reaction the differential cross section of the produced fermions is different for the forward and backward hemispheres.
 Those are defined by the angle $\theta$ between incoming positron and outgoing positively charged particle.
-In this lab experiment, the asymmetry A$_\mathrm{FB}$ is measured in $e^+e^- \rightarrow \mu^+\mu^-$ events. 
-\korr{hier noch ein paar von den schäbigen Formeln rausknallen?}
+In this lab experiment, the asymmetry A$_\mathrm{FB}$ is measured in $e^+e^- \rightarrow \mu^+\mu^-$ events \korr{why}. 
+\korr{hier noch ein paar von den schäbigen Formeln rausknallen?} \korr{yo \& erklären}
 
 \subsection{The OPAL Experiment}
 
@@ -244,25 +244,31 @@ The OPAL~detector was used from 1989 to 2000 at the LEP storage ring at the CERN
 It was designed to detect all kinds of particles produced in collisions of electrons and positrons.
 To cover most of the solid angle it had a barrel-like structure and consisted of a cylinder and two endcaps.
 For tracking and vertex reconstruction purposes the inner part is formed by a semiconductor strip detector and multiple proportional chambers.
-To measure the momentum of charged particles, the whole inner detector is surrounded by a solenoid which created a magnetic field.
+To measure the momentum of charged particles, the whole inner detector is surrounded by a solenoid which creates a magnetic field.
 The solenoid is followed by the calorimeters, first the electromagnetic and after that the hadronic one.
-As a last layer muon chambers are installed which consist of a tracking detector themselves.
+As a last layer muon chambers are installed which consist of a tracking detector themselves \korr{why}.
 \korr{OPAL Bild?}
 
+
+\korr{Vorbereitungsaufgaben}
 \section{Part I: Analysis of Event Displays}
 
 On the first day the software \texttt{GROPE} was used to study event displays and detector responses of the OPAL detector.
 
 \subsection{Part I: Analysis of Event Displays}
+\korr{Name der subsection?}
 
 To learn how to distinguish the different decay channels of the Z boson Monte-Carlo simulated test samples with events with only one decay mode have been investigated.
 In the following part the measured properties of the observed events and exemplary pictures of the detector response are presented.
 For every event the number of charged tracks (Ctrk(N)), the scalar sum of all momenta of charged tracks (Ctrk(SumP)) and the total energy deposited in the electromagnetic or hadronic calorimeter (Ecal(SumE) or Hcal(SumE) respectively) is noted in the corresponding tables.
+\korr{Variablen in kleiner Tabelle erklären. Vgl.\ Tabelle in Pt. 2}
+\korr{Generell: wieso keine bilder in seitenansicht? \& vllt. generell effekte erklären die in den tabellen erwähnt wurden (allgemein)}
+
 \clearpage
 \subsubsection{Z$^0\rightarrow e^+e^-$}
 
 A decay into electrons can easily be identified by the energy deposited in the electromagnetic calorimeters.
-The final state particles are flying approximately in opposite direction and are ideally completely stopped in the calorimeter.
+The final state particles are flying approximately in opposite direction and are ideally completely stopped in the electromagnetic calorimeter.
 A track for every particle can be observed in the tracking chamber.
 Additional hits in the electromagnetic calorimeters probably occur due to bremsstrahlung photons which leave no track in the inner detector.
 \begin{sidewaystable}
@@ -279,7 +285,7 @@ Additional hits in the electromagnetic calorimeters probably occur due to bremss
 \subsubsection{Z$^0\rightarrow \mu^+\mu^-$}
 
 Muons are detected in the muon chambers which form the outermost part of the detector.
-Since all other particles (except the non-detectable neutrinos) are stopped before reaching the muon chamber a signal there can -- neglecting noise hits -- be identified as a muon. 
+Since all other particles (except the non-detectable neutrinos) are stopped before reaching the muon chamber a signal there can -- neglecting noise hits\korr{wie unterscheiden sich diese?} -- be identified as a muon. 
 In general, muons are also created in a back to back configuration and leave a track in the tracking detector.
 \begin{sidewaystable}
 	\centering
@@ -297,7 +303,7 @@ In general, muons are also created in a back to back configuration and leave a t
 Because of the short lifetime of the $\tau$ lepton it can not be detected directly but by its decay products.
 Because it can decay in both leptons and hadrons there are two possible types of detector responses.
 In a leptonic $\tau$ decay an electron or muon and two neutrinos are created and seen as charged tracks in the inner detector.
-They cause signals either in the electromagnetic calorimeter or in the muon chambers while the neutrinos are not detected.
+They cause signals either in the electromagnetic calorimeter or in the muon chambers while the neutrinos are not detected.\korr{missing momentum is wichtig um zu erklären wie man schneidet}
 
 In a hadronic $\tau$ decay a neutrino and hadrons are produced.
 All hadrons create a shower in the hadronic calorimeter but depending on their charge a track can not always be observed.
@@ -361,7 +367,7 @@ In order to get optimal cut criteria, the data from all Monte-Carlo simulated sa
 	\caption{Distributions of the measured parameters for the different types of decay channels. To find cuts to differentiate between the decay channels the overlap of two distributions should be minimized without loosing two many events of the distribution of the particle type that shall be identified. All energies are given in \si{GeV}.}
 	\label{fig:histograms}
 \end{figure}
-The used cuts are given in table \ref{tab:cut_criteria_day1} and can be reviewed by looking on the events in a test sample (dataset number 1 was used).
+The used cuts are given in table \ref{tab:cut_criteria_day1} and can be reviewed by looking on the events in a test sample (dataset number 1 was used). \korr{Erklären wieso welcher cut gewählt wurde. Missing momentum von neutrinos etc.}
 All of the decay channels found with the cut criteria could be verified by analysis of event displays.
 \begin{table}[htb]
 	\centering
@@ -372,7 +378,7 @@ All of the decay channels found with the cut criteria could be verified by analy
 \begin{sidewaystable}
 	\centering
 		\input{./tables/tag1/testsample}
-	\caption{Collected data from the events in the test sample dataset. All values for energies and momenta in \si{GeV}.}
+	\caption{Collected data from the events in the test sample dataset. All values for energies and momenta in \si{GeV}.\korr{Bewertung dieser Tabelle? Hats funktioniert? \& was ist decay mode? -- ich glaube das ist die bestimmung mit den cuts nicht per hand}}
 \end{sidewaystable}
 
 \clearpage
