@@ -772,34 +772,33 @@ This is due to the large deviation of the full decay width in the tau-channel, w
 \label{sec:confidence_levels}
 The fits in the previous section were done using the minimization of
 \begin{align*}
-	\chi^2\left(\Theta\right) = \sum_{i = 1}^{N} \frac{\left[ y_i - f\left(x_i; \Theta\right) \right]^2}{\sigma_i^2}
+	\chi^2\left(\Theta\right) = \sum_{i = 1}^{N} \frac{\left[ y_i - f\left(x_i; \Theta\right) \right]^2}{\Delta y_i^2}
 \end{align*}
-with respect to the fit parameters~$\Theta$, where the measured values are given by the tuple $(x_i, y_i)$ with standard deviation $\sigma_i$ (in $y$-direction) and the fit hypothesis $f$ that depends on the parameters~$\Theta$.
+with respect to the fit parameters~$\Theta = (\Theta_1, \dots, \Theta_k)$, where the measured values are given by the tuple $(x_i, y_i)$ with standard deviation~$\Delta y_i$ and the fit hypothesis $f$ that depends on the parameters~$\Theta$.
 
+The $\chi^2$ of the fit is distributed according to the $\chi^2$-distribution, which is given by \cite{barlow}
+\begin{align*}
+	P(\chi^2, n) = \frac{2^{- n / 2}}{\Gamma(n / 2)} \, \chi^{n - 2} \, e^{-\chi^2 / 2} \,\text{,}
+\end{align*}
+where $\Gamma(x)$ is the gamma function and $n$ the number of degrees of freedom (i.e.\ $n = N - k$ with the number of fit parameters $k$).
+Assuming that the fit accurately describes the data, the probability~$p$ of finding a realization of the data with a larger $\chi^2$ is given by
+\begin{align*}
+	p(\chi^2, n) = \int_{\chi^2}^\infty P({\chi^\prime}^2, n) \dinf{{\chi^\prime}^2}
+\end{align*}
+with the probability density $P(\chi^2, n)$ of the $\chi^2$-distribution with $n$ degrees of freedom.
 
-
-
-
-
-
-
-
-
-\cite{barlow}
-
-
-
-\begin{table}
+Generally a small $p$-value either means that the errors have been underestimated or that the underlying model does not describe the data resulting in a bad fit.
+In contrast to this very large $p$-values close to one indicate overestimation of the errors.
+The results for the fits of the previous section are summarized in table~\ref{tab:chisquared}
+\begin{table}[h]
 	\centering
 	\input{./tables/chisqr.tex}
-	\caption{chisquare stuff}
+	\caption{Calculation of the $p$-value for the fitted Breit-Wigner distributions using the $\chi^2$-distribution with 4 degrees of freedom.}
+	\label{tab:chisquared}
 \end{table}
-
-\begin{align*}
-	p(\chi^2, \mathrm{ndf}) = \int_{\chi^2}^\infty f(x, \mathrm{ndf}) \dinf{x}
-\end{align*}
-with the probability density~$f(x, \mathrm{ndf})$ of the $\chi^2$-distribution with $\mathrm{ndf}$ degrees of freedom.
-
+The threshold for the 95\% confidence level is given by a $p$-value of 5\%, thus observing that the data for the electron- and tau-channel is better described by a different fit hypothesis.
+This is because there is considerable background in these channels, since the electron data still contains $t$-channel events and the tau data is polluted by misidentified events due to the difficulty in the separation process.
+The larger probabilities for the muon- and hadron-channels indicate a good fit.
 
 \subsubsection{Calculation of the Partial Decay Widths}
 \label{sec:partial_widths}
@@ -849,6 +848,20 @@ The current literature value for the ratio of partial widths is \cite{pdg}
 	&\left(\frac{\Gamma_\mathrm{\tau}}{\Gamma_\mathrm{e}}\right)^\mathrm{PDG} = \num{1.0019 +- 0.0032} \\
 \end{align*}
 which is also consistent with lepton universality.
+
+In addition one can calculate the ratio of the hadronic and leptonic peak cross section
+\begin{align*}
+	\frac{\Gamma_\mathrm{hadrons}}{3\Gamma_\ell} &= \frac{\Gamma_\mathrm{hadrons}}{\Gamma_\mathrm{e} + \Gamma_\mathrm{\mu} + \Gamma_\mathrm{\tau}} = \frac{\sigma_\mathrm{hadrons}^\mathrm{peak}}{\sigma_\mathrm{e}^\mathrm{peak} + \sigma_\mathrm{\mu}^\mathrm{peak} + \sigma_\mathrm{\tau}^\mathrm{peak}} \\
+	&= \num{6.955 +- 0.083}
+\end{align*}
+using the previously calculated decay widths and peak cross sections.
+Comparing these values with the ratio as calculated using partial widths given in \cite{pdg} neglecting any error correlations
+\begin{align*}
+	\left(\frac{\Gamma_\mathrm{hadrons}}{3\Gamma_\ell}\right)^\mathrm{PDG} = \num{6.924 +- 0.011}
+\end{align*}
+also shows a good agreement within the errors.
+
+
 
 \subsubsection{Number of Light Neutrino Generations}
 The full decay width of the Z-boson~$\Gamma_\mathrm{Z}$ can be expressed as the sum of partial widths of all possible decay channels
