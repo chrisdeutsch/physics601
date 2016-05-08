@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70107" creator="Ipe 7.2.2">
-<info created="D:20160508124634" modified="D:20160508124634"/>
+<info created="D:20160508124634" modified="D:20160508130603"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -257,7 +257,8 @@ h
 <layer name="mm"/>
 <layer name="tt"/>
 <layer name="qq"/>
-<view layers="qq" active="qq"/>
+<layer name="nn"/>
+<view layers="ee" active="ee"/>
 <path layer="storage" matrix="8.92214 0 0 8.92214 352 805.533" stroke="black">
 0 0 m
 0.084622 0.085855
@@ -558,11 +559,11 @@ h
 25.0481 -0.085855
 25.1327 -0 c
 </path>
-<path layer="ee" stroke="black" arrow="normal/large">
+<path layer="ee" stroke="black">
 64 800 m
 96 768 l
 </path>
-<path stroke="black">
+<path stroke="black" rarrow="normal/large">
 96 768 m
 128 736 l
 </path>
@@ -580,11 +581,11 @@ h
 128 736 m
 256 736 l
 </path>
-<path layer="mm" stroke="black" arrow="normal/large">
+<path layer="mm" stroke="black">
 64 800 m
 96 768 l
 </path>
-<path stroke="black">
+<path stroke="black" rarrow="normal/large">
 96 768 m
 128 736 l
 </path>
@@ -602,11 +603,11 @@ h
 128 736 m
 256 736 l
 </path>
-<path layer="tt" stroke="black" arrow="normal/large">
+<path layer="tt" stroke="black">
 64 800 m
 96 768 l
 </path>
-<path stroke="black">
+<path stroke="black" rarrow="normal/large">
 96 768 m
 128 736 l
 </path>
@@ -618,17 +619,17 @@ h
 64 672 m
 96 704 l
 </path>
-<text matrix="1 0 0 1 -32 -16" transformations="translations" pos="96 784" stroke="black" type="label" valign="top" size="Huge">$e^+$</text>
-<text matrix="1 0 0 1 0 -16" transformations="translations" pos="64 720" stroke="black" type="label" valign="baseline" size="Huge">$e^-$</text>
+<text matrix="1 0 0 1 -32 -16" transformations="translations" pos="96 784" stroke="black" type="label" width="26.621" height="20.637" depth="0" valign="top" size="Huge">$e^+$</text>
+<text matrix="1 0 0 1 0 -16" transformations="translations" pos="64 720" stroke="black" type="label" width="27.818" height="21.048" depth="0" valign="baseline" size="Huge">$e^-$</text>
 <path stroke="black" dash="dashed">
 128 736 m
 256 736 l
 </path>
-<path layer="qq" stroke="black" arrow="normal/large">
+<path layer="qq" stroke="black">
 64 800 m
 96 768 l
 </path>
-<path stroke="black">
+<path stroke="black" rarrow="normal/large">
 96 768 m
 128 736 l
 </path>
@@ -640,11 +641,169 @@ h
 64 672 m
 96 704 l
 </path>
-<text matrix="1 0 0 1 -32 -16" transformations="translations" pos="96 784" stroke="black" type="label" valign="top" size="Huge">$e^+$</text>
-<text matrix="1 0 0 1 0 -16" transformations="translations" pos="64 720" stroke="black" type="label" valign="baseline" size="Huge">$e^-$</text>
+<text matrix="1 0 0 1 -32 -16" transformations="translations" pos="96 784" stroke="black" type="label" width="26.621" height="20.637" depth="0" valign="top" size="Huge">$e^+$</text>
+<text matrix="1 0 0 1 0 -16" transformations="translations" pos="64 720" stroke="black" type="label" width="27.818" height="21.048" depth="0" valign="baseline" size="Huge">$e^-$</text>
 <path stroke="black" dash="dashed">
 128 736 m
 256 736 l
 </path>
+<path layer="ee" stroke="black">
+256 736 m
+288 768 l
+</path>
+<path stroke="black" rarrow="normal/large">
+288 768 m
+320 800 l
+</path>
+<path stroke="black" arrow="normal/large">
+256 736 m
+288 704 l
+</path>
+<path stroke="black">
+288 704 m
+320 672 l
+</path>
+<text matrix="1 0 0 1 320 -208" transformations="translations" pos="96 784" stroke="black" type="label" width="26.621" height="20.637" depth="0" valign="bottom" size="Huge">$e^+$</text>
+<text matrix="1 0 0 1 352 112" transformations="translations" pos="64 720" stroke="black" type="label" width="27.818" height="21.048" depth="0" valign="top" size="Huge">$e^-$</text>
+<text matrix="1 0 0 1 16 0" transformations="translations" pos="176 752" stroke="black" type="label" width="28.367" height="22.314" depth="0" halign="center" valign="center" size="Huge">$Z^0$</text>
+<text layer="mm" matrix="1 0 0 1 16 0" transformations="translations" pos="176 752" stroke="black" type="label" width="28.367" height="22.314" depth="0" halign="center" valign="center" size="Huge">$Z^0$</text>
+<text layer="tt" matrix="1 0 0 1 16 0" transformations="translations" pos="176 752" stroke="black" type="label" width="28.367" height="22.314" depth="0" halign="center" valign="center" size="Huge">$Z^0$</text>
+<text layer="qq" matrix="1 0 0 1 16 0" transformations="translations" pos="176 752" stroke="black" type="label" width="28.367" height="22.314" depth="0" halign="center" valign="center" size="Huge">$Z^0$</text>
+<path layer="mm" stroke="black">
+256 736 m
+288 768 l
+</path>
+<path stroke="black" rarrow="normal/large">
+288 768 m
+320 800 l
+</path>
+<path stroke="black" arrow="normal/large">
+256 736 m
+288 704 l
+</path>
+<path stroke="black">
+288 704 m
+320 672 l
+</path>
+<text matrix="1 0 0 1 224 -16" transformations="translations" pos="96 784" stroke="black" type="label" width="29.974" height="20.637" depth="4.82" halign="right" valign="top" size="Huge">$\mu^+$</text>
+<text matrix="1 0 0 1 256 -16" transformations="translations" pos="64 720" stroke="black" type="label" width="31.171" height="21.048" depth="4.82" halign="right" valign="baseline" size="Huge">$\mu^-$</text>
+<path layer="tt" stroke="black">
+256 736 m
+288 768 l
+</path>
+<path stroke="black" rarrow="normal/large">
+288 768 m
+320 800 l
+</path>
+<path stroke="black" arrow="normal/large">
+256 736 m
+288 704 l
+</path>
+<path stroke="black">
+288 704 m
+320 672 l
+</path>
+<text matrix="1 0 0 1 224 -16" transformations="translations" pos="96 784" stroke="black" type="label" width="28.68" height="20.637" depth="0" halign="right" valign="top" size="Huge">$\tau^+$</text>
+<text matrix="1 0 0 1 256 -16" transformations="translations" pos="64 720" stroke="black" type="label" width="29.878" height="21.048" depth="0" halign="right" valign="baseline" size="Huge">$\tau^-$</text>
+<path layer="qq" stroke="black">
+256 736 m
+288 768 l
+</path>
+<path stroke="black" rarrow="normal/large">
+288 768 m
+320 800 l
+</path>
+<path stroke="black" arrow="normal/large">
+256 736 m
+288 704 l
+</path>
+<path stroke="black">
+288 704 m
+320 672 l
+</path>
+<text matrix="1 0 0 1 224 -16" transformations="translations" pos="96 784" stroke="black" type="label" width="12.015" height="13.871" depth="4.82" halign="right" valign="top" size="Huge">$\mathrm{\bar{q}}$</text>
+<text matrix="1 0 0 1 256 -16" transformations="translations" pos="64 720" stroke="black" type="label" width="12.015" height="10.672" depth="4.82" halign="right" valign="baseline" size="Huge">$\mathrm{q}$</text>
+<path layer="nn" stroke="black">
+64 800 m
+96 768 l
+</path>
+<path stroke="black" rarrow="normal/large">
+96 768 m
+128 736 l
+</path>
+<path stroke="black">
+96 704 m
+128 736 l
+</path>
+<path stroke="black" arrow="normal/large">
+64 672 m
+96 704 l
+</path>
+<text matrix="1 0 0 1 -32 -16" transformations="translations" pos="96 784" stroke="black" type="label" width="26.621" height="20.637" depth="0" valign="top" size="Huge">$e^+$</text>
+<text matrix="1 0 0 1 0 -16" transformations="translations" pos="64 720" stroke="black" type="label" width="27.818" height="21.048" depth="0" valign="baseline" size="Huge">$e^-$</text>
+<path stroke="black" dash="dashed">
+128 736 m
+256 736 l
+</path>
+<text matrix="1 0 0 1 16 0" transformations="translations" pos="176 752" stroke="black" type="label" width="28.367" height="22.314" depth="0" halign="center" valign="center" size="Huge">$Z^0$</text>
+<path stroke="black">
+256 736 m
+288 768 l
+</path>
+<path stroke="black" rarrow="normal/large">
+288 768 m
+320 800 l
+</path>
+<path stroke="black" arrow="normal/large">
+256 736 m
+288 704 l
+</path>
+<path stroke="black">
+288 704 m
+320 672 l
+</path>
+<text matrix="1 0 0 1 224 -16" transformations="translations" pos="96 784" stroke="black" type="label" width="13.555" height="13.871" depth="0" halign="right" valign="top" size="Huge">$\bar{\nu}$</text>
+<text matrix="1 0 0 1 256 -16" transformations="translations" pos="64 720" stroke="black" type="label" width="13.555" height="10.672" depth="0" halign="right" valign="baseline" size="Huge">$\nu$</text>
+<path layer="ee" matrix="0 -1 1 0 -288 896" stroke="black">
+64 800 m
+96 768 l
+</path>
+<path matrix="0 -1 1 0 -288 896" stroke="black" rarrow="normal/large">
+96 768 m
+128 736 l
+</path>
+<path matrix="0 -1 1 0 -288 896" stroke="black">
+96 704 m
+128 736 l
+</path>
+<path matrix="0 -1 1 0 -288 896" stroke="black" arrow="normal/large">
+64 672 m
+96 704 l
+</path>
+<text matrix="1 -0 0 1 224 -48" transformations="translations" pos="96 784" stroke="black" type="label" width="26.621" height="20.637" depth="0" valign="top" size="Huge">$e^+$</text>
+<text matrix="1 -0 0 1 256 -48" transformations="translations" pos="64 720" stroke="black" type="label" width="27.818" height="21.048" depth="0" valign="baseline" size="Huge">$e^-$</text>
+<path matrix="0 -1 1 0 -288 896" stroke="black" dash="dashed">
+128 736 m
+256 736 l
+</path>
+<path matrix="0 -1 1 0 -288 896" stroke="black">
+256 736 m
+288 768 l
+</path>
+<path matrix="0 -1 1 0 -288 896" stroke="black" rarrow="normal/large">
+288 768 m
+320 800 l
+</path>
+<path matrix="0 -1 1 0 -288 896" stroke="black" arrow="normal/large">
+256 736 m
+288 704 l
+</path>
+<path matrix="0 -1 1 0 -288 896" stroke="black">
+288 704 m
+320 672 l
+</path>
+<text matrix="1 -0 0 1 384 -208" transformations="translations" pos="96 784" stroke="black" type="label" width="26.621" height="20.637" depth="0" halign="right" valign="bottom" size="Huge">$e^+$</text>
+<text matrix="1 -0 0 1 416 112" transformations="translations" pos="64 720" stroke="black" type="label" width="27.818" height="21.048" depth="0" halign="right" valign="top" size="Huge">$e^-$</text>
+<text matrix="1 -0 0 1 288 -48" transformations="translations" pos="176 752" stroke="black" type="label" width="28.367" height="22.314" depth="0" halign="center" valign="center" size="Huge">$Z^0$</text>
 </page>
 </ipe>

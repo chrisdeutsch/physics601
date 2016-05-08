@@ -1,0 +1,21 @@
+RUN,EVENT,Ctrk(Sump),Ctrk(N),Ecal(SumE),Hcal(SumE),Comment
+2566,163733,50.9,2,82.6,0,back to back electrons (kink in sideview)
+2566,165523,91.9,2,90,0,back to back electrons
+2566,165548,82.5,3,92.3,0,weird third track (short)
+2566,165576,80.9,2,86.8,0,back to back
+2566,166436,38.1,2,89.5,0,back to back
+2566,167987,83.8,2,87.5,0,back to back
+2566,168389,87.4,2,93.2,0,back to back
+2566,170045,69.3,2,90.7,0,back to back
+2566,170379,86.1,2,89.4,0.5,back to back
+2566,197594,90.3,2,90.6,0,back to back
+2566,197889,92.1,2,88.5,0.5,back to back
+2570,28178,81.7,3,91.6,0,back to back (single track -- 2 close tracks - side view)
+2570,28499,89.6,2,92.5,0,back to back
+2570,28743,61.1,2,89.2,0,back to back
+2570,28777,88.4,3,89.1,0,back to back (delta electron loop)
+2570,88224,90.9,2,90.5,0.3,back to back
+2570,90060,64.6,2,88.8,0,back to back (hits forward-backward calo)
+2570,91274,95.6,2,96.2,0,back to back
+2571,418921,93,2,90.8,0,back to back
+2571,420590,94.1,2,89.2,0,back to back
