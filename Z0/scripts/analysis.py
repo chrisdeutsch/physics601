@@ -244,7 +244,7 @@ ax3 = plt.subplot(223)
 plt.errorbar(data.E_cm.get_values(), data.sig_tau.get_values(), yerr=data.sig_tau_err.get_values(), fmt="o", zorder=2, markersize=2.5)
 plt.plot(x, tau_fit.eval(x=x), "-", zorder=1)
 plt.ylim((0.0, 2.2))
-plt.title("taus", fontsize=11)
+plt.title("tauons", fontsize=11)
 
 ax4 = plt.subplot(224, sharex=ax2)
 plt.errorbar(data.E_cm.get_values(), data.sig_hadr.get_values(), yerr=data.sig_hadr_err.get_values(), fmt="o", zorder=2, markersize=2.5)
@@ -270,4 +270,15 @@ plt.savefig("figures/cross_sections.pdf")
 plt.close()
 
 
+# AFB plot
+fig = plt.gcf()
+fig.set_size_inches(0.8 * fig.get_size_inches())
+
+plt.xlabel(r"$\sqrt{s}$ / GeV")
+plt.ylabel(r"$A_\mathrm{FB}$")
+plt.errorbar(data.E_cm.get_values(), data.afb.get_values(), yerr=data.afb_err.get_values(), fmt="o")
+
+plt.tight_layout(pad=0.2)
+plt.savefig("figures/afb.pdf")
+plt.close()
 
