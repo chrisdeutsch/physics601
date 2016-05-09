@@ -194,16 +194,49 @@ Because of confinement in QCD the strong interaction becomes stronger for larger
 If quark and antiquark fly apart a QCD field with high energy is created between them, where additional quark-antiquark pairs can be produced.
 This process repeats itself as long as the particles have more energy than needed for formation of colourless hadrons.
 As a result a hadronic decay of Z~bosons leads to a high number of final state particles, called jets.
-Possible Feynman diagrams for the mentioned processes are shown in figure \korr{REF}.
+Possible Feynman diagrams for the mentioned processes are shown in figure \ref{fig:feynman}.
 
-\korr{BILD Feynman Diagramme}
+\begin{figure}[htb]
+	\begin{subfigure}{.33\textwidth}
+		\centering
+%		\includegraphics[width=\textwidth]{./figures/theory/feynman/ee_s}
+		\subcaption{$e^+e^-\rightarrow e^+e^-$ (s-channel)}
+	\end{subfigure}
+	\begin{subfigure}{.33\textwidth}
+		\centering
+%		\includegraphics[width=\textwidth]{./figures/theory/feynman/ee_t}
+		\subcaption{$e^+e^-\rightarrow e^+e^-$ (t-channel)}
+	\end{subfigure}
+	\begin{subfigure}{.33\textwidth}
+		\centering
+%		\includegraphics[width=\textwidth]{./figures/theory/feynman/mm}
+		\subcaption{$e^+e^-\rightarrow \mu^+\mu^-$}
+	\end{subfigure}
+	\begin{subfigure}{.33\textwidth}
+		\centering
+%		\includegraphics[width=\textwidth]{./figures/theory/feynman/tt}
+		\subcaption{$e^+e^-\rightarrow \tau^+\tau^-$}
+	\end{subfigure}
+	\begin{subfigure}{.33\textwidth}
+		\centering
+%		\includegraphics[width=\textwidth]{./figures/theory/feynman/qq}
+		\subcaption{$e^+e^-\rightarrow \mathrm{q}\mathrm{\bar{q}}$}
+	\end{subfigure}
+	\begin{subfigure}{.33\textwidth}
+		\centering
+%		\includegraphics[width=\textwidth]{./figures/theory/feynman/tt}
+		\subcaption{$e^+e^-\rightarrow \nu\bar{\nu}$}
+	\end{subfigure}
+	\caption{Feynman diagrams for the different decay channels of the $Z$-boson. The initial state is according to the LEP storange ring always assumed to be an electron positron pair. In general, these processes are except for the creation of a neutrino pair also possible with a photon propagator.}
+	\label{fig:feynman}
+\end{figure}
 
 \subsubsection{Forward-Backward Asymmetry A$_\mathrm{FB}$}
 
 In a $e^+e^- \rightarrow f\bar{f}$ reaction the differential cross section of the produced fermions is different for the forward and backward hemispheres.
 Those are defined by the angle $\theta$ between incoming positron and outgoing positively charged particle.
-In this lab experiment, the asymmetry A$_\mathrm{FB}$ is measured in $e^+e^- \rightarrow \mu^+\mu^-$ events. 
-\korr{hier noch ein paar von den schäbigen Formeln rausknallen?}
+In this lab experiment, the asymmetry A$_\mathrm{FB}$ is measured in $e^+e^- \rightarrow \mu^+\mu^-$ events \korr{why}. 
+\korr{hier noch ein paar von den schäbigen Formeln rausknallen?} \korr{yo \& erklären}
 
 \subsection{The OPAL Experiment}
 
@@ -211,25 +244,74 @@ The OPAL~detector was used from 1989 to 2000 at the LEP storage ring at the CERN
 It was designed to detect all kinds of particles produced in collisions of electrons and positrons.
 To cover most of the solid angle it had a barrel-like structure and consisted of a cylinder and two endcaps.
 For tracking and vertex reconstruction purposes the inner part is formed by a semiconductor strip detector and multiple proportional chambers.
-To measure the momentum of charged particles, the whole inner detector is surrounded by a solenoid which created a magnetic field.
+To measure the momentum of charged particles, the whole inner detector is surrounded by a solenoid which creates a magnetic field.
 The solenoid is followed by the calorimeters, first the electromagnetic and after that the hadronic one.
-As a last layer muon chambers are installed which consist of a tracking detector themselves.
+As a last layer muon chambers are installed which consist of a tracking detector themselves \korr{why}.
 \korr{OPAL Bild?}
+
+\subsection{Problems}
+\subsubsection{Calculation of Partial Decay Widths}
+\begin{align*}
+	&\Gamma_f = \frac{N_\mathrm{c}^f \sqrt{2}}{12 \pi} G_\mathrm{F} M_\mathrm{Z}^3 \left( {g_\mathrm{V}^f}^2 + {g_\mathrm{A}^f}^2 \right)\\
+	&g_\mathrm{V}^f = I_3^f - 2 Q_f \sin\theta_\mathrm{W}\\
+	&g_\mathrm{A}^f = I_3^f
+\end{align*}
+\korr{Größen erklären}
+Partial widths
+\begin{align*}
+	&\Gamma_\ell = \SI{83.4}{MeV} \\
+	&\Gamma_\nu = \SI{165.9}{MeV} \\
+	&\Gamma_\mathrm{u} = \SI{285.3}{MeV} \\
+	&\Gamma_\mathrm{d} = \SI{367.8}{MeV}
+\end{align*}
+\begin{align*}
+\Gamma_\mathrm{hadrons} = 2\Gamma_\mathrm{u} + 3\Gamma_\mathrm{d}
+\end{align*}
+total decay width
+\begin{align*}
+	\Gamma_\mathrm{Z} &= \Gamma_\mathrm{hadrons} + 3 \Gamma_\ell + 3\Gamma_\nu \\
+	&= \SI{2.42}{GeV}
+\end{align*}
+
+
+
+
+
+
+
 
 \section{Part I: Analysis of Event Displays}
 
 On the first day the software \texttt{GROPE} was used to study event displays and detector responses of the OPAL detector.
 
 \subsection{Part I: Analysis of Event Displays}
+\korr{Name der subsection?}
 
 To learn how to distinguish the different decay channels of the Z boson Monte-Carlo simulated test samples with events with only one decay mode have been investigated.
 In the following part the measured properties of the observed events and exemplary pictures of the detector response are presented.
-For every event the number of charged tracks (Ctrk(N)), the scalar sum of all momenta of charged tracks (Ctrk(SumP)) and the total energy deposited in the electromagnetic or hadronic calorimeter (Ecal(SumE) or Hcal(SumE) respectively) is noted in the corresponding tables.
+The variables given for every event are presented in table \ref{tab:desc_variables_tag1}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{0.9\textwidth}{lX}
+		\toprule
+		\textbf{Variable} & \textbf{Description} \\
+		\midrule		
+		Ctrk(N) 	& Number of charged particle tracks in the tracking detector \\
+		Ctrk(SumP) 	& Total momentum of all charged particle tracks in the tracking detector \\
+		Ecal(SumE)	& Total energy deposited in the electromagnetic calorimeter \\
+		Hcal(SumE)	& Total energy deposited in the hadronic calorimeter \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Description of the variables in the $\mathrm{Z}^0$ decay datasets. Momenta and energies are always given in units of GeV.}
+	\label{tab:desc_variables_tag1}
+\end{table}
+\korr{Generell: wieso keine bilder in seitenansicht? \& vllt. generell effekte erklären die in den tabellen erwähnt wurden (allgemein)}
+
 \clearpage
 \subsubsection{Z$^0\rightarrow e^+e^-$}
 
 A decay into electrons can easily be identified by the energy deposited in the electromagnetic calorimeters.
-The final state particles are flying approximately in opposite direction and are ideally completely stopped in the calorimeter.
+The final state particles are flying approximately in opposite direction and are ideally completely stopped in the electromagnetic calorimeter.
 A track for every particle can be observed in the tracking chamber.
 Additional hits in the electromagnetic calorimeters probably occur due to bremsstrahlung photons which leave no track in the inner detector.
 \begin{sidewaystable}
@@ -246,7 +328,7 @@ Additional hits in the electromagnetic calorimeters probably occur due to bremss
 \subsubsection{Z$^0\rightarrow \mu^+\mu^-$}
 
 Muons are detected in the muon chambers which form the outermost part of the detector.
-Since all other particles (except the non-detectable neutrinos) are stopped before reaching the muon chamber a signal there can -- neglecting noise hits -- be identified as a muon. 
+Since all other particles (except the non-detectable neutrinos) are stopped before reaching the muon chamber a detected particle there can be identified as a muon. 
 In general, muons are also created in a back to back configuration and leave a track in the tracking detector.
 \begin{sidewaystable}
 	\centering
@@ -265,6 +347,7 @@ Because of the short lifetime of the $\tau$ lepton it can not be detected direct
 Because it can decay in both leptons and hadrons there are two possible types of detector responses.
 In a leptonic $\tau$ decay an electron or muon and two neutrinos are created and seen as charged tracks in the inner detector.
 They cause signals either in the electromagnetic calorimeter or in the muon chambers while the neutrinos are not detected.
+Since neutrinos carry momentum this leads to a smaller value for the measured final state compared to the initial state momentum.
 
 In a hadronic $\tau$ decay a neutrino and hadrons are produced.
 All hadrons create a shower in the hadronic calorimeter but depending on their charge a track can not always be observed.
@@ -328,7 +411,7 @@ In order to get optimal cut criteria, the data from all Monte-Carlo simulated sa
 	\caption{Distributions of the measured parameters for the different types of decay channels. To find cuts to differentiate between the decay channels the overlap of two distributions should be minimized without loosing two many events of the distribution of the particle type that shall be identified. All energies are given in \si{GeV}.}
 	\label{fig:histograms}
 \end{figure}
-The used cuts are given in table \ref{tab:cut_criteria_day1} and can be reviewed by looking on the events in a test sample (dataset number 1 was used).
+The used cuts are given in table \ref{tab:cut_criteria_day1} and can be reviewed by looking on the events in a test sample (dataset number 1 was used). \korr{Erklären wieso welcher cut gewählt wurde. Missing momentum von neutrinos etc.}
 All of the decay channels found with the cut criteria could be verified by analysis of event displays.
 \begin{table}[htb]
 	\centering
@@ -339,7 +422,7 @@ All of the decay channels found with the cut criteria could be verified by analy
 \begin{sidewaystable}
 	\centering
 		\input{./tables/tag1/testsample}
-	\caption{Collected data from the events in the test sample dataset. All values for energies and momenta in \si{GeV}.}
+	\caption{Collected data from the events in the test sample dataset. All values for energies and momenta in \si{GeV}.\korr{Bewertung dieser Tabelle? Hats funktioniert? \& was ist decay mode? -- ich glaube das ist die bestimmung mit den cuts nicht per hand}}
 \end{sidewaystable}
 
 \clearpage
@@ -749,7 +832,7 @@ The resulting quantities from the fit can be combined using the error weighted m
 \end{align*}
 with weights $w_i$ given by the standard deviation of the $i$-th value
 \begin{align*}
-	&w_i = \frac{1}{\Delta \bar{x}_i^2} \, \text{.}
+	&w_i = \frac{1}{\Delta x_i^2} \, \text{.}
 \end{align*}
 Therefore the mean values of the Z-mass and decay widths can be determined to be
 \begin{align*}
@@ -832,6 +915,7 @@ These values can be compared with the literature \cite{pdg}
 \end{align*}
 with the partial decay width of leptons~$\Gamma_\ell$ assuming lepton universality.
 Within the errors all of the measured partial decay widths are consistent with the literature values.
+\korr{compare with exercise}
 
 \subsubsection{Lepton Universality}
 According to lepton universality one would expect the same peak cross sections and partial widths for all lepton final states.
@@ -849,17 +933,17 @@ The current literature value for the ratio of partial widths is \cite{pdg}
 \end{align*}
 which is also consistent with lepton universality.
 
-In addition one can calculate the ratio of the hadronic and leptonic peak cross section
+In addition one can calculate the ratio of the hadronic and leptonic decay width
 \begin{align*}
 	\frac{\Gamma_\mathrm{hadrons}}{3\Gamma_\ell} &= \frac{\Gamma_\mathrm{hadrons}}{\Gamma_\mathrm{e} + \Gamma_\mathrm{\mu} + \Gamma_\mathrm{\tau}} = \frac{\sigma_\mathrm{hadrons}^\mathrm{peak}}{\sigma_\mathrm{e}^\mathrm{peak} + \sigma_\mathrm{\mu}^\mathrm{peak} + \sigma_\mathrm{\tau}^\mathrm{peak}} \\
 	&= \num{6.955 +- 0.083}
 \end{align*}
-using the previously calculated decay widths and peak cross sections.
-Comparing these values with the ratio as calculated using partial widths given in \cite{pdg} neglecting any error correlations
+using the previously calculated decay widths or peak cross sections.
+Comparing these values with the ratio as calculated using partial widths given in \cite{pdg} neglecting any correlations of the errors
 \begin{align*}
 	\left(\frac{\Gamma_\mathrm{hadrons}}{3\Gamma_\ell}\right)^\mathrm{PDG} = \num{6.924 +- 0.011}
 \end{align*}
-also shows a good agreement within the errors.
+also shows good agreement within the errors.
 
 
 
@@ -885,12 +969,46 @@ With the full decay width from section~\ref{sec:fit_resonance}, the partial deca
 is obtained.
 The calculated value is consistent with the observed number of three light neutrino generations.
 
-\subsubsection{Discussion of Uncertainties}
-
-
+\subsection{Discussion of Systematic Uncertainties}
+In the following additional sources of systematic uncertainties shall be discussed:
+\begin{itemize}
+	\item The details of the precut that was applied to the data are unknown.
+	For the treatment in this report it was assumed that the precut affects $s$- and $t$-channel equally.
+	But generally this does not have to be the case, since the smaller scattering angles in $t$-channel processes lead to more events close to the beam pipe, which cannot be reconstructed by the detector and thus are (in part) discarded in the precut.
+	Therefore the assumption that both channels are equally affected leads to a systematic uncertainty.	
+	
+	\item For the separation of $s$- and $t$-channel events for electron final states (discussed in section~\ref{sec:s_t_channel_separation}) the upper bound on the scattering angle was chosen too large.
+	This leads to a pollution of the electron data by $t$-channel events introducing systematic errors, which can be observed in the systematic deviation of the Z-mass as determined in the electron channel.
+	
+	\item Furthermore it was assumed that the Monte-Carlo simulation of the events accurately describes the underlying physics.
+	If this assumption does not hold systematic uncertainties are introduced.
+	Additionally the detector response has to be simulated using the exact detector geometry, material properties and external parameters affecting the detector operation (e.g.\ stray magnetic fields etc.).
+	This can only be done in approximation and therefore could be a cause of additional systematic uncertainties.
+\end{itemize}
 
 \section{Conclusion}
+Finally this report is concluded by summarizing the results of both parts.
 
+\subsection{Part I: Analysis of Event Displays}
+
+\subsection{Part II: Statistical Analysis of $\mathrm{Z}^0$ Decays}
+After refining the preliminary cuts from the first part using Monte-Carlo data a number of important quantities could be determined from data gathered by the OPAL-detector at LEP.
+These are the mass of the Z-boson
+\begin{align*}
+	M_\mathrm{Z} = \SI{91.15 +- 0.10}{GeV} \,\text{,}
+\end{align*}
+the full decay width
+\begin{align*}
+	\Gamma_\mathrm{Z} = \SI{2.52 +- 0.02}{GeV}
+\end{align*}
+and the partial widths of the lepton- and hadron-channels.
+Using the forward-backward asymmetry in the muon-channel the mixing angle in electroweak unification could be determined to be
+\begin{align*}
+	\sin\theta_\mathrm{W} = \num{0.234 +- 0.005} \,\text{.}
+\end{align*}
+These quantities are in good agreement with the currently best-known values as given in \cite{pdg}.
+Furthermore lepton universality could be verified using the different partial decay widths and peak cross section.
+Finally a determination of the number of light neutrino generations could be performed resulting in three light neutrino generations.
 
 \FloatBarrier
 % BIBLIOGRAPHIE
