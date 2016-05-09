@@ -173,7 +173,7 @@ Interaction particles can also be charged (W~boson) or uncharged (photon, gluon,
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.8\textwidth]{./figures/theory/standardmodel}
-	\caption{Standard Model of elementary particle physics\protect\footnotemark}
+	\caption{Standard Model of elementary particle physics\protect\footnotemark.}
 	\label{fig:standard_model}
 \end{figure}
 \footnotetext{{Image source: \url{https://commons.wikimedia.org/wiki/File:Standard_Model_of_Elementary_Particles.svg}, accessed 05/08/2016.}}
@@ -230,7 +230,7 @@ Possible Feynman diagrams for the mentioned processes are shown in figure \ref{f
 		\includegraphics[width=.9\textwidth]{./figures/theory/feynman/nn}
 		\subcaption{$e^+e^-\rightarrow \nu\bar{\nu}$}
 	\end{subfigure}
-	\caption{Feynman diagrams for the different decay channels of the $Z$-boson. The initial state is according to the LEP storange ring always assumed to be an electron positron pair. In general, these processes are except for the creation of a neutrino pair also possible with a photon propagator.}
+	\caption{Feynman diagrams for the different decay channels of the $Z$-boson in lowest order. The initial state is according to the LEP storage ring always assumed to be an electron positron pair. In general, these processes are except for the creation of a neutrino pair also possible with a photon propagator.}
 	\label{fig:feynman}
 \end{figure}
 
@@ -238,30 +238,55 @@ Possible Feynman diagrams for the mentioned processes are shown in figure \ref{f
 
 In a $e^+e^- \rightarrow f\bar{f}$ reaction the differential cross section of the produced fermions is different for the forward and backward hemispheres.
 Those are defined by the angle $\theta$ between incoming positron and outgoing positively charged particle.
-In this lab experiment, the asymmetry A$_\mathrm{FB}$ is measured in $e^+e^- \rightarrow \mu^+\mu^-$ events \korr{why}. 
-\korr{hier noch ein paar von den schäbigen Formeln rausknallen?} \korr{yo \& erklären}
+In this lab experiment, the asymmetry A$_\mathrm{FB}$ is measured in $e^+e^- \rightarrow \mu^+\mu^-$ events. 
+The asymmetry $A_\mathrm{FB}$is defined by
+\begin{align*}
+	A_\mathrm{FB}=\frac{\int_{0}^{1}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}-\int_{-1}^{0}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}}{\int_{0}^{1}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}+\int_{-1}^{0}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}}
+\end{align*}
+with the cross-section $\sigma$ and the angle $\Theta$ between incoming positron and outgoing positively charged muon \cite{instructions}.
+For a center of mass energy $\sqrt{s}=M_\mathrm{Z^0}$ and by restricting oneself to leptons this can be approximated by \cite{instructions}
+\begin{align*}
+	A_\mathrm{FB}^{\ell\text{,peak}}\approx 3\left(\frac{v_\ell}{a_\ell}\right)^2\quad\text{.}
+\end{align*}
+For an explanation of the parameters $v_\ell$ and $a_\ell$, see section \ref{sec:problems}.
 
 \subsection{The OPAL Experiment}
 
-The OPAL~detector was used from 1989 to 2000 at the LEP storage ring at the CERN facility in Switzerland.
+The OPAL~detector shown in \ref{fig:opal} was used from 1989 to 2000 at the LEP storage ring at the CERN facility in Switzerland.
 It was designed to detect all kinds of particles produced in collisions of electrons and positrons.
 To cover most of the solid angle it had a barrel-like structure and consisted of a cylinder and two endcaps.
 For tracking and vertex reconstruction purposes the inner part is formed by a semiconductor strip detector and multiple proportional chambers.
 To measure the momentum of charged particles, the whole inner detector is surrounded by a solenoid which creates a magnetic field.
 The solenoid is followed by the calorimeters, first the electromagnetic and after that the hadronic one.
 As a last layer muon chambers are installed which consist of a tracking detector themselves.
-\korr{OPAL Bild?}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.8\textwidth]{./figures/theory/opal}
+	\caption{Cut-away diagram of the OPAL detector with its main components\protect\footnotemark.}
+	\label{fig:opal}
+\end{figure}
+\footnotetext{Image source: CERN-DI-8404652 \url{https://cds.cern.ch/record/39362?ln=en}}
 
 \subsection{Problems}
+In the following the questions that should have been solved before performing the experiment are presented.
+\label{sec:problems}
 \subsubsection{Calculation of Partial Decay Widths}
+The theoretical values for the partial decay widths of $Z^0$ decays into charged leptons and hadrons is calculated at first.
+This can be done using equation (13) from \cite{instructions}
+\begin{align*}
+	&\Gamma_f = \frac{N_\mathrm{c}^f \sqrt{2}}{12 \pi} G_\mathrm{F} M_\mathrm{Z}^3 \left( {g_\mathrm{V}^f}^2 + {g_\mathrm{A}^f}^2 \right)
+\end{align*}
+with the color factor $N_c^f$ which is 1 for leptons and 3 for quarks and the coupling constants
 \korr{Tabelle mit weak charges, ladungen und kopplungsfaktoren für die verschiedenen teilchen}
 \cite{instructions}
 \begin{align*}
-	&\Gamma_f = \frac{N_\mathrm{c}^f \sqrt{2}}{12 \pi} G_\mathrm{F} M_\mathrm{Z}^3 \left( {g_\mathrm{V}^f}^2 + {g_\mathrm{A}^f}^2 \right)\\
 	&g_\mathrm{V}^f = I_3^f - 2 Q_f \sin\theta_\mathrm{W}\\
-	&g_\mathrm{A}^f = I_3^f
+	&g_\mathrm{A}^f = I_3^f \\
+	\intertext{for vector and axial-vector coupling that lead to the vector and axial-vector coupling between Z-boson and fermion-antifermion pairs}
+	&v_f = \frac{g_\mathrm{V}^f}{2\sin\theta_\mathrm{W}\cos\theta_\mathrm{W}}\\
+	&a_f = \frac{g_\mathrm{A}^f}{2\sin\theta_\mathrm{W}\cos\theta_\mathrm{W}}
 \end{align*}
-\korr{Größen erklären}
+The values for the weak charge $Q_f$, the third component of the weak isospin $I_3^f$ and the Weinberg angle $\theta_\mathrm{W}$ are given in table \korr{REF}\\
 Partial widths
 \begin{align*}
 	&\Gamma_\ell = \SI{83.4}{MeV} \\
@@ -269,6 +294,7 @@ Partial widths
 	&\Gamma_\mathrm{u} = \SI{285.3}{MeV} \\
 	&\Gamma_\mathrm{d} = \SI{367.8}{MeV}
 \end{align*}
+\korr{u und d jeweils für alle up- bzw down-type Quarks}
 \begin{align*}
 \Gamma_\mathrm{hadrons} &= 2\Gamma_\mathrm{u} + 3\Gamma_\mathrm{d} \\
 &= \SI{1.67}{GeV}
@@ -316,8 +342,20 @@ total decay width
 	\caption{Bla}
 \end{figure}
 
+\subsubsection{Forward-backward Asymmetry}
 
-
+\begin{table}[h]
+	\centering
+	\begin{tabular}{cl|ccc}
+	& 			& \multicolumn{3}{c}{center of mass energy $\sqrt{s}$} 		\\
+	&			& \SI{89.225}{GeV} 	& \SI{91.225}{GeV} 	& \SI{93.225}{GeV} 	\\\hline
+	\multirow{3}{*}{\rotatebox{90}{$\sin^2\theta_\mathrm{W}$}}
+	& \num{0.21} 	& \num{-0.094} 		& \num{0.076}		& \num{0.232}		\\
+	& \num{0.23} 	& \num{-0.164}		& \num{0.023}		& \num{0.196}		\\
+	& \num{0.25}	& \num{-0.195}		& \num{0.004}		& \num{0.191} 		\\	
+	\end{tabular}
+	\caption{Values for $A_\mathrm{FB}$ calculated with the exact formula (20) given in \cite{instructions} for different center of mass energies and Weinberg angles.}
+\end{table}
 
 
 
