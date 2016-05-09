@@ -249,7 +249,7 @@ To cover most of the solid angle it had a barrel-like structure and consisted of
 For tracking and vertex reconstruction purposes the inner part is formed by a semiconductor strip detector and multiple proportional chambers.
 To measure the momentum of charged particles, the whole inner detector is surrounded by a solenoid which creates a magnetic field.
 The solenoid is followed by the calorimeters, first the electromagnetic and after that the hadronic one.
-As a last layer muon chambers are installed which consist of a tracking detector themselves \korr{why}.
+As a last layer muon chambers are installed which consist of a tracking detector themselves.
 \korr{OPAL Bild?}
 
 \subsection{Problems}
@@ -287,8 +287,7 @@ total decay width
 
 On the first day the software \texttt{GROPE} was used to study event displays and detector responses of the OPAL detector.
 
-\subsection{Part I: Analysis of Event Displays}
-\korr{Name der subsection?}
+\subsection{Classification of Events by Detector Response}
 
 To learn how to distinguish the different decay channels of the Z boson Monte-Carlo simulated test samples with events with only one decay mode have been investigated.
 In the following part the measured properties of the observed events and exemplary pictures of the detector response are presented.
@@ -308,7 +307,8 @@ The variables given for every event are presented in table \ref{tab:desc_variabl
 	\caption{Description of the variables in the $\mathrm{Z}^0$ decay datasets. Momenta and energies are always given in units of GeV.}
 	\label{tab:desc_variables_tag1}
 \end{table}
-\korr{Generell: wieso keine bilder in seitenansicht? \& vllt. generell effekte erklären die in den tabellen erwähnt wurden (allgemein)}
+Deviations from ideal signals can always occur and have been noted in the tables.
+Those can originate either as additional signals from background radiation, e.g. cosmic muons or as deviations from the expected theoretical detector response, e.g. bremsstrahlung photons being emitted from electrons in the initial and final state can cause kinks in the tracks.
 
 \clearpage
 \subsubsection{Z$^0\rightarrow e^+e^-$}
@@ -324,7 +324,16 @@ Additional hits in the electromagnetic calorimeters probably occur due to bremss
 \end{sidewaystable}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\textwidth]{./data/tag1/ee_pics/cropped/ee_02}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=.75\textwidth]{./data/tag1/ee_pics/cropped/ee_02}
+		\subcaption{Front view}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=.75\textwidth]{./data/tag1/ee_pics/cropped/ee_02_side}
+		\subcaption{Side view}
+	\end{subfigure}
 	\caption{Exemplary picture of a $Z^0\rightarrow e^+e^-$ event. Electron and positron are emitted back to back, leave a track in the inner detector (light blue) and are stopped in the electromagnetic calorimeter (yellow).}
 \end{figure}
 \clearpage
@@ -340,7 +349,16 @@ In general, muons are also created in a back to back configuration and leave a t
 \end{sidewaystable}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\textwidth]{./data/tag1/mm_pics/cropped/mm_02}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=.75\textwidth]{./data/tag1/mm_pics/cropped/mm_02}
+		\subcaption{Front view}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=.75\textwidth]{./data/tag1/mm_pics/cropped/mm_02_side}
+		\subcaption{Side view}
+	\end{subfigure}
 	\caption{Exemplary picture of a $Z^0\rightarrow \mu^+\mu^-$ event. The muons are emitted back to back, leave a track in the inner detector (light blue) and small entries in the electromagnetic calorimeter (yellow) and the hadronic calorimeter (purple). They are identified as muons in the muon detector (red arrow).}
 \end{figure}
 \clearpage
@@ -363,7 +381,16 @@ All hadrons create a shower in the hadronic calorimeter but depending on their c
 \end{sidewaystable}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\textwidth]{./data/tag1/tt_pics/cropped/tt_05}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=.75\textwidth]{./data/tag1/tt_pics/cropped/tt_05}
+		\subcaption{Front view}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=.75\textwidth]{./data/tag1/tt_pics/cropped/tt_05_side}
+		\subcaption{Side view}
+	\end{subfigure}
 	\caption{Exemplary picture of a $Z^0\rightarrow \tau^+\tau^-$ event. A 1-prong and a 3-prong is observable. The 1-prong event can be identified as a muon while the 3-prong consists of pions which are detected in the electromagnetic calorimeter (in case of $\pi^0$) and the hadronic calorimeter ($\pi^\pm$).}
 \end{figure}
 \clearpage
@@ -380,7 +407,16 @@ The hadrons are stopped and seen as showers in the hadronic calorimeter.
 \end{sidewaystable}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\textwidth]{./data/tag1/qq_pics/cropped/qq_04}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=.75\textwidth]{./data/tag1/qq_pics/cropped/qq_04}
+		\subcaption{Front view}
+	\end{subfigure}
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=.75\textwidth]{./data/tag1/qq_pics/cropped/qq_04_side}
+		\subcaption{Side view}
+	\end{subfigure}
 	\caption{Exemplary picture of a $Z^0\rightarrow q\bar{q}$ event. One of the jets can be identified as a muonic event while the other tracks consist of electromagnetically interacting particles and hadrons.}
 \end{figure}
 \clearpage
@@ -414,7 +450,13 @@ In order to get optimal cut criteria, the data from all Monte-Carlo simulated sa
 	\caption{Distributions of the measured parameters for the different types of decay channels. To find cuts to differentiate between the decay channels the overlap of two distributions should be minimized without loosing two many events of the distribution of the particle type that shall be identified. All energies are given in \si{GeV}.}
 	\label{fig:histograms}
 \end{figure}
-The used cuts are given in table \ref{tab:cut_criteria_day1} and can be reviewed by looking on the events in a test sample (dataset number 1 was used). \korr{Erklären wieso welcher cut gewählt wurde. Missing momentum von neutrinos etc.}
+The used cuts are given in table \ref{tab:cut_criteria_day1} and can be reviewed by looking on the events in a test sample (dataset number 1 was used). 
+Since all leptons produce mostly two or in case of the $\tau$ decay only a few charged particles this was a good possibility to distinguish decays where jets are formed from the leptonic ones.
+Electrons are light, electromagnetically interacting particles and hence deposit all their energy in the electromagnetic calorimeter and no energy in the hadronic calorimeter which explains why we chose Ecal(SumE) to be larger than \SI{60}{GeV} and Hcal(SumE) to be smaller than \SI{2}{GeV}.
+Muons lose only a small energy in the calorimeters, that is why those entries should be small compared to the measured momentum of the charged tracks.
+To separate taus from muons and hadrons the momentum of all charged tracks could be used.
+Since electrons and taus have nearly the same distribution for this variable a further separation is needed which can be done with the deposited energy in the electromagnetic calorimeter.
+In general, since taus can decay to many different particles, they are difficult to identify by cuts.
 All of the decay channels found with the cut criteria could be verified by analysis of event displays.
 \begin{table}[htb]
 	\centering
@@ -425,7 +467,7 @@ All of the decay channels found with the cut criteria could be verified by analy
 \begin{sidewaystable}
 	\centering
 		\input{./tables/tag1/testsample}
-	\caption{Collected data from the events in the test sample dataset. All values for energies and momenta in \si{GeV}.\korr{Bewertung dieser Tabelle? Hats funktioniert? \& was ist decay mode? -- ich glaube das ist die bestimmung mit den cuts nicht per hand}}
+	\caption{Collected data from the events in the test sample dataset. The given decay channel is the classification based on the previously formulated cuts. All values for energies and momenta in \si{GeV}.}
 \end{sidewaystable}
 
 \clearpage
