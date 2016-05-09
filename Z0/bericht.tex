@@ -260,8 +260,22 @@ On the first day the software \texttt{GROPE} was used to study event displays an
 
 To learn how to distinguish the different decay channels of the Z boson Monte-Carlo simulated test samples with events with only one decay mode have been investigated.
 In the following part the measured properties of the observed events and exemplary pictures of the detector response are presented.
-For every event the number of charged tracks (Ctrk(N)), the scalar sum of all momenta of charged tracks (Ctrk(SumP)) and the total energy deposited in the electromagnetic or hadronic calorimeter (Ecal(SumE) or Hcal(SumE) respectively) is noted in the corresponding tables.
-\korr{Variablen in kleiner Tabelle erklären. Vgl.\ Tabelle in Pt. 2}
+The variables given for every event are presented in table \ref{tab:desc_variables_tag1}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{0.9\textwidth}{lX}
+		\toprule
+		\textbf{Variable} & \textbf{Description} \\
+		\midrule		
+		Ctrk(N) 	& Number of charged particle tracks in the tracking detector \\
+		Ctrk(SumP) 	& Total momentum of all charged particle tracks in the tracking detector \\
+		Ecal(SumE)	& Total energy deposited in the electromagnetic calorimeter \\
+		Hcal(SumE)	& Total energy deposited in the hadronic calorimeter \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Description of the variables in the $\mathrm{Z}^0$ decay datasets. Momenta and energies are always given in units of GeV.}
+	\label{tab:desc_variables_tag1}
+\end{table}
 \korr{Generell: wieso keine bilder in seitenansicht? \& vllt. generell effekte erklären die in den tabellen erwähnt wurden (allgemein)}
 
 \clearpage
@@ -285,7 +299,7 @@ Additional hits in the electromagnetic calorimeters probably occur due to bremss
 \subsubsection{Z$^0\rightarrow \mu^+\mu^-$}
 
 Muons are detected in the muon chambers which form the outermost part of the detector.
-Since all other particles (except the non-detectable neutrinos) are stopped before reaching the muon chamber a signal there can -- neglecting noise hits\korr{wie unterscheiden sich diese?} -- be identified as a muon. 
+Since all other particles (except the non-detectable neutrinos) are stopped before reaching the muon chamber a detected particle there can be identified as a muon. 
 In general, muons are also created in a back to back configuration and leave a track in the tracking detector.
 \begin{sidewaystable}
 	\centering
@@ -303,7 +317,8 @@ In general, muons are also created in a back to back configuration and leave a t
 Because of the short lifetime of the $\tau$ lepton it can not be detected directly but by its decay products.
 Because it can decay in both leptons and hadrons there are two possible types of detector responses.
 In a leptonic $\tau$ decay an electron or muon and two neutrinos are created and seen as charged tracks in the inner detector.
-They cause signals either in the electromagnetic calorimeter or in the muon chambers while the neutrinos are not detected.\korr{missing momentum is wichtig um zu erklären wie man schneidet}
+They cause signals either in the electromagnetic calorimeter or in the muon chambers while the neutrinos are not detected.
+Since neutrinos carry momentum this leads to a smaller value for the measured final state compared to the initial state momentum.
 
 In a hadronic $\tau$ decay a neutrino and hadrons are produced.
 All hadrons create a shower in the hadronic calorimeter but depending on their charge a track can not always be observed.
