@@ -254,6 +254,8 @@ As a last layer muon chambers are installed which consist of a tracking detector
 
 \subsection{Problems}
 \subsubsection{Calculation of Partial Decay Widths}
+\korr{Tabelle mit weak charges, ladungen und kopplungsfaktoren für die verschiedenen teilchen}
+\cite{instructions}
 \begin{align*}
 	&\Gamma_f = \frac{N_\mathrm{c}^f \sqrt{2}}{12 \pi} G_\mathrm{F} M_\mathrm{Z}^3 \left( {g_\mathrm{V}^f}^2 + {g_\mathrm{A}^f}^2 \right)\\
 	&g_\mathrm{V}^f = I_3^f - 2 Q_f \sin\theta_\mathrm{W}\\
@@ -268,13 +270,51 @@ Partial widths
 	&\Gamma_\mathrm{d} = \SI{367.8}{MeV}
 \end{align*}
 \begin{align*}
-\Gamma_\mathrm{hadrons} = 2\Gamma_\mathrm{u} + 3\Gamma_\mathrm{d}
+\Gamma_\mathrm{hadrons} &= 2\Gamma_\mathrm{u} + 3\Gamma_\mathrm{d} \\
+&= \SI{1.67}{GeV}
 \end{align*}
+\begin{align*}
+	\Gamma_\mathrm{ch.~leptons} = 3\Gamma_\ell = \SI{250}{MeV}
+\end{align*}
+\begin{align*}
+	\Gamma_\mathrm{neutrinos} = 3\Gamma_\nu =\SI{498}{MeV}
+\end{align*}
+
 total decay width
 \begin{align*}
 	\Gamma_\mathrm{Z} &= \Gamma_\mathrm{hadrons} + 3 \Gamma_\ell + 3\Gamma_\nu \\
 	&= \SI{2.42}{GeV}
 \end{align*}
+
+\subsubsection{Partial Cross Sections}
+\cite{instructions}
+\begin{align*}
+	\sigma_f^\mathrm{peak} = \frac{12 \pi}{M_\mathrm{Z}^2} \frac{\Gamma_\mathrm{e}}{\Gamma_\mathrm{Z}} \frac{\Gamma_f}{\Gamma_\mathrm{Z}}
+\end{align*}
+
+\begin{align*}
+	&\sigma_\ell^\mathrm{peak} = \SI{2.09}{nb}\\
+	&\sigma_\nu^\mathrm{peak} = \SI{4.16}{nb}\\
+	&\sigma_\mathrm{u}^\mathrm{peak} = \SI{7.16}{nb} \\
+	&\sigma_\mathrm{d}^\mathrm{peak} = \SI{9.23}{nb} 
+\end{align*}
+
+\subsubsection{Decay into additional pair???}
+\korr{Formel?}
+\begin{align*}
+	&\mathrm{ch.~lepton:} ~ 3.4\% \\
+	&\mathrm{up~type:} ~ 11.8 \% \\
+	&\mathrm{down~type:} ~ 15.2 \% \\
+	&\mathrm{neutrino:} ~ 6.9 \%
+\end{align*}
+
+\subsubsection{Angular distribution}
+\korr{noch summe (wie sind die einzelnen channels normiert?) und verteilung für muonen}
+\begin{figure}
+	\centering
+	\includegraphics{./figures/s_t_channel.pdf}
+	\caption{Bla}
+\end{figure}
 
 
 
