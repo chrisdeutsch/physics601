@@ -249,8 +249,37 @@ The solenoid is followed by the calorimeters, first the electromagnetic and afte
 As a last layer muon chambers are installed which consist of a tracking detector themselves \korr{why}.
 \korr{OPAL Bild?}
 
+\subsection{Problems}
+\subsubsection{Calculation of Partial Decay Widths}
+\begin{align*}
+	&\Gamma_f = \frac{N_\mathrm{c}^f \sqrt{2}}{12 \pi} G_\mathrm{F} M_\mathrm{Z}^3 \left( {g_\mathrm{V}^f}^2 + {g_\mathrm{A}^f}^2 \right)\\
+	&g_\mathrm{V}^f = I_3^f - 2 Q_f \sin\theta_\mathrm{W}\\
+	&g_\mathrm{A}^f = I_3^f
+\end{align*}
+\korr{Größen erklären}
+Partial widths
+\begin{align*}
+	&\Gamma_\ell = \SI{83.4}{MeV} \\
+	&\Gamma_\nu = \SI{165.9}{MeV} \\
+	&\Gamma_\mathrm{u} = \SI{285.3}{MeV} \\
+	&\Gamma_\mathrm{d} = \SI{367.8}{MeV}
+\end{align*}
+\begin{align*}
+\Gamma_\mathrm{hadrons} = 2\Gamma_\mathrm{u} + 3\Gamma_\mathrm{d}
+\end{align*}
+total decay width
+\begin{align*}
+	\Gamma_\mathrm{Z} &= \Gamma_\mathrm{hadrons} + 3 \Gamma_\ell + 3\Gamma_\nu \\
+	&= \SI{2.42}{GeV}
+\end{align*}
 
-\korr{Vorbereitungsaufgaben}
+
+
+
+
+
+
+
 \section{Part I: Analysis of Event Displays}
 
 On the first day the software \texttt{GROPE} was used to study event displays and detector responses of the OPAL detector.
