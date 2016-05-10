@@ -237,8 +237,8 @@ Possible Feynman diagrams for the mentioned processes are shown in figure \ref{f
 \subsubsection{Forward-Backward Asymmetry A$_\mathrm{FB}$}
 
 In a $e^+e^- \rightarrow f\bar{f}$ reaction the differential cross section of the produced fermions is different for the forward and backward hemispheres.
-Those are defined by the angle $\theta$ between incoming positron and outgoing positively charged particle.
-In this lab experiment, the asymmetry A$_\mathrm{FB}$ is measured in $e^+e^- \rightarrow \mu^+\mu^-$ events. 
+Those are defined by the angle $\theta$ \korr{Großes Theta kleine Theta?} between incoming positron and outgoing positively charged particle.
+In this lab experiment, the asymmetry $A_\mathrm{FB}$ is measured in $e^+e^- \rightarrow \mu^+\mu^-$ events. 
 The asymmetry $A_\mathrm{FB}$is defined by
 \begin{align*}
 	A_\mathrm{FB}=\frac{\int_{0}^{1}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}-\int_{-1}^{0}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}}{\int_{0}^{1}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}+\int_{-1}^{0}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}}
@@ -390,11 +390,13 @@ Those can originate either as additional signals from background radiation, e.g.
 
 \clearpage
 \subsubsection{Z$^0\rightarrow e^+e^-$}
-
+\korr{Momentum of the electrons (small mass -- equal energy)? Curvature in magnetic field (barely any because electrons carry most of the momentum but can be used for momentum measurement)? }
 A decay into electrons can easily be identified by the energy deposited in the electromagnetic calorimeters.
-The final state particles are flying approximately in opposite direction and are ideally completely stopped in the electromagnetic calorimeter.
+The final state particles are flying approximately in opposite direction and are ideally completely stopped in the electromagnetic calorimeter.\korr{How does this work? Electromagnetic shower.}
 A track for every particle can be observed in the tracking chamber.
-Additional hits in the electromagnetic calorimeters probably occur due to bremsstrahlung photons which leave no track in the inner detector.
+Additional hits in the electromagnetic calorimeters probably occur due to bremsstrahlung photons which leave no track in the inner detector\korr{Was bedeutet das für die Variablen? -- Die CM energie kann nicht im SumP beobachtet werden weil Photon ungeladen jedoch im ecal}. \korr{Woher kommen mehr als 2 tracks?}
+\korr{Interpretation der Tabellen muss aufjedenfall gemacht werden. D.h. typische response -- electronen wenig tracks fast die gesamte energie (SumP = Ecal) im Calo deponiert. Geladene tracks tragen die gesamte energie, hcal is nichts bis kaum was}
+\korr{Außerdem fehlen verweise auf das eventdisplay und die tabelle}
 \begin{sidewaystable}
 	\centering
 	\input{./tables/tag1/ee}
@@ -417,9 +419,12 @@ Additional hits in the electromagnetic calorimeters probably occur due to bremss
 \clearpage
 \subsubsection{Z$^0\rightarrow \mu^+\mu^-$}
 
-Muons are detected in the muon chambers which form the outermost part of the detector.
-Since all other particles (except the non-detectable neutrinos) are stopped before reaching the muon chamber a detected particle there can be identified as a muon. 
+Muons are detected in the muon chambers which form the outermost part of the detector.\korr{Was ist das? Ich würde den nachfolgenden satz mit dem hier tauschen. -- Muonen interagieren kaum weil soundso daher in muonendetektoren (trackern) im außenbereich ist man sich sicher dass es muonen sind}
+Since all other particles (except the non-detectable neutrinos) are stopped before reaching the muon chamber a detected particle there can be identified as a muon\korr{Warum tun die das nicht? Viel schwerer und damit geringere wahrscheinlichkeit schauer auszulösen da bremsstrahlung stark unterdrückt (wie ist die proportionalität?)}. 
 In general, muons are also created in a back to back configuration and leave a track in the tracking detector.
+\korr{Ref auf Tabelle und Bild. Was beudeutet das für die typische Signatur?}
+\korr{Anzahl tracks scheint immer 2 zu sein? warum ist das so? Wie sieht die signatur in den Kalorimetern aus? Muonen interagieren auch in den Kalorimetern wie man sieht.}
+\korr{Das kosmische Muon erwähnen. Woran sieht man auch noch dass es kosmisch sein muss? SumP}
 \begin{sidewaystable}
 	\centering
 	\input{./tables/tag1/mm}
@@ -442,14 +447,17 @@ In general, muons are also created in a back to back configuration and leave a t
 \clearpage
 \subsubsection{Z$^0\rightarrow \tau^+\tau^-$}
 
-Because of the short lifetime of the $\tau$ lepton it can not be detected directly but by its decay products.
-Because it can decay in both leptons and hadrons there are two possible types of detector responses.
+Because of the short lifetime\korr{Wie groß? Wie groß ist der mittlere Weg? Steht im PDG.} of the $\tau$ lepton it can not be detected directly but by its decay products \korr{Was sehen wir in den events? tau und antitau also effektiv sind in den events 2 tau zerfälle}.
+Because it can decay in both leptons and hadrons there are two possible types of detector responses\korr{wichtig dass das nicht ausschließlich in pionen zerfällt}.
 In a leptonic $\tau$ decay an electron or muon and two neutrinos are created and seen as charged tracks in the inner detector.
 They cause signals either in the electromagnetic calorimeter or in the muon chambers while the neutrinos are not detected.
 Since neutrinos carry momentum this leads to a smaller value for the measured final state compared to the initial state momentum.
+\korr{Gut das erklärt SumP. Die restliche Detektorresponse vllt noch etwas ausführen. Anzahl der Tracks? Was ist Prong?}
 
 In a hadronic $\tau$ decay a neutrino and hadrons are produced.
 All hadrons create a shower in the hadronic calorimeter but depending on their charge a track can not always be observed.
+\korr{Was sind die wichtigsten Zerfälle vom tau? Wie erklärt sich der große eintrag in den Ecals? Vgl. Zerfall von $\pi^0$ in zwei photonen}
+\korr{Referenzen auf Tabelle und Bilder}
 \begin{sidewaystable}
 	\centering
 	\resizebox{\textwidth}{!}{
@@ -469,19 +477,20 @@ All hadrons create a shower in the hadronic calorimeter but depending on their c
 		\includegraphics[width=.75\textwidth]{./data/tag1/tt_pics/cropped/tt_05_side}
 		\subcaption{Side view}
 	\end{subfigure}
-	\caption{Exemplary picture of a $Z^0\rightarrow \tau^+\tau^-$ event. A 1-prong and a 3-prong is observable. The 1-prong event can be identified as a muon while the 3-prong consists of pions which are detected in the electromagnetic calorimeter (in case of $\pi^0$) and the hadronic calorimeter ($\pi^\pm$).}
+	\caption{Exemplary picture of a $Z^0\rightarrow \tau^+\tau^-$ event. A 1-prong and a 3-prong is observable. The 1-prong event can be identified as a muon while the 3-prong consists of pions which are detected in the electromagnetic calorimeter (in case of $\pi^0$)\korr{sieht man wirklich die pionen? ungeladene pionen zerfallen schnell in 2 photonen} and the hadronic calorimeter ($\pi^\pm$).}
 \end{figure}
 \clearpage
 \subsubsection{Z$^0\rightarrow q\bar{q}$}
 
-Decays of Z$^0$ into quark-antiquark pairs always produce jets where quarks hadronize to mesons or baryons.
-Those can be identified as a large number of charged tracks in the tracking system.
-In addition some of the hadrons decay into leptons which can be seen as signal in the electromagnetic calorimeter or the muon chambers.
+Decays of Z$^0$ into quark-antiquark pairs always produce jets where quarks hadronize to mesons or baryons. \korr{Wie geht das grob?}
+Those can be identified as a large number of charged tracks in the tracking system. \korr{Mit teilweise starker Krümmung.}
+In addition some of the hadrons decay into leptons which can be seen as signal in the electromagnetic calorimeter or the muon chambers. \korr{Was ist mit Photonen?}
 The hadrons are stopped and seen as showers in the hadronic calorimeter.
+\korr{Referenzen auf Bilder und Tabelle}
 \begin{sidewaystable}
 	\centering
 	\input{./tables/tag1/qq}
-	\caption{Collected data from the hadronic dataset. All values for energies and momenta in \si{GeV}. If unambiguously determinable, the number of jets is given.}
+	\caption{Collected data from the hadronic dataset. All values for energies and momenta in \si{GeV}. If unambiguously determinable, the number of jets is given. \korr{Kommentare sind so meh}}
 \end{sidewaystable}
 \begin{figure}[h]
 	\centering
