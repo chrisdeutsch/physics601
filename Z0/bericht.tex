@@ -235,14 +235,16 @@ Possible Feynman diagrams for the mentioned processes are shown in figure \ref{f
 \end{figure}
 
 \subsubsection{Forward-Backward Asymmetry A$_\mathrm{FB}$}
+\label{sec:afb}
 
 In a $e^+e^- \rightarrow f\bar{f}$ reaction the differential cross section of the produced fermions is different for the forward and backward hemispheres.
 Those are defined by the angle $\Theta$ between incoming positron and outgoing positively charged particle.
 In this lab experiment, the asymmetry $A_\mathrm{FB}$ is measured in $e^+e^- \rightarrow \mu^+\mu^-$ events. 
 The asymmetry $A_\mathrm{FB}$is defined by
-\begin{align*}
+\begin{align}
 	A_\mathrm{FB}=\frac{\int_{0}^{1}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}-\int_{-1}^{0}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}}{\int_{0}^{1}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}+\int_{-1}^{0}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}}
-\end{align*}
+	\label{eq:afb}
+\end{align}
 with the cross-section $\sigma$ \cite{instructions}.
 For a center of mass energy $\sqrt{s}=M_\mathrm{Z^0}$ and by restricting oneself to leptons this can be approximated by \cite{instructions}
 \begin{align*}
@@ -279,8 +281,6 @@ This can be done using equation (13) from \cite{instructions}
 	\label{eqn:decaywidth}
 \end{align}
 with the color factor $N_c^f$ which is 1 for leptons and 3 for quarks and the coupling constants
-\korr{Tabelle mit weak charges, ladungen und kopplungsfaktoren für die verschiedenen teilchen}
-\cite{instructions}
 \begin{align*}
 	&g_\mathrm{V}^f = I_3^f - 2 Q_f \sin\theta_\mathrm{W}\\
 	&g_\mathrm{A}^f = I_3^f \\
@@ -288,8 +288,8 @@ with the color factor $N_c^f$ which is 1 for leptons and 3 for quarks and the co
 	&v_f = \frac{g_\mathrm{V}^f}{2\sin\theta_\mathrm{W}\cos\theta_\mathrm{W}}\\
 	&a_f = \frac{g_\mathrm{A}^f}{2\sin\theta_\mathrm{W}\cos\theta_\mathrm{W}}
 \end{align*}
-The values for the weak charge $Q_f$, the third component of the weak isospin $I_3^f$ and the Weinberg angle $\theta_\mathrm{W}$ are given in table \korr{REF}\\
-With \ref{eqn:decaywidth} the partial widths can be computed as
+The values for the weak charge $Q_f$, the third component of the weak isospin $I_3^f$ and the Weinberg angle $\theta_\mathrm{W}$ are given in table \korr{REF}\korr{Tabelle mit weak charges, ladungen und kopplungsfaktoren für die verschiedenen teilchen}\\
+With \eqref{eqn:decaywidth} the partial widths can be computed as
 \begin{align*}
 	&\Gamma_\ell = \SI{83.4}{MeV} \\
 	&\Gamma_\nu = \SI{165.9}{MeV} \\
@@ -297,6 +297,7 @@ With \ref{eqn:decaywidth} the partial widths can be computed as
 	&\Gamma_\mathrm{d} = \SI{367.8}{MeV}
 \end{align*}
 where $\Gamma_\mathrm{u}$ and $\Gamma_\mathrm{d}$ hold for all up or down type quarks.
+These values match with predicted values based on theoretical approaches given in table 1 in \cite{instructions} regarding that the above decay widths have been calculated under simplifying assumptions. 
 With this result the hadronic decay width can be calculated knowing that two up-type quarks (up and charm) and three down-type quarks (down, strange and bottom) can be produced. The top quark can not be created in a process involving the Z boson since its mass is too large.
 \begin{align*}
 \Gamma_\mathrm{hadrons} &= 2\Gamma_\mathrm{u} + 3\Gamma_\mathrm{d} \\
@@ -309,44 +310,59 @@ All three lepton generations ($e$, $\mu$, $\tau$) can occur in the final state s
 	\Gamma_\mathrm{neutrinos} = 3\Gamma_\nu =\SI{498}{MeV}
 \end{align*}
 Using the previous results the total decay width for the Z boson can be calculated in the following way:
-\begin{align*}
-	\Gamma_\mathrm{Z} &= \Gamma_\mathrm{hadrons} + 3 \Gamma_\ell + 3\Gamma_\nu \\
-	&= \SI{2.42}{GeV}\quad\text{.}
-\end{align*}
+\begin{align}
+	\Gamma_\mathrm{Z} &= \Gamma_\mathrm{hadrons} + \Gamma_\mathrm{ch. leptons} + \Gamma_\mathrm{neutrinos} \notag\\
+	&= 2\Gamma_\mathrm{u} + 3\Gamma_\mathrm{d} + 3 \Gamma_\ell + 3\Gamma_\nu \label{eq:total_decay_width}\\
+	&= \SI{2.42}{GeV}\notag\quad\text{.}
+\end{align}
 
 \subsubsection{Partial Cross Sections}
-\cite{instructions}
+The partial cross sections can be calculated using equation (15) from \cite{instructions} under the assumption to have a center of mass energy near the Z resonance:
 \begin{align*}
 	\sigma_f^\mathrm{peak} = \frac{12 \pi}{M_\mathrm{Z}^2} \frac{\Gamma_\mathrm{e}}{\Gamma_\mathrm{Z}} \frac{\Gamma_f}{\Gamma_\mathrm{Z}}
 \end{align*}
-
+With the Z mass (\SI{91.19}{GeV} \cite{pdg}) and the calculated decay widths from section \ref{sec:calc_partial_width} the cross sections are given by:
 \begin{align*}
 	&\sigma_\ell^\mathrm{peak} = \SI{2.09}{nb} \\
 	&\sigma_\nu^\mathrm{peak} = \SI{4.16}{nb} \\
 	&\sigma_\mathrm{u}^\mathrm{peak} = \SI{7.16}{nb} \\
-	&\sigma_\mathrm{d}^\mathrm{peak} = \SI{9.23}{nb} 
+	&\sigma_\mathrm{d}^\mathrm{peak} = \SI{9.23}{nb} \quad\text{.}
 \end{align*}
 
-\subsubsection{Decay into additional pair???}
-\korr{Formel?}
-\begin{align*}
-	&\mathrm{ch.~lepton:} ~ 3.4\% \\
-	&\mathrm{up~type:} ~ 11.8 \% \\
-	&\mathrm{down~type:} ~ 15.2 \% \\
-	&\mathrm{neutrino:} ~ 6.9 \%
-\end{align*}
+\subsubsection{Decay into additional pair}
+Using the total width of the Z resonance given in \eqref{eq:total_decay_width} the hypothetical percentage change of the Z resonance in case of a fourth pair of light fermions calculated.
+To do so it is necessary to increase the corresponding prefactor of the partial decay width by one.
+The change of the width of the Z resonance for the different cases of an additional light fermion is given below:
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+	charged lepton: & 3.4\% \\
+	up~type quark: & 11.8 \% \\
+	down~type quark: & 15.2 \% \\
+	neutrino: & 6.9 \%
+\end{tabular}
+\end{table}
+
 
 \subsubsection{Angular distribution}
-\korr{noch summe (wie sind die einzelnen channels normiert?) und verteilung für muonen}
-\begin{figure}
+The angular distribution of the differential cross section for  $e^+e^-\rightarrow \mu^+\mu^-$ and $e^+e^-\rightarrow e^+e^-$ is shown in figure \ref{fig:channels}.
+While the reaction with muons in the final state is only possible with a s-channel interaction, in the electron-positron case there is also a reaction in the t-channel, see also figure \ref{fig:feynman}.
+The different channels in the latter case are assumed to have the same contribution to the differential cross section since the real contributions are not given.
+Because only the proportionalities are known, the differential cross section is given in arbitrary units.
+In order to distinguish between the two channels for $e^+e^-$ it is possible to restrict oneself to a certain range in $\theta_\mathrm{W}$.
+\begin{figure}[h]
 	\centering
 	\includegraphics{./figures/s_t_channel.pdf}
-	\caption{Bla \korr{proportionalitäten erwähnen. Und erwähnen dass s und t channel mit der gleichen proportionalitätskonstante in die summe eingehen was in der realität nicht unbedingt der fall sein muss. erklären wie man jetzt den s-channel filtert.}}
+	\caption{Differential cross section of the $e^+e^-\rightarrow \mu^+\mu^-$ and $e^+e^-\rightarrow e^+e^-$ processes. The different channels in the  $e^+e^-\rightarrow e^+e^-$ case are assumed to have the same contribution to the differential cross section.}
+	\label{fig:channels}
 \end{figure}
 
 \subsubsection{Forward-backward Asymmetry}
 
-\begin{table}[h]
+The forward-backward asymmetry $A_\mathrm{FB}$ already mentioned in section \ref{sec:afb} can be calculated using the exact formula (20) from \cite{instructions}.
+This is done for different values of the Weinberg angle and the center of mass energy.
+The results can be found in table \ref{tab:afb_theory}. 
+\begin{table}[H]
 	\centering
 	\begin{tabular}{cl|ccc}
 	& 			& \multicolumn{3}{c}{center of mass energy $\sqrt{s}$} 		\\
@@ -357,9 +373,10 @@ Using the previous results the total decay width for the Z boson can be calculat
 	& \num{0.25}	& \num{-0.195}		& \num{0.004}		& \num{0.191} 		\\	
 	\end{tabular}
 	\caption{Values for $A_\mathrm{FB}$ calculated with the exact formula (20) given in \cite{instructions} for different center of mass energies and Weinberg angles.}
+	\label{tab:afb_theory}
 \end{table}
 
-
+\clearpage
 \section{Part I: Analysis of Event Displays}
 
 On the first day the software \texttt{GROPE} was used to study event displays and detector responses of the OPAL detector.
@@ -676,7 +693,7 @@ In addition to these selection cuts the electron and muon-channels are cut in \t
 
 \subsubsection{Separating $s$- and $t$-Channel in $\mathrm{e}^+ + \mathrm{e}^- \rightarrow \mathrm{e}^+ + \mathrm{e}^-$ Events}
 \label{sec:s_t_channel_separation}
-In section \korr{REF Vorbereitungsaufgaben} it was determined the differential cross section of the scattering process ($t$-channel) is strongly peaked in the forward direction.
+In section \ref{sec:problems} it was determined the differential cross section of the scattering process ($t$-channel) is strongly peaked in the forward direction.
 This process only contributes marginally to the total differential cross section of $t$- and $s$-channel in the backward direction.
 Therefore by constraining the scattering angle to larger values a selection of the annihilation process can be performed.
 For the case of annihilation the contribution of the intermediate Z-boson to the cross section is dominant, at center of mass energies comparable to the Z-mass.
