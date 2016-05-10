@@ -63,8 +63,8 @@
 % Verweise innerhalb des Dokuments
 \usepackage{hyperref}
 \hypersetup{
-	colorlinks = true,
-	allcolors = {black}
+%	colorlinks = true,
+%	allcolors = {black}
 }
 
 % bessere Tabellenlayouts
@@ -121,7 +121,7 @@
 \newcommand{\korr}[1]{{\color{red}(#1)}}
 
 % DOKUMENTINFORMATIONEN
-\title{E213 \\ Analysis of Decays of Heavy Vector Boson Z$_0$}
+\title{E213 \\ Analysis of $\mathrm{Z}^0$ Decays}
 
 \author{Christopher Deutsch\footnote{christopher.deutsch@uni-bonn.de} \and Christian Bespin\footnote{christian.bespin@uni-bonn.de}}
 
@@ -271,6 +271,7 @@ As a last layer muon chambers are installed which consist of a tracking detector
 In the following the questions that should have been solved before performing the experiment are presented.
 \label{sec:problems}
 \subsubsection{Calculation of Partial Decay Widths}
+\label{sec:calc_partial_width}
 The theoretical values for the partial decay widths of $Z^0$ decays into charged leptons and hadrons is calculated at first.
 This can be done using equation (13) from \cite{instructions}
 \begin{align*}
@@ -282,7 +283,7 @@ with the color factor $N_c^f$ which is 1 for leptons and 3 for quarks and the co
 \begin{align*}
 	&g_\mathrm{V}^f = I_3^f - 2 Q_f \sin\theta_\mathrm{W}\\
 	&g_\mathrm{A}^f = I_3^f \\
-	\intertext{for vector and axial-vector coupling that lead to the vector and axial-vector coupling between Z-boson and fermion-antifermion pairs}
+	\intertext{for vector and axial-vector coupling of the weak interaction that lead to the vector and axial-vector coupling between Z-boson and fermion-antifermion pairs}
 	&v_f = \frac{g_\mathrm{V}^f}{2\sin\theta_\mathrm{W}\cos\theta_\mathrm{W}}\\
 	&a_f = \frac{g_\mathrm{A}^f}{2\sin\theta_\mathrm{W}\cos\theta_\mathrm{W}}
 \end{align*}
@@ -400,7 +401,7 @@ Additional hits in the electromagnetic calorimeters probably occur due to bremss
 More than the expected two tracks can be observed which originate from an emmited photon that undergoes pair production or from $\delta$-electrons.
 
 Typically electrons have a detector response containing only a few charged tracks and deposit all of their energy in the electromagnetic calorimeter which equals approximately the measured \texttt{Ctrk(SumP)}.
-The values for all events in the electron dataset is given in table \ref{tab:eventdisplay_ee} and one typical event display is shown in \ref{fig:eventdisplay_ee}.
+The values for all events in the electron dataset are given in table \ref{tab:eventdisplay_ee} and one typical event display is shown in \ref{fig:eventdisplay_ee}.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}{\textwidth}
@@ -419,7 +420,7 @@ The values for all events in the electron dataset is given in table \ref{tab:eve
 	\caption{Exemplary picture of a $Z^0\rightarrow e^+e^-$ event. Electron and positron are emitted back to back, leave a track in the inner detector (light blue) and are stopped in the electromagnetic calorimeter (yellow).}
 	\label{fig:eventdisplay_ee}
 \end{figure}
-\begin{sidewaystable}
+\begin{sidewaystable}[h]
 	\centering
 	\input{./tables/tag1/ee}
 	\caption{Collected data from the electron dataset. All values for energies and momenta in \si{GeV}.}
@@ -429,15 +430,11 @@ The values for all events in the electron dataset is given in table \ref{tab:eve
 \subsubsection{Z$^0\rightarrow \mu^+\mu^-$}
 Muons have a large mass compared to electrons and have therefore a smaller probability to form showers and to emit bremsstrahlung.
 They can -- in contrast to all other types of particles (except neutrinos) -- reach the outer part of the detector and because of their small interactions, a signal in the muon chambers which form the outermost part of the detector can be identified as a muon. 
-In general, muons are also created in a back to back configuration and leave a track in the tracking detector.
-\korr{Ref auf Tabelle und Bild. Was beudeutet das für die typische Signatur?}
-\korr{Anzahl tracks scheint immer 2 zu sein? warum ist das so? Wie sieht die signatur in den Kalorimetern aus? Muonen interagieren auch in den Kalorimetern wie man sieht.}
-\korr{Das kosmische Muon erwähnen. Woran sieht man auch noch dass es kosmisch sein muss? SumP}
-\begin{sidewaystable}
-	\centering
-	\input{./tables/tag1/mm}
-	\caption{Collected data from the muon dataset. All values for energies and momenta in \si{GeV}.}
-\end{sidewaystable}
+In general, muons are also created in a back to back configuration and leave a track in the tracking detector which is shown in figure \ref{fig:eventdisplay_mm}.
+Since they can only be produced in pairs of $\mu^+\mu^-$ there are always two tracks visible although it is possible to have more tracks due to background radiation.
+Since most of the background is due to cosmic muons it can easily be identified if the number of muons is odd.
+In addition, the direction of the background muon can not be reconstructed to come from the interaction point and the additional momentum can be registered when looking at \texttt{Ctrk(Sump)}.
+The values for all events in the muon dataset are given in table \ref{tab:eventdisplay_mm}.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}{\textwidth}
@@ -454,28 +451,27 @@ In general, muons are also created in a back to back configuration and leave a t
 		\subcaption{Side view}
 	\end{subfigure}
 	\caption{Exemplary picture of a $Z^0\rightarrow \mu^+\mu^-$ event. The muons are emitted back to back, leave a track in the inner detector (light blue) and small entries in the electromagnetic calorimeter (yellow) and the hadronic calorimeter (purple). They are identified as muons in the muon detector (red arrow).}
+	\label{fig:eventdisplay_mm}
 \end{figure}
+\begin{sidewaystable}[h]
+	\centering
+	\input{./tables/tag1/mm}
+	\caption{Collected data from the muon dataset. All values for energies and momenta in \si{GeV}.}
+	\label{tab:eventdisplay_mm}
+\end{sidewaystable}
 \clearpage
 \subsubsection{Z$^0\rightarrow \tau^+\tau^-$}
 
-Because of the short lifetime\korr{Wie groß? Wie groß ist der mittlere Weg? Steht im PDG.} of the $\tau$ lepton it can not be detected directly but by its decay products \korr{Was sehen wir in den events? tau und antitau also effektiv sind in den events 2 tau zerfälle}.
-Because it can decay in both leptons and hadrons there are two possible types of detector responses\korr{wichtig dass das nicht ausschließlich in pionen zerfällt}.
+Because of the short lifetime the tau flies only a short range $c \tau = \SI{87}{\micro\meter}$ \cite{pdg} before it decays. Hence, the $\tau$ lepton it can not be detected directly but by its decay products where it is important to note that two different decays can be observed since the tau is produced as $\tau^+\tau^-$ pairs.
+Because both $\tau^+$ and $\tau^-$ can decay in either leptons or mainly hadrons there are two possible types of detector responses whereas in all processes a $\tau$ neutrino occurs.
 In a leptonic $\tau$ decay an electron or muon and two neutrinos are created and seen as charged tracks in the inner detector.
 They cause signals either in the electromagnetic calorimeter or in the muon chambers while the neutrinos are not detected.
 Since neutrinos carry momentum this leads to a smaller value for the measured final state compared to the initial state momentum.
-\korr{Gut das erklärt SumP. Die restliche Detektorresponse vllt noch etwas ausführen. Anzahl der Tracks? Was ist Prong?}
 
-In a hadronic $\tau$ decay a neutrino and hadrons are produced.
-All hadrons create a shower in the hadronic calorimeter but depending on their charge a track can not always be observed.
-\korr{Was sind die wichtigsten Zerfälle vom tau? Wie erklärt sich der große eintrag in den Ecals? Vgl. Zerfall von $\pi^0$ in zwei photonen}
-\korr{Referenzen auf Tabelle und Bilder}
-\begin{sidewaystable}
-	\centering
-	\resizebox{\textwidth}{!}{
-		\input{./tables/tag1/tt}
-	}
-	\caption{Collected data from the tau dataset. All values for energies and momenta in \si{GeV}. To identify the decay, only the charged particles are given. There are always neutrinos present which can not be detected and often times it is possible to have $\pi^0$ mesons that interact electromagnetically.}
-\end{sidewaystable}
+In a hadronic $\tau$ decay mostly pions or kaons are produced.
+While the neutral pion can decay into two photons which are detected as a shower in the electromagnetic calorimeter and explain a significant amount of energy measured in \texttt{Ecal(SumE)}, all other hadrons create a shower in the hadronic calorimeter but depending on their charge a track can not always be observed.
+Because of the many different possibilities for the $\tau$ decay, they are characterized by the number of charged tracks per initial $\tau$, called "prong".
+A $\tau$ event with a 1-prong consisting of a muon and a 3-prong with probably neutral pions decaying into photons and hadrons is shown in figure \ref{fig:eventdisplay_tt} while values for all events in the tau dataset are given in table \ref{tab:eventdisplay_tt}.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}{\textwidth}
@@ -491,8 +487,15 @@ All hadrons create a shower in the hadronic calorimeter but depending on their c
 		\includegraphics[width=.9\textwidth]{./data/tag1/tt_pics/cropped/tt_05_side}
 		\subcaption{Side view}
 	\end{subfigure}
-	\caption{Exemplary picture of a $Z^0\rightarrow \tau^+\tau^-$ event. A 1-prong and a 3-prong is observable. The 1-prong event can be identified as a muon while the 3-prong consists of pions which are detected in the electromagnetic calorimeter (in case of $\pi^0$)\korr{sieht man wirklich die pionen? ungeladene pionen zerfallen schnell in 2 photonen} and the hadronic calorimeter ($\pi^\pm$).}
+	\caption{Exemplary picture of a $Z^0\rightarrow \tau^+\tau^-$ event. A 1-prong and a 3-prong is observable. The 1-prong event can be identified as a muon while the 3-prong consists of hadrons which are identified in the hadronic calorimeter. The entries in the electromagnetic calorimeter are probably due to a neutral pion decaying into photons.}
+	\label{fig:eventdisplay_tt}
 \end{figure}
+\begin{sidewaystable}[h]
+	\centering
+	\input{./tables/tag1/tt}
+	\caption{Collected data from the tau dataset. All values for energies and momenta in \si{GeV}. To identify the decay, only the charged particles are given. There are always neutrinos present which can not be detected and often times it is possible to have $\pi^0$ mesons that interact electromagnetically.}
+	\label{tab:eventdisplay_tt}
+\end{sidewaystable}
 \clearpage
 \subsubsection{Z$^0\rightarrow q\bar{q}$}
 
@@ -1067,9 +1070,10 @@ These values can be compared with the literature \cite{pdg}
 	&\Gamma_\ell^\mathrm{PDG} = \SI{83.984 +- 0.086}{MeV} \\
 	&\Gamma_\mathrm{hadrons}^\mathrm{PDG} = \SI{1744.4 +- 2.0}{MeV}
 \end{align*}
-with the partial decay width of leptons~$\Gamma_\ell$ assuming lepton universality.
+with the partial decay width of charged leptons~$\Gamma_\ell$ assuming lepton universality.
 Within the errors all of the measured partial decay widths are consistent with the literature values.
-\korr{compare with exercise}
+Moreover these values can be compared to the theoretical predictions for the partial decay width in section~\ref{sec:calc_partial_width}.
+One observes that the deviation of the measured values from these predictions is slightly larger, which can be attributed to the fact that in calculating the partial decay widths only tree-level diagrams are considered.
 
 \subsubsection{Lepton Universality}
 According to lepton universality one would expect the same peak cross sections and partial widths for all lepton final states.
@@ -1197,72 +1201,70 @@ Finally a determination of the number of light neutrino generations could be per
 \newpage
 \section{Appendix}
 
-\subsection{Uncut MC-Data}
+\subsection{Variables of the MC-datasets after the Precut}
 \label{app:uncut_mc}
+In the following histograms of different variables of the Monte-Carlo datasets are summarized before applying any additional cut criteria besides the precut.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/pcharged_uncut.pdf}
-	\caption{text}
+	\caption{Distribution of the sum of charged particle momenta~\texttt{pcharged} for the Monte-Carlo simulations of electron (upper left), muon (upper right), tau (lower left) and hadronic final states (lower right). The momenta are given in units of GeV.}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/ncharged_uncut.pdf}
-	\caption{text}
+	\caption{Distribution of the number of charged particles~\texttt{ncharged} for the Monte-Carlo simulations of electron (upper left), muon (upper right), tau (lower left) and hadronic final states (lower right).}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/e_ecal_uncut.pdf}
-	\caption{text}
+	\caption{Distribution of the energy deposited in the electromagnetic calorimeter~\texttt{e\_ecal} for the Monte-Carlo simulations of electron (upper left), muon (upper right), tau (lower left) and hadronic final states (lower right). The energies are given in units of GeV.}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/e_hcal_uncut.pdf}
-	\caption{text}
+	\caption{Distribution of the energy deposited in the hadronic calorimeter~\texttt{e\_ecal} for the Monte-Carlo simulations of electron (upper left), muon (upper right), tau (lower left) and hadronic final states (lower right). The energies are given in units of GeV.}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/angular_mc/cropped/cos_theta.pdf}
-	\caption{text}
+	\caption{Distribution of the cosine of the scattering angle~\texttt{cos\_thet} for the Monte-Carlo simulations of electron (upper left), muon (upper right), tau (lower left) and hadronic final states (lower right). Undefined scattering angles (i.e.\ final states with multiple or no positively charged particles) are discarded.}
 	\label{fig:cos_theta_uncut}
 \end{figure}
 
-
 \clearpage
-\subsection{MC-Data using the Final Cuts}
+\subsection{Application of the Final Cuts to the MC-Datasets}
 \label{app:mc_final_cut}
+In the following histograms of \texttt{pcharged} of the different Monte-Carlo datasets are summarized after applying the selection cuts according to sections~\ref{sec:acceptance_detector}, \ref{sec:s_t_channel_separation} and table~\ref{tab:cut_criteria}.
+These histograms are used to obtain the number of events for the efficiency matrix formalism in section~\ref{sec:efficiency_matrix}.
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/final_cuts/cropped/electron_cut.pdf}
-	\caption{Electron cut}
+	\caption{Monte-Carlo datasets of electron (upper left), muon (upper right), tau (lower left) and hadronic events (lower right) after applying the selection cut for electrons.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/final_cuts/cropped/muon_cut.pdf}
-	\caption{Muon cut}
+	\caption{Monte-Carlo datasets of electron (upper left), muon (upper right), tau (lower left) and hadronic events (lower right) after applying the selection cut for muons.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/final_cuts/cropped/tau_cut.pdf}
-	\caption{Tau cut}
+	\caption{Monte-Carlo datasets of electron (upper left), muon (upper right), tau (lower left) and hadronic events (lower right) after applying the selection cut for taus.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/final_cuts/cropped/hadron_cut.pdf}
-	\caption{Hadron cut}
+	\caption{Monte-Carlo datasets of electron (upper left), muon (upper right), tau (lower left) and hadronic events (lower right) after applying the selection cut for hadrons.}
 \end{figure}
-
-
-
-
 
 
 \end{appendix}
