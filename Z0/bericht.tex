@@ -376,10 +376,10 @@ The variables given for every event are presented in table \ref{tab:desc_variabl
 		\toprule
 		\textbf{Variable} & \textbf{Description} \\
 		\midrule		
-		Ctrk(N) 	& Number of charged particle tracks in the tracking detector \\
-		Ctrk(SumP) 	& Total momentum of all charged particle tracks in the tracking detector \\
-		Ecal(SumE)	& Total energy deposited in the electromagnetic calorimeter \\
-		Hcal(SumE)	& Total energy deposited in the hadronic calorimeter \\
+		\texttt{Ctrk(N)} 	& Number of charged particle tracks in the tracking detector \\
+		\texttt{Ctrk(SumP)} 	& Total momentum of all charged particle tracks in the tracking detector \\
+		\texttt{Ecal(SumE)}	& Total energy deposited in the electromagnetic calorimeter \\
+		\texttt{Hcal(SumE)}	& Total energy deposited in the hadronic calorimeter \\
 		\bottomrule
 	\end{tabularx}
 	\caption{Description of the variables in the $\mathrm{Z}^0$ decay datasets. Momenta and energies are always given in units of GeV.}
@@ -510,9 +510,9 @@ The hadrons are stopped and seen as showers in the hadronic calorimeter.
 
 \subsection{Event Identification in Test Sample}
 
-Based on the observations from the previous exercise it was possible to evaluate cuts to apply on the data in order to distinguish between different decay channels of the Z boson.
-Those are given by the parameters measured or reconstructed in the detector, Ctrk(N), Ctrk(SumP), Ecal(SumE) and Hcal(SumE).
-In order to get optimal cut criteria, the data from all Monte-Carlo simulated samples has been histogrammed which is shown in figure \ref{fig:histograms}.
+Based on the observations from the previous exercise it was possible to develop cuts to apply to the data in order to distinguish between different decay channels of the Z-boson.
+The cuts are given in terms of the parameters that are measured or reconstructed in the detector, i.e.\ \texttt{Ctrk(N)}, \texttt{Ctrk(SumP)}, \texttt{Ecal(SumE)} and \texttt{Hcal(SumE)} (cf.\ table~\ref{tab:desc_variables_tag1}).
+In order to get preliminary cut criteria, the data of the Monte-Carlo simulated samples has been plotted in figure \ref{fig:histograms}.
 \begin{figure}[htb]
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -534,23 +534,28 @@ In order to get optimal cut criteria, the data from all Monte-Carlo simulated sa
 		\includegraphics[width=\textwidth]{./figures/event_display/Hcal(SumE)}
 
 	\end{subfigure}
-	\caption{Distributions of the measured parameters for the different types of decay channels. To find cuts to differentiate between the decay channels the overlap of two distributions should be minimized without loosing two many events of the distribution of the particle type that shall be identified. All energies are given in \si{GeV}.}
+	\caption{Distributions of the measured parameters for the different types of decay channels. To find cuts to differentiate between the decay channels the overlap of two distributions should be minimized without losing two many events of the distribution of the particle type that shall be identified. All energies and momenta are given in units of \si{GeV}.\korr{Binning für Elektronen Taus und Muonen für Ctrk(N)}}
 	\label{fig:histograms}
 \end{figure}
-The used cuts are given in table \ref{tab:cut_criteria_day1} and can be reviewed by looking on the events in a test sample (dataset number 1 was used). 
-Since all leptons produce mostly two or in case of the $\tau$ decay only a few charged particles this was a good possibility to distinguish decays where jets are formed from the leptonic ones.
-Electrons are light, electromagnetically interacting particles and hence deposit all their energy in the electromagnetic calorimeter and no energy in the hadronic calorimeter which explains why we chose Ecal(SumE) to be larger than \SI{60}{GeV} and Hcal(SumE) to be smaller than \SI{2}{GeV}.
-Muons lose only a small energy in the calorimeters, that is why those entries should be small compared to the measured momentum of the charged tracks.
-To separate taus from muons and hadrons the momentum of all charged tracks could be used.
-Since electrons and taus have nearly the same distribution for this variable a further separation is needed which can be done with the deposited energy in the electromagnetic calorimeter.
-In general, since taus can decay to many different particles, they are difficult to identify by cuts.
-All of the decay channels found with the cut criteria could be verified by analysis of event displays.
+
+The developed cuts are given in table~\ref{tab:cut_criteria_day1}.
+The number of charged particle tracks can be used to differentiate between (charged) leptonic and hadronic decays of the Z-boson, since all leptons produce mostly two or in case of the $\tau$ decay only few charged particles, whereas hadronic decays produce a high number of charged particles due to the hadronization process.
+Electrons are light, electromagnetically interacting particles and hence deposit all their energy in the electromagnetic calorimeter and (almost) no energy in the hadronic calorimeter.
+Therefore choosing \texttt{Ecal(SumE)} to be larger than \SI{60}{GeV} and \texttt{Hcal(SumE)} smaller than \SI{2}{GeV} should provide a suitable cut.
+Muons only lose a small amount of energy in the calorimeters due to their high mass and therefore the observed momentum of the charged tracks should be much larger than the deposited energy in the calorimeters.
+The separation of taus and hadrons from muons can be accomplished by cutting on the \texttt{Ctrk(Sump)} the sum of charged particle momenta, since the full center of mass energy cannot be observed due to neutrinos carrying missing momentum.
+Since electrons and taus have nearly the same distribution for \texttt{Ctrk(Sump)} a further separation is needed, which can be done with the deposited energy in the electromagnetic calorimeter.
+Generally tau-events are difficult to identify using simple cut criteria, since the variables show considerable overlap with the other decay-channels.
 \begin{table}[htb]
 	\centering
 	\input{./tables/tag1/cuts}
-	\caption{Applied cuts on the data to identify the decay channel.}
+	\caption{Cuts for the identification of the decay channel.}
 	\label{tab:cut_criteria_day1}
 \end{table}
+
+The final cuts are given in table~\ref{tab:cut_criteria_day1} and are reviewed by applying the cuts to events in dataset 1 containing decays in different decay-channel.
+\korr{Verweis auf die Tabelle \& erklären wie die identifizierung im detail abläuft}
+All of the decay channels found with the cut criteria could be verified by analysis of event displays.
 \begin{sidewaystable}
 	\centering
 		\input{./tables/tag1/testsample}
