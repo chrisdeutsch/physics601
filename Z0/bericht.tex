@@ -237,13 +237,13 @@ Possible Feynman diagrams for the mentioned processes are shown in figure \ref{f
 \subsubsection{Forward-Backward Asymmetry A$_\mathrm{FB}$}
 
 In a $e^+e^- \rightarrow f\bar{f}$ reaction the differential cross section of the produced fermions is different for the forward and backward hemispheres.
-Those are defined by the angle $\theta$ \korr{Großes Theta kleine Theta?} between incoming positron and outgoing positively charged particle.
+Those are defined by the angle $\Theta$ between incoming positron and outgoing positively charged particle.
 In this lab experiment, the asymmetry $A_\mathrm{FB}$ is measured in $e^+e^- \rightarrow \mu^+\mu^-$ events. 
 The asymmetry $A_\mathrm{FB}$is defined by
 \begin{align*}
 	A_\mathrm{FB}=\frac{\int_{0}^{1}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}-\int_{-1}^{0}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}}{\int_{0}^{1}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}+\int_{-1}^{0}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}}
 \end{align*}
-with the cross-section $\sigma$ and the angle $\Theta$ between incoming positron and outgoing positively charged muon \cite{instructions}.
+with the cross-section $\sigma$ \cite{instructions}.
 For a center of mass energy $\sqrt{s}=M_\mathrm{Z^0}$ and by restricting oneself to leptons this can be approximated by \cite{instructions}
 \begin{align*}
 	A_\mathrm{FB}^{\ell\text{,peak}}\approx 3\left(\frac{v_\ell}{a_\ell}\right)^2\quad\text{.}
@@ -265,7 +265,7 @@ As a last layer muon chambers are installed which consist of a tracking detector
 	\caption{Cut-away diagram of the OPAL detector with its main components\protect\footnotemark.}
 	\label{fig:opal}
 \end{figure}
-\footnotetext{Image source: CERN-DI-8404652 \url{https://cds.cern.ch/record/39362?ln=en}}
+\footnotetext{Image source: CERN-DI-8404652 \url{https://cds.cern.ch/record/39362?ln=en} accessed 05/09/2016}
 
 \subsection{Problems}
 In the following the questions that should have been solved before performing the experiment are presented.
@@ -287,14 +287,14 @@ with the color factor $N_c^f$ which is 1 for leptons and 3 for quarks and the co
 	&a_f = \frac{g_\mathrm{A}^f}{2\sin\theta_\mathrm{W}\cos\theta_\mathrm{W}}
 \end{align*}
 The values for the weak charge $Q_f$, the third component of the weak isospin $I_3^f$ and the Weinberg angle $\theta_\mathrm{W}$ are given in table \korr{REF}\\
-Partial widths
+With \korr{equation} the partial widths can be computed as
 \begin{align*}
 	&\Gamma_\ell = \SI{83.4}{MeV} \\
 	&\Gamma_\nu = \SI{165.9}{MeV} \\
 	&\Gamma_\mathrm{u} = \SI{285.3}{MeV} \\
 	&\Gamma_\mathrm{d} = \SI{367.8}{MeV}
 \end{align*}
-\korr{u und d jeweils für alle up- bzw down-type Quarks}
+where $\Gamma_\mathrm{u}$ and $\Gamma_\mathrm{d}$ hold for all up or down type quarks.
 \begin{align*}
 \Gamma_\mathrm{hadrons} &= 2\Gamma_\mathrm{u} + 3\Gamma_\mathrm{d} \\
 &= \SI{1.67}{GeV}
@@ -305,7 +305,6 @@ Partial widths
 \begin{align*}
 	\Gamma_\mathrm{neutrinos} = 3\Gamma_\nu =\SI{498}{MeV}
 \end{align*}
-
 total decay width
 \begin{align*}
 	\Gamma_\mathrm{Z} &= \Gamma_\mathrm{hadrons} + 3 \Gamma_\ell + 3\Gamma_\nu \\
@@ -319,8 +318,8 @@ total decay width
 \end{align*}
 
 \begin{align*}
-	&\sigma_\ell^\mathrm{peak} = \SI{2.09}{nb}\\
-	&\sigma_\nu^\mathrm{peak} = \SI{4.16}{nb}\\
+	&\sigma_\ell^\mathrm{peak} = \SI{2.09}{nb} \\
+	&\sigma_\nu^\mathrm{peak} = \SI{4.16}{nb} \\
 	&\sigma_\mathrm{u}^\mathrm{peak} = \SI{7.16}{nb} \\
 	&\sigma_\mathrm{d}^\mathrm{peak} = \SI{9.23}{nb} 
 \end{align*}
@@ -390,32 +389,41 @@ Those can originate either as additional signals from background radiation, e.g.
 
 \clearpage
 \subsubsection{Z$^0\rightarrow e^+e^-$}
-\korr{Momentum of the electrons (small mass -- equal energy)? Curvature in magnetic field (barely any because electrons carry most of the momentum but can be used for momentum measurement)? }
-A decay into electrons can easily be identified by the energy deposited in the electromagnetic calorimeters.
-The final state particles are flying approximately in opposite direction and are ideally completely stopped in the electromagnetic calorimeter.\korr{How does this work? Electromagnetic shower.}
+Electrons have small mass and hence their energy is approximately the same as their momentum.
+In $e^+e^-$ production at rest at the $Z^0$ resonance this value is about half the resonance energy and therefore the momentum is so high that barely any curvature can be observed.
+They can easily be identified by the energy deposited in the electromagnetic calorimeters.
+The final state particles are flying approximately in opposite direction and are ideally completely stopped in the electromagnetic calorimeter.
+In this process they lose all of their energy due to electromagnetic showers in which a charged lepton emits a bremsstrahlung photon which then can decay into another electron positron pair and so on.
 A track for every particle can be observed in the tracking chamber.
-Additional hits in the electromagnetic calorimeters probably occur due to bremsstrahlung photons which leave no track in the inner detector\korr{Was bedeutet das für die Variablen? -- Die CM energie kann nicht im SumP beobachtet werden weil Photon ungeladen jedoch im ecal}. \korr{Woher kommen mehr als 2 tracks?}
-\korr{Interpretation der Tabellen muss aufjedenfall gemacht werden. D.h. typische response -- electronen wenig tracks fast die gesamte energie (SumP = Ecal) im Calo deponiert. Geladene tracks tragen die gesamte energie, hcal is nichts bis kaum was}
-\korr{Außerdem fehlen verweise auf das eventdisplay und die tabelle}
-\begin{sidewaystable}
-	\centering
-	\input{./tables/tag1/ee}
-	\caption{Collected data from the electron dataset. All values for energies and momenta in \si{GeV}.}
-\end{sidewaystable}
+Additional hits in the electromagnetic calorimeters probably occur due to bremsstrahlung photons which leave no track in the inner detector and therefore the momentum can not be measured in \texttt{Ctrk(SumP)} but the energy is deposited in the electromagnetic calorimeter.
+More than the expected two tracks can be observed which originate from an emmited photon that undergoes pair production or from $\delta$ electrons.
+
+Typically electrons have a detector response containing only a few charged tracks and deposit all of their energy in the electromagnetic calorimeter which equals approximately the measured \texttt{Ctrk(SumP)}.
+The values for all events in the electron dataset is given in table \ref{tab:eventdisplay_ee} and one typical event display is shown in \ref{fig:eventdisplay_ee}.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}{\textwidth}
 		\centering
-		\includegraphics[width=.75\textwidth]{./data/tag1/ee_pics/cropped/ee_02}
+		\includegraphics[width=.9\textwidth]{./data/tag1/ee_pics/cropped/ee_02}
 		\subcaption{Front view}
 	\end{subfigure}
+\end{figure}
+\begin{figure}[h]
+\ContinuedFloat
 	\begin{subfigure}{\textwidth}
 		\centering
-		\includegraphics[width=.75\textwidth]{./data/tag1/ee_pics/cropped/ee_02_side}
+		\includegraphics[width=.9\textwidth]{./data/tag1/ee_pics/cropped/ee_02_side}
 		\subcaption{Side view}
 	\end{subfigure}
 	\caption{Exemplary picture of a $Z^0\rightarrow e^+e^-$ event. Electron and positron are emitted back to back, leave a track in the inner detector (light blue) and are stopped in the electromagnetic calorimeter (yellow).}
+	\label{fig:eventdisplay_ee}
 \end{figure}
+\begin{sidewaystable}
+	\centering
+	\input{./tables/tag1/ee}
+	\caption{Collected data from the electron dataset. All values for energies and momenta in \si{GeV}.}
+	\label{tab:eventdisplay_ee}
+\end{sidewaystable}
 \clearpage
 \subsubsection{Z$^0\rightarrow \mu^+\mu^-$}
 
