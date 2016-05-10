@@ -498,16 +498,14 @@ A $\tau$ event with a 1-prong consisting of a muon and a 3-prong with probably n
 \clearpage
 \subsubsection{Z$^0\rightarrow q\bar{q}$}
 
-Decays of Z$^0$ into quark-antiquark pairs always produce jets where quarks hadronize to mesons or baryons. \korr{Wie geht das grob?}
-Those can be identified as a large number of charged tracks in the tracking system. \korr{Mit teilweise starker Krümmung.}
-In addition some of the hadrons decay into leptons which can be seen as signal in the electromagnetic calorimeter or the muon chambers. \korr{Was ist mit Photonen?}
+Decays of Z$^0$ into quark-antiquark pairs always produce jets where quarks hadronize to mesons or baryons.
+In the created high energetic field created by a quark-antiquark pair more of such pairs can be produced which fly apart again and so on.
+The energy for every created pair decreases with every step until it is small enough for the quarks to form hadrons.
+Since quarks can not exist freely but form bound states the quarks and antiquarks combine spontaneously to mesons (quark-antiquark pairs) and baryons (combinations of three quarks or antiquarks) which make up the observed particle jets.
+Those can be identified as a large number of charged tracks in the tracking system which have many different curvatures.
+In addition some of the hadrons decay into leptons or photons which can be seen as signal in the electromagnetic calorimeter or the muon chambers.
 The hadrons are stopped and seen as showers in the hadronic calorimeter.
-\korr{Referenzen auf Bilder und Tabelle}
-\begin{sidewaystable}
-	\centering
-	\input{./tables/tag1/qq}
-	\caption{Collected data from the hadronic dataset. All values for energies and momenta in \si{GeV}. If unambiguously determinable, the number of jets is given. \korr{Kommentare sind so meh}}
-\end{sidewaystable}
+The values for all events in the hadronic dataset are given in table \ref{tab:eventdisplay_qq} and one typical event display is shown in \ref{fig:eventdisplay_qq}.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}{\textwidth}
@@ -524,7 +522,14 @@ The hadrons are stopped and seen as showers in the hadronic calorimeter.
 		\subcaption{Side view}
 	\end{subfigure}
 	\caption{Exemplary picture of a $Z^0\rightarrow q\bar{q}$ event. One of the jets can be identified as a muonic event while the other tracks consist of electromagnetically interacting particles and hadrons.}
+	\label{fig:eventdisplay_qq}
 \end{figure}
+\begin{sidewaystable}[h]
+	\centering
+	\input{./tables/tag1/qq}
+	\caption{Collected data from the hadronic dataset. All values for energies and momenta in \si{GeV}. If unambiguously determinable, the number of jets is given.}
+	\label{tab:evntdisplay_qq}
+\end{sidewaystable}
 \clearpage
 
 \subsection{Event Identification in Test Sample}
@@ -553,7 +558,7 @@ In order to get preliminary cut criteria, the data of the Monte-Carlo simulated 
 		\includegraphics[width=\textwidth]{./figures/event_display/Hcal(SumE)}
 
 	\end{subfigure}
-	\caption{Distributions of the measured parameters for the different types of decay channels. To find cuts to differentiate between the decay channels the overlap of two distributions should be minimized without losing two many events of the distribution of the particle type that shall be identified. All energies and momenta are given in units of \si{GeV}.\korr{Binning für Elektronen Taus und Muonen für Ctrk(N)}}
+	\caption{Distributions of the measured parameters for the different types of decay channels. To find cuts to differentiate between the decay channels the overlap of two distributions should be minimized without losing two many events of the distribution of the particle type that shall be identified. All energies and momenta are given in units of \si{GeV}.}
 	\label{fig:histograms}
 \end{figure}
 
@@ -573,12 +578,14 @@ Generally tau-events are difficult to identify using simple cut criteria, since 
 \end{table}
 
 The final cuts are given in table~\ref{tab:cut_criteria_day1} and are reviewed by applying the cuts to events in dataset 1 containing decays in different decay-channel.
-\korr{Verweis auf die Tabelle \& erklären wie die identifizierung im detail abläuft}
-All of the decay channels found with the cut criteria could be verified by analysis of event displays.
+The measured parameters for these events are given in table \ref{tab:testsample} where also the determined decay channel is noted.
+With the help of a computer the cuts have been applied on the given values to determine the decay channel by requiring an event to fulfill all of the chosen cuts for one decay channel.
+All of the decay channels found with the cut criteria could be verified by analysis of the event displays by eye.
 \begin{sidewaystable}
 	\centering
 		\input{./tables/tag1/testsample}
 	\caption{Collected data from the events in the test sample dataset. The given decay channel is the classification based on the previously formulated cuts. All values for energies and momenta in \si{GeV}.}
+	\label{tab:testsample}
 \end{sidewaystable}
 
 \clearpage
