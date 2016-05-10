@@ -375,6 +375,7 @@ The results can be found in table \ref{tab:afb_theory}.
 	\caption{Values for $A_\mathrm{FB}$ calculated with the exact formula (20) given in \cite{instructions} for different center of mass energies and Weinberg angles.}
 	\label{tab:afb_theory}
 \end{table}
+
 \clearpage
 \section{Part I: Analysis of Event Displays}
 
@@ -384,7 +385,8 @@ On the first day the software \texttt{GROPE} was used to study event displays an
 
 To learn how to distinguish the different decay channels of the Z boson Monte-Carlo simulated test samples with events with only one decay mode have been investigated.
 In the following part the measured properties of the observed events and exemplary pictures of the detector response are presented.
-The variables given for every event are presented in table \ref{tab:desc_variables_tag1}
+The variables given for every event are given in table~\ref{tab:desc_variables_tag1}.
+Possible deviations from the expected signals have been noted in the corresponding tables.
 \begin{table}[H]
 	\centering
 	\begin{tabularx}{0.9\textwidth}{lX}
@@ -400,19 +402,17 @@ The variables given for every event are presented in table \ref{tab:desc_variabl
 	\caption{Description of the variables in the $\mathrm{Z}^0$ decay datasets. Momenta and energies are always given in units of GeV.}
 	\label{tab:desc_variables_tag1}
 \end{table}
-Deviations from ideal signals can always occur and have been noted in the tables.
-Those can originate either as additional signals from background radiation, e.g. cosmic muons or as deviations from the expected theoretical detector response, e.g. bremsstrahlung photons being emitted from electrons in the initial and final state can cause kinks in the tracks.
 
 \clearpage
 \subsubsection{$\mathrm{Z}^0\rightarrow e^+e^-$}
 Electrons have small mass and hence their energy is approximately the same as their momentum.
-In $e^+e^-$ production at rest at the $\mathrm{Z}^0$ resonance this value is about half the resonance energy and therefore the momentum is so high that barely any curvature can be observed.
-They can easily be identified by the energy deposited in the electromagnetic calorimeters.
-The final state particles are flying approximately in opposite direction and are ideally completely stopped in the electromagnetic calorimeter.
-In this process they lose all of their energy due to electromagnetic showers in which a charged lepton emits a bremsstrahlung photon which then can decay into another electron positron pair and so on.
-A track for every particle can be observed in the tracking chamber.
-Additional hits in the electromagnetic calorimeters probably occur due to bremsstrahlung photons which leave no track in the inner detector and therefore the momentum can not be measured in \texttt{Ctrk(SumP)} but the energy is deposited in the electromagnetic calorimeter.
-More than the expected two tracks can be observed which originate from an emmited photon that undergoes pair production or from $\delta$-electrons.
+In electron pair production by $\mathrm{Z}^0$ decay this is approximately half of the Z-mass and therefore the tracks of electrons in the inner detector are barely bent by the magnetic field.
+Assuming the pair was produced at rest two collinear tracks can be observed in the inner detector (assuming no additional particles are created).
+
+Electrons can easily be identified by their charged track and the energy deposited in the electromagnetic calorimeters.
+In the calorimeter electrons lose all of their energy due to electromagnetic showers in which a cascade of bremsstrahlung and pair production processes lead to a exponential increase in the number of electrons, positrons and photons until all the energy is deposited inside the material.
+Additional hits in the electromagnetic calorimeters can occur due to bremsstrahlung photons which leave no track in the inner detector and therefore the momentum can not be measured in \texttt{Ctrk(SumP)} but the energy is deposited in the electromagnetic calorimeter.
+More than two charged tracks can be observed if a bremsstrahlung photon performs pair production or by production of a $\delta$-electron in the tracker gas.
 
 Typically electrons have a detector response containing only a few charged tracks and deposit all of their energy in the electromagnetic calorimeter which equals approximately the measured \texttt{Ctrk(SumP)}.
 The values for all events in the electron dataset are given in table \ref{tab:eventdisplay_ee} and one typical event display is shown in \ref{fig:eventdisplay_ee}.
@@ -441,13 +441,15 @@ The values for all events in the electron dataset are given in table \ref{tab:ev
 	\label{tab:eventdisplay_ee}
 \end{sidewaystable}
 \clearpage
+
 \subsubsection{$\mathrm{Z}^0\rightarrow \mu^+\mu^-$}
-Muons have a large mass compared to electrons and have therefore a smaller probability to form showers and to emit bremsstrahlung.
-They can -- in contrast to all other types of particles (except neutrinos) -- reach the outer part of the detector and because of their small interactions, a signal in the muon chambers which form the outermost part of the detector can be identified as a muon. 
-In general, muons are also created in a back to back configuration and leave a track in the tracking detector which is shown in figure \ref{fig:eventdisplay_mm}.
-Since they can only be produced in pairs of $\mu^+\mu^-$ there are always two tracks visible although it is possible to have more tracks due to background radiation.
-Since most of the background is due to cosmic muons it can easily be identified if the number of muons is odd.
-In addition, the direction of the background muon can not be reconstructed to come from the interaction point and the additional momentum can be registered when looking at \texttt{Ctrk(Sump)}.
+Muons have a large mass compared to electrons which results in a highly suppressed probability of emitting bremsstrahlung.
+Therefore muons do not initiate showers in the calorimeters and can -- in contrast to all other types of particles (except neutrinos) -- reach the outer part of the detector.
+A signal in the muon chamber, which forms the outermost part of the detector, can therefore only originate from a passing muon.
+In general, muons are also created in a back-to-back configuration and leave a track in the tracking detector which is shown in figure \ref{fig:eventdisplay_mm}.
+Since they can only be produced in pairs of $\mu^+\mu^-$ there are always two tracks visible although it is possible to have more tracks due to cosmic muons passing the detector, which can be identified by a track not originating from the interaction point.
+Generally in muon events the decay energy is completely contained in \texttt{Ctrk(Sump)} with small energy depositions in the calorimeters.
+
 The values for all events in the muon dataset are given in table \ref{tab:eventdisplay_mm}.
 \begin{figure}[h]
 	\centering
@@ -476,16 +478,16 @@ The values for all events in the muon dataset are given in table \ref{tab:eventd
 \clearpage
 \subsubsection{$\mathrm{Z}^0\rightarrow \tau^+\tau^-$}
 
-Because of the short lifetime the tau flies only a short range $c \tau = \SI{87}{\micro\meter}$ \cite{pdg} before it decays. Hence, the $\tau$ lepton it can not be detected directly but by its decay products where it is important to note that two different decays can be observed since the tau is produced as $\tau^+\tau^-$ pairs.
-Because both $\tau^+$ and $\tau^-$ can decay in either leptons or mainly hadrons there are two possible types of detector responses whereas in all processes a $\tau$ neutrino occurs.
-In a leptonic $\tau$ decay an electron or muon and two neutrinos are created and seen as charged tracks in the inner detector.
-They cause signals either in the electromagnetic calorimeter or in the muon chambers while the neutrinos are not detected.
-Since neutrinos carry momentum this leads to a smaller value for the measured final state compared to the initial state momentum.
+Because of the short lifetime the tau decays after a short range $c \tau = \SI{87}{\micro\meter}$ \cite{pdg}. Hence, only the decay products of the created $\tau^+$ and $\tau^-$ can be observed.
+Because the $\tau$ can decay either leptonically or hadronically there are two possible types of detector responses whereas in all processes a $\tau$ neutrino is created.
+In a leptonic $\tau$ decay an electron or muon and two neutrinos are created and the charged leptons can be seen as tracks in the inner detector.
+They cause signals either in the electromagnetic calorimeter or in the muon chambers, while the neutrinos are not detected.
+Since neutrinos carry momentum this leads to missing energy in the detection process.
 
 In a hadronic $\tau$ decay mostly pions or kaons are produced.
-While the neutral pion can decay into two photons which are detected as a shower in the electromagnetic calorimeter and explain a significant amount of energy measured in \texttt{Ecal(SumE)}, all other hadrons create a shower in the hadronic calorimeter but depending on their charge a track can not always be observed.
+While the neutral pion decays into two photons which are detected in the electromagnetic calorimeter and explain a significant amount of energy measured in \texttt{Ecal(SumE)}, all other hadrons create a shower in the hadronic calorimeter but depending on their charge a track can not always be observed.
 Because of the many different possibilities for the $\tau$ decay, they are characterized by the number of charged tracks per initial $\tau$, called "prong".
-A $\tau$ event with a 1-prong consisting of a muon and a 3-prong with probably neutral pions decaying into photons and hadrons is shown in figure \ref{fig:eventdisplay_tt} while values for all events in the tau dataset are given in table \ref{tab:eventdisplay_tt}.
+A $\tau$ event with a 1-prong consisting of a muon and a 3-prong with neutral pions decaying into photons and charged pions is shown in figure \ref{fig:eventdisplay_tt} while values for all events in the tau dataset are given in table \ref{tab:eventdisplay_tt}.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}{\textwidth}
@@ -501,7 +503,7 @@ A $\tau$ event with a 1-prong consisting of a muon and a 3-prong with probably n
 		\includegraphics[width=.9\textwidth]{./data/tag1/tt_pics/cropped/tt_05_side}
 		\subcaption{Side view}
 	\end{subfigure}
-	\caption{Exemplary picture of a $\mathrm{Z}^0\rightarrow \tau^+\tau^-$ event. A 1-prong and a 3-prong is observable. The 1-prong event can be identified as a muon while the 3-prong consists of hadrons which are identified in the hadronic calorimeter. The entries in the electromagnetic calorimeter are probably due to a neutral pion decaying into photons.}
+	\caption{Exemplary picture of a $\mathrm{Z}^0\rightarrow \tau^+\tau^-$ event. A 1-prong and a 3-prong is observable. The 1-prong event can be identified as a muon while the 3-prong consists of hadrons which are measured in the hadronic calorimeter. The entries in the electromagnetic calorimeter are probably due to a neutral pions decaying into photons.}
 	\label{fig:eventdisplay_tt}
 \end{figure}
 \begin{sidewaystable}[h]
@@ -514,13 +516,12 @@ A $\tau$ event with a 1-prong consisting of a muon and a 3-prong with probably n
 \subsubsection{$\mathrm{Z}^0\rightarrow \mathrm{q\bar{q}}$}
 
 Decays of $\mathrm{Z}^0$ into quark-antiquark pairs always produce jets where quarks hadronize to mesons or baryons.
-In the created high energetic field created by a quark-antiquark pair more of such pairs can be produced which fly apart again and so on.
-The energy for every created pair decreases with every step until it is small enough for the quarks to form hadrons.
-Since quarks can not exist freely but form bound states the quarks and antiquarks combine spontaneously to mesons (quark-antiquark pairs) and baryons (combinations of three quarks or antiquarks) which make up the observed particle jets.
-Those can be identified as a large number of charged tracks in the tracking system which have many different curvatures.
+Due to confinement high energy quarks create additional quark-antiquark pairs until the constituent energies are small enough for the formation of colorless hadrons.
+Therefore the constituent particles of a so called jet consists of mesons (quark-antiquark pairs) and baryons (combination of three quarks or antiquarks).
+Characteristic of hadronic decays of the Z-boson is the large number of charged tracks in the tracking system with varying curvatures.
 In addition some of the hadrons decay into leptons or photons which can be seen as signal in the electromagnetic calorimeter or the muon chambers.
-The hadrons are stopped and seen as showers in the hadronic calorimeter.
-The values for all events in the hadronic dataset are given in table \ref{tab:eventdisplay_qq} and one typical event display is shown in \ref{fig:eventdisplay_qq}.
+The remaining hadrons initiate hadronic showers in the hadronic calorimeters and are stopped completely.
+The values for all events in the hadronic dataset are given in table \ref{tab:eventdisplay_qq} and a typical event is shown in figure \ref{fig:eventdisplay_qq}.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}{\textwidth}
@@ -536,7 +537,7 @@ The values for all events in the hadronic dataset are given in table \ref{tab:ev
 		\includegraphics[width=.9\textwidth]{./data/tag1/qq_pics/cropped/qq_04_side}
 		\subcaption{Side view}
 	\end{subfigure}
-	\caption{Exemplary picture of a $\mathrm{Z}^0\rightarrow \mathrm{q\bar{q}}$ event. One of the jets can be identified as a muonic event while the other tracks consist of electromagnetically interacting particles and hadrons.}
+	\caption{Exemplary picture of a $\mathrm{Z}^0\rightarrow q\bar{q}$ event. One of the jets contains a muon while the other tracks consist of additional charged particles (mostly hadrons).}
 	\label{fig:eventdisplay_qq}
 \end{figure}
 \begin{sidewaystable}[h]
