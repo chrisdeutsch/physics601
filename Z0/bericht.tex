@@ -1198,72 +1198,70 @@ Finally a determination of the number of light neutrino generations could be per
 \newpage
 \section{Appendix}
 
-\subsection{Uncut MC-Data}
+\subsection{Variables of the MC-datasets after the Precut}
 \label{app:uncut_mc}
+In the following histograms of different variables of the Monte-Carlo datasets are summarized before applying any additional cut criteria besides the precut.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/pcharged_uncut.pdf}
-	\caption{text}
+	\caption{Distribution of the sum of charged particle momenta~\texttt{pcharged} for the Monte-Carlo simulations of electron (upper left), muon (upper right), tau (lower left) and hadronic final states (lower right). The momenta are given in units of GeV.}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/ncharged_uncut.pdf}
-	\caption{text}
+	\caption{Distribution of the number of charged particles~\texttt{ncharged} for the Monte-Carlo simulations of electron (upper left), muon (upper right), tau (lower left) and hadronic final states (lower right).}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/e_ecal_uncut.pdf}
-	\caption{text}
+	\caption{Distribution of the energy deposited in the electromagnetic calorimeter~\texttt{e\_ecal} for the Monte-Carlo simulations of electron (upper left), muon (upper right), tau (lower left) and hadronic final states (lower right). The energies are given in units of GeV.}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/uncut/cropped/e_hcal_uncut.pdf}
-	\caption{text}
+	\caption{Distribution of the energy deposited in the hadronic calorimeter~\texttt{e\_ecal} for the Monte-Carlo simulations of electron (upper left), muon (upper right), tau (lower left) and hadronic final states (lower right). The energies are given in units of GeV.}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/angular_mc/cropped/cos_theta.pdf}
-	\caption{text}
+	\caption{Distribution of the cosine of the scattering angle~\texttt{cos\_thet} for the Monte-Carlo simulations of electron (upper left), muon (upper right), tau (lower left) and hadronic final states (lower right). Undefined scattering angles (i.e.\ final states with multiple or no positively charged particles) are discarded.}
 	\label{fig:cos_theta_uncut}
 \end{figure}
 
-
 \clearpage
-\subsection{MC-Data using the Final Cuts}
+\subsection{Application of the Final Cuts to the MC-Datasets}
 \label{app:mc_final_cut}
+In the following histograms of \texttt{pcharged} of the different Monte-Carlo datasets are summarized after applying the selection cuts according to sections~\ref{sec:acceptance_detector}, \ref{sec:s_t_channel_separation} and table~\ref{tab:cut_criteria}.
+These histograms are used to obtain the number of events for the efficiency matrix formalism in section~\ref{sec:efficiency_matrix}.
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/final_cuts/cropped/electron_cut.pdf}
-	\caption{Electron cut}
+	\caption{Monte-Carlo datasets of electron (upper left), muon (upper right), tau (lower left) and hadronic events (lower right) after applying the selection cut for electrons.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/final_cuts/cropped/muon_cut.pdf}
-	\caption{Muon cut}
+	\caption{Monte-Carlo datasets of electron (upper left), muon (upper right), tau (lower left) and hadronic events (lower right) after applying the selection cut for muons.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/final_cuts/cropped/tau_cut.pdf}
-	\caption{Tau cut}
+	\caption{Monte-Carlo datasets of electron (upper left), muon (upper right), tau (lower left) and hadronic events (lower right) after applying the selection cut for taus.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{./data/tag2/final_cuts/cropped/hadron_cut.pdf}
-	\caption{Hadron cut}
+	\caption{Monte-Carlo datasets of electron (upper left), muon (upper right), tau (lower left) and hadronic events (lower right) after applying the selection cut for hadrons.}
 \end{figure}
-
-
-
-
 
 
 \end{appendix}
