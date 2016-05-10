@@ -247,7 +247,7 @@ ax3 = plt.subplot(223)
 plt.errorbar(data.E_cm.get_values(), data.sig_tau.get_values(), yerr=data.sig_tau_err.get_values(), fmt="o", zorder=2, markersize=2.5)
 plt.plot(x, tau_fit.eval(x=x), "-", zorder=1)
 plt.ylim((0.0, 2.2))
-plt.title("tauons", fontsize=11)
+plt.title("taus", fontsize=11)
 
 ax4 = plt.subplot(224, sharex=ax2)
 plt.errorbar(data.E_cm.get_values(), data.sig_hadr.get_values(), yerr=data.sig_hadr_err.get_values(), fmt="o", zorder=2, markersize=2.5)
