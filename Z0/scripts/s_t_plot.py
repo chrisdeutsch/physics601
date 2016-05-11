@@ -27,7 +27,7 @@ plt.plot(costheta, t_channel, "-", label="$t$-channel")
 plt.plot(costheta, s_channel + t_channel, "-", label="total")
 
 plt.title(r"$\mathrm{e}^+ \mathrm{e}^- \rightarrow \mathrm{e}^+ \mathrm{e}^-$")
-plt.xlabel(r"$\cos\theta_\mathrm{W}$")
+plt.xlabel(r"$\cos\theta$")
 plt.ylabel(r"$\frac{\mathrm{d}\sigma}{\mathrm{d}\Omega}$ / a.u.")
 plt.ylim((0, 10))
 plt.legend(loc=0)
