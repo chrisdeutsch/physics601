@@ -463,7 +463,6 @@ A signal in the muon chamber, which forms the outermost part of the detector, ca
 In general, muons are also created in a back-to-back configuration and leave a track in the tracking detector which is shown in figure \ref{fig:eventdisplay_mm}.
 Since they can only be produced in pairs of $\mu^+\mu^-$ there are always two tracks visible although it is possible to have more tracks due to cosmic muons passing the detector, which can be identified by a track not originating from the interaction point.
 Generally in muon events the decay energy is completely contained in \texttt{Ctrk(Sump)} with small energy depositions in the calorimeters.
-
 The values for all events in the muon dataset are given in table \ref{tab:eventdisplay_mm}.
 \begin{figure}[h]
 	\centering
@@ -737,7 +736,7 @@ In addition to this the cut in the scattering angle leads to a significant loss 
 Moreover the cut $\left| \cos\theta \right| < 0.9$ made in section~\ref{sec:acceptance_detector} also leads to some losses close to the beam pipe in the backward direction.
 To correct for these losses one can consider that the differential cross-section of the $s$-channel process is given by
 \begin{align*}
-	\deriv{\sigma_\mathrm{s}}{\cos\theta} \propto \left( 1 + \cos\theta \right)
+	\deriv{\sigma_\mathrm{s}}{\cos\theta} \propto \left( 1 + \cos^2\theta \right)
 \end{align*}
 thus the correction due to the cut on the scattering angle can be calculated by integration leading to
 \begin{align*}
