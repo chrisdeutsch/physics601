@@ -180,7 +180,7 @@ Interaction particles can also be charged (W-boson) or uncharged (photon, gluon,
 The particles of the Standard Model are summarized in figure~\ref{fig:standard_model}.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=.8\textwidth]{./figures/theory/standardmodel}
+	\includegraphics[width=.75\textwidth]{./figures/theory/standardmodel}
 	\caption{Standard Model of elementary particle physics\protect\footnotemark.}
 	\label{fig:standard_model}
 \end{figure}
@@ -278,7 +278,6 @@ As a last layer muon chambers are installed which consist of additional tracking
 
 \subsection{Problems}
 In the following the exercises that have been solved before performing the experiment are presented.
-
 \label{sec:problems}
 \subsubsection{Calculation of Partial Decay Widths}
 \label{sec:calc_partial_width}
@@ -608,8 +607,12 @@ The final cuts are given in table~\ref{tab:cut_criteria_day1} and are reviewed b
 The measured parameters for these events are given in table \ref{tab:testsample} where also the determined decay channel is noted.
 With the help of a computer the cuts have been applied on the given values to determine the decay channel by requiring an event to fulfill all of the chosen cuts for one decay channel.
 Most of the decay channels found with the cut criteria could be verified by analysis of the event displays by eye.
-Event number \num{13556} in run \num{4353} has been misinterpreted as a $\tau$ event although it is a two-photon reaction.
-This is due to the small momentum measured in \texttt{Ctrk(Sump)} since the photons leave no charged track.
+Event number \num{13556} in run \num{4353} has been misinterpreted as a $\tau$ event.
+The detector response is shown in figure \ref{fig:2photon}.
+This event can be interpreted as a $t$-channel reaction involving two photons where additionally a fermion-antifermion pair is produced.
+Those can be observed while the electron and positron in the final state have a large boost along the beam axis and hence are not detected.
+Since they carry a lot of the energy the detected charged particles carry a noticeably small momentum.
+Based on the signature, none of the classifications would be applicable for this event.
 \begin{sidewaystable}
 	\centering
 		\input{./tables/tag1/testsample}
@@ -1213,19 +1216,21 @@ Finally a determination of the number of light neutrino generations could be per
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{19}
-\bibitem{anleitung}
-	\emph{Advanced Laboratory Course (physics601): Description of Experiments}, BONN-AT-2016-01MP, Universität Bonn, January 2016
 
 \bibitem{instructions}
 	\emph{Instructions for E213: Analysis of $Z^0$ decays},
 	Universität Bonn.
+		
+\bibitem{thomson}
+	M.\ Thomson, \emph{Modern Particle Physics},
+	Cambridge University Press (2013).
 	
 \bibitem{pdg}
 	K.\ A.\ Olive \textit{et al.} (Particle Data Group),
 	Chin.\ Phys.\ C, \textbf{38}, 090001 (2014).
 	
-\bibitem{thomson}
-	M.\ Thomson, \emph{Modern Particle Physics}, Cambridge University Press (2013).
+\bibitem{anleitung}
+	\emph{Advanced Laboratory Course (physics601): Description of Experiments}, BONN-AT-2016-01MP, Universität Bonn, January 2016
 
 \bibitem{lmfit}
 	M.\ Newville \textit{et al.},
@@ -1242,6 +1247,26 @@ Finally a determination of the number of light neutrino generations could be per
 \begin{appendix}
 \newpage
 \section{Appendix}
+
+\subsection{Misinterpreted Event in the Test Sample}
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=.9\textwidth]{./data/tag1/test_pics/cropped/test_03}
+		\subcaption{Front view}
+	\end{subfigure}
+\end{figure}
+\begin{figure}[h]
+	\ContinuedFloat
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[width=.9\textwidth]{./data/tag1/test_pics/cropped/test_03_side}
+		\subcaption{Side view}
+	\end{subfigure}
+	\caption{Misinterpreted event in the test sample. It happens to be a two-photon reaction for which no classification is applicable. Additionally, an electron positron pair must be produced which can not be detected since it is strongly boosted in direction along the beam axis.}
+	\label{fig:2photon}
+\end{figure}
 
 \subsection{Variables of the MC-datasets after the Precut}
 \label{app:uncut_mc}
