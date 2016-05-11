@@ -277,11 +277,12 @@ As a last layer muon chambers are installed which consist of additional tracking
 \footnotetext{Image source: CERN-DI-8404652 \url{https://cds.cern.ch/record/39362?ln=en} accessed 05/09/2016.}
 
 \subsection{Problems}
-In the following the questions that should have been solved before performing the experiment are presented.
+In the following the exercises that have been solved before performing the experiment are presented.
+
 \label{sec:problems}
 \subsubsection{Calculation of Partial Decay Widths}
 \label{sec:calc_partial_width}
-The theoretical values for the partial decay widths of $\mathrm{Z}^0$ decays into charged leptons and hadrons is calculated at first.
+The theoretical values for the partial decay widths of $\mathrm{Z}^0$ decays into charged leptons and hadrons is calculated first.
 This can be done using equation (13) from \cite{instructions}
 \begin{align}
 	&\Gamma_f = \frac{N_\mathrm{c}^f \sqrt{2}}{12 \pi} G_\mathrm{F} M_\mathrm{Z}^3 \left( {g_\mathrm{V}^f}^2 + {g_\mathrm{A}^f}^2 \right)
@@ -293,25 +294,23 @@ with the color factor $N_c^f$ which is 1 for leptons and 3 for quarks and the co
 	&g_\mathrm{A}^f = I_3^f \\
 	\intertext{for vector and axial-vector coupling between Z-boson and fermion-antifermion pairs leading to the couplings}
 	&v_f = \frac{g_\mathrm{V}^f}{2\sin\theta_\mathrm{W}\cos\theta_\mathrm{W}}\\
-	&a_f = \frac{g_\mathrm{A}^f}{2\sin\theta_\mathrm{W}\cos\theta_\mathrm{W}}
+	&a_f = \frac{g_\mathrm{A}^f}{2\sin\theta_\mathrm{W}\cos\theta_\mathrm{W}} \,\text{.}
 \end{align*}
-The values for the weak charge $Q_f$, the third component of the weak isospin $I_3^f$ and the Weinberg angle $\theta_\mathrm{W}$ are given in table \ref{tab:constants}.
+The values for the electric charge $Q_f$, the third component of the weak isospin $I_3^f$ and the couplings are given in table~\ref{tab:constants}.
 \begin{table}[h]
 	\centering
 	\input{./tables/constants}
-	\caption{Values for charge, third component of weak isospin and both vector and axial-vector couplings for a Weinberg angle of $\sin^2\theta_\mathrm{W}=\num{0.23146}$}. Data taken from \cite{thomson}.
+	\caption{Values for charge, third component of weak isospin and both vector and axial-vector couplings for a Weinberg angle of $\sin^2\theta_\mathrm{W}=\num{0.23146}$. Data taken from \cite{thomson}.}
 	\label{tab:constants}
 \end{table}
-With \eqref{eqn:decaywidth} the partial widths can be computed as
+With equation~\eqref{eqn:decaywidth} the partial widths can be computed to be
 \begin{align*}
-	&\Gamma_\ell = \SI{83.4}{MeV} \\
-	&\Gamma_\nu = \SI{165.9}{MeV} \\
-	&\Gamma_\mathrm{u} = \SI{285.3}{MeV} \\
-	&\Gamma_\mathrm{d} = \SI{367.8}{MeV}
+	&\Gamma_\ell = \SI{83.4}{MeV} \quad	&&\Gamma_\nu = \SI{165.9}{MeV} \\
+	&\Gamma_\mathrm{u} = \SI{285.3}{MeV} \quad &&\Gamma_\mathrm{d} = \SI{367.8}{MeV}
 \end{align*}
-where $\Gamma_\mathrm{u}$ and $\Gamma_\mathrm{d}$ hold for all up or down type quarks.
-These values match with predicted values based on theoretical approaches given in table 1 in \cite{instructions} regarding that the above decay widths have been calculated under simplifying assumptions. 
-With this result the hadronic decay width can be calculated knowing that two up-type quarks (up and charm) and three down-type quarks (down, strange and bottom) can be produced. The top quark can not be created in a process involving the Z boson since its mass is too large.
+where $\Gamma_\mathrm{u}$ and $\Gamma_\mathrm{d}$ holds for all up- or down-type quarks.
+These values are consistent with the theoretical predictions given in table 1 of \cite{instructions}.
+With this result the hadronic decay width can be calculated knowing that two up-type quarks (up and charm) and three down-type quarks (down, strange and bottom) can be produced. The top quark can not be created in a process involving the Z-boson since its mass is too large.
 \begin{align*}
 \Gamma_\mathrm{hadrons} &= 2\Gamma_\mathrm{u} + 3\Gamma_\mathrm{d} \\
 &= \SI{1.67}{GeV}
@@ -324,34 +323,33 @@ All three lepton generations ($e$, $\mu$, $\tau$) can occur in the final state s
 \end{align*}
 Using the previous results the total decay width for the Z boson can be calculated in the following way:
 \begin{align}
-	\Gamma_\mathrm{Z} &= \Gamma_\mathrm{hadrons} + \Gamma_\mathrm{ch. leptons} + \Gamma_\mathrm{neutrinos} \notag\\
-	&= 2\Gamma_\mathrm{u} + 3\Gamma_\mathrm{d} + 3 \Gamma_\ell + 3\Gamma_\nu \label{eq:total_decay_width}\\
-	&= \SI{2.42}{GeV}\notag\quad\text{.}
+	\Gamma_\mathrm{Z} &= \Gamma_\mathrm{hadrons} + \Gamma_\mathrm{ch. leptons} + \Gamma_\mathrm{neutrinos} \nonumber\\
+	&= 2\Gamma_\mathrm{u} + 3\Gamma_\mathrm{d} + 3 \Gamma_\ell + 3\Gamma_\nu \nonumber\\
+	&= \SI{2.42}{GeV} \, \text{.}
+	\label{eq:total_decay_width}
 \end{align}
 
 \subsubsection{Partial Cross Sections}
-The partial cross sections can be calculated using equation (15) from \cite{instructions} under the assumption to have a center of mass energy near the Z resonance:
+The partial cross sections at the peak of the resonance can be calculated by \cite{instructions}:
 \begin{align*}
-	\sigma_f^\mathrm{peak} = \frac{12 \pi}{M_\mathrm{Z}^2} \frac{\Gamma_\mathrm{e}}{\Gamma_\mathrm{Z}} \frac{\Gamma_f}{\Gamma_\mathrm{Z}}
+	\sigma_f^\mathrm{peak} = \frac{12 \pi}{M_\mathrm{Z}^2} \frac{\Gamma_\mathrm{e}}{\Gamma_\mathrm{Z}} \frac{\Gamma_f}{\Gamma_\mathrm{Z}} \,\text{.}
 \end{align*}
-With the Z mass (\SI{91.19}{GeV} \cite{pdg}) and the calculated decay widths from section \ref{sec:calc_partial_width} the cross sections are given by:
+With a Z-mass of \SI{91.19}{GeV} \cite{pdg} and the calculated decay widths from section \ref{sec:calc_partial_width} the cross sections at peak can be calculated to be
 \begin{align*}
-	&\sigma_\ell^\mathrm{peak} = \SI{2.09}{nb} \\
-	&\sigma_\nu^\mathrm{peak} = \SI{4.16}{nb} \\
-	&\sigma_\mathrm{u}^\mathrm{peak} = \SI{7.16}{nb} \\
-	&\sigma_\mathrm{d}^\mathrm{peak} = \SI{9.23}{nb} \quad\text{.}
+	&\sigma_\ell^\mathrm{peak} = \SI{2.09}{nb} &&\sigma_\nu^\mathrm{peak} = \SI{4.16}{nb} \\
+	&\sigma_\mathrm{u}^\mathrm{peak} = \SI{7.16}{nb} &&\sigma_\mathrm{d}^\mathrm{peak} = \SI{9.23}{nb} \,\text{.}
 \end{align*}
 
-\subsubsection{Decay into additional pair}
-Using the total width of the Z resonance given in \eqref{eq:total_decay_width} the hypothetical percentage change of the Z resonance in case of a fourth pair of light fermions calculated.
+\subsubsection{Decay into Additional Pair of Light Fermions}
+Using the total width of the Z-resonance given in equation~\eqref{eq:total_decay_width} the increase in decay-widths of the Z-boson can be calculated, if a hypothetical decay into an additional pair of light fermions was possible.
 To do so it is necessary to increase the corresponding prefactor of the partial decay width by one.
-The change of the width of the Z resonance for the different cases of an additional light fermion is given below:
+The increase in decay-width of the Z-boson for the different cases of an additional light fermion is given below:
 \begin{table}[h]
 \centering
 \begin{tabular}{ll}
 	charged lepton: & 3.4\% \\
-	up~type quark: & 11.8 \% \\
-	down~type quark: & 15.2 \% \\
+	up-type quark: & 11.8 \% \\
+	down-type quark: & 15.2 \% \\
 	neutrino: & 6.9 \%
 \end{tabular}
 \end{table}
