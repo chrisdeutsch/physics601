@@ -271,7 +271,7 @@ As a last layer muon chambers are installed which consist of a tracking detector
 	\caption{Cut-away diagram of the OPAL detector with its main components\protect\footnotemark.}
 	\label{fig:opal}
 \end{figure}
-\footnotetext{Image source: CERN-DI-8404652 \url{https://cds.cern.ch/record/39362?ln=en} accessed 05/09/2016}
+\footnotetext{Image source: CERN-DI-8404652 \url{https://cds.cern.ch/record/39362?ln=en} accessed 05/09/2016.}
 
 \subsection{Problems}
 In the following the questions that should have been solved before performing the experiment are presented.
@@ -292,7 +292,13 @@ with the color factor $N_c^f$ which is 1 for leptons and 3 for quarks and the co
 	&v_f = \frac{g_\mathrm{V}^f}{2\sin\theta_\mathrm{W}\cos\theta_\mathrm{W}}\\
 	&a_f = \frac{g_\mathrm{A}^f}{2\sin\theta_\mathrm{W}\cos\theta_\mathrm{W}}
 \end{align*}
-The values for the weak charge $Q_f$, the third component of the weak isospin $I_3^f$ and the Weinberg angle $\theta_\mathrm{W}$ are given in table \korr{REF}\korr{Tabelle mit weak charges, ladungen und kopplungsfaktoren für die verschiedenen teilchen}\korr{Thomson 423}\\
+The values for the weak charge $Q_f$, the third component of the weak isospin $I_3^f$ and the Weinberg angle $\theta_\mathrm{W}$ are given in table \ref{tab:constants}.
+\begin{table}[h]
+	\centering
+	\input{./tables/constants}
+	\caption{Values for charge, third component of weak isospin and both vector and axial-vector couplings for a Weinberg angle of $\sin^2\theta_\mathrm{W}=\num{0.23146}$}. Data taken from \cite{thomson}.
+	\label{tab:constants}
+\end{table}
 With \eqref{eqn:decaywidth} the partial widths can be computed as
 \begin{align*}
 	&\Gamma_\ell = \SI{83.4}{MeV} \\
@@ -1214,6 +1220,9 @@ Finally a determination of the number of light neutrino generations could be per
 \bibitem{pdg}
 	K.\ A.\ Olive \textit{et al.} (Particle Data Group),
 	Chin.\ Phys.\ C, \textbf{38}, 090001 (2014).
+	
+\bibitem{thomson}
+	M.\ Thomson, \emph{Modern Particle Physics}, Cambridge University Press (2013).
 
 \bibitem{lmfit}
 	M.\ Newville \textit{et al.},
