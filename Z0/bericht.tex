@@ -157,7 +157,10 @@ Tutor: & David Hohn
 % INHALT VERSUCHSPROTOKOLL
 \section{Introduction}
 
-
+This lab experiment focuses on the $\mathrm{Z}^0$-boson, one of the gauge bosons in the Standard Model of particle physics.
+Using data from the OPAL detector on the LEP storange ring at the CERN facility events involving the $\mathrm{Z}$-boson are examined.
+With the help of a data analysis software the mass, decay width and partial cross sections of the $\mathrm{Z}$-boson shall be determined and a parameters of the Standard Model, the Weinberg angle, shall be calculated.
+Tests for lepton universality and the number of light neutrino generations are performed and the forward-backward asymmetry in the $e^+e^-\rightarrow\mu\mu^-$ process is computed.
 
 \section{Theoretical Background}
 
@@ -248,8 +251,9 @@ The asymmetry $A_\mathrm{FB}$is defined by
 with the cross-section $\sigma$ \cite{instructions}.
 For a center of mass energy $\sqrt{s}=M_\mathrm{Z^0}$ and by restricting oneself to leptons this can be approximated by \cite{instructions}
 \begin{align*}
-	A_\mathrm{FB}^{\ell\text{,peak}}\approx 3\left(\frac{v_\ell}{a_\ell}\right)^2\quad\text{.}
+	A_\mathrm{FB}^{\ell\text{,peak}}\approx 3\left(\frac{v_\ell}{a_\ell}\right)^2
 \end{align*}
+which is proportional to the squared ratio of the couplings in the weak interaction.
 For an explanation of the parameters $v_\ell$ and $a_\ell$, see section \ref{sec:problems}.
 
 \subsection{The OPAL Experiment}
@@ -282,13 +286,13 @@ This can be done using equation (13) from \cite{instructions}
 \end{align}
 with the color factor $N_c^f$ which is 1 for leptons and 3 for quarks and the coupling constants
 \begin{align*}
-	&g_\mathrm{V}^f = I_3^f - 2 Q_f \sin\theta_\mathrm{W}\\
+	&g_\mathrm{V}^f = I_3^f - 2 Q_f \sin^2\theta_\mathrm{W}\\
 	&g_\mathrm{A}^f = I_3^f \\
-	\intertext{for vector and axial-vector coupling of the weak interaction that lead to the vector and axial-vector coupling between Z-boson and fermion-antifermion pairs}
+	\intertext{for vector and axial-vector coupling between Z-boson and fermion-antifermion pairs leading to the couplings}
 	&v_f = \frac{g_\mathrm{V}^f}{2\sin\theta_\mathrm{W}\cos\theta_\mathrm{W}}\\
 	&a_f = \frac{g_\mathrm{A}^f}{2\sin\theta_\mathrm{W}\cos\theta_\mathrm{W}}
 \end{align*}
-The values for the weak charge $Q_f$, the third component of the weak isospin $I_3^f$ and the Weinberg angle $\theta_\mathrm{W}$ are given in table \korr{REF}\korr{Tabelle mit weak charges, ladungen und kopplungsfaktoren für die verschiedenen teilchen}\\
+The values for the weak charge $Q_f$, the third component of the weak isospin $I_3^f$ and the Weinberg angle $\theta_\mathrm{W}$ are given in table \korr{REF}\korr{Tabelle mit weak charges, ladungen und kopplungsfaktoren für die verschiedenen teilchen}\korr{Thomson 423}\\
 With \eqref{eqn:decaywidth} the partial widths can be computed as
 \begin{align*}
 	&\Gamma_\ell = \SI{83.4}{MeV} \\
@@ -1170,6 +1174,10 @@ In the following additional sources of systematic uncertainties shall be discuss
 Finally this report is concluded by summarizing the results of both parts.
 
 \subsection{Part I: Analysis of Event Displays}
+In the first part knowledge of the detector responses for different types of decays has been acquired.
+After analyzing the distributions of measured parameters cuts have been defined to distinguish between the occurring decay channels.
+This is needed in order to develop a machinable selection of events by decay type.
+Using a Monte-Carlo simulated test sample with all types of events the applied cuts could be verified by comparing the decay channel found by the computer and the one found by eye in the event display.
 
 \subsection{Part II: Statistical Analysis of $\mathrm{Z}^0$ Decays}
 After refining the preliminary cuts from the first part using Monte-Carlo data a number of important quantities could be determined from data gathered by the OPAL-detector at LEP.
