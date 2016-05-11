@@ -145,7 +145,7 @@ Tutor: & David Hohn
 % ZUSAMMENFASSUNG
 \begin{abstract}
 	\noindent In this laboratory experiment the Z-boson is investigated.
-	Its decays are observed in data taken at the OPAL-detector, which is used to determine the properties of the boson.
+	Its decays are observed in data taken at the OPAL detector, which is used to determine the properties of the boson.
 	Furthermore the forward-backward asymmetry in the $\mathrm{Z}^0 \rightarrow \mu^- \mu^+$ channel is used to determine the mixing angle in electroweak unification and the data is compared to lepton universality and the observed number of light neutrino generations.
 \end{abstract}
 
@@ -159,11 +159,12 @@ Tutor: & David Hohn
 % INHALT VERSUCHSPROTOKOLL
 \section{Introduction}
 
-This lab experiment focuses on the $\mathrm{Z}^0$-boson, one of the gauge bosons in the Standard Model of particle physics.
-Using data from the OPAL detector on the LEP storange ring at the CERN facility events involving the $\mathrm{Z}$-boson are examined.
-The detector response for different types of particles is studied and used to allow an computer-aided analysis.
-With the help of a data analysis software the mass, decay width and partial cross sections of the $\mathrm{Z}$-boson can be determined and a parameter of the Standard Model, the Weinberg angle, shall be calculated.
-Tests for lepton universality and the number of light neutrino generations are performed and the forward-backward asymmetry in the $e^+e^-\rightarrow\mu\mu^-$ process is computed.
+This laboratory experiment focuses on the Z-boson, one of the gauge bosons in the Standard Model of particle physics.
+Using data gathered at the OPAL detector at the LEP storage ring (CERN) decays of the Z-boson are examined.
+The detector response for the different decay-channels is studied, which allows for an computer-aided analysis.
+With the help of the data analysis software \texttt{PAW} the mass, decay widths and peak cross sections of the Z-boson are determined.
+The muonic decay-channel is used to calculate the forward-backward asymmetry of the decay, which allows for the determination of the Weinberg angle, a parameter of the Standard Model.
+Moreover the results of the analysis are compared to lepton universality and the observed number of light neutrino generations.
 
 \section{Theoretical Background}
 
@@ -175,7 +176,8 @@ The Standard Model describes the elementary particles and their interactions, ex
 In the Standard Model particles can be grouped by their properties into quarks, leptons and interaction particles.
 While quarks and leptons are fermions, the interaction particles are (gauge) bosons.
 Quarks have fractional charge of $+2/3$ or $-1/3$ and leptons are either charged (with charge $\pm1$ for electron, muon and tau) or uncharged (neutrinos).
-Interaction particles can also be charged (W~boson) or uncharged (photon, gluon, Z~boson).
+Interaction particles can also be charged (W-boson) or uncharged (photon, gluon, Z-boson).
+The particles of the Standard Model are summarized in figure~\ref{fig:standard_model}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.8\textwidth]{./figures/theory/standardmodel}
@@ -186,20 +188,20 @@ Interaction particles can also be charged (W~boson) or uncharged (photon, gluon,
 
 \subsection{Heavy Vector Boson $\mathrm{Z}^0$}
 
-The particle of interest for this experiment is the $\mathrm{Z}^0$~boson and its decays are studied.
-The Z~boson has a mass of \SI{91.2}{GeV} and a decay width of \SI{2.5}{GeV}.
+The particle of interest for this experiment is the $\mathrm{Z}^0$-boson and its decays are studied.
+The Z-boson has a mass of \SI{91.2}{GeV} and a decay width of \SI{2.5}{GeV}.
 It was discovered in 1983 in collider experiments at CERN.
 
 \subsubsection{Decays of $\mathrm{Z}^0$}
 
-Z~bosons can decay in many different ways.
-The final state of their decays can contain quarks, charged leptons and neutrinos, although it must be noted, that the top quark can not be produced since it is way heavier than the Z~boson.
-Due to conservation laws the Z~boson may produce only pairs of particles and antiparticles (e.g. electron and positron or neutrino and corresponding antineutrino).
+Z-bosons can decay in many different ways.
+The final state of their decays can contain quarks, charged leptons and neutrinos, although it must be noted, that the top quark can not be produced since it is heavier than the Z-boson itself.
+Due to conservation laws the Z-boson may produce only pairs of particles and antiparticles (e.g. electron and positron or neutrino and corresponding antineutrino).
 In case of production of a quark-antiquark pair the final state particles will form jets.
 Because of confinement in QCD the strong interaction becomes stronger for larger distances between two strongly interacting particles.
 If quark and antiquark fly apart a QCD field with high energy is created between them, where additional quark-antiquark pairs can be produced.
-This process repeats itself as long as the particles have more energy than needed for formation of colourless hadrons.
-As a result a hadronic decay of Z~bosons leads to a high number of final state particles, called jets.
+This process repeats itself as long as the particles have more energy than needed for formation of colorless hadrons.
+As a result a hadronic decay of Z-bosons leads to a high number of final state particles, called jets.
 Possible Feynman diagrams for the mentioned processes are shown in figure \ref{fig:feynman}.
 
 \begin{figure}[htb]
@@ -236,27 +238,25 @@ Possible Feynman diagrams for the mentioned processes are shown in figure \ref{f
 		\includegraphics[width=.9\textwidth]{./figures/theory/feynman/nn}
 		\subcaption{$e^+e^-\rightarrow \nu\bar{\nu}$}
 	\end{subfigure}
-	\caption{Feynman diagrams for the different decay channels of the $\mathrm{Z}^0$-boson in lowest order. The initial state is according to the LEP storage ring always assumed to be an electron positron pair. In general, these processes are except for the creation of a neutrino pair also possible with a photon propagator.}
+	\caption{Feynman diagrams for the different decay channels of the $\mathrm{Z}^0$-boson in lowest order. The initial state is according to the LEP storage ring always assumed to be an electron-positron pair. Except for neutrino pair-production these processes can also occur with a photon propagator.}
 	\label{fig:feynman}
 \end{figure}
 
 \subsubsection{Forward-Backward Asymmetry A$_\mathrm{FB}$}
 \label{sec:afb}
-
-In a $e^+e^- \rightarrow f\bar{f}$ reaction the differential cross section of the produced fermions is different for the forward and backward hemispheres.
-Those are defined by the angle $\Theta$ between incoming positron and outgoing positively charged particle.
-In this lab experiment, the asymmetry $A_\mathrm{FB}$ is measured in $e^+e^- \rightarrow \mu^+\mu^-$ events. 
-The asymmetry $A_\mathrm{FB}$is defined by
-\begin{align}
-	A_\mathrm{FB}=\frac{\int_{0}^{1}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}-\int_{-1}^{0}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}}{\int_{0}^{1}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}+\int_{-1}^{0}{\deriv{\sigma}{\cos\Theta}}\dinf{\cos\Theta}}
-	\label{eq:afb}
-\end{align}
-with the cross-section $\sigma$ \cite{instructions}.
-For a center of mass energy $\sqrt{s}=M_\mathrm{Z^0}$ and by restricting oneself to leptons this can be approximated by \cite{instructions}
+The differential cross section for the reaction $e^+e^- \rightarrow f\bar{f}$ is different for the forward and backward hemispheres.
+Those are defined by the angle $\theta$ between incoming positron and outgoing positively charged particle.
+In this laboratory experiment, the asymmetry $A_\mathrm{FB}$ is measured in the $e^+e^- \rightarrow \mu^+\mu^-$ channel. 
+The forward-backward asymmetry $A_\mathrm{FB}$ is defined by \cite{instructions}
+\begin{align*}
+	A_\mathrm{FB}=\frac{\int_{0}^{1}{\deriv{\sigma}{\cos\theta}}\dinf{\cos\theta}-\int_{-1}^{0}{\deriv{\sigma}{\cos\theta}}\dinf{\cos\theta}}{\int_{0}^{1}{\deriv{\sigma}{\cos\theta}}\dinf{\cos\theta}+\int_{-1}^{0}{\deriv{\sigma}{\cos\theta}}\dinf{\cos\theta}}
+\end{align*}
+with the differential cross section $\deriv{\sigma}{\cos\theta}$.
+For a center of mass energy $\sqrt{s}=M_\mathrm{Z}$ and by restricting oneself to leptonic-decays this can be approximated by \cite{instructions}
 \begin{align*}
 	A_\mathrm{FB}^{\ell\text{,peak}}\approx 3\left(\frac{v_\ell}{a_\ell}\right)^2
 \end{align*}
-which is proportional to the squared ratio of the couplings in the weak interaction.
+which is proportional to the squared ratio of the vector- and axial-couplings in the weak interaction.
 For an explanation of the parameters $v_\ell$ and $a_\ell$, see section \ref{sec:problems}.
 
 \subsection{The OPAL Experiment}
@@ -624,13 +624,13 @@ Based on the signature, none of the classifications would be applicable for this
 
 \clearpage
 \section{Part II: Statistical Analysis of $\mathrm{Z}^0$ Decays}
-The second part of this laboratory experiment is concerned with the analysis of data gathered by the OPAL-detector at LEP.
+The second part of this laboratory experiment is concerned with the analysis of data gathered by the OPAL detector at LEP.
 Since an analysis using event displays is infeasible, the data analysis software \texttt{PAW} is used instead.
 The aim of this part is to determine the mass and (partial) decay width of the $\mathrm{Z}^0$ and in addition to this calculate the electroweak mixing~$\sin^2\theta_\mathrm{W}$ from the forward-backward asymmetry in the muon channel.
 
 \subsection{Analysis of Monte-Carlo Data}
 \label{sec:analysis_mc_data}
-Before the data taken at the OPAL-detector can be evaluated, four datasets of Monte-Carlo data are analyzed to refine the preliminary cuts that were determined in the previous part.
+Before the data taken at the OPAL detector can be evaluated, four datasets of Monte-Carlo data are analyzed to refine the preliminary cuts that were determined in the previous part.
 These datasets contain a selection of simulated $\mathrm{Z}^0$ decays, which are separated into the different decay channels with electron, muon, tau or hadronic final states.
 Since the number of simulated events is known, these datasets can be used to estimate the (mis-)identification probability of the final cuts.
 The nomenclature that is used in describing the detector data is summarized in table~\ref{tab:desc_variables}.
@@ -861,7 +861,7 @@ with the error matrix by Monte-Carlo error propagation
 In the following this matrix can be used in analyzing real data gathered at OPAL.
 
 \subsection{Analysis of OPAL-Data}
-After the analysis of the cuts for event selection was performed, the data measured at the OPAL-detector can be analyzed.
+After the analysis of the cuts for event selection was performed, the data measured at the OPAL detector can be analyzed.
 Of the available datasets \texttt{data6} was chosen, since it has the highest integrated luminosities and therefore should allow for better statistics.
 
 The dataset contains events at seven different center of mass energies at LEP surrounding the Z-resonance.
@@ -1194,7 +1194,7 @@ This serves as a first algorithm to select different events by decay-channel and
 The preliminary cuts were applied to a Monte-Carlo simulated test sample with mixed events, in which most of the events could be successfully matched to the underlying decay-channel.
 
 \subsection{Part II: Statistical Analysis of $\mathrm{Z}^0$ Decays}
-After refining the preliminary cuts from the first part using additional Monte-Carlo data a number of important quantities could be determined from data gathered by the OPAL-detector at LEP.
+After refining the preliminary cuts from the first part using additional Monte-Carlo data a number of important quantities could be determined from data gathered by the OPAL detector at LEP.
 These are the mass of the Z-boson
 \begin{align*}
 	M_\mathrm{Z} = \SI{91.15 +- 0.10}{GeV} \,\text{,}
