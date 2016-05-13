@@ -1,0 +1,122 @@
+% !TeX spellcheck = en_US
+\documentclass[11pt,xcolor=dvipsnames,professionalfonts]{beamer}
+
+% Pakete
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+% AMS Pakete
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+% Text tools
+\usepackage{textcomp}
+
+% Einheiten
+\usepackage{siunitx}
+\sisetup{
+	separate-uncertainty
+}
+
+% Grafiken
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\setbeamerfont{caption}{size=\footnotesize}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\usepackage[percent]{overpic}
+
+% Theme
+\usetheme{Boadilla}
+\usecolortheme{rose}
+\useoutertheme{infolines}
+\useinnertheme{rectangles}
+\setbeamertemplate{itemize subitem}[triangle]
+
+\usefonttheme[onlymath]{serif}
+
+% [num] Zitationen
+\setbeamertemplate{bibliography item}[text]
+
+% Navigationsleiste ausschalten
+\beamertemplatenavigationsymbolsempty
+
+\author[Christian Bespin \& Christopher Deutsch]
+{Christian Bespin \& Christopher Deutsch}
+
+\title
+{Analysis of $\mathrm{Z}^0$ Decays}
+
+\subtitle
+{}
+%\logo{}
+
+\institute[]
+{Advanced Laboratory Course\\ Summer Term 16}
+
+\date{May 30, 2016}
+
+%\setbeamercovered{transparent}
+%\setbeamertemplate{navigation symbols}{}
+
+\newcommand{\beginbackup}{
+	\newcounter{framenumbervorappendix}
+	\setcounter{framenumbervorappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+	\addtocounter{framenumbervorappendix}{-\value{framenumber}}
+	\addtocounter{framenumber}{\value{framenumbervorappendix}} 
+}
+
+\begin{document}
+\maketitle
+
+
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
+\section{Introduction}
+\begin{frame}{Christian's Folien}
+	Hier deine Folien
+\end{frame}
+
+\section{Theoretical Background}
+
+\section{Part I: Analysis of Event Displays}
+
+\section{Part II: Statistical Analysis of $\mathrm{Z}^0$ Decays}
+\begin{frame}{Christopher's Folien}
+	Hier meine Folien
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}
+	\begin{center}
+		\LARGE
+		\textbf{Thank you for your attention!}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Bibliography}
+	\scriptsize
+	\begin{thebibliography}{9}
+		\bibitem[PDG]{pdg}
+			K.A. Olive \textit{et al.} (Particle Data Group),
+			\emph{The Review of Particle Physics},
+			Chin.\ Phys.\ C, \textbf{38}, 090001 (2014) and 2015 update.
+	\end{thebibliography}
+\end{frame}
+
+\beginbackup
+
+\begin{frame}{Backup Slides}
+	Backup Slides
+\end{frame}
+
+\backupend
+
+\end{document}

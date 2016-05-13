@@ -9,3 +9,5 @@
 bericht.pdf
 __pycache__
 *.ps1
+*.nav
+*.snm
