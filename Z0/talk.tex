@@ -157,30 +157,104 @@
 \end{frame}
 
 \begin{frame}{Acceptance of the OPAL-Detector}
-	\begin{overpic}[height=0.9\textheight, trim=0 0 0 20, clip]{./data/tag2/uncut/cropped/pcharged_uncut.pdf}
-		\put(31.3,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize electrons}}}
-		\put(78.8,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize muons}}}
-		\put(31.3,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize taus}}}
-		\put(78.8,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize hadrons}}}
-	\end{overpic}
+	\begin{columns}
+		\column[c]{0.66\textwidth}
+			\begin{overpic}[height=0.9\textheight, trim=0 0 0 20, clip]{./data/tag2/uncut/cropped/pcharged_uncut.pdf}
+				\put(31.3,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize electrons}}}
+				\put(78.8,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize muons}}}
+				\put(31.3,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize taus}}}
+				\put(78.8,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize hadrons}}}
+			\end{overpic}
+		
+		\column[c]{0.33\textwidth}
+			\begin{itemize}
+				\item $\left| \cos\theta \right| < 0.9$
+			\end{itemize}
+	\end{columns}
 \end{frame}
 
-\begin{frame}{Accept}
+\begin{frame}{Refining the Cuts}
+	\begin{center}
+		\input{./tables/cuts.tex}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Separating $s$- and $t$-Channel in $\mathrm{e}^+ + \mathrm{e}^- \rightarrow \mathrm{e}^+ + \mathrm{e}^-$}
+\end{frame}
+
+
+\begin{frame}{Efficiency Formalism}
+	\begin{center}
+		\input{./tables/events.tex}
+	\end{center}
 	
+	Definition of the efficiency matrix:
+	\begin{align*}
+		\vec{n} = E \cdot \vec{N} \qquad E_{ij} = \frac{n_{ij}}{N_j}
+	\end{align*}
 \end{frame}
 
-\begin{frame}
-	\begin{itemize}
-		\item Total number of events in each channel known
-		\begin{itemize}
-			\setlength\itemsep{0.5em}
-			\item determination of efficiency
-			\item probability of misidentification
-		\end{itemize}
-	\end{itemize}
+
+\begin{frame}{Efficiency Formalism}
+	Efficiency matrix for our cuts:
+	\begin{align*}
+	\footnotesize
+	E = \begin{pmatrix}
+	0.59259 & 0.00001 & 0.00117 & 0.00000 \\
+	0.00000 & 0.78537 & 0.00549 & 0.00000 \\
+	0.02027 & 0.04089 & 0.76651 & 0.00934 \\
+	0.00018 & 0.00000 & 0.00503 & 0.97533 \\
+	\end{pmatrix}
+	\end{align*}
+	
+	With errors from binomial statistics:
+	\begin{align*}
+	\footnotesize
+	\Delta E = \begin{pmatrix}
+	0.00266 & 0.00000 & 0.00000 & 0.00000 \\
+	0.00000 & 0.00130 & 0.00024 & 0.00000 \\
+	0.00077 & 0.00063 & 0.00134 & 0.00031 \\
+	0.00008 & 0.00000 & 0.00023 & 0.00050 \\
+	\end{pmatrix}
+	\end{align*}
+		
+	\textbf{Problem:} Experimentally only $\vec{n}$ is measured. Invert the efficiency matrix.
+	\begin{align*}
+		\vec{N} = E^{-1} \cdot \vec{n}
+	\end{align*}
+\end{frame}
+
+\begin{frame}{Efficiency Formalism}
+	Numerical inversion:
+	\begin{align*}
+	\footnotesize
+	E^{-1} = \begin{pmatrix}
+	1.68758 & 0.00011 &-0.00258 & 0.00002 \\
+	0.00312 & 1.27376 &-0.00912 & 0.00009 \\
+	-0.04465 &-0.06796 & 1.30525 &-0.01250 \\
+	-0.00007 & 0.00035 &-0.00673 & 1.02536 \\
+	\end{pmatrix}
+	\end{align*}
+	
+	Errors by Monte-Carlo error propagation (\num{100000} samples):
+	\begin{align*}
+	\footnotesize
+	\Delta E^{-1} = \begin{pmatrix}
+	0.00756 & 0.00001 & 0.00002 & 0.00001 \\
+	0.00002 & 0.00211 & 0.00039 & 0.00001 \\
+	0.00170 & 0.00105 & 0.00227 & 0.00041 \\
+	0.00013 & 0.00002 & 0.00030 & 0.00052 \\
+	\end{pmatrix}
+	\end{align*}
+	
+	\textbf{Now:} Apply cuts to experimental data to get $\vec{n}$ and calculate total events $\vec{N}$.
 \end{frame}
 
 \subsection{Analysis of OPAL Data}
+
+\begin{frame}{Analysis of OPAL Data}
+\end{frame}
+
 
 \section{Conclusion}
 
