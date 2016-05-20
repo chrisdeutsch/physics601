@@ -156,28 +156,144 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Acceptance of the OPAL-Detector}
-	\begin{columns}
-		\column[c]{0.66\textwidth}
-			\begin{overpic}[height=0.9\textheight, trim=0 0 0 20, clip]{./talkfigs/pdf/pcharged_uncut.pdf}
-				\put(31.3,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize electrons}}}
-				\put(78.8,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize muons}}}
-				\put(31.3,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize taus}}}
-				\put(78.8,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize hadrons}}}
-			\end{overpic}
-		
-		\column[c]{0.33\textwidth}
-			\begin{itemize}
-				\item $\left| \cos\theta \right| < 0.9$
-			\end{itemize}
-	\end{columns}
-\end{frame}
-
-\begin{frame}{Refining the Cuts}
+\begin{frame}{Refining the Cuts -- \texttt{pcharged}}
 	\begin{center}
-		\input{./tables/cuts.tex}
+		\begin{overpic}[height=0.9\textheight, trim=0 0 0 20, clip]{./talkfigs/pdf/pcharged_uncut.pdf}
+			\put(31.3,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize electrons}}}
+			\put(78.8,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize muons}}}
+			\put(31.3,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize taus}}}
+			\put(78.8,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize hadrons}}}
+		\end{overpic}
 	\end{center}
 \end{frame}
+
+\begin{frame}[noframenumbering]{Refining the Cuts -- \texttt{pcharged}}
+	\begin{center}
+		\begin{overpic}[height=0.9\textheight, trim=0 0 0 20, clip]{./talkfigs/pdf/pcharged_coscut.pdf}
+			\put(31.3,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize electrons}}}
+			\put(78.8,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize muons}}}
+			\put(31.3,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize taus}}}
+			\put(78.8,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize hadrons}}}
+		\end{overpic}
+	\end{center}
+\end{frame}
+
+\begin{frame}<1>[label=cutsummary]{Refining the Cuts -- Summary}
+	\begin{itemize}
+		\item<1-> electrons and muons: $\left| \cos\theta \right| < 0.9$
+	\end{itemize}
+	\vfill
+	\pause
+	\begin{center}
+		\begin{tabular}{lcccc}
+			\toprule
+			&\multicolumn{4}{c}{selected channel}  \\ \cmidrule(r){2-5}
+			& electrons & muons & tauons & hadrons \\
+			\midrule
+			\texttt{pcharged} & \only<2->{$> 30$} & \only<2->{$> 55$} & \only<2->{$>1\,\land\,<75$} & \only<2->{--}\\
+			\texttt{ncharged} & \only<3->{$< 5$}  & \only<3->{$< 4$}  & \only<3->{$< 8$} & \only<3->{$\geq 8$} \\
+			\texttt{e\_ecal}  & \only<4->{$> 70$} & \only<4->{$< 15$}  & \only<4->{$< 75$} & \only<4->{$> 20$} \\
+			\texttt{e\_hcal}  & \only<5->{$< 15$}  & \only<5->{$< 25$} & \only<5->{--} & \only<5->{--} \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Refining the Cuts -- \texttt{pcharged}}
+	\begin{center}
+		\begin{overpic}[height=0.9\textheight, trim=0 0 0 20, clip]{./talkfigs/pdf/pcharged_uncut.pdf}
+			\put(31.3,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize electrons}}}
+			\put(78.8,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize muons}}}
+			\put(31.3,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize taus}}}
+			\put(78.8,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize hadrons}}}
+		\end{overpic}
+	\end{center}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Refining the Cuts -- \texttt{pcharged}}
+	\begin{center}
+		\begin{overpic}[height=0.9\textheight, trim=0 0 0 20, clip]{./talkfigs/pdf/pcharged_cuts.pdf}
+			\put(31.3,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize electrons}}}
+			\put(78.8,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize muons}}}
+			\put(31.3,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize taus}}}
+			\put(78.8,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize hadrons}}}
+		\end{overpic}
+	\end{center}
+\end{frame}
+
+\againframe<2>{cutsummary}
+
+\begin{frame}{Refining the Cuts -- \texttt{ncharged}}
+	\begin{center}
+		\begin{overpic}[height=0.9\textheight, trim=0 0 0 20, clip]{./talkfigs/pdf/ncharged_uncut.pdf}
+			\put(31.3,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize electrons}}}
+			\put(78.8,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize muons}}}
+			\put(31.3,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize taus}}}
+			\put(78.8,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize hadrons}}}
+		\end{overpic}
+	\end{center}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Refining the Cuts -- \texttt{ncharged}}
+	\begin{center}
+		\begin{overpic}[height=0.9\textheight, trim=0 0 0 20, clip]{./talkfigs/pdf/ncharged_cuts.pdf}
+			\put(31.3,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize electrons}}}
+			\put(78.8,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize muons}}}
+			\put(31.3,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize taus}}}
+			\put(78.8,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize hadrons}}}
+		\end{overpic}
+	\end{center}
+\end{frame}
+
+\againframe<3>{cutsummary}
+
+\begin{frame}{Refining the Cuts -- \texttt{e\_ecal}}
+	\begin{center}
+		\begin{overpic}[height=0.9\textheight, trim=0 0 0 20, clip]{./talkfigs/pdf/e_ecal_uncut.pdf}
+			\put(31.3,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize electrons}}}
+			\put(78.8,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize muons}}}
+			\put(31.3,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize taus}}}
+			\put(78.8,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize hadrons}}}
+		\end{overpic}
+	\end{center}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Refining the Cuts -- \texttt{e\_ecal}}
+	\begin{center}
+		\begin{overpic}[height=0.9\textheight, trim=0 0 0 20, clip]{./talkfigs/pdf/e_ecal_cuts.pdf}
+			\put(31.3,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize electrons}}}
+			\put(78.8,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize muons}}}
+			\put(31.3,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize taus}}}
+			\put(78.8,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize hadrons}}}
+		\end{overpic}
+	\end{center}
+\end{frame}
+
+\againframe<4>{cutsummary}
+
+\begin{frame}{Refining the Cuts -- \texttt{e\_hcal}}
+	\begin{center}
+		\begin{overpic}[height=0.9\textheight, trim=0 0 0 20, clip]{./talkfigs/pdf/e_hcal_uncut.pdf}
+			\put(31.3,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize electrons}}}
+			\put(78.8,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize muons}}}
+			\put(31.3,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize taus}}}
+			\put(78.8,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize hadrons}}}
+		\end{overpic}
+	\end{center}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Refining the Cuts -- \texttt{e\_hcal}}
+	\begin{center}
+		\begin{overpic}[height=0.9\textheight, trim=0 0 0 20, clip]{./talkfigs/pdf/e_hcal_cuts.pdf}
+			\put(31.3,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize electrons}}}
+			\put(78.8,86.7){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize muons}}}
+			\put(31.3,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize taus}}}
+			\put(78.8,39.3){\fcolorbox{black}{white}{\makebox(12,3)[c]{\footnotesize hadrons}}}
+		\end{overpic}
+	\end{center}
+\end{frame}
+
+\againframe<5>{cutsummary}
 
 \begin{frame}{Separating $s$- and $t$-Channel in $\mathrm{e}^+ + \mathrm{e}^- \rightarrow \mathrm{e}^+ + \mathrm{e}^-$}
 \end{frame}
