@@ -180,7 +180,8 @@
 
 \begin{frame}<1>[label=cutsummary]{Refining the Cuts -- Summary}
 	\begin{itemize}
-		\item<1-> electrons and muons: $\left| \cos\theta \right| < 0.9$
+		\item<1-> electrons and muons: $\left| \cos\theta \right| < 0.9$ (unreconstructible events)
+		\item<6-> electrons: $\cos\theta < 0.5$ ($s$-channel)
 	\end{itemize}
 	\vfill
 	\pause
@@ -296,7 +297,28 @@
 \againframe<5>{cutsummary}
 
 \begin{frame}{Separating $s$- and $t$-Channel in $\mathrm{e}^+ + \mathrm{e}^- \rightarrow \mathrm{e}^+ + \mathrm{e}^-$}
+	\begin{columns}
+		\column[c]{0.5\textwidth}
+			\begin{itemize}
+				\setlength\itemsep{2.em}
+				\item<2-> $t$-channel dominant at small scattering angles
+				
+				\item<3-> remove most $t$-channel events by cutting $\cos\theta < 0.5$
+				
+				\item<4-> correction for the number of $s$-channel events
+				\begin{align*}
+					\kappa &= \frac{\int_{-1}^{1} (1 + \cos^2\theta) \, \mathrm{d}\cos\theta}{\int_{-0.9}^{0.5} (1 + \cos^2\theta) \, \mathrm{d}\cos\theta} \\
+					&\approx  1.5829
+				\end{align*}
+			\end{itemize}
+		\column[c]{0.5\textwidth}
+			\includegraphics<1>[width=1.0\textwidth]{./talkfigs/pdf/cos_thet_uncut.pdf}
+			\includegraphics<2>[width=1.0\textwidth]{./talkfigs/pdf/cos_thet_annotated.pdf}
+			\includegraphics<3->[width=1.0\textwidth]{./talkfigs/pdf/cos_thet_cuts.pdf}
+	\end{columns}
 \end{frame}
+
+\againframe<6>{cutsummary}
 
 
 \begin{frame}{Efficiency Formalism}
