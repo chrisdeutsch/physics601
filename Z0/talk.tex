@@ -322,13 +322,27 @@
 
 
 \begin{frame}{Efficiency Formalism}
+	Apply cuts to Monte-Carlo datasets:
 	\begin{center}
-		\input{./tables/events.tex}
+		\input{./tables/events_talk.tex}
 	\end{center}
 	
 	Definition of the efficiency matrix:
 	\begin{align*}
 		\vec{n} = E \cdot \vec{N} \qquad E_{ij} = \frac{n_{ij}}{N_j}
+		\qquad
+		\vec{n} = \begin{pmatrix}
+		n_\mathrm{e}\\
+		n_\mathrm{\mu}\\
+		n_\mathrm{\tau}\\
+		n_\mathrm{q}
+		\end{pmatrix}\qquad
+		\vec{N} = \begin{pmatrix}
+		\alert{N_\mathrm{e,~s}}\\
+		N_\mathrm{\mu}\\
+		N_\mathrm{\tau}\\
+		N_\mathrm{q}
+		\end{pmatrix}
 	\end{align*}
 \end{frame}
 
