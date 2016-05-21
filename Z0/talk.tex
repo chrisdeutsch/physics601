@@ -320,34 +320,53 @@
 
 \againframe<6>{cutsummary}
 
+\begin{frame}{Efficiency Matrix}
+	Using the chosen cuts quantify the:
+	\begin{itemize}
+		\setlength\itemsep{1.em}
+		\item fraction of correctly identified events
+		\item probability of misidentifying a event
+	\end{itemize}
+	\vspace{0.7cm}
+	Matrix formalism:
+	\begin{itemize}
+		\setlength\itemsep{1.em}
+		\item number of events in different channels separated in vectors
+		\begin{align*}
+			&\vec{n} = \begin{pmatrix}
+			\alert{n_\mathrm{e,s}} & n_\mathrm{\mu} & n_\mathrm{\tau} & n_\mathrm{q}
+			\end{pmatrix}^\mathrm{T}
+			\qquad
+			&\vec{N} = \begin{pmatrix}
+			\alert{N_\mathrm{e,s}} & N_\mathrm{\mu} & N_\mathrm{\tau} & N_\mathrm{q}
+			\end{pmatrix}^\mathrm{T}
+		\end{align*}
+		$\vec{n}$: number of events after cuts\qquad $\vec{N}$: total number of events 
+		
+		\item efficiency matrix definition
+		\begin{align*}
+			\vec{n} = E \cdot \vec{N}
+		\end{align*}
+		
+		
+	\end{itemize}
+\end{frame}
 
-\begin{frame}{Efficiency Formalism}
+
+\begin{frame}{Efficiency Matrix}
 	Apply cuts to Monte-Carlo datasets:
 	\begin{center}
 		\input{./tables/events_talk.tex}
 	\end{center}
 	
-	Definition of the efficiency matrix:
+	Calculate matrix elements:
 	\begin{align*}
-		\vec{n} = E \cdot \vec{N} \qquad E_{ij} = \frac{n_{ij}}{N_j}
-		\qquad
-		\vec{n} = \begin{pmatrix}
-		n_\mathrm{e}\\
-		n_\mathrm{\mu}\\
-		n_\mathrm{\tau}\\
-		n_\mathrm{q}
-		\end{pmatrix}\qquad
-		\vec{N} = \begin{pmatrix}
-		\alert{N_\mathrm{e,~s}}\\
-		N_\mathrm{\mu}\\
-		N_\mathrm{\tau}\\
-		N_\mathrm{q}
-		\end{pmatrix}
+		E_{ij} = \frac{n_{ij}}{N_j} \qquad\qquad N_\mathrm{e,s} = n_\mathrm{ee} \cdot \underbrace{\frac{100000}{93454}}_{\substack{\text{precut}\\\text{efficiency}}} \cdot \underbrace{\kappa}_{\substack{\text{correct.} \\ \text{due to} \\ \text{ang.\ cut}}} = 34136
 	\end{align*}
 \end{frame}
 
 
-\begin{frame}{Efficiency Formalism}
+\begin{frame}{Efficiency Matrix}
 	Efficiency matrix for our cuts:
 	\begin{align*}
 	\footnotesize
@@ -376,7 +395,7 @@
 	\end{align*}
 \end{frame}
 
-\begin{frame}{Efficiency Formalism}
+\begin{frame}{Efficiency Matrix}
 	Numerical inversion:
 	\begin{align*}
 	\footnotesize
@@ -429,8 +448,10 @@
 
 \beginbackup
 
-\begin{frame}{Backup Slides}
-	Backup Slides
+\begin{frame}{Error-Estimates from the Binomial Distribution}
+	\begin{align*}
+		\Delta n_i = \sqrt{N \cdot \left[ \frac{n_i}{N} - \left( \frac{n_i}{N} \right)^2 \right]}
+	\end{align*}
 \end{frame}
 
 \backupend
