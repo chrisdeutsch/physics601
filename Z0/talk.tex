@@ -418,8 +418,6 @@
 	0.00013 & 0.00002 & 0.00030 & 0.00052 \\
 	\end{pmatrix}
 	\end{align*}
-	
-	\textbf{Now:} Apply cuts to experimental data to get $\vec{n}$ and calculate total events $\vec{N}$.
 \end{frame}
 
 \subsection{Analysis of OPAL Data}
@@ -471,9 +469,88 @@
 
 \begin{frame}{Cross Section \& Breit-Wigner Fit}
 	\centering
-	\includegraphics[height=0.9\textheight]{./figures/cross_sections.pdf}
+	\includegraphics[height=0.9\textheight]{./talkfigs/pdf/cross_sections.pdf}
 \end{frame}
 
+\begin{frame}{Cross Section \& Breit-Wigner Fit}
+	\begin{center}
+		\input{./tables/fit_params.tex}
+	\end{center}
+	\vfill
+	Error weighted means:
+	\begin{alignat*}{2}
+		&M_\mathrm{Z} = \SI{91.15 +- 0.1}{GeV} \qquad &&M_\mathrm{Z}^\mathrm{PDG} = \SI{91.1876 +- 0.0021}{GeV}\\[0.5em]
+		&\Gamma_\mathrm{Z} = \SI{2.52 +- 0.02}{GeV} \qquad &&\Gamma_\mathrm{Z}^\mathrm{PDG} = \SI{2.4952 +- 0.0023}{GeV}
+	\end{alignat*}
+\end{frame}
+
+\begin{frame}{Partial Decay Widths}
+	\begin{itemize}
+		\item cross section at resonance from theory
+			\begin{align*}
+			\sigma_f^\mathrm{peak} = \frac{12 \pi}{M_\mathrm{Z}^2} \cdot \frac{\alert{\Gamma_\mathrm{e}}}{\Gamma_\mathrm{Z}} \cdot \frac{\Gamma_f}{\Gamma_\mathrm{Z}} \qquad f \in \left\{ \mathrm{e}, \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \right\}
+			\end{align*}
+		
+		\begin{enumerate}
+			\item calculate $\Gamma_\mathrm{e}$
+				 \begin{align*}
+				 	\Gamma_\mathrm{e} = \sqrt{\frac{M_\mathrm{Z}^2}{12 \pi} \, \Gamma_\mathrm{Z}^2 \sigma_\mathrm{e}^\mathrm{peak}}
+				 \end{align*}
+				 
+			\item use $\Gamma_\mathrm{e}$ to determine $\Gamma_f$ for $f \in \left\{ \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \right\}$
+				\begin{align*}
+					\Gamma_f = \frac{M_\mathrm{Z}^2}{12 \pi } \, \frac{\Gamma_\mathrm{Z}^2 }{\Gamma_\mathrm{e}} \sigma_f^\mathrm{peak}
+				\end{align*}
+		\end{enumerate}
+	\end{itemize}	
+\end{frame}
+
+\begin{frame}{Partial Decay Widths}
+	\begin{itemize}
+		\setlength\itemsep{2em}
+		\item resulting partial decay widths
+			\begin{alignat*}{2}
+			&\Gamma_\mathrm{e} = \SI{83.6 +- 1.8}{MeV} \qquad
+			&&\Gamma_\mathrm{\mu} = \SI{85.0 +- 2.3}{MeV}\\
+			&\Gamma_\mathrm{\tau} = \SI{87.1 +- 3.5}{MeV}\qquad
+			&&\Gamma_\mathrm{hadrons} = \SI{1778.5 +- 39}{MeV}
+			\end{alignat*}
+		
+		\item literature values
+		\begin{alignat*}{2}
+		&\Gamma_\ell^\mathrm{PDG} = \SI{83.984 +- 0.086}{MeV} \qquad
+		&&\Gamma_\mathrm{hadrons}^\mathrm{PDG} = \SI{1744.4 +- 2.0}{MeV}
+		\end{alignat*}
+		
+		\item consistent with lepton universality
+			\begin{align*}
+				&\frac{\Gamma_\mathrm{\mu}}{\Gamma_\mathrm{e}} = \num{1.017 +- 0.044} \qquad 
+				&\frac{\Gamma_\mathrm{\tau}}{\Gamma_\mathrm{e}} = \num{1.042 +- 0.055}
+			\end{align*}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Number of Light Neutrino Generations}
+	\begin{itemize}
+		\setlength\itemsep{2em}
+		\item full decay width of the Z-boson
+		\begin{align*}
+			\Gamma_\mathrm{Z} = \Gamma_\mathrm{e} + \Gamma_\mathrm{\mu} + \Gamma_\mathrm{\tau} + N_\nu \Gamma_\nu + \Gamma_\mathrm{hadrons}
+		\end{align*}
+		with $N_\nu$ number of neutrino generations $M_\nu < M_\mathrm{Z} / 2$
+		
+		\item $\Gamma_\nu$ known from theory: \quad $\Gamma_\nu = \SI{167.6}{MeV}$
+		
+		\item number of light neutrino generations
+			\begin{align*}
+			N_\nu &= \frac{\Gamma_\mathrm{Z} - \Gamma_\mathrm{e} - \Gamma_\mathrm{\mu} - \Gamma_\mathrm{\tau} - \Gamma_\mathrm{hadrons}}{\Gamma_\nu} \\[1.0em]
+			&= \num{2.94 +- 0.24} \quad \text{(using measured values)}
+			\end{align*}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Forward-Backward Asymmetry}
+\end{frame}
 
 \section{Conclusion}
 
