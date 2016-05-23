@@ -438,7 +438,7 @@
 			\item data contains events at multiple \texttt{e\_lep} -- select energies using cuts
 			\item after identifying the channels calculate cross section
 			\begin{align*}
-				\sigma_i = \frac{N_i}{\int \mathcal{L} \, \mathrm{d}t} + \underbrace{\mathrm{corr}_i(\sqrt{s})}_{\substack{\text{correction for} \\ \text{higher order} \\ \text{processes}}} \qquad i \in \left\{ \mathrm{e}, \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \right\}
+				\sigma_i = \frac{N_i}{\int \mathcal{L} \, \mathrm{d}t} + \underbrace{\mathrm{corr}_i(\sqrt{s})}_{\substack{\text{radiation} \\ \text{correction}}} \qquad i \in \left\{ \mathrm{e}, \mathrm{\mu}, \mathrm{\tau}, \mathrm{q} \right\}
 			\end{align*}
 			with integrated luminosity $\int \mathcal{L} \, \mathrm{d}t$ at a given energy
 		\end{itemize}
@@ -550,7 +550,67 @@
 \end{frame}
 
 \begin{frame}{Forward-Backward Asymmetry}
+	\begin{itemize}
+		\setlength\itemsep{1.5em}
+		\item asymmetric number of events in forward- and backward-hemisphere
+		\begin{align*}
+			\cos\theta > 0~\text{(forward)} \qquad \cos\theta < 0~\text{(backward)}
+		\end{align*}
+		
+		\item observable in all leptonic decay channels -- clearest signature for muons
+		
+		
+		\item forward-backward asymmetry
+			\begin{align*}
+				A_\mathrm{FB} = \frac{n_\mathrm{F} - n_\mathrm{B}}{n_\mathrm{F} + n_\mathrm{B}} + \underbrace{\mathrm{corr}(\sqrt{s})}_{\substack{\text{radiation} \\ \text{correction}}}
+			\end{align*}
+			function of cm.\ energy
+	\end{itemize}
 \end{frame}
+
+\begin{frame}{Forward-Backward Asymmetry}
+	\begin{columns}
+		\column[c]{0.45\textwidth}
+		\begin{itemize}
+			\setlength\itemsep{1.5em}
+			\item asymmetry at peak of resonance
+			\begin{align*}
+				A_\mathrm{FB}^\mathrm{peak} \approx 3\left( 1 - 4 \sin^2\theta_\mathrm{W} \right)
+			\end{align*}
+			
+			\item approx.\ peak asymmetry with measurement at $\sqrt{s} = \SI{91.24}{GeV}$
+			\begin{align*}
+			A_\mathrm{FB}^\mathrm{peak} \approx \num{0.0119 +- 0.0075}
+			\end{align*}
+		\end{itemize}
+		\column[c]{0.55\textwidth}
+			\begin{center}
+				\includegraphics{./talkfigs/pdf/afb.pdf}
+			\end{center}
+	\end{columns}
+
+\end{frame}
+
+\begin{frame}{Forward-Backward Asymmetry}
+		\begin{itemize}
+			\setlength\itemsep{1.5em}
+			\item calculate electroweak mixing
+			\begin{align*}
+			\sin^2\theta_\mathrm{W} &= \frac{1}{4} \left( 1 - \sqrt{A_\mathrm{FB}^\mathrm{peak} / 3} \right) \\[0.1em]
+			&= \num{0.234 +- 0.005}
+			\end{align*}
+			
+			\item good agreement with literature value
+			\begin{align*}
+				\left( \sin^2\theta_\mathrm{W} \right)^\mathrm{PDG} = \num{0.23126 +- 0.00005}
+			\end{align*}
+			
+			
+		\end{itemize}
+\end{frame}
+
+
+
 
 \section{Conclusion}
 
