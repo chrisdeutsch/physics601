@@ -24,6 +24,8 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{multirow}
+\usepackage{caption}
+\usepackage{subcaption}
 \setbeamerfont{caption}{size=\footnotesize}
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
 \usepackage[percent]{overpic}
@@ -79,17 +81,74 @@
 \end{frame}
 
 \section{Introduction}
-\begin{frame}{Christian's Folien}
-	Hier deine Folien
+\begin{frame}{Introduction}
+		\begin{itemize}
+			\item Elementary particles have characteristic mass and decay width
+			\item Are detected by their interactions and/or decay products
+			\item Characteristic Breit-Wigner resonance at $\sqrt{s}=m_\mathrm{particle}$
+			\item Measure properties of heavy vector boson $\mathrm{Z}^0$ in $e^+e^-$ collisions
+			\item Determine parameters of elementary particle physics: Weinberg angle, lepton universality, number of light neutrino generations
+			\item Use OPAL experiment at LEP storage ring ($e^+e^-$ collider with up to \SI{209}{GeV}~c.~m.~energy)
+		\end{itemize}
 \end{frame}
 
 \section{Theoretical Background}
 \begin{frame}{Theoretical Background}
-	
+	Forward-backward asymmetry
+	\begin{itemize}
+		\item In $e^+e^- \rightarrow f\bar{f}$, differential cross section different for forward and backward hemisphere $\rightarrow$ forward-backward asymmetry $A_\mathrm{FB}$
+		\item $A_\mathrm{FB}$ can be approximated to be $3\left(\frac{v_\ell}{a_\ell}\right)^2$ for energies near the resonance ($v_\ell$, $a_\ell$ weak couplings)
+		\item Measure $A_\mathrm{FB}$ in muon channel to determine Weinberg angle
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Theoretical Background}
+	Angular dependence of differential cross section
+	\begin{itemize}
+		\item $e^+e^-\rightarrow e^+e^-$ possible in $s$- and $t$-channel
+		\item In $s$-channel, $\frac{\mathrm{d}\sigma}{\mathrm{d}\Omega}\propto(1+\cos^2\theta)$, in $t$-channel $\frac{\mathrm{d}\sigma}{\mathrm{d}\Omega}\propto(1-\cos\theta)^2$
+		\item Differentiate between channels with cut on $\theta$
+	\end{itemize}
+	\vspace{.5em}
+	\centering
+	\includegraphics[width=.7\textwidth]{./talkfigs/pdf/s_t_channel}
 \end{frame}
 
 \begin{frame}{$\mathrm{Z}^0$ Boson}
-	
+	\begin{itemize}
+		\item Mass: \SI{91.2}{GeV}
+		\item Decay width: \SI{2.5}{GeV}
+		\item Can decay into all leptons and quarks (except top quark)
+	\end{itemize}
+	\begin{figure}[htb]
+		\centering
+		\begin{subfigure}{.28\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{./figures/theory/feynman/ee_s}
+		\end{subfigure}
+		\begin{subfigure}{.28\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{./figures/theory/feynman/ee_t}
+		\end{subfigure}
+		\begin{subfigure}{.28\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{./figures/theory/feynman/mm}
+		\end{subfigure}
+		\\
+		\vspace{1em}
+		\begin{subfigure}{.28\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{./figures/theory/feynman/tt}
+		\end{subfigure}
+		\begin{subfigure}{.28\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{./figures/theory/feynman/qq}
+		\end{subfigure}
+		\begin{subfigure}{.28\textwidth}
+			\centering
+			\includegraphics[width=.8\textwidth]{./figures/theory/feynman/nn}
+		\end{subfigure}
+	\end{figure}
 \end{frame}
 
 \section{Part I: Analysis of Event Displays}
@@ -106,8 +165,7 @@
 		\item Formulation of preliminary cut selections
 		\begin{itemize}
 			\setlength\itemsep{0.5em}
-			\item 
-			\item
+			\item Quantitatively differentiating between decay channels
 		\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -175,9 +233,10 @@
 
 \begin{frame}{Classification of Events}
 	\begin{itemize}
-		\setlength\itemsep{.5em}
+		\setlength\itemsep{1em}
 		\item Note measured quantities for every event:
 		\begin{itemize}
+			\setlength\itemsep{.5em}
 			\item Number of charged tracks
 			\item Total momentum of charged tracks
 			\item Energies deposited in e.m. and hadronic calorimeter
@@ -213,7 +272,8 @@
 		\end{tabular}
 	\end{center}
 	\begin{itemize}
-		\item Verify cuts by looking at test sample and comparing event type found by cuts and event type determined by eye \item All but one event from test sample identified correctly
+		\item Verify cuts by looking at test sample and comparing event type found by cuts and event type determined by eye
+		\item All but one event from test sample identified correctly
 		\item Problem: only few events, need more statistics to make more precise cuts
 	\end{itemize}
 \end{frame}
