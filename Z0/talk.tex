@@ -84,8 +84,139 @@
 \end{frame}
 
 \section{Theoretical Background}
+\begin{frame}{Theoretical Background}
+	
+\end{frame}
+
+\begin{frame}{$\mathrm{Z}^0$ Boson}
+	
+\end{frame}
 
 \section{Part I: Analysis of Event Displays}
+\begin{frame}{Part I: Analysis of Event Displays}
+	\begin{itemize}
+		\setlength\itemsep{2.em}
+		\item Understanding OPAL detector response
+		\begin{itemize}
+			\setlength\itemsep{0.5em}
+			\item Looking at event displays with software \texttt{GROPE}
+			\item Classification of events by detector response
+		\end{itemize}
+		
+		\item Formulation of preliminary cut selections
+		\begin{itemize}
+			\setlength\itemsep{0.5em}
+			\item 
+			\item
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{OPAL detector response}
+	\begin{columns}
+		\column[c]{0.5\textwidth}
+		Electrons:
+		\begin{itemize}
+			\setlength\itemsep{.5em}
+			\item $e^+e^-$ pair (two charged tracks)
+			\item Mostly back-to-back events
+			\item Energy deposited in e.m. calorimeter (red)
+		\end{itemize}
+		\column[c]{0.5\textwidth}
+		\includegraphics[width=1.0\textwidth]{./talkfigs/pdf/ee_02.pdf}
+
+	\end{columns}
+\end{frame}
+\begin{frame}{OPAL detector response}
+	\begin{columns}
+		\column[c]{0.5\textwidth}
+		Muons:
+		\begin{itemize}
+			\setlength\itemsep{.5em}
+			\item $\mu^+\mu^-$ pair (two charged tracks)
+			\item Mostly back-to-back events
+			\item No (small) energy deposited in calorimeters
+			\item Signal in muon detector
+		\end{itemize}
+		\column[c]{0.5\textwidth}
+		\includegraphics[width=1.0\textwidth]{./talkfigs/pdf/mm_02.pdf}
+	\end{columns}
+\end{frame}
+\begin{frame}{OPAL detector response}
+	\begin{columns}
+		\column[c]{0.5\textwidth}
+		Taus:
+		\begin{itemize}
+			\setlength\itemsep{.5em}
+			\item $\tau^+\tau^-$ pair
+			\item Short lifetime $\rightarrow$ decay into other particles before detection
+			\item Detector response depends on decay product
+			\item Event characterized by number of charged tracks (``prongs'')
+		\end{itemize}
+		\column[c]{0.5\textwidth}
+		\includegraphics[width=1.0\textwidth]{./talkfigs/pdf/tt_05.pdf}
+	\end{columns}
+\end{frame}
+\begin{frame}{OPAL detector response}
+	\begin{columns}
+		\column[c]{0.5\textwidth}
+		Hadrons:
+		\begin{itemize}
+			\setlength\itemsep{.5em}
+			\item Quark-antiquark pair initial decay products
+			\item Due to confinement additional quarks created $\rightarrow$ formation of hadrons
+			\item Deposit energy in hadronic calorimeter
+			\item Sometimes decay into leptons $\rightarrow$ signal in e.m. calorimeter
+		\end{itemize}
+		\column[c]{0.5\textwidth}
+		\includegraphics[width=1.0\textwidth]{./talkfigs/pdf/qq_04.pdf}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Classification of Events}
+	\begin{itemize}
+		\setlength\itemsep{.5em}
+		\item Note measured quantities for every event:
+		\begin{itemize}
+			\item Number of charged tracks
+			\item Total momentum of charged tracks
+			\item Energies deposited in e.m. and hadronic calorimeter
+		\end{itemize}
+		\item Plot distributions
+		\item Formulate cuts to separate types of $\mathrm{Z}^0$ decays
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Preliminary Cut Selections}
+	\begin{columns}
+		\column[c]{0.5\textwidth}
+		\includegraphics[width=1.0\textwidth]{./talkfigs/pdf/Ctrk(N).pdf}\\
+		\includegraphics[width=1.0\textwidth]{./talkfigs/pdf/Ecal(SumE).pdf}
+		\column[c]{0.5\textwidth}
+		\includegraphics[width=1.0\textwidth]{./talkfigs/pdf/Ctrk(Sump).pdf}\\
+		\includegraphics[width=1.0\textwidth]{./talkfigs/pdf/Hcal(SumE).pdf}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Preliminary Cut Selections}
+	\begin{center}
+		\begin{tabular}{lcccc}
+			\toprule
+			&\multicolumn{4}{c}{selected channel}  \\ \cmidrule(r){2-5}
+			& electrons & muons & tauons & hadrons \\
+			\midrule
+			total momentum / \si{GeV} & $> 30$ & $> 65$ & $< 65$ & --\\
+			number charged tracks & $< 5$  & $< 5$  & $< 6$ & $>7$ \\
+			e.m. cal. energy / \si{GeV}  & $> 60$ & $< 8$ & $< 60$ & -- \\
+			had. cal. energy / \si{GeV}  & $< 2$  & $< 10$ & -- & -- \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	\begin{itemize}
+		\item Verify cuts by looking at test sample and comparing event type found by cuts and event type determined by eye \item All but one event from test sample identified correctly
+		\item Problem: only few events, need more statistics to make more precise cuts
+	\end{itemize}
+\end{frame}
 
 \section{Part II: Statistical Analysis of $\mathrm{Z}^0$ Decays}
 \begin{frame}{Part II: Statistical Analysis of $\mathrm{Z}^0$ Decays}
