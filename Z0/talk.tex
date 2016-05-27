@@ -95,11 +95,10 @@
 \section{Theoretical Background}
 \begin{frame}{$\mathrm{Z}^0$ Boson}
 	\begin{itemize}
-		\item Mass $M_\mathrm{Z}^\mathrm{PDG} = \SI{91.1876 +- 0.0021}{GeV}$
-		\item Decay width $\Gamma_\mathrm{Z}^\mathrm{PDG} = \SI{2.4952 +- 0.0023}{GeV}$
+		\item Mass $M_\mathrm{Z} = \SI{91.1876 +- 0.0021}{GeV}$
+		\item Decay width $\Gamma_\mathrm{Z} = \SI{2.4952 +- 0.0023}{GeV}$\footnote{Particle Data Group, \emph{The Review of Particle Physics} 2014 and 2015 update}
 		\item Can decay into all leptons and quarks (except top quark)
 		\item In general all processes possible with photon propagator
-%		weniger Diagramme, leptonen zusammenfassen
 	\end{itemize}
 	\begin{figure}[htb]
 		\centering
@@ -126,12 +125,46 @@
 		\item Differentiate between channels with cut on $\theta$
 	\end{itemize}
 	\vspace{.5em}
-	\centering
-	\includegraphics[width=.7\textwidth]{./talkfigs/pdf/s_t_channel}
+	\begin{columns}
+		\column[c]{0.2\textwidth}
+		\centering
+		\includegraphics[width=.8\textwidth]{./figures/theory/feynman/t_z0}
+		\column[c]{0.2\textwidth}
+		\centering
+		\includegraphics[width=.8\textwidth]{./figures/theory/feynman/t_gamma}
+		\column[c]{0.6\textwidth}
+		\centering
+		\vspace{8pt}
+		\includegraphics[width=\textwidth]{./talkfigs/pdf/s_t_channel}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Theoretical Background}
 	Weinberg angle
+	\begin{itemize}
+		\item Electroweak unification: combine electromagnetic and weak interaction
+		\item Introduce weak isospin and weak hypercharge
+		\item Gauge bosons of this gauge group are not observable
+		\item Because of spontaneous symmetry breaking, combinations of two gauge bosons ($\mathrm{W}^3$ and $\mathrm{B}$) form observable $\mathrm{Z}^0$ and $\gamma$
+	\end{itemize}
+	\begin{align*}
+		\begin{pmatrix}
+		\gamma \\
+		\mathrm{Z}^0
+		\end{pmatrix} = 
+		\begin{pmatrix}
+		\cos\theta_\mathrm{W} & \sin\theta_\mathrm{W} \\
+		-\sin\theta_\mathrm{W} & \cos\theta_\mathrm{W}
+		\end{pmatrix}
+		\begin{pmatrix}
+		\mathrm{B} \\
+		\mathrm{W}^3
+		\end{pmatrix}
+	\end{align*}
+	\begin{itemize}
+		\item Weak mixing angle (``Weinberg angle'') $\theta_\mathrm{W}$
+		\item Describes relation between vector and axial-vector coupling
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Theoretical Background}
@@ -160,10 +193,10 @@
 			\item Classification of events by detector response
 		\end{itemize}
 		
-		\item Formulation of preliminary cut selections
+		\item Derivation of preliminary cut selections
 		\begin{itemize}
 			\setlength\itemsep{0.5em}
-			\item Quantitatively differentiating between decay channels
+			\item Analyze each decay channel separately
 		\end{itemize}
 	\end{itemize}
 \end{frame}
