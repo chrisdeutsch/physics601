@@ -83,62 +83,29 @@
 \section{Introduction}
 \begin{frame}{Introduction}
 		\begin{itemize}
-			\item Elementary particles have characteristic mass and decay width
-			\item Are detected by their interactions and/or decay products
-			\item Characteristic Breit-Wigner resonance at $\sqrt{s}=m_\mathrm{particle}$
-			\item Measure properties of heavy vector boson $\mathrm{Z}^0$ in $e^+e^-$ collisions
-			\item Determine parameters of elementary particle physics: Weinberg angle, lepton universality, number of light neutrino generations
-			\item Use OPAL experiment at LEP storage ring ($e^+e^-$ collider with up to \SI{209}{GeV}~c.~m.~energy)
+			\setlength\itemsep{1em}
+			\item Data from OPAL experiment at LEP provided
+			\item Measure properties of $\mathrm{Z}^0$ boson: mass, decay width
+			\item Analyze each decay channel separately
+			\item Use results to determine Weinberg angle and number of light neutrino generations
+			\item Show lepton universality
 		\end{itemize}
 \end{frame}
 
 \section{Theoretical Background}
-\begin{frame}{Theoretical Background}
-	Forward-backward asymmetry
-	\begin{itemize}
-		\item In $e^+e^- \rightarrow f\bar{f}$, differential cross section different for forward and backward hemisphere $\rightarrow$ forward-backward asymmetry $A_\mathrm{FB}$
-		\item $A_\mathrm{FB}$ can be approximated to be $3\left(\frac{v_\ell}{a_\ell}\right)^2$ for energies near the resonance ($v_\ell$, $a_\ell$ weak couplings)
-		\item Measure $A_\mathrm{FB}$ in muon channel to determine Weinberg angle
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Theoretical Background}
-	Angular dependence of differential cross section
-	\begin{itemize}
-		\item $e^+e^-\rightarrow e^+e^-$ possible in $s$- and $t$-channel
-		\item In $s$-channel, $\frac{\mathrm{d}\sigma}{\mathrm{d}\Omega}\propto(1+\cos^2\theta)$, in $t$-channel $\frac{\mathrm{d}\sigma}{\mathrm{d}\Omega}\propto(1-\cos\theta)^2$
-		\item Differentiate between channels with cut on $\theta$
-	\end{itemize}
-	\vspace{.5em}
-	\centering
-	\includegraphics[width=.7\textwidth]{./talkfigs/pdf/s_t_channel}
-\end{frame}
-
 \begin{frame}{$\mathrm{Z}^0$ Boson}
 	\begin{itemize}
-		\item Mass: \SI{91.2}{GeV}
-		\item Decay width: \SI{2.5}{GeV}
+		\item Mass $M_\mathrm{Z}^\mathrm{PDG} = \SI{91.1876 +- 0.0021}{GeV}$
+		\item Decay width $\Gamma_\mathrm{Z}^\mathrm{PDG} = \SI{2.4952 +- 0.0023}{GeV}$
 		\item Can decay into all leptons and quarks (except top quark)
+		\item In general all processes possible with photon propagator
+%		weniger Diagramme, leptonen zusammenfassen
 	\end{itemize}
 	\begin{figure}[htb]
 		\centering
 		\begin{subfigure}{.28\textwidth}
 			\centering
-			\includegraphics[width=.8\textwidth]{./figures/theory/feynman/ee_s}
-		\end{subfigure}
-		\begin{subfigure}{.28\textwidth}
-			\centering
-			\includegraphics[width=.8\textwidth]{./figures/theory/feynman/ee_t}
-		\end{subfigure}
-		\begin{subfigure}{.28\textwidth}
-			\centering
-			\includegraphics[width=.8\textwidth]{./figures/theory/feynman/mm}
-		\end{subfigure}
-		\\
-		\vspace{1em}
-		\begin{subfigure}{.28\textwidth}
-			\centering
-			\includegraphics[width=.8\textwidth]{./figures/theory/feynman/tt}
+			\includegraphics[width=.8\textwidth]{./figures/theory/feynman/ll}
 		\end{subfigure}
 		\begin{subfigure}{.28\textwidth}
 			\centering
@@ -146,9 +113,40 @@
 		\end{subfigure}
 		\begin{subfigure}{.28\textwidth}
 			\centering
-			\includegraphics[width=.8\textwidth]{./figures/theory/feynman/nn}
+			\includegraphics[width=.8\textwidth]{./figures/theory/feynman/ee_t}
 		\end{subfigure}
 	\end{figure}
+\end{frame}
+
+\begin{frame}{Theoretical Background}
+	Angular dependence of differential cross section
+	\begin{itemize}
+		\item $e^+e^-\rightarrow e^+e^-$ possible in $s$- and $t$-channel
+		\item In $s$-channel, $\frac{\mathrm{d}\sigma}{\mathrm{d}\Omega}\propto(1+\cos^2\theta)$, in $t$-channel $\frac{\mathrm{d}\sigma}{\mathrm{d}\Omega}\propto(1-\cos\theta)^{-2}$
+		\item Differentiate between channels with cut on $\theta$
+	\end{itemize}
+	\vspace{.5em}
+	\centering
+	\includegraphics[width=.7\textwidth]{./talkfigs/pdf/s_t_channel}
+\end{frame}
+
+\begin{frame}{Theoretical Background}
+	Weinberg angle
+\end{frame}
+
+\begin{frame}{Theoretical Background}
+	Forward-backward asymmetry
+	\begin{itemize}
+		\item In $e^+e^- \rightarrow f\bar{f}$, differential cross section different for forward and backward hemisphere $\rightarrow$ forward-backward asymmetry $A_\mathrm{FB}$
+		\item $A_\mathrm{FB}$ for leptons and energies near the resonance ($v_\ell$, $a_\ell$ weak couplings)
+		\begin{align*}
+			A_\mathrm{FB}^{\mathrm{peak}}\approx 3\left(\frac{v_\ell}{a_\ell}\right)^2 = 3\left( 1 - 4 \sin^2\theta_\mathrm{W} \right)
+		\end{align*}
+		\item Measure $A_\mathrm{FB}$ in muon channel to determine Weinberg angle
+		\begin{itemize}
+			\item Clearest detector signature
+		\end{itemize}
+	\end{itemize}
 \end{frame}
 
 \section{Part I: Analysis of Event Displays}
@@ -158,7 +156,7 @@
 		\item Understanding OPAL detector response
 		\begin{itemize}
 			\setlength\itemsep{0.5em}
-			\item Looking at event displays with software \texttt{GROPE}
+			\item Looking at event displays with software \texttt{GROPE} (MC data)
 			\item Classification of events by detector response
 		\end{itemize}
 		
@@ -192,7 +190,7 @@
 		\begin{itemize}
 			\setlength\itemsep{.5em}
 			\item $\mu^+\mu^-$ pair (two charged tracks)
-			\item Mostly back-to-back events
+			\item Back-to-back events
 			\item No (small) energy deposited in calorimeters
 			\item Signal in muon detector
 		\end{itemize}
