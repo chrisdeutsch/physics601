@@ -366,17 +366,22 @@
 	\begin{itemize}
 		\setlength\itemsep{2.em}
 		\item Simulated events with detector response separated into decay channels $\mathrm{e}, \mu, \tau, \mathrm{q}$ (\num{100000} events each)
-		
-		\item Available variables for each event:
-		\begin{description}
-			\item[\texttt{ncharged}] number of charged particles
-			\item[\texttt{pcharged}] total momentum of charged particles
-			\item[\texttt{e\_ecal}] total energy deposited in em.\ calorimeter
-			\item[\texttt{e\_hcal}] total energy deposited in had.\ calorimeter
-			\item[\texttt{cos\_thet}] angle between inc.\ and outg.\ positively charged particle
-			\item[\texttt{e\_lep}] energy of the beam at LEP
-		\end{description}
 	\end{itemize}
+	\begin{columns}
+		\column[c]{0.6\textwidth}
+			\includegraphics[width=\textwidth]{./talkfigs/pdf/mm_05_side.pdf}
+		
+		\column[c]{0.4\textwidth}
+			Detector variables for each event:
+			\begin{itemize}
+				\setlength{\itemsep}{0.5em}
+				\item \texttt{ncharged}
+				\item \texttt{pcharged}
+				\item \texttt{e\_ecal}
+				\item \texttt{e\_hcal}
+				\item \texttt{cos\_thet}
+			\end{itemize}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Refining the Cuts -- \texttt{pcharged}}
