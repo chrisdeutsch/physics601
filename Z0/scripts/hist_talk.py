@@ -7,7 +7,7 @@ plt.style.use("publication")
 files = ["ELECTRONS", "MUONS", "TAUS", "HADRONS"]
 data = dict((f, pd.read_csv("./data/tag1/" + f + ".csv")) for f in files)
 
-variables = [("Ctrk(Sump)", "Total momentum of charged tracks / GeV", 10), ("Ctrk(N)", "Number of charged tracks", 15), ("Ecal(SumE)", "Energy in e.m. calorimeter / GeV", 10), ("Hcal(SumE)", "Energy in hadronic calorimeter / GeV", 10)]
+variables = [("Ctrk(Sump)", "Total momentum of charged tracks / GeV", 10), ("Ctrk(N)", "Number of charged tracks", 15), ("Ecal(SumE)", "Energy in e.m. calorimeter / GeV", 10), ("Hcal(SumE)", "Energy in hadron calorimeter / GeV", 10)]
 
 for var, detail, b in variables:
     fig = plt.figure(figsize=(4.05, 2.7))
