@@ -327,7 +327,7 @@
 		\item Analysis of data gathered by OPAL at LEP
 		\begin{itemize}
 			\setlength\itemsep{0.5em}
-			\item event displays infeasible ($\sim \num{400000}$ events)
+			\item event displays unfeasible ($\sim \num{400000}$ events)
 			\item data analysis software \texttt{PAW} used instead
 		\end{itemize}
 		
@@ -349,7 +349,7 @@
 	\textbf{Procedure:}
 	\begin{enumerate}
 		\setlength\itemsep{2.em}
-		\item Analysis of Monte-Carlo data
+		\item Preparation of the measurement (MC-data)
 		\begin{itemize}
 			\setlength\itemsep{0.5em}
 			\item refine selection cuts for the different decay-channels
@@ -359,7 +359,7 @@
 			\item determine the efficiency of the applied cuts
 		\end{itemize}
 		
-		\item Analysis of OPAL data
+		\item Analysis of OPAL data (exp.\ data)
 		\begin{itemize}
 			\setlength\itemsep{0.5em}
 			\item separate the decay-channels with the selection cuts
@@ -568,23 +568,23 @@
 	Efficiency matrix for our cuts:
 	\begin{align*}
 	\footnotesize
-	E = \begin{pmatrix}
-	0.59259 & 0.00001 & 0.00117 & 0.00000 \\
-	0.00000 & 0.78537 & 0.00549 & 0.00000 \\
-	0.02027 & 0.04089 & 0.76651 & 0.00934 \\
-	0.00018 & 0.00000 & 0.00503 & 0.97533 \\
-	\end{pmatrix}
+	E = \begin{pmatrix*}[r]
+	59.259 & 0.001 & 0.117 & 0.000 \\
+	0.000 & 78.537 & 0.549 & 0.000 \\
+	2.027 & 4.089 & 76.651 & 0.934 \\
+	0.018 & 0.000 & 0.503 & 97.533 \\
+	\end{pmatrix*} \times 10^{-2}
 	\end{align*}
 	
 	With errors from binomial statistics:
 	\begin{align*}
 	\footnotesize
-	\Delta E = \begin{pmatrix}
-	0.00266 & 0.00000 & 0.00000 & 0.00000 \\
-	0.00000 & 0.00130 & 0.00024 & 0.00000 \\
-	0.00077 & 0.00063 & 0.00134 & 0.00031 \\
-	0.00008 & 0.00000 & 0.00023 & 0.00050 \\
-	\end{pmatrix}
+	\Delta E = \begin{pmatrix*}[r]
+	0.266 & 0.000 & 0.000 & 0.000 \\
+	0.000 & 0.130 & 0.024 & 0.000 \\
+	0.077 & 0.063 & 0.134 & 0.031 \\
+	0.008 & 0.000 & 0.023 & 0.050 \\
+	\end{pmatrix*} \times 10^{-2}
 	\end{align*}
 	
 	\pause
@@ -601,12 +601,12 @@
 	Numerical inversion:
 	\begin{align*}
 	\footnotesize
-	E^{-1} = \begin{pmatrix}
-	1.68758 & 0.00011 &-0.00258 & 0.00002 \\
-	0.00312 & 1.27376 &-0.00912 & 0.00009 \\
-	-0.04465 &-0.06796 & 1.30525 &-0.01250 \\
-	-0.00007 & 0.00035 &-0.00673 & 1.02536 \\
-	\end{pmatrix}
+	E^{-1} = \begin{pmatrix*}[r]
+	168.758 & 0.011 &-0.258 & 0.002 \\
+	0.312 & 127.376 &-0.912 & 0.009 \\
+	-4.465 &-6.796 & 130.525 &-1.250 \\
+	-0.007 & 0.035 &-0.673 & 102.536 \\
+	\end{pmatrix*} \times 10^{-2}
 	\end{align*}
 	
 	\vfill
@@ -615,11 +615,11 @@
 	\begin{align*}
 	\footnotesize
 	\Delta E^{-1} = \begin{pmatrix}
-	0.00756 & 0.00001 & 0.00002 & 0.00001 \\
-	0.00002 & 0.00211 & 0.00039 & 0.00001 \\
-	0.00170 & 0.00105 & 0.00227 & 0.00041 \\
-	0.00013 & 0.00002 & 0.00030 & 0.00052 \\
-	\end{pmatrix}
+	0.756 & 0.001 & 0.002 & 0.001 \\
+	0.002 & 0.211 & 0.039 & 0.001 \\
+	0.170 & 0.105 & 0.227 & 0.041 \\
+	0.013 & 0.002 & 0.030 & 0.052 \\
+	\end{pmatrix} \times 10^{-2}
 	\end{align*}
 \end{frame}
 
@@ -685,9 +685,10 @@
 	\pause
 	Error weighted means:
 	\begin{alignat*}{2}
-		&M_\mathrm{Z} = \SI{91.15 +- 0.1}{GeV} \qquad &&M_\mathrm{Z}^\mathrm{PDG} = \SI{91.1876 +- 0.0021}{GeV}\\[0.5em]
-		&\Gamma_\mathrm{Z} = \SI{2.52 +- 0.02}{GeV} \qquad &&\Gamma_\mathrm{Z}^\mathrm{PDG} = \SI{2.4952 +- 0.0023}{GeV}
+		&M_\mathrm{Z} = \SI{91.15 +- 0.1}{GeV} \qquad &&M_\mathrm{Z}^\mathrm{Lit.} = \SI{91.1876 +- 0.0021}{GeV}\\[0.5em]
+		&\Gamma_\mathrm{Z} = \SI{2.52 +- 0.02}{GeV} \qquad &&\Gamma_\mathrm{Z}^\mathrm{Lit.} = \SI{2.4952 +- 0.0023}{GeV}
 	\end{alignat*}
+	lit.\ values from \cite{pdg}
 \end{frame}
 
 \begin{frame}{Partial Decay Widths}
@@ -722,10 +723,10 @@
 			&&\Gamma_\mathrm{hadrons} = \SI{1778.5 +- 39}{MeV}
 			\end{alignat*}
 		
-		\item<2-> literature values
+		\item<2-> literature values \cite{pdg}
 		\begin{alignat*}{2}
-		&\Gamma_\ell^\mathrm{PDG} = \SI{83.984 +- 0.086}{MeV} \qquad
-		&&\Gamma_\mathrm{hadrons}^\mathrm{PDG} = \SI{1744.4 +- 2.0}{MeV}
+		&\Gamma_\ell = \SI{83.984 +- 0.086}{MeV} \qquad
+		&&\Gamma_\mathrm{hadrons} = \SI{1744.4 +- 2.0}{MeV}
 		\end{alignat*}
 		
 		\item<3-> consistent with lepton universality
@@ -745,7 +746,7 @@
 		\end{align*}
 		with $N_\nu$ number of neutrino generations $M_\nu < M_\mathrm{Z} / 2$
 		
-		\item<2-> $\Gamma_\nu$ known from theory: \quad $\Gamma_\nu = \SI{167.6}{MeV}$
+		\item<2-> $\Gamma_\nu$ known from theory: \quad $\Gamma_\nu = \SI{167.6}{MeV}$ \quad \cite{instructions}
 		
 		\item<3-> number of light neutrino generations
 			\begin{align*}
@@ -806,9 +807,9 @@
 			&= \num{0.234 +- 0.005}
 			\end{align*}
 			
-			\item<2-> good agreement with literature value
+			\item<2-> good agreement with literature value \cite{pdg}
 			\begin{align*}
-				\left( \sin^2\theta_\mathrm{W} \right)^\mathrm{PDG} = \num{0.23126 +- 0.00005}
+				\sin^2\theta_\mathrm{W} = \num{0.23126 +- 0.00005}
 			\end{align*}
 			
 			
@@ -830,6 +831,10 @@
 \begin{frame}{Bibliography}
 	\scriptsize
 	\begin{thebibliography}{9}
+		\bibitem[Instructions]{instructions}
+			\emph{Instructions for E213: Analysis of $Z^0$ decays},
+			Universität Bonn.
+		
 		\bibitem[PDG]{pdg}
 			K.A. Olive \textit{et al.} (Particle Data Group),
 			\emph{The Review of Particle Physics},
