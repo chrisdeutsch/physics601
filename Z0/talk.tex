@@ -449,28 +449,6 @@
 	\end{center}
 \end{frame}
 
-\begin{frame}<1>[label=cutsummary]{Refining the Cuts -- Summary}
-	\begin{itemize}
-		\item<1-> electrons and muons: $\left| \cos\theta \right| < 0.9$ (unreconstructible events)
-		\item<6-> electrons: $\cos\theta < 0.5$ ($s$-channel)
-	\end{itemize}
-	\vfill
-	\pause
-	\begin{center}
-		\begin{tabular}{lcccc}
-			\toprule
-			&\multicolumn{4}{c}{selected channel}  \\ \cmidrule(r){2-5}
-			& electrons & muons & tauons & hadrons \\
-			\midrule
-			\texttt{pcharged} & \only<2->{$> 30$} & \only<2->{$> 55$} & \only<2->{$>1\:\&\:<75$} & \only<2->{--}\\
-			\texttt{ncharged} & \only<3->{$< 5$}  & \only<3->{$< 4$}  & \only<3->{$< 8$} & \only<3->{$\geq 8$} \\
-			\texttt{e\_ecal}  & \only<4->{$> 70$} & \only<4->{$< 15$}  & \only<4->{$< 75$} & \only<4->{$> 20$} \\
-			\texttt{e\_hcal}  & \only<5->{$< 15$}  & \only<5->{$< 25$} & \only<5->{--} & \only<5->{--} \\
-			\bottomrule
-		\end{tabular}
-	\end{center}
-\end{frame}
-
 \begin{frame}{Refining the Cuts -- \texttt{pcharged}}
 	\begin{center}
 		\begin{overpic}[height=0.9\textheight, trim=0 0 0 20, clip]{./talkfigs/pdf/pcharged_cuts.pdf}
@@ -481,9 +459,6 @@
 		\end{overpic}
 	\end{center}
 \end{frame}
-
-\againframe<2>{cutsummary}
-
 
 \begin{frame}{Refining the Cuts -- \texttt{ncharged}}
 	\begin{center}
@@ -496,8 +471,6 @@
 	\end{center}
 \end{frame}
 
-\againframe<3>{cutsummary}
-
 \begin{frame}{Refining the Cuts -- \texttt{e\_ecal}}
 	\begin{center}
 		\begin{overpic}[height=0.9\textheight, trim=0 0 0 20, clip]{./talkfigs/pdf/e_ecal_cuts.pdf}
@@ -508,8 +481,6 @@
 		\end{overpic}
 	\end{center}
 \end{frame}
-
-\againframe<4>{cutsummary}
 
 \begin{frame}{Refining the Cuts -- \texttt{e\_hcal}}
 	\begin{center}
@@ -522,8 +493,6 @@
 	\end{center}
 \end{frame}
 
-\againframe<5>{cutsummary}
-
 \begin{frame}{Separating $s$- and $t$-Channel in $\mathrm{e}^+ + \mathrm{e}^- \rightarrow \mathrm{e}^+ + \mathrm{e}^-$}
 	\begin{columns}
 		\column[c]{0.5\textwidth}
@@ -531,7 +500,7 @@
 				\setlength\itemsep{2.em}
 				\item<2-> $t$-channel dominant at small scattering angles
 				
-				\item<3-> remove most $t$-channel events by cutting $\cos\theta < 0.5$
+				\item<3-> remove most $t$-channel events by cutting \framebox[1.1\width]{$\cos\theta < 0.5$}
 				
 				\item<4-> correction for the number of $s$-channel events
 				\begin{align*}
@@ -546,7 +515,26 @@
 	\end{columns}
 \end{frame}
 
-\againframe<6>{cutsummary}
+\begin{frame}{Summary of the Derived Cuts}
+	\begin{itemize}
+		\item electrons \& muons: \quad $\left| \cos\theta \right| < 0.9$ (unreconstructible events)
+		\item electrons: \quad $\cos\theta < 0.5$ ($s$-channel)
+	\end{itemize}
+	\vfill
+	\begin{center}
+		\begin{tabular}{lcccc}
+			\toprule
+			&\multicolumn{4}{c}{selected channel}  \\ \cmidrule(r){2-5}
+			& electrons & muons & tauons & hadrons \\
+			\midrule
+			\texttt{pcharged} [GeV] & $> 30$ & $> 55$ & $>1\:\&\:<75$ & --\\
+			\texttt{ncharged} & $< 5$  & $< 4$  & $< 8$ & $\geq 8$ \\
+			\texttt{e\_ecal} [GeV] & $> 70$ & $< 15$ & $< 75$ & $> 20$ \\
+			\texttt{e\_hcal} [GeV] & $< 15$ & $< 25$ & -- & -- \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{frame}
 
 \begin{frame}{Efficiency Matrix}
 	Using the chosen cuts quantify the:
@@ -705,9 +693,9 @@
 	\centering
 	\begin{overpic}[height=0.9\textheight]{./talkfigs/pdf/cross_sections.pdf}
 		\put(32,47){\small\makebox(0,0){$\chi^2_\mathrm{red.} = 2.796$}}
-		\put(78,47){\small\makebox(0,0){$\chi^2_\mathrm{red.} = 0.847$}}
+		\put(78.5,47){\small\makebox(0,0){$\chi^2_\mathrm{red.} = 0.847$}}
 		\put(32,13.5){\small\makebox(0,0){$\chi^2_\mathrm{red.} = 2.451$}}
-		\put(78,13.5){\small\makebox(0,0){$\chi^2_\mathrm{red.} = 1.776$}}
+		\put(78.5,13.5){\small\makebox(0,0){$\chi^2_\mathrm{red.} = 1.776$}}
 	\end{overpic}
 \end{frame}
 
@@ -869,7 +857,7 @@
 \begin{frame}{Bibliography}
 	\scriptsize
 	\begin{thebibliography}{9}
-		\bibitem[Instructions]{instructions}
+		\bibitem[Script]{instructions}
 			\emph{Instructions for E213: Analysis of $Z^0$ decays},
 			Universität Bonn.
 		
