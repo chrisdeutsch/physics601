@@ -128,13 +128,15 @@
 	\begin{columns}
 		\column[c]{0.2\textwidth}
 		\centering
-		\includegraphics[width=.8\textwidth]{./figures/theory/feynman/t_z0}
+		\includegraphics[width=.8\textwidth]{./figures/theory/feynman/t_z0}\\
+		\footnotesize{rare}
 		\column[c]{0.2\textwidth}
 		\centering
-		\includegraphics[width=.8\textwidth]{./figures/theory/feynman/t_gamma}
+		\includegraphics[width=.8\textwidth]{./figures/theory/feynman/t_gamma}\\
+		\footnotesize{dominant}
 		\column[c]{0.6\textwidth}
 		\centering
-		\vspace{8pt}
+		\vspace{3pt}
 		\includegraphics[width=\textwidth]{./talkfigs/pdf/s_t_channel}
 	\end{columns}
 \end{frame}
@@ -290,11 +292,21 @@
 \begin{frame}{Preliminary Cut Selections}
 	\begin{columns}
 		\column[c]{0.5\textwidth}
-		\includegraphics[width=1.0\textwidth]{./talkfigs/pdf/Ctrk(N).pdf}\\
-		\includegraphics[width=1.0\textwidth]{./talkfigs/pdf/Ecal(SumE).pdf}
+			\includegraphics[width=1.0\textwidth]{./talkfigs/pdf/Ctrk(N).pdf}\\
+			\begin{itemize}
+				\item Separate hadrons and charged leptons
+				\item \textbf{$e, \mu$} number of tracks $<5$
+				\item $\tau$ number of tracks $<6$
+				\item hadrons number of tracks $>7$
+			\end{itemize}
 		\column[c]{0.5\textwidth}
-		\includegraphics[width=1.0\textwidth]{./talkfigs/pdf/Ctrk(Sump).pdf}\\
-		\includegraphics[width=1.0\textwidth]{./talkfigs/pdf/Hcal(SumE).pdf}
+			\includegraphics[width=1.0\textwidth]{./talkfigs/pdf/Ecal(SumE).pdf}
+			\begin{itemize}
+				\item Separate electrons, muons
+				\item $\mu$ less than \SI{8}{GeV}
+				\item $e$ minimum \SI{60}{GeV}
+				\vspace{2.8em}
+			\end{itemize}
 	\end{columns}
 \end{frame}
 
